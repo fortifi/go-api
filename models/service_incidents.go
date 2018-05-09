@@ -12,28 +12,16 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// Organisation Organisation
-// swagger:model Organisation
-type Organisation struct {
+// ServiceIncidents Service Incidents
+// swagger:model ServiceIncidents
+type ServiceIncidents struct {
 
-	// logo
-	Logo string `json:"logo,omitempty"`
-
-	// org domain
-	OrgDomain string `json:"orgDomain,omitempty"`
-
-	// org fid
-	OrgFid string `json:"orgFid,omitempty"`
-
-	// org name
-	OrgName string `json:"orgName,omitempty"`
-
-	// primary colour
-	PrimaryColour string `json:"primaryColour,omitempty"`
+	// service incidents
+	ServiceIncidents ServiceIncidentsServiceIncidents `json:"serviceIncidents"`
 }
 
-// Validate validates this organisation
-func (m *Organisation) Validate(formats strfmt.Registry) error {
+// Validate validates this service incidents
+func (m *ServiceIncidents) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if len(res) > 0 {
@@ -43,7 +31,7 @@ func (m *Organisation) Validate(formats strfmt.Registry) error {
 }
 
 // MarshalBinary interface implementation
-func (m *Organisation) MarshalBinary() ([]byte, error) {
+func (m *ServiceIncidents) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -51,8 +39,8 @@ func (m *Organisation) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *Organisation) UnmarshalBinary(b []byte) error {
-	var res Organisation
+func (m *ServiceIncidents) UnmarshalBinary(b []byte) error {
+	var res ServiceIncidents
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

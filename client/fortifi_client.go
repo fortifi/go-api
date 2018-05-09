@@ -22,6 +22,7 @@ import (
 	"github.com/fortifi/go-api/client/polymers"
 	"github.com/fortifi/go-api/client/products"
 	"github.com/fortifi/go-api/client/reasons"
+	"github.com/fortifi/go-api/client/service_status"
 	"github.com/fortifi/go-api/client/support"
 )
 
@@ -87,6 +88,8 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *Fortifi {
 	cli.Products = products.New(transport, formats)
 
 	cli.Reasons = reasons.New(transport, formats)
+
+	cli.ServiceStatus = service_status.New(transport, formats)
 
 	cli.Support = support.New(transport, formats)
 
@@ -156,6 +159,8 @@ type Fortifi struct {
 
 	Reasons *reasons.Client
 
+	ServiceStatus *service_status.Client
+
 	Support *support.Client
 
 	Transport runtime.ClientTransport
@@ -186,6 +191,8 @@ func (c *Fortifi) SetTransport(transport runtime.ClientTransport) {
 	c.Products.SetTransport(transport)
 
 	c.Reasons.SetTransport(transport)
+
+	c.ServiceStatus.SetTransport(transport)
 
 	c.Support.SetTransport(transport)
 

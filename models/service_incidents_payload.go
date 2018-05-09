@@ -12,28 +12,19 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// Organisation Organisation
-// swagger:model Organisation
-type Organisation struct {
+// ServiceIncidentsPayload service incidents payload
+// swagger:model ServiceIncidentsPayload
+type ServiceIncidentsPayload struct {
 
-	// logo
-	Logo string `json:"logo,omitempty"`
+	// end date
+	EndDate strfmt.DateTime `json:"endDate,omitempty"`
 
-	// org domain
-	OrgDomain string `json:"orgDomain,omitempty"`
-
-	// org fid
-	OrgFid string `json:"orgFid,omitempty"`
-
-	// org name
-	OrgName string `json:"orgName,omitempty"`
-
-	// primary colour
-	PrimaryColour string `json:"primaryColour,omitempty"`
+	// start date
+	StartDate strfmt.DateTime `json:"startDate,omitempty"`
 }
 
-// Validate validates this organisation
-func (m *Organisation) Validate(formats strfmt.Registry) error {
+// Validate validates this service incidents payload
+func (m *ServiceIncidentsPayload) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if len(res) > 0 {
@@ -43,7 +34,7 @@ func (m *Organisation) Validate(formats strfmt.Registry) error {
 }
 
 // MarshalBinary interface implementation
-func (m *Organisation) MarshalBinary() ([]byte, error) {
+func (m *ServiceIncidentsPayload) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -51,8 +42,8 @@ func (m *Organisation) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *Organisation) UnmarshalBinary(b []byte) error {
-	var res Organisation
+func (m *ServiceIncidentsPayload) UnmarshalBinary(b []byte) error {
+	var res ServiceIncidentsPayload
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}
