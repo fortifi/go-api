@@ -33,7 +33,14 @@ func (o *GetCustomersCustomerFidPaymentMethodsCardsReader) ReadResponse(response
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewGetCustomersCustomerFidPaymentMethodsCardsDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -57,6 +64,44 @@ func (o *GetCustomersCustomerFidPaymentMethodsCardsOK) Error() string {
 func (o *GetCustomersCustomerFidPaymentMethodsCardsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.PaymentCards)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewGetCustomersCustomerFidPaymentMethodsCardsDefault creates a GetCustomersCustomerFidPaymentMethodsCardsDefault with default headers values
+func NewGetCustomersCustomerFidPaymentMethodsCardsDefault(code int) *GetCustomersCustomerFidPaymentMethodsCardsDefault {
+	return &GetCustomersCustomerFidPaymentMethodsCardsDefault{
+		_statusCode: code,
+	}
+}
+
+/*GetCustomersCustomerFidPaymentMethodsCardsDefault handles this case with default header values.
+
+Error
+*/
+type GetCustomersCustomerFidPaymentMethodsCardsDefault struct {
+	_statusCode int
+
+	Payload *models.Envelope
+}
+
+// Code gets the status code for the get customers customer fid payment methods cards default response
+func (o *GetCustomersCustomerFidPaymentMethodsCardsDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *GetCustomersCustomerFidPaymentMethodsCardsDefault) Error() string {
+	return fmt.Sprintf("[GET /customers/{customerFid}/paymentMethods/cards][%d] GetCustomersCustomerFidPaymentMethodsCards default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *GetCustomersCustomerFidPaymentMethodsCardsDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.Envelope)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

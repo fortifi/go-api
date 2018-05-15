@@ -32,13 +32,6 @@ func (o *DeleteOrdersOrderFidOffersOfferFidReader) ReadResponse(response runtime
 		}
 		return result, nil
 
-	case 404:
-		result := NewDeleteOrdersOrderFidOffersOfferFidNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewDeleteOrdersOrderFidOffersOfferFidDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -68,27 +61,6 @@ func (o *DeleteOrdersOrderFidOffersOfferFidOK) Error() string {
 }
 
 func (o *DeleteOrdersOrderFidOffersOfferFidOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewDeleteOrdersOrderFidOffersOfferFidNotFound creates a DeleteOrdersOrderFidOffersOfferFidNotFound with default headers values
-func NewDeleteOrdersOrderFidOffersOfferFidNotFound() *DeleteOrdersOrderFidOffersOfferFidNotFound {
-	return &DeleteOrdersOrderFidOffersOfferFidNotFound{}
-}
-
-/*DeleteOrdersOrderFidOffersOfferFidNotFound handles this case with default header values.
-
-Order not found
-*/
-type DeleteOrdersOrderFidOffersOfferFidNotFound struct {
-}
-
-func (o *DeleteOrdersOrderFidOffersOfferFidNotFound) Error() string {
-	return fmt.Sprintf("[DELETE /orders/{orderFid}/offers/{offerFid}][%d] deleteOrdersOrderFidOffersOfferFidNotFound ", 404)
-}
-
-func (o *DeleteOrdersOrderFidOffersOfferFidNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

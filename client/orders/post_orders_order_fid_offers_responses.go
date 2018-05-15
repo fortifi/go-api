@@ -32,13 +32,6 @@ func (o *PostOrdersOrderFidOffersReader) ReadResponse(response runtime.ClientRes
 		}
 		return result, nil
 
-	case 404:
-		result := NewPostOrdersOrderFidOffersNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPostOrdersOrderFidOffersDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -68,27 +61,6 @@ func (o *PostOrdersOrderFidOffersOK) Error() string {
 }
 
 func (o *PostOrdersOrderFidOffersOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewPostOrdersOrderFidOffersNotFound creates a PostOrdersOrderFidOffersNotFound with default headers values
-func NewPostOrdersOrderFidOffersNotFound() *PostOrdersOrderFidOffersNotFound {
-	return &PostOrdersOrderFidOffersNotFound{}
-}
-
-/*PostOrdersOrderFidOffersNotFound handles this case with default header values.
-
-Order not found
-*/
-type PostOrdersOrderFidOffersNotFound struct {
-}
-
-func (o *PostOrdersOrderFidOffersNotFound) Error() string {
-	return fmt.Sprintf("[POST /orders/{orderFid}/offers][%d] postOrdersOrderFidOffersNotFound ", 404)
-}
-
-func (o *PostOrdersOrderFidOffersNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

@@ -32,13 +32,6 @@ func (o *GetCustomersCustomerFidReader) ReadResponse(response runtime.ClientResp
 		}
 		return result, nil
 
-	case 404:
-		result := NewGetCustomersCustomerFidNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewGetCustomersCustomerFidDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -76,27 +69,6 @@ func (o *GetCustomersCustomerFidOK) readResponse(response runtime.ClientResponse
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewGetCustomersCustomerFidNotFound creates a GetCustomersCustomerFidNotFound with default headers values
-func NewGetCustomersCustomerFidNotFound() *GetCustomersCustomerFidNotFound {
-	return &GetCustomersCustomerFidNotFound{}
-}
-
-/*GetCustomersCustomerFidNotFound handles this case with default header values.
-
-Customer not found
-*/
-type GetCustomersCustomerFidNotFound struct {
-}
-
-func (o *GetCustomersCustomerFidNotFound) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}][%d] getCustomersCustomerFidNotFound ", 404)
-}
-
-func (o *GetCustomersCustomerFidNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

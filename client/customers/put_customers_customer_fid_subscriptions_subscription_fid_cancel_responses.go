@@ -32,20 +32,6 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelReader) ReadRe
 		}
 		return result, nil
 
-	case 400:
-		result := NewPutCustomersCustomerFidSubscriptionsSubscriptionFidCancelBadRequest()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
-	case 404:
-		result := NewPutCustomersCustomerFidSubscriptionsSubscriptionFidCancelNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPutCustomersCustomerFidSubscriptionsSubscriptionFidCancelDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -83,48 +69,6 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelOK) readRespon
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewPutCustomersCustomerFidSubscriptionsSubscriptionFidCancelBadRequest creates a PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelBadRequest with default headers values
-func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidCancelBadRequest() *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelBadRequest {
-	return &PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelBadRequest{}
-}
-
-/*PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelBadRequest handles this case with default header values.
-
-Invalid payload data
-*/
-type PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelBadRequest struct {
-}
-
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelBadRequest) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/cancel][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidCancelBadRequest ", 400)
-}
-
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewPutCustomersCustomerFidSubscriptionsSubscriptionFidCancelNotFound creates a PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelNotFound with default headers values
-func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidCancelNotFound() *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelNotFound {
-	return &PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelNotFound{}
-}
-
-/*PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelNotFound handles this case with default header values.
-
-Subscription not found
-*/
-type PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelNotFound struct {
-}
-
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelNotFound) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/cancel][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidCancelNotFound ", 404)
-}
-
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

@@ -32,13 +32,6 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeRea
 		}
 		return result, nil
 
-	case 404:
-		result := NewPutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -68,27 +61,6 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeOK)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewPutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeNotFound creates a PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeNotFound with default headers values
-func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeNotFound() *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeNotFound {
-	return &PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeNotFound{}
-}
-
-/*PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeNotFound handles this case with default header values.
-
-Subscription not found
-*/
-type PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeNotFound struct {
-}
-
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeNotFound) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/disableAutoCharge][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeNotFound ", 404)
-}
-
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

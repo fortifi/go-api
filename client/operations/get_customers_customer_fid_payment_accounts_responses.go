@@ -32,13 +32,6 @@ func (o *GetCustomersCustomerFidPaymentAccountsReader) ReadResponse(response run
 		}
 		return result, nil
 
-	case 400:
-		result := NewGetCustomersCustomerFidPaymentAccountsBadRequest()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewGetCustomersCustomerFidPaymentAccountsDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -76,27 +69,6 @@ func (o *GetCustomersCustomerFidPaymentAccountsOK) readResponse(response runtime
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewGetCustomersCustomerFidPaymentAccountsBadRequest creates a GetCustomersCustomerFidPaymentAccountsBadRequest with default headers values
-func NewGetCustomersCustomerFidPaymentAccountsBadRequest() *GetCustomersCustomerFidPaymentAccountsBadRequest {
-	return &GetCustomersCustomerFidPaymentAccountsBadRequest{}
-}
-
-/*GetCustomersCustomerFidPaymentAccountsBadRequest handles this case with default header values.
-
-Error retrieving payment accounts
-*/
-type GetCustomersCustomerFidPaymentAccountsBadRequest struct {
-}
-
-func (o *GetCustomersCustomerFidPaymentAccountsBadRequest) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/paymentAccounts][%d] getCustomersCustomerFidPaymentAccountsBadRequest ", 400)
-}
-
-func (o *GetCustomersCustomerFidPaymentAccountsBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

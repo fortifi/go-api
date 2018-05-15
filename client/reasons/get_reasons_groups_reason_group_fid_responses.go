@@ -32,13 +32,6 @@ func (o *GetReasonsGroupsReasonGroupFidReader) ReadResponse(response runtime.Cli
 		}
 		return result, nil
 
-	case 404:
-		result := NewGetReasonsGroupsReasonGroupFidNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewGetReasonsGroupsReasonGroupFidDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -76,27 +69,6 @@ func (o *GetReasonsGroupsReasonGroupFidOK) readResponse(response runtime.ClientR
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewGetReasonsGroupsReasonGroupFidNotFound creates a GetReasonsGroupsReasonGroupFidNotFound with default headers values
-func NewGetReasonsGroupsReasonGroupFidNotFound() *GetReasonsGroupsReasonGroupFidNotFound {
-	return &GetReasonsGroupsReasonGroupFidNotFound{}
-}
-
-/*GetReasonsGroupsReasonGroupFidNotFound handles this case with default header values.
-
-reasonGroupFid not found
-*/
-type GetReasonsGroupsReasonGroupFidNotFound struct {
-}
-
-func (o *GetReasonsGroupsReasonGroupFidNotFound) Error() string {
-	return fmt.Sprintf("[GET /reasons/groups/{reasonGroupFid}][%d] getReasonsGroupsReasonGroupFidNotFound ", 404)
-}
-
-func (o *GetReasonsGroupsReasonGroupFidNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

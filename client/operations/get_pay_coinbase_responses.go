@@ -33,7 +33,14 @@ func (o *GetPayCoinbaseReader) ReadResponse(response runtime.ClientResponse, con
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewGetPayCoinbaseDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -57,6 +64,44 @@ func (o *GetPayCoinbaseOK) Error() string {
 func (o *GetPayCoinbaseOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.GetPayCoinbaseOKBody)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewGetPayCoinbaseDefault creates a GetPayCoinbaseDefault with default headers values
+func NewGetPayCoinbaseDefault(code int) *GetPayCoinbaseDefault {
+	return &GetPayCoinbaseDefault{
+		_statusCode: code,
+	}
+}
+
+/*GetPayCoinbaseDefault handles this case with default header values.
+
+Error
+*/
+type GetPayCoinbaseDefault struct {
+	_statusCode int
+
+	Payload *models.Envelope
+}
+
+// Code gets the status code for the get pay coinbase default response
+func (o *GetPayCoinbaseDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *GetPayCoinbaseDefault) Error() string {
+	return fmt.Sprintf("[GET /pay/coinbase][%d] GetPayCoinbase default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *GetPayCoinbaseDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.Envelope)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

@@ -33,7 +33,14 @@ func (o *GetEntitiesEntityFidPropertiesValuesPropertyNameReader) ReadResponse(re
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewGetEntitiesEntityFidPropertiesValuesPropertyNameDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -57,6 +64,44 @@ func (o *GetEntitiesEntityFidPropertiesValuesPropertyNameOK) Error() string {
 func (o *GetEntitiesEntityFidPropertiesValuesPropertyNameOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.GetEntitiesEntityFidPropertiesValuesPropertyNameOKBody)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewGetEntitiesEntityFidPropertiesValuesPropertyNameDefault creates a GetEntitiesEntityFidPropertiesValuesPropertyNameDefault with default headers values
+func NewGetEntitiesEntityFidPropertiesValuesPropertyNameDefault(code int) *GetEntitiesEntityFidPropertiesValuesPropertyNameDefault {
+	return &GetEntitiesEntityFidPropertiesValuesPropertyNameDefault{
+		_statusCode: code,
+	}
+}
+
+/*GetEntitiesEntityFidPropertiesValuesPropertyNameDefault handles this case with default header values.
+
+Error
+*/
+type GetEntitiesEntityFidPropertiesValuesPropertyNameDefault struct {
+	_statusCode int
+
+	Payload *models.Envelope
+}
+
+// Code gets the status code for the get entities entity fid properties values property name default response
+func (o *GetEntitiesEntityFidPropertiesValuesPropertyNameDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *GetEntitiesEntityFidPropertiesValuesPropertyNameDefault) Error() string {
+	return fmt.Sprintf("[GET /entities/{entityFid}/properties/values/{propertyName}][%d] GetEntitiesEntityFidPropertiesValuesPropertyName default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *GetEntitiesEntityFidPropertiesValuesPropertyNameDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.Envelope)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

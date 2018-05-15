@@ -32,20 +32,6 @@ func (o *DeleteCustomersCustomerFidReader) ReadResponse(response runtime.ClientR
 		}
 		return result, nil
 
-	case 403:
-		result := NewDeleteCustomersCustomerFidForbidden()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
-	case 404:
-		result := NewDeleteCustomersCustomerFidNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewDeleteCustomersCustomerFidDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -75,48 +61,6 @@ func (o *DeleteCustomersCustomerFidOK) Error() string {
 }
 
 func (o *DeleteCustomersCustomerFidOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewDeleteCustomersCustomerFidForbidden creates a DeleteCustomersCustomerFidForbidden with default headers values
-func NewDeleteCustomersCustomerFidForbidden() *DeleteCustomersCustomerFidForbidden {
-	return &DeleteCustomersCustomerFidForbidden{}
-}
-
-/*DeleteCustomersCustomerFidForbidden handles this case with default header values.
-
-It is not possible to archive this customer
-*/
-type DeleteCustomersCustomerFidForbidden struct {
-}
-
-func (o *DeleteCustomersCustomerFidForbidden) Error() string {
-	return fmt.Sprintf("[DELETE /customers/{customerFid}][%d] deleteCustomersCustomerFidForbidden ", 403)
-}
-
-func (o *DeleteCustomersCustomerFidForbidden) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewDeleteCustomersCustomerFidNotFound creates a DeleteCustomersCustomerFidNotFound with default headers values
-func NewDeleteCustomersCustomerFidNotFound() *DeleteCustomersCustomerFidNotFound {
-	return &DeleteCustomersCustomerFidNotFound{}
-}
-
-/*DeleteCustomersCustomerFidNotFound handles this case with default header values.
-
-Customer not found
-*/
-type DeleteCustomersCustomerFidNotFound struct {
-}
-
-func (o *DeleteCustomersCustomerFidNotFound) Error() string {
-	return fmt.Sprintf("[DELETE /customers/{customerFid}][%d] deleteCustomersCustomerFidNotFound ", 404)
-}
-
-func (o *DeleteCustomersCustomerFidNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

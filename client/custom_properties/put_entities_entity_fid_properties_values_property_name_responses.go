@@ -32,13 +32,6 @@ func (o *PutEntitiesEntityFidPropertiesValuesPropertyNameReader) ReadResponse(re
 		}
 		return result, nil
 
-	case 400:
-		result := NewPutEntitiesEntityFidPropertiesValuesPropertyNameBadRequest()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPutEntitiesEntityFidPropertiesValuesPropertyNameDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -68,27 +61,6 @@ func (o *PutEntitiesEntityFidPropertiesValuesPropertyNameOK) Error() string {
 }
 
 func (o *PutEntitiesEntityFidPropertiesValuesPropertyNameOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewPutEntitiesEntityFidPropertiesValuesPropertyNameBadRequest creates a PutEntitiesEntityFidPropertiesValuesPropertyNameBadRequest with default headers values
-func NewPutEntitiesEntityFidPropertiesValuesPropertyNameBadRequest() *PutEntitiesEntityFidPropertiesValuesPropertyNameBadRequest {
-	return &PutEntitiesEntityFidPropertiesValuesPropertyNameBadRequest{}
-}
-
-/*PutEntitiesEntityFidPropertiesValuesPropertyNameBadRequest handles this case with default header values.
-
-Invalid Entity
-*/
-type PutEntitiesEntityFidPropertiesValuesPropertyNameBadRequest struct {
-}
-
-func (o *PutEntitiesEntityFidPropertiesValuesPropertyNameBadRequest) Error() string {
-	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/values/{propertyName}][%d] putEntitiesEntityFidPropertiesValuesPropertyNameBadRequest ", 400)
-}
-
-func (o *PutEntitiesEntityFidPropertiesValuesPropertyNameBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

@@ -32,13 +32,6 @@ func (o *PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementReader) Read
 		}
 		return result, nil
 
-	case 400:
-		result := NewPutEntitiesEntityFidPropertiesCountersPropertyNameIncrementBadRequest()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPutEntitiesEntityFidPropertiesCountersPropertyNameIncrementDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -68,27 +61,6 @@ func (o *PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementOK) Error() 
 }
 
 func (o *PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewPutEntitiesEntityFidPropertiesCountersPropertyNameIncrementBadRequest creates a PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementBadRequest with default headers values
-func NewPutEntitiesEntityFidPropertiesCountersPropertyNameIncrementBadRequest() *PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementBadRequest {
-	return &PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementBadRequest{}
-}
-
-/*PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementBadRequest handles this case with default header values.
-
-Invalid Entity
-*/
-type PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementBadRequest struct {
-}
-
-func (o *PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementBadRequest) Error() string {
-	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/counters/{propertyName}/increment][%d] putEntitiesEntityFidPropertiesCountersPropertyNameIncrementBadRequest ", 400)
-}
-
-func (o *PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

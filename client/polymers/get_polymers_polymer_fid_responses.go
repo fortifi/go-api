@@ -32,13 +32,6 @@ func (o *GetPolymersPolymerFidReader) ReadResponse(response runtime.ClientRespon
 		}
 		return result, nil
 
-	case 404:
-		result := NewGetPolymersPolymerFidNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewGetPolymersPolymerFidDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -76,27 +69,6 @@ func (o *GetPolymersPolymerFidOK) readResponse(response runtime.ClientResponse, 
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewGetPolymersPolymerFidNotFound creates a GetPolymersPolymerFidNotFound with default headers values
-func NewGetPolymersPolymerFidNotFound() *GetPolymersPolymerFidNotFound {
-	return &GetPolymersPolymerFidNotFound{}
-}
-
-/*GetPolymersPolymerFidNotFound handles this case with default header values.
-
-Polymer not found
-*/
-type GetPolymersPolymerFidNotFound struct {
-}
-
-func (o *GetPolymersPolymerFidNotFound) Error() string {
-	return fmt.Sprintf("[GET /polymers/{polymerFid}][%d] getPolymersPolymerFidNotFound ", 404)
-}
-
-func (o *GetPolymersPolymerFidNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

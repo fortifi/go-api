@@ -32,13 +32,6 @@ func (o *PostCustomersCustomerFidPaymentMethodsPaypalCompleteReader) ReadRespons
 		}
 		return result, nil
 
-	case 400:
-		result := NewPostCustomersCustomerFidPaymentMethodsPaypalCompleteBadRequest()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPostCustomersCustomerFidPaymentMethodsPaypalCompleteDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -68,27 +61,6 @@ func (o *PostCustomersCustomerFidPaymentMethodsPaypalCompleteOK) Error() string 
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsPaypalCompleteOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewPostCustomersCustomerFidPaymentMethodsPaypalCompleteBadRequest creates a PostCustomersCustomerFidPaymentMethodsPaypalCompleteBadRequest with default headers values
-func NewPostCustomersCustomerFidPaymentMethodsPaypalCompleteBadRequest() *PostCustomersCustomerFidPaymentMethodsPaypalCompleteBadRequest {
-	return &PostCustomersCustomerFidPaymentMethodsPaypalCompleteBadRequest{}
-}
-
-/*PostCustomersCustomerFidPaymentMethodsPaypalCompleteBadRequest handles this case with default header values.
-
-Failed to complete Paypal agreement
-*/
-type PostCustomersCustomerFidPaymentMethodsPaypalCompleteBadRequest struct {
-}
-
-func (o *PostCustomersCustomerFidPaymentMethodsPaypalCompleteBadRequest) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/paypal/complete][%d] postCustomersCustomerFidPaymentMethodsPaypalCompleteBadRequest ", 400)
-}
-
-func (o *PostCustomersCustomerFidPaymentMethodsPaypalCompleteBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

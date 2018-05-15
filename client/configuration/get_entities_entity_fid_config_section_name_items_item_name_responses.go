@@ -33,7 +33,14 @@ func (o *GetEntitiesEntityFidConfigSectionNameItemsItemNameReader) ReadResponse(
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewGetEntitiesEntityFidConfigSectionNameItemsItemNameDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -57,6 +64,44 @@ func (o *GetEntitiesEntityFidConfigSectionNameItemsItemNameOK) Error() string {
 func (o *GetEntitiesEntityFidConfigSectionNameItemsItemNameOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.GetEntitiesEntityFidConfigSectionNameItemsItemNameOKBody)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewGetEntitiesEntityFidConfigSectionNameItemsItemNameDefault creates a GetEntitiesEntityFidConfigSectionNameItemsItemNameDefault with default headers values
+func NewGetEntitiesEntityFidConfigSectionNameItemsItemNameDefault(code int) *GetEntitiesEntityFidConfigSectionNameItemsItemNameDefault {
+	return &GetEntitiesEntityFidConfigSectionNameItemsItemNameDefault{
+		_statusCode: code,
+	}
+}
+
+/*GetEntitiesEntityFidConfigSectionNameItemsItemNameDefault handles this case with default header values.
+
+Error
+*/
+type GetEntitiesEntityFidConfigSectionNameItemsItemNameDefault struct {
+	_statusCode int
+
+	Payload *models.Envelope
+}
+
+// Code gets the status code for the get entities entity fid config section name items item name default response
+func (o *GetEntitiesEntityFidConfigSectionNameItemsItemNameDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *GetEntitiesEntityFidConfigSectionNameItemsItemNameDefault) Error() string {
+	return fmt.Sprintf("[GET /entities/{entityFid}/config/{sectionName}/items/{itemName}][%d] GetEntitiesEntityFidConfigSectionNameItemsItemName default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *GetEntitiesEntityFidConfigSectionNameItemsItemNameDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.Envelope)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

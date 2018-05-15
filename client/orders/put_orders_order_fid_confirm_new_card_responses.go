@@ -32,13 +32,6 @@ func (o *PutOrdersOrderFidConfirmNewCardReader) ReadResponse(response runtime.Cl
 		}
 		return result, nil
 
-	case 503:
-		result := NewPutOrdersOrderFidConfirmNewCardServiceUnavailable()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPutOrdersOrderFidConfirmNewCardDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -76,27 +69,6 @@ func (o *PutOrdersOrderFidConfirmNewCardOK) readResponse(response runtime.Client
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewPutOrdersOrderFidConfirmNewCardServiceUnavailable creates a PutOrdersOrderFidConfirmNewCardServiceUnavailable with default headers values
-func NewPutOrdersOrderFidConfirmNewCardServiceUnavailable() *PutOrdersOrderFidConfirmNewCardServiceUnavailable {
-	return &PutOrdersOrderFidConfirmNewCardServiceUnavailable{}
-}
-
-/*PutOrdersOrderFidConfirmNewCardServiceUnavailable handles this case with default header values.
-
-There are no payment gateways available to handle your request
-*/
-type PutOrdersOrderFidConfirmNewCardServiceUnavailable struct {
-}
-
-func (o *PutOrdersOrderFidConfirmNewCardServiceUnavailable) Error() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/confirmNewCard][%d] putOrdersOrderFidConfirmNewCardServiceUnavailable ", 503)
-}
-
-func (o *PutOrdersOrderFidConfirmNewCardServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

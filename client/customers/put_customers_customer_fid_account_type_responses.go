@@ -32,13 +32,6 @@ func (o *PutCustomersCustomerFidAccountTypeReader) ReadResponse(response runtime
 		}
 		return result, nil
 
-	case 404:
-		result := NewPutCustomersCustomerFidAccountTypeNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPutCustomersCustomerFidAccountTypeDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -68,27 +61,6 @@ func (o *PutCustomersCustomerFidAccountTypeOK) Error() string {
 }
 
 func (o *PutCustomersCustomerFidAccountTypeOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewPutCustomersCustomerFidAccountTypeNotFound creates a PutCustomersCustomerFidAccountTypeNotFound with default headers values
-func NewPutCustomersCustomerFidAccountTypeNotFound() *PutCustomersCustomerFidAccountTypeNotFound {
-	return &PutCustomersCustomerFidAccountTypeNotFound{}
-}
-
-/*PutCustomersCustomerFidAccountTypeNotFound handles this case with default header values.
-
-Customer not found
-*/
-type PutCustomersCustomerFidAccountTypeNotFound struct {
-}
-
-func (o *PutCustomersCustomerFidAccountTypeNotFound) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/accountType][%d] putCustomersCustomerFidAccountTypeNotFound ", 404)
-}
-
-func (o *PutCustomersCustomerFidAccountTypeNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

@@ -32,20 +32,6 @@ func (o *PostCustomersReader) ReadResponse(response runtime.ClientResponse, cons
 		}
 		return result, nil
 
-	case 404:
-		result := NewPostCustomersNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
-	case 409:
-		result := NewPostCustomersConflict()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPostCustomersDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -83,50 +69,6 @@ func (o *PostCustomersOK) readResponse(response runtime.ClientResponse, consumer
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewPostCustomersNotFound creates a PostCustomersNotFound with default headers values
-func NewPostCustomersNotFound() *PostCustomersNotFound {
-	return &PostCustomersNotFound{}
-}
-
-/*PostCustomersNotFound handles this case with default header values.
-
-The brand Fid you are trying to add a customer to does not exist
-
-*/
-type PostCustomersNotFound struct {
-}
-
-func (o *PostCustomersNotFound) Error() string {
-	return fmt.Sprintf("[POST /customers][%d] postCustomersNotFound ", 404)
-}
-
-func (o *PostCustomersNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewPostCustomersConflict creates a PostCustomersConflict with default headers values
-func NewPostCustomersConflict() *PostCustomersConflict {
-	return &PostCustomersConflict{}
-}
-
-/*PostCustomersConflict handles this case with default header values.
-
-The external reference has already been used to create a customer
-
-*/
-type PostCustomersConflict struct {
-}
-
-func (o *PostCustomersConflict) Error() string {
-	return fmt.Sprintf("[POST /customers][%d] postCustomersConflict ", 409)
-}
-
-func (o *PostCustomersConflict) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

@@ -33,7 +33,14 @@ func (o *PutOrdersOrderFidProductsReader) ReadResponse(response runtime.ClientRe
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewPutOrdersOrderFidProductsDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -57,6 +64,44 @@ func (o *PutOrdersOrderFidProductsOK) Error() string {
 func (o *PutOrdersOrderFidProductsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.PutOrdersOrderFidProductsOKBody)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewPutOrdersOrderFidProductsDefault creates a PutOrdersOrderFidProductsDefault with default headers values
+func NewPutOrdersOrderFidProductsDefault(code int) *PutOrdersOrderFidProductsDefault {
+	return &PutOrdersOrderFidProductsDefault{
+		_statusCode: code,
+	}
+}
+
+/*PutOrdersOrderFidProductsDefault handles this case with default header values.
+
+Error
+*/
+type PutOrdersOrderFidProductsDefault struct {
+	_statusCode int
+
+	Payload *models.Envelope
+}
+
+// Code gets the status code for the put orders order fid products default response
+func (o *PutOrdersOrderFidProductsDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *PutOrdersOrderFidProductsDefault) Error() string {
+	return fmt.Sprintf("[PUT /orders/{orderFid}/products][%d] PutOrdersOrderFidProducts default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *PutOrdersOrderFidProductsDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.Envelope)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

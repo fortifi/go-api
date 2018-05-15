@@ -7,10 +7,13 @@ package operations
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 
 	strfmt "github.com/go-openapi/strfmt"
+
+	"github.com/fortifi/go-api/models"
 )
 
 // DeleteCustomersCustomerFidPaymentMethodsCardsCardFidReader is a Reader for the DeleteCustomersCustomerFidPaymentMethodsCardsCardFid structure.
@@ -30,7 +33,14 @@ func (o *DeleteCustomersCustomerFidPaymentMethodsCardsCardFidReader) ReadRespons
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDeleteCustomersCustomerFidPaymentMethodsCardsCardFidDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -51,6 +61,44 @@ func (o *DeleteCustomersCustomerFidPaymentMethodsCardsCardFidOK) Error() string 
 }
 
 func (o *DeleteCustomersCustomerFidPaymentMethodsCardsCardFidOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewDeleteCustomersCustomerFidPaymentMethodsCardsCardFidDefault creates a DeleteCustomersCustomerFidPaymentMethodsCardsCardFidDefault with default headers values
+func NewDeleteCustomersCustomerFidPaymentMethodsCardsCardFidDefault(code int) *DeleteCustomersCustomerFidPaymentMethodsCardsCardFidDefault {
+	return &DeleteCustomersCustomerFidPaymentMethodsCardsCardFidDefault{
+		_statusCode: code,
+	}
+}
+
+/*DeleteCustomersCustomerFidPaymentMethodsCardsCardFidDefault handles this case with default header values.
+
+Error
+*/
+type DeleteCustomersCustomerFidPaymentMethodsCardsCardFidDefault struct {
+	_statusCode int
+
+	Payload *models.Envelope
+}
+
+// Code gets the status code for the delete customers customer fid payment methods cards card fid default response
+func (o *DeleteCustomersCustomerFidPaymentMethodsCardsCardFidDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DeleteCustomersCustomerFidPaymentMethodsCardsCardFidDefault) Error() string {
+	return fmt.Sprintf("[DELETE /customers/{customerFid}/paymentMethods/cards/{cardFid}][%d] DeleteCustomersCustomerFidPaymentMethodsCardsCardFid default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DeleteCustomersCustomerFidPaymentMethodsCardsCardFidDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.Envelope)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

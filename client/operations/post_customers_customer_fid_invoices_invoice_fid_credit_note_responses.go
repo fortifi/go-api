@@ -32,20 +32,6 @@ func (o *PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteReader) ReadRespons
 		}
 		return result, nil
 
-	case 400:
-		result := NewPostCustomersCustomerFidInvoicesInvoiceFidCreditNoteBadRequest()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
-	case 404:
-		result := NewPostCustomersCustomerFidInvoicesInvoiceFidCreditNoteNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPostCustomersCustomerFidInvoicesInvoiceFidCreditNoteDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -83,48 +69,6 @@ func (o *PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteOK) readResponse(re
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewPostCustomersCustomerFidInvoicesInvoiceFidCreditNoteBadRequest creates a PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteBadRequest with default headers values
-func NewPostCustomersCustomerFidInvoicesInvoiceFidCreditNoteBadRequest() *PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteBadRequest {
-	return &PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteBadRequest{}
-}
-
-/*PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteBadRequest handles this case with default header values.
-
-Issue adding credit note to invoice
-*/
-type PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteBadRequest struct {
-}
-
-func (o *PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteBadRequest) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/invoices/{invoiceFid}/creditNote][%d] postCustomersCustomerFidInvoicesInvoiceFidCreditNoteBadRequest ", 400)
-}
-
-func (o *PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewPostCustomersCustomerFidInvoicesInvoiceFidCreditNoteNotFound creates a PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteNotFound with default headers values
-func NewPostCustomersCustomerFidInvoicesInvoiceFidCreditNoteNotFound() *PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteNotFound {
-	return &PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteNotFound{}
-}
-
-/*PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteNotFound handles this case with default header values.
-
-Invoice not found
-*/
-type PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteNotFound struct {
-}
-
-func (o *PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteNotFound) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/invoices/{invoiceFid}/creditNote][%d] postCustomersCustomerFidInvoicesInvoiceFidCreditNoteNotFound ", 404)
-}
-
-func (o *PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

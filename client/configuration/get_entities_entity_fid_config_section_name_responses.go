@@ -33,7 +33,14 @@ func (o *GetEntitiesEntityFidConfigSectionNameReader) ReadResponse(response runt
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewGetEntitiesEntityFidConfigSectionNameDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -57,6 +64,44 @@ func (o *GetEntitiesEntityFidConfigSectionNameOK) Error() string {
 func (o *GetEntitiesEntityFidConfigSectionNameOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.GetEntitiesEntityFidConfigSectionNameOKBody)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewGetEntitiesEntityFidConfigSectionNameDefault creates a GetEntitiesEntityFidConfigSectionNameDefault with default headers values
+func NewGetEntitiesEntityFidConfigSectionNameDefault(code int) *GetEntitiesEntityFidConfigSectionNameDefault {
+	return &GetEntitiesEntityFidConfigSectionNameDefault{
+		_statusCode: code,
+	}
+}
+
+/*GetEntitiesEntityFidConfigSectionNameDefault handles this case with default header values.
+
+Error
+*/
+type GetEntitiesEntityFidConfigSectionNameDefault struct {
+	_statusCode int
+
+	Payload *models.Envelope
+}
+
+// Code gets the status code for the get entities entity fid config section name default response
+func (o *GetEntitiesEntityFidConfigSectionNameDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *GetEntitiesEntityFidConfigSectionNameDefault) Error() string {
+	return fmt.Sprintf("[GET /entities/{entityFid}/config/{sectionName}][%d] GetEntitiesEntityFidConfigSectionName default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *GetEntitiesEntityFidConfigSectionNameDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.Envelope)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

@@ -33,7 +33,14 @@ func (o *GetServicesServiceFidIncidentsIncidentFidUpdatesReader) ReadResponse(re
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewGetServicesServiceFidIncidentsIncidentFidUpdatesDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -57,6 +64,44 @@ func (o *GetServicesServiceFidIncidentsIncidentFidUpdatesOK) Error() string {
 func (o *GetServicesServiceFidIncidentsIncidentFidUpdatesOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.GetServicesServiceFidIncidentsIncidentFidUpdatesOKBody)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewGetServicesServiceFidIncidentsIncidentFidUpdatesDefault creates a GetServicesServiceFidIncidentsIncidentFidUpdatesDefault with default headers values
+func NewGetServicesServiceFidIncidentsIncidentFidUpdatesDefault(code int) *GetServicesServiceFidIncidentsIncidentFidUpdatesDefault {
+	return &GetServicesServiceFidIncidentsIncidentFidUpdatesDefault{
+		_statusCode: code,
+	}
+}
+
+/*GetServicesServiceFidIncidentsIncidentFidUpdatesDefault handles this case with default header values.
+
+Error
+*/
+type GetServicesServiceFidIncidentsIncidentFidUpdatesDefault struct {
+	_statusCode int
+
+	Payload *models.Envelope
+}
+
+// Code gets the status code for the get services service fid incidents incident fid updates default response
+func (o *GetServicesServiceFidIncidentsIncidentFidUpdatesDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *GetServicesServiceFidIncidentsIncidentFidUpdatesDefault) Error() string {
+	return fmt.Sprintf("[GET /services/{serviceFid}/incidents/{incidentFid}/updates][%d] GetServicesServiceFidIncidentsIncidentFidUpdates default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *GetServicesServiceFidIncidentsIncidentFidUpdatesDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.Envelope)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

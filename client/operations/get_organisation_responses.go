@@ -33,7 +33,14 @@ func (o *GetOrganisationReader) ReadResponse(response runtime.ClientResponse, co
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewGetOrganisationDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -57,6 +64,44 @@ func (o *GetOrganisationOK) Error() string {
 func (o *GetOrganisationOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.GetOrganisationOKBody)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewGetOrganisationDefault creates a GetOrganisationDefault with default headers values
+func NewGetOrganisationDefault(code int) *GetOrganisationDefault {
+	return &GetOrganisationDefault{
+		_statusCode: code,
+	}
+}
+
+/*GetOrganisationDefault handles this case with default header values.
+
+Error
+*/
+type GetOrganisationDefault struct {
+	_statusCode int
+
+	Payload *models.Envelope
+}
+
+// Code gets the status code for the get organisation default response
+func (o *GetOrganisationDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *GetOrganisationDefault) Error() string {
+	return fmt.Sprintf("[GET /organisation][%d] getOrganisation default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *GetOrganisationDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.Envelope)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

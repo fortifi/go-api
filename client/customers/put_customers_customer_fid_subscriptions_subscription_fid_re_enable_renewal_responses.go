@@ -32,13 +32,6 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidReEnableRenewalReade
 		}
 		return result, nil
 
-	case 404:
-		result := NewPutCustomersCustomerFidSubscriptionsSubscriptionFidReEnableRenewalNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPutCustomersCustomerFidSubscriptionsSubscriptionFidReEnableRenewalDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -68,27 +61,6 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidReEnableRenewalOK) E
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidReEnableRenewalOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewPutCustomersCustomerFidSubscriptionsSubscriptionFidReEnableRenewalNotFound creates a PutCustomersCustomerFidSubscriptionsSubscriptionFidReEnableRenewalNotFound with default headers values
-func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidReEnableRenewalNotFound() *PutCustomersCustomerFidSubscriptionsSubscriptionFidReEnableRenewalNotFound {
-	return &PutCustomersCustomerFidSubscriptionsSubscriptionFidReEnableRenewalNotFound{}
-}
-
-/*PutCustomersCustomerFidSubscriptionsSubscriptionFidReEnableRenewalNotFound handles this case with default header values.
-
-Subscription not found
-*/
-type PutCustomersCustomerFidSubscriptionsSubscriptionFidReEnableRenewalNotFound struct {
-}
-
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidReEnableRenewalNotFound) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/reEnableRenewal][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidReEnableRenewalNotFound ", 404)
-}
-
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidReEnableRenewalNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

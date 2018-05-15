@@ -32,13 +32,6 @@ func (o *PostCustomersCustomerFidNoteReader) ReadResponse(response runtime.Clien
 		}
 		return result, nil
 
-	case 400:
-		result := NewPostCustomersCustomerFidNoteBadRequest()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPostCustomersCustomerFidNoteDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -68,27 +61,6 @@ func (o *PostCustomersCustomerFidNoteOK) Error() string {
 }
 
 func (o *PostCustomersCustomerFidNoteOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewPostCustomersCustomerFidNoteBadRequest creates a PostCustomersCustomerFidNoteBadRequest with default headers values
-func NewPostCustomersCustomerFidNoteBadRequest() *PostCustomersCustomerFidNoteBadRequest {
-	return &PostCustomersCustomerFidNoteBadRequest{}
-}
-
-/*PostCustomersCustomerFidNoteBadRequest handles this case with default header values.
-
-Invalid Payload
-*/
-type PostCustomersCustomerFidNoteBadRequest struct {
-}
-
-func (o *PostCustomersCustomerFidNoteBadRequest) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/note][%d] postCustomersCustomerFidNoteBadRequest ", 400)
-}
-
-func (o *PostCustomersCustomerFidNoteBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

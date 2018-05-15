@@ -32,13 +32,6 @@ func (o *PutMessengerDeliveriesDeliveryFidUnsubscribeReader) ReadResponse(respon
 		}
 		return result, nil
 
-	case 404:
-		result := NewPutMessengerDeliveriesDeliveryFidUnsubscribeNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPutMessengerDeliveriesDeliveryFidUnsubscribeDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -68,27 +61,6 @@ func (o *PutMessengerDeliveriesDeliveryFidUnsubscribeOK) Error() string {
 }
 
 func (o *PutMessengerDeliveriesDeliveryFidUnsubscribeOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewPutMessengerDeliveriesDeliveryFidUnsubscribeNotFound creates a PutMessengerDeliveriesDeliveryFidUnsubscribeNotFound with default headers values
-func NewPutMessengerDeliveriesDeliveryFidUnsubscribeNotFound() *PutMessengerDeliveriesDeliveryFidUnsubscribeNotFound {
-	return &PutMessengerDeliveriesDeliveryFidUnsubscribeNotFound{}
-}
-
-/*PutMessengerDeliveriesDeliveryFidUnsubscribeNotFound handles this case with default header values.
-
-Email Address not found
-*/
-type PutMessengerDeliveriesDeliveryFidUnsubscribeNotFound struct {
-}
-
-func (o *PutMessengerDeliveriesDeliveryFidUnsubscribeNotFound) Error() string {
-	return fmt.Sprintf("[PUT /messenger/deliveries/{deliveryFid}/unsubscribe][%d] putMessengerDeliveriesDeliveryFidUnsubscribeNotFound ", 404)
-}
-
-func (o *PutMessengerDeliveriesDeliveryFidUnsubscribeNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

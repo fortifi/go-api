@@ -32,13 +32,6 @@ func (o *GetProductsProductFidPricesReader) ReadResponse(response runtime.Client
 		}
 		return result, nil
 
-	case 404:
-		result := NewGetProductsProductFidPricesNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewGetProductsProductFidPricesDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -76,27 +69,6 @@ func (o *GetProductsProductFidPricesOK) readResponse(response runtime.ClientResp
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewGetProductsProductFidPricesNotFound creates a GetProductsProductFidPricesNotFound with default headers values
-func NewGetProductsProductFidPricesNotFound() *GetProductsProductFidPricesNotFound {
-	return &GetProductsProductFidPricesNotFound{}
-}
-
-/*GetProductsProductFidPricesNotFound handles this case with default header values.
-
-Product not found
-*/
-type GetProductsProductFidPricesNotFound struct {
-}
-
-func (o *GetProductsProductFidPricesNotFound) Error() string {
-	return fmt.Sprintf("[GET /products/{productFid}/prices][%d] getProductsProductFidPricesNotFound ", 404)
-}
-
-func (o *GetProductsProductFidPricesNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

@@ -32,13 +32,6 @@ func (o *PutAdvertisersAdvertiserFidApprovedReader) ReadResponse(response runtim
 		}
 		return result, nil
 
-	case 404:
-		result := NewPutAdvertisersAdvertiserFidApprovedNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPutAdvertisersAdvertiserFidApprovedDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -68,27 +61,6 @@ func (o *PutAdvertisersAdvertiserFidApprovedOK) Error() string {
 }
 
 func (o *PutAdvertisersAdvertiserFidApprovedOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewPutAdvertisersAdvertiserFidApprovedNotFound creates a PutAdvertisersAdvertiserFidApprovedNotFound with default headers values
-func NewPutAdvertisersAdvertiserFidApprovedNotFound() *PutAdvertisersAdvertiserFidApprovedNotFound {
-	return &PutAdvertisersAdvertiserFidApprovedNotFound{}
-}
-
-/*PutAdvertisersAdvertiserFidApprovedNotFound handles this case with default header values.
-
-Advertiser not found
-*/
-type PutAdvertisersAdvertiserFidApprovedNotFound struct {
-}
-
-func (o *PutAdvertisersAdvertiserFidApprovedNotFound) Error() string {
-	return fmt.Sprintf("[PUT /advertisers/{advertiserFid}/approved][%d] putAdvertisersAdvertiserFidApprovedNotFound ", 404)
-}
-
-func (o *PutAdvertisersAdvertiserFidApprovedNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

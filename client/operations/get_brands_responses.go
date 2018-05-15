@@ -33,7 +33,14 @@ func (o *GetBrandsReader) ReadResponse(response runtime.ClientResponse, consumer
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewGetBrandsDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -57,6 +64,44 @@ func (o *GetBrandsOK) Error() string {
 func (o *GetBrandsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.GetBrandsOKBody)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewGetBrandsDefault creates a GetBrandsDefault with default headers values
+func NewGetBrandsDefault(code int) *GetBrandsDefault {
+	return &GetBrandsDefault{
+		_statusCode: code,
+	}
+}
+
+/*GetBrandsDefault handles this case with default header values.
+
+Error
+*/
+type GetBrandsDefault struct {
+	_statusCode int
+
+	Payload *models.Envelope
+}
+
+// Code gets the status code for the get brands default response
+func (o *GetBrandsDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *GetBrandsDefault) Error() string {
+	return fmt.Sprintf("[GET /brands][%d] getBrands default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *GetBrandsDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.Envelope)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

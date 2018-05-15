@@ -32,13 +32,6 @@ func (o *GetCustomersCustomerFidInvoicesInvoiceFidReader) ReadResponse(response 
 		}
 		return result, nil
 
-	case 404:
-		result := NewGetCustomersCustomerFidInvoicesInvoiceFidNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewGetCustomersCustomerFidInvoicesInvoiceFidDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -76,27 +69,6 @@ func (o *GetCustomersCustomerFidInvoicesInvoiceFidOK) readResponse(response runt
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewGetCustomersCustomerFidInvoicesInvoiceFidNotFound creates a GetCustomersCustomerFidInvoicesInvoiceFidNotFound with default headers values
-func NewGetCustomersCustomerFidInvoicesInvoiceFidNotFound() *GetCustomersCustomerFidInvoicesInvoiceFidNotFound {
-	return &GetCustomersCustomerFidInvoicesInvoiceFidNotFound{}
-}
-
-/*GetCustomersCustomerFidInvoicesInvoiceFidNotFound handles this case with default header values.
-
-Invoice not found
-*/
-type GetCustomersCustomerFidInvoicesInvoiceFidNotFound struct {
-}
-
-func (o *GetCustomersCustomerFidInvoicesInvoiceFidNotFound) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/invoices/{invoiceFid}][%d] getCustomersCustomerFidInvoicesInvoiceFidNotFound ", 404)
-}
-
-func (o *GetCustomersCustomerFidInvoicesInvoiceFidNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

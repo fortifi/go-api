@@ -32,13 +32,6 @@ func (o *PostAdvertisersReader) ReadResponse(response runtime.ClientResponse, co
 		}
 		return result, nil
 
-	case 400:
-		result := NewPostAdvertisersBadRequest()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPostAdvertisersDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -76,28 +69,6 @@ func (o *PostAdvertisersOK) readResponse(response runtime.ClientResponse, consum
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewPostAdvertisersBadRequest creates a PostAdvertisersBadRequest with default headers values
-func NewPostAdvertisersBadRequest() *PostAdvertisersBadRequest {
-	return &PostAdvertisersBadRequest{}
-}
-
-/*PostAdvertisersBadRequest handles this case with default header values.
-
-Invalid data supplied
-
-*/
-type PostAdvertisersBadRequest struct {
-}
-
-func (o *PostAdvertisersBadRequest) Error() string {
-	return fmt.Sprintf("[POST /advertisers][%d] postAdvertisersBadRequest ", 400)
-}
-
-func (o *PostAdvertisersBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

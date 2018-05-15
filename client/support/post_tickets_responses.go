@@ -33,7 +33,14 @@ func (o *PostTicketsReader) ReadResponse(response runtime.ClientResponse, consum
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewPostTicketsDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -57,6 +64,44 @@ func (o *PostTicketsOK) Error() string {
 func (o *PostTicketsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.PostTicketsOKBody)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewPostTicketsDefault creates a PostTicketsDefault with default headers values
+func NewPostTicketsDefault(code int) *PostTicketsDefault {
+	return &PostTicketsDefault{
+		_statusCode: code,
+	}
+}
+
+/*PostTicketsDefault handles this case with default header values.
+
+Error
+*/
+type PostTicketsDefault struct {
+	_statusCode int
+
+	Payload *models.Envelope
+}
+
+// Code gets the status code for the post tickets default response
+func (o *PostTicketsDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *PostTicketsDefault) Error() string {
+	return fmt.Sprintf("[POST /tickets][%d] PostTickets default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *PostTicketsDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.Envelope)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

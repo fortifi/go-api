@@ -32,13 +32,6 @@ func (o *GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidReader) ReadRe
 		}
 		return result, nil
 
-	case 404:
-		result := NewGetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewGetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -76,27 +69,6 @@ func (o *GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidOK) readRespon
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewGetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidNotFound creates a GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidNotFound with default headers values
-func NewGetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidNotFound() *GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidNotFound {
-	return &GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidNotFound{}
-}
-
-/*GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidNotFound handles this case with default header values.
-
-Campaign not found
-*/
-type GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidNotFound struct {
-}
-
-func (o *GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidNotFound) Error() string {
-	return fmt.Sprintf("[GET /advertisers/{advertiserFid}/campaigns/{advertiserCampaignFid}][%d] getAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidNotFound ", 404)
-}
-
-func (o *GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

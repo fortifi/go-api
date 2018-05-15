@@ -32,13 +32,6 @@ func (o *GetCustomersFindByReferenceReader) ReadResponse(response runtime.Client
 		}
 		return result, nil
 
-	case 404:
-		result := NewGetCustomersFindByReferenceNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewGetCustomersFindByReferenceDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -76,27 +69,6 @@ func (o *GetCustomersFindByReferenceOK) readResponse(response runtime.ClientResp
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewGetCustomersFindByReferenceNotFound creates a GetCustomersFindByReferenceNotFound with default headers values
-func NewGetCustomersFindByReferenceNotFound() *GetCustomersFindByReferenceNotFound {
-	return &GetCustomersFindByReferenceNotFound{}
-}
-
-/*GetCustomersFindByReferenceNotFound handles this case with default header values.
-
-Customer not found
-*/
-type GetCustomersFindByReferenceNotFound struct {
-}
-
-func (o *GetCustomersFindByReferenceNotFound) Error() string {
-	return fmt.Sprintf("[GET /customers/findByReference][%d] getCustomersFindByReferenceNotFound ", 404)
-}
-
-func (o *GetCustomersFindByReferenceNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

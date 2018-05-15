@@ -32,13 +32,6 @@ func (o *DeleteAdvertisersAdvertiserFidApprovedReader) ReadResponse(response run
 		}
 		return result, nil
 
-	case 404:
-		result := NewDeleteAdvertisersAdvertiserFidApprovedNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewDeleteAdvertisersAdvertiserFidApprovedDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -68,27 +61,6 @@ func (o *DeleteAdvertisersAdvertiserFidApprovedOK) Error() string {
 }
 
 func (o *DeleteAdvertisersAdvertiserFidApprovedOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewDeleteAdvertisersAdvertiserFidApprovedNotFound creates a DeleteAdvertisersAdvertiserFidApprovedNotFound with default headers values
-func NewDeleteAdvertisersAdvertiserFidApprovedNotFound() *DeleteAdvertisersAdvertiserFidApprovedNotFound {
-	return &DeleteAdvertisersAdvertiserFidApprovedNotFound{}
-}
-
-/*DeleteAdvertisersAdvertiserFidApprovedNotFound handles this case with default header values.
-
-Advertiser not found
-*/
-type DeleteAdvertisersAdvertiserFidApprovedNotFound struct {
-}
-
-func (o *DeleteAdvertisersAdvertiserFidApprovedNotFound) Error() string {
-	return fmt.Sprintf("[DELETE /advertisers/{advertiserFid}/approved][%d] deleteAdvertisersAdvertiserFidApprovedNotFound ", 404)
-}
-
-func (o *DeleteAdvertisersAdvertiserFidApprovedNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

@@ -32,20 +32,6 @@ func (o *PostCustomersCustomerFidPaymentsPaymentFidChargebackReader) ReadRespons
 		}
 		return result, nil
 
-	case 400:
-		result := NewPostCustomersCustomerFidPaymentsPaymentFidChargebackBadRequest()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
-	case 404:
-		result := NewPostCustomersCustomerFidPaymentsPaymentFidChargebackNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPostCustomersCustomerFidPaymentsPaymentFidChargebackDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -83,48 +69,6 @@ func (o *PostCustomersCustomerFidPaymentsPaymentFidChargebackOK) readResponse(re
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewPostCustomersCustomerFidPaymentsPaymentFidChargebackBadRequest creates a PostCustomersCustomerFidPaymentsPaymentFidChargebackBadRequest with default headers values
-func NewPostCustomersCustomerFidPaymentsPaymentFidChargebackBadRequest() *PostCustomersCustomerFidPaymentsPaymentFidChargebackBadRequest {
-	return &PostCustomersCustomerFidPaymentsPaymentFidChargebackBadRequest{}
-}
-
-/*PostCustomersCustomerFidPaymentsPaymentFidChargebackBadRequest handles this case with default header values.
-
-Invalid Payload
-*/
-type PostCustomersCustomerFidPaymentsPaymentFidChargebackBadRequest struct {
-}
-
-func (o *PostCustomersCustomerFidPaymentsPaymentFidChargebackBadRequest) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/payments/{paymentFid}/chargeback][%d] postCustomersCustomerFidPaymentsPaymentFidChargebackBadRequest ", 400)
-}
-
-func (o *PostCustomersCustomerFidPaymentsPaymentFidChargebackBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewPostCustomersCustomerFidPaymentsPaymentFidChargebackNotFound creates a PostCustomersCustomerFidPaymentsPaymentFidChargebackNotFound with default headers values
-func NewPostCustomersCustomerFidPaymentsPaymentFidChargebackNotFound() *PostCustomersCustomerFidPaymentsPaymentFidChargebackNotFound {
-	return &PostCustomersCustomerFidPaymentsPaymentFidChargebackNotFound{}
-}
-
-/*PostCustomersCustomerFidPaymentsPaymentFidChargebackNotFound handles this case with default header values.
-
-Invalid Payment Fid
-*/
-type PostCustomersCustomerFidPaymentsPaymentFidChargebackNotFound struct {
-}
-
-func (o *PostCustomersCustomerFidPaymentsPaymentFidChargebackNotFound) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/payments/{paymentFid}/chargeback][%d] postCustomersCustomerFidPaymentsPaymentFidChargebackNotFound ", 404)
-}
-
-func (o *PostCustomersCustomerFidPaymentsPaymentFidChargebackNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

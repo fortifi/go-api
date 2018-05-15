@@ -32,13 +32,6 @@ func (o *GetLicenceCheckReader) ReadResponse(response runtime.ClientResponse, co
 		}
 		return result, nil
 
-	case 404:
-		result := NewGetLicenceCheckNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewGetLicenceCheckDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -76,27 +69,6 @@ func (o *GetLicenceCheckOK) readResponse(response runtime.ClientResponse, consum
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewGetLicenceCheckNotFound creates a GetLicenceCheckNotFound with default headers values
-func NewGetLicenceCheckNotFound() *GetLicenceCheckNotFound {
-	return &GetLicenceCheckNotFound{}
-}
-
-/*GetLicenceCheckNotFound handles this case with default header values.
-
-Licence Not Valid
-*/
-type GetLicenceCheckNotFound struct {
-}
-
-func (o *GetLicenceCheckNotFound) Error() string {
-	return fmt.Sprintf("[GET /licence/check][%d] getLicenceCheckNotFound ", 404)
-}
-
-func (o *GetLicenceCheckNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

@@ -7,10 +7,13 @@ package customers
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 
 	strfmt "github.com/go-openapi/strfmt"
+
+	"github.com/fortifi/go-api/models"
 )
 
 // PutCustomersCustomerFidReader is a Reader for the PutCustomersCustomerFid structure.
@@ -29,15 +32,15 @@ func (o *PutCustomersCustomerFidReader) ReadResponse(response runtime.ClientResp
 		}
 		return result, nil
 
-	case 404:
-		result := NewPutCustomersCustomerFidNotFound()
+	default:
+		result := NewPutCustomersCustomerFidDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
 		return nil, result
-
-	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
 	}
 }
 
@@ -62,23 +65,40 @@ func (o *PutCustomersCustomerFidOK) readResponse(response runtime.ClientResponse
 	return nil
 }
 
-// NewPutCustomersCustomerFidNotFound creates a PutCustomersCustomerFidNotFound with default headers values
-func NewPutCustomersCustomerFidNotFound() *PutCustomersCustomerFidNotFound {
-	return &PutCustomersCustomerFidNotFound{}
+// NewPutCustomersCustomerFidDefault creates a PutCustomersCustomerFidDefault with default headers values
+func NewPutCustomersCustomerFidDefault(code int) *PutCustomersCustomerFidDefault {
+	return &PutCustomersCustomerFidDefault{
+		_statusCode: code,
+	}
 }
 
-/*PutCustomersCustomerFidNotFound handles this case with default header values.
+/*PutCustomersCustomerFidDefault handles this case with default header values.
 
-Customer not found
+Error
 */
-type PutCustomersCustomerFidNotFound struct {
+type PutCustomersCustomerFidDefault struct {
+	_statusCode int
+
+	Payload *models.Envelope
 }
 
-func (o *PutCustomersCustomerFidNotFound) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}][%d] putCustomersCustomerFidNotFound ", 404)
+// Code gets the status code for the put customers customer fid default response
+func (o *PutCustomersCustomerFidDefault) Code() int {
+	return o._statusCode
 }
 
-func (o *PutCustomersCustomerFidNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *PutCustomersCustomerFidDefault) Error() string {
+	return fmt.Sprintf("[PUT /customers/{customerFid}][%d] PutCustomersCustomerFid default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *PutCustomersCustomerFidDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.Envelope)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

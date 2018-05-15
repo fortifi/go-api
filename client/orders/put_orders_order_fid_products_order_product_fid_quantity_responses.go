@@ -7,10 +7,13 @@ package orders
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 
 	strfmt "github.com/go-openapi/strfmt"
+
+	"github.com/fortifi/go-api/models"
 )
 
 // PutOrdersOrderFidProductsOrderProductFidQuantityReader is a Reader for the PutOrdersOrderFidProductsOrderProductFidQuantity structure.
@@ -30,7 +33,14 @@ func (o *PutOrdersOrderFidProductsOrderProductFidQuantityReader) ReadResponse(re
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewPutOrdersOrderFidProductsOrderProductFidQuantityDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -51,6 +61,44 @@ func (o *PutOrdersOrderFidProductsOrderProductFidQuantityOK) Error() string {
 }
 
 func (o *PutOrdersOrderFidProductsOrderProductFidQuantityOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewPutOrdersOrderFidProductsOrderProductFidQuantityDefault creates a PutOrdersOrderFidProductsOrderProductFidQuantityDefault with default headers values
+func NewPutOrdersOrderFidProductsOrderProductFidQuantityDefault(code int) *PutOrdersOrderFidProductsOrderProductFidQuantityDefault {
+	return &PutOrdersOrderFidProductsOrderProductFidQuantityDefault{
+		_statusCode: code,
+	}
+}
+
+/*PutOrdersOrderFidProductsOrderProductFidQuantityDefault handles this case with default header values.
+
+Error
+*/
+type PutOrdersOrderFidProductsOrderProductFidQuantityDefault struct {
+	_statusCode int
+
+	Payload *models.Envelope
+}
+
+// Code gets the status code for the put orders order fid products order product fid quantity default response
+func (o *PutOrdersOrderFidProductsOrderProductFidQuantityDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *PutOrdersOrderFidProductsOrderProductFidQuantityDefault) Error() string {
+	return fmt.Sprintf("[PUT /orders/{orderFid}/products/{orderProductFid}/quantity][%d] PutOrdersOrderFidProductsOrderProductFidQuantity default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *PutOrdersOrderFidProductsOrderProductFidQuantityDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.Envelope)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

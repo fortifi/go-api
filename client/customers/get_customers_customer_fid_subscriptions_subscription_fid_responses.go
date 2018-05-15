@@ -32,13 +32,6 @@ func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidReader) ReadResponse
 		}
 		return result, nil
 
-	case 404:
-		result := NewGetCustomersCustomerFidSubscriptionsSubscriptionFidNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewGetCustomersCustomerFidSubscriptionsSubscriptionFidDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -76,27 +69,6 @@ func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidOK) readResponse(res
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewGetCustomersCustomerFidSubscriptionsSubscriptionFidNotFound creates a GetCustomersCustomerFidSubscriptionsSubscriptionFidNotFound with default headers values
-func NewGetCustomersCustomerFidSubscriptionsSubscriptionFidNotFound() *GetCustomersCustomerFidSubscriptionsSubscriptionFidNotFound {
-	return &GetCustomersCustomerFidSubscriptionsSubscriptionFidNotFound{}
-}
-
-/*GetCustomersCustomerFidSubscriptionsSubscriptionFidNotFound handles this case with default header values.
-
-Subscription not found
-*/
-type GetCustomersCustomerFidSubscriptionsSubscriptionFidNotFound struct {
-}
-
-func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidNotFound) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/subscriptions/{subscriptionFid}][%d] getCustomersCustomerFidSubscriptionsSubscriptionFidNotFound ", 404)
-}
-
-func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

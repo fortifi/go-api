@@ -32,13 +32,6 @@ func (o *PutCustomersCustomerFidAccountStatusReader) ReadResponse(response runti
 		}
 		return result, nil
 
-	case 404:
-		result := NewPutCustomersCustomerFidAccountStatusNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPutCustomersCustomerFidAccountStatusDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -68,27 +61,6 @@ func (o *PutCustomersCustomerFidAccountStatusOK) Error() string {
 }
 
 func (o *PutCustomersCustomerFidAccountStatusOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewPutCustomersCustomerFidAccountStatusNotFound creates a PutCustomersCustomerFidAccountStatusNotFound with default headers values
-func NewPutCustomersCustomerFidAccountStatusNotFound() *PutCustomersCustomerFidAccountStatusNotFound {
-	return &PutCustomersCustomerFidAccountStatusNotFound{}
-}
-
-/*PutCustomersCustomerFidAccountStatusNotFound handles this case with default header values.
-
-Customer not found
-*/
-type PutCustomersCustomerFidAccountStatusNotFound struct {
-}
-
-func (o *PutCustomersCustomerFidAccountStatusNotFound) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/accountStatus][%d] putCustomersCustomerFidAccountStatusNotFound ", 404)
-}
-
-func (o *PutCustomersCustomerFidAccountStatusNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

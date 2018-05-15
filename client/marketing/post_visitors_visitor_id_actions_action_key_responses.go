@@ -32,27 +32,6 @@ func (o *PostVisitorsVisitorIDActionsActionKeyReader) ReadResponse(response runt
 		}
 		return result, nil
 
-	case 400:
-		result := NewPostVisitorsVisitorIDActionsActionKeyBadRequest()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
-	case 404:
-		result := NewPostVisitorsVisitorIDActionsActionKeyNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
-	case 409:
-		result := NewPostVisitorsVisitorIDActionsActionKeyConflict()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPostVisitorsVisitorIDActionsActionKeyDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -90,73 +69,6 @@ func (o *PostVisitorsVisitorIDActionsActionKeyOK) readResponse(response runtime.
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewPostVisitorsVisitorIDActionsActionKeyBadRequest creates a PostVisitorsVisitorIDActionsActionKeyBadRequest with default headers values
-func NewPostVisitorsVisitorIDActionsActionKeyBadRequest() *PostVisitorsVisitorIDActionsActionKeyBadRequest {
-	return &PostVisitorsVisitorIDActionsActionKeyBadRequest{}
-}
-
-/*PostVisitorsVisitorIDActionsActionKeyBadRequest handles this case with default header values.
-
-Not enough information was provided to complete your request
-e.g. Missing Visitor ID and/or Client IP
-
-*/
-type PostVisitorsVisitorIDActionsActionKeyBadRequest struct {
-}
-
-func (o *PostVisitorsVisitorIDActionsActionKeyBadRequest) Error() string {
-	return fmt.Sprintf("[POST /visitors/{visitorId}/actions/{actionKey}][%d] postVisitorsVisitorIdActionsActionKeyBadRequest ", 400)
-}
-
-func (o *PostVisitorsVisitorIDActionsActionKeyBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewPostVisitorsVisitorIDActionsActionKeyNotFound creates a PostVisitorsVisitorIDActionsActionKeyNotFound with default headers values
-func NewPostVisitorsVisitorIDActionsActionKeyNotFound() *PostVisitorsVisitorIDActionsActionKeyNotFound {
-	return &PostVisitorsVisitorIDActionsActionKeyNotFound{}
-}
-
-/*PostVisitorsVisitorIDActionsActionKeyNotFound handles this case with default header values.
-
-The actionKey specified does not exist
-
-*/
-type PostVisitorsVisitorIDActionsActionKeyNotFound struct {
-}
-
-func (o *PostVisitorsVisitorIDActionsActionKeyNotFound) Error() string {
-	return fmt.Sprintf("[POST /visitors/{visitorId}/actions/{actionKey}][%d] postVisitorsVisitorIdActionsActionKeyNotFound ", 404)
-}
-
-func (o *PostVisitorsVisitorIDActionsActionKeyNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewPostVisitorsVisitorIDActionsActionKeyConflict creates a PostVisitorsVisitorIDActionsActionKeyConflict with default headers values
-func NewPostVisitorsVisitorIDActionsActionKeyConflict() *PostVisitorsVisitorIDActionsActionKeyConflict {
-	return &PostVisitorsVisitorIDActionsActionKeyConflict{}
-}
-
-/*PostVisitorsVisitorIDActionsActionKeyConflict handles this case with default header values.
-
-The transaction ID specified has already been used for this action
-
-*/
-type PostVisitorsVisitorIDActionsActionKeyConflict struct {
-}
-
-func (o *PostVisitorsVisitorIDActionsActionKeyConflict) Error() string {
-	return fmt.Sprintf("[POST /visitors/{visitorId}/actions/{actionKey}][%d] postVisitorsVisitorIdActionsActionKeyConflict ", 409)
-}
-
-func (o *PostVisitorsVisitorIDActionsActionKeyConflict) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

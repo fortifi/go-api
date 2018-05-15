@@ -32,13 +32,6 @@ func (o *DeleteCustomersCustomerFidLoyalReader) ReadResponse(response runtime.Cl
 		}
 		return result, nil
 
-	case 404:
-		result := NewDeleteCustomersCustomerFidLoyalNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewDeleteCustomersCustomerFidLoyalDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -68,27 +61,6 @@ func (o *DeleteCustomersCustomerFidLoyalOK) Error() string {
 }
 
 func (o *DeleteCustomersCustomerFidLoyalOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewDeleteCustomersCustomerFidLoyalNotFound creates a DeleteCustomersCustomerFidLoyalNotFound with default headers values
-func NewDeleteCustomersCustomerFidLoyalNotFound() *DeleteCustomersCustomerFidLoyalNotFound {
-	return &DeleteCustomersCustomerFidLoyalNotFound{}
-}
-
-/*DeleteCustomersCustomerFidLoyalNotFound handles this case with default header values.
-
-Customer not found
-*/
-type DeleteCustomersCustomerFidLoyalNotFound struct {
-}
-
-func (o *DeleteCustomersCustomerFidLoyalNotFound) Error() string {
-	return fmt.Sprintf("[DELETE /customers/{customerFid}/loyal][%d] deleteCustomersCustomerFidLoyalNotFound ", 404)
-}
-
-func (o *DeleteCustomersCustomerFidLoyalNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

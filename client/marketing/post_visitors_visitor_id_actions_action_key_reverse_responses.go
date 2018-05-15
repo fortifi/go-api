@@ -32,20 +32,6 @@ func (o *PostVisitorsVisitorIDActionsActionKeyReverseReader) ReadResponse(respon
 		}
 		return result, nil
 
-	case 404:
-		result := NewPostVisitorsVisitorIDActionsActionKeyReverseNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
-	case 409:
-		result := NewPostVisitorsVisitorIDActionsActionKeyReverseConflict()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPostVisitorsVisitorIDActionsActionKeyReverseDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -83,50 +69,6 @@ func (o *PostVisitorsVisitorIDActionsActionKeyReverseOK) readResponse(response r
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewPostVisitorsVisitorIDActionsActionKeyReverseNotFound creates a PostVisitorsVisitorIDActionsActionKeyReverseNotFound with default headers values
-func NewPostVisitorsVisitorIDActionsActionKeyReverseNotFound() *PostVisitorsVisitorIDActionsActionKeyReverseNotFound {
-	return &PostVisitorsVisitorIDActionsActionKeyReverseNotFound{}
-}
-
-/*PostVisitorsVisitorIDActionsActionKeyReverseNotFound handles this case with default header values.
-
-The action you are trying to reverse cannot be found
-
-*/
-type PostVisitorsVisitorIDActionsActionKeyReverseNotFound struct {
-}
-
-func (o *PostVisitorsVisitorIDActionsActionKeyReverseNotFound) Error() string {
-	return fmt.Sprintf("[POST /visitors/{visitorId}/actions/{actionKey}/reverse][%d] postVisitorsVisitorIdActionsActionKeyReverseNotFound ", 404)
-}
-
-func (o *PostVisitorsVisitorIDActionsActionKeyReverseNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewPostVisitorsVisitorIDActionsActionKeyReverseConflict creates a PostVisitorsVisitorIDActionsActionKeyReverseConflict with default headers values
-func NewPostVisitorsVisitorIDActionsActionKeyReverseConflict() *PostVisitorsVisitorIDActionsActionKeyReverseConflict {
-	return &PostVisitorsVisitorIDActionsActionKeyReverseConflict{}
-}
-
-/*PostVisitorsVisitorIDActionsActionKeyReverseConflict handles this case with default header values.
-
-The action specified has already been reversed
-
-*/
-type PostVisitorsVisitorIDActionsActionKeyReverseConflict struct {
-}
-
-func (o *PostVisitorsVisitorIDActionsActionKeyReverseConflict) Error() string {
-	return fmt.Sprintf("[POST /visitors/{visitorId}/actions/{actionKey}/reverse][%d] postVisitorsVisitorIdActionsActionKeyReverseConflict ", 409)
-}
-
-func (o *PostVisitorsVisitorIDActionsActionKeyReverseConflict) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

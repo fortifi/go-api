@@ -32,13 +32,6 @@ func (o *PutCustomersCustomerFidSubscriptionTypeReader) ReadResponse(response ru
 		}
 		return result, nil
 
-	case 404:
-		result := NewPutCustomersCustomerFidSubscriptionTypeNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPutCustomersCustomerFidSubscriptionTypeDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -68,27 +61,6 @@ func (o *PutCustomersCustomerFidSubscriptionTypeOK) Error() string {
 }
 
 func (o *PutCustomersCustomerFidSubscriptionTypeOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewPutCustomersCustomerFidSubscriptionTypeNotFound creates a PutCustomersCustomerFidSubscriptionTypeNotFound with default headers values
-func NewPutCustomersCustomerFidSubscriptionTypeNotFound() *PutCustomersCustomerFidSubscriptionTypeNotFound {
-	return &PutCustomersCustomerFidSubscriptionTypeNotFound{}
-}
-
-/*PutCustomersCustomerFidSubscriptionTypeNotFound handles this case with default header values.
-
-Customer not found
-*/
-type PutCustomersCustomerFidSubscriptionTypeNotFound struct {
-}
-
-func (o *PutCustomersCustomerFidSubscriptionTypeNotFound) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptionType][%d] putCustomersCustomerFidSubscriptionTypeNotFound ", 404)
-}
-
-func (o *PutCustomersCustomerFidSubscriptionTypeNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

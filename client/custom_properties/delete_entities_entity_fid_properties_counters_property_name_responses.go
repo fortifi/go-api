@@ -7,10 +7,13 @@ package custom_properties
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 
 	strfmt "github.com/go-openapi/strfmt"
+
+	"github.com/fortifi/go-api/models"
 )
 
 // DeleteEntitiesEntityFidPropertiesCountersPropertyNameReader is a Reader for the DeleteEntitiesEntityFidPropertiesCountersPropertyName structure.
@@ -30,7 +33,14 @@ func (o *DeleteEntitiesEntityFidPropertiesCountersPropertyNameReader) ReadRespon
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDeleteEntitiesEntityFidPropertiesCountersPropertyNameDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -51,6 +61,44 @@ func (o *DeleteEntitiesEntityFidPropertiesCountersPropertyNameOK) Error() string
 }
 
 func (o *DeleteEntitiesEntityFidPropertiesCountersPropertyNameOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewDeleteEntitiesEntityFidPropertiesCountersPropertyNameDefault creates a DeleteEntitiesEntityFidPropertiesCountersPropertyNameDefault with default headers values
+func NewDeleteEntitiesEntityFidPropertiesCountersPropertyNameDefault(code int) *DeleteEntitiesEntityFidPropertiesCountersPropertyNameDefault {
+	return &DeleteEntitiesEntityFidPropertiesCountersPropertyNameDefault{
+		_statusCode: code,
+	}
+}
+
+/*DeleteEntitiesEntityFidPropertiesCountersPropertyNameDefault handles this case with default header values.
+
+Error
+*/
+type DeleteEntitiesEntityFidPropertiesCountersPropertyNameDefault struct {
+	_statusCode int
+
+	Payload *models.Envelope
+}
+
+// Code gets the status code for the delete entities entity fid properties counters property name default response
+func (o *DeleteEntitiesEntityFidPropertiesCountersPropertyNameDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DeleteEntitiesEntityFidPropertiesCountersPropertyNameDefault) Error() string {
+	return fmt.Sprintf("[DELETE /entities/{entityFid}/properties/counters/{propertyName}][%d] DeleteEntitiesEntityFidPropertiesCountersPropertyName default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DeleteEntitiesEntityFidPropertiesCountersPropertyNameDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.Envelope)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

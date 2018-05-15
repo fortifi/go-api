@@ -33,7 +33,14 @@ func (o *GetCustomersCustomerFidTicketsReader) ReadResponse(response runtime.Cli
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewGetCustomersCustomerFidTicketsDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -57,6 +64,44 @@ func (o *GetCustomersCustomerFidTicketsOK) Error() string {
 func (o *GetCustomersCustomerFidTicketsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.GetCustomersCustomerFidTicketsOKBody)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewGetCustomersCustomerFidTicketsDefault creates a GetCustomersCustomerFidTicketsDefault with default headers values
+func NewGetCustomersCustomerFidTicketsDefault(code int) *GetCustomersCustomerFidTicketsDefault {
+	return &GetCustomersCustomerFidTicketsDefault{
+		_statusCode: code,
+	}
+}
+
+/*GetCustomersCustomerFidTicketsDefault handles this case with default header values.
+
+Error
+*/
+type GetCustomersCustomerFidTicketsDefault struct {
+	_statusCode int
+
+	Payload *models.Envelope
+}
+
+// Code gets the status code for the get customers customer fid tickets default response
+func (o *GetCustomersCustomerFidTicketsDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *GetCustomersCustomerFidTicketsDefault) Error() string {
+	return fmt.Sprintf("[GET /customers/{customerFid}/tickets][%d] GetCustomersCustomerFidTickets default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *GetCustomersCustomerFidTicketsDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.Envelope)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

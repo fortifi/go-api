@@ -33,7 +33,14 @@ func (o *PostOrdersOrderFidProductsReader) ReadResponse(response runtime.ClientR
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewPostOrdersOrderFidProductsDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -57,6 +64,44 @@ func (o *PostOrdersOrderFidProductsOK) Error() string {
 func (o *PostOrdersOrderFidProductsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.PostOrdersOrderFidProductsOKBody)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewPostOrdersOrderFidProductsDefault creates a PostOrdersOrderFidProductsDefault with default headers values
+func NewPostOrdersOrderFidProductsDefault(code int) *PostOrdersOrderFidProductsDefault {
+	return &PostOrdersOrderFidProductsDefault{
+		_statusCode: code,
+	}
+}
+
+/*PostOrdersOrderFidProductsDefault handles this case with default header values.
+
+Error
+*/
+type PostOrdersOrderFidProductsDefault struct {
+	_statusCode int
+
+	Payload *models.Envelope
+}
+
+// Code gets the status code for the post orders order fid products default response
+func (o *PostOrdersOrderFidProductsDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *PostOrdersOrderFidProductsDefault) Error() string {
+	return fmt.Sprintf("[POST /orders/{orderFid}/products][%d] PostOrdersOrderFidProducts default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *PostOrdersOrderFidProductsDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.Envelope)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

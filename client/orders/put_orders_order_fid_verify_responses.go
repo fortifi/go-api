@@ -33,7 +33,14 @@ func (o *PutOrdersOrderFidVerifyReader) ReadResponse(response runtime.ClientResp
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewPutOrdersOrderFidVerifyDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -57,6 +64,44 @@ func (o *PutOrdersOrderFidVerifyOK) Error() string {
 func (o *PutOrdersOrderFidVerifyOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.PutOrdersOrderFidVerifyOKBody)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewPutOrdersOrderFidVerifyDefault creates a PutOrdersOrderFidVerifyDefault with default headers values
+func NewPutOrdersOrderFidVerifyDefault(code int) *PutOrdersOrderFidVerifyDefault {
+	return &PutOrdersOrderFidVerifyDefault{
+		_statusCode: code,
+	}
+}
+
+/*PutOrdersOrderFidVerifyDefault handles this case with default header values.
+
+Error
+*/
+type PutOrdersOrderFidVerifyDefault struct {
+	_statusCode int
+
+	Payload *models.Envelope
+}
+
+// Code gets the status code for the put orders order fid verify default response
+func (o *PutOrdersOrderFidVerifyDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *PutOrdersOrderFidVerifyDefault) Error() string {
+	return fmt.Sprintf("[PUT /orders/{orderFid}/verify][%d] PutOrdersOrderFidVerify default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *PutOrdersOrderFidVerifyDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.Envelope)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

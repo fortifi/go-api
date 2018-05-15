@@ -33,7 +33,14 @@ func (o *GetServicesReader) ReadResponse(response runtime.ClientResponse, consum
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewGetServicesDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -57,6 +64,44 @@ func (o *GetServicesOK) Error() string {
 func (o *GetServicesOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.GetServicesOKBody)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewGetServicesDefault creates a GetServicesDefault with default headers values
+func NewGetServicesDefault(code int) *GetServicesDefault {
+	return &GetServicesDefault{
+		_statusCode: code,
+	}
+}
+
+/*GetServicesDefault handles this case with default header values.
+
+Error
+*/
+type GetServicesDefault struct {
+	_statusCode int
+
+	Payload *models.Envelope
+}
+
+// Code gets the status code for the get services default response
+func (o *GetServicesDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *GetServicesDefault) Error() string {
+	return fmt.Sprintf("[GET /services][%d] GetServices default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *GetServicesDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.Envelope)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

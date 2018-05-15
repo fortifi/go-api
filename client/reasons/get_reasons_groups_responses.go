@@ -33,7 +33,14 @@ func (o *GetReasonsGroupsReader) ReadResponse(response runtime.ClientResponse, c
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewGetReasonsGroupsDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -57,6 +64,44 @@ func (o *GetReasonsGroupsOK) Error() string {
 func (o *GetReasonsGroupsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.GetReasonsGroupsOKBody)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewGetReasonsGroupsDefault creates a GetReasonsGroupsDefault with default headers values
+func NewGetReasonsGroupsDefault(code int) *GetReasonsGroupsDefault {
+	return &GetReasonsGroupsDefault{
+		_statusCode: code,
+	}
+}
+
+/*GetReasonsGroupsDefault handles this case with default header values.
+
+Error
+*/
+type GetReasonsGroupsDefault struct {
+	_statusCode int
+
+	Payload *models.Envelope
+}
+
+// Code gets the status code for the get reasons groups default response
+func (o *GetReasonsGroupsDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *GetReasonsGroupsDefault) Error() string {
+	return fmt.Sprintf("[GET /reasons/groups][%d] GetReasonsGroups default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *GetReasonsGroupsDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.Envelope)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

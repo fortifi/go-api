@@ -32,13 +32,6 @@ func (o *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseReader) ReadRespo
 		}
 		return result, nil
 
-	case 501:
-		result := NewPostCustomersCustomerFidPaymentMethodsPaypalInitialiseNotImplemented()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPostCustomersCustomerFidPaymentMethodsPaypalInitialiseDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -76,27 +69,6 @@ func (o *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseOK) readResponse(
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewPostCustomersCustomerFidPaymentMethodsPaypalInitialiseNotImplemented creates a PostCustomersCustomerFidPaymentMethodsPaypalInitialiseNotImplemented with default headers values
-func NewPostCustomersCustomerFidPaymentMethodsPaypalInitialiseNotImplemented() *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseNotImplemented {
-	return &PostCustomersCustomerFidPaymentMethodsPaypalInitialiseNotImplemented{}
-}
-
-/*PostCustomersCustomerFidPaymentMethodsPaypalInitialiseNotImplemented handles this case with default header values.
-
-Inable to initialise Paypal agreement
-*/
-type PostCustomersCustomerFidPaymentMethodsPaypalInitialiseNotImplemented struct {
-}
-
-func (o *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseNotImplemented) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/paypal/initialise][%d] postCustomersCustomerFidPaymentMethodsPaypalInitialiseNotImplemented ", 501)
-}
-
-func (o *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseNotImplemented) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

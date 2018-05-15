@@ -402,6 +402,38 @@ func (a *Client) PostCustomersCustomerFidPaymentsPaymentFidChargeback(params *Po
 }
 
 /*
+PostCustomersCustomerFidSar subjects access request
+
+Initiate a Subject Access Request.  A URL will be sent via a webhook (CustomerWHE::SUBJECT_ACCESS_REQUEST), once the archive is ready for download
+
+*/
+func (a *Client) PostCustomersCustomerFidSar(params *PostCustomersCustomerFidSarParams, authInfo runtime.ClientAuthInfoWriter) (*PostCustomersCustomerFidSarOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPostCustomersCustomerFidSarParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "PostCustomersCustomerFidSar",
+		Method:             "POST",
+		PathPattern:        "/customers/{customerFid}/sar",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PostCustomersCustomerFidSarReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*PostCustomersCustomerFidSarOK), nil
+
+}
+
+/*
 PutCustomersCustomerFid updates a customer
 */
 func (a *Client) PutCustomersCustomerFid(params *PutCustomersCustomerFidParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomersCustomerFidOK, error) {

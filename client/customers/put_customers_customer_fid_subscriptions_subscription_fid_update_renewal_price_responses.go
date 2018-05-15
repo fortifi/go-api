@@ -32,20 +32,6 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceRe
 		}
 		return result, nil
 
-	case 400:
-		result := NewPutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceBadRequest()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
-	case 404:
-		result := NewPutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -83,48 +69,6 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceOK
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewPutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceBadRequest creates a PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceBadRequest with default headers values
-func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceBadRequest() *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceBadRequest {
-	return &PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceBadRequest{}
-}
-
-/*PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceBadRequest handles this case with default header values.
-
-Invalid payload data
-*/
-type PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceBadRequest struct {
-}
-
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceBadRequest) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/updateRenewalPrice][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceBadRequest ", 400)
-}
-
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewPutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceNotFound creates a PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceNotFound with default headers values
-func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceNotFound() *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceNotFound {
-	return &PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceNotFound{}
-}
-
-/*PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceNotFound handles this case with default header values.
-
-Subscription not found
-*/
-type PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceNotFound struct {
-}
-
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceNotFound) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/updateRenewalPrice][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceNotFound ", 404)
-}
-
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

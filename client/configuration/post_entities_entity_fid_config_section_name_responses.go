@@ -32,13 +32,6 @@ func (o *PostEntitiesEntityFidConfigSectionNameReader) ReadResponse(response run
 		}
 		return result, nil
 
-	case 400:
-		result := NewPostEntitiesEntityFidConfigSectionNameBadRequest()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPostEntitiesEntityFidConfigSectionNameDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -68,27 +61,6 @@ func (o *PostEntitiesEntityFidConfigSectionNameOK) Error() string {
 }
 
 func (o *PostEntitiesEntityFidConfigSectionNameOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewPostEntitiesEntityFidConfigSectionNameBadRequest creates a PostEntitiesEntityFidConfigSectionNameBadRequest with default headers values
-func NewPostEntitiesEntityFidConfigSectionNameBadRequest() *PostEntitiesEntityFidConfigSectionNameBadRequest {
-	return &PostEntitiesEntityFidConfigSectionNameBadRequest{}
-}
-
-/*PostEntitiesEntityFidConfigSectionNameBadRequest handles this case with default header values.
-
-Invalid Entity
-*/
-type PostEntitiesEntityFidConfigSectionNameBadRequest struct {
-}
-
-func (o *PostEntitiesEntityFidConfigSectionNameBadRequest) Error() string {
-	return fmt.Sprintf("[POST /entities/{entityFid}/config/{sectionName}][%d] postEntitiesEntityFidConfigSectionNameBadRequest ", 400)
-}
-
-func (o *PostEntitiesEntityFidConfigSectionNameBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

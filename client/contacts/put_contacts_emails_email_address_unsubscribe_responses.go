@@ -32,13 +32,6 @@ func (o *PutContactsEmailsEmailAddressUnsubscribeReader) ReadResponse(response r
 		}
 		return result, nil
 
-	case 404:
-		result := NewPutContactsEmailsEmailAddressUnsubscribeNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPutContactsEmailsEmailAddressUnsubscribeDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -68,27 +61,6 @@ func (o *PutContactsEmailsEmailAddressUnsubscribeOK) Error() string {
 }
 
 func (o *PutContactsEmailsEmailAddressUnsubscribeOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewPutContactsEmailsEmailAddressUnsubscribeNotFound creates a PutContactsEmailsEmailAddressUnsubscribeNotFound with default headers values
-func NewPutContactsEmailsEmailAddressUnsubscribeNotFound() *PutContactsEmailsEmailAddressUnsubscribeNotFound {
-	return &PutContactsEmailsEmailAddressUnsubscribeNotFound{}
-}
-
-/*PutContactsEmailsEmailAddressUnsubscribeNotFound handles this case with default header values.
-
-Email Address not found
-*/
-type PutContactsEmailsEmailAddressUnsubscribeNotFound struct {
-}
-
-func (o *PutContactsEmailsEmailAddressUnsubscribeNotFound) Error() string {
-	return fmt.Sprintf("[PUT /contacts/emails/{emailAddress}/unsubscribe][%d] putContactsEmailsEmailAddressUnsubscribeNotFound ", 404)
-}
-
-func (o *PutContactsEmailsEmailAddressUnsubscribeNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

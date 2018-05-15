@@ -32,13 +32,6 @@ func (o *PutContactsEmailsEmailAddressConfirmReader) ReadResponse(response runti
 		}
 		return result, nil
 
-	case 404:
-		result := NewPutContactsEmailsEmailAddressConfirmNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPutContactsEmailsEmailAddressConfirmDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -68,27 +61,6 @@ func (o *PutContactsEmailsEmailAddressConfirmOK) Error() string {
 }
 
 func (o *PutContactsEmailsEmailAddressConfirmOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewPutContactsEmailsEmailAddressConfirmNotFound creates a PutContactsEmailsEmailAddressConfirmNotFound with default headers values
-func NewPutContactsEmailsEmailAddressConfirmNotFound() *PutContactsEmailsEmailAddressConfirmNotFound {
-	return &PutContactsEmailsEmailAddressConfirmNotFound{}
-}
-
-/*PutContactsEmailsEmailAddressConfirmNotFound handles this case with default header values.
-
-Email Address not found
-*/
-type PutContactsEmailsEmailAddressConfirmNotFound struct {
-}
-
-func (o *PutContactsEmailsEmailAddressConfirmNotFound) Error() string {
-	return fmt.Sprintf("[PUT /contacts/emails/{emailAddress}/confirm][%d] putContactsEmailsEmailAddressConfirmNotFound ", 404)
-}
-
-func (o *PutContactsEmailsEmailAddressConfirmNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

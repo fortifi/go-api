@@ -32,13 +32,6 @@ func (o *PutCustomersCustomerFidChargebacksChargebackFidReader) ReadResponse(res
 		}
 		return result, nil
 
-	case 400:
-		result := NewPutCustomersCustomerFidChargebacksChargebackFidBadRequest()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPutCustomersCustomerFidChargebacksChargebackFidDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -76,27 +69,6 @@ func (o *PutCustomersCustomerFidChargebacksChargebackFidOK) readResponse(respons
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewPutCustomersCustomerFidChargebacksChargebackFidBadRequest creates a PutCustomersCustomerFidChargebacksChargebackFidBadRequest with default headers values
-func NewPutCustomersCustomerFidChargebacksChargebackFidBadRequest() *PutCustomersCustomerFidChargebacksChargebackFidBadRequest {
-	return &PutCustomersCustomerFidChargebacksChargebackFidBadRequest{}
-}
-
-/*PutCustomersCustomerFidChargebacksChargebackFidBadRequest handles this case with default header values.
-
-Invalid Payload
-*/
-type PutCustomersCustomerFidChargebacksChargebackFidBadRequest struct {
-}
-
-func (o *PutCustomersCustomerFidChargebacksChargebackFidBadRequest) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/chargebacks/{chargebackFid}][%d] putCustomersCustomerFidChargebacksChargebackFidBadRequest ", 400)
-}
-
-func (o *PutCustomersCustomerFidChargebacksChargebackFidBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

@@ -32,13 +32,6 @@ func (o *PostPolymersReader) ReadResponse(response runtime.ClientResponse, consu
 		}
 		return result, nil
 
-	case 400:
-		result := NewPostPolymersBadRequest()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPostPolymersDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -76,27 +69,6 @@ func (o *PostPolymersOK) readResponse(response runtime.ClientResponse, consumer 
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewPostPolymersBadRequest creates a PostPolymersBadRequest with default headers values
-func NewPostPolymersBadRequest() *PostPolymersBadRequest {
-	return &PostPolymersBadRequest{}
-}
-
-/*PostPolymersBadRequest handles this case with default header values.
-
-Information provided is not valid
-*/
-type PostPolymersBadRequest struct {
-}
-
-func (o *PostPolymersBadRequest) Error() string {
-	return fmt.Sprintf("[POST /polymers][%d] postPolymersBadRequest ", 400)
-}
-
-func (o *PostPolymersBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

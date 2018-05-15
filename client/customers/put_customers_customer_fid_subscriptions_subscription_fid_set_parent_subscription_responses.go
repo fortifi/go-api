@@ -32,20 +32,6 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptio
 		}
 		return result, nil
 
-	case 400:
-		result := NewPutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionBadRequest()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
-	case 404:
-		result := NewPutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -83,48 +69,6 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptio
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewPutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionBadRequest creates a PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionBadRequest with default headers values
-func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionBadRequest() *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionBadRequest {
-	return &PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionBadRequest{}
-}
-
-/*PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionBadRequest handles this case with default header values.
-
-Cannot create cyclic reference
-*/
-type PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionBadRequest struct {
-}
-
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionBadRequest) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/setParentSubscription][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionBadRequest ", 400)
-}
-
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewPutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionNotFound creates a PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionNotFound with default headers values
-func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionNotFound() *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionNotFound {
-	return &PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionNotFound{}
-}
-
-/*PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionNotFound handles this case with default header values.
-
-Subscription not found
-*/
-type PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionNotFound struct {
-}
-
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionNotFound) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/setParentSubscription][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionNotFound ", 404)
-}
-
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

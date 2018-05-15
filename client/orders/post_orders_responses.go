@@ -33,7 +33,14 @@ func (o *PostOrdersReader) ReadResponse(response runtime.ClientResponse, consume
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewPostOrdersDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -57,6 +64,44 @@ func (o *PostOrdersOK) Error() string {
 func (o *PostOrdersOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.PostOrdersOKBody)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewPostOrdersDefault creates a PostOrdersDefault with default headers values
+func NewPostOrdersDefault(code int) *PostOrdersDefault {
+	return &PostOrdersDefault{
+		_statusCode: code,
+	}
+}
+
+/*PostOrdersDefault handles this case with default header values.
+
+Error
+*/
+type PostOrdersDefault struct {
+	_statusCode int
+
+	Payload *models.Envelope
+}
+
+// Code gets the status code for the post orders default response
+func (o *PostOrdersDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *PostOrdersDefault) Error() string {
+	return fmt.Sprintf("[POST /orders][%d] PostOrders default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *PostOrdersDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.Envelope)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

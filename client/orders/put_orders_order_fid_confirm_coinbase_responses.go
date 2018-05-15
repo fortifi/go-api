@@ -32,13 +32,6 @@ func (o *PutOrdersOrderFidConfirmCoinbaseReader) ReadResponse(response runtime.C
 		}
 		return result, nil
 
-	case 503:
-		result := NewPutOrdersOrderFidConfirmCoinbaseServiceUnavailable()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-
 	default:
 		result := NewPutOrdersOrderFidConfirmCoinbaseDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -76,27 +69,6 @@ func (o *PutOrdersOrderFidConfirmCoinbaseOK) readResponse(response runtime.Clien
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewPutOrdersOrderFidConfirmCoinbaseServiceUnavailable creates a PutOrdersOrderFidConfirmCoinbaseServiceUnavailable with default headers values
-func NewPutOrdersOrderFidConfirmCoinbaseServiceUnavailable() *PutOrdersOrderFidConfirmCoinbaseServiceUnavailable {
-	return &PutOrdersOrderFidConfirmCoinbaseServiceUnavailable{}
-}
-
-/*PutOrdersOrderFidConfirmCoinbaseServiceUnavailable handles this case with default header values.
-
-There are no payment gateways available to handle your request
-*/
-type PutOrdersOrderFidConfirmCoinbaseServiceUnavailable struct {
-}
-
-func (o *PutOrdersOrderFidConfirmCoinbaseServiceUnavailable) Error() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/confirmCoinbase][%d] putOrdersOrderFidConfirmCoinbaseServiceUnavailable ", 503)
-}
-
-func (o *PutOrdersOrderFidConfirmCoinbaseServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }
