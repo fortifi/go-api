@@ -54,6 +54,35 @@ func (a *Client) PutContactsEmailsEmailAddressConfirm(params *PutContactsEmailsE
 }
 
 /*
+PutContactsEmailsEmailAddressSubscribe subscribes an email address
+*/
+func (a *Client) PutContactsEmailsEmailAddressSubscribe(params *PutContactsEmailsEmailAddressSubscribeParams, authInfo runtime.ClientAuthInfoWriter) (*PutContactsEmailsEmailAddressSubscribeOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPutContactsEmailsEmailAddressSubscribeParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "PutContactsEmailsEmailAddressSubscribe",
+		Method:             "PUT",
+		PathPattern:        "/contacts/emails/{emailAddress}/subscribe",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"multipart/form-data"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PutContactsEmailsEmailAddressSubscribeReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*PutContactsEmailsEmailAddressSubscribeOK), nil
+
+}
+
+/*
 PutContactsEmailsEmailAddressUnsubscribe unsubscribes an email address
 */
 func (a *Client) PutContactsEmailsEmailAddressUnsubscribe(params *PutContactsEmailsEmailAddressUnsubscribeParams, authInfo runtime.ClientAuthInfoWriter) (*PutContactsEmailsEmailAddressUnsubscribeOK, error) {

@@ -72,6 +72,11 @@ type PutContactsEmailsEmailAddressUnsubscribeParams struct {
 
 	*/
 	EmailAddress string
+	/*GroupFid
+	  Group to unsubscribe the email address from
+
+	*/
+	GroupFid *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -133,6 +138,17 @@ func (o *PutContactsEmailsEmailAddressUnsubscribeParams) SetEmailAddress(emailAd
 	o.EmailAddress = emailAddress
 }
 
+// WithGroupFid adds the groupFid to the put contacts emails email address unsubscribe params
+func (o *PutContactsEmailsEmailAddressUnsubscribeParams) WithGroupFid(groupFid *string) *PutContactsEmailsEmailAddressUnsubscribeParams {
+	o.SetGroupFid(groupFid)
+	return o
+}
+
+// SetGroupFid adds the groupFid to the put contacts emails email address unsubscribe params
+func (o *PutContactsEmailsEmailAddressUnsubscribeParams) SetGroupFid(groupFid *string) {
+	o.GroupFid = groupFid
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *PutContactsEmailsEmailAddressUnsubscribeParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -160,6 +176,22 @@ func (o *PutContactsEmailsEmailAddressUnsubscribeParams) WriteToRequest(r runtim
 	// path param emailAddress
 	if err := r.SetPathParam("emailAddress", o.EmailAddress); err != nil {
 		return err
+	}
+
+	if o.GroupFid != nil {
+
+		// form param groupFid
+		var frGroupFid string
+		if o.GroupFid != nil {
+			frGroupFid = *o.GroupFid
+		}
+		fGroupFid := frGroupFid
+		if fGroupFid != "" {
+			if err := r.SetFormParam("groupFid", fGroupFid); err != nil {
+				return err
+			}
+		}
+
 	}
 
 	if len(res) > 0 {

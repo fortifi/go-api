@@ -344,6 +344,38 @@ func (a *Client) PostCustomers(params *PostCustomersParams, authInfo runtime.Cli
 }
 
 /*
+PostCustomersCustomerFidAnonymize anonymizes customer data
+
+Anonymize customer data
+
+*/
+func (a *Client) PostCustomersCustomerFidAnonymize(params *PostCustomersCustomerFidAnonymizeParams, authInfo runtime.ClientAuthInfoWriter) (*PostCustomersCustomerFidAnonymizeOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPostCustomersCustomerFidAnonymizeParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "PostCustomersCustomerFidAnonymize",
+		Method:             "POST",
+		PathPattern:        "/customers/{customerFid}/anonymize",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PostCustomersCustomerFidAnonymizeReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*PostCustomersCustomerFidAnonymizeOK), nil
+
+}
+
+/*
 PostCustomersCustomerFidNote saves a note against a customer
 */
 func (a *Client) PostCustomersCustomerFidNote(params *PostCustomersCustomerFidNoteParams, authInfo runtime.ClientAuthInfoWriter) (*PostCustomersCustomerFidNoteOK, error) {

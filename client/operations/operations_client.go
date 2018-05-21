@@ -460,6 +460,35 @@ func (a *Client) PutCustomersCustomerFidPaymentMethodsCardsCardFid(params *PutCu
 }
 
 /*
+PutMessengerDeliveriesDeliveryFidSubscribe subscribes an email based on the delivery fid
+*/
+func (a *Client) PutMessengerDeliveriesDeliveryFidSubscribe(params *PutMessengerDeliveriesDeliveryFidSubscribeParams, authInfo runtime.ClientAuthInfoWriter) (*PutMessengerDeliveriesDeliveryFidSubscribeOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPutMessengerDeliveriesDeliveryFidSubscribeParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "PutMessengerDeliveriesDeliveryFidSubscribe",
+		Method:             "PUT",
+		PathPattern:        "/messenger/deliveries/{deliveryFid}/subscribe",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"multipart/form-data"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PutMessengerDeliveriesDeliveryFidSubscribeReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*PutMessengerDeliveriesDeliveryFidSubscribeOK), nil
+
+}
+
+/*
 PutMessengerDeliveriesDeliveryFidUnsubscribe unsubscribes an email based on the delivery fid
 */
 func (a *Client) PutMessengerDeliveriesDeliveryFidUnsubscribe(params *PutMessengerDeliveriesDeliveryFidUnsubscribeParams, authInfo runtime.ClientAuthInfoWriter) (*PutMessengerDeliveriesDeliveryFidUnsubscribeOK, error) {

@@ -23,49 +23,28 @@ type ProductPriceAllOf1 struct {
 	CycleExact string `json:"cycleExact,omitempty"`
 
 	// cycle term
-	CycleTerm string `json:"cycleTerm,omitempty"`
+	CycleTerm int32 `json:"cycleTerm,omitempty"`
 
 	// cycle type
-	CycleType CycleTermType `json:"cycleType,omitempty"`
+	CycleType int32 `json:"cycleType,omitempty"`
 
 	// price
-	Price float32 `json:"price,omitempty"`
+	Price string `json:"price,omitempty"`
 
 	// product fid
 	ProductFid string `json:"productFid,omitempty"`
 
 	// setup fee
-	SetupFee float32 `json:"setupFee,omitempty"`
+	SetupFee string `json:"setupFee,omitempty"`
 }
 
 // Validate validates this product price all of1
 func (m *ProductPriceAllOf1) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateCycleType(formats); err != nil {
-		// prop
-		res = append(res, err)
-	}
-
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
-	return nil
-}
-
-func (m *ProductPriceAllOf1) validateCycleType(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.CycleType) { // not required
-		return nil
-	}
-
-	if err := m.CycleType.Validate(formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
-			return ve.ValidateName("cycleType")
-		}
-		return err
-	}
-
 	return nil
 }
 

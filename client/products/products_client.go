@@ -125,7 +125,7 @@ func (a *Client) GetProductsProductFidPrices(params *GetProductsProductFidPrices
 		Method:             "GET",
 		PathPattern:        "/products/{productFid}/prices",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"multipart/form-data"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetProductsProductFidPricesReader{formats: a.formats},
