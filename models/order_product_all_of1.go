@@ -16,8 +16,26 @@ import (
 // swagger:model orderProductAllOf1
 type OrderProductAllOf1 struct {
 
+	// currency
+	Currency string `json:"currency,omitempty"`
+
+	// cycle exact
+	CycleExact int32 `json:"cycleExact,omitempty"`
+
+	// cycle term
+	CycleTerm int32 `json:"cycleTerm,omitempty"`
+
+	// cycle type
+	CycleType int32 `json:"cycleType,omitempty"`
+
+	// discount amount
+	DiscountAmount float32 `json:"discountAmount,omitempty"`
+
 	// offer fid
 	OfferFid string `json:"offerFid,omitempty"`
+
+	// parent fid
+	ParentFid string `json:"parentFid,omitempty"`
 
 	// price
 	Price float32 `json:"price,omitempty"`
@@ -28,11 +46,26 @@ type OrderProductAllOf1 struct {
 	// product fid
 	ProductFid string `json:"productFid,omitempty"`
 
+	// purchase fid
+	PurchaseFid string `json:"purchaseFid,omitempty"`
+
 	// quantity
 	Quantity int64 `json:"quantity,omitempty"`
 
-	// Time in ISO 8601 standard with optional fractions of a second e.g 2015-12-05T13:11:59.888Z
-	RenewalDate strfmt.DateTime `json:"renewalDate,omitempty"`
+	// renewal date
+	RenewalDate int32 `json:"renewalDate,omitempty"`
+
+	// setup discount amount
+	SetupDiscountAmount float32 `json:"setupDiscountAmount,omitempty"`
+
+	// setup fee
+	SetupFee float32 `json:"setupFee,omitempty"`
+
+	// tax amount
+	TaxAmount float32 `json:"taxAmount,omitempty"`
+
+	// total amount
+	TotalAmount float32 `json:"totalAmount,omitempty"`
 }
 
 // Validate validates this order product all of1

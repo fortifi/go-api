@@ -76,6 +76,9 @@ type OrderAllOf1 struct {
 	// setup amount
 	SetupAmount float32 `json:"setupAmount,omitempty"`
 
+	// setup discount amount
+	SetupDiscountAmount float32 `json:"setupDiscountAmount,omitempty"`
+
 	// state
 	State int32 `json:"state,omitempty"`
 

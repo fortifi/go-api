@@ -83,6 +83,35 @@ func (a *Client) GetProductsGroups(params *GetProductsGroupsParams, authInfo run
 }
 
 /*
+GetProductsGroupsProductGroupFidProducts gets a list of products belonging to the group
+*/
+func (a *Client) GetProductsGroupsProductGroupFidProducts(params *GetProductsGroupsProductGroupFidProductsParams, authInfo runtime.ClientAuthInfoWriter) (*GetProductsGroupsProductGroupFidProductsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetProductsGroupsProductGroupFidProductsParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetProductsGroupsProductGroupFidProducts",
+		Method:             "GET",
+		PathPattern:        "/products/groups/{productGroupFid}/products",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetProductsGroupsProductGroupFidProductsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*GetProductsGroupsProductGroupFidProductsOK), nil
+
+}
+
+/*
 GetProductsOffers retrieves all offers
 */
 func (a *Client) GetProductsOffers(params *GetProductsOffersParams, authInfo runtime.ClientAuthInfoWriter) (*GetProductsOffersOK, error) {

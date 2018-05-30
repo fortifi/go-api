@@ -68,7 +68,7 @@ type PutOrdersOrderFidProductsOrderProductFidQuantityParams struct {
 	/*OrderProductFid*/
 	OrderProductFid string
 	/*Quantity*/
-	Quantity float64
+	Quantity int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -131,13 +131,13 @@ func (o *PutOrdersOrderFidProductsOrderProductFidQuantityParams) SetOrderProduct
 }
 
 // WithQuantity adds the quantity to the put orders order fid products order product fid quantity params
-func (o *PutOrdersOrderFidProductsOrderProductFidQuantityParams) WithQuantity(quantity float64) *PutOrdersOrderFidProductsOrderProductFidQuantityParams {
+func (o *PutOrdersOrderFidProductsOrderProductFidQuantityParams) WithQuantity(quantity int64) *PutOrdersOrderFidProductsOrderProductFidQuantityParams {
 	o.SetQuantity(quantity)
 	return o
 }
 
 // SetQuantity adds the quantity to the put orders order fid products order product fid quantity params
-func (o *PutOrdersOrderFidProductsOrderProductFidQuantityParams) SetQuantity(quantity float64) {
+func (o *PutOrdersOrderFidProductsOrderProductFidQuantityParams) SetQuantity(quantity int64) {
 	o.Quantity = quantity
 }
 
@@ -161,7 +161,7 @@ func (o *PutOrdersOrderFidProductsOrderProductFidQuantityParams) WriteToRequest(
 
 	// form param quantity
 	frQuantity := o.Quantity
-	fQuantity := swag.FormatFloat64(frQuantity)
+	fQuantity := swag.FormatInt64(frQuantity)
 	if fQuantity != "" {
 		if err := r.SetFormParam("quantity", fQuantity); err != nil {
 			return err

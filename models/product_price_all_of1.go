@@ -26,7 +26,7 @@ type ProductPriceAllOf1 struct {
 	CycleTerm int32 `json:"cycleTerm,omitempty"`
 
 	// cycle type
-	CycleType int32 `json:"cycleType,omitempty"`
+	CycleType string `json:"cycleType,omitempty"`
 
 	// price
 	Price string `json:"price,omitempty"`
