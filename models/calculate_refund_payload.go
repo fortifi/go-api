@@ -12,23 +12,26 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// SubscriptionCancelPayload subscription cancel payload
-// swagger:model SubscriptionCancelPayload
-type SubscriptionCancelPayload struct {
+// CalculateRefundPayload calculate refund payload
+// swagger:model CalculateRefundPayload
+type CalculateRefundPayload struct {
 
-	// cancel at next renewal
-	CancelAtNextRenewal bool `json:"cancelAtNextRenewal,omitempty"`
+	// include details
+	IncludeDetails bool `json:"includeDetails,omitempty"`
 
-	// Reason FID
-	ReasonFid string `json:"reasonFid,omitempty"`
+	// Timestamp of when to calculate the refund from. Rounded down to the start of the day. Default to start of tomorrow
+	RefundFromDate int32 `json:"refundFromDate,omitempty"`
 
 	// subscription refund type
 	// Required: true
 	SubscriptionRefundType SubscriptionRefundType `json:"subscriptionRefundType"`
+
+	// with termination fee
+	WithTerminationFee bool `json:"withTerminationFee,omitempty"`
 }
 
-// Validate validates this subscription cancel payload
-func (m *SubscriptionCancelPayload) Validate(formats strfmt.Registry) error {
+// Validate validates this calculate refund payload
+func (m *CalculateRefundPayload) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateSubscriptionRefundType(formats); err != nil {
@@ -42,7 +45,7 @@ func (m *SubscriptionCancelPayload) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *SubscriptionCancelPayload) validateSubscriptionRefundType(formats strfmt.Registry) error {
+func (m *CalculateRefundPayload) validateSubscriptionRefundType(formats strfmt.Registry) error {
 
 	if err := m.SubscriptionRefundType.Validate(formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -55,7 +58,7 @@ func (m *SubscriptionCancelPayload) validateSubscriptionRefundType(formats strfm
 }
 
 // MarshalBinary interface implementation
-func (m *SubscriptionCancelPayload) MarshalBinary() ([]byte, error) {
+func (m *CalculateRefundPayload) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -63,8 +66,8 @@ func (m *SubscriptionCancelPayload) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *SubscriptionCancelPayload) UnmarshalBinary(b []byte) error {
-	var res SubscriptionCancelPayload
+func (m *CalculateRefundPayload) UnmarshalBinary(b []byte) error {
+	var res CalculateRefundPayload
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

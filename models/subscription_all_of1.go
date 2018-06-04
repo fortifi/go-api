@@ -37,7 +37,7 @@ type SubscriptionAllOf1 struct {
 	// currency
 	Currency string `json:"currency,omitempty"`
 
-	// cycle
+	// Interval in ISO 8601 standard
 	Cycle string `json:"cycle,omitempty"`
 
 	// Time in ISO 8601 standard with optional fractions of a second e.g 2015-12-05T13:11:59.888Z

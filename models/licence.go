@@ -25,6 +25,9 @@ type Licence struct {
 	// customer fid
 	CustomerFid string `json:"customerFid,omitempty"`
 
+	// Interval in ISO 8601 standard
+	Cycle string `json:"cycle,omitempty"`
+
 	// cycle exact
 	CycleExact string `json:"cycleExact,omitempty"`
 
@@ -32,7 +35,7 @@ type Licence struct {
 	CycleTerm string `json:"cycleTerm,omitempty"`
 
 	// cycle type
-	CycleType string `json:"cycleType,omitempty"`
+	CycleType CycleTermType `json:"cycleType,omitempty"`
 
 	// Time in ISO 8601 standard with optional fractions of a second e.g 2015-12-05T13:11:59.888Z
 	DateCreated strfmt.DateTime `json:"dateCreated,omitempty"`
@@ -69,9 +72,30 @@ type Licence struct {
 func (m *Licence) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateCycleType(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *Licence) validateCycleType(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.CycleType) { // not required
+		return nil
+	}
+
+	if err := m.CycleType.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("cycleType")
+		}
+		return err
+	}
+
 	return nil
 }
 

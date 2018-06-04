@@ -19,6 +19,9 @@ type OrderProductAllOf1 struct {
 	// currency
 	Currency string `json:"currency,omitempty"`
 
+	// Interval in ISO 8601 standard
+	Cycle string `json:"cycle,omitempty"`
+
 	// cycle exact
 	CycleExact int32 `json:"cycleExact,omitempty"`
 
@@ -52,8 +55,8 @@ type OrderProductAllOf1 struct {
 	// quantity
 	Quantity int64 `json:"quantity,omitempty"`
 
-	// renewal date
-	RenewalDate int32 `json:"renewalDate,omitempty"`
+	// Time in ISO 8601 standard with optional fractions of a second e.g 2015-12-05T13:11:59.888Z
+	RenewalDate strfmt.DateTime `json:"renewalDate,omitempty"`
 
 	// setup discount amount
 	SetupDiscountAmount float32 `json:"setupDiscountAmount,omitempty"`
