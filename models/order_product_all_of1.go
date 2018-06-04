@@ -23,7 +23,7 @@ type OrderProductAllOf1 struct {
 	Cycle string `json:"cycle,omitempty"`
 
 	// cycle exact
-	CycleExact int32 `json:"cycleExact,omitempty"`
+	CycleExact string `json:"cycleExact,omitempty"`
 
 	// cycle term
 	CycleTerm int32 `json:"cycleTerm,omitempty"`

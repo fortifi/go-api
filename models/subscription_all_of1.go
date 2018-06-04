@@ -85,11 +85,17 @@ type SubscriptionAllOf1 struct {
 	// next renewal amount
 	NextRenewalAmount float32 `json:"nextRenewalAmount,omitempty"`
 
+	// offer fid
+	OfferFid string `json:"offerFid,omitempty"`
+
 	// paid renewals
 	PaidRenewals int32 `json:"paidRenewals,omitempty"`
 
 	// Time in ISO 8601 standard with optional fractions of a second e.g 2015-12-05T13:11:59.888Z
 	PaidUntil strfmt.DateTime `json:"paidUntil,omitempty"`
+
+	// price fid
+	PriceFid string `json:"priceFid,omitempty"`
 
 	// quantity
 	Quantity int32 `json:"quantity,omitempty"`
