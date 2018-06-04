@@ -170,6 +170,35 @@ func (a *Client) GetCustomersCustomerFidAddresses(params *GetCustomersCustomerFi
 }
 
 /*
+GetCustomersCustomerFidChatSessions retrieves chat sessions for customer
+*/
+func (a *Client) GetCustomersCustomerFidChatSessions(params *GetCustomersCustomerFidChatSessionsParams, authInfo runtime.ClientAuthInfoWriter) (*GetCustomersCustomerFidChatSessionsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetCustomersCustomerFidChatSessionsParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetCustomersCustomerFidChatSessions",
+		Method:             "GET",
+		PathPattern:        "/customers/{customerFid}/chatSessions",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetCustomersCustomerFidChatSessionsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*GetCustomersCustomerFidChatSessionsOK), nil
+
+}
+
+/*
 GetCustomersCustomerFidInvoices lists of invoice summaries for given customer
 */
 func (a *Client) GetCustomersCustomerFidInvoices(params *GetCustomersCustomerFidInvoicesParams, authInfo runtime.ClientAuthInfoWriter) (*GetCustomersCustomerFidInvoicesOK, error) {
@@ -224,6 +253,35 @@ func (a *Client) GetCustomersCustomerFidInvoicesInvoiceFid(params *GetCustomersC
 		return nil, err
 	}
 	return result.(*GetCustomersCustomerFidInvoicesInvoiceFidOK), nil
+
+}
+
+/*
+GetCustomersCustomerFidPaymentsPaymentFid retrieves a payment
+*/
+func (a *Client) GetCustomersCustomerFidPaymentsPaymentFid(params *GetCustomersCustomerFidPaymentsPaymentFidParams, authInfo runtime.ClientAuthInfoWriter) (*GetCustomersCustomerFidPaymentsPaymentFidOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetCustomersCustomerFidPaymentsPaymentFidParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetCustomersCustomerFidPaymentsPaymentFid",
+		Method:             "GET",
+		PathPattern:        "/customers/{customerFid}/payments/{paymentFid}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetCustomersCustomerFidPaymentsPaymentFidReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*GetCustomersCustomerFidPaymentsPaymentFidOK), nil
 
 }
 
@@ -669,6 +727,93 @@ func (a *Client) PutCustomersCustomerFidFraud(params *PutCustomersCustomerFidFra
 }
 
 /*
+PutCustomersCustomerFidInvoicesInvoiceFidRetry retries payment of invoice
+*/
+func (a *Client) PutCustomersCustomerFidInvoicesInvoiceFidRetry(params *PutCustomersCustomerFidInvoicesInvoiceFidRetryParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomersCustomerFidInvoicesInvoiceFidRetryOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPutCustomersCustomerFidInvoicesInvoiceFidRetryParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "PutCustomersCustomerFidInvoicesInvoiceFidRetry",
+		Method:             "PUT",
+		PathPattern:        "/customers/{customerFid}/invoices/{invoiceFid}/retry",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PutCustomersCustomerFidInvoicesInvoiceFidRetryReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*PutCustomersCustomerFidInvoicesInvoiceFidRetryOK), nil
+
+}
+
+/*
+PutCustomersCustomerFidInvoicesRetry retries payment of all customer invoices which are in invoice
+*/
+func (a *Client) PutCustomersCustomerFidInvoicesRetry(params *PutCustomersCustomerFidInvoicesRetryParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomersCustomerFidInvoicesRetryOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPutCustomersCustomerFidInvoicesRetryParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "PutCustomersCustomerFidInvoicesRetry",
+		Method:             "PUT",
+		PathPattern:        "/customers/{customerFid}/invoices/retry",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PutCustomersCustomerFidInvoicesRetryReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*PutCustomersCustomerFidInvoicesRetryOK), nil
+
+}
+
+/*
+PutCustomersCustomerFidLinkVisitor links visitor to customer record
+*/
+func (a *Client) PutCustomersCustomerFidLinkVisitor(params *PutCustomersCustomerFidLinkVisitorParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomersCustomerFidLinkVisitorOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPutCustomersCustomerFidLinkVisitorParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "PutCustomersCustomerFidLinkVisitor",
+		Method:             "PUT",
+		PathPattern:        "/customers/{customerFid}/linkVisitor",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"multipart/form-data"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PutCustomersCustomerFidLinkVisitorReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*PutCustomersCustomerFidLinkVisitorOK), nil
+
+}
+
+/*
 PutCustomersCustomerFidLocation updates a customers location
 */
 func (a *Client) PutCustomersCustomerFidLocation(params *PutCustomersCustomerFidLocationParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomersCustomerFidLocationOK, error) {
@@ -839,6 +984,35 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOffer(p
 		return nil, err
 	}
 	return result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferOK), nil
+
+}
+
+/*
+PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefund calculates the result of a potential refund on a subscription
+*/
+func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefund(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefund",
+		Method:             "PUT",
+		PathPattern:        "/customers/{customerFid}/subscriptions/{subscriptionFid}/calculateRefund",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundOK), nil
 
 }
 
@@ -1042,6 +1216,35 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSub
 		return nil, err
 	}
 	return result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionOK), nil
+
+}
+
+/*
+PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccount sets payment account for subscription if changing a payment method from an automatic payment method such as pay pal recurring payments any other subscriptions paid with the same agreement will be set to default payment method and the agreement will be cancelled
+*/
+func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccount(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccount",
+		Method:             "PUT",
+		PathPattern:        "/customers/{customerFid}/subscriptions/{subscriptionFid}/setPaymentAccount",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"multipart/form-data"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountOK), nil
 
 }
 

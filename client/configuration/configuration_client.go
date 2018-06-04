@@ -54,6 +54,35 @@ func (a *Client) DeleteEntitiesEntityFidConfigSectionName(params *DeleteEntities
 }
 
 /*
+GetConfigurationFinanceGateways lists all the current gateways
+*/
+func (a *Client) GetConfigurationFinanceGateways(params *GetConfigurationFinanceGatewaysParams, authInfo runtime.ClientAuthInfoWriter) (*GetConfigurationFinanceGatewaysOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetConfigurationFinanceGatewaysParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetConfigurationFinanceGateways",
+		Method:             "GET",
+		PathPattern:        "/configuration/finance/gateways",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetConfigurationFinanceGatewaysReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*GetConfigurationFinanceGatewaysOK), nil
+
+}
+
+/*
 GetEntitiesEntityFidConfigSectionName retrieves a config section
 */
 func (a *Client) GetEntitiesEntityFidConfigSectionName(params *GetEntitiesEntityFidConfigSectionNameParams, authInfo runtime.ClientAuthInfoWriter) (*GetEntitiesEntityFidConfigSectionNameOK, error) {

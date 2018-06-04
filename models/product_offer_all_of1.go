@@ -34,6 +34,9 @@ type ProductOfferAllOf1 struct {
 	// max usages
 	MaxUsages int32 `json:"maxUsages,omitempty"`
 
+	// Interval in ISO 8601 standard
+	Period string `json:"period,omitempty"`
+
 	// restrictive
 	Restrictive bool `json:"restrictive,omitempty"`
 
