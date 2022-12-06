@@ -80,6 +80,18 @@ type GetCustomersCustomerFidTicketsParams struct {
 	*/
 	Page *int64
 
+	/* SortBy.
+
+	   Sort the tickets by a specific field (default: dateCreated)
+	*/
+	SortBy *string
+
+	/* SortDirection.
+
+	   Sort the tickets in a specific order (default: ASC)
+	*/
+	SortDirection *string
+
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
@@ -166,6 +178,28 @@ func (o *GetCustomersCustomerFidTicketsParams) SetPage(page *int64) {
 	o.Page = page
 }
 
+// WithSortBy adds the sortBy to the get customers customer fid tickets params
+func (o *GetCustomersCustomerFidTicketsParams) WithSortBy(sortBy *string) *GetCustomersCustomerFidTicketsParams {
+	o.SetSortBy(sortBy)
+	return o
+}
+
+// SetSortBy adds the sortBy to the get customers customer fid tickets params
+func (o *GetCustomersCustomerFidTicketsParams) SetSortBy(sortBy *string) {
+	o.SortBy = sortBy
+}
+
+// WithSortDirection adds the sortDirection to the get customers customer fid tickets params
+func (o *GetCustomersCustomerFidTicketsParams) WithSortDirection(sortDirection *string) *GetCustomersCustomerFidTicketsParams {
+	o.SetSortDirection(sortDirection)
+	return o
+}
+
+// SetSortDirection adds the sortDirection to the get customers customer fid tickets params
+func (o *GetCustomersCustomerFidTicketsParams) SetSortDirection(sortDirection *string) {
+	o.SortDirection = sortDirection
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *GetCustomersCustomerFidTicketsParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -208,6 +242,40 @@ func (o *GetCustomersCustomerFidTicketsParams) WriteToRequest(r runtime.ClientRe
 		if qPage != "" {
 
 			if err := r.SetQueryParam("page", qPage); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SortBy != nil {
+
+		// query param sortBy
+		var qrSortBy string
+
+		if o.SortBy != nil {
+			qrSortBy = *o.SortBy
+		}
+		qSortBy := qrSortBy
+		if qSortBy != "" {
+
+			if err := r.SetQueryParam("sortBy", qSortBy); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SortDirection != nil {
+
+		// query param sortDirection
+		var qrSortDirection string
+
+		if o.SortDirection != nil {
+			qrSortDirection = *o.SortDirection
+		}
+		qSortDirection := qrSortDirection
+		if qSortDirection != "" {
+
+			if err := r.SetQueryParam("sortDirection", qSortDirection); err != nil {
 				return err
 			}
 		}

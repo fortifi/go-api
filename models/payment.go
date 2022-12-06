@@ -60,6 +60,9 @@ type Payment struct {
 	// source account type
 	SourceAccountType string `json:"sourceAccountType,omitempty"`
 
+	// source fid
+	SourceFid string `json:"sourceFid,omitempty"`
+
 	// statement descriptor
 	StatementDescriptor string `json:"statementDescriptor,omitempty"`
 
@@ -127,6 +130,8 @@ func (m *Payment) UnmarshalJSON(raw []byte) error {
 
 		SourceAccountType string `json:"sourceAccountType,omitempty"`
 
+		SourceFid string `json:"sourceFid,omitempty"`
+
 		StatementDescriptor string `json:"statementDescriptor,omitempty"`
 
 		Status string `json:"status,omitempty"`
@@ -174,6 +179,8 @@ func (m *Payment) UnmarshalJSON(raw []byte) error {
 	m.SourceAccountFid = dataAO1.SourceAccountFid
 
 	m.SourceAccountType = dataAO1.SourceAccountType
+
+	m.SourceFid = dataAO1.SourceFid
 
 	m.StatementDescriptor = dataAO1.StatementDescriptor
 
@@ -232,6 +239,8 @@ func (m Payment) MarshalJSON() ([]byte, error) {
 
 		SourceAccountType string `json:"sourceAccountType,omitempty"`
 
+		SourceFid string `json:"sourceFid,omitempty"`
+
 		StatementDescriptor string `json:"statementDescriptor,omitempty"`
 
 		Status string `json:"status,omitempty"`
@@ -276,6 +285,8 @@ func (m Payment) MarshalJSON() ([]byte, error) {
 	dataAO1.SourceAccountFid = m.SourceAccountFid
 
 	dataAO1.SourceAccountType = m.SourceAccountType
+
+	dataAO1.SourceFid = m.SourceFid
 
 	dataAO1.StatementDescriptor = m.StatementDescriptor
 

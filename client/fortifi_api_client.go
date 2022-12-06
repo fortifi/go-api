@@ -10,15 +10,20 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
+	"github.com/fortifi/go-api/client/account"
 	"github.com/fortifi/go-api/client/appstore"
+	"github.com/fortifi/go-api/client/attachment"
 	"github.com/fortifi/go-api/client/authentication"
 	"github.com/fortifi/go-api/client/brands"
+	"github.com/fortifi/go-api/client/chat"
+	"github.com/fortifi/go-api/client/comments"
 	"github.com/fortifi/go-api/client/contacts"
 	"github.com/fortifi/go-api/client/customers"
 	"github.com/fortifi/go-api/client/deprecated"
 	"github.com/fortifi/go-api/client/devices"
 	"github.com/fortifi/go-api/client/entities"
 	"github.com/fortifi/go-api/client/finance"
+	"github.com/fortifi/go-api/client/interactions"
 	"github.com/fortifi/go-api/client/licence"
 	"github.com/fortifi/go-api/client/marketing"
 	"github.com/fortifi/go-api/client/messenger"
@@ -77,15 +82,20 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *FortifiAPI
 
 	cli := new(FortifiAPI)
 	cli.Transport = transport
+	cli.Account = account.New(transport, formats)
 	cli.Appstore = appstore.New(transport, formats)
+	cli.Attachment = attachment.New(transport, formats)
 	cli.Authentication = authentication.New(transport, formats)
 	cli.Brands = brands.New(transport, formats)
+	cli.Chat = chat.New(transport, formats)
+	cli.Comments = comments.New(transport, formats)
 	cli.Contacts = contacts.New(transport, formats)
 	cli.Customers = customers.New(transport, formats)
 	cli.Deprecated = deprecated.New(transport, formats)
 	cli.Devices = devices.New(transport, formats)
 	cli.Entities = entities.New(transport, formats)
 	cli.Finance = finance.New(transport, formats)
+	cli.Interactions = interactions.New(transport, formats)
 	cli.Licence = licence.New(transport, formats)
 	cli.Marketing = marketing.New(transport, formats)
 	cli.Messenger = messenger.New(transport, formats)
@@ -144,11 +154,19 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 
 // FortifiAPI is a client for fortifi API
 type FortifiAPI struct {
+	Account account.ClientService
+
 	Appstore appstore.ClientService
+
+	Attachment attachment.ClientService
 
 	Authentication authentication.ClientService
 
 	Brands brands.ClientService
+
+	Chat chat.ClientService
+
+	Comments comments.ClientService
 
 	Contacts contacts.ClientService
 
@@ -161,6 +179,8 @@ type FortifiAPI struct {
 	Entities entities.ClientService
 
 	Finance finance.ClientService
+
+	Interactions interactions.ClientService
 
 	Licence licence.ClientService
 
@@ -196,15 +216,20 @@ type FortifiAPI struct {
 // SetTransport changes the transport on the client and all its subresources
 func (c *FortifiAPI) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
+	c.Account.SetTransport(transport)
 	c.Appstore.SetTransport(transport)
+	c.Attachment.SetTransport(transport)
 	c.Authentication.SetTransport(transport)
 	c.Brands.SetTransport(transport)
+	c.Chat.SetTransport(transport)
+	c.Comments.SetTransport(transport)
 	c.Contacts.SetTransport(transport)
 	c.Customers.SetTransport(transport)
 	c.Deprecated.SetTransport(transport)
 	c.Devices.SetTransport(transport)
 	c.Entities.SetTransport(transport)
 	c.Finance.SetTransport(transport)
+	c.Interactions.SetTransport(transport)
 	c.Licence.SetTransport(transport)
 	c.Marketing.SetTransport(transport)
 	c.Messenger.SetTransport(transport)

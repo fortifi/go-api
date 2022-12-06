@@ -26,6 +26,9 @@ type TicketPost struct {
 	// has attachments
 	HasAttachments bool `json:"hasAttachments,omitempty"`
 
+	// html body
+	HTMLBody string `json:"htmlBody,omitempty"`
+
 	// language
 	Language string `json:"language,omitempty"`
 

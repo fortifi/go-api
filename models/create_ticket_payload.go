@@ -20,6 +20,9 @@ import (
 // swagger:model CreateTicketPayload
 type CreateTicketPayload struct {
 
+	// account verification fid
+	AccountVerificationFid string `json:"accountVerificationFid,omitempty"`
+
 	// attachments
 	Attachments []string `json:"attachments"`
 
@@ -50,6 +53,9 @@ type CreateTicketPayload struct {
 	// impact
 	// Enum: [none minor moderate significant extensive]
 	Impact string `json:"impact,omitempty"`
+
+	// language
+	Language string `json:"language,omitempty"`
 
 	// queue fid
 	QueueFid string `json:"queueFid,omitempty"`

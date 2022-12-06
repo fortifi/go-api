@@ -76,6 +76,12 @@ type GetCustomersCustomerFidTicketsTicketFidPostsParams struct {
 	*/
 	CustomerFid string
 
+	/* IncludeHTML.
+
+	   Respond with the html body as a part of the response
+	*/
+	IncludeHTML *bool
+
 	/* Limit.
 
 	   Maximum number of records per page (default: 20, max: 100)
@@ -163,6 +169,17 @@ func (o *GetCustomersCustomerFidTicketsTicketFidPostsParams) SetCustomerFid(cust
 	o.CustomerFid = customerFid
 }
 
+// WithIncludeHTML adds the includeHTML to the get customers customer fid tickets ticket fid posts params
+func (o *GetCustomersCustomerFidTicketsTicketFidPostsParams) WithIncludeHTML(includeHTML *bool) *GetCustomersCustomerFidTicketsTicketFidPostsParams {
+	o.SetIncludeHTML(includeHTML)
+	return o
+}
+
+// SetIncludeHTML adds the includeHtml to the get customers customer fid tickets ticket fid posts params
+func (o *GetCustomersCustomerFidTicketsTicketFidPostsParams) SetIncludeHTML(includeHTML *bool) {
+	o.IncludeHTML = includeHTML
+}
+
 // WithLimit adds the limit to the get customers customer fid tickets ticket fid posts params
 func (o *GetCustomersCustomerFidTicketsTicketFidPostsParams) WithLimit(limit *int64) *GetCustomersCustomerFidTicketsTicketFidPostsParams {
 	o.SetLimit(limit)
@@ -213,6 +230,23 @@ func (o *GetCustomersCustomerFidTicketsTicketFidPostsParams) WriteToRequest(r ru
 	// path param customerFid
 	if err := r.SetPathParam("customerFid", o.CustomerFid); err != nil {
 		return err
+	}
+
+	if o.IncludeHTML != nil {
+
+		// query param includeHtml
+		var qrIncludeHTML bool
+
+		if o.IncludeHTML != nil {
+			qrIncludeHTML = *o.IncludeHTML
+		}
+		qIncludeHTML := swag.FormatBool(qrIncludeHTML)
+		if qIncludeHTML != "" {
+
+			if err := r.SetQueryParam("includeHtml", qIncludeHTML); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.Limit != nil {

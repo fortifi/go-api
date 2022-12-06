@@ -128,6 +128,8 @@ type ClientService interface {
 
 	GetCustomersFindByReference(params *GetCustomersFindByReferenceParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersFindByReferenceOK, error)
 
+	GetPaymentsTransactionTransactionID(params *GetPaymentsTransactionTransactionIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPaymentsTransactionTransactionIDOK, error)
+
 	PostContactsContactFidAddresses(params *PostContactsContactFidAddressesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostContactsContactFidAddressesOK, error)
 
 	PostContactsContactFidEmails(params *PostContactsContactFidEmailsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostContactsContactFidEmailsOK, error)
@@ -2170,6 +2172,44 @@ func (a *Client) GetCustomersFindByReference(params *GetCustomersFindByReference
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*GetCustomersFindByReferenceDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+GetPaymentsTransactionTransactionID retrieves a payment by transaction ID
+*/
+func (a *Client) GetPaymentsTransactionTransactionID(params *GetPaymentsTransactionTransactionIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPaymentsTransactionTransactionIDOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetPaymentsTransactionTransactionIDParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "GetPaymentsTransactionTransactionID",
+		Method:             "GET",
+		PathPattern:        "/payments/transaction/{transactionId}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetPaymentsTransactionTransactionIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetPaymentsTransactionTransactionIDOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*GetPaymentsTransactionTransactionIDDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
