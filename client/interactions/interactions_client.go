@@ -28,7 +28,9 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	GetInteractionsInteractionFidMessage(params *GetInteractionsInteractionFidMessageParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetInteractionsInteractionFidMessageOK, error)
+	GetInteractionsInteractionFidMessages(params *GetInteractionsInteractionFidMessagesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetInteractionsInteractionFidMessagesOK, error)
+
+	GetInteractionsInviteInviteCodeStatus(params *GetInteractionsInviteInviteCodeStatusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetInteractionsInviteInviteCodeStatusOK, error)
 
 	PostInteractionsInteractionFidClientConnected(params *PostInteractionsInteractionFidClientConnectedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidClientConnectedOK, error)
 
@@ -36,28 +38,32 @@ type ClientService interface {
 
 	PostInteractionsInteractionFidMessage(params *PostInteractionsInteractionFidMessageParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidMessageOK, error)
 
+	PostInteractionsInvite(params *PostInteractionsInviteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInviteOK, error)
+
+	PostInteractionsInviteInviteCode(params *PostInteractionsInviteInviteCodeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInviteInviteCodeOK, error)
+
 	PostInteractionsJourney(params *PostInteractionsJourneyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsJourneyOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
 
 /*
-GetInteractionsInteractionFidMessage gets all messages on an interaction
+GetInteractionsInteractionFidMessages gets all messages on an interaction
 */
-func (a *Client) GetInteractionsInteractionFidMessage(params *GetInteractionsInteractionFidMessageParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetInteractionsInteractionFidMessageOK, error) {
+func (a *Client) GetInteractionsInteractionFidMessages(params *GetInteractionsInteractionFidMessagesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetInteractionsInteractionFidMessagesOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewGetInteractionsInteractionFidMessageParams()
+		params = NewGetInteractionsInteractionFidMessagesParams()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "GetInteractionsInteractionFidMessage",
+		ID:                 "GetInteractionsInteractionFidMessages",
 		Method:             "GET",
-		PathPattern:        "/interactions/{interactionFid}/message",
+		PathPattern:        "/interactions/{interactionFid}/messages",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &GetInteractionsInteractionFidMessageReader{formats: a.formats},
+		Reader:             &GetInteractionsInteractionFidMessagesReader{formats: a.formats},
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
@@ -70,12 +76,50 @@ func (a *Client) GetInteractionsInteractionFidMessage(params *GetInteractionsInt
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*GetInteractionsInteractionFidMessageOK)
+	success, ok := result.(*GetInteractionsInteractionFidMessagesOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
-	unexpectedSuccess := result.(*GetInteractionsInteractionFidMessageDefault)
+	unexpectedSuccess := result.(*GetInteractionsInteractionFidMessagesDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+GetInteractionsInviteInviteCodeStatus gets an interaction invite status
+*/
+func (a *Client) GetInteractionsInviteInviteCodeStatus(params *GetInteractionsInviteInviteCodeStatusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetInteractionsInviteInviteCodeStatusOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetInteractionsInviteInviteCodeStatusParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "GetInteractionsInviteInviteCodeStatus",
+		Method:             "GET",
+		PathPattern:        "/interactions/invite/{inviteCode}/status",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetInteractionsInviteInviteCodeStatusReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetInteractionsInviteInviteCodeStatusOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*GetInteractionsInviteInviteCodeStatusDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -190,6 +234,82 @@ func (a *Client) PostInteractionsInteractionFidMessage(params *PostInteractionsI
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*PostInteractionsInteractionFidMessageDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PostInteractionsInvite creates an interaction invite
+*/
+func (a *Client) PostInteractionsInvite(params *PostInteractionsInviteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInviteOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPostInteractionsInviteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PostInteractionsInvite",
+		Method:             "POST",
+		PathPattern:        "/interactions/invite",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PostInteractionsInviteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PostInteractionsInviteOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PostInteractionsInviteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PostInteractionsInviteInviteCode accepts an interaction invite
+*/
+func (a *Client) PostInteractionsInviteInviteCode(params *PostInteractionsInviteInviteCodeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInviteInviteCodeOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPostInteractionsInviteInviteCodeParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PostInteractionsInviteInviteCode",
+		Method:             "POST",
+		PathPattern:        "/interactions/invite/{inviteCode}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PostInteractionsInviteInviteCodeReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PostInteractionsInviteInviteCodeOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PostInteractionsInviteInviteCodeDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
