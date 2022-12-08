@@ -81,11 +81,11 @@ func (o *PostInteractionsInteractionFidClientDisconnectedOK) IsCode(code int) bo
 }
 
 func (o *PostInteractionsInteractionFidClientDisconnectedOK) Error() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/client-disconnected][%d] postInteractionsInteractionFidClientDisconnectedOK  %+v", 200, o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/client/disconnected][%d] postInteractionsInteractionFidClientDisconnectedOK  %+v", 200, o.Payload)
 }
 
 func (o *PostInteractionsInteractionFidClientDisconnectedOK) String() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/client-disconnected][%d] postInteractionsInteractionFidClientDisconnectedOK  %+v", 200, o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/client/disconnected][%d] postInteractionsInteractionFidClientDisconnectedOK  %+v", 200, o.Payload)
 }
 
 func (o *PostInteractionsInteractionFidClientDisconnectedOK) GetPayload() *models.Envelope {
@@ -153,11 +153,11 @@ func (o *PostInteractionsInteractionFidClientDisconnectedDefault) IsCode(code in
 }
 
 func (o *PostInteractionsInteractionFidClientDisconnectedDefault) Error() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/client-disconnected][%d] PostInteractionsInteractionFidClientDisconnected default  %+v", o._statusCode, o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/client/disconnected][%d] PostInteractionsInteractionFidClientDisconnected default  %+v", o._statusCode, o.Payload)
 }
 
 func (o *PostInteractionsInteractionFidClientDisconnectedDefault) String() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/client-disconnected][%d] PostInteractionsInteractionFidClientDisconnected default  %+v", o._statusCode, o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/client/disconnected][%d] PostInteractionsInteractionFidClientDisconnected default  %+v", o._statusCode, o.Payload)
 }
 
 func (o *PostInteractionsInteractionFidClientDisconnectedDefault) GetPayload() *models.Envelope {

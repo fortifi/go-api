@@ -81,11 +81,11 @@ func (o *PostInteractionsInteractionFidClientConnectedOK) IsCode(code int) bool 
 }
 
 func (o *PostInteractionsInteractionFidClientConnectedOK) Error() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/client-connected][%d] postInteractionsInteractionFidClientConnectedOK  %+v", 200, o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/client/connected][%d] postInteractionsInteractionFidClientConnectedOK  %+v", 200, o.Payload)
 }
 
 func (o *PostInteractionsInteractionFidClientConnectedOK) String() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/client-connected][%d] postInteractionsInteractionFidClientConnectedOK  %+v", 200, o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/client/connected][%d] postInteractionsInteractionFidClientConnectedOK  %+v", 200, o.Payload)
 }
 
 func (o *PostInteractionsInteractionFidClientConnectedOK) GetPayload() *models.Envelope {
@@ -153,11 +153,11 @@ func (o *PostInteractionsInteractionFidClientConnectedDefault) IsCode(code int) 
 }
 
 func (o *PostInteractionsInteractionFidClientConnectedDefault) Error() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/client-connected][%d] PostInteractionsInteractionFidClientConnected default  %+v", o._statusCode, o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/client/connected][%d] PostInteractionsInteractionFidClientConnected default  %+v", o._statusCode, o.Payload)
 }
 
 func (o *PostInteractionsInteractionFidClientConnectedDefault) String() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/client-connected][%d] PostInteractionsInteractionFidClientConnected default  %+v", o._statusCode, o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/client/connected][%d] PostInteractionsInteractionFidClientConnected default  %+v", o._statusCode, o.Payload)
 }
 
 func (o *PostInteractionsInteractionFidClientConnectedDefault) GetPayload() *models.Envelope {

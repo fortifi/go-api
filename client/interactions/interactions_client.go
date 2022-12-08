@@ -134,7 +134,7 @@ func (a *Client) PostInteractionsInteractionFidClientConnected(params *PostInter
 	op := &runtime.ClientOperation{
 		ID:                 "PostInteractionsInteractionFidClientConnected",
 		Method:             "POST",
-		PathPattern:        "/interactions/{interactionFid}/client-connected",
+		PathPattern:        "/interactions/{interactionFid}/client/connected",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
@@ -172,7 +172,7 @@ func (a *Client) PostInteractionsInteractionFidClientDisconnected(params *PostIn
 	op := &runtime.ClientOperation{
 		ID:                 "PostInteractionsInteractionFidClientDisconnected",
 		Method:             "POST",
-		PathPattern:        "/interactions/{interactionFid}/client-disconnected",
+		PathPattern:        "/interactions/{interactionFid}/client/disconnected",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
