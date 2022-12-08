@@ -17,6 +17,9 @@ import (
 // swagger:model InteractionMessageResponse
 type InteractionMessageResponse struct {
 
+	// action type
+	ActionType string `json:"actionType,omitempty"`
+
 	// content
 	Content string `json:"content,omitempty"`
 

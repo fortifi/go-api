@@ -28,6 +28,8 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
+	GetInteractionsInteractionFid(params *GetInteractionsInteractionFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetInteractionsInteractionFidOK, error)
+
 	GetInteractionsInteractionFidMessages(params *GetInteractionsInteractionFidMessagesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetInteractionsInteractionFidMessagesOK, error)
 
 	GetInteractionsInviteInviteCodeStatus(params *GetInteractionsInviteInviteCodeStatusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetInteractionsInviteInviteCodeStatusOK, error)
@@ -45,6 +47,44 @@ type ClientService interface {
 	PostInteractionsJourney(params *PostInteractionsJourneyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsJourneyOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
+}
+
+/*
+GetInteractionsInteractionFid gets an interaction
+*/
+func (a *Client) GetInteractionsInteractionFid(params *GetInteractionsInteractionFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetInteractionsInteractionFidOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetInteractionsInteractionFidParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "GetInteractionsInteractionFid",
+		Method:             "GET",
+		PathPattern:        "/interactions/{interactionFid}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetInteractionsInteractionFidReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetInteractionsInteractionFidOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*GetInteractionsInteractionFidDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
 /*
