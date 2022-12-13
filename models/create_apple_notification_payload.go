@@ -54,6 +54,9 @@ type CreateAppleNotificationPayload struct {
 	// Required: true
 	RawReceipt *string `json:"rawReceipt"`
 
+	// renewal date
+	RenewalDate string `json:"renewalDate,omitempty"`
+
 	// The subscription ID (SKU). e.g com.company.android.year.12
 	// Required: true
 	SubscriptionID *string `json:"subscriptionId"`
