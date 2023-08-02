@@ -79,6 +79,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryOK)
 	return code == 200
 }
 
+// Code gets the status code for the put customers customer fid subscriptions subscription fid provisioning retry o k response
+func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryOK) Code() int {
+	return 200
+}
+
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryOK) Error() string {
 	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/provisioning/retry][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryOK ", 200)
 }
@@ -110,11 +115,6 @@ type PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryDefault
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the put customers customer fid subscriptions subscription fid provisioning retry default response
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this put customers customer fid subscriptions subscription fid provisioning retry default response has a 2xx status code
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryDef
 // IsCode returns true when this put customers customer fid subscriptions subscription fid provisioning retry default response a status code equal to that given
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the put customers customer fid subscriptions subscription fid provisioning retry default response
+func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryDefault) Error() string {

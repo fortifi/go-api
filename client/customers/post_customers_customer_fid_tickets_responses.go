@@ -79,6 +79,11 @@ func (o *PostCustomersCustomerFidTicketsOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the post customers customer fid tickets o k response
+func (o *PostCustomersCustomerFidTicketsOK) Code() int {
+	return 200
+}
+
 func (o *PostCustomersCustomerFidTicketsOK) Error() string {
 	return fmt.Sprintf("[POST /customers/{customerFid}/tickets][%d] postCustomersCustomerFidTicketsOK ", 200)
 }
@@ -110,11 +115,6 @@ type PostCustomersCustomerFidTicketsDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the post customers customer fid tickets default response
-func (o *PostCustomersCustomerFidTicketsDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this post customers customer fid tickets default response has a 2xx status code
 func (o *PostCustomersCustomerFidTicketsDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PostCustomersCustomerFidTicketsDefault) IsServerError() bool {
 // IsCode returns true when this post customers customer fid tickets default response a status code equal to that given
 func (o *PostCustomersCustomerFidTicketsDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the post customers customer fid tickets default response
+func (o *PostCustomersCustomerFidTicketsDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PostCustomersCustomerFidTicketsDefault) Error() string {

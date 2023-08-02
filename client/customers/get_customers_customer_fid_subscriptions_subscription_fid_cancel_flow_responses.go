@@ -83,6 +83,11 @@ func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK) IsCode
 	return code == 200
 }
 
+// Code gets the status code for the get customers customer fid subscriptions subscription fid cancel flow o k response
+func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK) Code() int {
+	return 200
+}
+
 func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK) Error() string {
 	return fmt.Sprintf("[GET /customers/{customerFid}/subscriptions/{subscriptionFid}/cancelFlow][%d] getCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowDefault struct
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the get customers customer fid subscriptions subscription fid cancel flow default response
-func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this get customers customer fid subscriptions subscription fid cancel flow default response has a 2xx status code
 func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowDefault) I
 // IsCode returns true when this get customers customer fid subscriptions subscription fid cancel flow default response a status code equal to that given
 func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the get customers customer fid subscriptions subscription fid cancel flow default response
+func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOKBody) Co
 func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("getCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK" + "." + "data")

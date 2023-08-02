@@ -83,6 +83,11 @@ func (o *PostUploadUploadURLOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the post upload upload Url o k response
+func (o *PostUploadUploadURLOK) Code() int {
+	return 200
+}
+
 func (o *PostUploadUploadURLOK) Error() string {
 	return fmt.Sprintf("[POST /upload/uploadUrl][%d] postUploadUploadUrlOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type PostUploadUploadURLDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the post upload upload URL default response
-func (o *PostUploadUploadURLDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this post upload upload URL default response has a 2xx status code
 func (o *PostUploadUploadURLDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *PostUploadUploadURLDefault) IsServerError() bool {
 // IsCode returns true when this post upload upload URL default response a status code equal to that given
 func (o *PostUploadUploadURLDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the post upload upload URL default response
+func (o *PostUploadUploadURLDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PostUploadUploadURLDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *PostUploadUploadURLOKBody) ContextValidate(ctx context.Context, formats
 func (o *PostUploadUploadURLOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("postUploadUploadUrlOK" + "." + "data")

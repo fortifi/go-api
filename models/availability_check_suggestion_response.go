@@ -85,6 +85,11 @@ func (m *AvailabilityCheckSuggestionResponse) contextValidateProperties(ctx cont
 	for i := 0; i < len(m.Properties); i++ {
 
 		if m.Properties[i] != nil {
+
+			if swag.IsZero(m.Properties[i]) { // not required
+				return nil
+			}
+
 			if err := m.Properties[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("properties" + "." + strconv.Itoa(i))

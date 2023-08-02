@@ -83,6 +83,11 @@ func (o *PostPublishersPublisherFidFinanceCostImportOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the post publishers publisher fid finance cost import o k response
+func (o *PostPublishersPublisherFidFinanceCostImportOK) Code() int {
+	return 200
+}
+
 func (o *PostPublishersPublisherFidFinanceCostImportOK) Error() string {
 	return fmt.Sprintf("[POST /publishers/{publisherFid}/finance/costImport][%d] postPublishersPublisherFidFinanceCostImportOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type PostPublishersPublisherFidFinanceCostImportDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the post publishers publisher fid finance cost import default response
-func (o *PostPublishersPublisherFidFinanceCostImportDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this post publishers publisher fid finance cost import default response has a 2xx status code
 func (o *PostPublishersPublisherFidFinanceCostImportDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *PostPublishersPublisherFidFinanceCostImportDefault) IsServerError() boo
 // IsCode returns true when this post publishers publisher fid finance cost import default response a status code equal to that given
 func (o *PostPublishersPublisherFidFinanceCostImportDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the post publishers publisher fid finance cost import default response
+func (o *PostPublishersPublisherFidFinanceCostImportDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PostPublishersPublisherFidFinanceCostImportDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *PostPublishersPublisherFidFinanceCostImportOKBody) ContextValidate(ctx 
 func (o *PostPublishersPublisherFidFinanceCostImportOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("postPublishersPublisherFidFinanceCostImportOK" + "." + "data")

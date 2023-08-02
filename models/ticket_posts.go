@@ -82,6 +82,11 @@ func (m *TicketPosts) contextValidatePosts(ctx context.Context, formats strfmt.R
 	for i := 0; i < len(m.Posts); i++ {
 
 		if m.Posts[i] != nil {
+
+			if swag.IsZero(m.Posts[i]) { // not required
+				return nil
+			}
+
 			if err := m.Posts[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("posts" + "." + strconv.Itoa(i))

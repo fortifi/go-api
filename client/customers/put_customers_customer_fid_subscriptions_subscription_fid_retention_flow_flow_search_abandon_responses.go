@@ -83,6 +83,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSea
 	return code == 200
 }
 
+// Code gets the status code for the put customers customer fid subscriptions subscription fid retention flow flow search abandon o k response
+func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOK) Code() int {
+	return 200
+}
+
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOK) Error() string {
 	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/retentionFlow/{flowSearch}/abandon][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchA
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the put customers customer fid subscriptions subscription fid retention flow flow search abandon default response
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this put customers customer fid subscriptions subscription fid retention flow flow search abandon default response has a 2xx status code
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSea
 // IsCode returns true when this put customers customer fid subscriptions subscription fid retention flow flow search abandon default response a status code equal to that given
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the put customers customer fid subscriptions subscription fid retention flow flow search abandon default response
+func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSea
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("putCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOK" + "." + "data")

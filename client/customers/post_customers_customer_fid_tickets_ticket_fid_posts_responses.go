@@ -83,6 +83,11 @@ func (o *PostCustomersCustomerFidTicketsTicketFidPostsOK) IsCode(code int) bool 
 	return code == 200
 }
 
+// Code gets the status code for the post customers customer fid tickets ticket fid posts o k response
+func (o *PostCustomersCustomerFidTicketsTicketFidPostsOK) Code() int {
+	return 200
+}
+
 func (o *PostCustomersCustomerFidTicketsTicketFidPostsOK) Error() string {
 	return fmt.Sprintf("[POST /customers/{customerFid}/tickets/{ticketFid}/posts][%d] postCustomersCustomerFidTicketsTicketFidPostsOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type PostCustomersCustomerFidTicketsTicketFidPostsDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the post customers customer fid tickets ticket fid posts default response
-func (o *PostCustomersCustomerFidTicketsTicketFidPostsDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this post customers customer fid tickets ticket fid posts default response has a 2xx status code
 func (o *PostCustomersCustomerFidTicketsTicketFidPostsDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *PostCustomersCustomerFidTicketsTicketFidPostsDefault) IsServerError() b
 // IsCode returns true when this post customers customer fid tickets ticket fid posts default response a status code equal to that given
 func (o *PostCustomersCustomerFidTicketsTicketFidPostsDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the post customers customer fid tickets ticket fid posts default response
+func (o *PostCustomersCustomerFidTicketsTicketFidPostsDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PostCustomersCustomerFidTicketsTicketFidPostsDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *PostCustomersCustomerFidTicketsTicketFidPostsOKBody) ContextValidate(ct
 func (o *PostCustomersCustomerFidTicketsTicketFidPostsOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("postCustomersCustomerFidTicketsTicketFidPostsOK" + "." + "data")

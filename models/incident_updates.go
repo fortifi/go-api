@@ -82,6 +82,11 @@ func (m *IncidentUpdates) contextValidateIncidentUpdates(ctx context.Context, fo
 	for i := 0; i < len(m.IncidentUpdates); i++ {
 
 		if m.IncidentUpdates[i] != nil {
+
+			if swag.IsZero(m.IncidentUpdates[i]) { // not required
+				return nil
+			}
+
 			if err := m.IncidentUpdates[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("incidentUpdates" + "." + strconv.Itoa(i))

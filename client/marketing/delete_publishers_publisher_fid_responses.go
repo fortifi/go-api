@@ -79,6 +79,11 @@ func (o *DeletePublishersPublisherFidOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the delete publishers publisher fid o k response
+func (o *DeletePublishersPublisherFidOK) Code() int {
+	return 200
+}
+
 func (o *DeletePublishersPublisherFidOK) Error() string {
 	return fmt.Sprintf("[DELETE /publishers/{publisherFid}][%d] deletePublishersPublisherFidOK ", 200)
 }
@@ -110,11 +115,6 @@ type DeletePublishersPublisherFidDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the delete publishers publisher fid default response
-func (o *DeletePublishersPublisherFidDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this delete publishers publisher fid default response has a 2xx status code
 func (o *DeletePublishersPublisherFidDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *DeletePublishersPublisherFidDefault) IsServerError() bool {
 // IsCode returns true when this delete publishers publisher fid default response a status code equal to that given
 func (o *DeletePublishersPublisherFidDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the delete publishers publisher fid default response
+func (o *DeletePublishersPublisherFidDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DeletePublishersPublisherFidDefault) Error() string {

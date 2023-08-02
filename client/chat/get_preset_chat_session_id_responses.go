@@ -83,6 +83,11 @@ func (o *GetPresetChatSessionIDOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the get preset chat session Id o k response
+func (o *GetPresetChatSessionIDOK) Code() int {
+	return 200
+}
+
 func (o *GetPresetChatSessionIDOK) Error() string {
 	return fmt.Sprintf("[GET /presetChat/{sessionId}][%d] getPresetChatSessionIdOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type GetPresetChatSessionIDDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the get preset chat session ID default response
-func (o *GetPresetChatSessionIDDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this get preset chat session ID default response has a 2xx status code
 func (o *GetPresetChatSessionIDDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *GetPresetChatSessionIDDefault) IsServerError() bool {
 // IsCode returns true when this get preset chat session ID default response a status code equal to that given
 func (o *GetPresetChatSessionIDDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the get preset chat session ID default response
+func (o *GetPresetChatSessionIDDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *GetPresetChatSessionIDDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *GetPresetChatSessionIDOKBody) ContextValidate(ctx context.Context, form
 func (o *GetPresetChatSessionIDOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("getPresetChatSessionIdOK" + "." + "data")

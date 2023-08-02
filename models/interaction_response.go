@@ -20,6 +20,9 @@ type InteractionResponse struct {
 	// agent name
 	AgentName string `json:"agentName,omitempty"`
 
+	// feedback
+	Feedback float64 `json:"feedback,omitempty"`
+
 	// fid
 	Fid string `json:"fid,omitempty"`
 

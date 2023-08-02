@@ -83,6 +83,11 @@ func (o *GetInteractionsInteractionFidOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the get interactions interaction fid o k response
+func (o *GetInteractionsInteractionFidOK) Code() int {
+	return 200
+}
+
 func (o *GetInteractionsInteractionFidOK) Error() string {
 	return fmt.Sprintf("[GET /interactions/{interactionFid}][%d] getInteractionsInteractionFidOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type GetInteractionsInteractionFidDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the get interactions interaction fid default response
-func (o *GetInteractionsInteractionFidDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this get interactions interaction fid default response has a 2xx status code
 func (o *GetInteractionsInteractionFidDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *GetInteractionsInteractionFidDefault) IsServerError() bool {
 // IsCode returns true when this get interactions interaction fid default response a status code equal to that given
 func (o *GetInteractionsInteractionFidDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the get interactions interaction fid default response
+func (o *GetInteractionsInteractionFidDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *GetInteractionsInteractionFidDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *GetInteractionsInteractionFidOKBody) ContextValidate(ctx context.Contex
 func (o *GetInteractionsInteractionFidOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("getInteractionsInteractionFidOK" + "." + "data")

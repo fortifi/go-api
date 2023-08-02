@@ -83,6 +83,11 @@ func (o *PostProductsProductFidAvailabilityCheckOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the post products product fid availability check o k response
+func (o *PostProductsProductFidAvailabilityCheckOK) Code() int {
+	return 200
+}
+
 func (o *PostProductsProductFidAvailabilityCheckOK) Error() string {
 	return fmt.Sprintf("[POST /products/{productFid}/availability/check][%d] postProductsProductFidAvailabilityCheckOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type PostProductsProductFidAvailabilityCheckDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the post products product fid availability check default response
-func (o *PostProductsProductFidAvailabilityCheckDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this post products product fid availability check default response has a 2xx status code
 func (o *PostProductsProductFidAvailabilityCheckDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *PostProductsProductFidAvailabilityCheckDefault) IsServerError() bool {
 // IsCode returns true when this post products product fid availability check default response a status code equal to that given
 func (o *PostProductsProductFidAvailabilityCheckDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the post products product fid availability check default response
+func (o *PostProductsProductFidAvailabilityCheckDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PostProductsProductFidAvailabilityCheckDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *PostProductsProductFidAvailabilityCheckOKBody) ContextValidate(ctx cont
 func (o *PostProductsProductFidAvailabilityCheckOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("postProductsProductFidAvailabilityCheckOK" + "." + "data")

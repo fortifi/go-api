@@ -139,6 +139,11 @@ func (m *Invoices) contextValidateInvoices(ctx context.Context, formats strfmt.R
 	for i := 0; i < len(m.Invoices); i++ {
 
 		if m.Invoices[i] != nil {
+
+			if swag.IsZero(m.Invoices[i]) { // not required
+				return nil
+			}
+
 			if err := m.Invoices[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("invoices" + "." + strconv.Itoa(i))

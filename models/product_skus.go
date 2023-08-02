@@ -82,6 +82,11 @@ func (m *ProductSkus) contextValidateSkus(ctx context.Context, formats strfmt.Re
 	for i := 0; i < len(m.Skus); i++ {
 
 		if m.Skus[i] != nil {
+
+			if swag.IsZero(m.Skus[i]) { // not required
+				return nil
+			}
+
 			if err := m.Skus[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("skus" + "." + strconv.Itoa(i))

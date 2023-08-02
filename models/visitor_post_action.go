@@ -109,6 +109,11 @@ func (m *VisitorPostAction) contextValidatePixels(ctx context.Context, formats s
 	for i := 0; i < len(m.Pixels); i++ {
 
 		if m.Pixels[i] != nil {
+
+			if swag.IsZero(m.Pixels[i]) { // not required
+				return nil
+			}
+
 			if err := m.Pixels[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("pixels" + "." + strconv.Itoa(i))

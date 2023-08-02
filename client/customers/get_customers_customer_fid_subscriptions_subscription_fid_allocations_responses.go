@@ -83,6 +83,11 @@ func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsOK) IsCod
 	return code == 200
 }
 
+// Code gets the status code for the get customers customer fid subscriptions subscription fid allocations o k response
+func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsOK) Code() int {
+	return 200
+}
+
 func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsOK) Error() string {
 	return fmt.Sprintf("[GET /customers/{customerFid}/subscriptions/{subscriptionFid}/allocations][%d] getCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsDefault struc
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the get customers customer fid subscriptions subscription fid allocations default response
-func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this get customers customer fid subscriptions subscription fid allocations default response has a 2xx status code
 func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsDefault) 
 // IsCode returns true when this get customers customer fid subscriptions subscription fid allocations default response a status code equal to that given
 func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the get customers customer fid subscriptions subscription fid allocations default response
+func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsOKBody) C
 func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("getCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsOK" + "." + "data")

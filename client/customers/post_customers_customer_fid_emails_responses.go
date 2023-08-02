@@ -79,6 +79,11 @@ func (o *PostCustomersCustomerFidEmailsOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the post customers customer fid emails o k response
+func (o *PostCustomersCustomerFidEmailsOK) Code() int {
+	return 200
+}
+
 func (o *PostCustomersCustomerFidEmailsOK) Error() string {
 	return fmt.Sprintf("[POST /customers/{customerFid}/emails][%d] postCustomersCustomerFidEmailsOK ", 200)
 }
@@ -110,11 +115,6 @@ type PostCustomersCustomerFidEmailsDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the post customers customer fid emails default response
-func (o *PostCustomersCustomerFidEmailsDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this post customers customer fid emails default response has a 2xx status code
 func (o *PostCustomersCustomerFidEmailsDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PostCustomersCustomerFidEmailsDefault) IsServerError() bool {
 // IsCode returns true when this post customers customer fid emails default response a status code equal to that given
 func (o *PostCustomersCustomerFidEmailsDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the post customers customer fid emails default response
+func (o *PostCustomersCustomerFidEmailsDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PostCustomersCustomerFidEmailsDefault) Error() string {

@@ -139,6 +139,11 @@ func (m *Periods) contextValidatePeriods(ctx context.Context, formats strfmt.Reg
 	for i := 0; i < len(m.Periods); i++ {
 
 		if m.Periods[i] != nil {
+
+			if swag.IsZero(m.Periods[i]) { // not required
+				return nil
+			}
+
 			if err := m.Periods[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("periods" + "." + strconv.Itoa(i))

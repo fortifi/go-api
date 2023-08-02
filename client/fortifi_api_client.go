@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 
 	"github.com/fortifi/go-api/client/account"
+	"github.com/fortifi/go-api/client/accountant"
 	"github.com/fortifi/go-api/client/appstore"
 	"github.com/fortifi/go-api/client/attachment"
 	"github.com/fortifi/go-api/client/authentication"
@@ -83,6 +84,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *FortifiAPI
 	cli := new(FortifiAPI)
 	cli.Transport = transport
 	cli.Account = account.New(transport, formats)
+	cli.Accountant = accountant.New(transport, formats)
 	cli.Appstore = appstore.New(transport, formats)
 	cli.Attachment = attachment.New(transport, formats)
 	cli.Authentication = authentication.New(transport, formats)
@@ -156,6 +158,8 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 type FortifiAPI struct {
 	Account account.ClientService
 
+	Accountant accountant.ClientService
+
 	Appstore appstore.ClientService
 
 	Attachment attachment.ClientService
@@ -217,6 +221,7 @@ type FortifiAPI struct {
 func (c *FortifiAPI) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
 	c.Account.SetTransport(transport)
+	c.Accountant.SetTransport(transport)
 	c.Appstore.SetTransport(transport)
 	c.Attachment.SetTransport(transport)
 	c.Authentication.SetTransport(transport)

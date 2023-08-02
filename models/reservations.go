@@ -82,6 +82,11 @@ func (m *Reservations) contextValidateReservations(ctx context.Context, formats 
 	for i := 0; i < len(m.Reservations); i++ {
 
 		if m.Reservations[i] != nil {
+
+			if swag.IsZero(m.Reservations[i]) { // not required
+				return nil
+			}
+
 			if err := m.Reservations[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("reservations" + "." + strconv.Itoa(i))

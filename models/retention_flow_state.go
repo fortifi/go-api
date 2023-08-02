@@ -244,6 +244,11 @@ func (m *RetentionFlowState) contextValidateChoices(ctx context.Context, formats
 	for i := 0; i < len(m.Choices); i++ {
 
 		if m.Choices[i] != nil {
+
+			if swag.IsZero(m.Choices[i]) { // not required
+				return nil
+			}
+
 			if err := m.Choices[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("choices" + "." + strconv.Itoa(i))
@@ -262,6 +267,11 @@ func (m *RetentionFlowState) contextValidateChoices(ctx context.Context, formats
 func (m *RetentionFlowState) contextValidateStepData(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.StepData != nil {
+
+		if swag.IsZero(m.StepData) { // not required
+			return nil
+		}
+
 		if err := m.StepData.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("stepData")

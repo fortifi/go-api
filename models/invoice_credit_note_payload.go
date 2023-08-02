@@ -111,6 +111,7 @@ func (m *InvoiceCreditNotePayload) ContextValidate(ctx context.Context, formats 
 func (m *InvoiceCreditNotePayload) contextValidateCreditAmountType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.CreditAmountType != nil {
+
 		if err := m.CreditAmountType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("creditAmountType")

@@ -79,6 +79,11 @@ func (o *PutCustomersCustomerFidExternalReferenceOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the put customers customer fid external reference o k response
+func (o *PutCustomersCustomerFidExternalReferenceOK) Code() int {
+	return 200
+}
+
 func (o *PutCustomersCustomerFidExternalReferenceOK) Error() string {
 	return fmt.Sprintf("[PUT /customers/{customerFid}/externalReference][%d] putCustomersCustomerFidExternalReferenceOK ", 200)
 }
@@ -110,11 +115,6 @@ type PutCustomersCustomerFidExternalReferenceDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the put customers customer fid external reference default response
-func (o *PutCustomersCustomerFidExternalReferenceDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this put customers customer fid external reference default response has a 2xx status code
 func (o *PutCustomersCustomerFidExternalReferenceDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PutCustomersCustomerFidExternalReferenceDefault) IsServerError() bool {
 // IsCode returns true when this put customers customer fid external reference default response a status code equal to that given
 func (o *PutCustomersCustomerFidExternalReferenceDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the put customers customer fid external reference default response
+func (o *PutCustomersCustomerFidExternalReferenceDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PutCustomersCustomerFidExternalReferenceDefault) Error() string {

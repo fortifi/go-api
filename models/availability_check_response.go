@@ -88,6 +88,11 @@ func (m *AvailabilityCheckResponse) contextValidateSuggestions(ctx context.Conte
 	for i := 0; i < len(m.Suggestions); i++ {
 
 		if m.Suggestions[i] != nil {
+
+			if swag.IsZero(m.Suggestions[i]) { // not required
+				return nil
+			}
+
 			if err := m.Suggestions[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("suggestions" + "." + strconv.Itoa(i))

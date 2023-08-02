@@ -83,6 +83,11 @@ func (o *GetCustomersCustomerFidOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the get customers customer fid o k response
+func (o *GetCustomersCustomerFidOK) Code() int {
+	return 200
+}
+
 func (o *GetCustomersCustomerFidOK) Error() string {
 	return fmt.Sprintf("[GET /customers/{customerFid}][%d] getCustomersCustomerFidOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type GetCustomersCustomerFidDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the get customers customer fid default response
-func (o *GetCustomersCustomerFidDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this get customers customer fid default response has a 2xx status code
 func (o *GetCustomersCustomerFidDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *GetCustomersCustomerFidDefault) IsServerError() bool {
 // IsCode returns true when this get customers customer fid default response a status code equal to that given
 func (o *GetCustomersCustomerFidDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the get customers customer fid default response
+func (o *GetCustomersCustomerFidDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *GetCustomersCustomerFidDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *GetCustomersCustomerFidOKBody) ContextValidate(ctx context.Context, for
 func (o *GetCustomersCustomerFidOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("getCustomersCustomerFidOK" + "." + "data")

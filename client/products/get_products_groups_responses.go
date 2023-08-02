@@ -83,6 +83,11 @@ func (o *GetProductsGroupsOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the get products groups o k response
+func (o *GetProductsGroupsOK) Code() int {
+	return 200
+}
+
 func (o *GetProductsGroupsOK) Error() string {
 	return fmt.Sprintf("[GET /products/groups][%d] getProductsGroupsOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type GetProductsGroupsDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the get products groups default response
-func (o *GetProductsGroupsDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this get products groups default response has a 2xx status code
 func (o *GetProductsGroupsDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *GetProductsGroupsDefault) IsServerError() bool {
 // IsCode returns true when this get products groups default response a status code equal to that given
 func (o *GetProductsGroupsDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the get products groups default response
+func (o *GetProductsGroupsDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *GetProductsGroupsDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *GetProductsGroupsOKBody) ContextValidate(ctx context.Context, formats s
 func (o *GetProductsGroupsOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("getProductsGroupsOK" + "." + "data")

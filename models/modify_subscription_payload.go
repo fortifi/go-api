@@ -96,6 +96,10 @@ func (m *ModifySubscriptionPayload) ContextValidate(ctx context.Context, formats
 
 func (m *ModifySubscriptionPayload) contextValidateMode(ctx context.Context, formats strfmt.Registry) error {
 
+	if swag.IsZero(m.Mode) { // not required
+		return nil
+	}
+
 	if err := m.Mode.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("mode")

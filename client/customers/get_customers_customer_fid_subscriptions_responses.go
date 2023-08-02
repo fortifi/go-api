@@ -83,6 +83,11 @@ func (o *GetCustomersCustomerFidSubscriptionsOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the get customers customer fid subscriptions o k response
+func (o *GetCustomersCustomerFidSubscriptionsOK) Code() int {
+	return 200
+}
+
 func (o *GetCustomersCustomerFidSubscriptionsOK) Error() string {
 	return fmt.Sprintf("[GET /customers/{customerFid}/subscriptions][%d] getCustomersCustomerFidSubscriptionsOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type GetCustomersCustomerFidSubscriptionsDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the get customers customer fid subscriptions default response
-func (o *GetCustomersCustomerFidSubscriptionsDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this get customers customer fid subscriptions default response has a 2xx status code
 func (o *GetCustomersCustomerFidSubscriptionsDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *GetCustomersCustomerFidSubscriptionsDefault) IsServerError() bool {
 // IsCode returns true when this get customers customer fid subscriptions default response a status code equal to that given
 func (o *GetCustomersCustomerFidSubscriptionsDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the get customers customer fid subscriptions default response
+func (o *GetCustomersCustomerFidSubscriptionsDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *GetCustomersCustomerFidSubscriptionsDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *GetCustomersCustomerFidSubscriptionsOKBody) ContextValidate(ctx context
 func (o *GetCustomersCustomerFidSubscriptionsOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("getCustomersCustomerFidSubscriptionsOK" + "." + "data")

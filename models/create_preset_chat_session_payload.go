@@ -158,6 +158,11 @@ func (m *CreatePresetChatSessionPayload) contextValidateLabels(ctx context.Conte
 	for i := 0; i < len(m.Labels); i++ {
 
 		if m.Labels[i] != nil {
+
+			if swag.IsZero(m.Labels[i]) { // not required
+				return nil
+			}
+
 			if err := m.Labels[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("labels" + "." + strconv.Itoa(i))
@@ -178,6 +183,11 @@ func (m *CreatePresetChatSessionPayload) contextValidateNotes(ctx context.Contex
 	for i := 0; i < len(m.Notes); i++ {
 
 		if m.Notes[i] != nil {
+
+			if swag.IsZero(m.Notes[i]) { // not required
+				return nil
+			}
+
 			if err := m.Notes[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("notes" + "." + strconv.Itoa(i))

@@ -83,6 +83,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelOK) IsCode(cod
 	return code == 200
 }
 
+// Code gets the status code for the put customers customer fid subscriptions subscription fid cancel o k response
+func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelOK) Code() int {
+	return 200
+}
+
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelOK) Error() string {
 	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/cancel][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidCancelOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the put customers customer fid subscriptions subscription fid cancel default response
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this put customers customer fid subscriptions subscription fid cancel default response has a 2xx status code
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelDefault) IsSer
 // IsCode returns true when this put customers customer fid subscriptions subscription fid cancel default response a status code equal to that given
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the put customers customer fid subscriptions subscription fid cancel default response
+func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelOKBody) Contex
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("putCustomersCustomerFidSubscriptionsSubscriptionFidCancelOK" + "." + "data")

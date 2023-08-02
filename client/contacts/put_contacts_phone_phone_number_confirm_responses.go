@@ -79,6 +79,11 @@ func (o *PutContactsPhonePhoneNumberConfirmOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the put contacts phone phone number confirm o k response
+func (o *PutContactsPhonePhoneNumberConfirmOK) Code() int {
+	return 200
+}
+
 func (o *PutContactsPhonePhoneNumberConfirmOK) Error() string {
 	return fmt.Sprintf("[PUT /contacts/phone/{phoneNumber}/confirm][%d] putContactsPhonePhoneNumberConfirmOK ", 200)
 }
@@ -110,11 +115,6 @@ type PutContactsPhonePhoneNumberConfirmDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the put contacts phone phone number confirm default response
-func (o *PutContactsPhonePhoneNumberConfirmDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this put contacts phone phone number confirm default response has a 2xx status code
 func (o *PutContactsPhonePhoneNumberConfirmDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PutContactsPhonePhoneNumberConfirmDefault) IsServerError() bool {
 // IsCode returns true when this put contacts phone phone number confirm default response a status code equal to that given
 func (o *PutContactsPhonePhoneNumberConfirmDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the put contacts phone phone number confirm default response
+func (o *PutContactsPhonePhoneNumberConfirmDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PutContactsPhonePhoneNumberConfirmDefault) Error() string {

@@ -83,6 +83,11 @@ func (o *GetProductsGroupsProductGroupFidProductsOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the get products groups product group fid products o k response
+func (o *GetProductsGroupsProductGroupFidProductsOK) Code() int {
+	return 200
+}
+
 func (o *GetProductsGroupsProductGroupFidProductsOK) Error() string {
 	return fmt.Sprintf("[GET /products/groups/{productGroupFid}/products][%d] getProductsGroupsProductGroupFidProductsOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type GetProductsGroupsProductGroupFidProductsDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the get products groups product group fid products default response
-func (o *GetProductsGroupsProductGroupFidProductsDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this get products groups product group fid products default response has a 2xx status code
 func (o *GetProductsGroupsProductGroupFidProductsDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *GetProductsGroupsProductGroupFidProductsDefault) IsServerError() bool {
 // IsCode returns true when this get products groups product group fid products default response a status code equal to that given
 func (o *GetProductsGroupsProductGroupFidProductsDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the get products groups product group fid products default response
+func (o *GetProductsGroupsProductGroupFidProductsDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *GetProductsGroupsProductGroupFidProductsDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *GetProductsGroupsProductGroupFidProductsOKBody) ContextValidate(ctx con
 func (o *GetProductsGroupsProductGroupFidProductsOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("getProductsGroupsProductGroupFidProductsOK" + "." + "data")

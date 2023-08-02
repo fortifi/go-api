@@ -83,6 +83,11 @@ func (o *GetCustomersFindByEmailOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the get customers find by email o k response
+func (o *GetCustomersFindByEmailOK) Code() int {
+	return 200
+}
+
 func (o *GetCustomersFindByEmailOK) Error() string {
 	return fmt.Sprintf("[GET /customers/findByEmail][%d] getCustomersFindByEmailOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type GetCustomersFindByEmailDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the get customers find by email default response
-func (o *GetCustomersFindByEmailDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this get customers find by email default response has a 2xx status code
 func (o *GetCustomersFindByEmailDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *GetCustomersFindByEmailDefault) IsServerError() bool {
 // IsCode returns true when this get customers find by email default response a status code equal to that given
 func (o *GetCustomersFindByEmailDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the get customers find by email default response
+func (o *GetCustomersFindByEmailDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *GetCustomersFindByEmailDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *GetCustomersFindByEmailOKBody) ContextValidate(ctx context.Context, for
 func (o *GetCustomersFindByEmailOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("getCustomersFindByEmailOK" + "." + "data")

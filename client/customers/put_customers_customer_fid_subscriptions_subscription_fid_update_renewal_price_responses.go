@@ -83,6 +83,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceOK
 	return code == 200
 }
 
+// Code gets the status code for the put customers customer fid subscriptions subscription fid update renewal price o k response
+func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceOK) Code() int {
+	return 200
+}
+
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceOK) Error() string {
 	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/updateRenewalPrice][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceDefaul
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the put customers customer fid subscriptions subscription fid update renewal price default response
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this put customers customer fid subscriptions subscription fid update renewal price default response has a 2xx status code
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceDe
 // IsCode returns true when this put customers customer fid subscriptions subscription fid update renewal price default response a status code equal to that given
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the put customers customer fid subscriptions subscription fid update renewal price default response
+func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceOK
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("putCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceOK" + "." + "data")

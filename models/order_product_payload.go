@@ -147,6 +147,10 @@ func (m *OrderProductPayload) ContextValidate(ctx context.Context, formats strfm
 
 func (m *OrderProductPayload) contextValidateCycleType(ctx context.Context, formats strfmt.Registry) error {
 
+	if swag.IsZero(m.CycleType) { // not required
+		return nil
+	}
+
 	if err := m.CycleType.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("cycleType")
@@ -162,6 +166,11 @@ func (m *OrderProductPayload) contextValidateCycleType(ctx context.Context, form
 func (m *OrderProductPayload) contextValidateProperties(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Properties != nil {
+
+		if swag.IsZero(m.Properties) { // not required
+			return nil
+		}
+
 		if err := m.Properties.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("properties")

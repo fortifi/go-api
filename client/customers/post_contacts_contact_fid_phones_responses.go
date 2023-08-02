@@ -79,6 +79,11 @@ func (o *PostContactsContactFidPhonesOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the post contacts contact fid phones o k response
+func (o *PostContactsContactFidPhonesOK) Code() int {
+	return 200
+}
+
 func (o *PostContactsContactFidPhonesOK) Error() string {
 	return fmt.Sprintf("[POST /contacts/{contactFid}/phones][%d] postContactsContactFidPhonesOK ", 200)
 }
@@ -110,11 +115,6 @@ type PostContactsContactFidPhonesDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the post contacts contact fid phones default response
-func (o *PostContactsContactFidPhonesDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this post contacts contact fid phones default response has a 2xx status code
 func (o *PostContactsContactFidPhonesDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PostContactsContactFidPhonesDefault) IsServerError() bool {
 // IsCode returns true when this post contacts contact fid phones default response a status code equal to that given
 func (o *PostContactsContactFidPhonesDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the post contacts contact fid phones default response
+func (o *PostContactsContactFidPhonesDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PostContactsContactFidPhonesDefault) Error() string {

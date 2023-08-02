@@ -79,6 +79,11 @@ func (o *DeleteDeviceHardwareIDOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the delete device hardware Id o k response
+func (o *DeleteDeviceHardwareIDOK) Code() int {
+	return 200
+}
+
 func (o *DeleteDeviceHardwareIDOK) Error() string {
 	return fmt.Sprintf("[DELETE /device/{hardwareId}][%d] deleteDeviceHardwareIdOK ", 200)
 }
@@ -110,11 +115,6 @@ type DeleteDeviceHardwareIDDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the delete device hardware ID default response
-func (o *DeleteDeviceHardwareIDDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this delete device hardware ID default response has a 2xx status code
 func (o *DeleteDeviceHardwareIDDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *DeleteDeviceHardwareIDDefault) IsServerError() bool {
 // IsCode returns true when this delete device hardware ID default response a status code equal to that given
 func (o *DeleteDeviceHardwareIDDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the delete device hardware ID default response
+func (o *DeleteDeviceHardwareIDDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DeleteDeviceHardwareIDDefault) Error() string {

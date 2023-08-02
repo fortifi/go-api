@@ -139,6 +139,11 @@ func (m *Publishers) contextValidatePublishers(ctx context.Context, formats strf
 	for i := 0; i < len(m.Publishers); i++ {
 
 		if m.Publishers[i] != nil {
+
+			if swag.IsZero(m.Publishers[i]) { // not required
+				return nil
+			}
+
 			if err := m.Publishers[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("publishers" + "." + strconv.Itoa(i))

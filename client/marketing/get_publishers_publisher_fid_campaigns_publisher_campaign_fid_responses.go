@@ -83,6 +83,11 @@ func (o *GetPublishersPublisherFidCampaignsPublisherCampaignFidOK) IsCode(code i
 	return code == 200
 }
 
+// Code gets the status code for the get publishers publisher fid campaigns publisher campaign fid o k response
+func (o *GetPublishersPublisherFidCampaignsPublisherCampaignFidOK) Code() int {
+	return 200
+}
+
 func (o *GetPublishersPublisherFidCampaignsPublisherCampaignFidOK) Error() string {
 	return fmt.Sprintf("[GET /publishers/{publisherFid}/campaigns/{publisherCampaignFid}][%d] getPublishersPublisherFidCampaignsPublisherCampaignFidOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type GetPublishersPublisherFidCampaignsPublisherCampaignFidDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the get publishers publisher fid campaigns publisher campaign fid default response
-func (o *GetPublishersPublisherFidCampaignsPublisherCampaignFidDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this get publishers publisher fid campaigns publisher campaign fid default response has a 2xx status code
 func (o *GetPublishersPublisherFidCampaignsPublisherCampaignFidDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *GetPublishersPublisherFidCampaignsPublisherCampaignFidDefault) IsServer
 // IsCode returns true when this get publishers publisher fid campaigns publisher campaign fid default response a status code equal to that given
 func (o *GetPublishersPublisherFidCampaignsPublisherCampaignFidDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the get publishers publisher fid campaigns publisher campaign fid default response
+func (o *GetPublishersPublisherFidCampaignsPublisherCampaignFidDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *GetPublishersPublisherFidCampaignsPublisherCampaignFidDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *GetPublishersPublisherFidCampaignsPublisherCampaignFidOKBody) ContextVa
 func (o *GetPublishersPublisherFidCampaignsPublisherCampaignFidOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("getPublishersPublisherFidCampaignsPublisherCampaignFidOK" + "." + "data")

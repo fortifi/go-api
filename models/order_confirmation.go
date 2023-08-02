@@ -78,6 +78,10 @@ func (m *OrderConfirmation) ContextValidate(ctx context.Context, formats strfmt.
 
 func (m *OrderConfirmation) contextValidatePaymentMode(ctx context.Context, formats strfmt.Registry) error {
 
+	if swag.IsZero(m.PaymentMode) { // not required
+		return nil
+	}
+
 	if err := m.PaymentMode.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("paymentMode")

@@ -83,6 +83,11 @@ func (o *PostCustomersOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the post customers o k response
+func (o *PostCustomersOK) Code() int {
+	return 200
+}
+
 func (o *PostCustomersOK) Error() string {
 	return fmt.Sprintf("[POST /customers][%d] postCustomersOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type PostCustomersDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the post customers default response
-func (o *PostCustomersDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this post customers default response has a 2xx status code
 func (o *PostCustomersDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *PostCustomersDefault) IsServerError() bool {
 // IsCode returns true when this post customers default response a status code equal to that given
 func (o *PostCustomersDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the post customers default response
+func (o *PostCustomersDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PostCustomersDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *PostCustomersOKBody) ContextValidate(ctx context.Context, formats strfm
 func (o *PostCustomersOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("postCustomersOK" + "." + "data")

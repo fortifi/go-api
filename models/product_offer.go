@@ -329,6 +329,10 @@ func (m *ProductOffer) ContextValidate(ctx context.Context, formats strfmt.Regis
 
 func (m *ProductOffer) contextValidateDiscountType(ctx context.Context, formats strfmt.Registry) error {
 
+	if swag.IsZero(m.DiscountType) { // not required
+		return nil
+	}
+
 	if err := m.DiscountType.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("discountType")
@@ -343,6 +347,10 @@ func (m *ProductOffer) contextValidateDiscountType(ctx context.Context, formats 
 
 func (m *ProductOffer) contextValidateSetupDiscountType(ctx context.Context, formats strfmt.Registry) error {
 
+	if swag.IsZero(m.SetupDiscountType) { // not required
+		return nil
+	}
+
 	if err := m.SetupDiscountType.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("setupDiscountType")
@@ -356,6 +364,10 @@ func (m *ProductOffer) contextValidateSetupDiscountType(ctx context.Context, for
 }
 
 func (m *ProductOffer) contextValidateTermType(ctx context.Context, formats strfmt.Registry) error {
+
+	if swag.IsZero(m.TermType) { // not required
+		return nil
+	}
 
 	if err := m.TermType.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {

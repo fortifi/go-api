@@ -23,6 +23,9 @@ type InvoiceItem struct {
 	// product fid
 	ProductFid string `json:"productFid,omitempty"`
 
+	// purchase fid
+	PurchaseFid string `json:"purchaseFid,omitempty"`
+
 	// sub items
 	SubItems []*InvoiceSubItem `json:"subItems"`
 
@@ -43,6 +46,8 @@ func (m *InvoiceItem) UnmarshalJSON(raw []byte) error {
 	var dataAO1 struct {
 		ProductFid string `json:"productFid,omitempty"`
 
+		PurchaseFid string `json:"purchaseFid,omitempty"`
+
 		SubItems []*InvoiceSubItem `json:"subItems"`
 
 		TotalAmount float32 `json:"totalAmount,omitempty"`
@@ -52,6 +57,8 @@ func (m *InvoiceItem) UnmarshalJSON(raw []byte) error {
 	}
 
 	m.ProductFid = dataAO1.ProductFid
+
+	m.PurchaseFid = dataAO1.PurchaseFid
 
 	m.SubItems = dataAO1.SubItems
 
@@ -72,12 +79,16 @@ func (m InvoiceItem) MarshalJSON() ([]byte, error) {
 	var dataAO1 struct {
 		ProductFid string `json:"productFid,omitempty"`
 
+		PurchaseFid string `json:"purchaseFid,omitempty"`
+
 		SubItems []*InvoiceSubItem `json:"subItems"`
 
 		TotalAmount float32 `json:"totalAmount,omitempty"`
 	}
 
 	dataAO1.ProductFid = m.ProductFid
+
+	dataAO1.PurchaseFid = m.PurchaseFid
 
 	dataAO1.SubItems = m.SubItems
 
@@ -161,6 +172,11 @@ func (m *InvoiceItem) contextValidateSubItems(ctx context.Context, formats strfm
 	for i := 0; i < len(m.SubItems); i++ {
 
 		if m.SubItems[i] != nil {
+
+			if swag.IsZero(m.SubItems[i]) { // not required
+				return nil
+			}
+
 			if err := m.SubItems[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("subItems" + "." + strconv.Itoa(i))

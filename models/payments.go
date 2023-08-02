@@ -82,6 +82,11 @@ func (m *Payments) contextValidatePayments(ctx context.Context, formats strfmt.R
 	for i := 0; i < len(m.Payments); i++ {
 
 		if m.Payments[i] != nil {
+
+			if swag.IsZero(m.Payments[i]) { // not required
+				return nil
+			}
+
 			if err := m.Payments[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("payments" + "." + strconv.Itoa(i))

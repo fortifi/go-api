@@ -83,6 +83,11 @@ func (o *GetContactsFindByReferenceContactReferenceOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the get contacts find by reference contact reference o k response
+func (o *GetContactsFindByReferenceContactReferenceOK) Code() int {
+	return 200
+}
+
 func (o *GetContactsFindByReferenceContactReferenceOK) Error() string {
 	return fmt.Sprintf("[GET /contacts/findByReference/{contactReference}][%d] getContactsFindByReferenceContactReferenceOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type GetContactsFindByReferenceContactReferenceDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the get contacts find by reference contact reference default response
-func (o *GetContactsFindByReferenceContactReferenceDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this get contacts find by reference contact reference default response has a 2xx status code
 func (o *GetContactsFindByReferenceContactReferenceDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *GetContactsFindByReferenceContactReferenceDefault) IsServerError() bool
 // IsCode returns true when this get contacts find by reference contact reference default response a status code equal to that given
 func (o *GetContactsFindByReferenceContactReferenceDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the get contacts find by reference contact reference default response
+func (o *GetContactsFindByReferenceContactReferenceDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *GetContactsFindByReferenceContactReferenceDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *GetContactsFindByReferenceContactReferenceOKBody) ContextValidate(ctx c
 func (o *GetContactsFindByReferenceContactReferenceOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("getContactsFindByReferenceContactReferenceOK" + "." + "data")

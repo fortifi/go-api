@@ -79,6 +79,11 @@ func (o *PutCustomersCustomerFidLifecycleStageOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the put customers customer fid lifecycle stage o k response
+func (o *PutCustomersCustomerFidLifecycleStageOK) Code() int {
+	return 200
+}
+
 func (o *PutCustomersCustomerFidLifecycleStageOK) Error() string {
 	return fmt.Sprintf("[PUT /customers/{customerFid}/lifecycleStage][%d] putCustomersCustomerFidLifecycleStageOK ", 200)
 }
@@ -110,11 +115,6 @@ type PutCustomersCustomerFidLifecycleStageDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the put customers customer fid lifecycle stage default response
-func (o *PutCustomersCustomerFidLifecycleStageDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this put customers customer fid lifecycle stage default response has a 2xx status code
 func (o *PutCustomersCustomerFidLifecycleStageDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PutCustomersCustomerFidLifecycleStageDefault) IsServerError() bool {
 // IsCode returns true when this put customers customer fid lifecycle stage default response a status code equal to that given
 func (o *PutCustomersCustomerFidLifecycleStageDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the put customers customer fid lifecycle stage default response
+func (o *PutCustomersCustomerFidLifecycleStageDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PutCustomersCustomerFidLifecycleStageDefault) Error() string {

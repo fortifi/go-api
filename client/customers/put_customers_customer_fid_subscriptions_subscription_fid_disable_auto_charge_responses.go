@@ -79,6 +79,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeOK)
 	return code == 200
 }
 
+// Code gets the status code for the put customers customer fid subscriptions subscription fid disable auto charge o k response
+func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeOK) Code() int {
+	return 200
+}
+
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeOK) Error() string {
 	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/disableAutoCharge][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeOK ", 200)
 }
@@ -110,11 +115,6 @@ type PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeDefault
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the put customers customer fid subscriptions subscription fid disable auto charge default response
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this put customers customer fid subscriptions subscription fid disable auto charge default response has a 2xx status code
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeDef
 // IsCode returns true when this put customers customer fid subscriptions subscription fid disable auto charge default response a status code equal to that given
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the put customers customer fid subscriptions subscription fid disable auto charge default response
+func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeDefault) Error() string {

@@ -79,6 +79,11 @@ func (o *PostCustomersCustomerFidPaymentMethodsPaypalCompleteOK) IsCode(code int
 	return code == 200
 }
 
+// Code gets the status code for the post customers customer fid payment methods paypal complete o k response
+func (o *PostCustomersCustomerFidPaymentMethodsPaypalCompleteOK) Code() int {
+	return 200
+}
+
 func (o *PostCustomersCustomerFidPaymentMethodsPaypalCompleteOK) Error() string {
 	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/paypal/complete][%d] postCustomersCustomerFidPaymentMethodsPaypalCompleteOK ", 200)
 }
@@ -110,11 +115,6 @@ type PostCustomersCustomerFidPaymentMethodsPaypalCompleteDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the post customers customer fid payment methods paypal complete default response
-func (o *PostCustomersCustomerFidPaymentMethodsPaypalCompleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this post customers customer fid payment methods paypal complete default response has a 2xx status code
 func (o *PostCustomersCustomerFidPaymentMethodsPaypalCompleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PostCustomersCustomerFidPaymentMethodsPaypalCompleteDefault) IsServerEr
 // IsCode returns true when this post customers customer fid payment methods paypal complete default response a status code equal to that given
 func (o *PostCustomersCustomerFidPaymentMethodsPaypalCompleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the post customers customer fid payment methods paypal complete default response
+func (o *PostCustomersCustomerFidPaymentMethodsPaypalCompleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsPaypalCompleteDefault) Error() string {

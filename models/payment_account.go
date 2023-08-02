@@ -222,6 +222,10 @@ func (m *PaymentAccount) ContextValidate(ctx context.Context, formats strfmt.Reg
 
 func (m *PaymentAccount) contextValidateAccountType(ctx context.Context, formats strfmt.Registry) error {
 
+	if swag.IsZero(m.AccountType) { // not required
+		return nil
+	}
+
 	if err := m.AccountType.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("accountType")
@@ -236,6 +240,10 @@ func (m *PaymentAccount) contextValidateAccountType(ctx context.Context, formats
 
 func (m *PaymentAccount) contextValidatePaymentMethod(ctx context.Context, formats strfmt.Registry) error {
 
+	if swag.IsZero(m.PaymentMethod) { // not required
+		return nil
+	}
+
 	if err := m.PaymentMethod.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("paymentMethod")
@@ -249,6 +257,10 @@ func (m *PaymentAccount) contextValidatePaymentMethod(ctx context.Context, forma
 }
 
 func (m *PaymentAccount) contextValidatePaymentMode(ctx context.Context, formats strfmt.Registry) error {
+
+	if swag.IsZero(m.PaymentMode) { // not required
+		return nil
+	}
 
 	if err := m.PaymentMode.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {

@@ -79,6 +79,11 @@ func (o *PutOrdersOrderFidProductsOrderProductFidSetInitialTermOK) IsCode(code i
 	return code == 200
 }
 
+// Code gets the status code for the put orders order fid products order product fid set initial term o k response
+func (o *PutOrdersOrderFidProductsOrderProductFidSetInitialTermOK) Code() int {
+	return 200
+}
+
 func (o *PutOrdersOrderFidProductsOrderProductFidSetInitialTermOK) Error() string {
 	return fmt.Sprintf("[PUT /orders/{orderFid}/products/{orderProductFid}/setInitialTerm][%d] putOrdersOrderFidProductsOrderProductFidSetInitialTermOK ", 200)
 }
@@ -110,11 +115,6 @@ type PutOrdersOrderFidProductsOrderProductFidSetInitialTermDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the put orders order fid products order product fid set initial term default response
-func (o *PutOrdersOrderFidProductsOrderProductFidSetInitialTermDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this put orders order fid products order product fid set initial term default response has a 2xx status code
 func (o *PutOrdersOrderFidProductsOrderProductFidSetInitialTermDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PutOrdersOrderFidProductsOrderProductFidSetInitialTermDefault) IsServer
 // IsCode returns true when this put orders order fid products order product fid set initial term default response a status code equal to that given
 func (o *PutOrdersOrderFidProductsOrderProductFidSetInitialTermDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the put orders order fid products order product fid set initial term default response
+func (o *PutOrdersOrderFidProductsOrderProductFidSetInitialTermDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PutOrdersOrderFidProductsOrderProductFidSetInitialTermDefault) Error() string {

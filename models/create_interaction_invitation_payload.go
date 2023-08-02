@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	"strconv"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -19,14 +20,35 @@ import (
 type CreateInteractionInvitationPayload struct {
 	StartInteractionPayload
 
+	// context
+	Context interface{} `json:"context,omitempty"`
+
 	// earliest start time
 	EarliestStartTime string `json:"earliestStartTime,omitempty"`
+
+	// edges
+	Edges string `json:"edges,omitempty"`
 
 	// expiry time
 	ExpiryTime string `json:"expiryTime,omitempty"`
 
+	// initial message
+	InitialMessage string `json:"initialMessage,omitempty"`
+
+	// journey tracking fid
+	JourneyTrackingFid string `json:"journeyTrackingFid,omitempty"`
+
+	// language
+	Language string `json:"language,omitempty"`
+
+	// notes
+	Notes []*KeyValuePayload `json:"notes"`
+
 	// topic
 	Topic string `json:"topic,omitempty"`
+
+	// verification fid
+	VerificationFid string `json:"verificationFid,omitempty"`
 }
 
 // UnmarshalJSON unmarshals this object from a JSON structure
@@ -40,21 +62,49 @@ func (m *CreateInteractionInvitationPayload) UnmarshalJSON(raw []byte) error {
 
 	// AO1
 	var dataAO1 struct {
+		Context interface{} `json:"context,omitempty"`
+
 		EarliestStartTime string `json:"earliestStartTime,omitempty"`
+
+		Edges string `json:"edges,omitempty"`
 
 		ExpiryTime string `json:"expiryTime,omitempty"`
 
+		InitialMessage string `json:"initialMessage,omitempty"`
+
+		JourneyTrackingFid string `json:"journeyTrackingFid,omitempty"`
+
+		Language string `json:"language,omitempty"`
+
+		Notes []*KeyValuePayload `json:"notes"`
+
 		Topic string `json:"topic,omitempty"`
+
+		VerificationFid string `json:"verificationFid,omitempty"`
 	}
 	if err := swag.ReadJSON(raw, &dataAO1); err != nil {
 		return err
 	}
 
+	m.Context = dataAO1.Context
+
 	m.EarliestStartTime = dataAO1.EarliestStartTime
+
+	m.Edges = dataAO1.Edges
 
 	m.ExpiryTime = dataAO1.ExpiryTime
 
+	m.InitialMessage = dataAO1.InitialMessage
+
+	m.JourneyTrackingFid = dataAO1.JourneyTrackingFid
+
+	m.Language = dataAO1.Language
+
+	m.Notes = dataAO1.Notes
+
 	m.Topic = dataAO1.Topic
+
+	m.VerificationFid = dataAO1.VerificationFid
 
 	return nil
 }
@@ -69,18 +119,46 @@ func (m CreateInteractionInvitationPayload) MarshalJSON() ([]byte, error) {
 	}
 	_parts = append(_parts, aO0)
 	var dataAO1 struct {
+		Context interface{} `json:"context,omitempty"`
+
 		EarliestStartTime string `json:"earliestStartTime,omitempty"`
+
+		Edges string `json:"edges,omitempty"`
 
 		ExpiryTime string `json:"expiryTime,omitempty"`
 
+		InitialMessage string `json:"initialMessage,omitempty"`
+
+		JourneyTrackingFid string `json:"journeyTrackingFid,omitempty"`
+
+		Language string `json:"language,omitempty"`
+
+		Notes []*KeyValuePayload `json:"notes"`
+
 		Topic string `json:"topic,omitempty"`
+
+		VerificationFid string `json:"verificationFid,omitempty"`
 	}
+
+	dataAO1.Context = m.Context
 
 	dataAO1.EarliestStartTime = m.EarliestStartTime
 
+	dataAO1.Edges = m.Edges
+
 	dataAO1.ExpiryTime = m.ExpiryTime
 
+	dataAO1.InitialMessage = m.InitialMessage
+
+	dataAO1.JourneyTrackingFid = m.JourneyTrackingFid
+
+	dataAO1.Language = m.Language
+
+	dataAO1.Notes = m.Notes
+
 	dataAO1.Topic = m.Topic
+
+	dataAO1.VerificationFid = m.VerificationFid
 
 	jsonDataAO1, errAO1 := swag.WriteJSON(dataAO1)
 	if errAO1 != nil {
@@ -99,9 +177,40 @@ func (m *CreateInteractionInvitationPayload) Validate(formats strfmt.Registry) e
 		res = append(res, err)
 	}
 
+	if err := m.validateNotes(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *CreateInteractionInvitationPayload) validateNotes(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Notes) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Notes); i++ {
+		if swag.IsZero(m.Notes[i]) { // not required
+			continue
+		}
+
+		if m.Notes[i] != nil {
+			if err := m.Notes[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("notes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("notes" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
 	return nil
 }
 
@@ -114,9 +223,38 @@ func (m *CreateInteractionInvitationPayload) ContextValidate(ctx context.Context
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateNotes(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *CreateInteractionInvitationPayload) contextValidateNotes(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Notes); i++ {
+
+		if m.Notes[i] != nil {
+
+			if swag.IsZero(m.Notes[i]) { // not required
+				return nil
+			}
+
+			if err := m.Notes[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("notes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("notes" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
 	return nil
 }
 

@@ -79,6 +79,11 @@ func (o *PostEntitiesEntityFidEventsOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the post entities entity fid events o k response
+func (o *PostEntitiesEntityFidEventsOK) Code() int {
+	return 200
+}
+
 func (o *PostEntitiesEntityFidEventsOK) Error() string {
 	return fmt.Sprintf("[POST /entities/{entityFid}/events][%d] postEntitiesEntityFidEventsOK ", 200)
 }
@@ -110,11 +115,6 @@ type PostEntitiesEntityFidEventsDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the post entities entity fid events default response
-func (o *PostEntitiesEntityFidEventsDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this post entities entity fid events default response has a 2xx status code
 func (o *PostEntitiesEntityFidEventsDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PostEntitiesEntityFidEventsDefault) IsServerError() bool {
 // IsCode returns true when this post entities entity fid events default response a status code equal to that given
 func (o *PostEntitiesEntityFidEventsDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the post entities entity fid events default response
+func (o *PostEntitiesEntityFidEventsDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PostEntitiesEntityFidEventsDefault) Error() string {

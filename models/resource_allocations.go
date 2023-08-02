@@ -139,6 +139,11 @@ func (m *ResourceAllocations) contextValidateAllocations(ctx context.Context, fo
 	for i := 0; i < len(m.Allocations); i++ {
 
 		if m.Allocations[i] != nil {
+
+			if swag.IsZero(m.Allocations[i]) { // not required
+				return nil
+			}
+
 			if err := m.Allocations[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("allocations" + "." + strconv.Itoa(i))

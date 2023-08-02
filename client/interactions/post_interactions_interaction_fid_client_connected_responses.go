@@ -80,6 +80,11 @@ func (o *PostInteractionsInteractionFidClientConnectedOK) IsCode(code int) bool 
 	return code == 200
 }
 
+// Code gets the status code for the post interactions interaction fid client connected o k response
+func (o *PostInteractionsInteractionFidClientConnectedOK) Code() int {
+	return 200
+}
+
 func (o *PostInteractionsInteractionFidClientConnectedOK) Error() string {
 	return fmt.Sprintf("[POST /interactions/{interactionFid}/client/connected][%d] postInteractionsInteractionFidClientConnectedOK  %+v", 200, o.Payload)
 }
@@ -122,11 +127,6 @@ type PostInteractionsInteractionFidClientConnectedDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the post interactions interaction fid client connected default response
-func (o *PostInteractionsInteractionFidClientConnectedDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this post interactions interaction fid client connected default response has a 2xx status code
 func (o *PostInteractionsInteractionFidClientConnectedDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -150,6 +150,11 @@ func (o *PostInteractionsInteractionFidClientConnectedDefault) IsServerError() b
 // IsCode returns true when this post interactions interaction fid client connected default response a status code equal to that given
 func (o *PostInteractionsInteractionFidClientConnectedDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the post interactions interaction fid client connected default response
+func (o *PostInteractionsInteractionFidClientConnectedDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PostInteractionsInteractionFidClientConnectedDefault) Error() string {

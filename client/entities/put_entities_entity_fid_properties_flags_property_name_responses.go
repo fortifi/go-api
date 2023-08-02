@@ -79,6 +79,11 @@ func (o *PutEntitiesEntityFidPropertiesFlagsPropertyNameOK) IsCode(code int) boo
 	return code == 200
 }
 
+// Code gets the status code for the put entities entity fid properties flags property name o k response
+func (o *PutEntitiesEntityFidPropertiesFlagsPropertyNameOK) Code() int {
+	return 200
+}
+
 func (o *PutEntitiesEntityFidPropertiesFlagsPropertyNameOK) Error() string {
 	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/flags/{propertyName}][%d] putEntitiesEntityFidPropertiesFlagsPropertyNameOK ", 200)
 }
@@ -110,11 +115,6 @@ type PutEntitiesEntityFidPropertiesFlagsPropertyNameDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the put entities entity fid properties flags property name default response
-func (o *PutEntitiesEntityFidPropertiesFlagsPropertyNameDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this put entities entity fid properties flags property name default response has a 2xx status code
 func (o *PutEntitiesEntityFidPropertiesFlagsPropertyNameDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PutEntitiesEntityFidPropertiesFlagsPropertyNameDefault) IsServerError()
 // IsCode returns true when this put entities entity fid properties flags property name default response a status code equal to that given
 func (o *PutEntitiesEntityFidPropertiesFlagsPropertyNameDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the put entities entity fid properties flags property name default response
+func (o *PutEntitiesEntityFidPropertiesFlagsPropertyNameDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PutEntitiesEntityFidPropertiesFlagsPropertyNameDefault) Error() string {

@@ -83,6 +83,11 @@ func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearc
 	return code == 200
 }
 
+// Code gets the status code for the post customers customer fid subscriptions subscription fid cancel flow flow search options o k response
+func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsOK) Code() int {
+	return 200
+}
+
 func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsOK) Error() string {
 	return fmt.Sprintf("[POST /customers/{customerFid}/subscriptions/{subscriptionFid}/cancelFlow/{flowSearch}/options][%d] postCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOpt
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the post customers customer fid subscriptions subscription fid cancel flow flow search options default response
-func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this post customers customer fid subscriptions subscription fid cancel flow flow search options default response has a 2xx status code
 func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearc
 // IsCode returns true when this post customers customer fid subscriptions subscription fid cancel flow flow search options default response a status code equal to that given
 func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the post customers customer fid subscriptions subscription fid cancel flow flow search options default response
+func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearc
 func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("postCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsOK" + "." + "data")

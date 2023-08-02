@@ -79,6 +79,11 @@ func (o *PutCustomersCustomerFidAccountStatusOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the put customers customer fid account status o k response
+func (o *PutCustomersCustomerFidAccountStatusOK) Code() int {
+	return 200
+}
+
 func (o *PutCustomersCustomerFidAccountStatusOK) Error() string {
 	return fmt.Sprintf("[PUT /customers/{customerFid}/accountStatus][%d] putCustomersCustomerFidAccountStatusOK ", 200)
 }
@@ -110,11 +115,6 @@ type PutCustomersCustomerFidAccountStatusDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the put customers customer fid account status default response
-func (o *PutCustomersCustomerFidAccountStatusDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this put customers customer fid account status default response has a 2xx status code
 func (o *PutCustomersCustomerFidAccountStatusDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PutCustomersCustomerFidAccountStatusDefault) IsServerError() bool {
 // IsCode returns true when this put customers customer fid account status default response a status code equal to that given
 func (o *PutCustomersCustomerFidAccountStatusDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the put customers customer fid account status default response
+func (o *PutCustomersCustomerFidAccountStatusDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PutCustomersCustomerFidAccountStatusDefault) Error() string {

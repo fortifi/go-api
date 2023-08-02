@@ -239,6 +239,11 @@ func (m *Product) ContextValidate(ctx context.Context, formats strfmt.Registry) 
 func (m *Product) contextValidateDefaultPrice(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.DefaultPrice != nil {
+
+		if swag.IsZero(m.DefaultPrice) { // not required
+			return nil
+		}
+
 		if err := m.DefaultPrice.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("defaultPrice")

@@ -193,6 +193,11 @@ func (m *PropertyBulkSetPayload) contextValidateDecrementCounters(ctx context.Co
 	for i := 0; i < len(m.DecrementCounters); i++ {
 
 		if m.DecrementCounters[i] != nil {
+
+			if swag.IsZero(m.DecrementCounters[i]) { // not required
+				return nil
+			}
+
 			if err := m.DecrementCounters[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("decrementCounters" + "." + strconv.Itoa(i))
@@ -213,6 +218,11 @@ func (m *PropertyBulkSetPayload) contextValidateFlags(ctx context.Context, forma
 	for i := 0; i < len(m.Flags); i++ {
 
 		if m.Flags[i] != nil {
+
+			if swag.IsZero(m.Flags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Flags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("flags" + "." + strconv.Itoa(i))
@@ -233,6 +243,11 @@ func (m *PropertyBulkSetPayload) contextValidateIncrementCounters(ctx context.Co
 	for i := 0; i < len(m.IncrementCounters); i++ {
 
 		if m.IncrementCounters[i] != nil {
+
+			if swag.IsZero(m.IncrementCounters[i]) { // not required
+				return nil
+			}
+
 			if err := m.IncrementCounters[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("incrementCounters" + "." + strconv.Itoa(i))
@@ -253,6 +268,11 @@ func (m *PropertyBulkSetPayload) contextValidateValues(ctx context.Context, form
 	for i := 0; i < len(m.Values); i++ {
 
 		if m.Values[i] != nil {
+
+			if swag.IsZero(m.Values[i]) { // not required
+				return nil
+			}
+
 			if err := m.Values[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("values" + "." + strconv.Itoa(i))

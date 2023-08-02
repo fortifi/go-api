@@ -230,6 +230,10 @@ func (m *CreateCustomerPayload) ContextValidate(ctx context.Context, formats str
 
 func (m *CreateCustomerPayload) contextValidateAccountStatus(ctx context.Context, formats strfmt.Registry) error {
 
+	if swag.IsZero(m.AccountStatus) { // not required
+		return nil
+	}
+
 	if err := m.AccountStatus.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("accountStatus")
@@ -243,6 +247,10 @@ func (m *CreateCustomerPayload) contextValidateAccountStatus(ctx context.Context
 }
 
 func (m *CreateCustomerPayload) contextValidateAccountType(ctx context.Context, formats strfmt.Registry) error {
+
+	if swag.IsZero(m.AccountType) { // not required
+		return nil
+	}
 
 	if err := m.AccountType.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -258,6 +266,10 @@ func (m *CreateCustomerPayload) contextValidateAccountType(ctx context.Context, 
 
 func (m *CreateCustomerPayload) contextValidateLifecycle(ctx context.Context, formats strfmt.Registry) error {
 
+	if swag.IsZero(m.Lifecycle) { // not required
+		return nil
+	}
+
 	if err := m.Lifecycle.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("lifecycle")
@@ -271,6 +283,10 @@ func (m *CreateCustomerPayload) contextValidateLifecycle(ctx context.Context, fo
 }
 
 func (m *CreateCustomerPayload) contextValidateSubscriptionType(ctx context.Context, formats strfmt.Registry) error {
+
+	if swag.IsZero(m.SubscriptionType) { // not required
+		return nil
+	}
 
 	if err := m.SubscriptionType.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {

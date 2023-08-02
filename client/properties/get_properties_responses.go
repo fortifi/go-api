@@ -83,6 +83,11 @@ func (o *GetPropertiesOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the get properties o k response
+func (o *GetPropertiesOK) Code() int {
+	return 200
+}
+
 func (o *GetPropertiesOK) Error() string {
 	return fmt.Sprintf("[GET /properties][%d] getPropertiesOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type GetPropertiesDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the get properties default response
-func (o *GetPropertiesDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this get properties default response has a 2xx status code
 func (o *GetPropertiesDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *GetPropertiesDefault) IsServerError() bool {
 // IsCode returns true when this get properties default response a status code equal to that given
 func (o *GetPropertiesDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the get properties default response
+func (o *GetPropertiesDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *GetPropertiesDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *GetPropertiesOKBody) ContextValidate(ctx context.Context, formats strfm
 func (o *GetPropertiesOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("getPropertiesOK" + "." + "data")

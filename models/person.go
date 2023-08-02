@@ -372,6 +372,11 @@ func (m *Person) ContextValidate(ctx context.Context, formats strfmt.Registry) e
 func (m *Person) contextValidateAddresses(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Addresses != nil {
+
+		if swag.IsZero(m.Addresses) { // not required
+			return nil
+		}
+
 		if err := m.Addresses.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("addresses")
@@ -388,6 +393,11 @@ func (m *Person) contextValidateAddresses(ctx context.Context, formats strfmt.Re
 func (m *Person) contextValidateEmails(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Emails != nil {
+
+		if swag.IsZero(m.Emails) { // not required
+			return nil
+		}
+
 		if err := m.Emails.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("emails")
@@ -404,6 +414,11 @@ func (m *Person) contextValidateEmails(ctx context.Context, formats strfmt.Regis
 func (m *Person) contextValidatePhones(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Phones != nil {
+
+		if swag.IsZero(m.Phones) { // not required
+			return nil
+		}
+
 		if err := m.Phones.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("phones")

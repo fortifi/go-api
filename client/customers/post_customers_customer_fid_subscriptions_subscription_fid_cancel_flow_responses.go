@@ -83,6 +83,11 @@ func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK) IsCod
 	return code == 200
 }
 
+// Code gets the status code for the post customers customer fid subscriptions subscription fid cancel flow o k response
+func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK) Code() int {
+	return 200
+}
+
 func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK) Error() string {
 	return fmt.Sprintf("[POST /customers/{customerFid}/subscriptions/{subscriptionFid}/cancelFlow][%d] postCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowDefault struc
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the post customers customer fid subscriptions subscription fid cancel flow default response
-func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this post customers customer fid subscriptions subscription fid cancel flow default response has a 2xx status code
 func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowDefault) 
 // IsCode returns true when this post customers customer fid subscriptions subscription fid cancel flow default response a status code equal to that given
 func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the post customers customer fid subscriptions subscription fid cancel flow default response
+func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOKBody) C
 func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("postCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK" + "." + "data")

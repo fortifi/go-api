@@ -140,6 +140,11 @@ func (m *Email) ContextValidate(ctx context.Context, formats strfmt.Registry) er
 func (m *Email) contextValidateMessageGroups(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.MessageGroups != nil {
+
+		if swag.IsZero(m.MessageGroups) { // not required
+			return nil
+		}
+
 		if err := m.MessageGroups.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("messageGroups")

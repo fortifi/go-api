@@ -69,6 +69,10 @@ func (m *SetAccountStatusPayload) ContextValidate(ctx context.Context, formats s
 
 func (m *SetAccountStatusPayload) contextValidateAccountStatus(ctx context.Context, formats strfmt.Registry) error {
 
+	if swag.IsZero(m.AccountStatus) { // not required
+		return nil
+	}
+
 	if err := m.AccountStatus.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("accountStatus")

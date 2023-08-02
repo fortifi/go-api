@@ -83,6 +83,11 @@ func (o *GetVersionOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the get version o k response
+func (o *GetVersionOK) Code() int {
+	return 200
+}
+
 func (o *GetVersionOK) Error() string {
 	return fmt.Sprintf("[GET /version][%d] getVersionOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type GetVersionDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the get version default response
-func (o *GetVersionDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this get version default response has a 2xx status code
 func (o *GetVersionDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *GetVersionDefault) IsServerError() bool {
 // IsCode returns true when this get version default response a status code equal to that given
 func (o *GetVersionDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the get version default response
+func (o *GetVersionDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *GetVersionDefault) Error() string {

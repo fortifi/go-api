@@ -79,6 +79,11 @@ func (o *PostOrdersOrderFidOffersOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the post orders order fid offers o k response
+func (o *PostOrdersOrderFidOffersOK) Code() int {
+	return 200
+}
+
 func (o *PostOrdersOrderFidOffersOK) Error() string {
 	return fmt.Sprintf("[POST /orders/{orderFid}/offers][%d] postOrdersOrderFidOffersOK ", 200)
 }
@@ -110,11 +115,6 @@ type PostOrdersOrderFidOffersDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the post orders order fid offers default response
-func (o *PostOrdersOrderFidOffersDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this post orders order fid offers default response has a 2xx status code
 func (o *PostOrdersOrderFidOffersDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PostOrdersOrderFidOffersDefault) IsServerError() bool {
 // IsCode returns true when this post orders order fid offers default response a status code equal to that given
 func (o *PostOrdersOrderFidOffersDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the post orders order fid offers default response
+func (o *PostOrdersOrderFidOffersDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PostOrdersOrderFidOffersDefault) Error() string {

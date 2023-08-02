@@ -196,6 +196,11 @@ func (m *OrderProductsPayload) contextValidateModifySubscriptions(ctx context.Co
 	for i := 0; i < len(m.ModifySubscriptions); i++ {
 
 		if m.ModifySubscriptions[i] != nil {
+
+			if swag.IsZero(m.ModifySubscriptions[i]) { // not required
+				return nil
+			}
+
 			if err := m.ModifySubscriptions[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("modifySubscriptions" + "." + strconv.Itoa(i))
@@ -216,6 +221,11 @@ func (m *OrderProductsPayload) contextValidateNamesProductPriceFids(ctx context.
 	for i := 0; i < len(m.NamesProductPriceFids); i++ {
 
 		if m.NamesProductPriceFids[i] != nil {
+
+			if swag.IsZero(m.NamesProductPriceFids[i]) { // not required
+				return nil
+			}
+
 			if err := m.NamesProductPriceFids[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("namesProductPriceFids" + "." + strconv.Itoa(i))
@@ -236,6 +246,11 @@ func (m *OrderProductsPayload) contextValidateProducts(ctx context.Context, form
 	for i := 0; i < len(m.Products); i++ {
 
 		if m.Products[i] != nil {
+
+			if swag.IsZero(m.Products[i]) { // not required
+				return nil
+			}
+
 			if err := m.Products[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("products" + "." + strconv.Itoa(i))
@@ -256,6 +271,11 @@ func (m *OrderProductsPayload) contextValidateQuantityProductPriceFids(ctx conte
 	for i := 0; i < len(m.QuantityProductPriceFids); i++ {
 
 		if m.QuantityProductPriceFids[i] != nil {
+
+			if swag.IsZero(m.QuantityProductPriceFids[i]) { // not required
+				return nil
+			}
+
 			if err := m.QuantityProductPriceFids[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("quantityProductPriceFids" + "." + strconv.Itoa(i))

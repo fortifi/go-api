@@ -83,6 +83,11 @@ func (o *PostProductsProductFidAvailabilityReserveOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the post products product fid availability reserve o k response
+func (o *PostProductsProductFidAvailabilityReserveOK) Code() int {
+	return 200
+}
+
 func (o *PostProductsProductFidAvailabilityReserveOK) Error() string {
 	return fmt.Sprintf("[POST /products/{productFid}/availability/reserve][%d] postProductsProductFidAvailabilityReserveOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type PostProductsProductFidAvailabilityReserveDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the post products product fid availability reserve default response
-func (o *PostProductsProductFidAvailabilityReserveDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this post products product fid availability reserve default response has a 2xx status code
 func (o *PostProductsProductFidAvailabilityReserveDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *PostProductsProductFidAvailabilityReserveDefault) IsServerError() bool 
 // IsCode returns true when this post products product fid availability reserve default response a status code equal to that given
 func (o *PostProductsProductFidAvailabilityReserveDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the post products product fid availability reserve default response
+func (o *PostProductsProductFidAvailabilityReserveDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PostProductsProductFidAvailabilityReserveDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *PostProductsProductFidAvailabilityReserveOKBody) ContextValidate(ctx co
 func (o *PostProductsProductFidAvailabilityReserveOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("postProductsProductFidAvailabilityReserveOK" + "." + "data")

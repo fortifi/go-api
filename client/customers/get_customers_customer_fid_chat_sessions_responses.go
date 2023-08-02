@@ -83,6 +83,11 @@ func (o *GetCustomersCustomerFidChatSessionsOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the get customers customer fid chat sessions o k response
+func (o *GetCustomersCustomerFidChatSessionsOK) Code() int {
+	return 200
+}
+
 func (o *GetCustomersCustomerFidChatSessionsOK) Error() string {
 	return fmt.Sprintf("[GET /customers/{customerFid}/chatSessions][%d] getCustomersCustomerFidChatSessionsOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type GetCustomersCustomerFidChatSessionsDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the get customers customer fid chat sessions default response
-func (o *GetCustomersCustomerFidChatSessionsDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this get customers customer fid chat sessions default response has a 2xx status code
 func (o *GetCustomersCustomerFidChatSessionsDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *GetCustomersCustomerFidChatSessionsDefault) IsServerError() bool {
 // IsCode returns true when this get customers customer fid chat sessions default response a status code equal to that given
 func (o *GetCustomersCustomerFidChatSessionsDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the get customers customer fid chat sessions default response
+func (o *GetCustomersCustomerFidChatSessionsDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *GetCustomersCustomerFidChatSessionsDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *GetCustomersCustomerFidChatSessionsOKBody) ContextValidate(ctx context.
 func (o *GetCustomersCustomerFidChatSessionsOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("getCustomersCustomerFidChatSessionsOK" + "." + "data")

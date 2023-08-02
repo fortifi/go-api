@@ -129,6 +129,11 @@ func (m *OrderAddProducts) ContextValidate(ctx context.Context, formats strfmt.R
 func (m *OrderAddProducts) contextValidateOrder(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Order != nil {
+
+		if swag.IsZero(m.Order) { // not required
+			return nil
+		}
+
 		if err := m.Order.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("order")

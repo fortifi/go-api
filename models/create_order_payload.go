@@ -216,6 +216,11 @@ func (m *CreateOrderPayload) contextValidateModifySubscriptions(ctx context.Cont
 	for i := 0; i < len(m.ModifySubscriptions); i++ {
 
 		if m.ModifySubscriptions[i] != nil {
+
+			if swag.IsZero(m.ModifySubscriptions[i]) { // not required
+				return nil
+			}
+
 			if err := m.ModifySubscriptions[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("modifySubscriptions" + "." + strconv.Itoa(i))
@@ -236,6 +241,11 @@ func (m *CreateOrderPayload) contextValidateProducts(ctx context.Context, format
 	for i := 0; i < len(m.Products); i++ {
 
 		if m.Products[i] != nil {
+
+			if swag.IsZero(m.Products[i]) { // not required
+				return nil
+			}
+
 			if err := m.Products[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("products" + "." + strconv.Itoa(i))
@@ -254,6 +264,11 @@ func (m *CreateOrderPayload) contextValidateProducts(ctx context.Context, format
 func (m *CreateOrderPayload) contextValidatePublisher(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Publisher != nil {
+
+		if swag.IsZero(m.Publisher) { // not required
+			return nil
+		}
+
 		if err := m.Publisher.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("publisher")
@@ -268,6 +283,10 @@ func (m *CreateOrderPayload) contextValidatePublisher(ctx context.Context, forma
 }
 
 func (m *CreateOrderPayload) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Type) { // not required
+		return nil
+	}
 
 	if err := m.Type.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {

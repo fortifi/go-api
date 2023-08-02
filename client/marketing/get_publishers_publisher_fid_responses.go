@@ -83,6 +83,11 @@ func (o *GetPublishersPublisherFidOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the get publishers publisher fid o k response
+func (o *GetPublishersPublisherFidOK) Code() int {
+	return 200
+}
+
 func (o *GetPublishersPublisherFidOK) Error() string {
 	return fmt.Sprintf("[GET /publishers/{publisherFid}][%d] getPublishersPublisherFidOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type GetPublishersPublisherFidDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the get publishers publisher fid default response
-func (o *GetPublishersPublisherFidDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this get publishers publisher fid default response has a 2xx status code
 func (o *GetPublishersPublisherFidDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *GetPublishersPublisherFidDefault) IsServerError() bool {
 // IsCode returns true when this get publishers publisher fid default response a status code equal to that given
 func (o *GetPublishersPublisherFidDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the get publishers publisher fid default response
+func (o *GetPublishersPublisherFidDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *GetPublishersPublisherFidDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *GetPublishersPublisherFidOKBody) ContextValidate(ctx context.Context, f
 func (o *GetPublishersPublisherFidOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("getPublishersPublisherFidOK" + "." + "data")

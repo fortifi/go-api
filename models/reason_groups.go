@@ -82,6 +82,11 @@ func (m *ReasonGroups) contextValidateReasonGroups(ctx context.Context, formats 
 	for i := 0; i < len(m.ReasonGroups); i++ {
 
 		if m.ReasonGroups[i] != nil {
+
+			if swag.IsZero(m.ReasonGroups[i]) { // not required
+				return nil
+			}
+
 			if err := m.ReasonGroups[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("reasonGroups" + "." + strconv.Itoa(i))

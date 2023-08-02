@@ -80,6 +80,11 @@ func (o *GetCustomersCustomerFidPhonesOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the get customers customer fid phones o k response
+func (o *GetCustomersCustomerFidPhonesOK) Code() int {
+	return 200
+}
+
 func (o *GetCustomersCustomerFidPhonesOK) Error() string {
 	return fmt.Sprintf("[GET /customers/{customerFid}/phones][%d] getCustomersCustomerFidPhonesOK  %+v", 200, o.Payload)
 }
@@ -122,11 +127,6 @@ type GetCustomersCustomerFidPhonesDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the get customers customer fid phones default response
-func (o *GetCustomersCustomerFidPhonesDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this get customers customer fid phones default response has a 2xx status code
 func (o *GetCustomersCustomerFidPhonesDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -150,6 +150,11 @@ func (o *GetCustomersCustomerFidPhonesDefault) IsServerError() bool {
 // IsCode returns true when this get customers customer fid phones default response a status code equal to that given
 func (o *GetCustomersCustomerFidPhonesDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the get customers customer fid phones default response
+func (o *GetCustomersCustomerFidPhonesDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *GetCustomersCustomerFidPhonesDefault) Error() string {

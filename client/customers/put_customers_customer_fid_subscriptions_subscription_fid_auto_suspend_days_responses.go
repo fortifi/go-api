@@ -79,6 +79,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysOK) I
 	return code == 200
 }
 
+// Code gets the status code for the put customers customer fid subscriptions subscription fid auto suspend days o k response
+func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysOK) Code() int {
+	return 200
+}
+
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysOK) Error() string {
 	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/autoSuspendDays][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysOK ", 200)
 }
@@ -110,11 +115,6 @@ type PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysDefault s
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the put customers customer fid subscriptions subscription fid auto suspend days default response
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this put customers customer fid subscriptions subscription fid auto suspend days default response has a 2xx status code
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysDefau
 // IsCode returns true when this put customers customer fid subscriptions subscription fid auto suspend days default response a status code equal to that given
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the put customers customer fid subscriptions subscription fid auto suspend days default response
+func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysDefault) Error() string {

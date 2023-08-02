@@ -79,6 +79,11 @@ func (o *PutOrdersOrderFidFinalizeOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the put orders order fid finalize o k response
+func (o *PutOrdersOrderFidFinalizeOK) Code() int {
+	return 200
+}
+
 func (o *PutOrdersOrderFidFinalizeOK) Error() string {
 	return fmt.Sprintf("[PUT /orders/{orderFid}/finalize][%d] putOrdersOrderFidFinalizeOK ", 200)
 }
@@ -110,11 +115,6 @@ type PutOrdersOrderFidFinalizeDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the put orders order fid finalize default response
-func (o *PutOrdersOrderFidFinalizeDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this put orders order fid finalize default response has a 2xx status code
 func (o *PutOrdersOrderFidFinalizeDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PutOrdersOrderFidFinalizeDefault) IsServerError() bool {
 // IsCode returns true when this put orders order fid finalize default response a status code equal to that given
 func (o *PutOrdersOrderFidFinalizeDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the put orders order fid finalize default response
+func (o *PutOrdersOrderFidFinalizeDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PutOrdersOrderFidFinalizeDefault) Error() string {

@@ -79,6 +79,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeOK) IsCod
 	return code == 200
 }
 
+// Code gets the status code for the put customers customer fid subscriptions subscription fid renewal mode o k response
+func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeOK) Code() int {
+	return 200
+}
+
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeOK) Error() string {
 	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/renewalMode][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeOK ", 200)
 }
@@ -110,11 +115,6 @@ type PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeDefault struc
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the put customers customer fid subscriptions subscription fid renewal mode default response
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this put customers customer fid subscriptions subscription fid renewal mode default response has a 2xx status code
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeDefault) 
 // IsCode returns true when this put customers customer fid subscriptions subscription fid renewal mode default response a status code equal to that given
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the put customers customer fid subscriptions subscription fid renewal mode default response
+func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeDefault) Error() string {

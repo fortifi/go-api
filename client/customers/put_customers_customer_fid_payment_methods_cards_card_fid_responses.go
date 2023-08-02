@@ -79,6 +79,11 @@ func (o *PutCustomersCustomerFidPaymentMethodsCardsCardFidOK) IsCode(code int) b
 	return code == 200
 }
 
+// Code gets the status code for the put customers customer fid payment methods cards card fid o k response
+func (o *PutCustomersCustomerFidPaymentMethodsCardsCardFidOK) Code() int {
+	return 200
+}
+
 func (o *PutCustomersCustomerFidPaymentMethodsCardsCardFidOK) Error() string {
 	return fmt.Sprintf("[PUT /customers/{customerFid}/paymentMethods/cards/{cardFid}][%d] putCustomersCustomerFidPaymentMethodsCardsCardFidOK ", 200)
 }
@@ -110,11 +115,6 @@ type PutCustomersCustomerFidPaymentMethodsCardsCardFidDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the put customers customer fid payment methods cards card fid default response
-func (o *PutCustomersCustomerFidPaymentMethodsCardsCardFidDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this put customers customer fid payment methods cards card fid default response has a 2xx status code
 func (o *PutCustomersCustomerFidPaymentMethodsCardsCardFidDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PutCustomersCustomerFidPaymentMethodsCardsCardFidDefault) IsServerError
 // IsCode returns true when this put customers customer fid payment methods cards card fid default response a status code equal to that given
 func (o *PutCustomersCustomerFidPaymentMethodsCardsCardFidDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the put customers customer fid payment methods cards card fid default response
+func (o *PutCustomersCustomerFidPaymentMethodsCardsCardFidDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PutCustomersCustomerFidPaymentMethodsCardsCardFidDefault) Error() string {

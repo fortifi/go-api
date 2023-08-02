@@ -21,6 +21,9 @@ type TicketReplyPayload struct {
 	// attachments
 	Attachments []string `json:"attachments"`
 
+	// html body
+	HTMLBody string `json:"htmlBody,omitempty"`
+
 	// status
 	Status TicketStatus `json:"status,omitempty"`
 
@@ -74,6 +77,10 @@ func (m *TicketReplyPayload) ContextValidate(ctx context.Context, formats strfmt
 }
 
 func (m *TicketReplyPayload) contextValidateStatus(ctx context.Context, formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Status) { // not required
+		return nil
+	}
 
 	if err := m.Status.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {

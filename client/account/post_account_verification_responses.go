@@ -80,6 +80,11 @@ func (o *PostAccountVerificationOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the post account verification o k response
+func (o *PostAccountVerificationOK) Code() int {
+	return 200
+}
+
 func (o *PostAccountVerificationOK) Error() string {
 	return fmt.Sprintf("[POST /account/verification][%d] postAccountVerificationOK  %+v", 200, o.Payload)
 }
@@ -122,11 +127,6 @@ type PostAccountVerificationDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the post account verification default response
-func (o *PostAccountVerificationDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this post account verification default response has a 2xx status code
 func (o *PostAccountVerificationDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -150,6 +150,11 @@ func (o *PostAccountVerificationDefault) IsServerError() bool {
 // IsCode returns true when this post account verification default response a status code equal to that given
 func (o *PostAccountVerificationDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the post account verification default response
+func (o *PostAccountVerificationDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PostAccountVerificationDefault) Error() string {

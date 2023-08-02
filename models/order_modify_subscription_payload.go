@@ -140,6 +140,11 @@ func (m *OrderModifySubscriptionPayload) ContextValidate(ctx context.Context, fo
 func (m *OrderModifySubscriptionPayload) contextValidateProperties(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Properties != nil {
+
+		if swag.IsZero(m.Properties) { // not required
+			return nil
+		}
+
 		if err := m.Properties.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("properties")

@@ -86,6 +86,11 @@ func (o *PutOrdersOrderFidSetChargeIDOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the put orders order fid set charge Id o k response
+func (o *PutOrdersOrderFidSetChargeIDOK) Code() int {
+	return 200
+}
+
 func (o *PutOrdersOrderFidSetChargeIDOK) Error() string {
 	return fmt.Sprintf("[PUT /orders/{orderFid}/setChargeId][%d] putOrdersOrderFidSetChargeIdOK  %+v", 200, o.Payload)
 }
@@ -149,6 +154,11 @@ func (o *PutOrdersOrderFidSetChargeIDBadRequest) IsCode(code int) bool {
 	return code == 400
 }
 
+// Code gets the status code for the put orders order fid set charge Id bad request response
+func (o *PutOrdersOrderFidSetChargeIDBadRequest) Code() int {
+	return 400
+}
+
 func (o *PutOrdersOrderFidSetChargeIDBadRequest) Error() string {
 	return fmt.Sprintf("[PUT /orders/{orderFid}/setChargeId][%d] putOrdersOrderFidSetChargeIdBadRequest  %+v", 400, o.Payload)
 }
@@ -191,11 +201,6 @@ type PutOrdersOrderFidSetChargeIDDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the put orders order fid set charge ID default response
-func (o *PutOrdersOrderFidSetChargeIDDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this put orders order fid set charge ID default response has a 2xx status code
 func (o *PutOrdersOrderFidSetChargeIDDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -219,6 +224,11 @@ func (o *PutOrdersOrderFidSetChargeIDDefault) IsServerError() bool {
 // IsCode returns true when this put orders order fid set charge ID default response a status code equal to that given
 func (o *PutOrdersOrderFidSetChargeIDDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the put orders order fid set charge ID default response
+func (o *PutOrdersOrderFidSetChargeIDDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PutOrdersOrderFidSetChargeIDDefault) Error() string {

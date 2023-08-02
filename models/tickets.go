@@ -139,6 +139,11 @@ func (m *Tickets) contextValidateTickets(ctx context.Context, formats strfmt.Reg
 	for i := 0; i < len(m.Tickets); i++ {
 
 		if m.Tickets[i] != nil {
+
+			if swag.IsZero(m.Tickets[i]) { // not required
+				return nil
+			}
+
 			if err := m.Tickets[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tickets" + "." + strconv.Itoa(i))

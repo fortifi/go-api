@@ -83,6 +83,11 @@ func (o *PostReservationsKeyApplicationBrandFidCustomerFidOK) IsCode(code int) b
 	return code == 200
 }
 
+// Code gets the status code for the post reservations key application brand fid customer fid o k response
+func (o *PostReservationsKeyApplicationBrandFidCustomerFidOK) Code() int {
+	return 200
+}
+
 func (o *PostReservationsKeyApplicationBrandFidCustomerFidOK) Error() string {
 	return fmt.Sprintf("[POST /reservations/{key}/{application}/{brandFid}/{customerFid}][%d] postReservationsKeyApplicationBrandFidCustomerFidOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type PostReservationsKeyApplicationBrandFidCustomerFidDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the post reservations key application brand fid customer fid default response
-func (o *PostReservationsKeyApplicationBrandFidCustomerFidDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this post reservations key application brand fid customer fid default response has a 2xx status code
 func (o *PostReservationsKeyApplicationBrandFidCustomerFidDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *PostReservationsKeyApplicationBrandFidCustomerFidDefault) IsServerError
 // IsCode returns true when this post reservations key application brand fid customer fid default response a status code equal to that given
 func (o *PostReservationsKeyApplicationBrandFidCustomerFidDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the post reservations key application brand fid customer fid default response
+func (o *PostReservationsKeyApplicationBrandFidCustomerFidDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PostReservationsKeyApplicationBrandFidCustomerFidDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *PostReservationsKeyApplicationBrandFidCustomerFidOKBody) ContextValidat
 func (o *PostReservationsKeyApplicationBrandFidCustomerFidOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("postReservationsKeyApplicationBrandFidCustomerFidOK" + "." + "data")

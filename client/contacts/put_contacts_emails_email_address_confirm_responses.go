@@ -79,6 +79,11 @@ func (o *PutContactsEmailsEmailAddressConfirmOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the put contacts emails email address confirm o k response
+func (o *PutContactsEmailsEmailAddressConfirmOK) Code() int {
+	return 200
+}
+
 func (o *PutContactsEmailsEmailAddressConfirmOK) Error() string {
 	return fmt.Sprintf("[PUT /contacts/emails/{emailAddress}/confirm][%d] putContactsEmailsEmailAddressConfirmOK ", 200)
 }
@@ -110,11 +115,6 @@ type PutContactsEmailsEmailAddressConfirmDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the put contacts emails email address confirm default response
-func (o *PutContactsEmailsEmailAddressConfirmDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this put contacts emails email address confirm default response has a 2xx status code
 func (o *PutContactsEmailsEmailAddressConfirmDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PutContactsEmailsEmailAddressConfirmDefault) IsServerError() bool {
 // IsCode returns true when this put contacts emails email address confirm default response a status code equal to that given
 func (o *PutContactsEmailsEmailAddressConfirmDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the put contacts emails email address confirm default response
+func (o *PutContactsEmailsEmailAddressConfirmDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PutContactsEmailsEmailAddressConfirmDefault) Error() string {

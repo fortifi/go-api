@@ -81,6 +81,10 @@ func (m *ConfirmOrderPayload) ContextValidate(ctx context.Context, formats strfm
 
 func (m *ConfirmOrderPayload) contextValidatePaymentServiceProcessor(ctx context.Context, formats strfmt.Registry) error {
 
+	if swag.IsZero(m.PaymentServiceProcessor) { // not required
+		return nil
+	}
+
 	if err := m.PaymentServiceProcessor.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("paymentServiceProcessor")

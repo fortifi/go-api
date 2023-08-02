@@ -34,9 +34,15 @@ type ClientService interface {
 
 	GetInteractionsInviteInviteCodeStatus(params *GetInteractionsInviteInviteCodeStatusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetInteractionsInviteInviteCodeStatusOK, error)
 
+	PostInteractionsInteractionFidAttachment(params *PostInteractionsInteractionFidAttachmentParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidAttachmentOK, error)
+
 	PostInteractionsInteractionFidClientConnected(params *PostInteractionsInteractionFidClientConnectedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidClientConnectedOK, error)
 
 	PostInteractionsInteractionFidClientDisconnected(params *PostInteractionsInteractionFidClientDisconnectedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidClientDisconnectedOK, error)
+
+	PostInteractionsInteractionFidCustomerClosed(params *PostInteractionsInteractionFidCustomerClosedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidCustomerClosedOK, error)
+
+	PostInteractionsInteractionFidFeedback(params *PostInteractionsInteractionFidFeedbackParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidFeedbackOK, error)
 
 	PostInteractionsInteractionFidMessage(params *PostInteractionsInteractionFidMessageParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidMessageOK, error)
 
@@ -164,6 +170,44 @@ func (a *Client) GetInteractionsInviteInviteCodeStatus(params *GetInteractionsIn
 }
 
 /*
+PostInteractionsInteractionFidAttachment creates an interaction attachment
+*/
+func (a *Client) PostInteractionsInteractionFidAttachment(params *PostInteractionsInteractionFidAttachmentParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidAttachmentOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPostInteractionsInteractionFidAttachmentParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PostInteractionsInteractionFidAttachment",
+		Method:             "POST",
+		PathPattern:        "/interactions/{interactionFid}/attachment",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PostInteractionsInteractionFidAttachmentReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PostInteractionsInteractionFidAttachmentOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PostInteractionsInteractionFidAttachmentDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
 PostInteractionsInteractionFidClientConnected as client has connected to the interaction
 */
 func (a *Client) PostInteractionsInteractionFidClientConnected(params *PostInteractionsInteractionFidClientConnectedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidClientConnectedOK, error) {
@@ -236,6 +280,82 @@ func (a *Client) PostInteractionsInteractionFidClientDisconnected(params *PostIn
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*PostInteractionsInteractionFidClientDisconnectedDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PostInteractionsInteractionFidCustomerClosed thes customer has purposely closed the interaction
+*/
+func (a *Client) PostInteractionsInteractionFidCustomerClosed(params *PostInteractionsInteractionFidCustomerClosedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidCustomerClosedOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPostInteractionsInteractionFidCustomerClosedParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PostInteractionsInteractionFidCustomerClosed",
+		Method:             "POST",
+		PathPattern:        "/interactions/{interactionFid}/customerClosed",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PostInteractionsInteractionFidCustomerClosedReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PostInteractionsInteractionFidCustomerClosedOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PostInteractionsInteractionFidCustomerClosedDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PostInteractionsInteractionFidFeedback submits feedback to an interaction
+*/
+func (a *Client) PostInteractionsInteractionFidFeedback(params *PostInteractionsInteractionFidFeedbackParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidFeedbackOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPostInteractionsInteractionFidFeedbackParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PostInteractionsInteractionFidFeedback",
+		Method:             "POST",
+		PathPattern:        "/interactions/{interactionFid}/feedback",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PostInteractionsInteractionFidFeedbackReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PostInteractionsInteractionFidFeedbackOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PostInteractionsInteractionFidFeedbackDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

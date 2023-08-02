@@ -83,6 +83,11 @@ func (o *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseOK) IsCode(code i
 	return code == 200
 }
 
+// Code gets the status code for the post customers customer fid payment methods paypal initialise o k response
+func (o *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseOK) Code() int {
+	return 200
+}
+
 func (o *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseOK) Error() string {
 	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/paypal/initialise][%d] postCustomersCustomerFidPaymentMethodsPaypalInitialiseOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type PostCustomersCustomerFidPaymentMethodsPaypalInitialiseDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the post customers customer fid payment methods paypal initialise default response
-func (o *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this post customers customer fid payment methods paypal initialise default response has a 2xx status code
 func (o *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseDefault) IsServer
 // IsCode returns true when this post customers customer fid payment methods paypal initialise default response a status code equal to that given
 func (o *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the post customers customer fid payment methods paypal initialise default response
+func (o *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseOKBody) ContextVa
 func (o *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("postCustomersCustomerFidPaymentMethodsPaypalInitialiseOK" + "." + "data")

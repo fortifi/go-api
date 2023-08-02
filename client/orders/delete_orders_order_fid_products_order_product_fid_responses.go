@@ -79,6 +79,11 @@ func (o *DeleteOrdersOrderFidProductsOrderProductFidOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the delete orders order fid products order product fid o k response
+func (o *DeleteOrdersOrderFidProductsOrderProductFidOK) Code() int {
+	return 200
+}
+
 func (o *DeleteOrdersOrderFidProductsOrderProductFidOK) Error() string {
 	return fmt.Sprintf("[DELETE /orders/{orderFid}/products/{orderProductFid}][%d] deleteOrdersOrderFidProductsOrderProductFidOK ", 200)
 }
@@ -110,11 +115,6 @@ type DeleteOrdersOrderFidProductsOrderProductFidDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the delete orders order fid products order product fid default response
-func (o *DeleteOrdersOrderFidProductsOrderProductFidDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this delete orders order fid products order product fid default response has a 2xx status code
 func (o *DeleteOrdersOrderFidProductsOrderProductFidDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *DeleteOrdersOrderFidProductsOrderProductFidDefault) IsServerError() boo
 // IsCode returns true when this delete orders order fid products order product fid default response a status code equal to that given
 func (o *DeleteOrdersOrderFidProductsOrderProductFidDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the delete orders order fid products order product fid default response
+func (o *DeleteOrdersOrderFidProductsOrderProductFidDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DeleteOrdersOrderFidProductsOrderProductFidDefault) Error() string {

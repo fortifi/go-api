@@ -83,6 +83,11 @@ func (o *PutReviewOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the put review o k response
+func (o *PutReviewOK) Code() int {
+	return 200
+}
+
 func (o *PutReviewOK) Error() string {
 	return fmt.Sprintf("[PUT /review][%d] putReviewOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type PutReviewDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the put review default response
-func (o *PutReviewDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this put review default response has a 2xx status code
 func (o *PutReviewDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *PutReviewDefault) IsServerError() bool {
 // IsCode returns true when this put review default response a status code equal to that given
 func (o *PutReviewDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the put review default response
+func (o *PutReviewDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PutReviewDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *PutReviewOKBody) ContextValidate(ctx context.Context, formats strfmt.Re
 func (o *PutReviewOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("putReviewOK" + "." + "data")

@@ -84,6 +84,11 @@ func (o *GetVisitorsVisitorIDPixelsOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the get visitors visitor Id pixels o k response
+func (o *GetVisitorsVisitorIDPixelsOK) Code() int {
+	return 200
+}
+
 func (o *GetVisitorsVisitorIDPixelsOK) Error() string {
 	return fmt.Sprintf("[GET /visitors/{visitorId}/pixels][%d] getVisitorsVisitorIdPixelsOK  %+v", 200, o.Payload)
 }
@@ -126,11 +131,6 @@ type GetVisitorsVisitorIDPixelsDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the get visitors visitor ID pixels default response
-func (o *GetVisitorsVisitorIDPixelsDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this get visitors visitor ID pixels default response has a 2xx status code
 func (o *GetVisitorsVisitorIDPixelsDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -154,6 +154,11 @@ func (o *GetVisitorsVisitorIDPixelsDefault) IsServerError() bool {
 // IsCode returns true when this get visitors visitor ID pixels default response a status code equal to that given
 func (o *GetVisitorsVisitorIDPixelsDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the get visitors visitor ID pixels default response
+func (o *GetVisitorsVisitorIDPixelsDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *GetVisitorsVisitorIDPixelsDefault) Error() string {
@@ -306,6 +311,11 @@ func (o *GetVisitorsVisitorIDPixelsOKBody) contextValidateData(ctx context.Conte
 	for i := 0; i < len(o.Data); i++ {
 
 		if o.Data[i] != nil {
+
+			if swag.IsZero(o.Data[i]) { // not required
+				return nil
+			}
+
 			if err := o.Data[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("getVisitorsVisitorIdPixelsOK" + "." + "data" + "." + strconv.Itoa(i))

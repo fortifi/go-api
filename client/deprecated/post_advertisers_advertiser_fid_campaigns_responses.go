@@ -83,6 +83,11 @@ func (o *PostAdvertisersAdvertiserFidCampaignsOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the post advertisers advertiser fid campaigns o k response
+func (o *PostAdvertisersAdvertiserFidCampaignsOK) Code() int {
+	return 200
+}
+
 func (o *PostAdvertisersAdvertiserFidCampaignsOK) Error() string {
 	return fmt.Sprintf("[POST /advertisers/{advertiserFid}/campaigns][%d] postAdvertisersAdvertiserFidCampaignsOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type PostAdvertisersAdvertiserFidCampaignsDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the post advertisers advertiser fid campaigns default response
-func (o *PostAdvertisersAdvertiserFidCampaignsDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this post advertisers advertiser fid campaigns default response has a 2xx status code
 func (o *PostAdvertisersAdvertiserFidCampaignsDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *PostAdvertisersAdvertiserFidCampaignsDefault) IsServerError() bool {
 // IsCode returns true when this post advertisers advertiser fid campaigns default response a status code equal to that given
 func (o *PostAdvertisersAdvertiserFidCampaignsDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the post advertisers advertiser fid campaigns default response
+func (o *PostAdvertisersAdvertiserFidCampaignsDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PostAdvertisersAdvertiserFidCampaignsDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *PostAdvertisersAdvertiserFidCampaignsOKBody) ContextValidate(ctx contex
 func (o *PostAdvertisersAdvertiserFidCampaignsOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("postAdvertisersAdvertiserFidCampaignsOK" + "." + "data")

@@ -288,6 +288,10 @@ func (m *Licence) ContextValidate(ctx context.Context, formats strfmt.Registry) 
 
 func (m *Licence) contextValidateCycleType(ctx context.Context, formats strfmt.Registry) error {
 
+	if swag.IsZero(m.CycleType) { // not required
+		return nil
+	}
+
 	if err := m.CycleType.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("cycleType")

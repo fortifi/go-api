@@ -82,6 +82,11 @@ func (m *CancelFlowReasons) contextValidateReasons(ctx context.Context, formats 
 	for i := 0; i < len(m.Reasons); i++ {
 
 		if m.Reasons[i] != nil {
+
+			if swag.IsZero(m.Reasons[i]) { // not required
+				return nil
+			}
+
 			if err := m.Reasons[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("reasons" + "." + strconv.Itoa(i))

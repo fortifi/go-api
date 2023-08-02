@@ -85,6 +85,7 @@ func (m *SubscriptionCancelPayload) ContextValidate(ctx context.Context, formats
 func (m *SubscriptionCancelPayload) contextValidateSubscriptionRefundType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.SubscriptionRefundType != nil {
+
 		if err := m.SubscriptionRefundType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("subscriptionRefundType")

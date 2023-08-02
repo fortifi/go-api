@@ -82,6 +82,11 @@ func (m *InteractionMessagesResponse) contextValidateMessages(ctx context.Contex
 	for i := 0; i < len(m.Messages); i++ {
 
 		if m.Messages[i] != nil {
+
+			if swag.IsZero(m.Messages[i]) { // not required
+				return nil
+			}
+
 			if err := m.Messages[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("messages" + "." + strconv.Itoa(i))

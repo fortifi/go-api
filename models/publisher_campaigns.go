@@ -139,6 +139,11 @@ func (m *PublisherCampaigns) contextValidateCampaigns(ctx context.Context, forma
 	for i := 0; i < len(m.Campaigns); i++ {
 
 		if m.Campaigns[i] != nil {
+
+			if swag.IsZero(m.Campaigns[i]) { // not required
+				return nil
+			}
+
 			if err := m.Campaigns[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("campaigns" + "." + strconv.Itoa(i))

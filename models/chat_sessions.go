@@ -139,6 +139,11 @@ func (m *ChatSessions) contextValidateChatSessions(ctx context.Context, formats 
 	for i := 0; i < len(m.ChatSessions); i++ {
 
 		if m.ChatSessions[i] != nil {
+
+			if swag.IsZero(m.ChatSessions[i]) { // not required
+				return nil
+			}
+
 			if err := m.ChatSessions[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("chatSessions" + "." + strconv.Itoa(i))

@@ -156,6 +156,11 @@ func (m *Properties) contextValidateCounters(ctx context.Context, formats strfmt
 	for i := 0; i < len(m.Counters); i++ {
 
 		if m.Counters[i] != nil {
+
+			if swag.IsZero(m.Counters[i]) { // not required
+				return nil
+			}
+
 			if err := m.Counters[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("counters" + "." + strconv.Itoa(i))
@@ -176,6 +181,11 @@ func (m *Properties) contextValidateFlags(ctx context.Context, formats strfmt.Re
 	for i := 0; i < len(m.Flags); i++ {
 
 		if m.Flags[i] != nil {
+
+			if swag.IsZero(m.Flags[i]) { // not required
+				return nil
+			}
+
 			if err := m.Flags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("flags" + "." + strconv.Itoa(i))
@@ -196,6 +206,11 @@ func (m *Properties) contextValidateValues(ctx context.Context, formats strfmt.R
 	for i := 0; i < len(m.Values); i++ {
 
 		if m.Values[i] != nil {
+
+			if swag.IsZero(m.Values[i]) { // not required
+				return nil
+			}
+
 			if err := m.Values[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("values" + "." + strconv.Itoa(i))

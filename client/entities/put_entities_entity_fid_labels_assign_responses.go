@@ -79,6 +79,11 @@ func (o *PutEntitiesEntityFidLabelsAssignOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the put entities entity fid labels assign o k response
+func (o *PutEntitiesEntityFidLabelsAssignOK) Code() int {
+	return 200
+}
+
 func (o *PutEntitiesEntityFidLabelsAssignOK) Error() string {
 	return fmt.Sprintf("[PUT /entities/{entityFid}/labels/assign][%d] putEntitiesEntityFidLabelsAssignOK ", 200)
 }
@@ -110,11 +115,6 @@ type PutEntitiesEntityFidLabelsAssignDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the put entities entity fid labels assign default response
-func (o *PutEntitiesEntityFidLabelsAssignDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this put entities entity fid labels assign default response has a 2xx status code
 func (o *PutEntitiesEntityFidLabelsAssignDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PutEntitiesEntityFidLabelsAssignDefault) IsServerError() bool {
 // IsCode returns true when this put entities entity fid labels assign default response a status code equal to that given
 func (o *PutEntitiesEntityFidLabelsAssignDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the put entities entity fid labels assign default response
+func (o *PutEntitiesEntityFidLabelsAssignDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PutEntitiesEntityFidLabelsAssignDefault) Error() string {

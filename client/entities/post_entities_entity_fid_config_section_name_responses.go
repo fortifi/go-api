@@ -79,6 +79,11 @@ func (o *PostEntitiesEntityFidConfigSectionNameOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the post entities entity fid config section name o k response
+func (o *PostEntitiesEntityFidConfigSectionNameOK) Code() int {
+	return 200
+}
+
 func (o *PostEntitiesEntityFidConfigSectionNameOK) Error() string {
 	return fmt.Sprintf("[POST /entities/{entityFid}/config/{sectionName}][%d] postEntitiesEntityFidConfigSectionNameOK ", 200)
 }
@@ -110,11 +115,6 @@ type PostEntitiesEntityFidConfigSectionNameDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the post entities entity fid config section name default response
-func (o *PostEntitiesEntityFidConfigSectionNameDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this post entities entity fid config section name default response has a 2xx status code
 func (o *PostEntitiesEntityFidConfigSectionNameDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PostEntitiesEntityFidConfigSectionNameDefault) IsServerError() bool {
 // IsCode returns true when this post entities entity fid config section name default response a status code equal to that given
 func (o *PostEntitiesEntityFidConfigSectionNameDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the post entities entity fid config section name default response
+func (o *PostEntitiesEntityFidConfigSectionNameDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PostEntitiesEntityFidConfigSectionNameDefault) Error() string {

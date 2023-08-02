@@ -79,6 +79,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysOK) Is
 	return code == 200
 }
 
+// Code gets the status code for the put customers customer fid subscriptions subscription fid auto cancel days o k response
+func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysOK) Code() int {
+	return 200
+}
+
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysOK) Error() string {
 	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/autoCancelDays][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysOK ", 200)
 }
@@ -110,11 +115,6 @@ type PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysDefault st
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the put customers customer fid subscriptions subscription fid auto cancel days default response
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this put customers customer fid subscriptions subscription fid auto cancel days default response has a 2xx status code
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysDefaul
 // IsCode returns true when this put customers customer fid subscriptions subscription fid auto cancel days default response a status code equal to that given
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the put customers customer fid subscriptions subscription fid auto cancel days default response
+func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysDefault) Error() string {

@@ -82,6 +82,11 @@ func (m *ProductPrices) contextValidatePrices(ctx context.Context, formats strfm
 	for i := 0; i < len(m.Prices); i++ {
 
 		if m.Prices[i] != nil {
+
+			if swag.IsZero(m.Prices[i]) { // not required
+				return nil
+			}
+
 			if err := m.Prices[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("prices" + "." + strconv.Itoa(i))

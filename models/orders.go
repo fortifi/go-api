@@ -82,6 +82,11 @@ func (m *Orders) contextValidateOrders(ctx context.Context, formats strfmt.Regis
 	for i := 0; i < len(m.Orders); i++ {
 
 		if m.Orders[i] != nil {
+
+			if swag.IsZero(m.Orders[i]) { // not required
+				return nil
+			}
+
 			if err := m.Orders[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("orders" + "." + strconv.Itoa(i))

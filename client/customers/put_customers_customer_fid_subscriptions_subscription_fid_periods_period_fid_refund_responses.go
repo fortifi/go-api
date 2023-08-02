@@ -79,6 +79,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefu
 	return code == 200
 }
 
+// Code gets the status code for the put customers customer fid subscriptions subscription fid periods period fid refund o k response
+func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundOK) Code() int {
+	return 200
+}
+
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundOK) Error() string {
 	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/periods/{periodFid}/refund][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundOK ", 200)
 }
@@ -110,11 +115,6 @@ type PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundDe
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the put customers customer fid subscriptions subscription fid periods period fid refund default response
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this put customers customer fid subscriptions subscription fid periods period fid refund default response has a 2xx status code
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefu
 // IsCode returns true when this put customers customer fid subscriptions subscription fid periods period fid refund default response a status code equal to that given
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the put customers customer fid subscriptions subscription fid periods period fid refund default response
+func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundDefault) Error() string {

@@ -79,6 +79,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountOK)
 	return code == 200
 }
 
+// Code gets the status code for the put customers customer fid subscriptions subscription fid set payment account o k response
+func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountOK) Code() int {
+	return 200
+}
+
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountOK) Error() string {
 	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/setPaymentAccount][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountOK ", 200)
 }
@@ -110,11 +115,6 @@ type PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountDefault
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the put customers customer fid subscriptions subscription fid set payment account default response
-func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this put customers customer fid subscriptions subscription fid set payment account default response has a 2xx status code
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountDef
 // IsCode returns true when this put customers customer fid subscriptions subscription fid set payment account default response a status code equal to that given
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the put customers customer fid subscriptions subscription fid set payment account default response
+func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountDefault) Error() string {

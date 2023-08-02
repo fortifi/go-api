@@ -79,6 +79,11 @@ func (o *PutContactsDeviceHardwareIDSubscribeOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the put contacts device hardware Id subscribe o k response
+func (o *PutContactsDeviceHardwareIDSubscribeOK) Code() int {
+	return 200
+}
+
 func (o *PutContactsDeviceHardwareIDSubscribeOK) Error() string {
 	return fmt.Sprintf("[PUT /contacts/device/{hardwareId}/subscribe][%d] putContactsDeviceHardwareIdSubscribeOK ", 200)
 }
@@ -110,11 +115,6 @@ type PutContactsDeviceHardwareIDSubscribeDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the put contacts device hardware ID subscribe default response
-func (o *PutContactsDeviceHardwareIDSubscribeDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this put contacts device hardware ID subscribe default response has a 2xx status code
 func (o *PutContactsDeviceHardwareIDSubscribeDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PutContactsDeviceHardwareIDSubscribeDefault) IsServerError() bool {
 // IsCode returns true when this put contacts device hardware ID subscribe default response a status code equal to that given
 func (o *PutContactsDeviceHardwareIDSubscribeDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the put contacts device hardware ID subscribe default response
+func (o *PutContactsDeviceHardwareIDSubscribeDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PutContactsDeviceHardwareIDSubscribeDefault) Error() string {

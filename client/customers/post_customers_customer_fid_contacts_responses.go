@@ -82,6 +82,11 @@ func (o *PostCustomersCustomerFidContactsOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the post customers customer fid contacts o k response
+func (o *PostCustomersCustomerFidContactsOK) Code() int {
+	return 200
+}
+
 func (o *PostCustomersCustomerFidContactsOK) Error() string {
 	return fmt.Sprintf("[POST /customers/{customerFid}/contacts][%d] postCustomersCustomerFidContactsOK ", 200)
 }
@@ -113,11 +118,6 @@ type PostCustomersCustomerFidContactsDefault struct {
 	Payload *PostCustomersCustomerFidContactsDefaultBody
 }
 
-// Code gets the status code for the post customers customer fid contacts default response
-func (o *PostCustomersCustomerFidContactsDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this post customers customer fid contacts default response has a 2xx status code
 func (o *PostCustomersCustomerFidContactsDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -141,6 +141,11 @@ func (o *PostCustomersCustomerFidContactsDefault) IsServerError() bool {
 // IsCode returns true when this post customers customer fid contacts default response a status code equal to that given
 func (o *PostCustomersCustomerFidContactsDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the post customers customer fid contacts default response
+func (o *PostCustomersCustomerFidContactsDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PostCustomersCustomerFidContactsDefault) Error() string {
@@ -284,6 +289,11 @@ func (o *PostCustomersCustomerFidContactsDefaultBody) ContextValidate(ctx contex
 func (o *PostCustomersCustomerFidContactsDefaultBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("PostCustomersCustomerFidContacts default" + "." + "data")

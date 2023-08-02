@@ -79,6 +79,11 @@ func (o *DeleteCustomersCustomerFidPhonesPhoneFidOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the delete customers customer fid phones phone fid o k response
+func (o *DeleteCustomersCustomerFidPhonesPhoneFidOK) Code() int {
+	return 200
+}
+
 func (o *DeleteCustomersCustomerFidPhonesPhoneFidOK) Error() string {
 	return fmt.Sprintf("[DELETE /customers/{customerFid}/phones/{phoneFid}][%d] deleteCustomersCustomerFidPhonesPhoneFidOK ", 200)
 }
@@ -110,11 +115,6 @@ type DeleteCustomersCustomerFidPhonesPhoneFidDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the delete customers customer fid phones phone fid default response
-func (o *DeleteCustomersCustomerFidPhonesPhoneFidDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this delete customers customer fid phones phone fid default response has a 2xx status code
 func (o *DeleteCustomersCustomerFidPhonesPhoneFidDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *DeleteCustomersCustomerFidPhonesPhoneFidDefault) IsServerError() bool {
 // IsCode returns true when this delete customers customer fid phones phone fid default response a status code equal to that given
 func (o *DeleteCustomersCustomerFidPhonesPhoneFidDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the delete customers customer fid phones phone fid default response
+func (o *DeleteCustomersCustomerFidPhonesPhoneFidDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DeleteCustomersCustomerFidPhonesPhoneFidDefault) Error() string {

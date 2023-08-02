@@ -69,6 +69,10 @@ func (m *TicketStatusPayload) ContextValidate(ctx context.Context, formats strfm
 
 func (m *TicketStatusPayload) contextValidateTicketStatus(ctx context.Context, formats strfmt.Registry) error {
 
+	if swag.IsZero(m.TicketStatus) { // not required
+		return nil
+	}
+
 	if err := m.TicketStatus.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("ticketStatus")

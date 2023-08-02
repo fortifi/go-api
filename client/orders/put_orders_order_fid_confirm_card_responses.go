@@ -83,6 +83,11 @@ func (o *PutOrdersOrderFidConfirmCardOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the put orders order fid confirm card o k response
+func (o *PutOrdersOrderFidConfirmCardOK) Code() int {
+	return 200
+}
+
 func (o *PutOrdersOrderFidConfirmCardOK) Error() string {
 	return fmt.Sprintf("[PUT /orders/{orderFid}/confirmCard][%d] putOrdersOrderFidConfirmCardOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type PutOrdersOrderFidConfirmCardDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the put orders order fid confirm card default response
-func (o *PutOrdersOrderFidConfirmCardDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this put orders order fid confirm card default response has a 2xx status code
 func (o *PutOrdersOrderFidConfirmCardDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *PutOrdersOrderFidConfirmCardDefault) IsServerError() bool {
 // IsCode returns true when this put orders order fid confirm card default response a status code equal to that given
 func (o *PutOrdersOrderFidConfirmCardDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the put orders order fid confirm card default response
+func (o *PutOrdersOrderFidConfirmCardDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PutOrdersOrderFidConfirmCardDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *PutOrdersOrderFidConfirmCardOKBody) ContextValidate(ctx context.Context
 func (o *PutOrdersOrderFidConfirmCardOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("putOrdersOrderFidConfirmCardOK" + "." + "data")

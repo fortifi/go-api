@@ -83,6 +83,11 @@ func (o *PostCommentsOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the post comments o k response
+func (o *PostCommentsOK) Code() int {
+	return 200
+}
+
 func (o *PostCommentsOK) Error() string {
 	return fmt.Sprintf("[POST /comments][%d] postCommentsOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type PostCommentsDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the post comments default response
-func (o *PostCommentsDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this post comments default response has a 2xx status code
 func (o *PostCommentsDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *PostCommentsDefault) IsServerError() bool {
 // IsCode returns true when this post comments default response a status code equal to that given
 func (o *PostCommentsDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the post comments default response
+func (o *PostCommentsDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PostCommentsDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *PostCommentsOKBody) ContextValidate(ctx context.Context, formats strfmt
 func (o *PostCommentsOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("postCommentsOK" + "." + "data")

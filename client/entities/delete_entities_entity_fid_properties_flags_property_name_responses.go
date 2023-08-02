@@ -79,6 +79,11 @@ func (o *DeleteEntitiesEntityFidPropertiesFlagsPropertyNameOK) IsCode(code int) 
 	return code == 200
 }
 
+// Code gets the status code for the delete entities entity fid properties flags property name o k response
+func (o *DeleteEntitiesEntityFidPropertiesFlagsPropertyNameOK) Code() int {
+	return 200
+}
+
 func (o *DeleteEntitiesEntityFidPropertiesFlagsPropertyNameOK) Error() string {
 	return fmt.Sprintf("[DELETE /entities/{entityFid}/properties/flags/{propertyName}][%d] deleteEntitiesEntityFidPropertiesFlagsPropertyNameOK ", 200)
 }
@@ -110,11 +115,6 @@ type DeleteEntitiesEntityFidPropertiesFlagsPropertyNameDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the delete entities entity fid properties flags property name default response
-func (o *DeleteEntitiesEntityFidPropertiesFlagsPropertyNameDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this delete entities entity fid properties flags property name default response has a 2xx status code
 func (o *DeleteEntitiesEntityFidPropertiesFlagsPropertyNameDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *DeleteEntitiesEntityFidPropertiesFlagsPropertyNameDefault) IsServerErro
 // IsCode returns true when this delete entities entity fid properties flags property name default response a status code equal to that given
 func (o *DeleteEntitiesEntityFidPropertiesFlagsPropertyNameDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the delete entities entity fid properties flags property name default response
+func (o *DeleteEntitiesEntityFidPropertiesFlagsPropertyNameDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DeleteEntitiesEntityFidPropertiesFlagsPropertyNameDefault) Error() string {

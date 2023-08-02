@@ -82,6 +82,11 @@ func (m *ServiceIncidents) contextValidateServiceIncidents(ctx context.Context, 
 	for i := 0; i < len(m.ServiceIncidents); i++ {
 
 		if m.ServiceIncidents[i] != nil {
+
+			if swag.IsZero(m.ServiceIncidents[i]) { // not required
+				return nil
+			}
+
 			if err := m.ServiceIncidents[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("serviceIncidents" + "." + strconv.Itoa(i))

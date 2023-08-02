@@ -28,11 +28,53 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
+	GetTicketsTicketFid(params *GetTicketsTicketFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetTicketsTicketFidOK, error)
+
 	PostTickets(params *PostTicketsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostTicketsOK, error)
+
+	PostTicketsTicketFidNote(params *PostTicketsTicketFidNoteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostTicketsTicketFidNoteOK, error)
 
 	PutTicketsTicketFidStatus(params *PutTicketsTicketFidStatusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutTicketsTicketFidStatusOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
+}
+
+/*
+GetTicketsTicketFid gets a ticket
+*/
+func (a *Client) GetTicketsTicketFid(params *GetTicketsTicketFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetTicketsTicketFidOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetTicketsTicketFidParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "GetTicketsTicketFid",
+		Method:             "GET",
+		PathPattern:        "/tickets/{ticketFid}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetTicketsTicketFidReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetTicketsTicketFidOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*GetTicketsTicketFidDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
 /*
@@ -72,6 +114,44 @@ func (a *Client) PostTickets(params *PostTicketsParams, authInfo runtime.ClientA
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*PostTicketsDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PostTicketsTicketFidNote creates a note against the ticket
+*/
+func (a *Client) PostTicketsTicketFidNote(params *PostTicketsTicketFidNoteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostTicketsTicketFidNoteOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPostTicketsTicketFidNoteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PostTicketsTicketFidNote",
+		Method:             "POST",
+		PathPattern:        "/tickets/{ticketFid}/note",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PostTicketsTicketFidNoteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PostTicketsTicketFidNoteOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PostTicketsTicketFidNoteDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

@@ -83,6 +83,11 @@ func (o *GetOrganisationOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the get organisation o k response
+func (o *GetOrganisationOK) Code() int {
+	return 200
+}
+
 func (o *GetOrganisationOK) Error() string {
 	return fmt.Sprintf("[GET /organisation][%d] getOrganisationOK  %+v", 200, o.Payload)
 }
@@ -125,11 +130,6 @@ type GetOrganisationDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the get organisation default response
-func (o *GetOrganisationDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this get organisation default response has a 2xx status code
 func (o *GetOrganisationDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -153,6 +153,11 @@ func (o *GetOrganisationDefault) IsServerError() bool {
 // IsCode returns true when this get organisation default response a status code equal to that given
 func (o *GetOrganisationDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the get organisation default response
+func (o *GetOrganisationDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *GetOrganisationDefault) Error() string {
@@ -296,6 +301,11 @@ func (o *GetOrganisationOKBody) ContextValidate(ctx context.Context, formats str
 func (o *GetOrganisationOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("getOrganisationOK" + "." + "data")

@@ -79,6 +79,11 @@ func (o *PutPublishersPublisherFidDisableOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the put publishers publisher fid disable o k response
+func (o *PutPublishersPublisherFidDisableOK) Code() int {
+	return 200
+}
+
 func (o *PutPublishersPublisherFidDisableOK) Error() string {
 	return fmt.Sprintf("[PUT /publishers/{publisherFid}/disable][%d] putPublishersPublisherFidDisableOK ", 200)
 }
@@ -110,11 +115,6 @@ type PutPublishersPublisherFidDisableDefault struct {
 	Payload *models.Envelope
 }
 
-// Code gets the status code for the put publishers publisher fid disable default response
-func (o *PutPublishersPublisherFidDisableDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this put publishers publisher fid disable default response has a 2xx status code
 func (o *PutPublishersPublisherFidDisableDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -138,6 +138,11 @@ func (o *PutPublishersPublisherFidDisableDefault) IsServerError() bool {
 // IsCode returns true when this put publishers publisher fid disable default response a status code equal to that given
 func (o *PutPublishersPublisherFidDisableDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the put publishers publisher fid disable default response
+func (o *PutPublishersPublisherFidDisableDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *PutPublishersPublisherFidDisableDefault) Error() string {

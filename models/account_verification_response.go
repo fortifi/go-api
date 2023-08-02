@@ -96,6 +96,11 @@ func (m *AccountVerificationResponse) ContextValidate(ctx context.Context, forma
 func (m *AccountVerificationResponse) contextValidateVerification(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Verification != nil {
+
+		if swag.IsZero(m.Verification) { // not required
+			return nil
+		}
+
 		if err := m.Verification.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("verification")

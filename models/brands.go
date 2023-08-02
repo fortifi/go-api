@@ -82,6 +82,11 @@ func (m *Brands) contextValidateBrands(ctx context.Context, formats strfmt.Regis
 	for i := 0; i < len(m.Brands); i++ {
 
 		if m.Brands[i] != nil {
+
+			if swag.IsZero(m.Brands[i]) { // not required
+				return nil
+			}
+
 			if err := m.Brands[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("brands" + "." + strconv.Itoa(i))

@@ -97,6 +97,11 @@ func (m *FraudScan) contextValidateMetaDataItems(ctx context.Context, formats st
 	for i := 0; i < len(m.MetaDataItems); i++ {
 
 		if m.MetaDataItems[i] != nil {
+
+			if swag.IsZero(m.MetaDataItems[i]) { // not required
+				return nil
+			}
+
 			if err := m.MetaDataItems[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("metaDataItems" + "." + strconv.Itoa(i))
