@@ -6,6 +6,7 @@ package entities
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PutEntitiesEntityFidPropertiesFlagsPropertyNameOK) Code() int {
 }
 
 func (o *PutEntitiesEntityFidPropertiesFlagsPropertyNameOK) Error() string {
-	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/flags/{propertyName}][%d] putEntitiesEntityFidPropertiesFlagsPropertyNameOK ", 200)
+	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/flags/{propertyName}][%d] putEntitiesEntityFidPropertiesFlagsPropertyNameOK", 200)
 }
 
 func (o *PutEntitiesEntityFidPropertiesFlagsPropertyNameOK) String() string {
-	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/flags/{propertyName}][%d] putEntitiesEntityFidPropertiesFlagsPropertyNameOK ", 200)
+	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/flags/{propertyName}][%d] putEntitiesEntityFidPropertiesFlagsPropertyNameOK", 200)
 }
 
 func (o *PutEntitiesEntityFidPropertiesFlagsPropertyNameOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PutEntitiesEntityFidPropertiesFlagsPropertyNameDefault) Code() int {
 }
 
 func (o *PutEntitiesEntityFidPropertiesFlagsPropertyNameDefault) Error() string {
-	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/flags/{propertyName}][%d] PutEntitiesEntityFidPropertiesFlagsPropertyName default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/flags/{propertyName}][%d] PutEntitiesEntityFidPropertiesFlagsPropertyName default %s", o._statusCode, payload)
 }
 
 func (o *PutEntitiesEntityFidPropertiesFlagsPropertyNameDefault) String() string {
-	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/flags/{propertyName}][%d] PutEntitiesEntityFidPropertiesFlagsPropertyName default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/flags/{propertyName}][%d] PutEntitiesEntityFidPropertiesFlagsPropertyName default %s", o._statusCode, payload)
 }
 
 func (o *PutEntitiesEntityFidPropertiesFlagsPropertyNameDefault) GetPayload() *models.Envelope {

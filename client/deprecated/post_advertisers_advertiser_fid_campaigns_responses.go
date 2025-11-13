@@ -7,6 +7,7 @@ package deprecated
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostAdvertisersAdvertiserFidCampaignsOK) Code() int {
 }
 
 func (o *PostAdvertisersAdvertiserFidCampaignsOK) Error() string {
-	return fmt.Sprintf("[POST /advertisers/{advertiserFid}/campaigns][%d] postAdvertisersAdvertiserFidCampaignsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /advertisers/{advertiserFid}/campaigns][%d] postAdvertisersAdvertiserFidCampaignsOK %s", 200, payload)
 }
 
 func (o *PostAdvertisersAdvertiserFidCampaignsOK) String() string {
-	return fmt.Sprintf("[POST /advertisers/{advertiserFid}/campaigns][%d] postAdvertisersAdvertiserFidCampaignsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /advertisers/{advertiserFid}/campaigns][%d] postAdvertisersAdvertiserFidCampaignsOK %s", 200, payload)
 }
 
 func (o *PostAdvertisersAdvertiserFidCampaignsOK) GetPayload() *PostAdvertisersAdvertiserFidCampaignsOKBody {
@@ -161,11 +164,13 @@ func (o *PostAdvertisersAdvertiserFidCampaignsDefault) Code() int {
 }
 
 func (o *PostAdvertisersAdvertiserFidCampaignsDefault) Error() string {
-	return fmt.Sprintf("[POST /advertisers/{advertiserFid}/campaigns][%d] PostAdvertisersAdvertiserFidCampaigns default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /advertisers/{advertiserFid}/campaigns][%d] PostAdvertisersAdvertiserFidCampaigns default %s", o._statusCode, payload)
 }
 
 func (o *PostAdvertisersAdvertiserFidCampaignsDefault) String() string {
-	return fmt.Sprintf("[POST /advertisers/{advertiserFid}/campaigns][%d] PostAdvertisersAdvertiserFidCampaigns default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /advertisers/{advertiserFid}/campaigns][%d] PostAdvertisersAdvertiserFidCampaigns default %s", o._statusCode, payload)
 }
 
 func (o *PostAdvertisersAdvertiserFidCampaignsDefault) GetPayload() *models.Envelope {

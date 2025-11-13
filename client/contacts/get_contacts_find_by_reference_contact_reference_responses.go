@@ -7,6 +7,7 @@ package contacts
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetContactsFindByReferenceContactReferenceOK) Code() int {
 }
 
 func (o *GetContactsFindByReferenceContactReferenceOK) Error() string {
-	return fmt.Sprintf("[GET /contacts/findByReference/{contactReference}][%d] getContactsFindByReferenceContactReferenceOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /contacts/findByReference/{contactReference}][%d] getContactsFindByReferenceContactReferenceOK %s", 200, payload)
 }
 
 func (o *GetContactsFindByReferenceContactReferenceOK) String() string {
-	return fmt.Sprintf("[GET /contacts/findByReference/{contactReference}][%d] getContactsFindByReferenceContactReferenceOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /contacts/findByReference/{contactReference}][%d] getContactsFindByReferenceContactReferenceOK %s", 200, payload)
 }
 
 func (o *GetContactsFindByReferenceContactReferenceOK) GetPayload() *GetContactsFindByReferenceContactReferenceOKBody {
@@ -161,11 +164,13 @@ func (o *GetContactsFindByReferenceContactReferenceDefault) Code() int {
 }
 
 func (o *GetContactsFindByReferenceContactReferenceDefault) Error() string {
-	return fmt.Sprintf("[GET /contacts/findByReference/{contactReference}][%d] GetContactsFindByReferenceContactReference default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /contacts/findByReference/{contactReference}][%d] GetContactsFindByReferenceContactReference default %s", o._statusCode, payload)
 }
 
 func (o *GetContactsFindByReferenceContactReferenceDefault) String() string {
-	return fmt.Sprintf("[GET /contacts/findByReference/{contactReference}][%d] GetContactsFindByReferenceContactReference default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /contacts/findByReference/{contactReference}][%d] GetContactsFindByReferenceContactReference default %s", o._statusCode, payload)
 }
 
 func (o *GetContactsFindByReferenceContactReferenceDefault) GetPayload() *models.Envelope {

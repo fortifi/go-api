@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostCustomersCustomerFidTicketsTicketFidPostsOK) Code() int {
 }
 
 func (o *PostCustomersCustomerFidTicketsTicketFidPostsOK) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/tickets/{ticketFid}/posts][%d] postCustomersCustomerFidTicketsTicketFidPostsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/tickets/{ticketFid}/posts][%d] postCustomersCustomerFidTicketsTicketFidPostsOK %s", 200, payload)
 }
 
 func (o *PostCustomersCustomerFidTicketsTicketFidPostsOK) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/tickets/{ticketFid}/posts][%d] postCustomersCustomerFidTicketsTicketFidPostsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/tickets/{ticketFid}/posts][%d] postCustomersCustomerFidTicketsTicketFidPostsOK %s", 200, payload)
 }
 
 func (o *PostCustomersCustomerFidTicketsTicketFidPostsOK) GetPayload() *PostCustomersCustomerFidTicketsTicketFidPostsOKBody {
@@ -161,11 +164,13 @@ func (o *PostCustomersCustomerFidTicketsTicketFidPostsDefault) Code() int {
 }
 
 func (o *PostCustomersCustomerFidTicketsTicketFidPostsDefault) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/tickets/{ticketFid}/posts][%d] PostCustomersCustomerFidTicketsTicketFidPosts default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/tickets/{ticketFid}/posts][%d] PostCustomersCustomerFidTicketsTicketFidPosts default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidTicketsTicketFidPostsDefault) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/tickets/{ticketFid}/posts][%d] PostCustomersCustomerFidTicketsTicketFidPosts default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/tickets/{ticketFid}/posts][%d] PostCustomersCustomerFidTicketsTicketFidPosts default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidTicketsTicketFidPostsDefault) GetPayload() *models.Envelope {

@@ -22,7 +22,7 @@ type CreateOrderPayload struct {
 	// FID of a valid Brand
 	BrandFid string `json:"brandFid,omitempty"`
 
-	// Charge ID provided by ChargeHive.com
+	// Charge ID provided by ChargeHive.com or `true` to create one
 	ChargeID string `json:"chargeId,omitempty"`
 
 	// IP Address of the visitor

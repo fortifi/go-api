@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PutCustomersCustomerFidPaymentMethodsPaymentMethodFidOK) Code() int {
 }
 
 func (o *PutCustomersCustomerFidPaymentMethodsPaymentMethodFidOK) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/paymentMethods/{paymentMethodFid}][%d] putCustomersCustomerFidPaymentMethodsPaymentMethodFidOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/paymentMethods/{paymentMethodFid}][%d] putCustomersCustomerFidPaymentMethodsPaymentMethodFidOK", 200)
 }
 
 func (o *PutCustomersCustomerFidPaymentMethodsPaymentMethodFidOK) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/paymentMethods/{paymentMethodFid}][%d] putCustomersCustomerFidPaymentMethodsPaymentMethodFidOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/paymentMethods/{paymentMethodFid}][%d] putCustomersCustomerFidPaymentMethodsPaymentMethodFidOK", 200)
 }
 
 func (o *PutCustomersCustomerFidPaymentMethodsPaymentMethodFidOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PutCustomersCustomerFidPaymentMethodsPaymentMethodFidDefault) Code() in
 }
 
 func (o *PutCustomersCustomerFidPaymentMethodsPaymentMethodFidDefault) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/paymentMethods/{paymentMethodFid}][%d] PutCustomersCustomerFidPaymentMethodsPaymentMethodFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/paymentMethods/{paymentMethodFid}][%d] PutCustomersCustomerFidPaymentMethodsPaymentMethodFid default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidPaymentMethodsPaymentMethodFidDefault) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/paymentMethods/{paymentMethodFid}][%d] PutCustomersCustomerFidPaymentMethodsPaymentMethodFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/paymentMethods/{paymentMethodFid}][%d] PutCustomersCustomerFidPaymentMethodsPaymentMethodFid default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidPaymentMethodsPaymentMethodFidDefault) GetPayload() *models.Envelope {

@@ -7,6 +7,7 @@ package entities
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostUploadUploadURLOK) Code() int {
 }
 
 func (o *PostUploadUploadURLOK) Error() string {
-	return fmt.Sprintf("[POST /upload/uploadUrl][%d] postUploadUploadUrlOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /upload/uploadUrl][%d] postUploadUploadUrlOK %s", 200, payload)
 }
 
 func (o *PostUploadUploadURLOK) String() string {
-	return fmt.Sprintf("[POST /upload/uploadUrl][%d] postUploadUploadUrlOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /upload/uploadUrl][%d] postUploadUploadUrlOK %s", 200, payload)
 }
 
 func (o *PostUploadUploadURLOK) GetPayload() *PostUploadUploadURLOKBody {
@@ -161,11 +164,13 @@ func (o *PostUploadUploadURLDefault) Code() int {
 }
 
 func (o *PostUploadUploadURLDefault) Error() string {
-	return fmt.Sprintf("[POST /upload/uploadUrl][%d] PostUploadUploadURL default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /upload/uploadUrl][%d] PostUploadUploadURL default %s", o._statusCode, payload)
 }
 
 func (o *PostUploadUploadURLDefault) String() string {
-	return fmt.Sprintf("[POST /upload/uploadUrl][%d] PostUploadUploadURL default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /upload/uploadUrl][%d] PostUploadUploadURL default %s", o._statusCode, payload)
 }
 
 func (o *PostUploadUploadURLDefault) GetPayload() *models.Envelope {

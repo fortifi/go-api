@@ -7,12 +7,38 @@ package reviews
 
 import (
 	"github.com/go-openapi/runtime"
+	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 )
 
 // New creates a new reviews API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
 	return &Client{transport: transport, formats: formats}
+}
+
+// New creates a new reviews API client with basic auth credentials.
+// It takes the following parameters:
+// - host: http host (github.com).
+// - basePath: any base path for the API client ("/v1", "/v3").
+// - scheme: http scheme ("http", "https").
+// - user: user for basic authentication header.
+// - password: password for basic authentication header.
+func NewClientWithBasicAuth(host, basePath, scheme, user, password string) ClientService {
+	transport := httptransport.New(host, basePath, []string{scheme})
+	transport.DefaultAuthentication = httptransport.BasicAuth(user, password)
+	return &Client{transport: transport, formats: strfmt.Default}
+}
+
+// New creates a new reviews API client with a bearer token for authentication.
+// It takes the following parameters:
+// - host: http host (github.com).
+// - basePath: any base path for the API client ("/v1", "/v3").
+// - scheme: http scheme ("http", "https").
+// - bearerToken: bearer token for Bearer authentication header.
+func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) ClientService {
+	transport := httptransport.New(host, basePath, []string{scheme})
+	transport.DefaultAuthentication = httptransport.BearerToken(bearerToken)
+	return &Client{transport: transport, formats: strfmt.Default}
 }
 
 /*
@@ -23,16 +49,56 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
-// ClientOption is the option for Client methods
+// ClientOption may be used to customize the behavior of Client methods.
 type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
+	GetCustomersCustomerFidReviews(params *GetCustomersCustomerFidReviewsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidReviewsOK, error)
+
 	PostReview(params *PostReviewParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostReviewOK, error)
 
-	PutReview(params *PutReviewParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutReviewOK, error)
+	PutReviewReviewFid(params *PutReviewReviewFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutReviewReviewFidOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
+}
+
+/*
+GetCustomersCustomerFidReviews lists reviews
+*/
+func (a *Client) GetCustomersCustomerFidReviews(params *GetCustomersCustomerFidReviewsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidReviewsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetCustomersCustomerFidReviewsParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "GetCustomersCustomerFidReviews",
+		Method:             "GET",
+		PathPattern:        "/customers/{customerFid}/reviews",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetCustomersCustomerFidReviewsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetCustomersCustomerFidReviewsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*GetCustomersCustomerFidReviewsDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
 /*
@@ -74,22 +140,22 @@ func (a *Client) PostReview(params *PostReviewParams, authInfo runtime.ClientAut
 }
 
 /*
-PutReview updates a review
+PutReviewReviewFid updates a review
 */
-func (a *Client) PutReview(params *PutReviewParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutReviewOK, error) {
+func (a *Client) PutReviewReviewFid(params *PutReviewReviewFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutReviewReviewFidOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewPutReviewParams()
+		params = NewPutReviewReviewFidParams()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "PutReview",
+		ID:                 "PutReviewReviewFid",
 		Method:             "PUT",
-		PathPattern:        "/review",
+		PathPattern:        "/review/{reviewFid}",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &PutReviewReader{formats: a.formats},
+		Reader:             &PutReviewReviewFidReader{formats: a.formats},
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
@@ -102,12 +168,12 @@ func (a *Client) PutReview(params *PutReviewParams, authInfo runtime.ClientAuthI
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*PutReviewOK)
+	success, ok := result.(*PutReviewReviewFidOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
-	unexpectedSuccess := result.(*PutReviewDefault)
+	unexpectedSuccess := result.(*PutReviewReviewFidDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

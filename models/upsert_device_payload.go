@@ -53,7 +53,7 @@ type UpsertDevicePayload struct {
 	Manufacturer string `json:"manufacturer,omitempty"`
 
 	// Status of customer email opt-in
-	// Enum: [no confirmed]
+	// Enum: ["no","confirmed"]
 	OptInStatus string `json:"optInStatus,omitempty"`
 
 	// The operating system of the device
@@ -66,7 +66,7 @@ type UpsertDevicePayload struct {
 	PushAuth string `json:"pushAuth,omitempty"`
 
 	// push source
-	// Enum: [apple firebase]
+	// Enum: ["apple","firebase","web-push"]
 	PushSource string `json:"pushSource,omitempty"`
 
 	// The height of the device screen
@@ -169,7 +169,7 @@ var upsertDevicePayloadTypePushSourcePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["apple","firebase"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["apple","firebase","web-push"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -184,6 +184,9 @@ const (
 
 	// UpsertDevicePayloadPushSourceFirebase captures enum value "firebase"
 	UpsertDevicePayloadPushSourceFirebase string = "firebase"
+
+	// UpsertDevicePayloadPushSourceWebDashPush captures enum value "web-push"
+	UpsertDevicePayloadPushSourceWebDashPush string = "web-push"
 )
 
 // prop value enum

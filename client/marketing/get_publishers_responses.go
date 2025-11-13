@@ -7,6 +7,7 @@ package marketing
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetPublishersOK) Code() int {
 }
 
 func (o *GetPublishersOK) Error() string {
-	return fmt.Sprintf("[GET /publishers][%d] getPublishersOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /publishers][%d] getPublishersOK %s", 200, payload)
 }
 
 func (o *GetPublishersOK) String() string {
-	return fmt.Sprintf("[GET /publishers][%d] getPublishersOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /publishers][%d] getPublishersOK %s", 200, payload)
 }
 
 func (o *GetPublishersOK) GetPayload() *GetPublishersOKBody {
@@ -161,11 +164,13 @@ func (o *GetPublishersDefault) Code() int {
 }
 
 func (o *GetPublishersDefault) Error() string {
-	return fmt.Sprintf("[GET /publishers][%d] GetPublishers default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /publishers][%d] GetPublishers default %s", o._statusCode, payload)
 }
 
 func (o *GetPublishersDefault) String() string {
-	return fmt.Sprintf("[GET /publishers][%d] GetPublishers default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /publishers][%d] GetPublishers default %s", o._statusCode, payload)
 }
 
 func (o *GetPublishersDefault) GetPayload() *models.Envelope {

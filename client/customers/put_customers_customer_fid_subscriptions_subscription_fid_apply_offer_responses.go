@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferOK) Code()
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferOK) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/applyOffer][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/applyOffer][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferOK", 200)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferOK) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/applyOffer][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/applyOffer][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferOK", 200)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferDefault) C
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferDefault) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/applyOffer][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOffer default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/applyOffer][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOffer default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferDefault) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/applyOffer][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOffer default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/applyOffer][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOffer default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferDefault) GetPayload() *models.Envelope {

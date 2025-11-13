@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK) Co
 }
 
 func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/subscriptions/{subscriptionFid}/retentionFlow][%d] postCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/subscriptions/{subscriptionFid}/retentionFlow][%d] postCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK %s", 200, payload)
 }
 
 func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/subscriptions/{subscriptionFid}/retentionFlow][%d] postCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/subscriptions/{subscriptionFid}/retentionFlow][%d] postCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK %s", 200, payload)
 }
 
 func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK) GetPayload() *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOKBody {
@@ -161,11 +164,13 @@ func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowDefaul
 }
 
 func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowDefault) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/subscriptions/{subscriptionFid}/retentionFlow][%d] PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlow default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/subscriptions/{subscriptionFid}/retentionFlow][%d] PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlow default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowDefault) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/subscriptions/{subscriptionFid}/retentionFlow][%d] PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlow default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/subscriptions/{subscriptionFid}/retentionFlow][%d] PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlow default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowDefault) GetPayload() *models.Envelope {

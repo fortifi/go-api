@@ -7,6 +7,7 @@ package comments
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostCommentsOK) Code() int {
 }
 
 func (o *PostCommentsOK) Error() string {
-	return fmt.Sprintf("[POST /comments][%d] postCommentsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /comments][%d] postCommentsOK %s", 200, payload)
 }
 
 func (o *PostCommentsOK) String() string {
-	return fmt.Sprintf("[POST /comments][%d] postCommentsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /comments][%d] postCommentsOK %s", 200, payload)
 }
 
 func (o *PostCommentsOK) GetPayload() *PostCommentsOKBody {
@@ -161,11 +164,13 @@ func (o *PostCommentsDefault) Code() int {
 }
 
 func (o *PostCommentsDefault) Error() string {
-	return fmt.Sprintf("[POST /comments][%d] PostComments default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /comments][%d] PostComments default %s", o._statusCode, payload)
 }
 
 func (o *PostCommentsDefault) String() string {
-	return fmt.Sprintf("[POST /comments][%d] PostComments default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /comments][%d] PostComments default %s", o._statusCode, payload)
 }
 
 func (o *PostCommentsDefault) GetPayload() *models.Envelope {

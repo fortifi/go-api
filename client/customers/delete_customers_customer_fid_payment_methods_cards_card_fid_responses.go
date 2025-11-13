@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *DeleteCustomersCustomerFidPaymentMethodsCardsCardFidOK) Code() int {
 }
 
 func (o *DeleteCustomersCustomerFidPaymentMethodsCardsCardFidOK) Error() string {
-	return fmt.Sprintf("[DELETE /customers/{customerFid}/paymentMethods/cards/{cardFid}][%d] deleteCustomersCustomerFidPaymentMethodsCardsCardFidOK ", 200)
+	return fmt.Sprintf("[DELETE /customers/{customerFid}/paymentMethods/cards/{cardFid}][%d] deleteCustomersCustomerFidPaymentMethodsCardsCardFidOK", 200)
 }
 
 func (o *DeleteCustomersCustomerFidPaymentMethodsCardsCardFidOK) String() string {
-	return fmt.Sprintf("[DELETE /customers/{customerFid}/paymentMethods/cards/{cardFid}][%d] deleteCustomersCustomerFidPaymentMethodsCardsCardFidOK ", 200)
+	return fmt.Sprintf("[DELETE /customers/{customerFid}/paymentMethods/cards/{cardFid}][%d] deleteCustomersCustomerFidPaymentMethodsCardsCardFidOK", 200)
 }
 
 func (o *DeleteCustomersCustomerFidPaymentMethodsCardsCardFidOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *DeleteCustomersCustomerFidPaymentMethodsCardsCardFidDefault) Code() int
 }
 
 func (o *DeleteCustomersCustomerFidPaymentMethodsCardsCardFidDefault) Error() string {
-	return fmt.Sprintf("[DELETE /customers/{customerFid}/paymentMethods/cards/{cardFid}][%d] DeleteCustomersCustomerFidPaymentMethodsCardsCardFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /customers/{customerFid}/paymentMethods/cards/{cardFid}][%d] DeleteCustomersCustomerFidPaymentMethodsCardsCardFid default %s", o._statusCode, payload)
 }
 
 func (o *DeleteCustomersCustomerFidPaymentMethodsCardsCardFidDefault) String() string {
-	return fmt.Sprintf("[DELETE /customers/{customerFid}/paymentMethods/cards/{cardFid}][%d] DeleteCustomersCustomerFidPaymentMethodsCardsCardFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /customers/{customerFid}/paymentMethods/cards/{cardFid}][%d] DeleteCustomersCustomerFidPaymentMethodsCardsCardFid default %s", o._statusCode, payload)
 }
 
 func (o *DeleteCustomersCustomerFidPaymentMethodsCardsCardFidDefault) GetPayload() *models.Envelope {

@@ -7,6 +7,7 @@ package interactions
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostInteractionsInviteOK) Code() int {
 }
 
 func (o *PostInteractionsInviteOK) Error() string {
-	return fmt.Sprintf("[POST /interactions/invite][%d] postInteractionsInviteOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/invite][%d] postInteractionsInviteOK %s", 200, payload)
 }
 
 func (o *PostInteractionsInviteOK) String() string {
-	return fmt.Sprintf("[POST /interactions/invite][%d] postInteractionsInviteOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/invite][%d] postInteractionsInviteOK %s", 200, payload)
 }
 
 func (o *PostInteractionsInviteOK) GetPayload() *PostInteractionsInviteOKBody {
@@ -161,11 +164,13 @@ func (o *PostInteractionsInviteDefault) Code() int {
 }
 
 func (o *PostInteractionsInviteDefault) Error() string {
-	return fmt.Sprintf("[POST /interactions/invite][%d] PostInteractionsInvite default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/invite][%d] PostInteractionsInvite default %s", o._statusCode, payload)
 }
 
 func (o *PostInteractionsInviteDefault) String() string {
-	return fmt.Sprintf("[POST /interactions/invite][%d] PostInteractionsInvite default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/invite][%d] PostInteractionsInvite default %s", o._statusCode, payload)
 }
 
 func (o *PostInteractionsInviteDefault) GetPayload() *models.Envelope {

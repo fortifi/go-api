@@ -7,6 +7,7 @@ package polymers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostPolymersParentFidOK) Code() int {
 }
 
 func (o *PostPolymersParentFidOK) Error() string {
-	return fmt.Sprintf("[POST /polymers/{parentFid}][%d] postPolymersParentFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /polymers/{parentFid}][%d] postPolymersParentFidOK %s", 200, payload)
 }
 
 func (o *PostPolymersParentFidOK) String() string {
-	return fmt.Sprintf("[POST /polymers/{parentFid}][%d] postPolymersParentFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /polymers/{parentFid}][%d] postPolymersParentFidOK %s", 200, payload)
 }
 
 func (o *PostPolymersParentFidOK) GetPayload() *PostPolymersParentFidOKBody {
@@ -161,11 +164,13 @@ func (o *PostPolymersParentFidDefault) Code() int {
 }
 
 func (o *PostPolymersParentFidDefault) Error() string {
-	return fmt.Sprintf("[POST /polymers/{parentFid}][%d] PostPolymersParentFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /polymers/{parentFid}][%d] PostPolymersParentFid default %s", o._statusCode, payload)
 }
 
 func (o *PostPolymersParentFidDefault) String() string {
-	return fmt.Sprintf("[POST /polymers/{parentFid}][%d] PostPolymersParentFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /polymers/{parentFid}][%d] PostPolymersParentFid default %s", o._statusCode, payload)
 }
 
 func (o *PostPolymersParentFidDefault) GetPayload() *models.Envelope {

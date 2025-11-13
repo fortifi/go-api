@@ -7,6 +7,7 @@ package marketing
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostVisitorsVisitorIDActionsActionKeyReverseOK) Code() int {
 }
 
 func (o *PostVisitorsVisitorIDActionsActionKeyReverseOK) Error() string {
-	return fmt.Sprintf("[POST /visitors/{visitorId}/actions/{actionKey}/reverse][%d] postVisitorsVisitorIdActionsActionKeyReverseOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /visitors/{visitorId}/actions/{actionKey}/reverse][%d] postVisitorsVisitorIdActionsActionKeyReverseOK %s", 200, payload)
 }
 
 func (o *PostVisitorsVisitorIDActionsActionKeyReverseOK) String() string {
-	return fmt.Sprintf("[POST /visitors/{visitorId}/actions/{actionKey}/reverse][%d] postVisitorsVisitorIdActionsActionKeyReverseOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /visitors/{visitorId}/actions/{actionKey}/reverse][%d] postVisitorsVisitorIdActionsActionKeyReverseOK %s", 200, payload)
 }
 
 func (o *PostVisitorsVisitorIDActionsActionKeyReverseOK) GetPayload() *PostVisitorsVisitorIDActionsActionKeyReverseOKBody {
@@ -161,11 +164,13 @@ func (o *PostVisitorsVisitorIDActionsActionKeyReverseDefault) Code() int {
 }
 
 func (o *PostVisitorsVisitorIDActionsActionKeyReverseDefault) Error() string {
-	return fmt.Sprintf("[POST /visitors/{visitorId}/actions/{actionKey}/reverse][%d] PostVisitorsVisitorIDActionsActionKeyReverse default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /visitors/{visitorId}/actions/{actionKey}/reverse][%d] PostVisitorsVisitorIDActionsActionKeyReverse default %s", o._statusCode, payload)
 }
 
 func (o *PostVisitorsVisitorIDActionsActionKeyReverseDefault) String() string {
-	return fmt.Sprintf("[POST /visitors/{visitorId}/actions/{actionKey}/reverse][%d] PostVisitorsVisitorIDActionsActionKeyReverse default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /visitors/{visitorId}/actions/{actionKey}/reverse][%d] PostVisitorsVisitorIDActionsActionKeyReverse default %s", o._statusCode, payload)
 }
 
 func (o *PostVisitorsVisitorIDActionsActionKeyReverseDefault) GetPayload() *models.Envelope {

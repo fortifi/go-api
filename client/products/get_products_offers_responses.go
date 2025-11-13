@@ -7,6 +7,7 @@ package products
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetProductsOffersOK) Code() int {
 }
 
 func (o *GetProductsOffersOK) Error() string {
-	return fmt.Sprintf("[GET /products/offers][%d] getProductsOffersOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /products/offers][%d] getProductsOffersOK %s", 200, payload)
 }
 
 func (o *GetProductsOffersOK) String() string {
-	return fmt.Sprintf("[GET /products/offers][%d] getProductsOffersOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /products/offers][%d] getProductsOffersOK %s", 200, payload)
 }
 
 func (o *GetProductsOffersOK) GetPayload() *GetProductsOffersOKBody {
@@ -161,11 +164,13 @@ func (o *GetProductsOffersDefault) Code() int {
 }
 
 func (o *GetProductsOffersDefault) Error() string {
-	return fmt.Sprintf("[GET /products/offers][%d] GetProductsOffers default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /products/offers][%d] GetProductsOffers default %s", o._statusCode, payload)
 }
 
 func (o *GetProductsOffersDefault) String() string {
-	return fmt.Sprintf("[GET /products/offers][%d] GetProductsOffers default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /products/offers][%d] GetProductsOffers default %s", o._statusCode, payload)
 }
 
 func (o *GetProductsOffersDefault) GetPayload() *models.Envelope {

@@ -6,6 +6,7 @@ package entities
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementOK) Code() i
 }
 
 func (o *PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementOK) Error() string {
-	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/counters/{propertyName}/increment][%d] putEntitiesEntityFidPropertiesCountersPropertyNameIncrementOK ", 200)
+	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/counters/{propertyName}/increment][%d] putEntitiesEntityFidPropertiesCountersPropertyNameIncrementOK", 200)
 }
 
 func (o *PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementOK) String() string {
-	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/counters/{propertyName}/increment][%d] putEntitiesEntityFidPropertiesCountersPropertyNameIncrementOK ", 200)
+	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/counters/{propertyName}/increment][%d] putEntitiesEntityFidPropertiesCountersPropertyNameIncrementOK", 200)
 }
 
 func (o *PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementDefault) Cod
 }
 
 func (o *PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementDefault) Error() string {
-	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/counters/{propertyName}/increment][%d] PutEntitiesEntityFidPropertiesCountersPropertyNameIncrement default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/counters/{propertyName}/increment][%d] PutEntitiesEntityFidPropertiesCountersPropertyNameIncrement default %s", o._statusCode, payload)
 }
 
 func (o *PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementDefault) String() string {
-	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/counters/{propertyName}/increment][%d] PutEntitiesEntityFidPropertiesCountersPropertyNameIncrement default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/counters/{propertyName}/increment][%d] PutEntitiesEntityFidPropertiesCountersPropertyNameIncrement default %s", o._statusCode, payload)
 }
 
 func (o *PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementDefault) GetPayload() *models.Envelope {

@@ -7,6 +7,7 @@ package interactions
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostInteractionsInteractionFidMessageOK) Code() int {
 }
 
 func (o *PostInteractionsInteractionFidMessageOK) Error() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/message][%d] postInteractionsInteractionFidMessageOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/message][%d] postInteractionsInteractionFidMessageOK %s", 200, payload)
 }
 
 func (o *PostInteractionsInteractionFidMessageOK) String() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/message][%d] postInteractionsInteractionFidMessageOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/message][%d] postInteractionsInteractionFidMessageOK %s", 200, payload)
 }
 
 func (o *PostInteractionsInteractionFidMessageOK) GetPayload() *PostInteractionsInteractionFidMessageOKBody {
@@ -161,11 +164,13 @@ func (o *PostInteractionsInteractionFidMessageDefault) Code() int {
 }
 
 func (o *PostInteractionsInteractionFidMessageDefault) Error() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/message][%d] PostInteractionsInteractionFidMessage default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/message][%d] PostInteractionsInteractionFidMessage default %s", o._statusCode, payload)
 }
 
 func (o *PostInteractionsInteractionFidMessageDefault) String() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/message][%d] PostInteractionsInteractionFidMessage default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/message][%d] PostInteractionsInteractionFidMessage default %s", o._statusCode, payload)
 }
 
 func (o *PostInteractionsInteractionFidMessageDefault) GetPayload() *models.Envelope {

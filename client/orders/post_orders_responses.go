@@ -7,6 +7,7 @@ package orders
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostOrdersOK) Code() int {
 }
 
 func (o *PostOrdersOK) Error() string {
-	return fmt.Sprintf("[POST /orders][%d] postOrdersOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /orders][%d] postOrdersOK %s", 200, payload)
 }
 
 func (o *PostOrdersOK) String() string {
-	return fmt.Sprintf("[POST /orders][%d] postOrdersOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /orders][%d] postOrdersOK %s", 200, payload)
 }
 
 func (o *PostOrdersOK) GetPayload() *PostOrdersOKBody {
@@ -161,11 +164,13 @@ func (o *PostOrdersDefault) Code() int {
 }
 
 func (o *PostOrdersDefault) Error() string {
-	return fmt.Sprintf("[POST /orders][%d] PostOrders default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /orders][%d] PostOrders default %s", o._statusCode, payload)
 }
 
 func (o *PostOrdersDefault) String() string {
-	return fmt.Sprintf("[POST /orders][%d] PostOrders default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /orders][%d] PostOrders default %s", o._statusCode, payload)
 }
 
 func (o *PostOrdersDefault) GetPayload() *models.Envelope {

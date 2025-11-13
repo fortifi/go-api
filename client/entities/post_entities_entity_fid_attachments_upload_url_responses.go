@@ -7,6 +7,7 @@ package entities
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostEntitiesEntityFidAttachmentsUploadURLOK) Code() int {
 }
 
 func (o *PostEntitiesEntityFidAttachmentsUploadURLOK) Error() string {
-	return fmt.Sprintf("[POST /entities/{entityFid}/attachments/uploadUrl][%d] postEntitiesEntityFidAttachmentsUploadUrlOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /entities/{entityFid}/attachments/uploadUrl][%d] postEntitiesEntityFidAttachmentsUploadUrlOK %s", 200, payload)
 }
 
 func (o *PostEntitiesEntityFidAttachmentsUploadURLOK) String() string {
-	return fmt.Sprintf("[POST /entities/{entityFid}/attachments/uploadUrl][%d] postEntitiesEntityFidAttachmentsUploadUrlOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /entities/{entityFid}/attachments/uploadUrl][%d] postEntitiesEntityFidAttachmentsUploadUrlOK %s", 200, payload)
 }
 
 func (o *PostEntitiesEntityFidAttachmentsUploadURLOK) GetPayload() *PostEntitiesEntityFidAttachmentsUploadURLOKBody {
@@ -161,11 +164,13 @@ func (o *PostEntitiesEntityFidAttachmentsUploadURLDefault) Code() int {
 }
 
 func (o *PostEntitiesEntityFidAttachmentsUploadURLDefault) Error() string {
-	return fmt.Sprintf("[POST /entities/{entityFid}/attachments/uploadUrl][%d] PostEntitiesEntityFidAttachmentsUploadURL default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /entities/{entityFid}/attachments/uploadUrl][%d] PostEntitiesEntityFidAttachmentsUploadURL default %s", o._statusCode, payload)
 }
 
 func (o *PostEntitiesEntityFidAttachmentsUploadURLDefault) String() string {
-	return fmt.Sprintf("[POST /entities/{entityFid}/attachments/uploadUrl][%d] PostEntitiesEntityFidAttachmentsUploadURL default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /entities/{entityFid}/attachments/uploadUrl][%d] PostEntitiesEntityFidAttachmentsUploadURL default %s", o._statusCode, payload)
 }
 
 func (o *PostEntitiesEntityFidAttachmentsUploadURLDefault) GetPayload() *models.Envelope {

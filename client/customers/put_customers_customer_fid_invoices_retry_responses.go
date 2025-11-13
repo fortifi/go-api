@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PutCustomersCustomerFidInvoicesRetryOK) Code() int {
 }
 
 func (o *PutCustomersCustomerFidInvoicesRetryOK) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/invoices/retry][%d] putCustomersCustomerFidInvoicesRetryOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/invoices/retry][%d] putCustomersCustomerFidInvoicesRetryOK", 200)
 }
 
 func (o *PutCustomersCustomerFidInvoicesRetryOK) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/invoices/retry][%d] putCustomersCustomerFidInvoicesRetryOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/invoices/retry][%d] putCustomersCustomerFidInvoicesRetryOK", 200)
 }
 
 func (o *PutCustomersCustomerFidInvoicesRetryOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PutCustomersCustomerFidInvoicesRetryDefault) Code() int {
 }
 
 func (o *PutCustomersCustomerFidInvoicesRetryDefault) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/invoices/retry][%d] PutCustomersCustomerFidInvoicesRetry default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/invoices/retry][%d] PutCustomersCustomerFidInvoicesRetry default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidInvoicesRetryDefault) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/invoices/retry][%d] PutCustomersCustomerFidInvoicesRetry default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/invoices/retry][%d] PutCustomersCustomerFidInvoicesRetry default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidInvoicesRetryDefault) GetPayload() *models.Envelope {

@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetCustomersCustomerFidPaymentsPaymentFidOK) Code() int {
 }
 
 func (o *GetCustomersCustomerFidPaymentsPaymentFidOK) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/payments/{paymentFid}][%d] getCustomersCustomerFidPaymentsPaymentFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/payments/{paymentFid}][%d] getCustomersCustomerFidPaymentsPaymentFidOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidPaymentsPaymentFidOK) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/payments/{paymentFid}][%d] getCustomersCustomerFidPaymentsPaymentFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/payments/{paymentFid}][%d] getCustomersCustomerFidPaymentsPaymentFidOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidPaymentsPaymentFidOK) GetPayload() *GetCustomersCustomerFidPaymentsPaymentFidOKBody {
@@ -161,11 +164,13 @@ func (o *GetCustomersCustomerFidPaymentsPaymentFidDefault) Code() int {
 }
 
 func (o *GetCustomersCustomerFidPaymentsPaymentFidDefault) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/payments/{paymentFid}][%d] GetCustomersCustomerFidPaymentsPaymentFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/payments/{paymentFid}][%d] GetCustomersCustomerFidPaymentsPaymentFid default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidPaymentsPaymentFidDefault) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/payments/{paymentFid}][%d] GetCustomersCustomerFidPaymentsPaymentFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/payments/{paymentFid}][%d] GetCustomersCustomerFidPaymentsPaymentFid default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidPaymentsPaymentFidDefault) GetPayload() *models.Envelope {

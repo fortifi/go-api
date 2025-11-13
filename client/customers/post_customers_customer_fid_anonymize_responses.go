@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostCustomersCustomerFidAnonymizeOK) Code() int {
 }
 
 func (o *PostCustomersCustomerFidAnonymizeOK) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/anonymize][%d] postCustomersCustomerFidAnonymizeOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/anonymize][%d] postCustomersCustomerFidAnonymizeOK %s", 200, payload)
 }
 
 func (o *PostCustomersCustomerFidAnonymizeOK) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/anonymize][%d] postCustomersCustomerFidAnonymizeOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/anonymize][%d] postCustomersCustomerFidAnonymizeOK %s", 200, payload)
 }
 
 func (o *PostCustomersCustomerFidAnonymizeOK) GetPayload() *PostCustomersCustomerFidAnonymizeOKBody {
@@ -161,11 +164,13 @@ func (o *PostCustomersCustomerFidAnonymizeDefault) Code() int {
 }
 
 func (o *PostCustomersCustomerFidAnonymizeDefault) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/anonymize][%d] PostCustomersCustomerFidAnonymize default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/anonymize][%d] PostCustomersCustomerFidAnonymize default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidAnonymizeDefault) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/anonymize][%d] PostCustomersCustomerFidAnonymize default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/anonymize][%d] PostCustomersCustomerFidAnonymize default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidAnonymizeDefault) GetPayload() *models.Envelope {

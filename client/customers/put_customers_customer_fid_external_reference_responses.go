@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PutCustomersCustomerFidExternalReferenceOK) Code() int {
 }
 
 func (o *PutCustomersCustomerFidExternalReferenceOK) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/externalReference][%d] putCustomersCustomerFidExternalReferenceOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/externalReference][%d] putCustomersCustomerFidExternalReferenceOK", 200)
 }
 
 func (o *PutCustomersCustomerFidExternalReferenceOK) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/externalReference][%d] putCustomersCustomerFidExternalReferenceOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/externalReference][%d] putCustomersCustomerFidExternalReferenceOK", 200)
 }
 
 func (o *PutCustomersCustomerFidExternalReferenceOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PutCustomersCustomerFidExternalReferenceDefault) Code() int {
 }
 
 func (o *PutCustomersCustomerFidExternalReferenceDefault) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/externalReference][%d] PutCustomersCustomerFidExternalReference default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/externalReference][%d] PutCustomersCustomerFidExternalReference default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidExternalReferenceDefault) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/externalReference][%d] PutCustomersCustomerFidExternalReference default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/externalReference][%d] PutCustomersCustomerFidExternalReference default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidExternalReferenceDefault) GetPayload() *models.Envelope {

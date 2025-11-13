@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryOK)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryOK) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/provisioning/retry][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/provisioning/retry][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryOK", 200)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryOK) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/provisioning/retry][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/provisioning/retry][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryOK", 200)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryDef
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryDefault) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/provisioning/retry][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetry default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/provisioning/retry][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetry default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryDefault) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/provisioning/retry][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetry default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/provisioning/retry][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetry default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryDefault) GetPayload() *models.Envelope {

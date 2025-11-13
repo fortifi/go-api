@@ -7,6 +7,7 @@ package attachment
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostAttachmentEntityFidOK) Code() int {
 }
 
 func (o *PostAttachmentEntityFidOK) Error() string {
-	return fmt.Sprintf("[POST /attachment/{entityFid}][%d] postAttachmentEntityFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /attachment/{entityFid}][%d] postAttachmentEntityFidOK %s", 200, payload)
 }
 
 func (o *PostAttachmentEntityFidOK) String() string {
-	return fmt.Sprintf("[POST /attachment/{entityFid}][%d] postAttachmentEntityFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /attachment/{entityFid}][%d] postAttachmentEntityFidOK %s", 200, payload)
 }
 
 func (o *PostAttachmentEntityFidOK) GetPayload() *PostAttachmentEntityFidOKBody {
@@ -161,11 +164,13 @@ func (o *PostAttachmentEntityFidDefault) Code() int {
 }
 
 func (o *PostAttachmentEntityFidDefault) Error() string {
-	return fmt.Sprintf("[POST /attachment/{entityFid}][%d] PostAttachmentEntityFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /attachment/{entityFid}][%d] PostAttachmentEntityFid default %s", o._statusCode, payload)
 }
 
 func (o *PostAttachmentEntityFidDefault) String() string {
-	return fmt.Sprintf("[POST /attachment/{entityFid}][%d] PostAttachmentEntityFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /attachment/{entityFid}][%d] PostAttachmentEntityFid default %s", o._statusCode, payload)
 }
 
 func (o *PostAttachmentEntityFidDefault) GetPayload() *models.Envelope {

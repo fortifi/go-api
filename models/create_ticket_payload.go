@@ -51,7 +51,7 @@ type CreateTicketPayload struct {
 	HTMLBody string `json:"htmlBody,omitempty"`
 
 	// impact
-	// Enum: [none minor moderate significant extensive]
+	// Enum: ["none","minor","moderate","significant","extensive"]
 	Impact string `json:"impact,omitempty"`
 
 	// language
@@ -67,11 +67,11 @@ type CreateTicketPayload struct {
 	TextBody string `json:"textBody,omitempty"`
 
 	// ticket type
-	// Enum: [generic question problem incident]
+	// Enum: ["generic","question","problem","incident"]
 	TicketType string `json:"ticketType,omitempty"`
 
 	// urgency
-	// Enum: [triage low normal high urgent emergency critical]
+	// Enum: ["triage","low","normal","high","urgent","emergency","critical"]
 	Urgency string `json:"urgency,omitempty"`
 }
 

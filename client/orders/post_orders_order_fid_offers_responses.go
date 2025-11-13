@@ -6,6 +6,7 @@ package orders
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PostOrdersOrderFidOffersOK) Code() int {
 }
 
 func (o *PostOrdersOrderFidOffersOK) Error() string {
-	return fmt.Sprintf("[POST /orders/{orderFid}/offers][%d] postOrdersOrderFidOffersOK ", 200)
+	return fmt.Sprintf("[POST /orders/{orderFid}/offers][%d] postOrdersOrderFidOffersOK", 200)
 }
 
 func (o *PostOrdersOrderFidOffersOK) String() string {
-	return fmt.Sprintf("[POST /orders/{orderFid}/offers][%d] postOrdersOrderFidOffersOK ", 200)
+	return fmt.Sprintf("[POST /orders/{orderFid}/offers][%d] postOrdersOrderFidOffersOK", 200)
 }
 
 func (o *PostOrdersOrderFidOffersOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PostOrdersOrderFidOffersDefault) Code() int {
 }
 
 func (o *PostOrdersOrderFidOffersDefault) Error() string {
-	return fmt.Sprintf("[POST /orders/{orderFid}/offers][%d] PostOrdersOrderFidOffers default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /orders/{orderFid}/offers][%d] PostOrdersOrderFidOffers default %s", o._statusCode, payload)
 }
 
 func (o *PostOrdersOrderFidOffersDefault) String() string {
-	return fmt.Sprintf("[POST /orders/{orderFid}/offers][%d] PostOrdersOrderFidOffers default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /orders/{orderFid}/offers][%d] PostOrdersOrderFidOffers default %s", o._statusCode, payload)
 }
 
 func (o *PostOrdersOrderFidOffersDefault) GetPayload() *models.Envelope {

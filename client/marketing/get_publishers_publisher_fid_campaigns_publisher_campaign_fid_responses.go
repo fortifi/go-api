@@ -7,6 +7,7 @@ package marketing
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetPublishersPublisherFidCampaignsPublisherCampaignFidOK) Code() int {
 }
 
 func (o *GetPublishersPublisherFidCampaignsPublisherCampaignFidOK) Error() string {
-	return fmt.Sprintf("[GET /publishers/{publisherFid}/campaigns/{publisherCampaignFid}][%d] getPublishersPublisherFidCampaignsPublisherCampaignFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /publishers/{publisherFid}/campaigns/{publisherCampaignFid}][%d] getPublishersPublisherFidCampaignsPublisherCampaignFidOK %s", 200, payload)
 }
 
 func (o *GetPublishersPublisherFidCampaignsPublisherCampaignFidOK) String() string {
-	return fmt.Sprintf("[GET /publishers/{publisherFid}/campaigns/{publisherCampaignFid}][%d] getPublishersPublisherFidCampaignsPublisherCampaignFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /publishers/{publisherFid}/campaigns/{publisherCampaignFid}][%d] getPublishersPublisherFidCampaignsPublisherCampaignFidOK %s", 200, payload)
 }
 
 func (o *GetPublishersPublisherFidCampaignsPublisherCampaignFidOK) GetPayload() *GetPublishersPublisherFidCampaignsPublisherCampaignFidOKBody {
@@ -161,11 +164,13 @@ func (o *GetPublishersPublisherFidCampaignsPublisherCampaignFidDefault) Code() i
 }
 
 func (o *GetPublishersPublisherFidCampaignsPublisherCampaignFidDefault) Error() string {
-	return fmt.Sprintf("[GET /publishers/{publisherFid}/campaigns/{publisherCampaignFid}][%d] GetPublishersPublisherFidCampaignsPublisherCampaignFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /publishers/{publisherFid}/campaigns/{publisherCampaignFid}][%d] GetPublishersPublisherFidCampaignsPublisherCampaignFid default %s", o._statusCode, payload)
 }
 
 func (o *GetPublishersPublisherFidCampaignsPublisherCampaignFidDefault) String() string {
-	return fmt.Sprintf("[GET /publishers/{publisherFid}/campaigns/{publisherCampaignFid}][%d] GetPublishersPublisherFidCampaignsPublisherCampaignFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /publishers/{publisherFid}/campaigns/{publisherCampaignFid}][%d] GetPublishersPublisherFidCampaignsPublisherCampaignFid default %s", o._statusCode, payload)
 }
 
 func (o *GetPublishersPublisherFidCampaignsPublisherCampaignFidDefault) GetPayload() *models.Envelope {

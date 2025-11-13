@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostCustomersCustomerFidInteractionsOK) Code() int {
 }
 
 func (o *PostCustomersCustomerFidInteractionsOK) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/interactions][%d] postCustomersCustomerFidInteractionsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/interactions][%d] postCustomersCustomerFidInteractionsOK %s", 200, payload)
 }
 
 func (o *PostCustomersCustomerFidInteractionsOK) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/interactions][%d] postCustomersCustomerFidInteractionsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/interactions][%d] postCustomersCustomerFidInteractionsOK %s", 200, payload)
 }
 
 func (o *PostCustomersCustomerFidInteractionsOK) GetPayload() *PostCustomersCustomerFidInteractionsOKBody {
@@ -161,11 +164,13 @@ func (o *PostCustomersCustomerFidInteractionsDefault) Code() int {
 }
 
 func (o *PostCustomersCustomerFidInteractionsDefault) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/interactions][%d] PostCustomersCustomerFidInteractions default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/interactions][%d] PostCustomersCustomerFidInteractions default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidInteractionsDefault) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/interactions][%d] PostCustomersCustomerFidInteractions default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/interactions][%d] PostCustomersCustomerFidInteractions default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidInteractionsDefault) GetPayload() *models.Envelope {

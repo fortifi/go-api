@@ -7,6 +7,7 @@ package authentication
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetMeOK) Code() int {
 }
 
 func (o *GetMeOK) Error() string {
-	return fmt.Sprintf("[GET /me][%d] getMeOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /me][%d] getMeOK %s", 200, payload)
 }
 
 func (o *GetMeOK) String() string {
-	return fmt.Sprintf("[GET /me][%d] getMeOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /me][%d] getMeOK %s", 200, payload)
 }
 
 func (o *GetMeOK) GetPayload() *GetMeOKBody {
@@ -161,11 +164,13 @@ func (o *GetMeDefault) Code() int {
 }
 
 func (o *GetMeDefault) Error() string {
-	return fmt.Sprintf("[GET /me][%d] getMe default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /me][%d] getMe default %s", o._statusCode, payload)
 }
 
 func (o *GetMeDefault) String() string {
-	return fmt.Sprintf("[GET /me][%d] getMe default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /me][%d] getMe default %s", o._statusCode, payload)
 }
 
 func (o *GetMeDefault) GetPayload() *models.Envelope {

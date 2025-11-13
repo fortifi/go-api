@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseOK) Code() int {
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseOK) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/paypal/initialise][%d] postCustomersCustomerFidPaymentMethodsPaypalInitialiseOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/paypal/initialise][%d] postCustomersCustomerFidPaymentMethodsPaypalInitialiseOK %s", 200, payload)
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseOK) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/paypal/initialise][%d] postCustomersCustomerFidPaymentMethodsPaypalInitialiseOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/paypal/initialise][%d] postCustomersCustomerFidPaymentMethodsPaypalInitialiseOK %s", 200, payload)
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseOK) GetPayload() *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseOKBody {
@@ -161,11 +164,13 @@ func (o *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseDefault) Code() i
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseDefault) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/paypal/initialise][%d] PostCustomersCustomerFidPaymentMethodsPaypalInitialise default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/paypal/initialise][%d] PostCustomersCustomerFidPaymentMethodsPaypalInitialise default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseDefault) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/paypal/initialise][%d] PostCustomersCustomerFidPaymentMethodsPaypalInitialise default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/paypal/initialise][%d] PostCustomersCustomerFidPaymentMethodsPaypalInitialise default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseDefault) GetPayload() *models.Envelope {

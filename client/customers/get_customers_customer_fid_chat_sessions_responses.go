@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetCustomersCustomerFidChatSessionsOK) Code() int {
 }
 
 func (o *GetCustomersCustomerFidChatSessionsOK) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/chatSessions][%d] getCustomersCustomerFidChatSessionsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/chatSessions][%d] getCustomersCustomerFidChatSessionsOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidChatSessionsOK) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/chatSessions][%d] getCustomersCustomerFidChatSessionsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/chatSessions][%d] getCustomersCustomerFidChatSessionsOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidChatSessionsOK) GetPayload() *GetCustomersCustomerFidChatSessionsOKBody {
@@ -161,11 +164,13 @@ func (o *GetCustomersCustomerFidChatSessionsDefault) Code() int {
 }
 
 func (o *GetCustomersCustomerFidChatSessionsDefault) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/chatSessions][%d] GetCustomersCustomerFidChatSessions default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/chatSessions][%d] GetCustomersCustomerFidChatSessions default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidChatSessionsDefault) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/chatSessions][%d] GetCustomersCustomerFidChatSessions default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/chatSessions][%d] GetCustomersCustomerFidChatSessions default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidChatSessionsDefault) GetPayload() *models.Envelope {

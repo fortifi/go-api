@@ -6,6 +6,7 @@ package interactions
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -86,11 +87,13 @@ func (o *PostInteractionsInteractionFidClientDisconnectedOK) Code() int {
 }
 
 func (o *PostInteractionsInteractionFidClientDisconnectedOK) Error() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/client/disconnected][%d] postInteractionsInteractionFidClientDisconnectedOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/client/disconnected][%d] postInteractionsInteractionFidClientDisconnectedOK %s", 200, payload)
 }
 
 func (o *PostInteractionsInteractionFidClientDisconnectedOK) String() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/client/disconnected][%d] postInteractionsInteractionFidClientDisconnectedOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/client/disconnected][%d] postInteractionsInteractionFidClientDisconnectedOK %s", 200, payload)
 }
 
 func (o *PostInteractionsInteractionFidClientDisconnectedOK) GetPayload() *models.Envelope {
@@ -158,11 +161,13 @@ func (o *PostInteractionsInteractionFidClientDisconnectedDefault) Code() int {
 }
 
 func (o *PostInteractionsInteractionFidClientDisconnectedDefault) Error() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/client/disconnected][%d] PostInteractionsInteractionFidClientDisconnected default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/client/disconnected][%d] PostInteractionsInteractionFidClientDisconnected default %s", o._statusCode, payload)
 }
 
 func (o *PostInteractionsInteractionFidClientDisconnectedDefault) String() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/client/disconnected][%d] PostInteractionsInteractionFidClientDisconnected default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/client/disconnected][%d] PostInteractionsInteractionFidClientDisconnected default %s", o._statusCode, payload)
 }
 
 func (o *PostInteractionsInteractionFidClientDisconnectedDefault) GetPayload() *models.Envelope {

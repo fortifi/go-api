@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *DeleteCustomersCustomerFidPhonesPhoneFidOK) Code() int {
 }
 
 func (o *DeleteCustomersCustomerFidPhonesPhoneFidOK) Error() string {
-	return fmt.Sprintf("[DELETE /customers/{customerFid}/phones/{phoneFid}][%d] deleteCustomersCustomerFidPhonesPhoneFidOK ", 200)
+	return fmt.Sprintf("[DELETE /customers/{customerFid}/phones/{phoneFid}][%d] deleteCustomersCustomerFidPhonesPhoneFidOK", 200)
 }
 
 func (o *DeleteCustomersCustomerFidPhonesPhoneFidOK) String() string {
-	return fmt.Sprintf("[DELETE /customers/{customerFid}/phones/{phoneFid}][%d] deleteCustomersCustomerFidPhonesPhoneFidOK ", 200)
+	return fmt.Sprintf("[DELETE /customers/{customerFid}/phones/{phoneFid}][%d] deleteCustomersCustomerFidPhonesPhoneFidOK", 200)
 }
 
 func (o *DeleteCustomersCustomerFidPhonesPhoneFidOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *DeleteCustomersCustomerFidPhonesPhoneFidDefault) Code() int {
 }
 
 func (o *DeleteCustomersCustomerFidPhonesPhoneFidDefault) Error() string {
-	return fmt.Sprintf("[DELETE /customers/{customerFid}/phones/{phoneFid}][%d] DeleteCustomersCustomerFidPhonesPhoneFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /customers/{customerFid}/phones/{phoneFid}][%d] DeleteCustomersCustomerFidPhonesPhoneFid default %s", o._statusCode, payload)
 }
 
 func (o *DeleteCustomersCustomerFidPhonesPhoneFidDefault) String() string {
-	return fmt.Sprintf("[DELETE /customers/{customerFid}/phones/{phoneFid}][%d] DeleteCustomersCustomerFidPhonesPhoneFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /customers/{customerFid}/phones/{phoneFid}][%d] DeleteCustomersCustomerFidPhonesPhoneFid default %s", o._statusCode, payload)
 }
 
 func (o *DeleteCustomersCustomerFidPhonesPhoneFidDefault) GetPayload() *models.Envelope {

@@ -7,6 +7,7 @@ package authentication
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetVersionOK) Code() int {
 }
 
 func (o *GetVersionOK) Error() string {
-	return fmt.Sprintf("[GET /version][%d] getVersionOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /version][%d] getVersionOK %s", 200, payload)
 }
 
 func (o *GetVersionOK) String() string {
-	return fmt.Sprintf("[GET /version][%d] getVersionOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /version][%d] getVersionOK %s", 200, payload)
 }
 
 func (o *GetVersionOK) GetPayload() *GetVersionOKBody {
@@ -161,11 +164,13 @@ func (o *GetVersionDefault) Code() int {
 }
 
 func (o *GetVersionDefault) Error() string {
-	return fmt.Sprintf("[GET /version][%d] getVersion default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /version][%d] getVersion default %s", o._statusCode, payload)
 }
 
 func (o *GetVersionDefault) String() string {
-	return fmt.Sprintf("[GET /version][%d] getVersion default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /version][%d] getVersion default %s", o._statusCode, payload)
 }
 
 func (o *GetVersionDefault) GetPayload() *models.Envelope {

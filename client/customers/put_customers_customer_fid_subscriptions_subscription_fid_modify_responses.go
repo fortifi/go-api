@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyOK) Code() int
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyOK) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/modify][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidModifyOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/modify][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidModifyOK %s", 200, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyOK) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/modify][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidModifyOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/modify][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidModifyOK %s", 200, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyOK) GetPayload() *PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyOKBody {
@@ -161,11 +164,13 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyDefault) Code(
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyDefault) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/modify][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidModify default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/modify][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidModify default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyDefault) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/modify][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidModify default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/modify][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidModify default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyDefault) GetPayload() *models.Envelope {

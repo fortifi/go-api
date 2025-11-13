@@ -7,6 +7,7 @@ package interactions
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetInteractionsInviteInviteCodeStatusOK) Code() int {
 }
 
 func (o *GetInteractionsInviteInviteCodeStatusOK) Error() string {
-	return fmt.Sprintf("[GET /interactions/invite/{inviteCode}/status][%d] getInteractionsInviteInviteCodeStatusOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /interactions/invite/{inviteCode}/status][%d] getInteractionsInviteInviteCodeStatusOK %s", 200, payload)
 }
 
 func (o *GetInteractionsInviteInviteCodeStatusOK) String() string {
-	return fmt.Sprintf("[GET /interactions/invite/{inviteCode}/status][%d] getInteractionsInviteInviteCodeStatusOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /interactions/invite/{inviteCode}/status][%d] getInteractionsInviteInviteCodeStatusOK %s", 200, payload)
 }
 
 func (o *GetInteractionsInviteInviteCodeStatusOK) GetPayload() *GetInteractionsInviteInviteCodeStatusOKBody {
@@ -161,11 +164,13 @@ func (o *GetInteractionsInviteInviteCodeStatusDefault) Code() int {
 }
 
 func (o *GetInteractionsInviteInviteCodeStatusDefault) Error() string {
-	return fmt.Sprintf("[GET /interactions/invite/{inviteCode}/status][%d] GetInteractionsInviteInviteCodeStatus default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /interactions/invite/{inviteCode}/status][%d] GetInteractionsInviteInviteCodeStatus default %s", o._statusCode, payload)
 }
 
 func (o *GetInteractionsInviteInviteCodeStatusDefault) String() string {
-	return fmt.Sprintf("[GET /interactions/invite/{inviteCode}/status][%d] GetInteractionsInviteInviteCodeStatus default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /interactions/invite/{inviteCode}/status][%d] GetInteractionsInviteInviteCodeStatus default %s", o._statusCode, payload)
 }
 
 func (o *GetInteractionsInviteInviteCodeStatusDefault) GetPayload() *models.Envelope {

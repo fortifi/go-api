@@ -7,6 +7,7 @@ package reservations
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostReservationsKeyApplicationBrandFidCustomerFidOK) Code() int {
 }
 
 func (o *PostReservationsKeyApplicationBrandFidCustomerFidOK) Error() string {
-	return fmt.Sprintf("[POST /reservations/{key}/{application}/{brandFid}/{customerFid}][%d] postReservationsKeyApplicationBrandFidCustomerFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /reservations/{key}/{application}/{brandFid}/{customerFid}][%d] postReservationsKeyApplicationBrandFidCustomerFidOK %s", 200, payload)
 }
 
 func (o *PostReservationsKeyApplicationBrandFidCustomerFidOK) String() string {
-	return fmt.Sprintf("[POST /reservations/{key}/{application}/{brandFid}/{customerFid}][%d] postReservationsKeyApplicationBrandFidCustomerFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /reservations/{key}/{application}/{brandFid}/{customerFid}][%d] postReservationsKeyApplicationBrandFidCustomerFidOK %s", 200, payload)
 }
 
 func (o *PostReservationsKeyApplicationBrandFidCustomerFidOK) GetPayload() *PostReservationsKeyApplicationBrandFidCustomerFidOKBody {
@@ -161,11 +164,13 @@ func (o *PostReservationsKeyApplicationBrandFidCustomerFidDefault) Code() int {
 }
 
 func (o *PostReservationsKeyApplicationBrandFidCustomerFidDefault) Error() string {
-	return fmt.Sprintf("[POST /reservations/{key}/{application}/{brandFid}/{customerFid}][%d] PostReservationsKeyApplicationBrandFidCustomerFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /reservations/{key}/{application}/{brandFid}/{customerFid}][%d] PostReservationsKeyApplicationBrandFidCustomerFid default %s", o._statusCode, payload)
 }
 
 func (o *PostReservationsKeyApplicationBrandFidCustomerFidDefault) String() string {
-	return fmt.Sprintf("[POST /reservations/{key}/{application}/{brandFid}/{customerFid}][%d] PostReservationsKeyApplicationBrandFidCustomerFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /reservations/{key}/{application}/{brandFid}/{customerFid}][%d] PostReservationsKeyApplicationBrandFidCustomerFid default %s", o._statusCode, payload)
 }
 
 func (o *PostReservationsKeyApplicationBrandFidCustomerFidDefault) GetPayload() *models.Envelope {

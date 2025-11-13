@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PostCustomersCustomerFidTicketsOK) Code() int {
 }
 
 func (o *PostCustomersCustomerFidTicketsOK) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/tickets][%d] postCustomersCustomerFidTicketsOK ", 200)
+	return fmt.Sprintf("[POST /customers/{customerFid}/tickets][%d] postCustomersCustomerFidTicketsOK", 200)
 }
 
 func (o *PostCustomersCustomerFidTicketsOK) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/tickets][%d] postCustomersCustomerFidTicketsOK ", 200)
+	return fmt.Sprintf("[POST /customers/{customerFid}/tickets][%d] postCustomersCustomerFidTicketsOK", 200)
 }
 
 func (o *PostCustomersCustomerFidTicketsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PostCustomersCustomerFidTicketsDefault) Code() int {
 }
 
 func (o *PostCustomersCustomerFidTicketsDefault) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/tickets][%d] PostCustomersCustomerFidTickets default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/tickets][%d] PostCustomersCustomerFidTickets default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidTicketsDefault) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/tickets][%d] PostCustomersCustomerFidTickets default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/tickets][%d] PostCustomersCustomerFidTickets default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidTicketsDefault) GetPayload() *models.Envelope {

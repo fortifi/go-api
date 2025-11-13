@@ -6,6 +6,7 @@ package contacts
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PutContactsDeviceHardwareIDUnsubscribeOK) Code() int {
 }
 
 func (o *PutContactsDeviceHardwareIDUnsubscribeOK) Error() string {
-	return fmt.Sprintf("[PUT /contacts/device/{hardwareId}/unsubscribe][%d] putContactsDeviceHardwareIdUnsubscribeOK ", 200)
+	return fmt.Sprintf("[PUT /contacts/device/{hardwareId}/unsubscribe][%d] putContactsDeviceHardwareIdUnsubscribeOK", 200)
 }
 
 func (o *PutContactsDeviceHardwareIDUnsubscribeOK) String() string {
-	return fmt.Sprintf("[PUT /contacts/device/{hardwareId}/unsubscribe][%d] putContactsDeviceHardwareIdUnsubscribeOK ", 200)
+	return fmt.Sprintf("[PUT /contacts/device/{hardwareId}/unsubscribe][%d] putContactsDeviceHardwareIdUnsubscribeOK", 200)
 }
 
 func (o *PutContactsDeviceHardwareIDUnsubscribeOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PutContactsDeviceHardwareIDUnsubscribeDefault) Code() int {
 }
 
 func (o *PutContactsDeviceHardwareIDUnsubscribeDefault) Error() string {
-	return fmt.Sprintf("[PUT /contacts/device/{hardwareId}/unsubscribe][%d] PutContactsDeviceHardwareIDUnsubscribe default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /contacts/device/{hardwareId}/unsubscribe][%d] PutContactsDeviceHardwareIDUnsubscribe default %s", o._statusCode, payload)
 }
 
 func (o *PutContactsDeviceHardwareIDUnsubscribeDefault) String() string {
-	return fmt.Sprintf("[PUT /contacts/device/{hardwareId}/unsubscribe][%d] PutContactsDeviceHardwareIDUnsubscribe default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /contacts/device/{hardwareId}/unsubscribe][%d] PutContactsDeviceHardwareIDUnsubscribe default %s", o._statusCode, payload)
 }
 
 func (o *PutContactsDeviceHardwareIDUnsubscribeDefault) GetPayload() *models.Envelope {

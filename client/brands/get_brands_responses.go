@@ -7,6 +7,7 @@ package brands
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetBrandsOK) Code() int {
 }
 
 func (o *GetBrandsOK) Error() string {
-	return fmt.Sprintf("[GET /brands][%d] getBrandsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /brands][%d] getBrandsOK %s", 200, payload)
 }
 
 func (o *GetBrandsOK) String() string {
-	return fmt.Sprintf("[GET /brands][%d] getBrandsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /brands][%d] getBrandsOK %s", 200, payload)
 }
 
 func (o *GetBrandsOK) GetPayload() *GetBrandsOKBody {
@@ -161,11 +164,13 @@ func (o *GetBrandsDefault) Code() int {
 }
 
 func (o *GetBrandsDefault) Error() string {
-	return fmt.Sprintf("[GET /brands][%d] getBrands default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /brands][%d] getBrands default %s", o._statusCode, payload)
 }
 
 func (o *GetBrandsDefault) String() string {
-	return fmt.Sprintf("[GET /brands][%d] getBrands default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /brands][%d] getBrands default %s", o._statusCode, payload)
 }
 
 func (o *GetBrandsDefault) GetPayload() *models.Envelope {

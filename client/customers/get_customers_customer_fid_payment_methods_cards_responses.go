@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -86,11 +87,13 @@ func (o *GetCustomersCustomerFidPaymentMethodsCardsOK) Code() int {
 }
 
 func (o *GetCustomersCustomerFidPaymentMethodsCardsOK) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/paymentMethods/cards][%d] getCustomersCustomerFidPaymentMethodsCardsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/paymentMethods/cards][%d] getCustomersCustomerFidPaymentMethodsCardsOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidPaymentMethodsCardsOK) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/paymentMethods/cards][%d] getCustomersCustomerFidPaymentMethodsCardsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/paymentMethods/cards][%d] getCustomersCustomerFidPaymentMethodsCardsOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidPaymentMethodsCardsOK) GetPayload() *models.PaymentCards {
@@ -158,11 +161,13 @@ func (o *GetCustomersCustomerFidPaymentMethodsCardsDefault) Code() int {
 }
 
 func (o *GetCustomersCustomerFidPaymentMethodsCardsDefault) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/paymentMethods/cards][%d] GetCustomersCustomerFidPaymentMethodsCards default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/paymentMethods/cards][%d] GetCustomersCustomerFidPaymentMethodsCards default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidPaymentMethodsCardsDefault) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/paymentMethods/cards][%d] GetCustomersCustomerFidPaymentMethodsCards default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/paymentMethods/cards][%d] GetCustomersCustomerFidPaymentMethodsCards default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidPaymentMethodsCardsDefault) GetPayload() *models.Envelope {

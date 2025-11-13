@@ -7,6 +7,7 @@ package finance
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostPublishersPublisherFidFinanceCostImportOK) Code() int {
 }
 
 func (o *PostPublishersPublisherFidFinanceCostImportOK) Error() string {
-	return fmt.Sprintf("[POST /publishers/{publisherFid}/finance/costImport][%d] postPublishersPublisherFidFinanceCostImportOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /publishers/{publisherFid}/finance/costImport][%d] postPublishersPublisherFidFinanceCostImportOK %s", 200, payload)
 }
 
 func (o *PostPublishersPublisherFidFinanceCostImportOK) String() string {
-	return fmt.Sprintf("[POST /publishers/{publisherFid}/finance/costImport][%d] postPublishersPublisherFidFinanceCostImportOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /publishers/{publisherFid}/finance/costImport][%d] postPublishersPublisherFidFinanceCostImportOK %s", 200, payload)
 }
 
 func (o *PostPublishersPublisherFidFinanceCostImportOK) GetPayload() *PostPublishersPublisherFidFinanceCostImportOKBody {
@@ -161,11 +164,13 @@ func (o *PostPublishersPublisherFidFinanceCostImportDefault) Code() int {
 }
 
 func (o *PostPublishersPublisherFidFinanceCostImportDefault) Error() string {
-	return fmt.Sprintf("[POST /publishers/{publisherFid}/finance/costImport][%d] PostPublishersPublisherFidFinanceCostImport default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /publishers/{publisherFid}/finance/costImport][%d] PostPublishersPublisherFidFinanceCostImport default %s", o._statusCode, payload)
 }
 
 func (o *PostPublishersPublisherFidFinanceCostImportDefault) String() string {
-	return fmt.Sprintf("[POST /publishers/{publisherFid}/finance/costImport][%d] PostPublishersPublisherFidFinanceCostImport default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /publishers/{publisherFid}/finance/costImport][%d] PostPublishersPublisherFidFinanceCostImport default %s", o._statusCode, payload)
 }
 
 func (o *PostPublishersPublisherFidFinanceCostImportDefault) GetPayload() *models.Envelope {

@@ -67,7 +67,7 @@ type Payment struct {
 	StatementDescriptor string `json:"statementDescriptor,omitempty"`
 
 	// status
-	// Enum: [pending paid refund-pending refunded partially-refunded chargeback chargeback-pending]
+	// Enum: ["pending","paid","refund-pending","refunded","partially-refunded","chargeback","chargeback-pending"]
 	Status string `json:"status,omitempty"`
 
 	// status code
@@ -89,7 +89,7 @@ type Payment struct {
 	TransactionID string `json:"transactionId,omitempty"`
 
 	// type
-	// Enum: [affiliate invoice order unknown preauth]
+	// Enum: ["affiliate","invoice","order","unknown","preauth"]
 	Type string `json:"type,omitempty"`
 }
 

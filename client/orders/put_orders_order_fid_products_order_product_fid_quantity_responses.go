@@ -6,6 +6,7 @@ package orders
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PutOrdersOrderFidProductsOrderProductFidQuantityOK) Code() int {
 }
 
 func (o *PutOrdersOrderFidProductsOrderProductFidQuantityOK) Error() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/products/{orderProductFid}/quantity][%d] putOrdersOrderFidProductsOrderProductFidQuantityOK ", 200)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/products/{orderProductFid}/quantity][%d] putOrdersOrderFidProductsOrderProductFidQuantityOK", 200)
 }
 
 func (o *PutOrdersOrderFidProductsOrderProductFidQuantityOK) String() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/products/{orderProductFid}/quantity][%d] putOrdersOrderFidProductsOrderProductFidQuantityOK ", 200)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/products/{orderProductFid}/quantity][%d] putOrdersOrderFidProductsOrderProductFidQuantityOK", 200)
 }
 
 func (o *PutOrdersOrderFidProductsOrderProductFidQuantityOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PutOrdersOrderFidProductsOrderProductFidQuantityDefault) Code() int {
 }
 
 func (o *PutOrdersOrderFidProductsOrderProductFidQuantityDefault) Error() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/products/{orderProductFid}/quantity][%d] PutOrdersOrderFidProductsOrderProductFidQuantity default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/products/{orderProductFid}/quantity][%d] PutOrdersOrderFidProductsOrderProductFidQuantity default %s", o._statusCode, payload)
 }
 
 func (o *PutOrdersOrderFidProductsOrderProductFidQuantityDefault) String() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/products/{orderProductFid}/quantity][%d] PutOrdersOrderFidProductsOrderProductFidQuantity default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/products/{orderProductFid}/quantity][%d] PutOrdersOrderFidProductsOrderProductFidQuantity default %s", o._statusCode, payload)
 }
 
 func (o *PutOrdersOrderFidProductsOrderProductFidQuantityDefault) GetPayload() *models.Envelope {

@@ -7,6 +7,7 @@ package reviews
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostReviewOK) Code() int {
 }
 
 func (o *PostReviewOK) Error() string {
-	return fmt.Sprintf("[POST /review][%d] postReviewOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /review][%d] postReviewOK %s", 200, payload)
 }
 
 func (o *PostReviewOK) String() string {
-	return fmt.Sprintf("[POST /review][%d] postReviewOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /review][%d] postReviewOK %s", 200, payload)
 }
 
 func (o *PostReviewOK) GetPayload() *PostReviewOKBody {
@@ -161,11 +164,13 @@ func (o *PostReviewDefault) Code() int {
 }
 
 func (o *PostReviewDefault) Error() string {
-	return fmt.Sprintf("[POST /review][%d] PostReview default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /review][%d] PostReview default %s", o._statusCode, payload)
 }
 
 func (o *PostReviewDefault) String() string {
-	return fmt.Sprintf("[POST /review][%d] PostReview default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /review][%d] PostReview default %s", o._statusCode, payload)
 }
 
 func (o *PostReviewDefault) GetPayload() *models.Envelope {

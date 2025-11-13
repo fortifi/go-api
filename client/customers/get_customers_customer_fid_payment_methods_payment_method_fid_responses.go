@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetCustomersCustomerFidPaymentMethodsPaymentMethodFidOK) Code() int {
 }
 
 func (o *GetCustomersCustomerFidPaymentMethodsPaymentMethodFidOK) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/paymentMethods/{paymentMethodFid}][%d] getCustomersCustomerFidPaymentMethodsPaymentMethodFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/paymentMethods/{paymentMethodFid}][%d] getCustomersCustomerFidPaymentMethodsPaymentMethodFidOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidPaymentMethodsPaymentMethodFidOK) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/paymentMethods/{paymentMethodFid}][%d] getCustomersCustomerFidPaymentMethodsPaymentMethodFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/paymentMethods/{paymentMethodFid}][%d] getCustomersCustomerFidPaymentMethodsPaymentMethodFidOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidPaymentMethodsPaymentMethodFidOK) GetPayload() *GetCustomersCustomerFidPaymentMethodsPaymentMethodFidOKBody {
@@ -161,11 +164,13 @@ func (o *GetCustomersCustomerFidPaymentMethodsPaymentMethodFidDefault) Code() in
 }
 
 func (o *GetCustomersCustomerFidPaymentMethodsPaymentMethodFidDefault) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/paymentMethods/{paymentMethodFid}][%d] GetCustomersCustomerFidPaymentMethodsPaymentMethodFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/paymentMethods/{paymentMethodFid}][%d] GetCustomersCustomerFidPaymentMethodsPaymentMethodFid default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidPaymentMethodsPaymentMethodFidDefault) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/paymentMethods/{paymentMethodFid}][%d] GetCustomersCustomerFidPaymentMethodsPaymentMethodFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/paymentMethods/{paymentMethodFid}][%d] GetCustomersCustomerFidPaymentMethodsPaymentMethodFid default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidPaymentMethodsPaymentMethodFidDefault) GetPayload() *models.Envelope {

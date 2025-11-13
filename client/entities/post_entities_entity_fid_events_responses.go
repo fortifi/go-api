@@ -6,6 +6,7 @@ package entities
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PostEntitiesEntityFidEventsOK) Code() int {
 }
 
 func (o *PostEntitiesEntityFidEventsOK) Error() string {
-	return fmt.Sprintf("[POST /entities/{entityFid}/events][%d] postEntitiesEntityFidEventsOK ", 200)
+	return fmt.Sprintf("[POST /entities/{entityFid}/events][%d] postEntitiesEntityFidEventsOK", 200)
 }
 
 func (o *PostEntitiesEntityFidEventsOK) String() string {
-	return fmt.Sprintf("[POST /entities/{entityFid}/events][%d] postEntitiesEntityFidEventsOK ", 200)
+	return fmt.Sprintf("[POST /entities/{entityFid}/events][%d] postEntitiesEntityFidEventsOK", 200)
 }
 
 func (o *PostEntitiesEntityFidEventsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PostEntitiesEntityFidEventsDefault) Code() int {
 }
 
 func (o *PostEntitiesEntityFidEventsDefault) Error() string {
-	return fmt.Sprintf("[POST /entities/{entityFid}/events][%d] PostEntitiesEntityFidEvents default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /entities/{entityFid}/events][%d] PostEntitiesEntityFidEvents default %s", o._statusCode, payload)
 }
 
 func (o *PostEntitiesEntityFidEventsDefault) String() string {
-	return fmt.Sprintf("[POST /entities/{entityFid}/events][%d] PostEntitiesEntityFidEvents default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /entities/{entityFid}/events][%d] PostEntitiesEntityFidEvents default %s", o._statusCode, payload)
 }
 
 func (o *PostEntitiesEntityFidEventsDefault) GetPayload() *models.Envelope {

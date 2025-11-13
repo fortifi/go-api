@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSea
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOK) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/retentionFlow/{flowSearch}/abandon][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/retentionFlow/{flowSearch}/abandon][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOK %s", 200, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOK) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/retentionFlow/{flowSearch}/abandon][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/retentionFlow/{flowSearch}/abandon][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOK %s", 200, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOK) GetPayload() *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOKBody {
@@ -161,11 +164,13 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSea
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonDefault) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/retentionFlow/{flowSearch}/abandon][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandon default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/retentionFlow/{flowSearch}/abandon][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandon default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonDefault) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/retentionFlow/{flowSearch}/abandon][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandon default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/retentionFlow/{flowSearch}/abandon][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandon default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonDefault) GetPayload() *models.Envelope {

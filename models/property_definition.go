@@ -34,7 +34,7 @@ type PropertyDefinition struct {
 	ValidationConfig string `json:"validationConfig,omitempty"`
 
 	// validation type
-	// Enum: [regex prerequisite]
+	// Enum: ["regex","prerequisite"]
 	ValidationType string `json:"validationType,omitempty"`
 
 	// value type

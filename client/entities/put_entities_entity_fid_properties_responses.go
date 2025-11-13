@@ -6,6 +6,7 @@ package entities
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PutEntitiesEntityFidPropertiesOK) Code() int {
 }
 
 func (o *PutEntitiesEntityFidPropertiesOK) Error() string {
-	return fmt.Sprintf("[PUT /entities/{entityFid}/properties][%d] putEntitiesEntityFidPropertiesOK ", 200)
+	return fmt.Sprintf("[PUT /entities/{entityFid}/properties][%d] putEntitiesEntityFidPropertiesOK", 200)
 }
 
 func (o *PutEntitiesEntityFidPropertiesOK) String() string {
-	return fmt.Sprintf("[PUT /entities/{entityFid}/properties][%d] putEntitiesEntityFidPropertiesOK ", 200)
+	return fmt.Sprintf("[PUT /entities/{entityFid}/properties][%d] putEntitiesEntityFidPropertiesOK", 200)
 }
 
 func (o *PutEntitiesEntityFidPropertiesOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PutEntitiesEntityFidPropertiesDefault) Code() int {
 }
 
 func (o *PutEntitiesEntityFidPropertiesDefault) Error() string {
-	return fmt.Sprintf("[PUT /entities/{entityFid}/properties][%d] PutEntitiesEntityFidProperties default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /entities/{entityFid}/properties][%d] PutEntitiesEntityFidProperties default %s", o._statusCode, payload)
 }
 
 func (o *PutEntitiesEntityFidPropertiesDefault) String() string {
-	return fmt.Sprintf("[PUT /entities/{entityFid}/properties][%d] PutEntitiesEntityFidProperties default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /entities/{entityFid}/properties][%d] PutEntitiesEntityFidProperties default %s", o._statusCode, payload)
 }
 
 func (o *PutEntitiesEntityFidPropertiesDefault) GetPayload() *models.Envelope {

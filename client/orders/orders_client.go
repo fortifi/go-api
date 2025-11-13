@@ -7,12 +7,38 @@ package orders
 
 import (
 	"github.com/go-openapi/runtime"
+	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 )
 
 // New creates a new orders API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
 	return &Client{transport: transport, formats: formats}
+}
+
+// New creates a new orders API client with basic auth credentials.
+// It takes the following parameters:
+// - host: http host (github.com).
+// - basePath: any base path for the API client ("/v1", "/v3").
+// - scheme: http scheme ("http", "https").
+// - user: user for basic authentication header.
+// - password: password for basic authentication header.
+func NewClientWithBasicAuth(host, basePath, scheme, user, password string) ClientService {
+	transport := httptransport.New(host, basePath, []string{scheme})
+	transport.DefaultAuthentication = httptransport.BasicAuth(user, password)
+	return &Client{transport: transport, formats: strfmt.Default}
+}
+
+// New creates a new orders API client with a bearer token for authentication.
+// It takes the following parameters:
+// - host: http host (github.com).
+// - basePath: any base path for the API client ("/v1", "/v3").
+// - scheme: http scheme ("http", "https").
+// - bearerToken: bearer token for Bearer authentication header.
+func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) ClientService {
+	transport := httptransport.New(host, basePath, []string{scheme})
+	transport.DefaultAuthentication = httptransport.BearerToken(bearerToken)
+	return &Client{transport: transport, formats: strfmt.Default}
 }
 
 /*
@@ -23,8 +49,32 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
-// ClientOption is the option for Client methods
+// ClientOption may be used to customize the behavior of Client methods.
 type ClientOption func(*runtime.ClientOperation)
+
+// This client is generated with a few options you might find useful for your swagger spec.
+//
+// Feel free to add you own set of options.
+
+// WithContentType allows the client to force the Content-Type header
+// to negotiate a specific Consumer from the server.
+//
+// You may use this option to set arbitrary extensions to your MIME media type.
+func WithContentType(mime string) ClientOption {
+	return func(r *runtime.ClientOperation) {
+		r.ConsumesMediaTypes = []string{mime}
+	}
+}
+
+// WithContentTypeApplicationJSON sets the Content-Type header to "application/json".
+func WithContentTypeApplicationJSON(r *runtime.ClientOperation) {
+	r.ConsumesMediaTypes = []string{"application/json"}
+}
+
+// WithContentTypeMultipartFormData sets the Content-Type header to "multipart/form-data".
+func WithContentTypeMultipartFormData(r *runtime.ClientOperation) {
+	r.ConsumesMediaTypes = []string{"multipart/form-data"}
+}
 
 // ClientService is the interface for Client methods
 type ClientService interface {
@@ -65,6 +115,8 @@ type ClientService interface {
 	PutOrdersOrderFidProductsOrderProductFidSetInitialTerm(params *PutOrdersOrderFidProductsOrderProductFidSetInitialTermParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidProductsOrderProductFidSetInitialTermOK, error)
 
 	PutOrdersOrderFidSetChargeID(params *PutOrdersOrderFidSetChargeIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidSetChargeIDOK, error)
+
+	PutOrdersOrderFidTriggerOnDemand(params *PutOrdersOrderFidTriggerOnDemandParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidTriggerOnDemandOK, error)
 
 	PutOrdersOrderFidVerify(params *PutOrdersOrderFidVerifyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidVerifyOK, error)
 
@@ -790,6 +842,44 @@ func (a *Client) PutOrdersOrderFidSetChargeID(params *PutOrdersOrderFidSetCharge
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*PutOrdersOrderFidSetChargeIDDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PutOrdersOrderFidTriggerOnDemand triggers on demand schedule for an order
+*/
+func (a *Client) PutOrdersOrderFidTriggerOnDemand(params *PutOrdersOrderFidTriggerOnDemandParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidTriggerOnDemandOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPutOrdersOrderFidTriggerOnDemandParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PutOrdersOrderFidTriggerOnDemand",
+		Method:             "PUT",
+		PathPattern:        "/orders/{orderFid}/triggerOnDemand",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PutOrdersOrderFidTriggerOnDemandReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PutOrdersOrderFidTriggerOnDemandOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PutOrdersOrderFidTriggerOnDemandDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

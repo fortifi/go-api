@@ -7,6 +7,7 @@ package interactions
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetInteractionsInteractionFidOK) Code() int {
 }
 
 func (o *GetInteractionsInteractionFidOK) Error() string {
-	return fmt.Sprintf("[GET /interactions/{interactionFid}][%d] getInteractionsInteractionFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /interactions/{interactionFid}][%d] getInteractionsInteractionFidOK %s", 200, payload)
 }
 
 func (o *GetInteractionsInteractionFidOK) String() string {
-	return fmt.Sprintf("[GET /interactions/{interactionFid}][%d] getInteractionsInteractionFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /interactions/{interactionFid}][%d] getInteractionsInteractionFidOK %s", 200, payload)
 }
 
 func (o *GetInteractionsInteractionFidOK) GetPayload() *GetInteractionsInteractionFidOKBody {
@@ -161,11 +164,13 @@ func (o *GetInteractionsInteractionFidDefault) Code() int {
 }
 
 func (o *GetInteractionsInteractionFidDefault) Error() string {
-	return fmt.Sprintf("[GET /interactions/{interactionFid}][%d] GetInteractionsInteractionFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /interactions/{interactionFid}][%d] GetInteractionsInteractionFid default %s", o._statusCode, payload)
 }
 
 func (o *GetInteractionsInteractionFidDefault) String() string {
-	return fmt.Sprintf("[GET /interactions/{interactionFid}][%d] GetInteractionsInteractionFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /interactions/{interactionFid}][%d] GetInteractionsInteractionFid default %s", o._statusCode, payload)
 }
 
 func (o *GetInteractionsInteractionFidDefault) GetPayload() *models.Envelope {

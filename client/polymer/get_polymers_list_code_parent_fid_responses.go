@@ -7,6 +7,7 @@ package polymer
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetPolymersListCodeParentFidOK) Code() int {
 }
 
 func (o *GetPolymersListCodeParentFidOK) Error() string {
-	return fmt.Sprintf("[GET /polymers/list/{code}/{parentFid}][%d] getPolymersListCodeParentFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /polymers/list/{code}/{parentFid}][%d] getPolymersListCodeParentFidOK %s", 200, payload)
 }
 
 func (o *GetPolymersListCodeParentFidOK) String() string {
-	return fmt.Sprintf("[GET /polymers/list/{code}/{parentFid}][%d] getPolymersListCodeParentFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /polymers/list/{code}/{parentFid}][%d] getPolymersListCodeParentFidOK %s", 200, payload)
 }
 
 func (o *GetPolymersListCodeParentFidOK) GetPayload() *GetPolymersListCodeParentFidOKBody {
@@ -161,11 +164,13 @@ func (o *GetPolymersListCodeParentFidDefault) Code() int {
 }
 
 func (o *GetPolymersListCodeParentFidDefault) Error() string {
-	return fmt.Sprintf("[GET /polymers/list/{code}/{parentFid}][%d] GetPolymersListCodeParentFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /polymers/list/{code}/{parentFid}][%d] GetPolymersListCodeParentFid default %s", o._statusCode, payload)
 }
 
 func (o *GetPolymersListCodeParentFidDefault) String() string {
-	return fmt.Sprintf("[GET /polymers/list/{code}/{parentFid}][%d] GetPolymersListCodeParentFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /polymers/list/{code}/{parentFid}][%d] GetPolymersListCodeParentFid default %s", o._statusCode, payload)
 }
 
 func (o *GetPolymersListCodeParentFidDefault) GetPayload() *models.Envelope {

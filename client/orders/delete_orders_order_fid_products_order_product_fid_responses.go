@@ -6,6 +6,7 @@ package orders
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *DeleteOrdersOrderFidProductsOrderProductFidOK) Code() int {
 }
 
 func (o *DeleteOrdersOrderFidProductsOrderProductFidOK) Error() string {
-	return fmt.Sprintf("[DELETE /orders/{orderFid}/products/{orderProductFid}][%d] deleteOrdersOrderFidProductsOrderProductFidOK ", 200)
+	return fmt.Sprintf("[DELETE /orders/{orderFid}/products/{orderProductFid}][%d] deleteOrdersOrderFidProductsOrderProductFidOK", 200)
 }
 
 func (o *DeleteOrdersOrderFidProductsOrderProductFidOK) String() string {
-	return fmt.Sprintf("[DELETE /orders/{orderFid}/products/{orderProductFid}][%d] deleteOrdersOrderFidProductsOrderProductFidOK ", 200)
+	return fmt.Sprintf("[DELETE /orders/{orderFid}/products/{orderProductFid}][%d] deleteOrdersOrderFidProductsOrderProductFidOK", 200)
 }
 
 func (o *DeleteOrdersOrderFidProductsOrderProductFidOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *DeleteOrdersOrderFidProductsOrderProductFidDefault) Code() int {
 }
 
 func (o *DeleteOrdersOrderFidProductsOrderProductFidDefault) Error() string {
-	return fmt.Sprintf("[DELETE /orders/{orderFid}/products/{orderProductFid}][%d] DeleteOrdersOrderFidProductsOrderProductFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /orders/{orderFid}/products/{orderProductFid}][%d] DeleteOrdersOrderFidProductsOrderProductFid default %s", o._statusCode, payload)
 }
 
 func (o *DeleteOrdersOrderFidProductsOrderProductFidDefault) String() string {
-	return fmt.Sprintf("[DELETE /orders/{orderFid}/products/{orderProductFid}][%d] DeleteOrdersOrderFidProductsOrderProductFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /orders/{orderFid}/products/{orderProductFid}][%d] DeleteOrdersOrderFidProductsOrderProductFid default %s", o._statusCode, payload)
 }
 
 func (o *DeleteOrdersOrderFidProductsOrderProductFidDefault) GetPayload() *models.Envelope {

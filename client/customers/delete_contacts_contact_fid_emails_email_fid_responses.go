@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *DeleteContactsContactFidEmailsEmailFidOK) Code() int {
 }
 
 func (o *DeleteContactsContactFidEmailsEmailFidOK) Error() string {
-	return fmt.Sprintf("[DELETE /contacts/{contactFid}/emails/{emailFid}][%d] deleteContactsContactFidEmailsEmailFidOK ", 200)
+	return fmt.Sprintf("[DELETE /contacts/{contactFid}/emails/{emailFid}][%d] deleteContactsContactFidEmailsEmailFidOK", 200)
 }
 
 func (o *DeleteContactsContactFidEmailsEmailFidOK) String() string {
-	return fmt.Sprintf("[DELETE /contacts/{contactFid}/emails/{emailFid}][%d] deleteContactsContactFidEmailsEmailFidOK ", 200)
+	return fmt.Sprintf("[DELETE /contacts/{contactFid}/emails/{emailFid}][%d] deleteContactsContactFidEmailsEmailFidOK", 200)
 }
 
 func (o *DeleteContactsContactFidEmailsEmailFidOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *DeleteContactsContactFidEmailsEmailFidDefault) Code() int {
 }
 
 func (o *DeleteContactsContactFidEmailsEmailFidDefault) Error() string {
-	return fmt.Sprintf("[DELETE /contacts/{contactFid}/emails/{emailFid}][%d] DeleteContactsContactFidEmailsEmailFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /contacts/{contactFid}/emails/{emailFid}][%d] DeleteContactsContactFidEmailsEmailFid default %s", o._statusCode, payload)
 }
 
 func (o *DeleteContactsContactFidEmailsEmailFidDefault) String() string {
-	return fmt.Sprintf("[DELETE /contacts/{contactFid}/emails/{emailFid}][%d] DeleteContactsContactFidEmailsEmailFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /contacts/{contactFid}/emails/{emailFid}][%d] DeleteContactsContactFidEmailsEmailFid default %s", o._statusCode, payload)
 }
 
 func (o *DeleteContactsContactFidEmailsEmailFidDefault) GetPayload() *models.Envelope {

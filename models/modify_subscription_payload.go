@@ -19,6 +19,9 @@ import (
 // swagger:model ModifySubscriptionPayload
 type ModifySubscriptionPayload struct {
 
+	// Use a specific chargeID for this modification, or pass `true` to create a charge
+	ChargeID string `json:"chargeId,omitempty"`
+
 	// Description of the modify subscription
 	Description string `json:"description,omitempty"`
 

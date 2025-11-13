@@ -91,8 +91,11 @@ type Order struct {
 	OrderHash string `json:"orderHash,omitempty"`
 
 	// order type
-	// Enum: [initial purchase cancel prerenew]
+	// Enum: ["initial","purchase","cancel","prerenew"]
 	OrderType string `json:"orderType,omitempty"`
+
+	// parent order fid
+	ParentOrderFid string `json:"parentOrderFid,omitempty"`
 
 	// payment account fid
 	PaymentAccountFid string `json:"paymentAccountFid,omitempty"`
@@ -184,6 +187,8 @@ func (m *Order) UnmarshalJSON(raw []byte) error {
 
 		OrderType string `json:"orderType,omitempty"`
 
+		ParentOrderFid string `json:"parentOrderFid,omitempty"`
+
 		PaymentAccountFid string `json:"paymentAccountFid,omitempty"`
 
 		PaymentServiceType string `json:"paymentServiceType,omitempty"`
@@ -255,6 +260,8 @@ func (m *Order) UnmarshalJSON(raw []byte) error {
 	m.OrderHash = dataAO1.OrderHash
 
 	m.OrderType = dataAO1.OrderType
+
+	m.ParentOrderFid = dataAO1.ParentOrderFid
 
 	m.PaymentAccountFid = dataAO1.PaymentAccountFid
 
@@ -337,6 +344,8 @@ func (m Order) MarshalJSON() ([]byte, error) {
 
 		OrderType string `json:"orderType,omitempty"`
 
+		ParentOrderFid string `json:"parentOrderFid,omitempty"`
+
 		PaymentAccountFid string `json:"paymentAccountFid,omitempty"`
 
 		PaymentServiceType string `json:"paymentServiceType,omitempty"`
@@ -405,6 +414,8 @@ func (m Order) MarshalJSON() ([]byte, error) {
 	dataAO1.OrderHash = m.OrderHash
 
 	dataAO1.OrderType = m.OrderType
+
+	dataAO1.ParentOrderFid = m.ParentOrderFid
 
 	dataAO1.PaymentAccountFid = m.PaymentAccountFid
 

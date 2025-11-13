@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysOK) Co
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysOK) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/autoCancelDays][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/autoCancelDays][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysOK", 200)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysOK) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/autoCancelDays][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/autoCancelDays][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysOK", 200)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysDefaul
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysDefault) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/autoCancelDays][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDays default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/autoCancelDays][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDays default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysDefault) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/autoCancelDays][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDays default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/autoCancelDays][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDays default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysDefault) GetPayload() *models.Envelope {

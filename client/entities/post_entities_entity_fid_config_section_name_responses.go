@@ -6,6 +6,7 @@ package entities
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PostEntitiesEntityFidConfigSectionNameOK) Code() int {
 }
 
 func (o *PostEntitiesEntityFidConfigSectionNameOK) Error() string {
-	return fmt.Sprintf("[POST /entities/{entityFid}/config/{sectionName}][%d] postEntitiesEntityFidConfigSectionNameOK ", 200)
+	return fmt.Sprintf("[POST /entities/{entityFid}/config/{sectionName}][%d] postEntitiesEntityFidConfigSectionNameOK", 200)
 }
 
 func (o *PostEntitiesEntityFidConfigSectionNameOK) String() string {
-	return fmt.Sprintf("[POST /entities/{entityFid}/config/{sectionName}][%d] postEntitiesEntityFidConfigSectionNameOK ", 200)
+	return fmt.Sprintf("[POST /entities/{entityFid}/config/{sectionName}][%d] postEntitiesEntityFidConfigSectionNameOK", 200)
 }
 
 func (o *PostEntitiesEntityFidConfigSectionNameOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PostEntitiesEntityFidConfigSectionNameDefault) Code() int {
 }
 
 func (o *PostEntitiesEntityFidConfigSectionNameDefault) Error() string {
-	return fmt.Sprintf("[POST /entities/{entityFid}/config/{sectionName}][%d] PostEntitiesEntityFidConfigSectionName default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /entities/{entityFid}/config/{sectionName}][%d] PostEntitiesEntityFidConfigSectionName default %s", o._statusCode, payload)
 }
 
 func (o *PostEntitiesEntityFidConfigSectionNameDefault) String() string {
-	return fmt.Sprintf("[POST /entities/{entityFid}/config/{sectionName}][%d] PostEntitiesEntityFidConfigSectionName default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /entities/{entityFid}/config/{sectionName}][%d] PostEntitiesEntityFidConfigSectionName default %s", o._statusCode, payload)
 }
 
 func (o *PostEntitiesEntityFidConfigSectionNameDefault) GetPayload() *models.Envelope {

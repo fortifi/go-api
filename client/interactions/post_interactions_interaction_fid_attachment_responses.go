@@ -7,6 +7,7 @@ package interactions
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostInteractionsInteractionFidAttachmentOK) Code() int {
 }
 
 func (o *PostInteractionsInteractionFidAttachmentOK) Error() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/attachment][%d] postInteractionsInteractionFidAttachmentOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/attachment][%d] postInteractionsInteractionFidAttachmentOK %s", 200, payload)
 }
 
 func (o *PostInteractionsInteractionFidAttachmentOK) String() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/attachment][%d] postInteractionsInteractionFidAttachmentOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/attachment][%d] postInteractionsInteractionFidAttachmentOK %s", 200, payload)
 }
 
 func (o *PostInteractionsInteractionFidAttachmentOK) GetPayload() *PostInteractionsInteractionFidAttachmentOKBody {
@@ -161,11 +164,13 @@ func (o *PostInteractionsInteractionFidAttachmentDefault) Code() int {
 }
 
 func (o *PostInteractionsInteractionFidAttachmentDefault) Error() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/attachment][%d] PostInteractionsInteractionFidAttachment default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/attachment][%d] PostInteractionsInteractionFidAttachment default %s", o._statusCode, payload)
 }
 
 func (o *PostInteractionsInteractionFidAttachmentDefault) String() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/attachment][%d] PostInteractionsInteractionFidAttachment default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/attachment][%d] PostInteractionsInteractionFidAttachment default %s", o._statusCode, payload)
 }
 
 func (o *PostInteractionsInteractionFidAttachmentDefault) GetPayload() *models.Envelope {

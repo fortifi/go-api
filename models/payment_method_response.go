@@ -70,6 +70,12 @@ type PaymentMethodResponse struct {
 	// Format: date-time
 	LockExpiresAt strfmt.DateTime `json:"lockExpiresAt,omitempty"`
 
+	// lookup code
+	LookupCode string `json:"lookupCode,omitempty"`
+
+	// merchant fingerprint
+	MerchantFingerprint string `json:"merchantFingerprint,omitempty"`
+
 	// method scheme
 	MethodScheme string `json:"methodScheme,omitempty"`
 
@@ -134,6 +140,10 @@ func (m *PaymentMethodResponse) UnmarshalJSON(raw []byte) error {
 
 		LockExpiresAt strfmt.DateTime `json:"lockExpiresAt,omitempty"`
 
+		LookupCode string `json:"lookupCode,omitempty"`
+
+		MerchantFingerprint string `json:"merchantFingerprint,omitempty"`
+
 		MethodScheme string `json:"methodScheme,omitempty"`
 
 		MethodSubType string `json:"methodSubType,omitempty"`
@@ -181,6 +191,10 @@ func (m *PaymentMethodResponse) UnmarshalJSON(raw []byte) error {
 	m.LastSuccessChallengeTime = dataAO1.LastSuccessChallengeTime
 
 	m.LockExpiresAt = dataAO1.LockExpiresAt
+
+	m.LookupCode = dataAO1.LookupCode
+
+	m.MerchantFingerprint = dataAO1.MerchantFingerprint
 
 	m.MethodScheme = dataAO1.MethodScheme
 
@@ -239,6 +253,10 @@ func (m PaymentMethodResponse) MarshalJSON() ([]byte, error) {
 
 		LockExpiresAt strfmt.DateTime `json:"lockExpiresAt,omitempty"`
 
+		LookupCode string `json:"lookupCode,omitempty"`
+
+		MerchantFingerprint string `json:"merchantFingerprint,omitempty"`
+
 		MethodScheme string `json:"methodScheme,omitempty"`
 
 		MethodSubType string `json:"methodSubType,omitempty"`
@@ -283,6 +301,10 @@ func (m PaymentMethodResponse) MarshalJSON() ([]byte, error) {
 	dataAO1.LastSuccessChallengeTime = m.LastSuccessChallengeTime
 
 	dataAO1.LockExpiresAt = m.LockExpiresAt
+
+	dataAO1.LookupCode = m.LookupCode
+
+	dataAO1.MerchantFingerprint = m.MerchantFingerprint
 
 	dataAO1.MethodScheme = m.MethodScheme
 

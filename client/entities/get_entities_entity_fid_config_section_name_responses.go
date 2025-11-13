@@ -7,6 +7,7 @@ package entities
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetEntitiesEntityFidConfigSectionNameOK) Code() int {
 }
 
 func (o *GetEntitiesEntityFidConfigSectionNameOK) Error() string {
-	return fmt.Sprintf("[GET /entities/{entityFid}/config/{sectionName}][%d] getEntitiesEntityFidConfigSectionNameOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /entities/{entityFid}/config/{sectionName}][%d] getEntitiesEntityFidConfigSectionNameOK %s", 200, payload)
 }
 
 func (o *GetEntitiesEntityFidConfigSectionNameOK) String() string {
-	return fmt.Sprintf("[GET /entities/{entityFid}/config/{sectionName}][%d] getEntitiesEntityFidConfigSectionNameOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /entities/{entityFid}/config/{sectionName}][%d] getEntitiesEntityFidConfigSectionNameOK %s", 200, payload)
 }
 
 func (o *GetEntitiesEntityFidConfigSectionNameOK) GetPayload() *GetEntitiesEntityFidConfigSectionNameOKBody {
@@ -161,11 +164,13 @@ func (o *GetEntitiesEntityFidConfigSectionNameDefault) Code() int {
 }
 
 func (o *GetEntitiesEntityFidConfigSectionNameDefault) Error() string {
-	return fmt.Sprintf("[GET /entities/{entityFid}/config/{sectionName}][%d] GetEntitiesEntityFidConfigSectionName default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /entities/{entityFid}/config/{sectionName}][%d] GetEntitiesEntityFidConfigSectionName default %s", o._statusCode, payload)
 }
 
 func (o *GetEntitiesEntityFidConfigSectionNameDefault) String() string {
-	return fmt.Sprintf("[GET /entities/{entityFid}/config/{sectionName}][%d] GetEntitiesEntityFidConfigSectionName default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /entities/{entityFid}/config/{sectionName}][%d] GetEntitiesEntityFidConfigSectionName default %s", o._statusCode, payload)
 }
 
 func (o *GetEntitiesEntityFidConfigSectionNameDefault) GetPayload() *models.Envelope {

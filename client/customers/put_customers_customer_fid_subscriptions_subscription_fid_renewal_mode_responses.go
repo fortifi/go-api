@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeOK) Code(
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeOK) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/renewalMode][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/renewalMode][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeOK", 200)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeOK) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/renewalMode][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/renewalMode][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeOK", 200)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeDefault) 
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeDefault) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/renewalMode][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalMode default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/renewalMode][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalMode default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeDefault) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/renewalMode][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalMode default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/renewalMode][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalMode default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeDefault) GetPayload() *models.Envelope {

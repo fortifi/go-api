@@ -6,6 +6,7 @@ package entities
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *DeleteEntitiesEntityFidConfigSectionNameOK) Code() int {
 }
 
 func (o *DeleteEntitiesEntityFidConfigSectionNameOK) Error() string {
-	return fmt.Sprintf("[DELETE /entities/{entityFid}/config/{sectionName}][%d] deleteEntitiesEntityFidConfigSectionNameOK ", 200)
+	return fmt.Sprintf("[DELETE /entities/{entityFid}/config/{sectionName}][%d] deleteEntitiesEntityFidConfigSectionNameOK", 200)
 }
 
 func (o *DeleteEntitiesEntityFidConfigSectionNameOK) String() string {
-	return fmt.Sprintf("[DELETE /entities/{entityFid}/config/{sectionName}][%d] deleteEntitiesEntityFidConfigSectionNameOK ", 200)
+	return fmt.Sprintf("[DELETE /entities/{entityFid}/config/{sectionName}][%d] deleteEntitiesEntityFidConfigSectionNameOK", 200)
 }
 
 func (o *DeleteEntitiesEntityFidConfigSectionNameOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *DeleteEntitiesEntityFidConfigSectionNameDefault) Code() int {
 }
 
 func (o *DeleteEntitiesEntityFidConfigSectionNameDefault) Error() string {
-	return fmt.Sprintf("[DELETE /entities/{entityFid}/config/{sectionName}][%d] DeleteEntitiesEntityFidConfigSectionName default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /entities/{entityFid}/config/{sectionName}][%d] DeleteEntitiesEntityFidConfigSectionName default %s", o._statusCode, payload)
 }
 
 func (o *DeleteEntitiesEntityFidConfigSectionNameDefault) String() string {
-	return fmt.Sprintf("[DELETE /entities/{entityFid}/config/{sectionName}][%d] DeleteEntitiesEntityFidConfigSectionName default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /entities/{entityFid}/config/{sectionName}][%d] DeleteEntitiesEntityFidConfigSectionName default %s", o._statusCode, payload)
 }
 
 func (o *DeleteEntitiesEntityFidConfigSectionNameDefault) GetPayload() *models.Envelope {

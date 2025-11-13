@@ -7,12 +7,38 @@ package customers
 
 import (
 	"github.com/go-openapi/runtime"
+	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 )
 
 // New creates a new customers API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
 	return &Client{transport: transport, formats: formats}
+}
+
+// New creates a new customers API client with basic auth credentials.
+// It takes the following parameters:
+// - host: http host (github.com).
+// - basePath: any base path for the API client ("/v1", "/v3").
+// - scheme: http scheme ("http", "https").
+// - user: user for basic authentication header.
+// - password: password for basic authentication header.
+func NewClientWithBasicAuth(host, basePath, scheme, user, password string) ClientService {
+	transport := httptransport.New(host, basePath, []string{scheme})
+	transport.DefaultAuthentication = httptransport.BasicAuth(user, password)
+	return &Client{transport: transport, formats: strfmt.Default}
+}
+
+// New creates a new customers API client with a bearer token for authentication.
+// It takes the following parameters:
+// - host: http host (github.com).
+// - basePath: any base path for the API client ("/v1", "/v3").
+// - scheme: http scheme ("http", "https").
+// - bearerToken: bearer token for Bearer authentication header.
+func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) ClientService {
+	transport := httptransport.New(host, basePath, []string{scheme})
+	transport.DefaultAuthentication = httptransport.BearerToken(bearerToken)
+	return &Client{transport: transport, formats: strfmt.Default}
 }
 
 /*
@@ -23,8 +49,32 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
-// ClientOption is the option for Client methods
+// ClientOption may be used to customize the behavior of Client methods.
 type ClientOption func(*runtime.ClientOperation)
+
+// This client is generated with a few options you might find useful for your swagger spec.
+//
+// Feel free to add you own set of options.
+
+// WithContentType allows the client to force the Content-Type header
+// to negotiate a specific Consumer from the server.
+//
+// You may use this option to set arbitrary extensions to your MIME media type.
+func WithContentType(mime string) ClientOption {
+	return func(r *runtime.ClientOperation) {
+		r.ConsumesMediaTypes = []string{mime}
+	}
+}
+
+// WithContentTypeApplicationJSON sets the Content-Type header to "application/json".
+func WithContentTypeApplicationJSON(r *runtime.ClientOperation) {
+	r.ConsumesMediaTypes = []string{"application/json"}
+}
+
+// WithContentTypeMultipartFormData sets the Content-Type header to "multipart/form-data".
+func WithContentTypeMultipartFormData(r *runtime.ClientOperation) {
+	r.ConsumesMediaTypes = []string{"multipart/form-data"}
+}
 
 // ClientService is the interface for Client methods
 type ClientService interface {
@@ -77,6 +127,8 @@ type ClientService interface {
 	GetCustomersCustomerFidInvoicesInvoiceFid(params *GetCustomersCustomerFidInvoicesInvoiceFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidInvoicesInvoiceFidOK, error)
 
 	GetCustomersCustomerFidInvoicesInvoiceFidDownload(params *GetCustomersCustomerFidInvoicesInvoiceFidDownloadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidInvoicesInvoiceFidDownloadOK, error)
+
+	GetCustomersCustomerFidNotifications(params *GetCustomersCustomerFidNotificationsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidNotificationsOK, error)
 
 	GetCustomersCustomerFidOrders(params *GetCustomersCustomerFidOrdersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidOrdersOK, error)
 
@@ -174,6 +226,8 @@ type ClientService interface {
 
 	PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptions(params *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsOK, error)
 
+	PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequest(params *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOK, error)
+
 	PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlow(params *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK, error)
 
 	PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowEmpty(params *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowEmptyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowEmptyOK, error)
@@ -250,6 +304,8 @@ type ClientService interface {
 
 	PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoCharge(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoChargeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoChargeOK, error)
 
+	PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModify(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyOK, error)
+
 	PutCustomersCustomerFidSubscriptionsSubscriptionFidModify(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyOK, error)
 
 	PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefund(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundOK, error)
@@ -272,7 +328,11 @@ type ClientService interface {
 
 	PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccount(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountOK, error)
 
+	PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspend(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendOK, error)
+
 	PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPrice(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceOK, error)
+
+	PutCustomersCustomerFidTestAccount(params *PutCustomersCustomerFidTestAccountParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidTestAccountOK, error)
 
 	PutCustomersCustomerFidUpgradePaymentAccount(params *PutCustomersCustomerFidUpgradePaymentAccountParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidUpgradePaymentAccountOK, error)
 
@@ -1228,6 +1288,44 @@ func (a *Client) GetCustomersCustomerFidInvoicesInvoiceFidDownload(params *GetCu
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*GetCustomersCustomerFidInvoicesInvoiceFidDownloadDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+GetCustomersCustomerFidNotifications lists push notification sent to a customer
+*/
+func (a *Client) GetCustomersCustomerFidNotifications(params *GetCustomersCustomerFidNotificationsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidNotificationsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetCustomersCustomerFidNotificationsParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "GetCustomersCustomerFidNotifications",
+		Method:             "GET",
+		PathPattern:        "/customers/{customerFid}/notifications",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetCustomersCustomerFidNotificationsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetCustomersCustomerFidNotificationsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*GetCustomersCustomerFidNotificationsDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2538,7 +2636,7 @@ func (a *Client) PostCustomersCustomerFidContacts(params *PostCustomersCustomerF
 		Method:             "POST",
 		PathPattern:        "/customers/{customerFid}/contacts",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json", "multipart/form-data"},
+		ConsumesMediaTypes: []string{"multipart/form-data", "application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &PostCustomersCustomerFidContactsReader{formats: a.formats},
@@ -3056,6 +3154,44 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowF
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequest creates a cancel request for a subscription
+*/
+func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequest(params *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequest",
+		Method:             "POST",
+		PathPattern:        "/customers/{customerFid}/subscriptions/{subscriptionFid}/cancelRequest",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4508,6 +4644,44 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoCh
 }
 
 /*
+PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModify modifies an existing subscription with a new price returns the new subscription
+*/
+func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModify(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModify",
+		Method:             "PUT",
+		PathPattern:        "/customers/{customerFid}/subscriptions/{subscriptionFid}/forceModify",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
 PutCustomersCustomerFidSubscriptionsSubscriptionFidModify modifies an existing subscription with a new price returns new open order to be completed
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidModify(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyOK, error) {
@@ -4926,6 +5100,44 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAc
 }
 
 /*
+PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspend suspends a subscription
+*/
+func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspend(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspend",
+		Method:             "PUT",
+		PathPattern:        "/customers/{customerFid}/subscriptions/{subscriptionFid}/suspend",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
 PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPrice modifies an existing subscription with a new price which will be used for the next renewal
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPrice(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceOK, error) {
@@ -4960,6 +5172,44 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewa
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PutCustomersCustomerFidTestAccount marks a customer as a test account
+*/
+func (a *Client) PutCustomersCustomerFidTestAccount(params *PutCustomersCustomerFidTestAccountParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidTestAccountOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPutCustomersCustomerFidTestAccountParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PutCustomersCustomerFidTestAccount",
+		Method:             "PUT",
+		PathPattern:        "/customers/{customerFid}/testAccount",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PutCustomersCustomerFidTestAccountReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PutCustomersCustomerFidTestAccountOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PutCustomersCustomerFidTestAccountDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

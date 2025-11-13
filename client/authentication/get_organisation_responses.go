@@ -7,6 +7,7 @@ package authentication
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetOrganisationOK) Code() int {
 }
 
 func (o *GetOrganisationOK) Error() string {
-	return fmt.Sprintf("[GET /organisation][%d] getOrganisationOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /organisation][%d] getOrganisationOK %s", 200, payload)
 }
 
 func (o *GetOrganisationOK) String() string {
-	return fmt.Sprintf("[GET /organisation][%d] getOrganisationOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /organisation][%d] getOrganisationOK %s", 200, payload)
 }
 
 func (o *GetOrganisationOK) GetPayload() *GetOrganisationOKBody {
@@ -161,11 +164,13 @@ func (o *GetOrganisationDefault) Code() int {
 }
 
 func (o *GetOrganisationDefault) Error() string {
-	return fmt.Sprintf("[GET /organisation][%d] getOrganisation default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /organisation][%d] getOrganisation default %s", o._statusCode, payload)
 }
 
 func (o *GetOrganisationDefault) String() string {
-	return fmt.Sprintf("[GET /organisation][%d] getOrganisation default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /organisation][%d] getOrganisation default %s", o._statusCode, payload)
 }
 
 func (o *GetOrganisationDefault) GetPayload() *models.Envelope {

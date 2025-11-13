@@ -7,6 +7,7 @@ package marketing
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetPublishersPublisherFidOK) Code() int {
 }
 
 func (o *GetPublishersPublisherFidOK) Error() string {
-	return fmt.Sprintf("[GET /publishers/{publisherFid}][%d] getPublishersPublisherFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /publishers/{publisherFid}][%d] getPublishersPublisherFidOK %s", 200, payload)
 }
 
 func (o *GetPublishersPublisherFidOK) String() string {
-	return fmt.Sprintf("[GET /publishers/{publisherFid}][%d] getPublishersPublisherFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /publishers/{publisherFid}][%d] getPublishersPublisherFidOK %s", 200, payload)
 }
 
 func (o *GetPublishersPublisherFidOK) GetPayload() *GetPublishersPublisherFidOKBody {
@@ -161,11 +164,13 @@ func (o *GetPublishersPublisherFidDefault) Code() int {
 }
 
 func (o *GetPublishersPublisherFidDefault) Error() string {
-	return fmt.Sprintf("[GET /publishers/{publisherFid}][%d] GetPublishersPublisherFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /publishers/{publisherFid}][%d] GetPublishersPublisherFid default %s", o._statusCode, payload)
 }
 
 func (o *GetPublishersPublisherFidDefault) String() string {
-	return fmt.Sprintf("[GET /publishers/{publisherFid}][%d] GetPublishersPublisherFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /publishers/{publisherFid}][%d] GetPublishersPublisherFid default %s", o._statusCode, payload)
 }
 
 func (o *GetPublishersPublisherFidDefault) GetPayload() *models.Envelope {

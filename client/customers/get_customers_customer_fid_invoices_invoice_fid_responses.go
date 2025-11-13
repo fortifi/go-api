@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -86,11 +87,13 @@ func (o *GetCustomersCustomerFidInvoicesInvoiceFidOK) Code() int {
 }
 
 func (o *GetCustomersCustomerFidInvoicesInvoiceFidOK) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/invoices/{invoiceFid}][%d] getCustomersCustomerFidInvoicesInvoiceFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/invoices/{invoiceFid}][%d] getCustomersCustomerFidInvoicesInvoiceFidOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidInvoicesInvoiceFidOK) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/invoices/{invoiceFid}][%d] getCustomersCustomerFidInvoicesInvoiceFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/invoices/{invoiceFid}][%d] getCustomersCustomerFidInvoicesInvoiceFidOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidInvoicesInvoiceFidOK) GetPayload() *models.Invoice {
@@ -158,11 +161,13 @@ func (o *GetCustomersCustomerFidInvoicesInvoiceFidDefault) Code() int {
 }
 
 func (o *GetCustomersCustomerFidInvoicesInvoiceFidDefault) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/invoices/{invoiceFid}][%d] GetCustomersCustomerFidInvoicesInvoiceFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/invoices/{invoiceFid}][%d] GetCustomersCustomerFidInvoicesInvoiceFid default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidInvoicesInvoiceFidDefault) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/invoices/{invoiceFid}][%d] GetCustomersCustomerFidInvoicesInvoiceFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/invoices/{invoiceFid}][%d] GetCustomersCustomerFidInvoicesInvoiceFid default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidInvoicesInvoiceFidDefault) GetPayload() *models.Envelope {

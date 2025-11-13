@@ -26,6 +26,9 @@ type Attachment struct {
 	// md5sum
 	Md5sum string `json:"md5sum,omitempty"`
 
+	// meta
+	Meta map[string]string `json:"meta,omitempty"`
+
 	// mime type
 	MimeType string `json:"mimeType,omitempty"`
 

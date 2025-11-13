@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -86,11 +87,13 @@ func (o *GetContactsContactFidAddressesOK) Code() int {
 }
 
 func (o *GetContactsContactFidAddressesOK) Error() string {
-	return fmt.Sprintf("[GET /contacts/{contactFid}/addresses][%d] getContactsContactFidAddressesOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /contacts/{contactFid}/addresses][%d] getContactsContactFidAddressesOK %s", 200, payload)
 }
 
 func (o *GetContactsContactFidAddressesOK) String() string {
-	return fmt.Sprintf("[GET /contacts/{contactFid}/addresses][%d] getContactsContactFidAddressesOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /contacts/{contactFid}/addresses][%d] getContactsContactFidAddressesOK %s", 200, payload)
 }
 
 func (o *GetContactsContactFidAddressesOK) GetPayload() *models.Addresses {
@@ -158,11 +161,13 @@ func (o *GetContactsContactFidAddressesDefault) Code() int {
 }
 
 func (o *GetContactsContactFidAddressesDefault) Error() string {
-	return fmt.Sprintf("[GET /contacts/{contactFid}/addresses][%d] GetContactsContactFidAddresses default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /contacts/{contactFid}/addresses][%d] GetContactsContactFidAddresses default %s", o._statusCode, payload)
 }
 
 func (o *GetContactsContactFidAddressesDefault) String() string {
-	return fmt.Sprintf("[GET /contacts/{contactFid}/addresses][%d] GetContactsContactFidAddresses default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /contacts/{contactFid}/addresses][%d] GetContactsContactFidAddresses default %s", o._statusCode, payload)
 }
 
 func (o *GetContactsContactFidAddressesDefault) GetPayload() *models.Envelope {

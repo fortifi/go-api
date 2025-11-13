@@ -7,6 +7,7 @@ package marketing
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"strconv"
@@ -90,11 +91,13 @@ func (o *GetVisitorsVisitorIDPixelsOK) Code() int {
 }
 
 func (o *GetVisitorsVisitorIDPixelsOK) Error() string {
-	return fmt.Sprintf("[GET /visitors/{visitorId}/pixels][%d] getVisitorsVisitorIdPixelsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /visitors/{visitorId}/pixels][%d] getVisitorsVisitorIdPixelsOK %s", 200, payload)
 }
 
 func (o *GetVisitorsVisitorIDPixelsOK) String() string {
-	return fmt.Sprintf("[GET /visitors/{visitorId}/pixels][%d] getVisitorsVisitorIdPixelsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /visitors/{visitorId}/pixels][%d] getVisitorsVisitorIdPixelsOK %s", 200, payload)
 }
 
 func (o *GetVisitorsVisitorIDPixelsOK) GetPayload() *GetVisitorsVisitorIDPixelsOKBody {
@@ -162,11 +165,13 @@ func (o *GetVisitorsVisitorIDPixelsDefault) Code() int {
 }
 
 func (o *GetVisitorsVisitorIDPixelsDefault) Error() string {
-	return fmt.Sprintf("[GET /visitors/{visitorId}/pixels][%d] GetVisitorsVisitorIDPixels default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /visitors/{visitorId}/pixels][%d] GetVisitorsVisitorIDPixels default %s", o._statusCode, payload)
 }
 
 func (o *GetVisitorsVisitorIDPixelsDefault) String() string {
-	return fmt.Sprintf("[GET /visitors/{visitorId}/pixels][%d] GetVisitorsVisitorIDPixels default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /visitors/{visitorId}/pixels][%d] GetVisitorsVisitorIDPixels default %s", o._statusCode, payload)
 }
 
 func (o *GetVisitorsVisitorIDPixelsDefault) GetPayload() *models.Envelope {

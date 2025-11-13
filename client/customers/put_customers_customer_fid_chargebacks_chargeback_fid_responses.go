@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PutCustomersCustomerFidChargebacksChargebackFidOK) Code() int {
 }
 
 func (o *PutCustomersCustomerFidChargebacksChargebackFidOK) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/chargebacks/{chargebackFid}][%d] putCustomersCustomerFidChargebacksChargebackFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/chargebacks/{chargebackFid}][%d] putCustomersCustomerFidChargebacksChargebackFidOK %s", 200, payload)
 }
 
 func (o *PutCustomersCustomerFidChargebacksChargebackFidOK) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/chargebacks/{chargebackFid}][%d] putCustomersCustomerFidChargebacksChargebackFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/chargebacks/{chargebackFid}][%d] putCustomersCustomerFidChargebacksChargebackFidOK %s", 200, payload)
 }
 
 func (o *PutCustomersCustomerFidChargebacksChargebackFidOK) GetPayload() *PutCustomersCustomerFidChargebacksChargebackFidOKBody {
@@ -161,11 +164,13 @@ func (o *PutCustomersCustomerFidChargebacksChargebackFidDefault) Code() int {
 }
 
 func (o *PutCustomersCustomerFidChargebacksChargebackFidDefault) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/chargebacks/{chargebackFid}][%d] PutCustomersCustomerFidChargebacksChargebackFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/chargebacks/{chargebackFid}][%d] PutCustomersCustomerFidChargebacksChargebackFid default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidChargebacksChargebackFidDefault) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/chargebacks/{chargebackFid}][%d] PutCustomersCustomerFidChargebacksChargebackFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/chargebacks/{chargebackFid}][%d] PutCustomersCustomerFidChargebacksChargebackFid default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidChargebacksChargebackFidDefault) GetPayload() *models.Envelope {

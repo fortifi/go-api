@@ -7,6 +7,7 @@ package orders
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PutOrdersOrderFidConfirmPayPalOK) Code() int {
 }
 
 func (o *PutOrdersOrderFidConfirmPayPalOK) Error() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/confirmPayPal][%d] putOrdersOrderFidConfirmPayPalOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/confirmPayPal][%d] putOrdersOrderFidConfirmPayPalOK %s", 200, payload)
 }
 
 func (o *PutOrdersOrderFidConfirmPayPalOK) String() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/confirmPayPal][%d] putOrdersOrderFidConfirmPayPalOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/confirmPayPal][%d] putOrdersOrderFidConfirmPayPalOK %s", 200, payload)
 }
 
 func (o *PutOrdersOrderFidConfirmPayPalOK) GetPayload() *PutOrdersOrderFidConfirmPayPalOKBody {
@@ -161,11 +164,13 @@ func (o *PutOrdersOrderFidConfirmPayPalDefault) Code() int {
 }
 
 func (o *PutOrdersOrderFidConfirmPayPalDefault) Error() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/confirmPayPal][%d] PutOrdersOrderFidConfirmPayPal default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/confirmPayPal][%d] PutOrdersOrderFidConfirmPayPal default %s", o._statusCode, payload)
 }
 
 func (o *PutOrdersOrderFidConfirmPayPalDefault) String() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/confirmPayPal][%d] PutOrdersOrderFidConfirmPayPal default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/confirmPayPal][%d] PutOrdersOrderFidConfirmPayPal default %s", o._statusCode, payload)
 }
 
 func (o *PutOrdersOrderFidConfirmPayPalDefault) GetPayload() *models.Envelope {

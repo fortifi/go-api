@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -86,11 +87,13 @@ func (o *GetCustomersCustomerFidEmailsOK) Code() int {
 }
 
 func (o *GetCustomersCustomerFidEmailsOK) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/emails][%d] getCustomersCustomerFidEmailsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/emails][%d] getCustomersCustomerFidEmailsOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidEmailsOK) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/emails][%d] getCustomersCustomerFidEmailsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/emails][%d] getCustomersCustomerFidEmailsOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidEmailsOK) GetPayload() *models.Emails {
@@ -158,11 +161,13 @@ func (o *GetCustomersCustomerFidEmailsDefault) Code() int {
 }
 
 func (o *GetCustomersCustomerFidEmailsDefault) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/emails][%d] GetCustomersCustomerFidEmails default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/emails][%d] GetCustomersCustomerFidEmails default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidEmailsDefault) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/emails][%d] GetCustomersCustomerFidEmails default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/emails][%d] GetCustomersCustomerFidEmails default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidEmailsDefault) GetPayload() *models.Envelope {

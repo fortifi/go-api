@@ -6,6 +6,7 @@ package contacts
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PutContactsDeviceHardwareIDSubscribeOK) Code() int {
 }
 
 func (o *PutContactsDeviceHardwareIDSubscribeOK) Error() string {
-	return fmt.Sprintf("[PUT /contacts/device/{hardwareId}/subscribe][%d] putContactsDeviceHardwareIdSubscribeOK ", 200)
+	return fmt.Sprintf("[PUT /contacts/device/{hardwareId}/subscribe][%d] putContactsDeviceHardwareIdSubscribeOK", 200)
 }
 
 func (o *PutContactsDeviceHardwareIDSubscribeOK) String() string {
-	return fmt.Sprintf("[PUT /contacts/device/{hardwareId}/subscribe][%d] putContactsDeviceHardwareIdSubscribeOK ", 200)
+	return fmt.Sprintf("[PUT /contacts/device/{hardwareId}/subscribe][%d] putContactsDeviceHardwareIdSubscribeOK", 200)
 }
 
 func (o *PutContactsDeviceHardwareIDSubscribeOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PutContactsDeviceHardwareIDSubscribeDefault) Code() int {
 }
 
 func (o *PutContactsDeviceHardwareIDSubscribeDefault) Error() string {
-	return fmt.Sprintf("[PUT /contacts/device/{hardwareId}/subscribe][%d] PutContactsDeviceHardwareIDSubscribe default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /contacts/device/{hardwareId}/subscribe][%d] PutContactsDeviceHardwareIDSubscribe default %s", o._statusCode, payload)
 }
 
 func (o *PutContactsDeviceHardwareIDSubscribeDefault) String() string {
-	return fmt.Sprintf("[PUT /contacts/device/{hardwareId}/subscribe][%d] PutContactsDeviceHardwareIDSubscribe default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /contacts/device/{hardwareId}/subscribe][%d] PutContactsDeviceHardwareIDSubscribe default %s", o._statusCode, payload)
 }
 
 func (o *PutContactsDeviceHardwareIDSubscribeDefault) GetPayload() *models.Envelope {

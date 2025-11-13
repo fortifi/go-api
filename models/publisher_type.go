@@ -68,6 +68,33 @@ const (
 
 	// PublisherTypeContent captures enum value "content"
 	PublisherTypeContent PublisherType = "content"
+
+	// PublisherTypeNative captures enum value "native"
+	PublisherTypeNative PublisherType = "native"
+
+	// PublisherTypeSocial captures enum value "social"
+	PublisherTypeSocial PublisherType = "social"
+
+	// PublisherTypePush captures enum value "push"
+	PublisherTypePush PublisherType = "push"
+
+	// PublisherTypeVideo captures enum value "video"
+	PublisherTypeVideo PublisherType = "video"
+
+	// PublisherTypeTv captures enum value "tv"
+	PublisherTypeTv PublisherType = "tv"
+
+	// PublisherTypeSeo captures enum value "seo"
+	PublisherTypeSeo PublisherType = "seo"
+
+	// PublisherTypeAppInstall captures enum value "app_install"
+	PublisherTypeAppInstall PublisherType = "app_install"
+
+	// PublisherTypePodcast captures enum value "podcast"
+	PublisherTypePodcast PublisherType = "podcast"
+
+	// PublisherTypeInfluencer captures enum value "influencer"
+	PublisherTypeInfluencer PublisherType = "influencer"
 )
 
 // for schema
@@ -75,7 +102,7 @@ var publisherTypeEnum []interface{}
 
 func init() {
 	var res []PublisherType
-	if err := json.Unmarshal([]byte(`["affiliate","network","customer","display","priority_affiliate","offline","ppc","internal","search_engine","mobile","email","retarget","content"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["affiliate","network","customer","display","priority_affiliate","offline","ppc","internal","search_engine","mobile","email","retarget","content","native","social","push","video","tv","seo","app_install","podcast","influencer"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {

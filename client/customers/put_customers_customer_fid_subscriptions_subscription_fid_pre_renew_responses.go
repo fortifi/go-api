@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewOK) Code() i
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewOK) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/preRenew][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/preRenew][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewOK %s", 200, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewOK) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/preRenew][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/preRenew][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewOK %s", 200, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewOK) GetPayload() *PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewOKBody {
@@ -161,11 +164,13 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewDefault) Cod
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewDefault) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/preRenew][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenew default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/preRenew][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenew default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewDefault) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/preRenew][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenew default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/preRenew][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenew default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewDefault) GetPayload() *models.Envelope {

@@ -7,6 +7,7 @@ package entities
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetEntitiesEntityFidPropertiesOK) Code() int {
 }
 
 func (o *GetEntitiesEntityFidPropertiesOK) Error() string {
-	return fmt.Sprintf("[GET /entities/{entityFid}/properties][%d] getEntitiesEntityFidPropertiesOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /entities/{entityFid}/properties][%d] getEntitiesEntityFidPropertiesOK %s", 200, payload)
 }
 
 func (o *GetEntitiesEntityFidPropertiesOK) String() string {
-	return fmt.Sprintf("[GET /entities/{entityFid}/properties][%d] getEntitiesEntityFidPropertiesOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /entities/{entityFid}/properties][%d] getEntitiesEntityFidPropertiesOK %s", 200, payload)
 }
 
 func (o *GetEntitiesEntityFidPropertiesOK) GetPayload() *GetEntitiesEntityFidPropertiesOKBody {
@@ -161,11 +164,13 @@ func (o *GetEntitiesEntityFidPropertiesDefault) Code() int {
 }
 
 func (o *GetEntitiesEntityFidPropertiesDefault) Error() string {
-	return fmt.Sprintf("[GET /entities/{entityFid}/properties][%d] GetEntitiesEntityFidProperties default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /entities/{entityFid}/properties][%d] GetEntitiesEntityFidProperties default %s", o._statusCode, payload)
 }
 
 func (o *GetEntitiesEntityFidPropertiesDefault) String() string {
-	return fmt.Sprintf("[GET /entities/{entityFid}/properties][%d] GetEntitiesEntityFidProperties default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /entities/{entityFid}/properties][%d] GetEntitiesEntityFidProperties default %s", o._statusCode, payload)
 }
 
 func (o *GetEntitiesEntityFidPropertiesDefault) GetPayload() *models.Envelope {

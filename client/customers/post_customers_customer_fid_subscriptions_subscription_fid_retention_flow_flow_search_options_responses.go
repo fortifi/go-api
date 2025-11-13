@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSe
 }
 
 func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOK) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/subscriptions/{subscriptionFid}/retentionFlow/{flowSearch}/options][%d] postCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/subscriptions/{subscriptionFid}/retentionFlow/{flowSearch}/options][%d] postCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOK %s", 200, payload)
 }
 
 func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOK) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/subscriptions/{subscriptionFid}/retentionFlow/{flowSearch}/options][%d] postCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/subscriptions/{subscriptionFid}/retentionFlow/{flowSearch}/options][%d] postCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOK %s", 200, payload)
 }
 
 func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOK) GetPayload() *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOKBody {
@@ -161,11 +164,13 @@ func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSe
 }
 
 func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsDefault) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/subscriptions/{subscriptionFid}/retentionFlow/{flowSearch}/options][%d] PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptions default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/subscriptions/{subscriptionFid}/retentionFlow/{flowSearch}/options][%d] PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptions default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsDefault) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/subscriptions/{subscriptionFid}/retentionFlow/{flowSearch}/options][%d] PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptions default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/subscriptions/{subscriptionFid}/retentionFlow/{flowSearch}/options][%d] PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptions default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsDefault) GetPayload() *models.Envelope {

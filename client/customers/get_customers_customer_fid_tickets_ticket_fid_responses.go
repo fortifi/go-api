@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetCustomersCustomerFidTicketsTicketFidOK) Code() int {
 }
 
 func (o *GetCustomersCustomerFidTicketsTicketFidOK) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/tickets/{ticketFid}][%d] getCustomersCustomerFidTicketsTicketFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/tickets/{ticketFid}][%d] getCustomersCustomerFidTicketsTicketFidOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidTicketsTicketFidOK) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/tickets/{ticketFid}][%d] getCustomersCustomerFidTicketsTicketFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/tickets/{ticketFid}][%d] getCustomersCustomerFidTicketsTicketFidOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidTicketsTicketFidOK) GetPayload() *GetCustomersCustomerFidTicketsTicketFidOKBody {
@@ -161,11 +164,13 @@ func (o *GetCustomersCustomerFidTicketsTicketFidDefault) Code() int {
 }
 
 func (o *GetCustomersCustomerFidTicketsTicketFidDefault) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/tickets/{ticketFid}][%d] GetCustomersCustomerFidTicketsTicketFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/tickets/{ticketFid}][%d] GetCustomersCustomerFidTicketsTicketFid default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidTicketsTicketFidDefault) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/tickets/{ticketFid}][%d] GetCustomersCustomerFidTicketsTicketFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/tickets/{ticketFid}][%d] GetCustomersCustomerFidTicketsTicketFid default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidTicketsTicketFidDefault) GetPayload() *models.Envelope {

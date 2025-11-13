@@ -22,6 +22,9 @@ type FindTransactionResponse struct {
 	// city
 	City string `json:"city,omitempty"`
 
+	// company fid
+	CompanyFid string `json:"companyFid,omitempty"`
+
 	// country
 	Country string `json:"country,omitempty"`
 
@@ -61,6 +64,9 @@ type FindTransactionResponse struct {
 	// subscription fid
 	SubscriptionFid string `json:"subscriptionFid,omitempty"`
 
+	// subscriptions
+	Subscriptions []*Subscription `json:"subscriptions"`
+
 	// taxes
 	Taxes []*InvoiceTaxItem `json:"taxes"`
 
@@ -80,6 +86,10 @@ func (m *FindTransactionResponse) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateItems(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSubscriptions(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -145,6 +155,32 @@ func (m *FindTransactionResponse) validateItems(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *FindTransactionResponse) validateSubscriptions(formats strfmt.Registry) error {
+	if swag.IsZero(m.Subscriptions) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Subscriptions); i++ {
+		if swag.IsZero(m.Subscriptions[i]) { // not required
+			continue
+		}
+
+		if m.Subscriptions[i] != nil {
+			if err := m.Subscriptions[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("subscriptions" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("subscriptions" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
 func (m *FindTransactionResponse) validateTaxes(formats strfmt.Registry) error {
 	if swag.IsZero(m.Taxes) { // not required
 		return nil
@@ -180,6 +216,10 @@ func (m *FindTransactionResponse) ContextValidate(ctx context.Context, formats s
 	}
 
 	if err := m.contextValidateItems(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSubscriptions(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -233,6 +273,31 @@ func (m *FindTransactionResponse) contextValidateItems(ctx context.Context, form
 					return ve.ValidateName("items" + "." + strconv.Itoa(i))
 				} else if ce, ok := err.(*errors.CompositeError); ok {
 					return ce.ValidateName("items" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *FindTransactionResponse) contextValidateSubscriptions(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Subscriptions); i++ {
+
+		if m.Subscriptions[i] != nil {
+
+			if swag.IsZero(m.Subscriptions[i]) { // not required
+				return nil
+			}
+
+			if err := m.Subscriptions[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("subscriptions" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("subscriptions" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

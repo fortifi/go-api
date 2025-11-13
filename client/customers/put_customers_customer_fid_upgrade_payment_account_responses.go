@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PutCustomersCustomerFidUpgradePaymentAccountOK) Code() int {
 }
 
 func (o *PutCustomersCustomerFidUpgradePaymentAccountOK) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/upgradePaymentAccount][%d] putCustomersCustomerFidUpgradePaymentAccountOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/upgradePaymentAccount][%d] putCustomersCustomerFidUpgradePaymentAccountOK", 200)
 }
 
 func (o *PutCustomersCustomerFidUpgradePaymentAccountOK) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/upgradePaymentAccount][%d] putCustomersCustomerFidUpgradePaymentAccountOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/upgradePaymentAccount][%d] putCustomersCustomerFidUpgradePaymentAccountOK", 200)
 }
 
 func (o *PutCustomersCustomerFidUpgradePaymentAccountOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PutCustomersCustomerFidUpgradePaymentAccountDefault) Code() int {
 }
 
 func (o *PutCustomersCustomerFidUpgradePaymentAccountDefault) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/upgradePaymentAccount][%d] PutCustomersCustomerFidUpgradePaymentAccount default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/upgradePaymentAccount][%d] PutCustomersCustomerFidUpgradePaymentAccount default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidUpgradePaymentAccountDefault) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/upgradePaymentAccount][%d] PutCustomersCustomerFidUpgradePaymentAccount default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/upgradePaymentAccount][%d] PutCustomersCustomerFidUpgradePaymentAccount default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidUpgradePaymentAccountDefault) GetPayload() *models.Envelope {

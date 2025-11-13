@@ -7,6 +7,7 @@ package reasons
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetReasonsGroupsReasonGroupFidOK) Code() int {
 }
 
 func (o *GetReasonsGroupsReasonGroupFidOK) Error() string {
-	return fmt.Sprintf("[GET /reasons/groups/{reasonGroupFid}][%d] getReasonsGroupsReasonGroupFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /reasons/groups/{reasonGroupFid}][%d] getReasonsGroupsReasonGroupFidOK %s", 200, payload)
 }
 
 func (o *GetReasonsGroupsReasonGroupFidOK) String() string {
-	return fmt.Sprintf("[GET /reasons/groups/{reasonGroupFid}][%d] getReasonsGroupsReasonGroupFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /reasons/groups/{reasonGroupFid}][%d] getReasonsGroupsReasonGroupFidOK %s", 200, payload)
 }
 
 func (o *GetReasonsGroupsReasonGroupFidOK) GetPayload() *GetReasonsGroupsReasonGroupFidOKBody {
@@ -161,11 +164,13 @@ func (o *GetReasonsGroupsReasonGroupFidDefault) Code() int {
 }
 
 func (o *GetReasonsGroupsReasonGroupFidDefault) Error() string {
-	return fmt.Sprintf("[GET /reasons/groups/{reasonGroupFid}][%d] GetReasonsGroupsReasonGroupFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /reasons/groups/{reasonGroupFid}][%d] GetReasonsGroupsReasonGroupFid default %s", o._statusCode, payload)
 }
 
 func (o *GetReasonsGroupsReasonGroupFidDefault) String() string {
-	return fmt.Sprintf("[GET /reasons/groups/{reasonGroupFid}][%d] GetReasonsGroupsReasonGroupFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /reasons/groups/{reasonGroupFid}][%d] GetReasonsGroupsReasonGroupFid default %s", o._statusCode, payload)
 }
 
 func (o *GetReasonsGroupsReasonGroupFidDefault) GetPayload() *models.Envelope {

@@ -7,6 +7,7 @@ package products
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetProductsGroupsOK) Code() int {
 }
 
 func (o *GetProductsGroupsOK) Error() string {
-	return fmt.Sprintf("[GET /products/groups][%d] getProductsGroupsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /products/groups][%d] getProductsGroupsOK %s", 200, payload)
 }
 
 func (o *GetProductsGroupsOK) String() string {
-	return fmt.Sprintf("[GET /products/groups][%d] getProductsGroupsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /products/groups][%d] getProductsGroupsOK %s", 200, payload)
 }
 
 func (o *GetProductsGroupsOK) GetPayload() *GetProductsGroupsOKBody {
@@ -161,11 +164,13 @@ func (o *GetProductsGroupsDefault) Code() int {
 }
 
 func (o *GetProductsGroupsDefault) Error() string {
-	return fmt.Sprintf("[GET /products/groups][%d] GetProductsGroups default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /products/groups][%d] GetProductsGroups default %s", o._statusCode, payload)
 }
 
 func (o *GetProductsGroupsDefault) String() string {
-	return fmt.Sprintf("[GET /products/groups][%d] GetProductsGroups default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /products/groups][%d] GetProductsGroups default %s", o._statusCode, payload)
 }
 
 func (o *GetProductsGroupsDefault) GetPayload() *models.Envelope {

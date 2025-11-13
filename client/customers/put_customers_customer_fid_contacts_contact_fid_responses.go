@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PutCustomersCustomerFidContactsContactFidOK) Code() int {
 }
 
 func (o *PutCustomersCustomerFidContactsContactFidOK) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/contacts/{contactFid}][%d] putCustomersCustomerFidContactsContactFidOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/contacts/{contactFid}][%d] putCustomersCustomerFidContactsContactFidOK", 200)
 }
 
 func (o *PutCustomersCustomerFidContactsContactFidOK) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/contacts/{contactFid}][%d] putCustomersCustomerFidContactsContactFidOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/contacts/{contactFid}][%d] putCustomersCustomerFidContactsContactFidOK", 200)
 }
 
 func (o *PutCustomersCustomerFidContactsContactFidOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PutCustomersCustomerFidContactsContactFidDefault) Code() int {
 }
 
 func (o *PutCustomersCustomerFidContactsContactFidDefault) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/contacts/{contactFid}][%d] PutCustomersCustomerFidContactsContactFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/contacts/{contactFid}][%d] PutCustomersCustomerFidContactsContactFid default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidContactsContactFidDefault) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/contacts/{contactFid}][%d] PutCustomersCustomerFidContactsContactFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/contacts/{contactFid}][%d] PutCustomersCustomerFidContactsContactFid default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidContactsContactFidDefault) GetPayload() *models.Envelope {

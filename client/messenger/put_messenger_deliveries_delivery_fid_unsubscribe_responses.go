@@ -6,6 +6,7 @@ package messenger
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PutMessengerDeliveriesDeliveryFidUnsubscribeOK) Code() int {
 }
 
 func (o *PutMessengerDeliveriesDeliveryFidUnsubscribeOK) Error() string {
-	return fmt.Sprintf("[PUT /messenger/deliveries/{deliveryFid}/unsubscribe][%d] putMessengerDeliveriesDeliveryFidUnsubscribeOK ", 200)
+	return fmt.Sprintf("[PUT /messenger/deliveries/{deliveryFid}/unsubscribe][%d] putMessengerDeliveriesDeliveryFidUnsubscribeOK", 200)
 }
 
 func (o *PutMessengerDeliveriesDeliveryFidUnsubscribeOK) String() string {
-	return fmt.Sprintf("[PUT /messenger/deliveries/{deliveryFid}/unsubscribe][%d] putMessengerDeliveriesDeliveryFidUnsubscribeOK ", 200)
+	return fmt.Sprintf("[PUT /messenger/deliveries/{deliveryFid}/unsubscribe][%d] putMessengerDeliveriesDeliveryFidUnsubscribeOK", 200)
 }
 
 func (o *PutMessengerDeliveriesDeliveryFidUnsubscribeOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PutMessengerDeliveriesDeliveryFidUnsubscribeDefault) Code() int {
 }
 
 func (o *PutMessengerDeliveriesDeliveryFidUnsubscribeDefault) Error() string {
-	return fmt.Sprintf("[PUT /messenger/deliveries/{deliveryFid}/unsubscribe][%d] PutMessengerDeliveriesDeliveryFidUnsubscribe default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /messenger/deliveries/{deliveryFid}/unsubscribe][%d] PutMessengerDeliveriesDeliveryFidUnsubscribe default %s", o._statusCode, payload)
 }
 
 func (o *PutMessengerDeliveriesDeliveryFidUnsubscribeDefault) String() string {
-	return fmt.Sprintf("[PUT /messenger/deliveries/{deliveryFid}/unsubscribe][%d] PutMessengerDeliveriesDeliveryFidUnsubscribe default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /messenger/deliveries/{deliveryFid}/unsubscribe][%d] PutMessengerDeliveriesDeliveryFidUnsubscribe default %s", o._statusCode, payload)
 }
 
 func (o *PutMessengerDeliveriesDeliveryFidUnsubscribeDefault) GetPayload() *models.Envelope {

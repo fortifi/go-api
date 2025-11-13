@@ -19,6 +19,9 @@ import (
 type Period struct {
 	Entity
 
+	// amount paid
+	AmountPaid float32 `json:"amountPaid,omitempty"`
+
 	// charge date
 	ChargeDate int64 `json:"chargeDate,omitempty"`
 
@@ -67,6 +70,8 @@ func (m *Period) UnmarshalJSON(raw []byte) error {
 
 	// AO1
 	var dataAO1 struct {
+		AmountPaid float32 `json:"amountPaid,omitempty"`
+
 		ChargeDate int64 `json:"chargeDate,omitempty"`
 
 		CreditedAmount float32 `json:"creditedAmount,omitempty"`
@@ -94,6 +99,8 @@ func (m *Period) UnmarshalJSON(raw []byte) error {
 	if err := swag.ReadJSON(raw, &dataAO1); err != nil {
 		return err
 	}
+
+	m.AmountPaid = dataAO1.AmountPaid
 
 	m.ChargeDate = dataAO1.ChargeDate
 
@@ -132,6 +139,8 @@ func (m Period) MarshalJSON() ([]byte, error) {
 	}
 	_parts = append(_parts, aO0)
 	var dataAO1 struct {
+		AmountPaid float32 `json:"amountPaid,omitempty"`
+
 		ChargeDate int64 `json:"chargeDate,omitempty"`
 
 		CreditedAmount float32 `json:"creditedAmount,omitempty"`
@@ -156,6 +165,8 @@ func (m Period) MarshalJSON() ([]byte, error) {
 
 		TotalAmount float32 `json:"totalAmount,omitempty"`
 	}
+
+	dataAO1.AmountPaid = m.AmountPaid
 
 	dataAO1.ChargeDate = m.ChargeDate
 

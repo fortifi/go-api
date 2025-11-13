@@ -6,6 +6,7 @@ package orders
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PutOrdersOrderFidFinalizeOK) Code() int {
 }
 
 func (o *PutOrdersOrderFidFinalizeOK) Error() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/finalize][%d] putOrdersOrderFidFinalizeOK ", 200)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/finalize][%d] putOrdersOrderFidFinalizeOK", 200)
 }
 
 func (o *PutOrdersOrderFidFinalizeOK) String() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/finalize][%d] putOrdersOrderFidFinalizeOK ", 200)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/finalize][%d] putOrdersOrderFidFinalizeOK", 200)
 }
 
 func (o *PutOrdersOrderFidFinalizeOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PutOrdersOrderFidFinalizeDefault) Code() int {
 }
 
 func (o *PutOrdersOrderFidFinalizeDefault) Error() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/finalize][%d] PutOrdersOrderFidFinalize default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/finalize][%d] PutOrdersOrderFidFinalize default %s", o._statusCode, payload)
 }
 
 func (o *PutOrdersOrderFidFinalizeDefault) String() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/finalize][%d] PutOrdersOrderFidFinalize default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/finalize][%d] PutOrdersOrderFidFinalize default %s", o._statusCode, payload)
 }
 
 func (o *PutOrdersOrderFidFinalizeDefault) GetPayload() *models.Envelope {

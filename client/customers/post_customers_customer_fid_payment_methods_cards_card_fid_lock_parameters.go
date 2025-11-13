@@ -14,6 +14,7 @@ import (
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
+	"github.com/go-openapi/swag"
 )
 
 // NewPostCustomersCustomerFidPaymentMethodsCardsCardFidLockParams creates a new PostCustomersCustomerFidPaymentMethodsCardsCardFidLockParams object,
@@ -69,6 +70,9 @@ type PostCustomersCustomerFidPaymentMethodsCardsCardFidLockParams struct {
 	   Customer FID to use
 	*/
 	CustomerFid string
+
+	// ExpirySeconds.
+	ExpirySeconds int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -145,6 +149,17 @@ func (o *PostCustomersCustomerFidPaymentMethodsCardsCardFidLockParams) SetCustom
 	o.CustomerFid = customerFid
 }
 
+// WithExpirySeconds adds the expirySeconds to the post customers customer fid payment methods cards card fid lock params
+func (o *PostCustomersCustomerFidPaymentMethodsCardsCardFidLockParams) WithExpirySeconds(expirySeconds int64) *PostCustomersCustomerFidPaymentMethodsCardsCardFidLockParams {
+	o.SetExpirySeconds(expirySeconds)
+	return o
+}
+
+// SetExpirySeconds adds the expirySeconds to the post customers customer fid payment methods cards card fid lock params
+func (o *PostCustomersCustomerFidPaymentMethodsCardsCardFidLockParams) SetExpirySeconds(expirySeconds int64) {
+	o.ExpirySeconds = expirySeconds
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *PostCustomersCustomerFidPaymentMethodsCardsCardFidLockParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -161,6 +176,15 @@ func (o *PostCustomersCustomerFidPaymentMethodsCardsCardFidLockParams) WriteToRe
 	// path param customerFid
 	if err := r.SetPathParam("customerFid", o.CustomerFid); err != nil {
 		return err
+	}
+
+	// form param expirySeconds
+	frExpirySeconds := o.ExpirySeconds
+	fExpirySeconds := swag.FormatInt64(frExpirySeconds)
+	if fExpirySeconds != "" {
+		if err := r.SetFormParam("expirySeconds", fExpirySeconds); err != nil {
+			return err
+		}
 	}
 
 	if len(res) > 0 {

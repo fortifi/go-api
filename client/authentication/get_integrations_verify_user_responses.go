@@ -7,6 +7,7 @@ package authentication
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetIntegrationsVerifyUserOK) Code() int {
 }
 
 func (o *GetIntegrationsVerifyUserOK) Error() string {
-	return fmt.Sprintf("[GET /integrations/verifyUser][%d] getIntegrationsVerifyUserOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /integrations/verifyUser][%d] getIntegrationsVerifyUserOK %s", 200, payload)
 }
 
 func (o *GetIntegrationsVerifyUserOK) String() string {
-	return fmt.Sprintf("[GET /integrations/verifyUser][%d] getIntegrationsVerifyUserOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /integrations/verifyUser][%d] getIntegrationsVerifyUserOK %s", 200, payload)
 }
 
 func (o *GetIntegrationsVerifyUserOK) GetPayload() *GetIntegrationsVerifyUserOKBody {
@@ -161,11 +164,13 @@ func (o *GetIntegrationsVerifyUserDefault) Code() int {
 }
 
 func (o *GetIntegrationsVerifyUserDefault) Error() string {
-	return fmt.Sprintf("[GET /integrations/verifyUser][%d] GetIntegrationsVerifyUser default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /integrations/verifyUser][%d] GetIntegrationsVerifyUser default %s", o._statusCode, payload)
 }
 
 func (o *GetIntegrationsVerifyUserDefault) String() string {
-	return fmt.Sprintf("[GET /integrations/verifyUser][%d] GetIntegrationsVerifyUser default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /integrations/verifyUser][%d] GetIntegrationsVerifyUser default %s", o._statusCode, payload)
 }
 
 func (o *GetIntegrationsVerifyUserDefault) GetPayload() *models.Envelope {

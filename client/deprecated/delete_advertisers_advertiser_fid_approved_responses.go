@@ -6,6 +6,7 @@ package deprecated
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *DeleteAdvertisersAdvertiserFidApprovedOK) Code() int {
 }
 
 func (o *DeleteAdvertisersAdvertiserFidApprovedOK) Error() string {
-	return fmt.Sprintf("[DELETE /advertisers/{advertiserFid}/approved][%d] deleteAdvertisersAdvertiserFidApprovedOK ", 200)
+	return fmt.Sprintf("[DELETE /advertisers/{advertiserFid}/approved][%d] deleteAdvertisersAdvertiserFidApprovedOK", 200)
 }
 
 func (o *DeleteAdvertisersAdvertiserFidApprovedOK) String() string {
-	return fmt.Sprintf("[DELETE /advertisers/{advertiserFid}/approved][%d] deleteAdvertisersAdvertiserFidApprovedOK ", 200)
+	return fmt.Sprintf("[DELETE /advertisers/{advertiserFid}/approved][%d] deleteAdvertisersAdvertiserFidApprovedOK", 200)
 }
 
 func (o *DeleteAdvertisersAdvertiserFidApprovedOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *DeleteAdvertisersAdvertiserFidApprovedDefault) Code() int {
 }
 
 func (o *DeleteAdvertisersAdvertiserFidApprovedDefault) Error() string {
-	return fmt.Sprintf("[DELETE /advertisers/{advertiserFid}/approved][%d] DeleteAdvertisersAdvertiserFidApproved default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /advertisers/{advertiserFid}/approved][%d] DeleteAdvertisersAdvertiserFidApproved default %s", o._statusCode, payload)
 }
 
 func (o *DeleteAdvertisersAdvertiserFidApprovedDefault) String() string {
-	return fmt.Sprintf("[DELETE /advertisers/{advertiserFid}/approved][%d] DeleteAdvertisersAdvertiserFidApproved default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /advertisers/{advertiserFid}/approved][%d] DeleteAdvertisersAdvertiserFidApproved default %s", o._statusCode, payload)
 }
 
 func (o *DeleteAdvertisersAdvertiserFidApprovedDefault) GetPayload() *models.Envelope {

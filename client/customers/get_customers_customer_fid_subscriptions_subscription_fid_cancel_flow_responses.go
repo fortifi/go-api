@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK) Code()
 }
 
 func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/subscriptions/{subscriptionFid}/cancelFlow][%d] getCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/subscriptions/{subscriptionFid}/cancelFlow][%d] getCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/subscriptions/{subscriptionFid}/cancelFlow][%d] getCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/subscriptions/{subscriptionFid}/cancelFlow][%d] getCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK) GetPayload() *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOKBody {
@@ -161,11 +164,13 @@ func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowDefault) C
 }
 
 func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowDefault) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/subscriptions/{subscriptionFid}/cancelFlow][%d] GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlow default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/subscriptions/{subscriptionFid}/cancelFlow][%d] GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlow default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowDefault) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/subscriptions/{subscriptionFid}/cancelFlow][%d] GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlow default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/subscriptions/{subscriptionFid}/cancelFlow][%d] GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlow default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowDefault) GetPayload() *models.Envelope {

@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetCustomersCustomerFidTicketsOK) Code() int {
 }
 
 func (o *GetCustomersCustomerFidTicketsOK) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/tickets][%d] getCustomersCustomerFidTicketsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/tickets][%d] getCustomersCustomerFidTicketsOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidTicketsOK) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/tickets][%d] getCustomersCustomerFidTicketsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/tickets][%d] getCustomersCustomerFidTicketsOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidTicketsOK) GetPayload() *GetCustomersCustomerFidTicketsOKBody {
@@ -161,11 +164,13 @@ func (o *GetCustomersCustomerFidTicketsDefault) Code() int {
 }
 
 func (o *GetCustomersCustomerFidTicketsDefault) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/tickets][%d] GetCustomersCustomerFidTickets default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/tickets][%d] GetCustomersCustomerFidTickets default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidTicketsDefault) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/tickets][%d] GetCustomersCustomerFidTickets default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/tickets][%d] GetCustomersCustomerFidTickets default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidTicketsDefault) GetPayload() *models.Envelope {

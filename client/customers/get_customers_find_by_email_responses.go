@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetCustomersFindByEmailOK) Code() int {
 }
 
 func (o *GetCustomersFindByEmailOK) Error() string {
-	return fmt.Sprintf("[GET /customers/findByEmail][%d] getCustomersFindByEmailOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/findByEmail][%d] getCustomersFindByEmailOK %s", 200, payload)
 }
 
 func (o *GetCustomersFindByEmailOK) String() string {
-	return fmt.Sprintf("[GET /customers/findByEmail][%d] getCustomersFindByEmailOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/findByEmail][%d] getCustomersFindByEmailOK %s", 200, payload)
 }
 
 func (o *GetCustomersFindByEmailOK) GetPayload() *GetCustomersFindByEmailOKBody {
@@ -161,11 +164,13 @@ func (o *GetCustomersFindByEmailDefault) Code() int {
 }
 
 func (o *GetCustomersFindByEmailDefault) Error() string {
-	return fmt.Sprintf("[GET /customers/findByEmail][%d] GetCustomersFindByEmail default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/findByEmail][%d] GetCustomersFindByEmail default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersFindByEmailDefault) String() string {
-	return fmt.Sprintf("[GET /customers/findByEmail][%d] GetCustomersFindByEmail default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/findByEmail][%d] GetCustomersFindByEmail default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersFindByEmailDefault) GetPayload() *models.Envelope {

@@ -7,6 +7,7 @@ package interactions
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostInteractionsJourneyOK) Code() int {
 }
 
 func (o *PostInteractionsJourneyOK) Error() string {
-	return fmt.Sprintf("[POST /interactions/journey][%d] postInteractionsJourneyOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/journey][%d] postInteractionsJourneyOK %s", 200, payload)
 }
 
 func (o *PostInteractionsJourneyOK) String() string {
-	return fmt.Sprintf("[POST /interactions/journey][%d] postInteractionsJourneyOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/journey][%d] postInteractionsJourneyOK %s", 200, payload)
 }
 
 func (o *PostInteractionsJourneyOK) GetPayload() *PostInteractionsJourneyOKBody {
@@ -161,11 +164,13 @@ func (o *PostInteractionsJourneyDefault) Code() int {
 }
 
 func (o *PostInteractionsJourneyDefault) Error() string {
-	return fmt.Sprintf("[POST /interactions/journey][%d] PostInteractionsJourney default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/journey][%d] PostInteractionsJourney default %s", o._statusCode, payload)
 }
 
 func (o *PostInteractionsJourneyDefault) String() string {
-	return fmt.Sprintf("[POST /interactions/journey][%d] PostInteractionsJourney default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/journey][%d] PostInteractionsJourney default %s", o._statusCode, payload)
 }
 
 func (o *PostInteractionsJourneyDefault) GetPayload() *models.Envelope {

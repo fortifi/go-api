@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetCustomersFindByReferenceOK) Code() int {
 }
 
 func (o *GetCustomersFindByReferenceOK) Error() string {
-	return fmt.Sprintf("[GET /customers/findByReference][%d] getCustomersFindByReferenceOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/findByReference][%d] getCustomersFindByReferenceOK %s", 200, payload)
 }
 
 func (o *GetCustomersFindByReferenceOK) String() string {
-	return fmt.Sprintf("[GET /customers/findByReference][%d] getCustomersFindByReferenceOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/findByReference][%d] getCustomersFindByReferenceOK %s", 200, payload)
 }
 
 func (o *GetCustomersFindByReferenceOK) GetPayload() *GetCustomersFindByReferenceOKBody {
@@ -161,11 +164,13 @@ func (o *GetCustomersFindByReferenceDefault) Code() int {
 }
 
 func (o *GetCustomersFindByReferenceDefault) Error() string {
-	return fmt.Sprintf("[GET /customers/findByReference][%d] GetCustomersFindByReference default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/findByReference][%d] GetCustomersFindByReference default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersFindByReferenceDefault) String() string {
-	return fmt.Sprintf("[GET /customers/findByReference][%d] GetCustomersFindByReference default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/findByReference][%d] GetCustomersFindByReference default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersFindByReferenceDefault) GetPayload() *models.Envelope {

@@ -7,9 +7,12 @@ package models
 
 import (
 	"context"
+	"encoding/json"
 
+	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
+	"github.com/go-openapi/validate"
 )
 
 // CreateReviewPayload create review payload
@@ -17,33 +20,145 @@ import (
 // swagger:model CreateReviewPayload
 type CreateReviewPayload struct {
 
+	// The app lookup reference
+	AppLookupRef string `json:"appLookupRef,omitempty"`
+
+	// The review source inside the app
+	AppSource string `json:"appSource,omitempty"`
+
+	// The app version
+	AppVersion string `json:"appVersion,omitempty"`
+
+	// The Review Body
+	Content string `json:"content,omitempty"`
+
 	// Customer who submitted the review
 	CustomerFid string `json:"customerFid,omitempty"`
 
-	// Title of the Review
-	DisplayName string `json:"displayName,omitempty"`
+	// The source of the install
+	InstallSource string `json:"installSource,omitempty"`
+
+	// IP Address of the visitor
+	IPAddress string `json:"ipAddress,omitempty"`
 
 	// The language code the Review was submitted in
-	Language string `json:"language,omitempty"`
+	// Required: true
+	Language *string `json:"language"`
 
-	// The review public url
-	PublicURL string `json:"publicUrl,omitempty"`
+	// The provider of the review
+	// Required: true
+	// Enum: ["trustpilot","google","facebook","yelp","tripadvisor","other"]
+	Provider *string `json:"provider"`
 
-	// The Review Body
-	Review string `json:"review,omitempty"`
-
-	// Source of the Review (e.g. Trustpilot, Google)
-	Source string `json:"source,omitempty"`
-
-	// The max rating that can be offered (Defaults to 5)
-	StarMax int64 `json:"starMax,omitempty"`
+	// The purchase FID the review is for
+	PurchaseFid string `json:"purchaseFid,omitempty"`
 
 	// The Customer Rating Submitted
-	StarRating int64 `json:"starRating,omitempty"`
+	// Required: true
+	Rating *int64 `json:"rating"`
+
+	// The max rating that can be offered (Defaults to 5)
+	RatingMax int64 `json:"ratingMax,omitempty"`
+
+	// Subject of the Review
+	Subject string `json:"subject,omitempty"`
+
+	// User Agent of the visitors browser 'HTTP_USER_AGENT'
+	UserAgent string `json:"userAgent,omitempty"`
 }
 
 // Validate validates this create review payload
 func (m *CreateReviewPayload) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateLanguage(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateProvider(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateRating(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *CreateReviewPayload) validateLanguage(formats strfmt.Registry) error {
+
+	if err := validate.Required("language", "body", m.Language); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var createReviewPayloadTypeProviderPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["trustpilot","google","facebook","yelp","tripadvisor","other"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		createReviewPayloadTypeProviderPropEnum = append(createReviewPayloadTypeProviderPropEnum, v)
+	}
+}
+
+const (
+
+	// CreateReviewPayloadProviderTrustpilot captures enum value "trustpilot"
+	CreateReviewPayloadProviderTrustpilot string = "trustpilot"
+
+	// CreateReviewPayloadProviderGoogle captures enum value "google"
+	CreateReviewPayloadProviderGoogle string = "google"
+
+	// CreateReviewPayloadProviderFacebook captures enum value "facebook"
+	CreateReviewPayloadProviderFacebook string = "facebook"
+
+	// CreateReviewPayloadProviderYelp captures enum value "yelp"
+	CreateReviewPayloadProviderYelp string = "yelp"
+
+	// CreateReviewPayloadProviderTripadvisor captures enum value "tripadvisor"
+	CreateReviewPayloadProviderTripadvisor string = "tripadvisor"
+
+	// CreateReviewPayloadProviderOther captures enum value "other"
+	CreateReviewPayloadProviderOther string = "other"
+)
+
+// prop value enum
+func (m *CreateReviewPayload) validateProviderEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, createReviewPayloadTypeProviderPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *CreateReviewPayload) validateProvider(formats strfmt.Registry) error {
+
+	if err := validate.Required("provider", "body", m.Provider); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateProviderEnum("provider", "body", *m.Provider); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *CreateReviewPayload) validateRating(formats strfmt.Registry) error {
+
+	if err := validate.Required("rating", "body", m.Rating); err != nil {
+		return err
+	}
+
 	return nil
 }
 

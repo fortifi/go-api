@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *DeleteContactsContactFidPhonesPhoneFidOK) Code() int {
 }
 
 func (o *DeleteContactsContactFidPhonesPhoneFidOK) Error() string {
-	return fmt.Sprintf("[DELETE /contacts/{contactFid}/phones/{phoneFid}][%d] deleteContactsContactFidPhonesPhoneFidOK ", 200)
+	return fmt.Sprintf("[DELETE /contacts/{contactFid}/phones/{phoneFid}][%d] deleteContactsContactFidPhonesPhoneFidOK", 200)
 }
 
 func (o *DeleteContactsContactFidPhonesPhoneFidOK) String() string {
-	return fmt.Sprintf("[DELETE /contacts/{contactFid}/phones/{phoneFid}][%d] deleteContactsContactFidPhonesPhoneFidOK ", 200)
+	return fmt.Sprintf("[DELETE /contacts/{contactFid}/phones/{phoneFid}][%d] deleteContactsContactFidPhonesPhoneFidOK", 200)
 }
 
 func (o *DeleteContactsContactFidPhonesPhoneFidOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *DeleteContactsContactFidPhonesPhoneFidDefault) Code() int {
 }
 
 func (o *DeleteContactsContactFidPhonesPhoneFidDefault) Error() string {
-	return fmt.Sprintf("[DELETE /contacts/{contactFid}/phones/{phoneFid}][%d] DeleteContactsContactFidPhonesPhoneFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /contacts/{contactFid}/phones/{phoneFid}][%d] DeleteContactsContactFidPhonesPhoneFid default %s", o._statusCode, payload)
 }
 
 func (o *DeleteContactsContactFidPhonesPhoneFidDefault) String() string {
-	return fmt.Sprintf("[DELETE /contacts/{contactFid}/phones/{phoneFid}][%d] DeleteContactsContactFidPhonesPhoneFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /contacts/{contactFid}/phones/{phoneFid}][%d] DeleteContactsContactFidPhonesPhoneFid default %s", o._statusCode, payload)
 }
 
 func (o *DeleteContactsContactFidPhonesPhoneFidDefault) GetPayload() *models.Envelope {

@@ -7,6 +7,7 @@ package deprecated
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetAdvertisersOK) Code() int {
 }
 
 func (o *GetAdvertisersOK) Error() string {
-	return fmt.Sprintf("[GET /advertisers][%d] getAdvertisersOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /advertisers][%d] getAdvertisersOK %s", 200, payload)
 }
 
 func (o *GetAdvertisersOK) String() string {
-	return fmt.Sprintf("[GET /advertisers][%d] getAdvertisersOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /advertisers][%d] getAdvertisersOK %s", 200, payload)
 }
 
 func (o *GetAdvertisersOK) GetPayload() *GetAdvertisersOKBody {
@@ -161,11 +164,13 @@ func (o *GetAdvertisersDefault) Code() int {
 }
 
 func (o *GetAdvertisersDefault) Error() string {
-	return fmt.Sprintf("[GET /advertisers][%d] GetAdvertisers default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /advertisers][%d] GetAdvertisers default %s", o._statusCode, payload)
 }
 
 func (o *GetAdvertisersDefault) String() string {
-	return fmt.Sprintf("[GET /advertisers][%d] GetAdvertisers default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /advertisers][%d] GetAdvertisers default %s", o._statusCode, payload)
 }
 
 func (o *GetAdvertisersDefault) GetPayload() *models.Envelope {

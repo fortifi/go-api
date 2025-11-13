@@ -7,6 +7,7 @@ package accountant
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostAccountantTransactionSearchOK) Code() int {
 }
 
 func (o *PostAccountantTransactionSearchOK) Error() string {
-	return fmt.Sprintf("[POST /accountant/transaction/search][%d] postAccountantTransactionSearchOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /accountant/transaction/search][%d] postAccountantTransactionSearchOK %s", 200, payload)
 }
 
 func (o *PostAccountantTransactionSearchOK) String() string {
-	return fmt.Sprintf("[POST /accountant/transaction/search][%d] postAccountantTransactionSearchOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /accountant/transaction/search][%d] postAccountantTransactionSearchOK %s", 200, payload)
 }
 
 func (o *PostAccountantTransactionSearchOK) GetPayload() *PostAccountantTransactionSearchOKBody {
@@ -161,11 +164,13 @@ func (o *PostAccountantTransactionSearchDefault) Code() int {
 }
 
 func (o *PostAccountantTransactionSearchDefault) Error() string {
-	return fmt.Sprintf("[POST /accountant/transaction/search][%d] PostAccountantTransactionSearch default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /accountant/transaction/search][%d] PostAccountantTransactionSearch default %s", o._statusCode, payload)
 }
 
 func (o *PostAccountantTransactionSearchDefault) String() string {
-	return fmt.Sprintf("[POST /accountant/transaction/search][%d] PostAccountantTransactionSearch default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /accountant/transaction/search][%d] PostAccountantTransactionSearch default %s", o._statusCode, payload)
 }
 
 func (o *PostAccountantTransactionSearchDefault) GetPayload() *models.Envelope {

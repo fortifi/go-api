@@ -27,7 +27,7 @@ type RetentionFlowOption struct {
 	Key string `json:"key,omitempty"`
 
 	// type
-	// Enum: [flag value]
+	// Enum: ["flag","value"]
 	Type string `json:"type,omitempty"`
 
 	// value

@@ -41,6 +41,12 @@ type CalculatedSubscriptionModification struct {
 	// next renewal total
 	NextRenewalTotal float32 `json:"nextRenewalTotal,omitempty"`
 
+	// refund to account balance total
+	RefundToAccountBalanceTotal float32 `json:"refundToAccountBalanceTotal,omitempty"`
+
+	// refund to customer total
+	RefundToCustomerTotal float32 `json:"refundToCustomerTotal,omitempty"`
+
 	// setup amount
 	SetupAmount float32 `json:"setupAmount,omitempty"`
 

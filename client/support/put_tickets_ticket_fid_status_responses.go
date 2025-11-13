@@ -7,6 +7,7 @@ package support
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PutTicketsTicketFidStatusOK) Code() int {
 }
 
 func (o *PutTicketsTicketFidStatusOK) Error() string {
-	return fmt.Sprintf("[PUT /tickets/{ticketFid}/status][%d] putTicketsTicketFidStatusOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /tickets/{ticketFid}/status][%d] putTicketsTicketFidStatusOK %s", 200, payload)
 }
 
 func (o *PutTicketsTicketFidStatusOK) String() string {
-	return fmt.Sprintf("[PUT /tickets/{ticketFid}/status][%d] putTicketsTicketFidStatusOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /tickets/{ticketFid}/status][%d] putTicketsTicketFidStatusOK %s", 200, payload)
 }
 
 func (o *PutTicketsTicketFidStatusOK) GetPayload() *PutTicketsTicketFidStatusOKBody {
@@ -161,11 +164,13 @@ func (o *PutTicketsTicketFidStatusDefault) Code() int {
 }
 
 func (o *PutTicketsTicketFidStatusDefault) Error() string {
-	return fmt.Sprintf("[PUT /tickets/{ticketFid}/status][%d] PutTicketsTicketFidStatus default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /tickets/{ticketFid}/status][%d] PutTicketsTicketFidStatus default %s", o._statusCode, payload)
 }
 
 func (o *PutTicketsTicketFidStatusDefault) String() string {
-	return fmt.Sprintf("[PUT /tickets/{ticketFid}/status][%d] PutTicketsTicketFidStatus default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /tickets/{ticketFid}/status][%d] PutTicketsTicketFidStatus default %s", o._statusCode, payload)
 }
 
 func (o *PutTicketsTicketFidStatusDefault) GetPayload() *models.Envelope {

@@ -7,6 +7,7 @@ package orders
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PutOrdersOrderFidVerifyOK) Code() int {
 }
 
 func (o *PutOrdersOrderFidVerifyOK) Error() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/verify][%d] putOrdersOrderFidVerifyOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/verify][%d] putOrdersOrderFidVerifyOK %s", 200, payload)
 }
 
 func (o *PutOrdersOrderFidVerifyOK) String() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/verify][%d] putOrdersOrderFidVerifyOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/verify][%d] putOrdersOrderFidVerifyOK %s", 200, payload)
 }
 
 func (o *PutOrdersOrderFidVerifyOK) GetPayload() *PutOrdersOrderFidVerifyOKBody {
@@ -161,11 +164,13 @@ func (o *PutOrdersOrderFidVerifyDefault) Code() int {
 }
 
 func (o *PutOrdersOrderFidVerifyDefault) Error() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/verify][%d] PutOrdersOrderFidVerify default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/verify][%d] PutOrdersOrderFidVerify default %s", o._statusCode, payload)
 }
 
 func (o *PutOrdersOrderFidVerifyDefault) String() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/verify][%d] PutOrdersOrderFidVerify default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/verify][%d] PutOrdersOrderFidVerify default %s", o._statusCode, payload)
 }
 
 func (o *PutOrdersOrderFidVerifyDefault) GetPayload() *models.Envelope {

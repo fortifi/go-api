@@ -7,6 +7,7 @@ package properties
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetPropertiesOK) Code() int {
 }
 
 func (o *GetPropertiesOK) Error() string {
-	return fmt.Sprintf("[GET /properties][%d] getPropertiesOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /properties][%d] getPropertiesOK %s", 200, payload)
 }
 
 func (o *GetPropertiesOK) String() string {
-	return fmt.Sprintf("[GET /properties][%d] getPropertiesOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /properties][%d] getPropertiesOK %s", 200, payload)
 }
 
 func (o *GetPropertiesOK) GetPayload() *GetPropertiesOKBody {
@@ -161,11 +164,13 @@ func (o *GetPropertiesDefault) Code() int {
 }
 
 func (o *GetPropertiesDefault) Error() string {
-	return fmt.Sprintf("[GET /properties][%d] GetProperties default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /properties][%d] GetProperties default %s", o._statusCode, payload)
 }
 
 func (o *GetPropertiesDefault) String() string {
-	return fmt.Sprintf("[GET /properties][%d] GetProperties default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /properties][%d] GetProperties default %s", o._statusCode, payload)
 }
 
 func (o *GetPropertiesDefault) GetPayload() *models.Envelope {

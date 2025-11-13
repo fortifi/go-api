@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PutCustomersCustomerFidLifecycleStageOK) Code() int {
 }
 
 func (o *PutCustomersCustomerFidLifecycleStageOK) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/lifecycleStage][%d] putCustomersCustomerFidLifecycleStageOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/lifecycleStage][%d] putCustomersCustomerFidLifecycleStageOK", 200)
 }
 
 func (o *PutCustomersCustomerFidLifecycleStageOK) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/lifecycleStage][%d] putCustomersCustomerFidLifecycleStageOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/lifecycleStage][%d] putCustomersCustomerFidLifecycleStageOK", 200)
 }
 
 func (o *PutCustomersCustomerFidLifecycleStageOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PutCustomersCustomerFidLifecycleStageDefault) Code() int {
 }
 
 func (o *PutCustomersCustomerFidLifecycleStageDefault) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/lifecycleStage][%d] PutCustomersCustomerFidLifecycleStage default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/lifecycleStage][%d] PutCustomersCustomerFidLifecycleStage default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidLifecycleStageDefault) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/lifecycleStage][%d] PutCustomersCustomerFidLifecycleStage default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/lifecycleStage][%d] PutCustomersCustomerFidLifecycleStage default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidLifecycleStageDefault) GetPayload() *models.Envelope {

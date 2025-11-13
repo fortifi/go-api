@@ -21,6 +21,9 @@ type TicketReplyPayload struct {
 	// attachments
 	Attachments []string `json:"attachments"`
 
+	// contact fid
+	ContactFid string `json:"contactFid,omitempty"`
+
 	// html body
 	HTMLBody string `json:"htmlBody,omitempty"`
 

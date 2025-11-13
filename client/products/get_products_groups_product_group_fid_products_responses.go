@@ -7,6 +7,7 @@ package products
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetProductsGroupsProductGroupFidProductsOK) Code() int {
 }
 
 func (o *GetProductsGroupsProductGroupFidProductsOK) Error() string {
-	return fmt.Sprintf("[GET /products/groups/{productGroupFid}/products][%d] getProductsGroupsProductGroupFidProductsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /products/groups/{productGroupFid}/products][%d] getProductsGroupsProductGroupFidProductsOK %s", 200, payload)
 }
 
 func (o *GetProductsGroupsProductGroupFidProductsOK) String() string {
-	return fmt.Sprintf("[GET /products/groups/{productGroupFid}/products][%d] getProductsGroupsProductGroupFidProductsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /products/groups/{productGroupFid}/products][%d] getProductsGroupsProductGroupFidProductsOK %s", 200, payload)
 }
 
 func (o *GetProductsGroupsProductGroupFidProductsOK) GetPayload() *GetProductsGroupsProductGroupFidProductsOKBody {
@@ -161,11 +164,13 @@ func (o *GetProductsGroupsProductGroupFidProductsDefault) Code() int {
 }
 
 func (o *GetProductsGroupsProductGroupFidProductsDefault) Error() string {
-	return fmt.Sprintf("[GET /products/groups/{productGroupFid}/products][%d] GetProductsGroupsProductGroupFidProducts default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /products/groups/{productGroupFid}/products][%d] GetProductsGroupsProductGroupFidProducts default %s", o._statusCode, payload)
 }
 
 func (o *GetProductsGroupsProductGroupFidProductsDefault) String() string {
-	return fmt.Sprintf("[GET /products/groups/{productGroupFid}/products][%d] GetProductsGroupsProductGroupFidProducts default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /products/groups/{productGroupFid}/products][%d] GetProductsGroupsProductGroupFidProducts default %s", o._statusCode, payload)
 }
 
 func (o *GetProductsGroupsProductGroupFidProductsDefault) GetPayload() *models.Envelope {

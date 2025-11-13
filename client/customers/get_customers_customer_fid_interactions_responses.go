@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -86,11 +87,13 @@ func (o *GetCustomersCustomerFidInteractionsOK) Code() int {
 }
 
 func (o *GetCustomersCustomerFidInteractionsOK) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/interactions][%d] getCustomersCustomerFidInteractionsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/interactions][%d] getCustomersCustomerFidInteractionsOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidInteractionsOK) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/interactions][%d] getCustomersCustomerFidInteractionsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/interactions][%d] getCustomersCustomerFidInteractionsOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidInteractionsOK) GetPayload() *models.CustomerInteractions {
@@ -158,11 +161,13 @@ func (o *GetCustomersCustomerFidInteractionsDefault) Code() int {
 }
 
 func (o *GetCustomersCustomerFidInteractionsDefault) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/interactions][%d] GetCustomersCustomerFidInteractions default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/interactions][%d] GetCustomersCustomerFidInteractions default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidInteractionsDefault) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/interactions][%d] GetCustomersCustomerFidInteractions default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/interactions][%d] GetCustomersCustomerFidInteractions default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidInteractionsDefault) GetPayload() *models.Envelope {

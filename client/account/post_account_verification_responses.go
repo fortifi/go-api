@@ -6,6 +6,7 @@ package account
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -86,11 +87,13 @@ func (o *PostAccountVerificationOK) Code() int {
 }
 
 func (o *PostAccountVerificationOK) Error() string {
-	return fmt.Sprintf("[POST /account/verification][%d] postAccountVerificationOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /account/verification][%d] postAccountVerificationOK %s", 200, payload)
 }
 
 func (o *PostAccountVerificationOK) String() string {
-	return fmt.Sprintf("[POST /account/verification][%d] postAccountVerificationOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /account/verification][%d] postAccountVerificationOK %s", 200, payload)
 }
 
 func (o *PostAccountVerificationOK) GetPayload() *models.AccountVerificationResponse {
@@ -158,11 +161,13 @@ func (o *PostAccountVerificationDefault) Code() int {
 }
 
 func (o *PostAccountVerificationDefault) Error() string {
-	return fmt.Sprintf("[POST /account/verification][%d] PostAccountVerification default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /account/verification][%d] PostAccountVerification default %s", o._statusCode, payload)
 }
 
 func (o *PostAccountVerificationDefault) String() string {
-	return fmt.Sprintf("[POST /account/verification][%d] PostAccountVerification default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /account/verification][%d] PostAccountVerification default %s", o._statusCode, payload)
 }
 
 func (o *PostAccountVerificationDefault) GetPayload() *models.Envelope {

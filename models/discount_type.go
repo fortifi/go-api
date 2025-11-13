@@ -35,6 +35,9 @@ const (
 
 	// DiscountTypePercentage captures enum value "percentage"
 	DiscountTypePercentage DiscountType = "percentage"
+
+	// DiscountTypeOverride captures enum value "override"
+	DiscountTypeOverride DiscountType = "override"
 )
 
 // for schema
@@ -42,7 +45,7 @@ var discountTypeEnum []interface{}
 
 func init() {
 	var res []DiscountType
-	if err := json.Unmarshal([]byte(`["fixed","percentage"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["fixed","percentage","override"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {

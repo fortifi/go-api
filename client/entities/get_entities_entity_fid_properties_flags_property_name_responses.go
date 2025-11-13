@@ -7,6 +7,7 @@ package entities
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetEntitiesEntityFidPropertiesFlagsPropertyNameOK) Code() int {
 }
 
 func (o *GetEntitiesEntityFidPropertiesFlagsPropertyNameOK) Error() string {
-	return fmt.Sprintf("[GET /entities/{entityFid}/properties/flags/{propertyName}][%d] getEntitiesEntityFidPropertiesFlagsPropertyNameOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /entities/{entityFid}/properties/flags/{propertyName}][%d] getEntitiesEntityFidPropertiesFlagsPropertyNameOK %s", 200, payload)
 }
 
 func (o *GetEntitiesEntityFidPropertiesFlagsPropertyNameOK) String() string {
-	return fmt.Sprintf("[GET /entities/{entityFid}/properties/flags/{propertyName}][%d] getEntitiesEntityFidPropertiesFlagsPropertyNameOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /entities/{entityFid}/properties/flags/{propertyName}][%d] getEntitiesEntityFidPropertiesFlagsPropertyNameOK %s", 200, payload)
 }
 
 func (o *GetEntitiesEntityFidPropertiesFlagsPropertyNameOK) GetPayload() *GetEntitiesEntityFidPropertiesFlagsPropertyNameOKBody {
@@ -161,11 +164,13 @@ func (o *GetEntitiesEntityFidPropertiesFlagsPropertyNameDefault) Code() int {
 }
 
 func (o *GetEntitiesEntityFidPropertiesFlagsPropertyNameDefault) Error() string {
-	return fmt.Sprintf("[GET /entities/{entityFid}/properties/flags/{propertyName}][%d] GetEntitiesEntityFidPropertiesFlagsPropertyName default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /entities/{entityFid}/properties/flags/{propertyName}][%d] GetEntitiesEntityFidPropertiesFlagsPropertyName default %s", o._statusCode, payload)
 }
 
 func (o *GetEntitiesEntityFidPropertiesFlagsPropertyNameDefault) String() string {
-	return fmt.Sprintf("[GET /entities/{entityFid}/properties/flags/{propertyName}][%d] GetEntitiesEntityFidPropertiesFlagsPropertyName default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /entities/{entityFid}/properties/flags/{propertyName}][%d] GetEntitiesEntityFidPropertiesFlagsPropertyName default %s", o._statusCode, payload)
 }
 
 func (o *GetEntitiesEntityFidPropertiesFlagsPropertyNameDefault) GetPayload() *models.Envelope {

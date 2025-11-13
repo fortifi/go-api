@@ -7,6 +7,7 @@ package service_status
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetServicesOK) Code() int {
 }
 
 func (o *GetServicesOK) Error() string {
-	return fmt.Sprintf("[GET /services][%d] getServicesOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /services][%d] getServicesOK %s", 200, payload)
 }
 
 func (o *GetServicesOK) String() string {
-	return fmt.Sprintf("[GET /services][%d] getServicesOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /services][%d] getServicesOK %s", 200, payload)
 }
 
 func (o *GetServicesOK) GetPayload() *GetServicesOKBody {
@@ -161,11 +164,13 @@ func (o *GetServicesDefault) Code() int {
 }
 
 func (o *GetServicesDefault) Error() string {
-	return fmt.Sprintf("[GET /services][%d] GetServices default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /services][%d] GetServices default %s", o._statusCode, payload)
 }
 
 func (o *GetServicesDefault) String() string {
-	return fmt.Sprintf("[GET /services][%d] GetServices default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /services][%d] GetServices default %s", o._statusCode, payload)
 }
 
 func (o *GetServicesDefault) GetPayload() *models.Envelope {

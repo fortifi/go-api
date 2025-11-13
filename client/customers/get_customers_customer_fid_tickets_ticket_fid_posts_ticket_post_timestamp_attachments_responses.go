@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachme
 }
 
 func (o *GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsOK) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/tickets/{ticketFid}/posts/{ticketPostTimestamp}/attachments][%d] getCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/tickets/{ticketFid}/posts/{ticketPostTimestamp}/attachments][%d] getCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsOK) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/tickets/{ticketFid}/posts/{ticketPostTimestamp}/attachments][%d] getCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/tickets/{ticketFid}/posts/{ticketPostTimestamp}/attachments][%d] getCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsOK) GetPayload() *GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsOKBody {
@@ -161,11 +164,13 @@ func (o *GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachme
 }
 
 func (o *GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsDefault) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/tickets/{ticketFid}/posts/{ticketPostTimestamp}/attachments][%d] GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachments default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/tickets/{ticketFid}/posts/{ticketPostTimestamp}/attachments][%d] GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachments default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsDefault) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/tickets/{ticketFid}/posts/{ticketPostTimestamp}/attachments][%d] GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachments default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/tickets/{ticketFid}/posts/{ticketPostTimestamp}/attachments][%d] GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachments default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsDefault) GetPayload() *models.Envelope {

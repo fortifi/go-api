@@ -23,7 +23,9 @@ import (
 	"github.com/fortifi/go-api/client/deprecated"
 	"github.com/fortifi/go-api/client/devices"
 	"github.com/fortifi/go-api/client/entities"
+	"github.com/fortifi/go-api/client/feature_flags"
 	"github.com/fortifi/go-api/client/finance"
+	"github.com/fortifi/go-api/client/flow"
 	"github.com/fortifi/go-api/client/interactions"
 	"github.com/fortifi/go-api/client/licence"
 	"github.com/fortifi/go-api/client/marketing"
@@ -39,6 +41,7 @@ import (
 	"github.com/fortifi/go-api/client/reviews"
 	"github.com/fortifi/go-api/client/service_status"
 	"github.com/fortifi/go-api/client/support"
+	"github.com/fortifi/go-api/client/transaction"
 )
 
 // Default fortifi API HTTP client.
@@ -96,7 +99,9 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *FortifiAPI
 	cli.Deprecated = deprecated.New(transport, formats)
 	cli.Devices = devices.New(transport, formats)
 	cli.Entities = entities.New(transport, formats)
+	cli.FeatureFlags = feature_flags.New(transport, formats)
 	cli.Finance = finance.New(transport, formats)
+	cli.Flow = flow.New(transport, formats)
 	cli.Interactions = interactions.New(transport, formats)
 	cli.Licence = licence.New(transport, formats)
 	cli.Marketing = marketing.New(transport, formats)
@@ -112,6 +117,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *FortifiAPI
 	cli.Reviews = reviews.New(transport, formats)
 	cli.ServiceStatus = service_status.New(transport, formats)
 	cli.Support = support.New(transport, formats)
+	cli.Transaction = transaction.New(transport, formats)
 	return cli
 }
 
@@ -182,7 +188,11 @@ type FortifiAPI struct {
 
 	Entities entities.ClientService
 
+	FeatureFlags feature_flags.ClientService
+
 	Finance finance.ClientService
+
+	Flow flow.ClientService
 
 	Interactions interactions.ClientService
 
@@ -214,6 +224,8 @@ type FortifiAPI struct {
 
 	Support support.ClientService
 
+	Transaction transaction.ClientService
+
 	Transport runtime.ClientTransport
 }
 
@@ -233,7 +245,9 @@ func (c *FortifiAPI) SetTransport(transport runtime.ClientTransport) {
 	c.Deprecated.SetTransport(transport)
 	c.Devices.SetTransport(transport)
 	c.Entities.SetTransport(transport)
+	c.FeatureFlags.SetTransport(transport)
 	c.Finance.SetTransport(transport)
+	c.Flow.SetTransport(transport)
 	c.Interactions.SetTransport(transport)
 	c.Licence.SetTransport(transport)
 	c.Marketing.SetTransport(transport)
@@ -249,4 +263,5 @@ func (c *FortifiAPI) SetTransport(transport runtime.ClientTransport) {
 	c.Reviews.SetTransport(transport)
 	c.ServiceStatus.SetTransport(transport)
 	c.Support.SetTransport(transport)
+	c.Transaction.SetTransport(transport)
 }

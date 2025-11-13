@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelOK) Code() int
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelOK) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/cancel][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidCancelOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/cancel][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidCancelOK %s", 200, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelOK) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/cancel][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidCancelOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/cancel][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidCancelOK %s", 200, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelOK) GetPayload() *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelOKBody {
@@ -161,11 +164,13 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelDefault) Code(
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelDefault) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/cancel][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidCancel default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/cancel][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidCancel default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelDefault) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/cancel][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidCancel default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/cancel][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidCancel default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelDefault) GetPayload() *models.Envelope {
@@ -192,7 +197,7 @@ type PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelOKBody struct {
 	models.Envelope
 
 	// data
-	Data *models.Subscription `json:"data,omitempty"`
+	Data *models.SubscriptionCancellation `json:"data,omitempty"`
 }
 
 // UnmarshalJSON unmarshals this object from a JSON structure
@@ -206,7 +211,7 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelOKBody) Unmars
 
 	// PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelOKBodyAO1
 	var dataPutCustomersCustomerFidSubscriptionsSubscriptionFidCancelOKBodyAO1 struct {
-		Data *models.Subscription `json:"data,omitempty"`
+		Data *models.SubscriptionCancellation `json:"data,omitempty"`
 	}
 	if err := swag.ReadJSON(raw, &dataPutCustomersCustomerFidSubscriptionsSubscriptionFidCancelOKBodyAO1); err != nil {
 		return err
@@ -227,7 +232,7 @@ func (o PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelOKBody) Marshal
 	}
 	_parts = append(_parts, putCustomersCustomerFidSubscriptionsSubscriptionFidCancelOKBodyAO0)
 	var dataPutCustomersCustomerFidSubscriptionsSubscriptionFidCancelOKBodyAO1 struct {
-		Data *models.Subscription `json:"data,omitempty"`
+		Data *models.SubscriptionCancellation `json:"data,omitempty"`
 	}
 
 	dataPutCustomersCustomerFidSubscriptionsSubscriptionFidCancelOKBodyAO1.Data = o.Data

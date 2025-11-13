@@ -6,6 +6,7 @@ package deprecated
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PutAdvertisersAdvertiserFidApprovedOK) Code() int {
 }
 
 func (o *PutAdvertisersAdvertiserFidApprovedOK) Error() string {
-	return fmt.Sprintf("[PUT /advertisers/{advertiserFid}/approved][%d] putAdvertisersAdvertiserFidApprovedOK ", 200)
+	return fmt.Sprintf("[PUT /advertisers/{advertiserFid}/approved][%d] putAdvertisersAdvertiserFidApprovedOK", 200)
 }
 
 func (o *PutAdvertisersAdvertiserFidApprovedOK) String() string {
-	return fmt.Sprintf("[PUT /advertisers/{advertiserFid}/approved][%d] putAdvertisersAdvertiserFidApprovedOK ", 200)
+	return fmt.Sprintf("[PUT /advertisers/{advertiserFid}/approved][%d] putAdvertisersAdvertiserFidApprovedOK", 200)
 }
 
 func (o *PutAdvertisersAdvertiserFidApprovedOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PutAdvertisersAdvertiserFidApprovedDefault) Code() int {
 }
 
 func (o *PutAdvertisersAdvertiserFidApprovedDefault) Error() string {
-	return fmt.Sprintf("[PUT /advertisers/{advertiserFid}/approved][%d] PutAdvertisersAdvertiserFidApproved default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /advertisers/{advertiserFid}/approved][%d] PutAdvertisersAdvertiserFidApproved default %s", o._statusCode, payload)
 }
 
 func (o *PutAdvertisersAdvertiserFidApprovedDefault) String() string {
-	return fmt.Sprintf("[PUT /advertisers/{advertiserFid}/approved][%d] PutAdvertisersAdvertiserFidApproved default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /advertisers/{advertiserFid}/approved][%d] PutAdvertisersAdvertiserFidApproved default %s", o._statusCode, payload)
 }
 
 func (o *PutAdvertisersAdvertiserFidApprovedDefault) GetPayload() *models.Envelope {

@@ -7,6 +7,7 @@ package orders
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PutOrdersOrderFidProductsOK) Code() int {
 }
 
 func (o *PutOrdersOrderFidProductsOK) Error() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/products][%d] putOrdersOrderFidProductsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/products][%d] putOrdersOrderFidProductsOK %s", 200, payload)
 }
 
 func (o *PutOrdersOrderFidProductsOK) String() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/products][%d] putOrdersOrderFidProductsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/products][%d] putOrdersOrderFidProductsOK %s", 200, payload)
 }
 
 func (o *PutOrdersOrderFidProductsOK) GetPayload() *PutOrdersOrderFidProductsOKBody {
@@ -161,11 +164,13 @@ func (o *PutOrdersOrderFidProductsDefault) Code() int {
 }
 
 func (o *PutOrdersOrderFidProductsDefault) Error() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/products][%d] PutOrdersOrderFidProducts default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/products][%d] PutOrdersOrderFidProducts default %s", o._statusCode, payload)
 }
 
 func (o *PutOrdersOrderFidProductsDefault) String() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/products][%d] PutOrdersOrderFidProducts default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/products][%d] PutOrdersOrderFidProducts default %s", o._statusCode, payload)
 }
 
 func (o *PutOrdersOrderFidProductsDefault) GetPayload() *models.Envelope {

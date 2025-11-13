@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostCustomersCustomerFidPaymentsPaymentFidChargebackOK) Code() int {
 }
 
 func (o *PostCustomersCustomerFidPaymentsPaymentFidChargebackOK) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/payments/{paymentFid}/chargeback][%d] postCustomersCustomerFidPaymentsPaymentFidChargebackOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/payments/{paymentFid}/chargeback][%d] postCustomersCustomerFidPaymentsPaymentFidChargebackOK %s", 200, payload)
 }
 
 func (o *PostCustomersCustomerFidPaymentsPaymentFidChargebackOK) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/payments/{paymentFid}/chargeback][%d] postCustomersCustomerFidPaymentsPaymentFidChargebackOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/payments/{paymentFid}/chargeback][%d] postCustomersCustomerFidPaymentsPaymentFidChargebackOK %s", 200, payload)
 }
 
 func (o *PostCustomersCustomerFidPaymentsPaymentFidChargebackOK) GetPayload() *PostCustomersCustomerFidPaymentsPaymentFidChargebackOKBody {
@@ -161,11 +164,13 @@ func (o *PostCustomersCustomerFidPaymentsPaymentFidChargebackDefault) Code() int
 }
 
 func (o *PostCustomersCustomerFidPaymentsPaymentFidChargebackDefault) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/payments/{paymentFid}/chargeback][%d] PostCustomersCustomerFidPaymentsPaymentFidChargeback default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/payments/{paymentFid}/chargeback][%d] PostCustomersCustomerFidPaymentsPaymentFidChargeback default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidPaymentsPaymentFidChargebackDefault) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/payments/{paymentFid}/chargeback][%d] PostCustomersCustomerFidPaymentsPaymentFidChargeback default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/payments/{paymentFid}/chargeback][%d] PostCustomersCustomerFidPaymentsPaymentFidChargeback default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidPaymentsPaymentFidChargebackDefault) GetPayload() *models.Envelope {

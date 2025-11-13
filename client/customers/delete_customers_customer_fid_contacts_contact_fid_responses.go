@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *DeleteCustomersCustomerFidContactsContactFidOK) Code() int {
 }
 
 func (o *DeleteCustomersCustomerFidContactsContactFidOK) Error() string {
-	return fmt.Sprintf("[DELETE /customers/{customerFid}/contacts/{contactFid}][%d] deleteCustomersCustomerFidContactsContactFidOK ", 200)
+	return fmt.Sprintf("[DELETE /customers/{customerFid}/contacts/{contactFid}][%d] deleteCustomersCustomerFidContactsContactFidOK", 200)
 }
 
 func (o *DeleteCustomersCustomerFidContactsContactFidOK) String() string {
-	return fmt.Sprintf("[DELETE /customers/{customerFid}/contacts/{contactFid}][%d] deleteCustomersCustomerFidContactsContactFidOK ", 200)
+	return fmt.Sprintf("[DELETE /customers/{customerFid}/contacts/{contactFid}][%d] deleteCustomersCustomerFidContactsContactFidOK", 200)
 }
 
 func (o *DeleteCustomersCustomerFidContactsContactFidOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *DeleteCustomersCustomerFidContactsContactFidDefault) Code() int {
 }
 
 func (o *DeleteCustomersCustomerFidContactsContactFidDefault) Error() string {
-	return fmt.Sprintf("[DELETE /customers/{customerFid}/contacts/{contactFid}][%d] DeleteCustomersCustomerFidContactsContactFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /customers/{customerFid}/contacts/{contactFid}][%d] DeleteCustomersCustomerFidContactsContactFid default %s", o._statusCode, payload)
 }
 
 func (o *DeleteCustomersCustomerFidContactsContactFidDefault) String() string {
-	return fmt.Sprintf("[DELETE /customers/{customerFid}/contacts/{contactFid}][%d] DeleteCustomersCustomerFidContactsContactFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /customers/{customerFid}/contacts/{contactFid}][%d] DeleteCustomersCustomerFidContactsContactFid default %s", o._statusCode, payload)
 }
 
 func (o *DeleteCustomersCustomerFidContactsContactFidDefault) GetPayload() *models.Envelope {

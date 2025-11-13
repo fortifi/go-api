@@ -7,6 +7,7 @@ package finance
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetPublishersPublisherFidFinanceCostImportCostImportFidOK) Code() int {
 }
 
 func (o *GetPublishersPublisherFidFinanceCostImportCostImportFidOK) Error() string {
-	return fmt.Sprintf("[GET /publishers/{publisherFid}/finance/costImport/{costImportFid}][%d] getPublishersPublisherFidFinanceCostImportCostImportFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /publishers/{publisherFid}/finance/costImport/{costImportFid}][%d] getPublishersPublisherFidFinanceCostImportCostImportFidOK %s", 200, payload)
 }
 
 func (o *GetPublishersPublisherFidFinanceCostImportCostImportFidOK) String() string {
-	return fmt.Sprintf("[GET /publishers/{publisherFid}/finance/costImport/{costImportFid}][%d] getPublishersPublisherFidFinanceCostImportCostImportFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /publishers/{publisherFid}/finance/costImport/{costImportFid}][%d] getPublishersPublisherFidFinanceCostImportCostImportFidOK %s", 200, payload)
 }
 
 func (o *GetPublishersPublisherFidFinanceCostImportCostImportFidOK) GetPayload() *GetPublishersPublisherFidFinanceCostImportCostImportFidOKBody {
@@ -161,11 +164,13 @@ func (o *GetPublishersPublisherFidFinanceCostImportCostImportFidDefault) Code() 
 }
 
 func (o *GetPublishersPublisherFidFinanceCostImportCostImportFidDefault) Error() string {
-	return fmt.Sprintf("[GET /publishers/{publisherFid}/finance/costImport/{costImportFid}][%d] GetPublishersPublisherFidFinanceCostImportCostImportFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /publishers/{publisherFid}/finance/costImport/{costImportFid}][%d] GetPublishersPublisherFidFinanceCostImportCostImportFid default %s", o._statusCode, payload)
 }
 
 func (o *GetPublishersPublisherFidFinanceCostImportCostImportFidDefault) String() string {
-	return fmt.Sprintf("[GET /publishers/{publisherFid}/finance/costImport/{costImportFid}][%d] GetPublishersPublisherFidFinanceCostImportCostImportFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /publishers/{publisherFid}/finance/costImport/{costImportFid}][%d] GetPublishersPublisherFidFinanceCostImportCostImportFid default %s", o._statusCode, payload)
 }
 
 func (o *GetPublishersPublisherFidFinanceCostImportCostImportFidDefault) GetPayload() *models.Envelope {

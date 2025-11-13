@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeOK)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeOK) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/disableAutoCharge][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/disableAutoCharge][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeOK", 200)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeOK) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/disableAutoCharge][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/disableAutoCharge][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeOK", 200)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeDef
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeDefault) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/disableAutoCharge][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoCharge default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/disableAutoCharge][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoCharge default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeDefault) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/disableAutoCharge][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoCharge default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/disableAutoCharge][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoCharge default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeDefault) GetPayload() *models.Envelope {

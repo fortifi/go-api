@@ -7,6 +7,7 @@ package deprecated
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostAdvertisersOK) Code() int {
 }
 
 func (o *PostAdvertisersOK) Error() string {
-	return fmt.Sprintf("[POST /advertisers][%d] postAdvertisersOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /advertisers][%d] postAdvertisersOK %s", 200, payload)
 }
 
 func (o *PostAdvertisersOK) String() string {
-	return fmt.Sprintf("[POST /advertisers][%d] postAdvertisersOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /advertisers][%d] postAdvertisersOK %s", 200, payload)
 }
 
 func (o *PostAdvertisersOK) GetPayload() *PostAdvertisersOKBody {
@@ -161,11 +164,13 @@ func (o *PostAdvertisersDefault) Code() int {
 }
 
 func (o *PostAdvertisersDefault) Error() string {
-	return fmt.Sprintf("[POST /advertisers][%d] PostAdvertisers default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /advertisers][%d] PostAdvertisers default %s", o._statusCode, payload)
 }
 
 func (o *PostAdvertisersDefault) String() string {
-	return fmt.Sprintf("[POST /advertisers][%d] PostAdvertisers default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /advertisers][%d] PostAdvertisers default %s", o._statusCode, payload)
 }
 
 func (o *PostAdvertisersDefault) GetPayload() *models.Envelope {

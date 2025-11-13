@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PutCustomersCustomerFidInvoicesInvoiceFidRetryOK) Code() int {
 }
 
 func (o *PutCustomersCustomerFidInvoicesInvoiceFidRetryOK) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/invoices/{invoiceFid}/retry][%d] putCustomersCustomerFidInvoicesInvoiceFidRetryOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/invoices/{invoiceFid}/retry][%d] putCustomersCustomerFidInvoicesInvoiceFidRetryOK", 200)
 }
 
 func (o *PutCustomersCustomerFidInvoicesInvoiceFidRetryOK) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/invoices/{invoiceFid}/retry][%d] putCustomersCustomerFidInvoicesInvoiceFidRetryOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/invoices/{invoiceFid}/retry][%d] putCustomersCustomerFidInvoicesInvoiceFidRetryOK", 200)
 }
 
 func (o *PutCustomersCustomerFidInvoicesInvoiceFidRetryOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PutCustomersCustomerFidInvoicesInvoiceFidRetryDefault) Code() int {
 }
 
 func (o *PutCustomersCustomerFidInvoicesInvoiceFidRetryDefault) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/invoices/{invoiceFid}/retry][%d] PutCustomersCustomerFidInvoicesInvoiceFidRetry default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/invoices/{invoiceFid}/retry][%d] PutCustomersCustomerFidInvoicesInvoiceFidRetry default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidInvoicesInvoiceFidRetryDefault) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/invoices/{invoiceFid}/retry][%d] PutCustomersCustomerFidInvoicesInvoiceFidRetry default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/invoices/{invoiceFid}/retry][%d] PutCustomersCustomerFidInvoicesInvoiceFidRetry default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidInvoicesInvoiceFidRetryDefault) GetPayload() *models.Envelope {

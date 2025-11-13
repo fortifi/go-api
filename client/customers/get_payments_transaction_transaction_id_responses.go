@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetPaymentsTransactionTransactionIDOK) Code() int {
 }
 
 func (o *GetPaymentsTransactionTransactionIDOK) Error() string {
-	return fmt.Sprintf("[GET /payments/transaction/{transactionId}][%d] getPaymentsTransactionTransactionIdOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /payments/transaction/{transactionId}][%d] getPaymentsTransactionTransactionIdOK %s", 200, payload)
 }
 
 func (o *GetPaymentsTransactionTransactionIDOK) String() string {
-	return fmt.Sprintf("[GET /payments/transaction/{transactionId}][%d] getPaymentsTransactionTransactionIdOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /payments/transaction/{transactionId}][%d] getPaymentsTransactionTransactionIdOK %s", 200, payload)
 }
 
 func (o *GetPaymentsTransactionTransactionIDOK) GetPayload() *GetPaymentsTransactionTransactionIDOKBody {
@@ -161,11 +164,13 @@ func (o *GetPaymentsTransactionTransactionIDDefault) Code() int {
 }
 
 func (o *GetPaymentsTransactionTransactionIDDefault) Error() string {
-	return fmt.Sprintf("[GET /payments/transaction/{transactionId}][%d] GetPaymentsTransactionTransactionID default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /payments/transaction/{transactionId}][%d] GetPaymentsTransactionTransactionID default %s", o._statusCode, payload)
 }
 
 func (o *GetPaymentsTransactionTransactionIDDefault) String() string {
-	return fmt.Sprintf("[GET /payments/transaction/{transactionId}][%d] GetPaymentsTransactionTransactionID default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /payments/transaction/{transactionId}][%d] GetPaymentsTransactionTransactionID default %s", o._statusCode, payload)
 }
 
 func (o *GetPaymentsTransactionTransactionIDDefault) GetPayload() *models.Envelope {

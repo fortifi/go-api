@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *DeleteCustomersCustomerFidLoyalOK) Code() int {
 }
 
 func (o *DeleteCustomersCustomerFidLoyalOK) Error() string {
-	return fmt.Sprintf("[DELETE /customers/{customerFid}/loyal][%d] deleteCustomersCustomerFidLoyalOK ", 200)
+	return fmt.Sprintf("[DELETE /customers/{customerFid}/loyal][%d] deleteCustomersCustomerFidLoyalOK", 200)
 }
 
 func (o *DeleteCustomersCustomerFidLoyalOK) String() string {
-	return fmt.Sprintf("[DELETE /customers/{customerFid}/loyal][%d] deleteCustomersCustomerFidLoyalOK ", 200)
+	return fmt.Sprintf("[DELETE /customers/{customerFid}/loyal][%d] deleteCustomersCustomerFidLoyalOK", 200)
 }
 
 func (o *DeleteCustomersCustomerFidLoyalOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *DeleteCustomersCustomerFidLoyalDefault) Code() int {
 }
 
 func (o *DeleteCustomersCustomerFidLoyalDefault) Error() string {
-	return fmt.Sprintf("[DELETE /customers/{customerFid}/loyal][%d] DeleteCustomersCustomerFidLoyal default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /customers/{customerFid}/loyal][%d] DeleteCustomersCustomerFidLoyal default %s", o._statusCode, payload)
 }
 
 func (o *DeleteCustomersCustomerFidLoyalDefault) String() string {
-	return fmt.Sprintf("[DELETE /customers/{customerFid}/loyal][%d] DeleteCustomersCustomerFidLoyal default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /customers/{customerFid}/loyal][%d] DeleteCustomersCustomerFidLoyal default %s", o._statusCode, payload)
 }
 
 func (o *DeleteCustomersCustomerFidLoyalDefault) GetPayload() *models.Envelope {

@@ -7,6 +7,7 @@ package appstore
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostAppstoreCustomerFidGoogleOK) Code() int {
 }
 
 func (o *PostAppstoreCustomerFidGoogleOK) Error() string {
-	return fmt.Sprintf("[POST /appstore/{customerFid}/google][%d] postAppstoreCustomerFidGoogleOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /appstore/{customerFid}/google][%d] postAppstoreCustomerFidGoogleOK %s", 200, payload)
 }
 
 func (o *PostAppstoreCustomerFidGoogleOK) String() string {
-	return fmt.Sprintf("[POST /appstore/{customerFid}/google][%d] postAppstoreCustomerFidGoogleOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /appstore/{customerFid}/google][%d] postAppstoreCustomerFidGoogleOK %s", 200, payload)
 }
 
 func (o *PostAppstoreCustomerFidGoogleOK) GetPayload() *PostAppstoreCustomerFidGoogleOKBody {
@@ -161,11 +164,13 @@ func (o *PostAppstoreCustomerFidGoogleDefault) Code() int {
 }
 
 func (o *PostAppstoreCustomerFidGoogleDefault) Error() string {
-	return fmt.Sprintf("[POST /appstore/{customerFid}/google][%d] PostAppstoreCustomerFidGoogle default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /appstore/{customerFid}/google][%d] PostAppstoreCustomerFidGoogle default %s", o._statusCode, payload)
 }
 
 func (o *PostAppstoreCustomerFidGoogleDefault) String() string {
-	return fmt.Sprintf("[POST /appstore/{customerFid}/google][%d] PostAppstoreCustomerFidGoogle default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /appstore/{customerFid}/google][%d] PostAppstoreCustomerFidGoogle default %s", o._statusCode, payload)
 }
 
 func (o *PostAppstoreCustomerFidGoogleDefault) GetPayload() *models.Envelope {

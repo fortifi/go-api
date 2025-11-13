@@ -7,6 +7,7 @@ package chat
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetPresetChatSessionIDOK) Code() int {
 }
 
 func (o *GetPresetChatSessionIDOK) Error() string {
-	return fmt.Sprintf("[GET /presetChat/{sessionId}][%d] getPresetChatSessionIdOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /presetChat/{sessionId}][%d] getPresetChatSessionIdOK %s", 200, payload)
 }
 
 func (o *GetPresetChatSessionIDOK) String() string {
-	return fmt.Sprintf("[GET /presetChat/{sessionId}][%d] getPresetChatSessionIdOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /presetChat/{sessionId}][%d] getPresetChatSessionIdOK %s", 200, payload)
 }
 
 func (o *GetPresetChatSessionIDOK) GetPayload() *GetPresetChatSessionIDOKBody {
@@ -161,11 +164,13 @@ func (o *GetPresetChatSessionIDDefault) Code() int {
 }
 
 func (o *GetPresetChatSessionIDDefault) Error() string {
-	return fmt.Sprintf("[GET /presetChat/{sessionId}][%d] GetPresetChatSessionID default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /presetChat/{sessionId}][%d] GetPresetChatSessionID default %s", o._statusCode, payload)
 }
 
 func (o *GetPresetChatSessionIDDefault) String() string {
-	return fmt.Sprintf("[GET /presetChat/{sessionId}][%d] GetPresetChatSessionID default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /presetChat/{sessionId}][%d] GetPresetChatSessionID default %s", o._statusCode, payload)
 }
 
 func (o *GetPresetChatSessionIDDefault) GetPayload() *models.Envelope {

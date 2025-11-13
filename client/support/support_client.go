@@ -7,12 +7,38 @@ package support
 
 import (
 	"github.com/go-openapi/runtime"
+	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 )
 
 // New creates a new support API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
 	return &Client{transport: transport, formats: formats}
+}
+
+// New creates a new support API client with basic auth credentials.
+// It takes the following parameters:
+// - host: http host (github.com).
+// - basePath: any base path for the API client ("/v1", "/v3").
+// - scheme: http scheme ("http", "https").
+// - user: user for basic authentication header.
+// - password: password for basic authentication header.
+func NewClientWithBasicAuth(host, basePath, scheme, user, password string) ClientService {
+	transport := httptransport.New(host, basePath, []string{scheme})
+	transport.DefaultAuthentication = httptransport.BasicAuth(user, password)
+	return &Client{transport: transport, formats: strfmt.Default}
+}
+
+// New creates a new support API client with a bearer token for authentication.
+// It takes the following parameters:
+// - host: http host (github.com).
+// - basePath: any base path for the API client ("/v1", "/v3").
+// - scheme: http scheme ("http", "https").
+// - bearerToken: bearer token for Bearer authentication header.
+func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) ClientService {
+	transport := httptransport.New(host, basePath, []string{scheme})
+	transport.DefaultAuthentication = httptransport.BearerToken(bearerToken)
+	return &Client{transport: transport, formats: strfmt.Default}
 }
 
 /*
@@ -23,12 +49,18 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
-// ClientOption is the option for Client methods
+// ClientOption may be used to customize the behavior of Client methods.
 type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
+	GetSupportChatEnabled(params *GetSupportChatEnabledParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetSupportChatEnabledOK, error)
+
 	GetTicketsTicketFid(params *GetTicketsTicketFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetTicketsTicketFidOK, error)
+
+	GetTicketsTicketFidPosts(params *GetTicketsTicketFidPostsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetTicketsTicketFidPostsOK, error)
+
+	PostInteractionsTicket(params *PostInteractionsTicketParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsTicketOK, error)
 
 	PostTickets(params *PostTicketsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostTicketsOK, error)
 
@@ -37,6 +69,44 @@ type ClientService interface {
 	PutTicketsTicketFidStatus(params *PutTicketsTicketFidStatusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutTicketsTicketFidStatusOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
+}
+
+/*
+GetSupportChatEnabled checks if chat is enabled
+*/
+func (a *Client) GetSupportChatEnabled(params *GetSupportChatEnabledParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetSupportChatEnabledOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetSupportChatEnabledParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "GetSupportChatEnabled",
+		Method:             "GET",
+		PathPattern:        "/support/chatEnabled",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetSupportChatEnabledReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetSupportChatEnabledOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*GetSupportChatEnabledDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
 /*
@@ -74,6 +144,84 @@ func (a *Client) GetTicketsTicketFid(params *GetTicketsTicketFidParams, authInfo
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*GetTicketsTicketFidDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+GetTicketsTicketFidPosts retrieves ticket posts for a ticket
+*/
+func (a *Client) GetTicketsTicketFidPosts(params *GetTicketsTicketFidPostsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetTicketsTicketFidPostsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetTicketsTicketFidPostsParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "GetTicketsTicketFidPosts",
+		Method:             "GET",
+		PathPattern:        "/tickets/{ticketFid}/posts",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetTicketsTicketFidPostsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetTicketsTicketFidPostsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*GetTicketsTicketFidPostsDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PostInteractionsTicket creates an interaction ticket
+
+The attachments property is an array of unique filenames that have been created using ```/upload/uploadUrl```
+*/
+func (a *Client) PostInteractionsTicket(params *PostInteractionsTicketParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsTicketOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPostInteractionsTicketParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PostInteractionsTicket",
+		Method:             "POST",
+		PathPattern:        "/interactions/ticket",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PostInteractionsTicketReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PostInteractionsTicketOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PostInteractionsTicketDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

@@ -7,6 +7,7 @@ package devices
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostDeviceUpsertOK) Code() int {
 }
 
 func (o *PostDeviceUpsertOK) Error() string {
-	return fmt.Sprintf("[POST /device/upsert][%d] postDeviceUpsertOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /device/upsert][%d] postDeviceUpsertOK %s", 200, payload)
 }
 
 func (o *PostDeviceUpsertOK) String() string {
-	return fmt.Sprintf("[POST /device/upsert][%d] postDeviceUpsertOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /device/upsert][%d] postDeviceUpsertOK %s", 200, payload)
 }
 
 func (o *PostDeviceUpsertOK) GetPayload() *PostDeviceUpsertOKBody {
@@ -161,11 +164,13 @@ func (o *PostDeviceUpsertDefault) Code() int {
 }
 
 func (o *PostDeviceUpsertDefault) Error() string {
-	return fmt.Sprintf("[POST /device/upsert][%d] PostDeviceUpsert default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /device/upsert][%d] PostDeviceUpsert default %s", o._statusCode, payload)
 }
 
 func (o *PostDeviceUpsertDefault) String() string {
-	return fmt.Sprintf("[POST /device/upsert][%d] PostDeviceUpsert default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /device/upsert][%d] PostDeviceUpsert default %s", o._statusCode, payload)
 }
 
 func (o *PostDeviceUpsertDefault) GetPayload() *models.Envelope {

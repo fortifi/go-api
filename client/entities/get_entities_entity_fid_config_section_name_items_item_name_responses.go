@@ -7,6 +7,7 @@ package entities
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetEntitiesEntityFidConfigSectionNameItemsItemNameOK) Code() int {
 }
 
 func (o *GetEntitiesEntityFidConfigSectionNameItemsItemNameOK) Error() string {
-	return fmt.Sprintf("[GET /entities/{entityFid}/config/{sectionName}/items/{itemName}][%d] getEntitiesEntityFidConfigSectionNameItemsItemNameOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /entities/{entityFid}/config/{sectionName}/items/{itemName}][%d] getEntitiesEntityFidConfigSectionNameItemsItemNameOK %s", 200, payload)
 }
 
 func (o *GetEntitiesEntityFidConfigSectionNameItemsItemNameOK) String() string {
-	return fmt.Sprintf("[GET /entities/{entityFid}/config/{sectionName}/items/{itemName}][%d] getEntitiesEntityFidConfigSectionNameItemsItemNameOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /entities/{entityFid}/config/{sectionName}/items/{itemName}][%d] getEntitiesEntityFidConfigSectionNameItemsItemNameOK %s", 200, payload)
 }
 
 func (o *GetEntitiesEntityFidConfigSectionNameItemsItemNameOK) GetPayload() *GetEntitiesEntityFidConfigSectionNameItemsItemNameOKBody {
@@ -161,11 +164,13 @@ func (o *GetEntitiesEntityFidConfigSectionNameItemsItemNameDefault) Code() int {
 }
 
 func (o *GetEntitiesEntityFidConfigSectionNameItemsItemNameDefault) Error() string {
-	return fmt.Sprintf("[GET /entities/{entityFid}/config/{sectionName}/items/{itemName}][%d] GetEntitiesEntityFidConfigSectionNameItemsItemName default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /entities/{entityFid}/config/{sectionName}/items/{itemName}][%d] GetEntitiesEntityFidConfigSectionNameItemsItemName default %s", o._statusCode, payload)
 }
 
 func (o *GetEntitiesEntityFidConfigSectionNameItemsItemNameDefault) String() string {
-	return fmt.Sprintf("[GET /entities/{entityFid}/config/{sectionName}/items/{itemName}][%d] GetEntitiesEntityFidConfigSectionNameItemsItemName default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /entities/{entityFid}/config/{sectionName}/items/{itemName}][%d] GetEntitiesEntityFidConfigSectionNameItemsItemName default %s", o._statusCode, payload)
 }
 
 func (o *GetEntitiesEntityFidConfigSectionNameItemsItemNameDefault) GetPayload() *models.Envelope {

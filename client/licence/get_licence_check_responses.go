@@ -7,6 +7,7 @@ package licence
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetLicenceCheckOK) Code() int {
 }
 
 func (o *GetLicenceCheckOK) Error() string {
-	return fmt.Sprintf("[GET /licence/check][%d] getLicenceCheckOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /licence/check][%d] getLicenceCheckOK %s", 200, payload)
 }
 
 func (o *GetLicenceCheckOK) String() string {
-	return fmt.Sprintf("[GET /licence/check][%d] getLicenceCheckOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /licence/check][%d] getLicenceCheckOK %s", 200, payload)
 }
 
 func (o *GetLicenceCheckOK) GetPayload() *GetLicenceCheckOKBody {
@@ -161,11 +164,13 @@ func (o *GetLicenceCheckDefault) Code() int {
 }
 
 func (o *GetLicenceCheckDefault) Error() string {
-	return fmt.Sprintf("[GET /licence/check][%d] GetLicenceCheck default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /licence/check][%d] GetLicenceCheck default %s", o._statusCode, payload)
 }
 
 func (o *GetLicenceCheckDefault) String() string {
-	return fmt.Sprintf("[GET /licence/check][%d] GetLicenceCheck default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /licence/check][%d] GetLicenceCheck default %s", o._statusCode, payload)
 }
 
 func (o *GetLicenceCheckDefault) GetPayload() *models.Envelope {

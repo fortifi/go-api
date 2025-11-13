@@ -7,6 +7,7 @@ package products
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostProductsProductFidAvailabilityReserveOK) Code() int {
 }
 
 func (o *PostProductsProductFidAvailabilityReserveOK) Error() string {
-	return fmt.Sprintf("[POST /products/{productFid}/availability/reserve][%d] postProductsProductFidAvailabilityReserveOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /products/{productFid}/availability/reserve][%d] postProductsProductFidAvailabilityReserveOK %s", 200, payload)
 }
 
 func (o *PostProductsProductFidAvailabilityReserveOK) String() string {
-	return fmt.Sprintf("[POST /products/{productFid}/availability/reserve][%d] postProductsProductFidAvailabilityReserveOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /products/{productFid}/availability/reserve][%d] postProductsProductFidAvailabilityReserveOK %s", 200, payload)
 }
 
 func (o *PostProductsProductFidAvailabilityReserveOK) GetPayload() *PostProductsProductFidAvailabilityReserveOKBody {
@@ -161,11 +164,13 @@ func (o *PostProductsProductFidAvailabilityReserveDefault) Code() int {
 }
 
 func (o *PostProductsProductFidAvailabilityReserveDefault) Error() string {
-	return fmt.Sprintf("[POST /products/{productFid}/availability/reserve][%d] PostProductsProductFidAvailabilityReserve default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /products/{productFid}/availability/reserve][%d] PostProductsProductFidAvailabilityReserve default %s", o._statusCode, payload)
 }
 
 func (o *PostProductsProductFidAvailabilityReserveDefault) String() string {
-	return fmt.Sprintf("[POST /products/{productFid}/availability/reserve][%d] PostProductsProductFidAvailabilityReserve default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /products/{productFid}/availability/reserve][%d] PostProductsProductFidAvailabilityReserve default %s", o._statusCode, payload)
 }
 
 func (o *PostProductsProductFidAvailabilityReserveDefault) GetPayload() *models.Envelope {

@@ -6,6 +6,7 @@ package entities
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PutEntitiesEntityFidPropertiesValuesPropertyNameOK) Code() int {
 }
 
 func (o *PutEntitiesEntityFidPropertiesValuesPropertyNameOK) Error() string {
-	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/values/{propertyName}][%d] putEntitiesEntityFidPropertiesValuesPropertyNameOK ", 200)
+	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/values/{propertyName}][%d] putEntitiesEntityFidPropertiesValuesPropertyNameOK", 200)
 }
 
 func (o *PutEntitiesEntityFidPropertiesValuesPropertyNameOK) String() string {
-	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/values/{propertyName}][%d] putEntitiesEntityFidPropertiesValuesPropertyNameOK ", 200)
+	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/values/{propertyName}][%d] putEntitiesEntityFidPropertiesValuesPropertyNameOK", 200)
 }
 
 func (o *PutEntitiesEntityFidPropertiesValuesPropertyNameOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PutEntitiesEntityFidPropertiesValuesPropertyNameDefault) Code() int {
 }
 
 func (o *PutEntitiesEntityFidPropertiesValuesPropertyNameDefault) Error() string {
-	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/values/{propertyName}][%d] PutEntitiesEntityFidPropertiesValuesPropertyName default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/values/{propertyName}][%d] PutEntitiesEntityFidPropertiesValuesPropertyName default %s", o._statusCode, payload)
 }
 
 func (o *PutEntitiesEntityFidPropertiesValuesPropertyNameDefault) String() string {
-	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/values/{propertyName}][%d] PutEntitiesEntityFidPropertiesValuesPropertyName default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /entities/{entityFid}/properties/values/{propertyName}][%d] PutEntitiesEntityFidPropertiesValuesPropertyName default %s", o._statusCode, payload)
 }
 
 func (o *PutEntitiesEntityFidPropertiesValuesPropertyNameDefault) GetPayload() *models.Envelope {

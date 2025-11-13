@@ -6,6 +6,7 @@ package entities
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PutEntitiesEntityFidLabelsAssignOK) Code() int {
 }
 
 func (o *PutEntitiesEntityFidLabelsAssignOK) Error() string {
-	return fmt.Sprintf("[PUT /entities/{entityFid}/labels/assign][%d] putEntitiesEntityFidLabelsAssignOK ", 200)
+	return fmt.Sprintf("[PUT /entities/{entityFid}/labels/assign][%d] putEntitiesEntityFidLabelsAssignOK", 200)
 }
 
 func (o *PutEntitiesEntityFidLabelsAssignOK) String() string {
-	return fmt.Sprintf("[PUT /entities/{entityFid}/labels/assign][%d] putEntitiesEntityFidLabelsAssignOK ", 200)
+	return fmt.Sprintf("[PUT /entities/{entityFid}/labels/assign][%d] putEntitiesEntityFidLabelsAssignOK", 200)
 }
 
 func (o *PutEntitiesEntityFidLabelsAssignOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PutEntitiesEntityFidLabelsAssignDefault) Code() int {
 }
 
 func (o *PutEntitiesEntityFidLabelsAssignDefault) Error() string {
-	return fmt.Sprintf("[PUT /entities/{entityFid}/labels/assign][%d] PutEntitiesEntityFidLabelsAssign default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /entities/{entityFid}/labels/assign][%d] PutEntitiesEntityFidLabelsAssign default %s", o._statusCode, payload)
 }
 
 func (o *PutEntitiesEntityFidLabelsAssignDefault) String() string {
-	return fmt.Sprintf("[PUT /entities/{entityFid}/labels/assign][%d] PutEntitiesEntityFidLabelsAssign default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /entities/{entityFid}/labels/assign][%d] PutEntitiesEntityFidLabelsAssign default %s", o._statusCode, payload)
 }
 
 func (o *PutEntitiesEntityFidLabelsAssignDefault) GetPayload() *models.Envelope {

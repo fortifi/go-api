@@ -24,7 +24,7 @@ type AdvertiserPixel struct {
 	Content string `json:"content,omitempty"`
 
 	// method
-	// Enum: [iframe img js curl html]
+	// Enum: ["iframe","img","js","curl","html"]
 	Method string `json:"method,omitempty"`
 
 	// url

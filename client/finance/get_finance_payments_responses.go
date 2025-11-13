@@ -7,6 +7,7 @@ package finance
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetFinancePaymentsOK) Code() int {
 }
 
 func (o *GetFinancePaymentsOK) Error() string {
-	return fmt.Sprintf("[GET /finance/payments][%d] getFinancePaymentsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /finance/payments][%d] getFinancePaymentsOK %s", 200, payload)
 }
 
 func (o *GetFinancePaymentsOK) String() string {
-	return fmt.Sprintf("[GET /finance/payments][%d] getFinancePaymentsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /finance/payments][%d] getFinancePaymentsOK %s", 200, payload)
 }
 
 func (o *GetFinancePaymentsOK) GetPayload() *GetFinancePaymentsOKBody {
@@ -161,11 +164,13 @@ func (o *GetFinancePaymentsDefault) Code() int {
 }
 
 func (o *GetFinancePaymentsDefault) Error() string {
-	return fmt.Sprintf("[GET /finance/payments][%d] GetFinancePayments default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /finance/payments][%d] GetFinancePayments default %s", o._statusCode, payload)
 }
 
 func (o *GetFinancePaymentsDefault) String() string {
-	return fmt.Sprintf("[GET /finance/payments][%d] GetFinancePayments default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /finance/payments][%d] GetFinancePayments default %s", o._statusCode, payload)
 }
 
 func (o *GetFinancePaymentsDefault) GetPayload() *models.Envelope {

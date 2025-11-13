@@ -7,6 +7,7 @@ package chat
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostPresetChatOK) Code() int {
 }
 
 func (o *PostPresetChatOK) Error() string {
-	return fmt.Sprintf("[POST /presetChat][%d] postPresetChatOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /presetChat][%d] postPresetChatOK %s", 200, payload)
 }
 
 func (o *PostPresetChatOK) String() string {
-	return fmt.Sprintf("[POST /presetChat][%d] postPresetChatOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /presetChat][%d] postPresetChatOK %s", 200, payload)
 }
 
 func (o *PostPresetChatOK) GetPayload() *PostPresetChatOKBody {
@@ -161,11 +164,13 @@ func (o *PostPresetChatDefault) Code() int {
 }
 
 func (o *PostPresetChatDefault) Error() string {
-	return fmt.Sprintf("[POST /presetChat][%d] PostPresetChat default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /presetChat][%d] PostPresetChat default %s", o._statusCode, payload)
 }
 
 func (o *PostPresetChatDefault) String() string {
-	return fmt.Sprintf("[POST /presetChat][%d] PostPresetChat default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /presetChat][%d] PostPresetChat default %s", o._statusCode, payload)
 }
 
 func (o *PostPresetChatDefault) GetPayload() *models.Envelope {

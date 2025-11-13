@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PostCustomersCustomerFidPaymentMethodsCardsCardFidLockOK) Code() int {
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsCardsCardFidLockOK) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/cards/{cardFid}/lock][%d] postCustomersCustomerFidPaymentMethodsCardsCardFidLockOK ", 200)
+	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/cards/{cardFid}/lock][%d] postCustomersCustomerFidPaymentMethodsCardsCardFidLockOK", 200)
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsCardsCardFidLockOK) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/cards/{cardFid}/lock][%d] postCustomersCustomerFidPaymentMethodsCardsCardFidLockOK ", 200)
+	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/cards/{cardFid}/lock][%d] postCustomersCustomerFidPaymentMethodsCardsCardFidLockOK", 200)
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsCardsCardFidLockOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PostCustomersCustomerFidPaymentMethodsCardsCardFidLockDefault) Code() i
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsCardsCardFidLockDefault) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/cards/{cardFid}/lock][%d] PostCustomersCustomerFidPaymentMethodsCardsCardFidLock default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/cards/{cardFid}/lock][%d] PostCustomersCustomerFidPaymentMethodsCardsCardFidLock default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsCardsCardFidLockDefault) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/cards/{cardFid}/lock][%d] PostCustomersCustomerFidPaymentMethodsCardsCardFidLock default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/cards/{cardFid}/lock][%d] PostCustomersCustomerFidPaymentMethodsCardsCardFidLock default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsCardsCardFidLockDefault) GetPayload() *models.Envelope {

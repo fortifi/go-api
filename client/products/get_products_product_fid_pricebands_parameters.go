@@ -152,14 +152,16 @@ func (o *GetProductsProductFidPricebandsParams) WriteToRequest(r runtime.ClientR
 
 	if o.Currency != nil {
 
-		// form param currency
-		var frCurrency string
+		// query param currency
+		var qrCurrency string
+
 		if o.Currency != nil {
-			frCurrency = *o.Currency
+			qrCurrency = *o.Currency
 		}
-		fCurrency := frCurrency
-		if fCurrency != "" {
-			if err := r.SetFormParam("currency", fCurrency); err != nil {
+		qCurrency := qrCurrency
+		if qCurrency != "" {
+
+			if err := r.SetQueryParam("currency", qCurrency); err != nil {
 				return err
 			}
 		}

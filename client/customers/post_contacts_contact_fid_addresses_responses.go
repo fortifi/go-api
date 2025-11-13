@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PostContactsContactFidAddressesOK) Code() int {
 }
 
 func (o *PostContactsContactFidAddressesOK) Error() string {
-	return fmt.Sprintf("[POST /contacts/{contactFid}/addresses][%d] postContactsContactFidAddressesOK ", 200)
+	return fmt.Sprintf("[POST /contacts/{contactFid}/addresses][%d] postContactsContactFidAddressesOK", 200)
 }
 
 func (o *PostContactsContactFidAddressesOK) String() string {
-	return fmt.Sprintf("[POST /contacts/{contactFid}/addresses][%d] postContactsContactFidAddressesOK ", 200)
+	return fmt.Sprintf("[POST /contacts/{contactFid}/addresses][%d] postContactsContactFidAddressesOK", 200)
 }
 
 func (o *PostContactsContactFidAddressesOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PostContactsContactFidAddressesDefault) Code() int {
 }
 
 func (o *PostContactsContactFidAddressesDefault) Error() string {
-	return fmt.Sprintf("[POST /contacts/{contactFid}/addresses][%d] PostContactsContactFidAddresses default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /contacts/{contactFid}/addresses][%d] PostContactsContactFidAddresses default %s", o._statusCode, payload)
 }
 
 func (o *PostContactsContactFidAddressesDefault) String() string {
-	return fmt.Sprintf("[POST /contacts/{contactFid}/addresses][%d] PostContactsContactFidAddresses default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /contacts/{contactFid}/addresses][%d] PostContactsContactFidAddresses default %s", o._statusCode, payload)
 }
 
 func (o *PostContactsContactFidAddressesDefault) GetPayload() *models.Envelope {

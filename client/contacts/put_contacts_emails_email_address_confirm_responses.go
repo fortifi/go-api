@@ -6,6 +6,7 @@ package contacts
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PutContactsEmailsEmailAddressConfirmOK) Code() int {
 }
 
 func (o *PutContactsEmailsEmailAddressConfirmOK) Error() string {
-	return fmt.Sprintf("[PUT /contacts/emails/{emailAddress}/confirm][%d] putContactsEmailsEmailAddressConfirmOK ", 200)
+	return fmt.Sprintf("[PUT /contacts/emails/{emailAddress}/confirm][%d] putContactsEmailsEmailAddressConfirmOK", 200)
 }
 
 func (o *PutContactsEmailsEmailAddressConfirmOK) String() string {
-	return fmt.Sprintf("[PUT /contacts/emails/{emailAddress}/confirm][%d] putContactsEmailsEmailAddressConfirmOK ", 200)
+	return fmt.Sprintf("[PUT /contacts/emails/{emailAddress}/confirm][%d] putContactsEmailsEmailAddressConfirmOK", 200)
 }
 
 func (o *PutContactsEmailsEmailAddressConfirmOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PutContactsEmailsEmailAddressConfirmDefault) Code() int {
 }
 
 func (o *PutContactsEmailsEmailAddressConfirmDefault) Error() string {
-	return fmt.Sprintf("[PUT /contacts/emails/{emailAddress}/confirm][%d] PutContactsEmailsEmailAddressConfirm default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /contacts/emails/{emailAddress}/confirm][%d] PutContactsEmailsEmailAddressConfirm default %s", o._statusCode, payload)
 }
 
 func (o *PutContactsEmailsEmailAddressConfirmDefault) String() string {
-	return fmt.Sprintf("[PUT /contacts/emails/{emailAddress}/confirm][%d] PutContactsEmailsEmailAddressConfirm default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /contacts/emails/{emailAddress}/confirm][%d] PutContactsEmailsEmailAddressConfirm default %s", o._statusCode, payload)
 }
 
 func (o *PutContactsEmailsEmailAddressConfirmDefault) GetPayload() *models.Envelope {

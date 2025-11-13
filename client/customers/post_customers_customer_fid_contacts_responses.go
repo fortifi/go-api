@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -88,11 +89,11 @@ func (o *PostCustomersCustomerFidContactsOK) Code() int {
 }
 
 func (o *PostCustomersCustomerFidContactsOK) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/contacts][%d] postCustomersCustomerFidContactsOK ", 200)
+	return fmt.Sprintf("[POST /customers/{customerFid}/contacts][%d] postCustomersCustomerFidContactsOK", 200)
 }
 
 func (o *PostCustomersCustomerFidContactsOK) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/contacts][%d] postCustomersCustomerFidContactsOK ", 200)
+	return fmt.Sprintf("[POST /customers/{customerFid}/contacts][%d] postCustomersCustomerFidContactsOK", 200)
 }
 
 func (o *PostCustomersCustomerFidContactsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -149,11 +150,13 @@ func (o *PostCustomersCustomerFidContactsDefault) Code() int {
 }
 
 func (o *PostCustomersCustomerFidContactsDefault) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/contacts][%d] PostCustomersCustomerFidContacts default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/contacts][%d] PostCustomersCustomerFidContacts default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidContactsDefault) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/contacts][%d] PostCustomersCustomerFidContacts default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/contacts][%d] PostCustomersCustomerFidContacts default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidContactsDefault) GetPayload() *PostCustomersCustomerFidContactsDefaultBody {

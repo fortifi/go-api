@@ -7,6 +7,7 @@ package products
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostProductsProductFidAvailabilityCheckOK) Code() int {
 }
 
 func (o *PostProductsProductFidAvailabilityCheckOK) Error() string {
-	return fmt.Sprintf("[POST /products/{productFid}/availability/check][%d] postProductsProductFidAvailabilityCheckOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /products/{productFid}/availability/check][%d] postProductsProductFidAvailabilityCheckOK %s", 200, payload)
 }
 
 func (o *PostProductsProductFidAvailabilityCheckOK) String() string {
-	return fmt.Sprintf("[POST /products/{productFid}/availability/check][%d] postProductsProductFidAvailabilityCheckOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /products/{productFid}/availability/check][%d] postProductsProductFidAvailabilityCheckOK %s", 200, payload)
 }
 
 func (o *PostProductsProductFidAvailabilityCheckOK) GetPayload() *PostProductsProductFidAvailabilityCheckOKBody {
@@ -161,11 +164,13 @@ func (o *PostProductsProductFidAvailabilityCheckDefault) Code() int {
 }
 
 func (o *PostProductsProductFidAvailabilityCheckDefault) Error() string {
-	return fmt.Sprintf("[POST /products/{productFid}/availability/check][%d] PostProductsProductFidAvailabilityCheck default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /products/{productFid}/availability/check][%d] PostProductsProductFidAvailabilityCheck default %s", o._statusCode, payload)
 }
 
 func (o *PostProductsProductFidAvailabilityCheckDefault) String() string {
-	return fmt.Sprintf("[POST /products/{productFid}/availability/check][%d] PostProductsProductFidAvailabilityCheck default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /products/{productFid}/availability/check][%d] PostProductsProductFidAvailabilityCheck default %s", o._statusCode, payload)
 }
 
 func (o *PostProductsProductFidAvailabilityCheckDefault) GetPayload() *models.Envelope {

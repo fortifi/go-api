@@ -6,6 +6,7 @@ package devices
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *DeleteDeviceHardwareIDOK) Code() int {
 }
 
 func (o *DeleteDeviceHardwareIDOK) Error() string {
-	return fmt.Sprintf("[DELETE /device/{hardwareId}][%d] deleteDeviceHardwareIdOK ", 200)
+	return fmt.Sprintf("[DELETE /device/{hardwareId}][%d] deleteDeviceHardwareIdOK", 200)
 }
 
 func (o *DeleteDeviceHardwareIDOK) String() string {
-	return fmt.Sprintf("[DELETE /device/{hardwareId}][%d] deleteDeviceHardwareIdOK ", 200)
+	return fmt.Sprintf("[DELETE /device/{hardwareId}][%d] deleteDeviceHardwareIdOK", 200)
 }
 
 func (o *DeleteDeviceHardwareIDOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *DeleteDeviceHardwareIDDefault) Code() int {
 }
 
 func (o *DeleteDeviceHardwareIDDefault) Error() string {
-	return fmt.Sprintf("[DELETE /device/{hardwareId}][%d] DeleteDeviceHardwareID default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /device/{hardwareId}][%d] DeleteDeviceHardwareID default %s", o._statusCode, payload)
 }
 
 func (o *DeleteDeviceHardwareIDDefault) String() string {
-	return fmt.Sprintf("[DELETE /device/{hardwareId}][%d] DeleteDeviceHardwareID default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /device/{hardwareId}][%d] DeleteDeviceHardwareID default %s", o._statusCode, payload)
 }
 
 func (o *DeleteDeviceHardwareIDDefault) GetPayload() *models.Envelope {

@@ -6,6 +6,7 @@ package entities
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *DeleteEntitiesEntityFidPropertiesCountersPropertyNameOK) Code() int {
 }
 
 func (o *DeleteEntitiesEntityFidPropertiesCountersPropertyNameOK) Error() string {
-	return fmt.Sprintf("[DELETE /entities/{entityFid}/properties/counters/{propertyName}][%d] deleteEntitiesEntityFidPropertiesCountersPropertyNameOK ", 200)
+	return fmt.Sprintf("[DELETE /entities/{entityFid}/properties/counters/{propertyName}][%d] deleteEntitiesEntityFidPropertiesCountersPropertyNameOK", 200)
 }
 
 func (o *DeleteEntitiesEntityFidPropertiesCountersPropertyNameOK) String() string {
-	return fmt.Sprintf("[DELETE /entities/{entityFid}/properties/counters/{propertyName}][%d] deleteEntitiesEntityFidPropertiesCountersPropertyNameOK ", 200)
+	return fmt.Sprintf("[DELETE /entities/{entityFid}/properties/counters/{propertyName}][%d] deleteEntitiesEntityFidPropertiesCountersPropertyNameOK", 200)
 }
 
 func (o *DeleteEntitiesEntityFidPropertiesCountersPropertyNameOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *DeleteEntitiesEntityFidPropertiesCountersPropertyNameDefault) Code() in
 }
 
 func (o *DeleteEntitiesEntityFidPropertiesCountersPropertyNameDefault) Error() string {
-	return fmt.Sprintf("[DELETE /entities/{entityFid}/properties/counters/{propertyName}][%d] DeleteEntitiesEntityFidPropertiesCountersPropertyName default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /entities/{entityFid}/properties/counters/{propertyName}][%d] DeleteEntitiesEntityFidPropertiesCountersPropertyName default %s", o._statusCode, payload)
 }
 
 func (o *DeleteEntitiesEntityFidPropertiesCountersPropertyNameDefault) String() string {
-	return fmt.Sprintf("[DELETE /entities/{entityFid}/properties/counters/{propertyName}][%d] DeleteEntitiesEntityFidPropertiesCountersPropertyName default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /entities/{entityFid}/properties/counters/{propertyName}][%d] DeleteEntitiesEntityFidPropertiesCountersPropertyName default %s", o._statusCode, payload)
 }
 
 func (o *DeleteEntitiesEntityFidPropertiesCountersPropertyNameDefault) GetPayload() *models.Envelope {

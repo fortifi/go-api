@@ -6,6 +6,7 @@ package orders
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -86,11 +87,13 @@ func (o *PutOrdersOrderFidExternalReferenceOK) Code() int {
 }
 
 func (o *PutOrdersOrderFidExternalReferenceOK) Error() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/externalReference][%d] putOrdersOrderFidExternalReferenceOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/externalReference][%d] putOrdersOrderFidExternalReferenceOK %s", 200, payload)
 }
 
 func (o *PutOrdersOrderFidExternalReferenceOK) String() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/externalReference][%d] putOrdersOrderFidExternalReferenceOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/externalReference][%d] putOrdersOrderFidExternalReferenceOK %s", 200, payload)
 }
 
 func (o *PutOrdersOrderFidExternalReferenceOK) GetPayload() *models.Envelope {
@@ -158,11 +161,13 @@ func (o *PutOrdersOrderFidExternalReferenceDefault) Code() int {
 }
 
 func (o *PutOrdersOrderFidExternalReferenceDefault) Error() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/externalReference][%d] PutOrdersOrderFidExternalReference default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/externalReference][%d] PutOrdersOrderFidExternalReference default %s", o._statusCode, payload)
 }
 
 func (o *PutOrdersOrderFidExternalReferenceDefault) String() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/externalReference][%d] PutOrdersOrderFidExternalReference default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/externalReference][%d] PutOrdersOrderFidExternalReference default %s", o._statusCode, payload)
 }
 
 func (o *PutOrdersOrderFidExternalReferenceDefault) GetPayload() *models.Envelope {

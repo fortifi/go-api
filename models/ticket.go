@@ -22,6 +22,9 @@ type Ticket struct {
 	// agent fid
 	AgentFid string `json:"agentFid,omitempty"`
 
+	// attachment urls
+	AttachmentUrls []string `json:"attachmentUrls"`
+
 	// attachments
 	Attachments int64 `json:"attachments,omitempty"`
 
@@ -132,6 +135,8 @@ func (m *Ticket) UnmarshalJSON(raw []byte) error {
 	var dataAO1 struct {
 		AgentFid string `json:"agentFid,omitempty"`
 
+		AttachmentUrls []string `json:"attachmentUrls"`
+
 		Attachments int64 `json:"attachments,omitempty"`
 
 		Bcc string `json:"bcc,omitempty"`
@@ -201,6 +206,8 @@ func (m *Ticket) UnmarshalJSON(raw []byte) error {
 	}
 
 	m.AgentFid = dataAO1.AgentFid
+
+	m.AttachmentUrls = dataAO1.AttachmentUrls
 
 	m.Attachments = dataAO1.Attachments
 
@@ -281,6 +288,8 @@ func (m Ticket) MarshalJSON() ([]byte, error) {
 	var dataAO1 struct {
 		AgentFid string `json:"agentFid,omitempty"`
 
+		AttachmentUrls []string `json:"attachmentUrls"`
+
 		Attachments int64 `json:"attachments,omitempty"`
 
 		Bcc string `json:"bcc,omitempty"`
@@ -347,6 +356,8 @@ func (m Ticket) MarshalJSON() ([]byte, error) {
 	}
 
 	dataAO1.AgentFid = m.AgentFid
+
+	dataAO1.AttachmentUrls = m.AttachmentUrls
 
 	dataAO1.Attachments = m.Attachments
 

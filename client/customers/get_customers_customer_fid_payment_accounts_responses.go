@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetCustomersCustomerFidPaymentAccountsOK) Code() int {
 }
 
 func (o *GetCustomersCustomerFidPaymentAccountsOK) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/paymentAccounts][%d] getCustomersCustomerFidPaymentAccountsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/paymentAccounts][%d] getCustomersCustomerFidPaymentAccountsOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidPaymentAccountsOK) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/paymentAccounts][%d] getCustomersCustomerFidPaymentAccountsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/paymentAccounts][%d] getCustomersCustomerFidPaymentAccountsOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidPaymentAccountsOK) GetPayload() *GetCustomersCustomerFidPaymentAccountsOKBody {
@@ -161,11 +164,13 @@ func (o *GetCustomersCustomerFidPaymentAccountsDefault) Code() int {
 }
 
 func (o *GetCustomersCustomerFidPaymentAccountsDefault) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/paymentAccounts][%d] GetCustomersCustomerFidPaymentAccounts default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/paymentAccounts][%d] GetCustomersCustomerFidPaymentAccounts default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidPaymentAccountsDefault) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/paymentAccounts][%d] GetCustomersCustomerFidPaymentAccounts default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/paymentAccounts][%d] GetCustomersCustomerFidPaymentAccounts default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidPaymentAccountsDefault) GetPayload() *models.Envelope {

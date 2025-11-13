@@ -7,6 +7,7 @@ package marketing
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostVisitorsVisitorIDActionsActionKeyOK) Code() int {
 }
 
 func (o *PostVisitorsVisitorIDActionsActionKeyOK) Error() string {
-	return fmt.Sprintf("[POST /visitors/{visitorId}/actions/{actionKey}][%d] postVisitorsVisitorIdActionsActionKeyOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /visitors/{visitorId}/actions/{actionKey}][%d] postVisitorsVisitorIdActionsActionKeyOK %s", 200, payload)
 }
 
 func (o *PostVisitorsVisitorIDActionsActionKeyOK) String() string {
-	return fmt.Sprintf("[POST /visitors/{visitorId}/actions/{actionKey}][%d] postVisitorsVisitorIdActionsActionKeyOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /visitors/{visitorId}/actions/{actionKey}][%d] postVisitorsVisitorIdActionsActionKeyOK %s", 200, payload)
 }
 
 func (o *PostVisitorsVisitorIDActionsActionKeyOK) GetPayload() *PostVisitorsVisitorIDActionsActionKeyOKBody {
@@ -161,11 +164,13 @@ func (o *PostVisitorsVisitorIDActionsActionKeyDefault) Code() int {
 }
 
 func (o *PostVisitorsVisitorIDActionsActionKeyDefault) Error() string {
-	return fmt.Sprintf("[POST /visitors/{visitorId}/actions/{actionKey}][%d] PostVisitorsVisitorIDActionsActionKey default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /visitors/{visitorId}/actions/{actionKey}][%d] PostVisitorsVisitorIDActionsActionKey default %s", o._statusCode, payload)
 }
 
 func (o *PostVisitorsVisitorIDActionsActionKeyDefault) String() string {
-	return fmt.Sprintf("[POST /visitors/{visitorId}/actions/{actionKey}][%d] PostVisitorsVisitorIDActionsActionKey default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /visitors/{visitorId}/actions/{actionKey}][%d] PostVisitorsVisitorIDActionsActionKey default %s", o._statusCode, payload)
 }
 
 func (o *PostVisitorsVisitorIDActionsActionKeyDefault) GetPayload() *models.Envelope {

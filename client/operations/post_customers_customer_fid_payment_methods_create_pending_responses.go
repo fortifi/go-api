@@ -7,6 +7,7 @@ package operations
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostCustomersCustomerFidPaymentMethodsCreatePendingOK) Code() int {
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsCreatePendingOK) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/createPending][%d] postCustomersCustomerFidPaymentMethodsCreatePendingOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/createPending][%d] postCustomersCustomerFidPaymentMethodsCreatePendingOK %s", 200, payload)
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsCreatePendingOK) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/createPending][%d] postCustomersCustomerFidPaymentMethodsCreatePendingOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/createPending][%d] postCustomersCustomerFidPaymentMethodsCreatePendingOK %s", 200, payload)
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsCreatePendingOK) GetPayload() *PostCustomersCustomerFidPaymentMethodsCreatePendingOKBody {
@@ -161,11 +164,13 @@ func (o *PostCustomersCustomerFidPaymentMethodsCreatePendingDefault) Code() int 
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsCreatePendingDefault) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/createPending][%d] PostCustomersCustomerFidPaymentMethodsCreatePending default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/createPending][%d] PostCustomersCustomerFidPaymentMethodsCreatePending default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsCreatePendingDefault) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/createPending][%d] PostCustomersCustomerFidPaymentMethodsCreatePending default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/createPending][%d] PostCustomersCustomerFidPaymentMethodsCreatePending default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsCreatePendingDefault) GetPayload() *models.Envelope {

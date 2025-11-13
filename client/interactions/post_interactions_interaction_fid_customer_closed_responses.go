@@ -7,6 +7,7 @@ package interactions
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostInteractionsInteractionFidCustomerClosedOK) Code() int {
 }
 
 func (o *PostInteractionsInteractionFidCustomerClosedOK) Error() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/customerClosed][%d] postInteractionsInteractionFidCustomerClosedOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/customerClosed][%d] postInteractionsInteractionFidCustomerClosedOK %s", 200, payload)
 }
 
 func (o *PostInteractionsInteractionFidCustomerClosedOK) String() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/customerClosed][%d] postInteractionsInteractionFidCustomerClosedOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/customerClosed][%d] postInteractionsInteractionFidCustomerClosedOK %s", 200, payload)
 }
 
 func (o *PostInteractionsInteractionFidCustomerClosedOK) GetPayload() *PostInteractionsInteractionFidCustomerClosedOKBody {
@@ -161,11 +164,13 @@ func (o *PostInteractionsInteractionFidCustomerClosedDefault) Code() int {
 }
 
 func (o *PostInteractionsInteractionFidCustomerClosedDefault) Error() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/customerClosed][%d] PostInteractionsInteractionFidCustomerClosed default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/customerClosed][%d] PostInteractionsInteractionFidCustomerClosed default %s", o._statusCode, payload)
 }
 
 func (o *PostInteractionsInteractionFidCustomerClosedDefault) String() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/customerClosed][%d] PostInteractionsInteractionFidCustomerClosed default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/customerClosed][%d] PostInteractionsInteractionFidCustomerClosed default %s", o._statusCode, payload)
 }
 
 func (o *PostInteractionsInteractionFidCustomerClosedDefault) GetPayload() *models.Envelope {

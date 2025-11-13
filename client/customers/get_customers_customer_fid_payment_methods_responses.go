@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetCustomersCustomerFidPaymentMethodsOK) Code() int {
 }
 
 func (o *GetCustomersCustomerFidPaymentMethodsOK) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/paymentMethods][%d] getCustomersCustomerFidPaymentMethodsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/paymentMethods][%d] getCustomersCustomerFidPaymentMethodsOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidPaymentMethodsOK) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/paymentMethods][%d] getCustomersCustomerFidPaymentMethodsOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/paymentMethods][%d] getCustomersCustomerFidPaymentMethodsOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidPaymentMethodsOK) GetPayload() *GetCustomersCustomerFidPaymentMethodsOKBody {
@@ -161,11 +164,13 @@ func (o *GetCustomersCustomerFidPaymentMethodsDefault) Code() int {
 }
 
 func (o *GetCustomersCustomerFidPaymentMethodsDefault) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/paymentMethods][%d] GetCustomersCustomerFidPaymentMethods default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/paymentMethods][%d] GetCustomersCustomerFidPaymentMethods default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidPaymentMethodsDefault) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/paymentMethods][%d] GetCustomersCustomerFidPaymentMethods default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/paymentMethods][%d] GetCustomersCustomerFidPaymentMethods default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidPaymentMethodsDefault) GetPayload() *models.Envelope {

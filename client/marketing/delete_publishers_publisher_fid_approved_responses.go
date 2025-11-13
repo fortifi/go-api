@@ -6,6 +6,7 @@ package marketing
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *DeletePublishersPublisherFidApprovedOK) Code() int {
 }
 
 func (o *DeletePublishersPublisherFidApprovedOK) Error() string {
-	return fmt.Sprintf("[DELETE /publishers/{publisherFid}/approved][%d] deletePublishersPublisherFidApprovedOK ", 200)
+	return fmt.Sprintf("[DELETE /publishers/{publisherFid}/approved][%d] deletePublishersPublisherFidApprovedOK", 200)
 }
 
 func (o *DeletePublishersPublisherFidApprovedOK) String() string {
-	return fmt.Sprintf("[DELETE /publishers/{publisherFid}/approved][%d] deletePublishersPublisherFidApprovedOK ", 200)
+	return fmt.Sprintf("[DELETE /publishers/{publisherFid}/approved][%d] deletePublishersPublisherFidApprovedOK", 200)
 }
 
 func (o *DeletePublishersPublisherFidApprovedOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *DeletePublishersPublisherFidApprovedDefault) Code() int {
 }
 
 func (o *DeletePublishersPublisherFidApprovedDefault) Error() string {
-	return fmt.Sprintf("[DELETE /publishers/{publisherFid}/approved][%d] DeletePublishersPublisherFidApproved default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /publishers/{publisherFid}/approved][%d] DeletePublishersPublisherFidApproved default %s", o._statusCode, payload)
 }
 
 func (o *DeletePublishersPublisherFidApprovedDefault) String() string {
-	return fmt.Sprintf("[DELETE /publishers/{publisherFid}/approved][%d] DeletePublishersPublisherFidApproved default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /publishers/{publisherFid}/approved][%d] DeletePublishersPublisherFidApproved default %s", o._statusCode, payload)
 }
 
 func (o *DeletePublishersPublisherFidApprovedDefault) GetPayload() *models.Envelope {

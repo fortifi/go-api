@@ -32,6 +32,9 @@ type CreateInteractionInvitationPayload struct {
 	// expiry time
 	ExpiryTime string `json:"expiryTime,omitempty"`
 
+	// impact
+	Impact int64 `json:"impact,omitempty"`
+
 	// initial message
 	InitialMessage string `json:"initialMessage,omitempty"`
 
@@ -44,8 +47,14 @@ type CreateInteractionInvitationPayload struct {
 	// notes
 	Notes []*KeyValuePayload `json:"notes"`
 
+	// priority
+	Priority int64 `json:"priority,omitempty"`
+
 	// topic
 	Topic string `json:"topic,omitempty"`
+
+	// urgency
+	Urgency int64 `json:"urgency,omitempty"`
 
 	// verification fid
 	VerificationFid string `json:"verificationFid,omitempty"`
@@ -70,6 +79,8 @@ func (m *CreateInteractionInvitationPayload) UnmarshalJSON(raw []byte) error {
 
 		ExpiryTime string `json:"expiryTime,omitempty"`
 
+		Impact int64 `json:"impact,omitempty"`
+
 		InitialMessage string `json:"initialMessage,omitempty"`
 
 		JourneyTrackingFid string `json:"journeyTrackingFid,omitempty"`
@@ -78,7 +89,11 @@ func (m *CreateInteractionInvitationPayload) UnmarshalJSON(raw []byte) error {
 
 		Notes []*KeyValuePayload `json:"notes"`
 
+		Priority int64 `json:"priority,omitempty"`
+
 		Topic string `json:"topic,omitempty"`
+
+		Urgency int64 `json:"urgency,omitempty"`
 
 		VerificationFid string `json:"verificationFid,omitempty"`
 	}
@@ -94,6 +109,8 @@ func (m *CreateInteractionInvitationPayload) UnmarshalJSON(raw []byte) error {
 
 	m.ExpiryTime = dataAO1.ExpiryTime
 
+	m.Impact = dataAO1.Impact
+
 	m.InitialMessage = dataAO1.InitialMessage
 
 	m.JourneyTrackingFid = dataAO1.JourneyTrackingFid
@@ -102,7 +119,11 @@ func (m *CreateInteractionInvitationPayload) UnmarshalJSON(raw []byte) error {
 
 	m.Notes = dataAO1.Notes
 
+	m.Priority = dataAO1.Priority
+
 	m.Topic = dataAO1.Topic
+
+	m.Urgency = dataAO1.Urgency
 
 	m.VerificationFid = dataAO1.VerificationFid
 
@@ -127,6 +148,8 @@ func (m CreateInteractionInvitationPayload) MarshalJSON() ([]byte, error) {
 
 		ExpiryTime string `json:"expiryTime,omitempty"`
 
+		Impact int64 `json:"impact,omitempty"`
+
 		InitialMessage string `json:"initialMessage,omitempty"`
 
 		JourneyTrackingFid string `json:"journeyTrackingFid,omitempty"`
@@ -135,7 +158,11 @@ func (m CreateInteractionInvitationPayload) MarshalJSON() ([]byte, error) {
 
 		Notes []*KeyValuePayload `json:"notes"`
 
+		Priority int64 `json:"priority,omitempty"`
+
 		Topic string `json:"topic,omitempty"`
+
+		Urgency int64 `json:"urgency,omitempty"`
 
 		VerificationFid string `json:"verificationFid,omitempty"`
 	}
@@ -148,6 +175,8 @@ func (m CreateInteractionInvitationPayload) MarshalJSON() ([]byte, error) {
 
 	dataAO1.ExpiryTime = m.ExpiryTime
 
+	dataAO1.Impact = m.Impact
+
 	dataAO1.InitialMessage = m.InitialMessage
 
 	dataAO1.JourneyTrackingFid = m.JourneyTrackingFid
@@ -156,7 +185,11 @@ func (m CreateInteractionInvitationPayload) MarshalJSON() ([]byte, error) {
 
 	dataAO1.Notes = m.Notes
 
+	dataAO1.Priority = m.Priority
+
 	dataAO1.Topic = m.Topic
+
+	dataAO1.Urgency = m.Urgency
 
 	dataAO1.VerificationFid = m.VerificationFid
 

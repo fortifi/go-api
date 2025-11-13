@@ -7,6 +7,7 @@ package reservations
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetReservationsKeyApplicationBrandFidOK) Code() int {
 }
 
 func (o *GetReservationsKeyApplicationBrandFidOK) Error() string {
-	return fmt.Sprintf("[GET /reservations/{key}/{application}/{brandFid}][%d] getReservationsKeyApplicationBrandFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /reservations/{key}/{application}/{brandFid}][%d] getReservationsKeyApplicationBrandFidOK %s", 200, payload)
 }
 
 func (o *GetReservationsKeyApplicationBrandFidOK) String() string {
-	return fmt.Sprintf("[GET /reservations/{key}/{application}/{brandFid}][%d] getReservationsKeyApplicationBrandFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /reservations/{key}/{application}/{brandFid}][%d] getReservationsKeyApplicationBrandFidOK %s", 200, payload)
 }
 
 func (o *GetReservationsKeyApplicationBrandFidOK) GetPayload() *GetReservationsKeyApplicationBrandFidOKBody {
@@ -161,11 +164,13 @@ func (o *GetReservationsKeyApplicationBrandFidDefault) Code() int {
 }
 
 func (o *GetReservationsKeyApplicationBrandFidDefault) Error() string {
-	return fmt.Sprintf("[GET /reservations/{key}/{application}/{brandFid}][%d] GetReservationsKeyApplicationBrandFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /reservations/{key}/{application}/{brandFid}][%d] GetReservationsKeyApplicationBrandFid default %s", o._statusCode, payload)
 }
 
 func (o *GetReservationsKeyApplicationBrandFidDefault) String() string {
-	return fmt.Sprintf("[GET /reservations/{key}/{application}/{brandFid}][%d] GetReservationsKeyApplicationBrandFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /reservations/{key}/{application}/{brandFid}][%d] GetReservationsKeyApplicationBrandFid default %s", o._statusCode, payload)
 }
 
 func (o *GetReservationsKeyApplicationBrandFidDefault) GetPayload() *models.Envelope {

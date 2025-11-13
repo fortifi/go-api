@@ -121,6 +121,9 @@ type Subscription struct {
 	// parent fid
 	ParentFid string `json:"parentFid,omitempty"`
 
+	// The FID of the payment method used to pay for this subscription (Blank will use account methods)
+	PaymentMethodFid string `json:"paymentMethodFid,omitempty"`
+
 	// price fid
 	PriceFid string `json:"priceFid,omitempty"`
 
@@ -261,6 +264,8 @@ func (m *Subscription) UnmarshalJSON(raw []byte) error {
 
 		ParentFid string `json:"parentFid,omitempty"`
 
+		PaymentMethodFid string `json:"paymentMethodFid,omitempty"`
+
 		PriceFid string `json:"priceFid,omitempty"`
 
 		ProductFid string `json:"productFid,omitempty"`
@@ -366,6 +371,8 @@ func (m *Subscription) UnmarshalJSON(raw []byte) error {
 	m.PaidUntil = dataAO1.PaidUntil
 
 	m.ParentFid = dataAO1.ParentFid
+
+	m.PaymentMethodFid = dataAO1.PaymentMethodFid
 
 	m.PriceFid = dataAO1.PriceFid
 
@@ -482,6 +489,8 @@ func (m Subscription) MarshalJSON() ([]byte, error) {
 
 		ParentFid string `json:"parentFid,omitempty"`
 
+		PaymentMethodFid string `json:"paymentMethodFid,omitempty"`
+
 		PriceFid string `json:"priceFid,omitempty"`
 
 		ProductFid string `json:"productFid,omitempty"`
@@ -584,6 +593,8 @@ func (m Subscription) MarshalJSON() ([]byte, error) {
 	dataAO1.PaidUntil = m.PaidUntil
 
 	dataAO1.ParentFid = m.ParentFid
+
+	dataAO1.PaymentMethodFid = m.PaymentMethodFid
 
 	dataAO1.PriceFid = m.PriceFid
 

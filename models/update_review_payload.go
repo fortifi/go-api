@@ -17,14 +17,11 @@ import (
 // swagger:model UpdateReviewPayload
 type UpdateReviewPayload struct {
 
-	// Title of the Review
-	DisplayName string `json:"displayName,omitempty"`
+	// The Content of the Review
+	Content string `json:"content,omitempty"`
 
-	// The Review Body
-	Review string `json:"review,omitempty"`
-
-	// The Fid of the Review to update
-	ReviewFid string `json:"reviewFid,omitempty"`
+	// Subject of the Review
+	Subject string `json:"subject,omitempty"`
 }
 
 // Validate validates this update review payload

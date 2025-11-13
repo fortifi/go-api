@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -86,11 +87,13 @@ func (o *GetCustomersCustomerFidInvoicesInvoiceFidDownloadOK) Code() int {
 }
 
 func (o *GetCustomersCustomerFidInvoicesInvoiceFidDownloadOK) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/invoices/{invoiceFid}/download][%d] getCustomersCustomerFidInvoicesInvoiceFidDownloadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/invoices/{invoiceFid}/download][%d] getCustomersCustomerFidInvoicesInvoiceFidDownloadOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidInvoicesInvoiceFidDownloadOK) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/invoices/{invoiceFid}/download][%d] getCustomersCustomerFidInvoicesInvoiceFidDownloadOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/invoices/{invoiceFid}/download][%d] getCustomersCustomerFidInvoicesInvoiceFidDownloadOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidInvoicesInvoiceFidDownloadOK) GetPayload() *models.InvoiceDownloadResponse {
@@ -158,11 +161,13 @@ func (o *GetCustomersCustomerFidInvoicesInvoiceFidDownloadDefault) Code() int {
 }
 
 func (o *GetCustomersCustomerFidInvoicesInvoiceFidDownloadDefault) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/invoices/{invoiceFid}/download][%d] GetCustomersCustomerFidInvoicesInvoiceFidDownload default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/invoices/{invoiceFid}/download][%d] GetCustomersCustomerFidInvoicesInvoiceFidDownload default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidInvoicesInvoiceFidDownloadDefault) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/invoices/{invoiceFid}/download][%d] GetCustomersCustomerFidInvoicesInvoiceFidDownload default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/invoices/{invoiceFid}/download][%d] GetCustomersCustomerFidInvoicesInvoiceFidDownload default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidInvoicesInvoiceFidDownloadDefault) GetPayload() *models.Envelope {

@@ -21,7 +21,7 @@ import (
 type InteractionType struct {
 
 	// name
-	// Enum: [unknown voice email chat ticket meeting remote letter social]
+	// Enum: ["unknown","voice","email","chat","ticket","meeting","remote","letter","social"]
 	Name string `json:"name,omitempty"`
 }
 

@@ -7,6 +7,7 @@ package orders
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PutOrdersOrderFidItemsProductFidOrderItemFidOK) Code() int {
 }
 
 func (o *PutOrdersOrderFidItemsProductFidOrderItemFidOK) Error() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/items/{productFid}/{orderItemFid}][%d] putOrdersOrderFidItemsProductFidOrderItemFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/items/{productFid}/{orderItemFid}][%d] putOrdersOrderFidItemsProductFidOrderItemFidOK %s", 200, payload)
 }
 
 func (o *PutOrdersOrderFidItemsProductFidOrderItemFidOK) String() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/items/{productFid}/{orderItemFid}][%d] putOrdersOrderFidItemsProductFidOrderItemFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/items/{productFid}/{orderItemFid}][%d] putOrdersOrderFidItemsProductFidOrderItemFidOK %s", 200, payload)
 }
 
 func (o *PutOrdersOrderFidItemsProductFidOrderItemFidOK) GetPayload() *PutOrdersOrderFidItemsProductFidOrderItemFidOKBody {
@@ -161,11 +164,13 @@ func (o *PutOrdersOrderFidItemsProductFidOrderItemFidDefault) Code() int {
 }
 
 func (o *PutOrdersOrderFidItemsProductFidOrderItemFidDefault) Error() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/items/{productFid}/{orderItemFid}][%d] PutOrdersOrderFidItemsProductFidOrderItemFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/items/{productFid}/{orderItemFid}][%d] PutOrdersOrderFidItemsProductFidOrderItemFid default %s", o._statusCode, payload)
 }
 
 func (o *PutOrdersOrderFidItemsProductFidOrderItemFidDefault) String() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/items/{productFid}/{orderItemFid}][%d] PutOrdersOrderFidItemsProductFidOrderItemFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/items/{productFid}/{orderItemFid}][%d] PutOrdersOrderFidItemsProductFidOrderItemFid default %s", o._statusCode, payload)
 }
 
 func (o *PutOrdersOrderFidItemsProductFidOrderItemFidDefault) GetPayload() *models.Envelope {

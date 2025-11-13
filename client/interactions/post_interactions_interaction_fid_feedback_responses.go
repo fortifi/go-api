@@ -7,6 +7,7 @@ package interactions
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostInteractionsInteractionFidFeedbackOK) Code() int {
 }
 
 func (o *PostInteractionsInteractionFidFeedbackOK) Error() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/feedback][%d] postInteractionsInteractionFidFeedbackOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/feedback][%d] postInteractionsInteractionFidFeedbackOK %s", 200, payload)
 }
 
 func (o *PostInteractionsInteractionFidFeedbackOK) String() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/feedback][%d] postInteractionsInteractionFidFeedbackOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/feedback][%d] postInteractionsInteractionFidFeedbackOK %s", 200, payload)
 }
 
 func (o *PostInteractionsInteractionFidFeedbackOK) GetPayload() *PostInteractionsInteractionFidFeedbackOKBody {
@@ -161,11 +164,13 @@ func (o *PostInteractionsInteractionFidFeedbackDefault) Code() int {
 }
 
 func (o *PostInteractionsInteractionFidFeedbackDefault) Error() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/feedback][%d] PostInteractionsInteractionFidFeedback default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/feedback][%d] PostInteractionsInteractionFidFeedback default %s", o._statusCode, payload)
 }
 
 func (o *PostInteractionsInteractionFidFeedbackDefault) String() string {
-	return fmt.Sprintf("[POST /interactions/{interactionFid}/feedback][%d] PostInteractionsInteractionFidFeedback default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /interactions/{interactionFid}/feedback][%d] PostInteractionsInteractionFidFeedback default %s", o._statusCode, payload)
 }
 
 func (o *PostInteractionsInteractionFidFeedbackDefault) GetPayload() *models.Envelope {

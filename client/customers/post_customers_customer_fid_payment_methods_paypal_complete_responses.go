@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PostCustomersCustomerFidPaymentMethodsPaypalCompleteOK) Code() int {
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsPaypalCompleteOK) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/paypal/complete][%d] postCustomersCustomerFidPaymentMethodsPaypalCompleteOK ", 200)
+	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/paypal/complete][%d] postCustomersCustomerFidPaymentMethodsPaypalCompleteOK", 200)
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsPaypalCompleteOK) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/paypal/complete][%d] postCustomersCustomerFidPaymentMethodsPaypalCompleteOK ", 200)
+	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/paypal/complete][%d] postCustomersCustomerFidPaymentMethodsPaypalCompleteOK", 200)
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsPaypalCompleteOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PostCustomersCustomerFidPaymentMethodsPaypalCompleteDefault) Code() int
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsPaypalCompleteDefault) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/paypal/complete][%d] PostCustomersCustomerFidPaymentMethodsPaypalComplete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/paypal/complete][%d] PostCustomersCustomerFidPaymentMethodsPaypalComplete default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsPaypalCompleteDefault) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/paypal/complete][%d] PostCustomersCustomerFidPaymentMethodsPaypalComplete default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/paymentMethods/paypal/complete][%d] PostCustomersCustomerFidPaymentMethodsPaypalComplete default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidPaymentMethodsPaypalCompleteDefault) GetPayload() *models.Envelope {

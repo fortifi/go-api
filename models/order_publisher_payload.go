@@ -27,7 +27,7 @@ type OrderPublisherPayload struct {
 	CampaignHash string `json:"campaignHash,omitempty"`
 
 	// (required) Trigger the publisher action when the order gets to this state
-	// Enum: [approved setup complete]
+	// Enum: ["approved","setup","complete"]
 	OnState string `json:"onState,omitempty"`
 
 	// Sub Tracking ID 1 (leave blank to use visitor ID values)

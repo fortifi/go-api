@@ -7,6 +7,7 @@ package orders
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetOrdersOrderFidFraudScanOK) Code() int {
 }
 
 func (o *GetOrdersOrderFidFraudScanOK) Error() string {
-	return fmt.Sprintf("[GET /orders/{orderFid}/fraudScan][%d] getOrdersOrderFidFraudScanOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /orders/{orderFid}/fraudScan][%d] getOrdersOrderFidFraudScanOK %s", 200, payload)
 }
 
 func (o *GetOrdersOrderFidFraudScanOK) String() string {
-	return fmt.Sprintf("[GET /orders/{orderFid}/fraudScan][%d] getOrdersOrderFidFraudScanOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /orders/{orderFid}/fraudScan][%d] getOrdersOrderFidFraudScanOK %s", 200, payload)
 }
 
 func (o *GetOrdersOrderFidFraudScanOK) GetPayload() *GetOrdersOrderFidFraudScanOKBody {
@@ -161,11 +164,13 @@ func (o *GetOrdersOrderFidFraudScanDefault) Code() int {
 }
 
 func (o *GetOrdersOrderFidFraudScanDefault) Error() string {
-	return fmt.Sprintf("[GET /orders/{orderFid}/fraudScan][%d] GetOrdersOrderFidFraudScan default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /orders/{orderFid}/fraudScan][%d] GetOrdersOrderFidFraudScan default %s", o._statusCode, payload)
 }
 
 func (o *GetOrdersOrderFidFraudScanDefault) String() string {
-	return fmt.Sprintf("[GET /orders/{orderFid}/fraudScan][%d] GetOrdersOrderFidFraudScan default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /orders/{orderFid}/fraudScan][%d] GetOrdersOrderFidFraudScan default %s", o._statusCode, payload)
 }
 
 func (o *GetOrdersOrderFidFraudScanDefault) GetPayload() *models.Envelope {

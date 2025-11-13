@@ -6,6 +6,7 @@ package customers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -85,11 +86,11 @@ func (o *PutCustomersCustomerFidSubscriptionTypeOK) Code() int {
 }
 
 func (o *PutCustomersCustomerFidSubscriptionTypeOK) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptionType][%d] putCustomersCustomerFidSubscriptionTypeOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptionType][%d] putCustomersCustomerFidSubscriptionTypeOK", 200)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionTypeOK) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptionType][%d] putCustomersCustomerFidSubscriptionTypeOK ", 200)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptionType][%d] putCustomersCustomerFidSubscriptionTypeOK", 200)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionTypeOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
@@ -146,11 +147,13 @@ func (o *PutCustomersCustomerFidSubscriptionTypeDefault) Code() int {
 }
 
 func (o *PutCustomersCustomerFidSubscriptionTypeDefault) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptionType][%d] PutCustomersCustomerFidSubscriptionType default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptionType][%d] PutCustomersCustomerFidSubscriptionType default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionTypeDefault) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptionType][%d] PutCustomersCustomerFidSubscriptionType default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptionType][%d] PutCustomersCustomerFidSubscriptionType default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionTypeDefault) GetPayload() *models.Envelope {

@@ -6,6 +6,7 @@ package orders
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -29,12 +30,6 @@ func (o *PutOrdersOrderFidSetChargeIDReader) ReadResponse(response runtime.Clien
 			return nil, err
 		}
 		return result, nil
-	case 400:
-		result := NewPutOrdersOrderFidSetChargeIDBadRequest()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
 	default:
 		result := NewPutOrdersOrderFidSetChargeIDDefault(response.Code())
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -92,11 +87,13 @@ func (o *PutOrdersOrderFidSetChargeIDOK) Code() int {
 }
 
 func (o *PutOrdersOrderFidSetChargeIDOK) Error() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/setChargeId][%d] putOrdersOrderFidSetChargeIdOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/setChargeId][%d] putOrdersOrderFidSetChargeIdOK %s", 200, payload)
 }
 
 func (o *PutOrdersOrderFidSetChargeIDOK) String() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/setChargeId][%d] putOrdersOrderFidSetChargeIdOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/setChargeId][%d] putOrdersOrderFidSetChargeIdOK %s", 200, payload)
 }
 
 func (o *PutOrdersOrderFidSetChargeIDOK) GetPayload() *models.Envelope {
@@ -104,74 +101,6 @@ func (o *PutOrdersOrderFidSetChargeIDOK) GetPayload() *models.Envelope {
 }
 
 func (o *PutOrdersOrderFidSetChargeIDOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	o.Payload = new(models.Envelope)
-
-	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewPutOrdersOrderFidSetChargeIDBadRequest creates a PutOrdersOrderFidSetChargeIDBadRequest with default headers values
-func NewPutOrdersOrderFidSetChargeIDBadRequest() *PutOrdersOrderFidSetChargeIDBadRequest {
-	return &PutOrdersOrderFidSetChargeIDBadRequest{}
-}
-
-/*
-PutOrdersOrderFidSetChargeIDBadRequest describes a response with status code 400, with default header values.
-
-Invalid Charge ID
-*/
-type PutOrdersOrderFidSetChargeIDBadRequest struct {
-	Payload *models.Envelope
-}
-
-// IsSuccess returns true when this put orders order fid set charge Id bad request response has a 2xx status code
-func (o *PutOrdersOrderFidSetChargeIDBadRequest) IsSuccess() bool {
-	return false
-}
-
-// IsRedirect returns true when this put orders order fid set charge Id bad request response has a 3xx status code
-func (o *PutOrdersOrderFidSetChargeIDBadRequest) IsRedirect() bool {
-	return false
-}
-
-// IsClientError returns true when this put orders order fid set charge Id bad request response has a 4xx status code
-func (o *PutOrdersOrderFidSetChargeIDBadRequest) IsClientError() bool {
-	return true
-}
-
-// IsServerError returns true when this put orders order fid set charge Id bad request response has a 5xx status code
-func (o *PutOrdersOrderFidSetChargeIDBadRequest) IsServerError() bool {
-	return false
-}
-
-// IsCode returns true when this put orders order fid set charge Id bad request response a status code equal to that given
-func (o *PutOrdersOrderFidSetChargeIDBadRequest) IsCode(code int) bool {
-	return code == 400
-}
-
-// Code gets the status code for the put orders order fid set charge Id bad request response
-func (o *PutOrdersOrderFidSetChargeIDBadRequest) Code() int {
-	return 400
-}
-
-func (o *PutOrdersOrderFidSetChargeIDBadRequest) Error() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/setChargeId][%d] putOrdersOrderFidSetChargeIdBadRequest  %+v", 400, o.Payload)
-}
-
-func (o *PutOrdersOrderFidSetChargeIDBadRequest) String() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/setChargeId][%d] putOrdersOrderFidSetChargeIdBadRequest  %+v", 400, o.Payload)
-}
-
-func (o *PutOrdersOrderFidSetChargeIDBadRequest) GetPayload() *models.Envelope {
-	return o.Payload
-}
-
-func (o *PutOrdersOrderFidSetChargeIDBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.Envelope)
 
@@ -232,11 +161,13 @@ func (o *PutOrdersOrderFidSetChargeIDDefault) Code() int {
 }
 
 func (o *PutOrdersOrderFidSetChargeIDDefault) Error() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/setChargeId][%d] PutOrdersOrderFidSetChargeID default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/setChargeId][%d] PutOrdersOrderFidSetChargeID default %s", o._statusCode, payload)
 }
 
 func (o *PutOrdersOrderFidSetChargeIDDefault) String() string {
-	return fmt.Sprintf("[PUT /orders/{orderFid}/setChargeId][%d] PutOrdersOrderFidSetChargeID default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /orders/{orderFid}/setChargeId][%d] PutOrdersOrderFidSetChargeID default %s", o._statusCode, payload)
 }
 
 func (o *PutOrdersOrderFidSetChargeIDDefault) GetPayload() *models.Envelope {

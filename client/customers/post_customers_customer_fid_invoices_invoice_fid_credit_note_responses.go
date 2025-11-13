@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteOK) Code() int {
 }
 
 func (o *PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteOK) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/invoices/{invoiceFid}/creditNote][%d] postCustomersCustomerFidInvoicesInvoiceFidCreditNoteOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/invoices/{invoiceFid}/creditNote][%d] postCustomersCustomerFidInvoicesInvoiceFidCreditNoteOK %s", 200, payload)
 }
 
 func (o *PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteOK) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/invoices/{invoiceFid}/creditNote][%d] postCustomersCustomerFidInvoicesInvoiceFidCreditNoteOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/invoices/{invoiceFid}/creditNote][%d] postCustomersCustomerFidInvoicesInvoiceFidCreditNoteOK %s", 200, payload)
 }
 
 func (o *PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteOK) GetPayload() *PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteOKBody {
@@ -161,11 +164,13 @@ func (o *PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteDefault) Code() int
 }
 
 func (o *PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteDefault) Error() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/invoices/{invoiceFid}/creditNote][%d] PostCustomersCustomerFidInvoicesInvoiceFidCreditNote default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/invoices/{invoiceFid}/creditNote][%d] PostCustomersCustomerFidInvoicesInvoiceFidCreditNote default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteDefault) String() string {
-	return fmt.Sprintf("[POST /customers/{customerFid}/invoices/{invoiceFid}/creditNote][%d] PostCustomersCustomerFidInvoicesInvoiceFidCreditNote default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /customers/{customerFid}/invoices/{invoiceFid}/creditNote][%d] PostCustomersCustomerFidInvoicesInvoiceFidCreditNote default %s", o._statusCode, payload)
 }
 
 func (o *PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteDefault) GetPayload() *models.Envelope {

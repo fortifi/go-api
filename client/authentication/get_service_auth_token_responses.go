@@ -7,6 +7,7 @@ package authentication
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetServiceAuthTokenOK) Code() int {
 }
 
 func (o *GetServiceAuthTokenOK) Error() string {
-	return fmt.Sprintf("[POST /svcauth/verify][%d] getServiceAuthTokenOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /svcauth/verify][%d] getServiceAuthTokenOK %s", 200, payload)
 }
 
 func (o *GetServiceAuthTokenOK) String() string {
-	return fmt.Sprintf("[POST /svcauth/verify][%d] getServiceAuthTokenOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /svcauth/verify][%d] getServiceAuthTokenOK %s", 200, payload)
 }
 
 func (o *GetServiceAuthTokenOK) GetPayload() *GetServiceAuthTokenOKBody {
@@ -161,11 +164,13 @@ func (o *GetServiceAuthTokenDefault) Code() int {
 }
 
 func (o *GetServiceAuthTokenDefault) Error() string {
-	return fmt.Sprintf("[POST /svcauth/verify][%d] getServiceAuthToken default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /svcauth/verify][%d] getServiceAuthToken default %s", o._statusCode, payload)
 }
 
 func (o *GetServiceAuthTokenDefault) String() string {
-	return fmt.Sprintf("[POST /svcauth/verify][%d] getServiceAuthToken default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /svcauth/verify][%d] getServiceAuthToken default %s", o._statusCode, payload)
 }
 
 func (o *GetServiceAuthTokenDefault) GetPayload() *models.Envelope {

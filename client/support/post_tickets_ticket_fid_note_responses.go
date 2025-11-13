@@ -7,6 +7,7 @@ package support
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PostTicketsTicketFidNoteOK) Code() int {
 }
 
 func (o *PostTicketsTicketFidNoteOK) Error() string {
-	return fmt.Sprintf("[POST /tickets/{ticketFid}/note][%d] postTicketsTicketFidNoteOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /tickets/{ticketFid}/note][%d] postTicketsTicketFidNoteOK %s", 200, payload)
 }
 
 func (o *PostTicketsTicketFidNoteOK) String() string {
-	return fmt.Sprintf("[POST /tickets/{ticketFid}/note][%d] postTicketsTicketFidNoteOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /tickets/{ticketFid}/note][%d] postTicketsTicketFidNoteOK %s", 200, payload)
 }
 
 func (o *PostTicketsTicketFidNoteOK) GetPayload() *PostTicketsTicketFidNoteOKBody {
@@ -161,11 +164,13 @@ func (o *PostTicketsTicketFidNoteDefault) Code() int {
 }
 
 func (o *PostTicketsTicketFidNoteDefault) Error() string {
-	return fmt.Sprintf("[POST /tickets/{ticketFid}/note][%d] PostTicketsTicketFidNote default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /tickets/{ticketFid}/note][%d] PostTicketsTicketFidNote default %s", o._statusCode, payload)
 }
 
 func (o *PostTicketsTicketFidNoteDefault) String() string {
-	return fmt.Sprintf("[POST /tickets/{ticketFid}/note][%d] PostTicketsTicketFidNote default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /tickets/{ticketFid}/note][%d] PostTicketsTicketFidNote default %s", o._statusCode, payload)
 }
 
 func (o *PostTicketsTicketFidNoteDefault) GetPayload() *models.Envelope {

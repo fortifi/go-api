@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundOK) C
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundOK) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/calculateRefund][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/calculateRefund][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundOK %s", 200, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundOK) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/calculateRefund][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/calculateRefund][%d] putCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundOK %s", 200, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundOK) GetPayload() *PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundOKBody {
@@ -161,11 +164,13 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundDefau
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundDefault) Error() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/calculateRefund][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefund default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/calculateRefund][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefund default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundDefault) String() string {
-	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/calculateRefund][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefund default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /customers/{customerFid}/subscriptions/{subscriptionFid}/calculateRefund][%d] PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefund default %s", o._statusCode, payload)
 }
 
 func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundDefault) GetPayload() *models.Envelope {

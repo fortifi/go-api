@@ -7,6 +7,7 @@ package customers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -89,11 +90,13 @@ func (o *GetCustomersCustomerFidContactsContactFidOK) Code() int {
 }
 
 func (o *GetCustomersCustomerFidContactsContactFidOK) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/contacts/{contactFid}][%d] getCustomersCustomerFidContactsContactFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/contacts/{contactFid}][%d] getCustomersCustomerFidContactsContactFidOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidContactsContactFidOK) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/contacts/{contactFid}][%d] getCustomersCustomerFidContactsContactFidOK  %+v", 200, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/contacts/{contactFid}][%d] getCustomersCustomerFidContactsContactFidOK %s", 200, payload)
 }
 
 func (o *GetCustomersCustomerFidContactsContactFidOK) GetPayload() *GetCustomersCustomerFidContactsContactFidOKBody {
@@ -161,11 +164,13 @@ func (o *GetCustomersCustomerFidContactsContactFidDefault) Code() int {
 }
 
 func (o *GetCustomersCustomerFidContactsContactFidDefault) Error() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/contacts/{contactFid}][%d] GetCustomersCustomerFidContactsContactFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/contacts/{contactFid}][%d] GetCustomersCustomerFidContactsContactFid default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidContactsContactFidDefault) String() string {
-	return fmt.Sprintf("[GET /customers/{customerFid}/contacts/{contactFid}][%d] GetCustomersCustomerFidContactsContactFid default  %+v", o._statusCode, o.Payload)
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /customers/{customerFid}/contacts/{contactFid}][%d] GetCustomersCustomerFidContactsContactFid default %s", o._statusCode, payload)
 }
 
 func (o *GetCustomersCustomerFidContactsContactFidDefault) GetPayload() *models.Envelope {
