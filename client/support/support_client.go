@@ -68,6 +68,8 @@ type ClientService interface {
 
 	PutTicketsTicketFidStatus(params *PutTicketsTicketFidStatusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutTicketsTicketFidStatusOK, error)
 
+	PutTicketsTicketFidUpdateCcBcc(params *PutTicketsTicketFidUpdateCcBccParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutTicketsTicketFidUpdateCcBccOK, error)
+
 	SetTransport(transport runtime.ClientTransport)
 }
 
@@ -338,6 +340,46 @@ func (a *Client) PutTicketsTicketFidStatus(params *PutTicketsTicketFidStatusPara
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*PutTicketsTicketFidStatusDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PutTicketsTicketFidUpdateCcBcc updates cc and bcc fields for ticket
+
+Set respective fields to add and remove Cc/Bcc fields
+*/
+func (a *Client) PutTicketsTicketFidUpdateCcBcc(params *PutTicketsTicketFidUpdateCcBccParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutTicketsTicketFidUpdateCcBccOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPutTicketsTicketFidUpdateCcBccParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PutTicketsTicketFidUpdateCcBcc",
+		Method:             "PUT",
+		PathPattern:        "/tickets/{ticketFid}/updateCcBcc",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PutTicketsTicketFidUpdateCcBccReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PutTicketsTicketFidUpdateCcBccOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PutTicketsTicketFidUpdateCcBccDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

@@ -62,6 +62,8 @@ type ClientService interface {
 
 	GetProductsOffers(params *GetProductsOffersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsOffersOK, error)
 
+	GetProductsProductFid(params *GetProductsProductFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidOK, error)
+
 	GetProductsProductFidPricebands(params *GetProductsProductFidPricebandsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidPricebandsOK, error)
 
 	GetProductsProductFidPrices(params *GetProductsProductFidPricesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidPricesOK, error)
@@ -224,6 +226,44 @@ func (a *Client) GetProductsOffers(params *GetProductsOffersParams, authInfo run
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*GetProductsOffersDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+GetProductsProductFid retrieves product details
+*/
+func (a *Client) GetProductsProductFid(params *GetProductsProductFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetProductsProductFidParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "GetProductsProductFid",
+		Method:             "GET",
+		PathPattern:        "/products/{productFid}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetProductsProductFidReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetProductsProductFidOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*GetProductsProductFidDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

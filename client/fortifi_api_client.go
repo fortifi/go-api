@@ -39,7 +39,6 @@ import (
 	"github.com/fortifi/go-api/client/reasons"
 	"github.com/fortifi/go-api/client/reservations"
 	"github.com/fortifi/go-api/client/reviews"
-	"github.com/fortifi/go-api/client/service_status"
 	"github.com/fortifi/go-api/client/support"
 	"github.com/fortifi/go-api/client/transaction"
 )
@@ -115,7 +114,6 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *FortifiAPI
 	cli.Reasons = reasons.New(transport, formats)
 	cli.Reservations = reservations.New(transport, formats)
 	cli.Reviews = reviews.New(transport, formats)
-	cli.ServiceStatus = service_status.New(transport, formats)
 	cli.Support = support.New(transport, formats)
 	cli.Transaction = transaction.New(transport, formats)
 	return cli
@@ -220,8 +218,6 @@ type FortifiAPI struct {
 
 	Reviews reviews.ClientService
 
-	ServiceStatus service_status.ClientService
-
 	Support support.ClientService
 
 	Transaction transaction.ClientService
@@ -261,7 +257,6 @@ func (c *FortifiAPI) SetTransport(transport runtime.ClientTransport) {
 	c.Reasons.SetTransport(transport)
 	c.Reservations.SetTransport(transport)
 	c.Reviews.SetTransport(transport)
-	c.ServiceStatus.SetTransport(transport)
 	c.Support.SetTransport(transport)
 	c.Transaction.SetTransport(transport)
 }

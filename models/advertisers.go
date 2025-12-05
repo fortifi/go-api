@@ -21,7 +21,7 @@ type Advertisers struct {
 	Pagination
 
 	// advertisers
-	Advertisers []*Publisher `json:"advertisers"`
+	Advertisers []*Advertiser `json:"advertisers"`
 }
 
 // UnmarshalJSON unmarshals this object from a JSON structure
@@ -35,7 +35,7 @@ func (m *Advertisers) UnmarshalJSON(raw []byte) error {
 
 	// AO1
 	var dataAO1 struct {
-		Advertisers []*Publisher `json:"advertisers"`
+		Advertisers []*Advertiser `json:"advertisers"`
 	}
 	if err := swag.ReadJSON(raw, &dataAO1); err != nil {
 		return err
@@ -56,7 +56,7 @@ func (m Advertisers) MarshalJSON() ([]byte, error) {
 	}
 	_parts = append(_parts, aO0)
 	var dataAO1 struct {
-		Advertisers []*Publisher `json:"advertisers"`
+		Advertisers []*Advertiser `json:"advertisers"`
 	}
 
 	dataAO1.Advertisers = m.Advertisers

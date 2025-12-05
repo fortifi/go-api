@@ -8,6 +8,7 @@ package models
 import (
 	"context"
 	"encoding/json"
+	"strconv"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -26,8 +27,14 @@ type CreateTicketPayload struct {
 	// attachments
 	Attachments []string `json:"attachments"`
 
+	// key = Email | value = Display Name
+	Bcc []*KeyValuePayload `json:"bcc"`
+
 	// brand fid
 	BrandFid string `json:"brandFid,omitempty"`
+
+	// key = Email | value = Display Name
+	Cc []*KeyValuePayload `json:"cc"`
 
 	// customer email
 	CustomerEmail string `json:"customerEmail,omitempty"`
@@ -79,6 +86,14 @@ type CreateTicketPayload struct {
 func (m *CreateTicketPayload) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateBcc(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateCc(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateImpact(formats); err != nil {
 		res = append(res, err)
 	}
@@ -94,6 +109,58 @@ func (m *CreateTicketPayload) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *CreateTicketPayload) validateBcc(formats strfmt.Registry) error {
+	if swag.IsZero(m.Bcc) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Bcc); i++ {
+		if swag.IsZero(m.Bcc[i]) { // not required
+			continue
+		}
+
+		if m.Bcc[i] != nil {
+			if err := m.Bcc[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("bcc" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("bcc" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *CreateTicketPayload) validateCc(formats strfmt.Registry) error {
+	if swag.IsZero(m.Cc) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Cc); i++ {
+		if swag.IsZero(m.Cc[i]) { // not required
+			continue
+		}
+
+		if m.Cc[i] != nil {
+			if err := m.Cc[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("cc" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("cc" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
 	return nil
 }
 
@@ -253,8 +320,71 @@ func (m *CreateTicketPayload) validateUrgency(formats strfmt.Registry) error {
 	return nil
 }
 
-// ContextValidate validates this create ticket payload based on context it is used
+// ContextValidate validate this create ticket payload based on the context it is used
 func (m *CreateTicketPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateBcc(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCc(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *CreateTicketPayload) contextValidateBcc(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Bcc); i++ {
+
+		if m.Bcc[i] != nil {
+
+			if swag.IsZero(m.Bcc[i]) { // not required
+				return nil
+			}
+
+			if err := m.Bcc[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("bcc" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("bcc" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *CreateTicketPayload) contextValidateCc(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Cc); i++ {
+
+		if m.Cc[i] != nil {
+
+			if swag.IsZero(m.Cc[i]) { // not required
+				return nil
+			}
+
+			if err := m.Cc[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("cc" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("cc" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
 	return nil
 }
 
