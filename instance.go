@@ -105,11 +105,11 @@ func (f *Instance) GetAPIInstance() (*client.FortifiAPI, error) {
 		return nil, fmt.Errorf("Failed to authenticate with Fortifi: %s", err.Error())
 	}
 
-	f.apiInstance = client.New(transport, strfmt.Default)
+	f.apiInstance = client.New(NewTransport(transport, f.getNewToken), strfmt.Default)
 	return f.apiInstance, nil
 }
 
-func (f *Instance) getNewToken(transport *httptransport.Runtime) error {
+func (f *Instance) getNewToken(transport runtime.ClientTransport) error {
 	c := client.New(transport, strfmt.Default)
 	p := authentication.NewGetServiceAuthTokenParams()
 	p.Payload = &models.ServiceAccountCredentialsPayload{
