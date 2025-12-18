@@ -38,3 +38,12 @@ Use Fortifi
 	fmt.Printf("Customers First Name is %s\n", response.Payload.FirstName)
 
 ```
+
+## Prerequisite: Install go-swagger
+
+Before generating code, ensure you have the correct tap for go-swagger:
+
+```sh
+brew tap go-swagger/go-swagger
+brew install go-swagger
+```
