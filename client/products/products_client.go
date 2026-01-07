@@ -54,27 +54,103 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
+	DeleteProductsGroupsProductGroupFidProductsProductFid(params *DeleteProductsGroupsProductGroupFidProductsProductFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteProductsGroupsProductGroupFidProductsProductFidOK, error)
+
 	GetProducts(params *GetProductsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsOK, error)
 
 	GetProductsGroups(params *GetProductsGroupsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsGroupsOK, error)
+
+	GetProductsGroupsProductGroupFid(params *GetProductsGroupsProductGroupFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsGroupsProductGroupFidOK, error)
 
 	GetProductsGroupsProductGroupFidProducts(params *GetProductsGroupsProductGroupFidProductsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsGroupsProductGroupFidProductsOK, error)
 
 	GetProductsOffers(params *GetProductsOffersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsOffersOK, error)
 
+	GetProductsOffersOfferFid(params *GetProductsOffersOfferFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsOffersOfferFidOK, error)
+
 	GetProductsProductFid(params *GetProductsProductFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidOK, error)
 
 	GetProductsProductFidPricebands(params *GetProductsProductFidPricebandsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidPricebandsOK, error)
 
+	GetProductsProductFidPricebandsPriceBandFid(params *GetProductsProductFidPricebandsPriceBandFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidPricebandsPriceBandFidOK, error)
+
 	GetProductsProductFidPrices(params *GetProductsProductFidPricesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidPricesOK, error)
 
+	GetProductsProductFidPricesPriceFid(params *GetProductsProductFidPricesPriceFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidPricesPriceFidOK, error)
+
 	GetProductsProductFidSkus(params *GetProductsProductFidSkusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidSkusOK, error)
+
+	GetProductsProductFidSkusSkuFid(params *GetProductsProductFidSkusSkuFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidSkusSkuFidOK, error)
+
+	PostProducts(params *PostProductsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsOK, error)
+
+	PostProductsGroups(params *PostProductsGroupsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsGroupsOK, error)
+
+	PostProductsGroupsProductGroupFidProductsProductFid(params *PostProductsGroupsProductGroupFidProductsProductFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsGroupsProductGroupFidProductsProductFidOK, error)
+
+	PostProductsOffers(params *PostProductsOffersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsOffersOK, error)
 
 	PostProductsProductFidAvailabilityCheck(params *PostProductsProductFidAvailabilityCheckParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsProductFidAvailabilityCheckOK, error)
 
 	PostProductsProductFidAvailabilityReserve(params *PostProductsProductFidAvailabilityReserveParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsProductFidAvailabilityReserveOK, error)
 
+	PostProductsProductFidPricebands(params *PostProductsProductFidPricebandsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsProductFidPricebandsOK, error)
+
+	PostProductsProductFidPrices(params *PostProductsProductFidPricesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsProductFidPricesOK, error)
+
+	PostProductsProductFidSkus(params *PostProductsProductFidSkusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsProductFidSkusOK, error)
+
+	PutProductsGroupsProductGroupFid(params *PutProductsGroupsProductGroupFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsGroupsProductGroupFidOK, error)
+
+	PutProductsOffersOfferFid(params *PutProductsOffersOfferFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsOffersOfferFidOK, error)
+
+	PutProductsProductFid(params *PutProductsProductFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsProductFidOK, error)
+
+	PutProductsProductFidPricebandsPriceBandFid(params *PutProductsProductFidPricebandsPriceBandFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsProductFidPricebandsPriceBandFidOK, error)
+
+	PutProductsProductFidPricesPriceFid(params *PutProductsProductFidPricesPriceFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsProductFidPricesPriceFidOK, error)
+
+	PutProductsProductFidSkusSkuFid(params *PutProductsProductFidSkusSkuFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsProductFidSkusSkuFidOK, error)
+
 	SetTransport(transport runtime.ClientTransport)
+}
+
+/*
+DeleteProductsGroupsProductGroupFidProductsProductFid removes a product from the group
+*/
+func (a *Client) DeleteProductsGroupsProductGroupFidProductsProductFid(params *DeleteProductsGroupsProductGroupFidProductsProductFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteProductsGroupsProductGroupFidProductsProductFidOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeleteProductsGroupsProductGroupFidProductsProductFidParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "DeleteProductsGroupsProductGroupFidProductsProductFid",
+		Method:             "DELETE",
+		PathPattern:        "/products/groups/{productGroupFid}/products/{productFid}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &DeleteProductsGroupsProductGroupFidProductsProductFidReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DeleteProductsGroupsProductGroupFidProductsProductFidOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*DeleteProductsGroupsProductGroupFidProductsProductFidDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
 /*
@@ -150,6 +226,44 @@ func (a *Client) GetProductsGroups(params *GetProductsGroupsParams, authInfo run
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*GetProductsGroupsDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+GetProductsGroupsProductGroupFid retrieves product group details
+*/
+func (a *Client) GetProductsGroupsProductGroupFid(params *GetProductsGroupsProductGroupFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsGroupsProductGroupFidOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetProductsGroupsProductGroupFidParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "GetProductsGroupsProductGroupFid",
+		Method:             "GET",
+		PathPattern:        "/products/groups/{productGroupFid}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetProductsGroupsProductGroupFidReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetProductsGroupsProductGroupFidOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*GetProductsGroupsProductGroupFidDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -230,6 +344,44 @@ func (a *Client) GetProductsOffers(params *GetProductsOffersParams, authInfo run
 }
 
 /*
+GetProductsOffersOfferFid retrieves offer details
+*/
+func (a *Client) GetProductsOffersOfferFid(params *GetProductsOffersOfferFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsOffersOfferFidOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetProductsOffersOfferFidParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "GetProductsOffersOfferFid",
+		Method:             "GET",
+		PathPattern:        "/products/offers/{offerFid}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetProductsOffersOfferFidReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetProductsOffersOfferFidOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*GetProductsOffersOfferFidDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
 GetProductsProductFid retrieves product details
 */
 func (a *Client) GetProductsProductFid(params *GetProductsProductFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidOK, error) {
@@ -306,6 +458,44 @@ func (a *Client) GetProductsProductFidPricebands(params *GetProductsProductFidPr
 }
 
 /*
+GetProductsProductFidPricebandsPriceBandFid retrieves product price band details
+*/
+func (a *Client) GetProductsProductFidPricebandsPriceBandFid(params *GetProductsProductFidPricebandsPriceBandFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidPricebandsPriceBandFidOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetProductsProductFidPricebandsPriceBandFidParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "GetProductsProductFidPricebandsPriceBandFid",
+		Method:             "GET",
+		PathPattern:        "/products/{productFid}/pricebands/{priceBandFid}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetProductsProductFidPricebandsPriceBandFidReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetProductsProductFidPricebandsPriceBandFidOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*GetProductsProductFidPricebandsPriceBandFidDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
 GetProductsProductFidPrices retrieves product prices
 */
 func (a *Client) GetProductsProductFidPrices(params *GetProductsProductFidPricesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidPricesOK, error) {
@@ -344,6 +534,44 @@ func (a *Client) GetProductsProductFidPrices(params *GetProductsProductFidPrices
 }
 
 /*
+GetProductsProductFidPricesPriceFid retrieves product price details
+*/
+func (a *Client) GetProductsProductFidPricesPriceFid(params *GetProductsProductFidPricesPriceFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidPricesPriceFidOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetProductsProductFidPricesPriceFidParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "GetProductsProductFidPricesPriceFid",
+		Method:             "GET",
+		PathPattern:        "/products/{productFid}/prices/{priceFid}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetProductsProductFidPricesPriceFidReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetProductsProductFidPricesPriceFidOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*GetProductsProductFidPricesPriceFidDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
 GetProductsProductFidSkus retrieves product s k us
 */
 func (a *Client) GetProductsProductFidSkus(params *GetProductsProductFidSkusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidSkusOK, error) {
@@ -378,6 +606,196 @@ func (a *Client) GetProductsProductFidSkus(params *GetProductsProductFidSkusPara
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*GetProductsProductFidSkusDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+GetProductsProductFidSkusSkuFid retrieves product s k u details
+*/
+func (a *Client) GetProductsProductFidSkusSkuFid(params *GetProductsProductFidSkusSkuFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidSkusSkuFidOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetProductsProductFidSkusSkuFidParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "GetProductsProductFidSkusSkuFid",
+		Method:             "GET",
+		PathPattern:        "/products/{productFid}/skus/{skuFid}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetProductsProductFidSkusSkuFidReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetProductsProductFidSkusSkuFidOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*GetProductsProductFidSkusSkuFidDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PostProducts creates a new product
+*/
+func (a *Client) PostProducts(params *PostProductsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPostProductsParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PostProducts",
+		Method:             "POST",
+		PathPattern:        "/products",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PostProductsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PostProductsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PostProductsDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PostProductsGroups creates a new product group
+*/
+func (a *Client) PostProductsGroups(params *PostProductsGroupsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsGroupsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPostProductsGroupsParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PostProductsGroups",
+		Method:             "POST",
+		PathPattern:        "/products/groups",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PostProductsGroupsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PostProductsGroupsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PostProductsGroupsDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PostProductsGroupsProductGroupFidProductsProductFid adds a product to the group
+*/
+func (a *Client) PostProductsGroupsProductGroupFidProductsProductFid(params *PostProductsGroupsProductGroupFidProductsProductFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsGroupsProductGroupFidProductsProductFidOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPostProductsGroupsProductGroupFidProductsProductFidParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PostProductsGroupsProductGroupFidProductsProductFid",
+		Method:             "POST",
+		PathPattern:        "/products/groups/{productGroupFid}/products/{productFid}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PostProductsGroupsProductGroupFidProductsProductFidReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PostProductsGroupsProductGroupFidProductsProductFidOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PostProductsGroupsProductGroupFidProductsProductFidDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PostProductsOffers creates a new offer
+*/
+func (a *Client) PostProductsOffers(params *PostProductsOffersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsOffersOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPostProductsOffersParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PostProductsOffers",
+		Method:             "POST",
+		PathPattern:        "/products/offers",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PostProductsOffersReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PostProductsOffersOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PostProductsOffersDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -454,6 +872,348 @@ func (a *Client) PostProductsProductFidAvailabilityReserve(params *PostProductsP
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*PostProductsProductFidAvailabilityReserveDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PostProductsProductFidPricebands creates a new product price band
+*/
+func (a *Client) PostProductsProductFidPricebands(params *PostProductsProductFidPricebandsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsProductFidPricebandsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPostProductsProductFidPricebandsParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PostProductsProductFidPricebands",
+		Method:             "POST",
+		PathPattern:        "/products/{productFid}/pricebands",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PostProductsProductFidPricebandsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PostProductsProductFidPricebandsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PostProductsProductFidPricebandsDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PostProductsProductFidPrices creates a new product price
+*/
+func (a *Client) PostProductsProductFidPrices(params *PostProductsProductFidPricesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsProductFidPricesOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPostProductsProductFidPricesParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PostProductsProductFidPrices",
+		Method:             "POST",
+		PathPattern:        "/products/{productFid}/prices",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PostProductsProductFidPricesReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PostProductsProductFidPricesOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PostProductsProductFidPricesDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PostProductsProductFidSkus creates a new product s k u
+*/
+func (a *Client) PostProductsProductFidSkus(params *PostProductsProductFidSkusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsProductFidSkusOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPostProductsProductFidSkusParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PostProductsProductFidSkus",
+		Method:             "POST",
+		PathPattern:        "/products/{productFid}/skus",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PostProductsProductFidSkusReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PostProductsProductFidSkusOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PostProductsProductFidSkusDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PutProductsGroupsProductGroupFid updates product group details
+*/
+func (a *Client) PutProductsGroupsProductGroupFid(params *PutProductsGroupsProductGroupFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsGroupsProductGroupFidOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPutProductsGroupsProductGroupFidParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PutProductsGroupsProductGroupFid",
+		Method:             "PUT",
+		PathPattern:        "/products/groups/{productGroupFid}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PutProductsGroupsProductGroupFidReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PutProductsGroupsProductGroupFidOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PutProductsGroupsProductGroupFidDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PutProductsOffersOfferFid updates offer details
+*/
+func (a *Client) PutProductsOffersOfferFid(params *PutProductsOffersOfferFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsOffersOfferFidOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPutProductsOffersOfferFidParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PutProductsOffersOfferFid",
+		Method:             "PUT",
+		PathPattern:        "/products/offers/{offerFid}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PutProductsOffersOfferFidReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PutProductsOffersOfferFidOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PutProductsOffersOfferFidDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PutProductsProductFid updates product details
+*/
+func (a *Client) PutProductsProductFid(params *PutProductsProductFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsProductFidOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPutProductsProductFidParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PutProductsProductFid",
+		Method:             "PUT",
+		PathPattern:        "/products/{productFid}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PutProductsProductFidReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PutProductsProductFidOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PutProductsProductFidDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PutProductsProductFidPricebandsPriceBandFid updates product price band details
+*/
+func (a *Client) PutProductsProductFidPricebandsPriceBandFid(params *PutProductsProductFidPricebandsPriceBandFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsProductFidPricebandsPriceBandFidOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPutProductsProductFidPricebandsPriceBandFidParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PutProductsProductFidPricebandsPriceBandFid",
+		Method:             "PUT",
+		PathPattern:        "/products/{productFid}/pricebands/{priceBandFid}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PutProductsProductFidPricebandsPriceBandFidReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PutProductsProductFidPricebandsPriceBandFidOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PutProductsProductFidPricebandsPriceBandFidDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PutProductsProductFidPricesPriceFid updates product price details
+*/
+func (a *Client) PutProductsProductFidPricesPriceFid(params *PutProductsProductFidPricesPriceFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsProductFidPricesPriceFidOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPutProductsProductFidPricesPriceFidParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PutProductsProductFidPricesPriceFid",
+		Method:             "PUT",
+		PathPattern:        "/products/{productFid}/prices/{priceFid}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PutProductsProductFidPricesPriceFidReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PutProductsProductFidPricesPriceFidOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PutProductsProductFidPricesPriceFidDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PutProductsProductFidSkusSkuFid updates product s k u details
+*/
+func (a *Client) PutProductsProductFidSkusSkuFid(params *PutProductsProductFidSkusSkuFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsProductFidSkusSkuFidOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPutProductsProductFidSkusSkuFidParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PutProductsProductFidSkusSkuFid",
+		Method:             "PUT",
+		PathPattern:        "/products/{productFid}/skus/{skuFid}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PutProductsProductFidSkusSkuFidReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PutProductsProductFidSkusSkuFidOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*PutProductsProductFidSkusSkuFidDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

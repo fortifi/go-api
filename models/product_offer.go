@@ -37,7 +37,7 @@ type ProductOffer struct {
 
 	// Time in ISO 8601 standard with optional fractions of a second e.g 2015-12-05T13:11:59.888Z
 	// Format: date-time
-	ExpiryTime strfmt.DateTime `json:"expiryTime,omitempty"`
+	ExpiryTime *strfmt.DateTime `json:"expiryTime,omitempty"`
 
 	// max usages
 	MaxUsages int32 `json:"maxUsages,omitempty"`
@@ -82,7 +82,7 @@ func (m *ProductOffer) UnmarshalJSON(raw []byte) error {
 
 		DiscountType DiscountType `json:"discountType,omitempty"`
 
-		ExpiryTime strfmt.DateTime `json:"expiryTime,omitempty"`
+		ExpiryTime *strfmt.DateTime `json:"expiryTime,omitempty"`
 
 		MaxUsages int32 `json:"maxUsages,omitempty"`
 
@@ -151,7 +151,7 @@ func (m ProductOffer) MarshalJSON() ([]byte, error) {
 
 		DiscountType DiscountType `json:"discountType,omitempty"`
 
-		ExpiryTime strfmt.DateTime `json:"expiryTime,omitempty"`
+		ExpiryTime *strfmt.DateTime `json:"expiryTime,omitempty"`
 
 		MaxUsages int32 `json:"maxUsages,omitempty"`
 
