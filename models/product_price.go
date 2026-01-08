@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
+	"github.com/go-openapi/validate"
 )
 
 // ProductPrice Product Price
@@ -18,6 +19,9 @@ import (
 // swagger:model ProductPrice
 type ProductPrice struct {
 	Entity
+
+	// cancel days
+	CancelDays int32 `json:"cancelDays,omitempty"`
 
 	// currency
 	Currency string `json:"currency,omitempty"`
@@ -49,8 +53,25 @@ type ProductPrice struct {
 	// sku fid
 	SkuFid string `json:"skuFid,omitempty"`
 
+	// suspend after days
+	SuspendAfterDays int32 `json:"suspendAfterDays,omitempty"`
+
+	// suspend style
+	// Max Length: 20
+	SuspendStyle string `json:"suspendStyle,omitempty"`
+
 	// tax inclusive
 	TaxInclusive bool `json:"taxInclusive,omitempty"`
+
+	// termination fee
+	TerminationFee float32 `json:"terminationFee,omitempty"`
+
+	// termination type
+	// Max Length: 15
+	TerminationType string `json:"terminationType,omitempty"`
+
+	// visibility
+	Visibility int32 `json:"visibility,omitempty"`
 }
 
 // UnmarshalJSON unmarshals this object from a JSON structure
@@ -64,6 +85,8 @@ func (m *ProductPrice) UnmarshalJSON(raw []byte) error {
 
 	// AO1
 	var dataAO1 struct {
+		CancelDays int32 `json:"cancelDays,omitempty"`
+
 		Currency string `json:"currency,omitempty"`
 
 		Cycle string `json:"cycle,omitempty"`
@@ -84,11 +107,23 @@ func (m *ProductPrice) UnmarshalJSON(raw []byte) error {
 
 		SkuFid string `json:"skuFid,omitempty"`
 
+		SuspendAfterDays int32 `json:"suspendAfterDays,omitempty"`
+
+		SuspendStyle string `json:"suspendStyle,omitempty"`
+
 		TaxInclusive bool `json:"taxInclusive,omitempty"`
+
+		TerminationFee float32 `json:"terminationFee,omitempty"`
+
+		TerminationType string `json:"terminationType,omitempty"`
+
+		Visibility int32 `json:"visibility,omitempty"`
 	}
 	if err := swag.ReadJSON(raw, &dataAO1); err != nil {
 		return err
 	}
+
+	m.CancelDays = dataAO1.CancelDays
 
 	m.Currency = dataAO1.Currency
 
@@ -110,7 +145,17 @@ func (m *ProductPrice) UnmarshalJSON(raw []byte) error {
 
 	m.SkuFid = dataAO1.SkuFid
 
+	m.SuspendAfterDays = dataAO1.SuspendAfterDays
+
+	m.SuspendStyle = dataAO1.SuspendStyle
+
 	m.TaxInclusive = dataAO1.TaxInclusive
+
+	m.TerminationFee = dataAO1.TerminationFee
+
+	m.TerminationType = dataAO1.TerminationType
+
+	m.Visibility = dataAO1.Visibility
 
 	return nil
 }
@@ -125,6 +170,8 @@ func (m ProductPrice) MarshalJSON() ([]byte, error) {
 	}
 	_parts = append(_parts, aO0)
 	var dataAO1 struct {
+		CancelDays int32 `json:"cancelDays,omitempty"`
+
 		Currency string `json:"currency,omitempty"`
 
 		Cycle string `json:"cycle,omitempty"`
@@ -145,8 +192,20 @@ func (m ProductPrice) MarshalJSON() ([]byte, error) {
 
 		SkuFid string `json:"skuFid,omitempty"`
 
+		SuspendAfterDays int32 `json:"suspendAfterDays,omitempty"`
+
+		SuspendStyle string `json:"suspendStyle,omitempty"`
+
 		TaxInclusive bool `json:"taxInclusive,omitempty"`
+
+		TerminationFee float32 `json:"terminationFee,omitempty"`
+
+		TerminationType string `json:"terminationType,omitempty"`
+
+		Visibility int32 `json:"visibility,omitempty"`
 	}
+
+	dataAO1.CancelDays = m.CancelDays
 
 	dataAO1.Currency = m.Currency
 
@@ -168,7 +227,17 @@ func (m ProductPrice) MarshalJSON() ([]byte, error) {
 
 	dataAO1.SkuFid = m.SkuFid
 
+	dataAO1.SuspendAfterDays = m.SuspendAfterDays
+
+	dataAO1.SuspendStyle = m.SuspendStyle
+
 	dataAO1.TaxInclusive = m.TaxInclusive
+
+	dataAO1.TerminationFee = m.TerminationFee
+
+	dataAO1.TerminationType = m.TerminationType
+
+	dataAO1.Visibility = m.Visibility
 
 	jsonDataAO1, errAO1 := swag.WriteJSON(dataAO1)
 	if errAO1 != nil {
@@ -191,6 +260,14 @@ func (m *ProductPrice) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateSuspendStyle(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateTerminationType(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
@@ -209,6 +286,32 @@ func (m *ProductPrice) validateCycleType(formats strfmt.Registry) error {
 		} else if ce, ok := err.(*errors.CompositeError); ok {
 			return ce.ValidateName("cycleType")
 		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *ProductPrice) validateSuspendStyle(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.SuspendStyle) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("suspendStyle", "body", m.SuspendStyle, 20); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ProductPrice) validateTerminationType(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.TerminationType) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("terminationType", "body", m.TerminationType, 15); err != nil {
 		return err
 	}
 
