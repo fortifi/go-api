@@ -29,10 +29,10 @@ type Ticket struct {
 	Attachments int64 `json:"attachments,omitempty"`
 
 	// bcc
-	Bcc string `json:"bcc,omitempty"`
+	Bcc map[string]string `json:"bcc,omitempty"`
 
 	// cc
-	Cc string `json:"cc,omitempty"`
+	Cc map[string]string `json:"cc,omitempty"`
 
 	// company fid
 	CompanyFid string `json:"companyFid,omitempty"`
@@ -139,9 +139,9 @@ func (m *Ticket) UnmarshalJSON(raw []byte) error {
 
 		Attachments int64 `json:"attachments,omitempty"`
 
-		Bcc string `json:"bcc,omitempty"`
+		Bcc map[string]string `json:"bcc,omitempty"`
 
-		Cc string `json:"cc,omitempty"`
+		Cc map[string]string `json:"cc,omitempty"`
 
 		CompanyFid string `json:"companyFid,omitempty"`
 
@@ -292,9 +292,9 @@ func (m Ticket) MarshalJSON() ([]byte, error) {
 
 		Attachments int64 `json:"attachments,omitempty"`
 
-		Bcc string `json:"bcc,omitempty"`
+		Bcc map[string]string `json:"bcc,omitempty"`
 
-		Cc string `json:"cc,omitempty"`
+		Cc map[string]string `json:"cc,omitempty"`
 
 		CompanyFid string `json:"companyFid,omitempty"`
 

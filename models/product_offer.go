@@ -20,6 +20,9 @@ import (
 type ProductOffer struct {
 	Entity
 
+	// api only
+	APIOnly bool `json:"apiOnly,omitempty"`
+
 	// apply fid
 	ApplyFid string `json:"applyFid,omitempty"`
 
@@ -37,7 +40,7 @@ type ProductOffer struct {
 
 	// Time in ISO 8601 standard with optional fractions of a second e.g 2015-12-05T13:11:59.888Z
 	// Format: date-time
-	ExpiryTime strfmt.DateTime `json:"expiryTime,omitempty"`
+	ExpiryTime *strfmt.DateTime `json:"expiryTime,omitempty"`
 
 	// max usages
 	MaxUsages int32 `json:"maxUsages,omitempty"`
@@ -72,6 +75,8 @@ func (m *ProductOffer) UnmarshalJSON(raw []byte) error {
 
 	// AO1
 	var dataAO1 struct {
+		APIOnly bool `json:"apiOnly,omitempty"`
+
 		ApplyFid string `json:"applyFid,omitempty"`
 
 		CouponCode string `json:"couponCode,omitempty"`
@@ -82,7 +87,7 @@ func (m *ProductOffer) UnmarshalJSON(raw []byte) error {
 
 		DiscountType DiscountType `json:"discountType,omitempty"`
 
-		ExpiryTime strfmt.DateTime `json:"expiryTime,omitempty"`
+		ExpiryTime *strfmt.DateTime `json:"expiryTime,omitempty"`
 
 		MaxUsages int32 `json:"maxUsages,omitempty"`
 
@@ -101,6 +106,8 @@ func (m *ProductOffer) UnmarshalJSON(raw []byte) error {
 	if err := swag.ReadJSON(raw, &dataAO1); err != nil {
 		return err
 	}
+
+	m.APIOnly = dataAO1.APIOnly
 
 	m.ApplyFid = dataAO1.ApplyFid
 
@@ -141,6 +148,8 @@ func (m ProductOffer) MarshalJSON() ([]byte, error) {
 	}
 	_parts = append(_parts, aO0)
 	var dataAO1 struct {
+		APIOnly bool `json:"apiOnly,omitempty"`
+
 		ApplyFid string `json:"applyFid,omitempty"`
 
 		CouponCode string `json:"couponCode,omitempty"`
@@ -151,7 +160,7 @@ func (m ProductOffer) MarshalJSON() ([]byte, error) {
 
 		DiscountType DiscountType `json:"discountType,omitempty"`
 
-		ExpiryTime strfmt.DateTime `json:"expiryTime,omitempty"`
+		ExpiryTime *strfmt.DateTime `json:"expiryTime,omitempty"`
 
 		MaxUsages int32 `json:"maxUsages,omitempty"`
 
@@ -167,6 +176,8 @@ func (m ProductOffer) MarshalJSON() ([]byte, error) {
 
 		TermType CycleTermType `json:"termType,omitempty"`
 	}
+
+	dataAO1.APIOnly = m.APIOnly
 
 	dataAO1.ApplyFid = m.ApplyFid
 
