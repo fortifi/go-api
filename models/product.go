@@ -22,6 +22,12 @@ type Product struct {
 	// allow quantity
 	AllowQuantity int32 `json:"allowQuantity,omitempty"`
 
+	// can modify sku
+	CanModifySku bool `json:"canModifySku,omitempty"`
+
+	// can suspend
+	CanSuspend bool `json:"canSuspend,omitempty"`
+
 	// default price
 	DefaultPrice *ProductPrice `json:"defaultPrice,omitempty"`
 
@@ -66,6 +72,10 @@ func (m *Product) UnmarshalJSON(raw []byte) error {
 	var dataAO1 struct {
 		AllowQuantity int32 `json:"allowQuantity,omitempty"`
 
+		CanModifySku bool `json:"canModifySku,omitempty"`
+
+		CanSuspend bool `json:"canSuspend,omitempty"`
+
 		DefaultPrice *ProductPrice `json:"defaultPrice,omitempty"`
 
 		DefaultPriceFid string `json:"defaultPriceFid,omitempty"`
@@ -91,6 +101,10 @@ func (m *Product) UnmarshalJSON(raw []byte) error {
 	}
 
 	m.AllowQuantity = dataAO1.AllowQuantity
+
+	m.CanModifySku = dataAO1.CanModifySku
+
+	m.CanSuspend = dataAO1.CanSuspend
 
 	m.DefaultPrice = dataAO1.DefaultPrice
 
@@ -127,6 +141,10 @@ func (m Product) MarshalJSON() ([]byte, error) {
 	var dataAO1 struct {
 		AllowQuantity int32 `json:"allowQuantity,omitempty"`
 
+		CanModifySku bool `json:"canModifySku,omitempty"`
+
+		CanSuspend bool `json:"canSuspend,omitempty"`
+
 		DefaultPrice *ProductPrice `json:"defaultPrice,omitempty"`
 
 		DefaultPriceFid string `json:"defaultPriceFid,omitempty"`
@@ -149,6 +167,10 @@ func (m Product) MarshalJSON() ([]byte, error) {
 	}
 
 	dataAO1.AllowQuantity = m.AllowQuantity
+
+	dataAO1.CanModifySku = m.CanModifySku
+
+	dataAO1.CanSuspend = m.CanSuspend
 
 	dataAO1.DefaultPrice = m.DefaultPrice
 
