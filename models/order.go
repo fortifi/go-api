@@ -100,6 +100,18 @@ type Order struct {
 	// payment account fid
 	PaymentAccountFid string `json:"paymentAccountFid,omitempty"`
 
+	// payment method bin
+	PaymentMethodBin string `json:"paymentMethodBin,omitempty"`
+
+	// payment method last4
+	PaymentMethodLast4 string `json:"paymentMethodLast4,omitempty"`
+
+	// payment method name
+	PaymentMethodName string `json:"paymentMethodName,omitempty"`
+
+	// payment method type
+	PaymentMethodType string `json:"paymentMethodType,omitempty"`
+
 	// payment service type
 	PaymentServiceType string `json:"paymentServiceType,omitempty"`
 
@@ -191,6 +203,14 @@ func (m *Order) UnmarshalJSON(raw []byte) error {
 
 		PaymentAccountFid string `json:"paymentAccountFid,omitempty"`
 
+		PaymentMethodBin string `json:"paymentMethodBin,omitempty"`
+
+		PaymentMethodLast4 string `json:"paymentMethodLast4,omitempty"`
+
+		PaymentMethodName string `json:"paymentMethodName,omitempty"`
+
+		PaymentMethodType string `json:"paymentMethodType,omitempty"`
+
 		PaymentServiceType string `json:"paymentServiceType,omitempty"`
 
 		QueueFid string `json:"queueFid,omitempty"`
@@ -264,6 +284,14 @@ func (m *Order) UnmarshalJSON(raw []byte) error {
 	m.ParentOrderFid = dataAO1.ParentOrderFid
 
 	m.PaymentAccountFid = dataAO1.PaymentAccountFid
+
+	m.PaymentMethodBin = dataAO1.PaymentMethodBin
+
+	m.PaymentMethodLast4 = dataAO1.PaymentMethodLast4
+
+	m.PaymentMethodName = dataAO1.PaymentMethodName
+
+	m.PaymentMethodType = dataAO1.PaymentMethodType
 
 	m.PaymentServiceType = dataAO1.PaymentServiceType
 
@@ -348,6 +376,14 @@ func (m Order) MarshalJSON() ([]byte, error) {
 
 		PaymentAccountFid string `json:"paymentAccountFid,omitempty"`
 
+		PaymentMethodBin string `json:"paymentMethodBin,omitempty"`
+
+		PaymentMethodLast4 string `json:"paymentMethodLast4,omitempty"`
+
+		PaymentMethodName string `json:"paymentMethodName,omitempty"`
+
+		PaymentMethodType string `json:"paymentMethodType,omitempty"`
+
 		PaymentServiceType string `json:"paymentServiceType,omitempty"`
 
 		QueueFid string `json:"queueFid,omitempty"`
@@ -418,6 +454,14 @@ func (m Order) MarshalJSON() ([]byte, error) {
 	dataAO1.ParentOrderFid = m.ParentOrderFid
 
 	dataAO1.PaymentAccountFid = m.PaymentAccountFid
+
+	dataAO1.PaymentMethodBin = m.PaymentMethodBin
+
+	dataAO1.PaymentMethodLast4 = m.PaymentMethodLast4
+
+	dataAO1.PaymentMethodName = m.PaymentMethodName
+
+	dataAO1.PaymentMethodType = m.PaymentMethodType
 
 	dataAO1.PaymentServiceType = m.PaymentServiceType
 
