@@ -87,6 +87,10 @@ type Order struct {
 	// offer fid
 	OfferFid string `json:"offerFid,omitempty"`
 
+	// Time in ISO 8601 standard with optional fractions of a second e.g 2015-12-05T13:11:59.888Z
+	// Format: date-time
+	OrderDate strfmt.DateTime `json:"orderDate,omitempty"`
+
 	// order hash
 	OrderHash string `json:"orderHash,omitempty"`
 
@@ -195,6 +199,8 @@ func (m *Order) UnmarshalJSON(raw []byte) error {
 
 		OfferFid string `json:"offerFid,omitempty"`
 
+		OrderDate strfmt.DateTime `json:"orderDate,omitempty"`
+
 		OrderHash string `json:"orderHash,omitempty"`
 
 		OrderType string `json:"orderType,omitempty"`
@@ -276,6 +282,8 @@ func (m *Order) UnmarshalJSON(raw []byte) error {
 	m.LastPaymentFid = dataAO1.LastPaymentFid
 
 	m.OfferFid = dataAO1.OfferFid
+
+	m.OrderDate = dataAO1.OrderDate
 
 	m.OrderHash = dataAO1.OrderHash
 
@@ -368,6 +376,8 @@ func (m Order) MarshalJSON() ([]byte, error) {
 
 		OfferFid string `json:"offerFid,omitempty"`
 
+		OrderDate strfmt.DateTime `json:"orderDate,omitempty"`
+
 		OrderHash string `json:"orderHash,omitempty"`
 
 		OrderType string `json:"orderType,omitempty"`
@@ -447,6 +457,8 @@ func (m Order) MarshalJSON() ([]byte, error) {
 
 	dataAO1.OfferFid = m.OfferFid
 
+	dataAO1.OrderDate = m.OrderDate
+
 	dataAO1.OrderHash = m.OrderHash
 
 	dataAO1.OrderType = m.OrderType
@@ -498,6 +510,10 @@ func (m *Order) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateOrderDate(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateOrderType(formats); err != nil {
 		res = append(res, err)
 	}
@@ -505,6 +521,19 @@ func (m *Order) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *Order) validateOrderDate(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.OrderDate) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("orderDate", "body", "date-time", m.OrderDate.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
