@@ -27,6 +27,12 @@ type Order struct {
 	// amount paid
 	AmountPaid float32 `json:"amountPaid,omitempty"`
 
+	// amount paid unit
+	AmountPaidUnit int64 `json:"amountPaidUnit,omitempty"`
+
+	// amount unit
+	AmountUnit int64 `json:"amountUnit,omitempty"`
+
 	// approved by fid
 	ApprovedByFid string `json:"approvedByFid,omitempty"`
 
@@ -53,6 +59,9 @@ type Order struct {
 
 	// discount amount
 	DiscountAmount float32 `json:"discountAmount,omitempty"`
+
+	// discount amount unit
+	DiscountAmountUnit int64 `json:"discountAmountUnit,omitempty"`
 
 	// discount type
 	DiscountType string `json:"discountType,omitempty"`
@@ -125,8 +134,14 @@ type Order struct {
 	// setup amount
 	SetupAmount float32 `json:"setupAmount,omitempty"`
 
+	// setup amount unit
+	SetupAmountUnit int64 `json:"setupAmountUnit,omitempty"`
+
 	// setup discount amount
 	SetupDiscountAmount float32 `json:"setupDiscountAmount,omitempty"`
+
+	// setup discount amount unit
+	SetupDiscountAmountUnit int64 `json:"setupDiscountAmountUnit,omitempty"`
 
 	// state
 	State int32 `json:"state,omitempty"`
@@ -134,8 +149,14 @@ type Order struct {
 	// tax amount
 	TaxAmount float32 `json:"taxAmount,omitempty"`
 
+	// tax amount unit
+	TaxAmountUnit int64 `json:"taxAmountUnit,omitempty"`
+
 	// total amount
 	TotalAmount float32 `json:"totalAmount,omitempty"`
+
+	// total amount unit
+	TotalAmountUnit int64 `json:"totalAmountUnit,omitempty"`
 
 	// user agent
 	UserAgent string `json:"userAgent,omitempty"`
@@ -159,6 +180,10 @@ func (m *Order) UnmarshalJSON(raw []byte) error {
 
 		AmountPaid float32 `json:"amountPaid,omitempty"`
 
+		AmountPaidUnit int64 `json:"amountPaidUnit,omitempty"`
+
+		AmountUnit int64 `json:"amountUnit,omitempty"`
+
 		ApprovedByFid string `json:"approvedByFid,omitempty"`
 
 		AuthorizeID string `json:"authorizeId,omitempty"`
@@ -176,6 +201,8 @@ func (m *Order) UnmarshalJSON(raw []byte) error {
 		CustomerFid string `json:"customerFid,omitempty"`
 
 		DiscountAmount float32 `json:"discountAmount,omitempty"`
+
+		DiscountAmountUnit int64 `json:"discountAmountUnit,omitempty"`
 
 		DiscountType string `json:"discountType,omitempty"`
 
@@ -223,13 +250,21 @@ func (m *Order) UnmarshalJSON(raw []byte) error {
 
 		SetupAmount float32 `json:"setupAmount,omitempty"`
 
+		SetupAmountUnit int64 `json:"setupAmountUnit,omitempty"`
+
 		SetupDiscountAmount float32 `json:"setupDiscountAmount,omitempty"`
+
+		SetupDiscountAmountUnit int64 `json:"setupDiscountAmountUnit,omitempty"`
 
 		State int32 `json:"state,omitempty"`
 
 		TaxAmount float32 `json:"taxAmount,omitempty"`
 
+		TaxAmountUnit int64 `json:"taxAmountUnit,omitempty"`
+
 		TotalAmount float32 `json:"totalAmount,omitempty"`
+
+		TotalAmountUnit int64 `json:"totalAmountUnit,omitempty"`
 
 		UserAgent string `json:"userAgent,omitempty"`
 
@@ -242,6 +277,10 @@ func (m *Order) UnmarshalJSON(raw []byte) error {
 	m.Amount = dataAO1.Amount
 
 	m.AmountPaid = dataAO1.AmountPaid
+
+	m.AmountPaidUnit = dataAO1.AmountPaidUnit
+
+	m.AmountUnit = dataAO1.AmountUnit
 
 	m.ApprovedByFid = dataAO1.ApprovedByFid
 
@@ -260,6 +299,8 @@ func (m *Order) UnmarshalJSON(raw []byte) error {
 	m.CustomerFid = dataAO1.CustomerFid
 
 	m.DiscountAmount = dataAO1.DiscountAmount
+
+	m.DiscountAmountUnit = dataAO1.DiscountAmountUnit
 
 	m.DiscountType = dataAO1.DiscountType
 
@@ -307,13 +348,21 @@ func (m *Order) UnmarshalJSON(raw []byte) error {
 
 	m.SetupAmount = dataAO1.SetupAmount
 
+	m.SetupAmountUnit = dataAO1.SetupAmountUnit
+
 	m.SetupDiscountAmount = dataAO1.SetupDiscountAmount
+
+	m.SetupDiscountAmountUnit = dataAO1.SetupDiscountAmountUnit
 
 	m.State = dataAO1.State
 
 	m.TaxAmount = dataAO1.TaxAmount
 
+	m.TaxAmountUnit = dataAO1.TaxAmountUnit
+
 	m.TotalAmount = dataAO1.TotalAmount
+
+	m.TotalAmountUnit = dataAO1.TotalAmountUnit
 
 	m.UserAgent = dataAO1.UserAgent
 
@@ -336,6 +385,10 @@ func (m Order) MarshalJSON() ([]byte, error) {
 
 		AmountPaid float32 `json:"amountPaid,omitempty"`
 
+		AmountPaidUnit int64 `json:"amountPaidUnit,omitempty"`
+
+		AmountUnit int64 `json:"amountUnit,omitempty"`
+
 		ApprovedByFid string `json:"approvedByFid,omitempty"`
 
 		AuthorizeID string `json:"authorizeId,omitempty"`
@@ -353,6 +406,8 @@ func (m Order) MarshalJSON() ([]byte, error) {
 		CustomerFid string `json:"customerFid,omitempty"`
 
 		DiscountAmount float32 `json:"discountAmount,omitempty"`
+
+		DiscountAmountUnit int64 `json:"discountAmountUnit,omitempty"`
 
 		DiscountType string `json:"discountType,omitempty"`
 
@@ -400,13 +455,21 @@ func (m Order) MarshalJSON() ([]byte, error) {
 
 		SetupAmount float32 `json:"setupAmount,omitempty"`
 
+		SetupAmountUnit int64 `json:"setupAmountUnit,omitempty"`
+
 		SetupDiscountAmount float32 `json:"setupDiscountAmount,omitempty"`
+
+		SetupDiscountAmountUnit int64 `json:"setupDiscountAmountUnit,omitempty"`
 
 		State int32 `json:"state,omitempty"`
 
 		TaxAmount float32 `json:"taxAmount,omitempty"`
 
+		TaxAmountUnit int64 `json:"taxAmountUnit,omitempty"`
+
 		TotalAmount float32 `json:"totalAmount,omitempty"`
+
+		TotalAmountUnit int64 `json:"totalAmountUnit,omitempty"`
 
 		UserAgent string `json:"userAgent,omitempty"`
 
@@ -416,6 +479,10 @@ func (m Order) MarshalJSON() ([]byte, error) {
 	dataAO1.Amount = m.Amount
 
 	dataAO1.AmountPaid = m.AmountPaid
+
+	dataAO1.AmountPaidUnit = m.AmountPaidUnit
+
+	dataAO1.AmountUnit = m.AmountUnit
 
 	dataAO1.ApprovedByFid = m.ApprovedByFid
 
@@ -434,6 +501,8 @@ func (m Order) MarshalJSON() ([]byte, error) {
 	dataAO1.CustomerFid = m.CustomerFid
 
 	dataAO1.DiscountAmount = m.DiscountAmount
+
+	dataAO1.DiscountAmountUnit = m.DiscountAmountUnit
 
 	dataAO1.DiscountType = m.DiscountType
 
@@ -481,13 +550,21 @@ func (m Order) MarshalJSON() ([]byte, error) {
 
 	dataAO1.SetupAmount = m.SetupAmount
 
+	dataAO1.SetupAmountUnit = m.SetupAmountUnit
+
 	dataAO1.SetupDiscountAmount = m.SetupDiscountAmount
+
+	dataAO1.SetupDiscountAmountUnit = m.SetupDiscountAmountUnit
 
 	dataAO1.State = m.State
 
 	dataAO1.TaxAmount = m.TaxAmount
 
+	dataAO1.TaxAmountUnit = m.TaxAmountUnit
+
 	dataAO1.TotalAmount = m.TotalAmount
+
+	dataAO1.TotalAmountUnit = m.TotalAmountUnit
 
 	dataAO1.UserAgent = m.UserAgent
 

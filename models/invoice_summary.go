@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	"strconv"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -25,6 +26,9 @@ type InvoiceSummary struct {
 
 	// base amount
 	BaseAmount float32 `json:"baseAmount,omitempty"`
+
+	// credit notes
+	CreditNotes []*CreditNote `json:"creditNotes"`
 
 	// credited amount
 	CreditedAmount float32 `json:"creditedAmount,omitempty"`
@@ -84,6 +88,8 @@ func (m *InvoiceSummary) UnmarshalJSON(raw []byte) error {
 
 		BaseAmount float32 `json:"baseAmount,omitempty"`
 
+		CreditNotes []*CreditNote `json:"creditNotes"`
+
 		CreditedAmount float32 `json:"creditedAmount,omitempty"`
 
 		Currency string `json:"currency,omitempty"`
@@ -117,6 +123,8 @@ func (m *InvoiceSummary) UnmarshalJSON(raw []byte) error {
 	m.AmountPaid = dataAO1.AmountPaid
 
 	m.BaseAmount = dataAO1.BaseAmount
+
+	m.CreditNotes = dataAO1.CreditNotes
 
 	m.CreditedAmount = dataAO1.CreditedAmount
 
@@ -161,6 +169,8 @@ func (m InvoiceSummary) MarshalJSON() ([]byte, error) {
 
 		BaseAmount float32 `json:"baseAmount,omitempty"`
 
+		CreditNotes []*CreditNote `json:"creditNotes"`
+
 		CreditedAmount float32 `json:"creditedAmount,omitempty"`
 
 		Currency string `json:"currency,omitempty"`
@@ -191,6 +201,8 @@ func (m InvoiceSummary) MarshalJSON() ([]byte, error) {
 	dataAO1.AmountPaid = m.AmountPaid
 
 	dataAO1.BaseAmount = m.BaseAmount
+
+	dataAO1.CreditNotes = m.CreditNotes
 
 	dataAO1.CreditedAmount = m.CreditedAmount
 
@@ -235,6 +247,10 @@ func (m *InvoiceSummary) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateCreditNotes(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDueDate(formats); err != nil {
 		res = append(res, err)
 	}
@@ -250,6 +266,33 @@ func (m *InvoiceSummary) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *InvoiceSummary) validateCreditNotes(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.CreditNotes) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.CreditNotes); i++ {
+		if swag.IsZero(m.CreditNotes[i]) { // not required
+			continue
+		}
+
+		if m.CreditNotes[i] != nil {
+			if err := m.CreditNotes[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("creditNotes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("creditNotes" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
 	return nil
 }
 
@@ -301,9 +344,38 @@ func (m *InvoiceSummary) ContextValidate(ctx context.Context, formats strfmt.Reg
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateCreditNotes(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *InvoiceSummary) contextValidateCreditNotes(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.CreditNotes); i++ {
+
+		if m.CreditNotes[i] != nil {
+
+			if swag.IsZero(m.CreditNotes[i]) { // not required
+				return nil
+			}
+
+			if err := m.CreditNotes[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("creditNotes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("creditNotes" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
 	return nil
 }
 

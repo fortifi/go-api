@@ -38,6 +38,9 @@ type OrderProduct struct {
 	// discount amount
 	DiscountAmount float32 `json:"discountAmount,omitempty"`
 
+	// discount amount unit
+	DiscountAmountUnit int64 `json:"discountAmountUnit,omitempty"`
+
 	// identity
 	Identity string `json:"identity,omitempty"`
 
@@ -59,6 +62,9 @@ type OrderProduct struct {
 	// price fid
 	PriceFid string `json:"priceFid,omitempty"`
 
+	// price unit
+	PriceUnit int64 `json:"priceUnit,omitempty"`
+
 	// product fid
 	ProductFid string `json:"productFid,omitempty"`
 
@@ -75,8 +81,14 @@ type OrderProduct struct {
 	// setup discount amount
 	SetupDiscountAmount float32 `json:"setupDiscountAmount,omitempty"`
 
+	// setup discount amount unit
+	SetupDiscountAmountUnit int64 `json:"setupDiscountAmountUnit,omitempty"`
+
 	// setup fee
 	SetupFee float32 `json:"setupFee,omitempty"`
+
+	// setup fee unit
+	SetupFeeUnit int64 `json:"setupFeeUnit,omitempty"`
 
 	// sku fid
 	SkuFid string `json:"skuFid,omitempty"`
@@ -84,8 +96,14 @@ type OrderProduct struct {
 	// tax amount
 	TaxAmount float32 `json:"taxAmount,omitempty"`
 
+	// tax amount unit
+	TaxAmountUnit int64 `json:"taxAmountUnit,omitempty"`
+
 	// total amount
 	TotalAmount float32 `json:"totalAmount,omitempty"`
+
+	// total amount unit
+	TotalAmountUnit int64 `json:"totalAmountUnit,omitempty"`
 }
 
 // UnmarshalJSON unmarshals this object from a JSON structure
@@ -111,6 +129,8 @@ func (m *OrderProduct) UnmarshalJSON(raw []byte) error {
 
 		DiscountAmount float32 `json:"discountAmount,omitempty"`
 
+		DiscountAmountUnit int64 `json:"discountAmountUnit,omitempty"`
+
 		Identity string `json:"identity,omitempty"`
 
 		InitialTermEndDate string `json:"initialTermEndDate,omitempty"`
@@ -125,6 +145,8 @@ func (m *OrderProduct) UnmarshalJSON(raw []byte) error {
 
 		PriceFid string `json:"priceFid,omitempty"`
 
+		PriceUnit int64 `json:"priceUnit,omitempty"`
+
 		ProductFid string `json:"productFid,omitempty"`
 
 		PurchaseFid string `json:"purchaseFid,omitempty"`
@@ -135,13 +157,21 @@ func (m *OrderProduct) UnmarshalJSON(raw []byte) error {
 
 		SetupDiscountAmount float32 `json:"setupDiscountAmount,omitempty"`
 
+		SetupDiscountAmountUnit int64 `json:"setupDiscountAmountUnit,omitempty"`
+
 		SetupFee float32 `json:"setupFee,omitempty"`
+
+		SetupFeeUnit int64 `json:"setupFeeUnit,omitempty"`
 
 		SkuFid string `json:"skuFid,omitempty"`
 
 		TaxAmount float32 `json:"taxAmount,omitempty"`
 
+		TaxAmountUnit int64 `json:"taxAmountUnit,omitempty"`
+
 		TotalAmount float32 `json:"totalAmount,omitempty"`
+
+		TotalAmountUnit int64 `json:"totalAmountUnit,omitempty"`
 	}
 	if err := swag.ReadJSON(raw, &dataAO1); err != nil {
 		return err
@@ -159,6 +189,8 @@ func (m *OrderProduct) UnmarshalJSON(raw []byte) error {
 
 	m.DiscountAmount = dataAO1.DiscountAmount
 
+	m.DiscountAmountUnit = dataAO1.DiscountAmountUnit
+
 	m.Identity = dataAO1.Identity
 
 	m.InitialTermEndDate = dataAO1.InitialTermEndDate
@@ -173,6 +205,8 @@ func (m *OrderProduct) UnmarshalJSON(raw []byte) error {
 
 	m.PriceFid = dataAO1.PriceFid
 
+	m.PriceUnit = dataAO1.PriceUnit
+
 	m.ProductFid = dataAO1.ProductFid
 
 	m.PurchaseFid = dataAO1.PurchaseFid
@@ -183,13 +217,21 @@ func (m *OrderProduct) UnmarshalJSON(raw []byte) error {
 
 	m.SetupDiscountAmount = dataAO1.SetupDiscountAmount
 
+	m.SetupDiscountAmountUnit = dataAO1.SetupDiscountAmountUnit
+
 	m.SetupFee = dataAO1.SetupFee
+
+	m.SetupFeeUnit = dataAO1.SetupFeeUnit
 
 	m.SkuFid = dataAO1.SkuFid
 
 	m.TaxAmount = dataAO1.TaxAmount
 
+	m.TaxAmountUnit = dataAO1.TaxAmountUnit
+
 	m.TotalAmount = dataAO1.TotalAmount
+
+	m.TotalAmountUnit = dataAO1.TotalAmountUnit
 
 	return nil
 }
@@ -216,6 +258,8 @@ func (m OrderProduct) MarshalJSON() ([]byte, error) {
 
 		DiscountAmount float32 `json:"discountAmount,omitempty"`
 
+		DiscountAmountUnit int64 `json:"discountAmountUnit,omitempty"`
+
 		Identity string `json:"identity,omitempty"`
 
 		InitialTermEndDate string `json:"initialTermEndDate,omitempty"`
@@ -230,6 +274,8 @@ func (m OrderProduct) MarshalJSON() ([]byte, error) {
 
 		PriceFid string `json:"priceFid,omitempty"`
 
+		PriceUnit int64 `json:"priceUnit,omitempty"`
+
 		ProductFid string `json:"productFid,omitempty"`
 
 		PurchaseFid string `json:"purchaseFid,omitempty"`
@@ -240,13 +286,21 @@ func (m OrderProduct) MarshalJSON() ([]byte, error) {
 
 		SetupDiscountAmount float32 `json:"setupDiscountAmount,omitempty"`
 
+		SetupDiscountAmountUnit int64 `json:"setupDiscountAmountUnit,omitempty"`
+
 		SetupFee float32 `json:"setupFee,omitempty"`
+
+		SetupFeeUnit int64 `json:"setupFeeUnit,omitempty"`
 
 		SkuFid string `json:"skuFid,omitempty"`
 
 		TaxAmount float32 `json:"taxAmount,omitempty"`
 
+		TaxAmountUnit int64 `json:"taxAmountUnit,omitempty"`
+
 		TotalAmount float32 `json:"totalAmount,omitempty"`
+
+		TotalAmountUnit int64 `json:"totalAmountUnit,omitempty"`
 	}
 
 	dataAO1.Currency = m.Currency
@@ -260,6 +314,8 @@ func (m OrderProduct) MarshalJSON() ([]byte, error) {
 	dataAO1.CycleType = m.CycleType
 
 	dataAO1.DiscountAmount = m.DiscountAmount
+
+	dataAO1.DiscountAmountUnit = m.DiscountAmountUnit
 
 	dataAO1.Identity = m.Identity
 
@@ -275,6 +331,8 @@ func (m OrderProduct) MarshalJSON() ([]byte, error) {
 
 	dataAO1.PriceFid = m.PriceFid
 
+	dataAO1.PriceUnit = m.PriceUnit
+
 	dataAO1.ProductFid = m.ProductFid
 
 	dataAO1.PurchaseFid = m.PurchaseFid
@@ -285,13 +343,21 @@ func (m OrderProduct) MarshalJSON() ([]byte, error) {
 
 	dataAO1.SetupDiscountAmount = m.SetupDiscountAmount
 
+	dataAO1.SetupDiscountAmountUnit = m.SetupDiscountAmountUnit
+
 	dataAO1.SetupFee = m.SetupFee
+
+	dataAO1.SetupFeeUnit = m.SetupFeeUnit
 
 	dataAO1.SkuFid = m.SkuFid
 
 	dataAO1.TaxAmount = m.TaxAmount
 
+	dataAO1.TaxAmountUnit = m.TaxAmountUnit
+
 	dataAO1.TotalAmount = m.TotalAmount
+
+	dataAO1.TotalAmountUnit = m.TotalAmountUnit
 
 	jsonDataAO1, errAO1 := swag.WriteJSON(dataAO1)
 	if errAO1 != nil {
