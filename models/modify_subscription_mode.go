@@ -41,7 +41,7 @@ const (
 )
 
 // for schema
-var modifySubscriptionModeEnum []interface{}
+var modifySubscriptionModeEnum []any
 
 func init() {
 	var res []ModifySubscriptionMode

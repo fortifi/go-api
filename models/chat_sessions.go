@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -101,11 +102,15 @@ func (m *ChatSessions) validateChatSessions(formats strfmt.Registry) error {
 
 		if m.ChatSessions[i] != nil {
 			if err := m.ChatSessions[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("chatSessions" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("chatSessions" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -145,11 +150,15 @@ func (m *ChatSessions) contextValidateChatSessions(ctx context.Context, formats 
 			}
 
 			if err := m.ChatSessions[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("chatSessions" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("chatSessions" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}

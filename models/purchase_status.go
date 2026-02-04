@@ -77,7 +77,7 @@ const (
 )
 
 // for schema
-var purchaseStatusEnum []interface{}
+var purchaseStatusEnum []any
 
 func init() {
 	var res []PurchaseStatus

@@ -105,7 +105,7 @@ type ClientService interface {
 GetContactsFindByReferenceContactReference finds a person with a reference
 */
 func (a *Client) GetContactsFindByReferenceContactReference(params *GetContactsFindByReferenceContactReferenceParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetContactsFindByReferenceContactReferenceOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetContactsFindByReferenceContactReferenceParams()
 	}
@@ -125,17 +125,22 @@ func (a *Client) GetContactsFindByReferenceContactReference(params *GetContactsF
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetContactsFindByReferenceContactReferenceOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetContactsFindByReferenceContactReferenceDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -143,7 +148,7 @@ func (a *Client) GetContactsFindByReferenceContactReference(params *GetContactsF
 GetContactsSearch searches for contacts
 */
 func (a *Client) GetContactsSearch(params *GetContactsSearchParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetContactsSearchOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetContactsSearchParams()
 	}
@@ -163,17 +168,22 @@ func (a *Client) GetContactsSearch(params *GetContactsSearchParams, authInfo run
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetContactsSearchOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetContactsSearchDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -181,7 +191,7 @@ func (a *Client) GetContactsSearch(params *GetContactsSearchParams, authInfo run
 GetTicketsSearch searches for tickets
 */
 func (a *Client) GetTicketsSearch(params *GetTicketsSearchParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetTicketsSearchOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetTicketsSearchParams()
 	}
@@ -201,17 +211,22 @@ func (a *Client) GetTicketsSearch(params *GetTicketsSearchParams, authInfo runti
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetTicketsSearchOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetTicketsSearchDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -219,7 +234,7 @@ func (a *Client) GetTicketsSearch(params *GetTicketsSearchParams, authInfo runti
 PutContactsDeviceHardwareIDSubscribe subscribes an device
 */
 func (a *Client) PutContactsDeviceHardwareIDSubscribe(params *PutContactsDeviceHardwareIDSubscribeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutContactsDeviceHardwareIDSubscribeOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutContactsDeviceHardwareIDSubscribeParams()
 	}
@@ -239,17 +254,22 @@ func (a *Client) PutContactsDeviceHardwareIDSubscribe(params *PutContactsDeviceH
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutContactsDeviceHardwareIDSubscribeOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutContactsDeviceHardwareIDSubscribeDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -257,7 +277,7 @@ func (a *Client) PutContactsDeviceHardwareIDSubscribe(params *PutContactsDeviceH
 PutContactsDeviceHardwareIDUnsubscribe unsubscribes a device
 */
 func (a *Client) PutContactsDeviceHardwareIDUnsubscribe(params *PutContactsDeviceHardwareIDUnsubscribeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutContactsDeviceHardwareIDUnsubscribeOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutContactsDeviceHardwareIDUnsubscribeParams()
 	}
@@ -277,17 +297,22 @@ func (a *Client) PutContactsDeviceHardwareIDUnsubscribe(params *PutContactsDevic
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutContactsDeviceHardwareIDUnsubscribeOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutContactsDeviceHardwareIDUnsubscribeDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -295,7 +320,7 @@ func (a *Client) PutContactsDeviceHardwareIDUnsubscribe(params *PutContactsDevic
 PutContactsEmailsEmailAddressConfirm confirms email address
 */
 func (a *Client) PutContactsEmailsEmailAddressConfirm(params *PutContactsEmailsEmailAddressConfirmParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutContactsEmailsEmailAddressConfirmOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutContactsEmailsEmailAddressConfirmParams()
 	}
@@ -315,17 +340,22 @@ func (a *Client) PutContactsEmailsEmailAddressConfirm(params *PutContactsEmailsE
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutContactsEmailsEmailAddressConfirmOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutContactsEmailsEmailAddressConfirmDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -333,7 +363,7 @@ func (a *Client) PutContactsEmailsEmailAddressConfirm(params *PutContactsEmailsE
 PutContactsEmailsEmailAddressSubscribe subscribes an email address
 */
 func (a *Client) PutContactsEmailsEmailAddressSubscribe(params *PutContactsEmailsEmailAddressSubscribeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutContactsEmailsEmailAddressSubscribeOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutContactsEmailsEmailAddressSubscribeParams()
 	}
@@ -353,17 +383,22 @@ func (a *Client) PutContactsEmailsEmailAddressSubscribe(params *PutContactsEmail
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutContactsEmailsEmailAddressSubscribeOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutContactsEmailsEmailAddressSubscribeDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -371,7 +406,7 @@ func (a *Client) PutContactsEmailsEmailAddressSubscribe(params *PutContactsEmail
 PutContactsEmailsEmailAddressUnsubscribe unsubscribes an email address
 */
 func (a *Client) PutContactsEmailsEmailAddressUnsubscribe(params *PutContactsEmailsEmailAddressUnsubscribeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutContactsEmailsEmailAddressUnsubscribeOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutContactsEmailsEmailAddressUnsubscribeParams()
 	}
@@ -391,17 +426,22 @@ func (a *Client) PutContactsEmailsEmailAddressUnsubscribe(params *PutContactsEma
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutContactsEmailsEmailAddressUnsubscribeOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutContactsEmailsEmailAddressUnsubscribeDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -409,7 +449,7 @@ func (a *Client) PutContactsEmailsEmailAddressUnsubscribe(params *PutContactsEma
 PutContactsPhonePhoneNumberConfirm confirms phone number
 */
 func (a *Client) PutContactsPhonePhoneNumberConfirm(params *PutContactsPhonePhoneNumberConfirmParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutContactsPhonePhoneNumberConfirmOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutContactsPhonePhoneNumberConfirmParams()
 	}
@@ -429,17 +469,22 @@ func (a *Client) PutContactsPhonePhoneNumberConfirm(params *PutContactsPhonePhon
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutContactsPhonePhoneNumberConfirmOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutContactsPhonePhoneNumberConfirmDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -447,7 +492,7 @@ func (a *Client) PutContactsPhonePhoneNumberConfirm(params *PutContactsPhonePhon
 PutMessengerDeliveriesDeliveryFidSubscribe subscribes an email based on the delivery fid
 */
 func (a *Client) PutMessengerDeliveriesDeliveryFidSubscribe(params *PutMessengerDeliveriesDeliveryFidSubscribeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutMessengerDeliveriesDeliveryFidSubscribeOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutMessengerDeliveriesDeliveryFidSubscribeParams()
 	}
@@ -467,17 +512,22 @@ func (a *Client) PutMessengerDeliveriesDeliveryFidSubscribe(params *PutMessenger
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutMessengerDeliveriesDeliveryFidSubscribeOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutMessengerDeliveriesDeliveryFidSubscribeDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

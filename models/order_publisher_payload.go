@@ -60,7 +60,7 @@ func (m *OrderPublisherPayload) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-var orderPublisherPayloadTypeOnStatePropEnum []interface{}
+var orderPublisherPayloadTypeOnStatePropEnum []any
 
 func init() {
 	var res []string

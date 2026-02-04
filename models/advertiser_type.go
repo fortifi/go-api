@@ -71,7 +71,7 @@ const (
 )
 
 // for schema
-var advertiserTypeEnum []interface{}
+var advertiserTypeEnum []any
 
 func init() {
 	var res []AdvertiserType

@@ -91,7 +91,7 @@ func (m *CreateInteractionTicketPayload) Validate(formats strfmt.Registry) error
 	return nil
 }
 
-var createInteractionTicketPayloadTypeImpactPropEnum []interface{}
+var createInteractionTicketPayloadTypeImpactPropEnum []any
 
 func init() {
 	var res []string
@@ -142,7 +142,7 @@ func (m *CreateInteractionTicketPayload) validateImpact(formats strfmt.Registry)
 	return nil
 }
 
-var createInteractionTicketPayloadTypeTicketTypePropEnum []interface{}
+var createInteractionTicketPayloadTypeTicketTypePropEnum []any
 
 func init() {
 	var res []string
@@ -190,7 +190,7 @@ func (m *CreateInteractionTicketPayload) validateTicketType(formats strfmt.Regis
 	return nil
 }
 
-var createInteractionTicketPayloadTypeUrgencyPropEnum []interface{}
+var createInteractionTicketPayloadTypeUrgencyPropEnum []any
 
 func init() {
 	var res []string

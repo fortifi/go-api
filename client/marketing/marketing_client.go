@@ -93,7 +93,7 @@ type ClientService interface {
 DeletePublishersPublisherFid deletes a publisher
 */
 func (a *Client) DeletePublishersPublisherFid(params *DeletePublishersPublisherFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeletePublishersPublisherFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewDeletePublishersPublisherFidParams()
 	}
@@ -113,17 +113,22 @@ func (a *Client) DeletePublishersPublisherFid(params *DeletePublishersPublisherF
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*DeletePublishersPublisherFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*DeletePublishersPublisherFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -131,7 +136,7 @@ func (a *Client) DeletePublishersPublisherFid(params *DeletePublishersPublisherF
 DeletePublishersPublisherFidApproved removes approved status on an publisher
 */
 func (a *Client) DeletePublishersPublisherFidApproved(params *DeletePublishersPublisherFidApprovedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeletePublishersPublisherFidApprovedOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewDeletePublishersPublisherFidApprovedParams()
 	}
@@ -151,17 +156,22 @@ func (a *Client) DeletePublishersPublisherFidApproved(params *DeletePublishersPu
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*DeletePublishersPublisherFidApprovedOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*DeletePublishersPublisherFidApprovedDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -169,7 +179,7 @@ func (a *Client) DeletePublishersPublisherFidApproved(params *DeletePublishersPu
 GetPublishers lists publishers
 */
 func (a *Client) GetPublishers(params *GetPublishersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPublishersOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetPublishersParams()
 	}
@@ -189,17 +199,22 @@ func (a *Client) GetPublishers(params *GetPublishersParams, authInfo runtime.Cli
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetPublishersOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetPublishersDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -207,7 +222,7 @@ func (a *Client) GetPublishers(params *GetPublishersParams, authInfo runtime.Cli
 GetPublishersPublisherFid retrieves a publisher
 */
 func (a *Client) GetPublishersPublisherFid(params *GetPublishersPublisherFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPublishersPublisherFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetPublishersPublisherFidParams()
 	}
@@ -227,17 +242,22 @@ func (a *Client) GetPublishersPublisherFid(params *GetPublishersPublisherFidPara
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetPublishersPublisherFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetPublishersPublisherFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -245,7 +265,7 @@ func (a *Client) GetPublishersPublisherFid(params *GetPublishersPublisherFidPara
 GetPublishersPublisherFidCampaigns lists campaigns
 */
 func (a *Client) GetPublishersPublisherFidCampaigns(params *GetPublishersPublisherFidCampaignsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPublishersPublisherFidCampaignsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetPublishersPublisherFidCampaignsParams()
 	}
@@ -265,17 +285,22 @@ func (a *Client) GetPublishersPublisherFidCampaigns(params *GetPublishersPublish
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetPublishersPublisherFidCampaignsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetPublishersPublisherFidCampaignsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -283,7 +308,7 @@ func (a *Client) GetPublishersPublisherFidCampaigns(params *GetPublishersPublish
 GetPublishersPublisherFidCampaignsPublisherCampaignFid retrieves a publisher campaign
 */
 func (a *Client) GetPublishersPublisherFidCampaignsPublisherCampaignFid(params *GetPublishersPublisherFidCampaignsPublisherCampaignFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPublishersPublisherFidCampaignsPublisherCampaignFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetPublishersPublisherFidCampaignsPublisherCampaignFidParams()
 	}
@@ -303,17 +328,22 @@ func (a *Client) GetPublishersPublisherFidCampaignsPublisherCampaignFid(params *
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetPublishersPublisherFidCampaignsPublisherCampaignFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetPublishersPublisherFidCampaignsPublisherCampaignFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -323,7 +353,7 @@ GetVisitorsVisitorID retrieves information about a visitor
 This call will return information related to how a visitor arrived
 */
 func (a *Client) GetVisitorsVisitorID(params *GetVisitorsVisitorIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetVisitorsVisitorIDOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetVisitorsVisitorIDParams()
 	}
@@ -343,17 +373,22 @@ func (a *Client) GetVisitorsVisitorID(params *GetVisitorsVisitorIDParams, authIn
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetVisitorsVisitorIDOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetVisitorsVisitorIDDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -363,7 +398,7 @@ GetVisitorsVisitorIDPixels retrieves pending pixels for this visitor
 This call will release pixels from the pending queue on read
 */
 func (a *Client) GetVisitorsVisitorIDPixels(params *GetVisitorsVisitorIDPixelsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetVisitorsVisitorIDPixelsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetVisitorsVisitorIDPixelsParams()
 	}
@@ -383,17 +418,22 @@ func (a *Client) GetVisitorsVisitorIDPixels(params *GetVisitorsVisitorIDPixelsPa
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetVisitorsVisitorIDPixelsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetVisitorsVisitorIDPixelsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -401,7 +441,7 @@ func (a *Client) GetVisitorsVisitorIDPixels(params *GetVisitorsVisitorIDPixelsPa
 PostPublishers creates a new publisher
 */
 func (a *Client) PostPublishers(params *PostPublishersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostPublishersOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostPublishersParams()
 	}
@@ -421,17 +461,22 @@ func (a *Client) PostPublishers(params *PostPublishersParams, authInfo runtime.C
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostPublishersOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostPublishersDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -439,7 +484,7 @@ func (a *Client) PostPublishers(params *PostPublishersParams, authInfo runtime.C
 PostPublishersPublisherFidCampaigns creates a new publisher campaign
 */
 func (a *Client) PostPublishersPublisherFidCampaigns(params *PostPublishersPublisherFidCampaignsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostPublishersPublisherFidCampaignsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostPublishersPublisherFidCampaignsParams()
 	}
@@ -459,17 +504,22 @@ func (a *Client) PostPublishersPublisherFidCampaigns(params *PostPublishersPubli
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostPublishersPublisherFidCampaignsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostPublishersPublisherFidCampaignsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -479,7 +529,7 @@ PostVisitorsVisitorIDActionsActionKey tracks an action
 Track an action such as a lead or acquisition
 */
 func (a *Client) PostVisitorsVisitorIDActionsActionKey(params *PostVisitorsVisitorIDActionsActionKeyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostVisitorsVisitorIDActionsActionKeyOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostVisitorsVisitorIDActionsActionKeyParams()
 	}
@@ -499,17 +549,22 @@ func (a *Client) PostVisitorsVisitorIDActionsActionKey(params *PostVisitorsVisit
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostVisitorsVisitorIDActionsActionKeyOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostVisitorsVisitorIDActionsActionKeyDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -519,7 +574,7 @@ PostVisitorsVisitorIDActionsActionKeyReverse reverses a previously tracked actio
 When an action has been reversed, e.g. cancelled, refunded
 */
 func (a *Client) PostVisitorsVisitorIDActionsActionKeyReverse(params *PostVisitorsVisitorIDActionsActionKeyReverseParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostVisitorsVisitorIDActionsActionKeyReverseOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostVisitorsVisitorIDActionsActionKeyReverseParams()
 	}
@@ -539,17 +594,22 @@ func (a *Client) PostVisitorsVisitorIDActionsActionKeyReverse(params *PostVisito
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostVisitorsVisitorIDActionsActionKeyReverseOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostVisitorsVisitorIDActionsActionKeyReverseDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -557,7 +617,7 @@ func (a *Client) PostVisitorsVisitorIDActionsActionKeyReverse(params *PostVisito
 PutPublishersPublisherFidApproved sets approved status on an publisher
 */
 func (a *Client) PutPublishersPublisherFidApproved(params *PutPublishersPublisherFidApprovedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutPublishersPublisherFidApprovedOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutPublishersPublisherFidApprovedParams()
 	}
@@ -577,17 +637,22 @@ func (a *Client) PutPublishersPublisherFidApproved(params *PutPublishersPublishe
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutPublishersPublisherFidApprovedOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutPublishersPublisherFidApprovedDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -595,7 +660,7 @@ func (a *Client) PutPublishersPublisherFidApproved(params *PutPublishersPublishe
 PutPublishersPublisherFidDisable disables a publisher
 */
 func (a *Client) PutPublishersPublisherFidDisable(params *PutPublishersPublisherFidDisableParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutPublishersPublisherFidDisableOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutPublishersPublisherFidDisableParams()
 	}
@@ -615,17 +680,22 @@ func (a *Client) PutPublishersPublisherFidDisable(params *PutPublishersPublisher
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutPublishersPublisherFidDisableOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutPublishersPublisherFidDisableDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -633,7 +703,7 @@ func (a *Client) PutPublishersPublisherFidDisable(params *PutPublishersPublisher
 PutPublishersPublisherFidEnable enables a publisher
 */
 func (a *Client) PutPublishersPublisherFidEnable(params *PutPublishersPublisherFidEnableParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutPublishersPublisherFidEnableOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutPublishersPublisherFidEnableParams()
 	}
@@ -653,17 +723,22 @@ func (a *Client) PutPublishersPublisherFidEnable(params *PutPublishersPublisherF
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutPublishersPublisherFidEnableOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutPublishersPublisherFidEnableDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -671,7 +746,7 @@ func (a *Client) PutPublishersPublisherFidEnable(params *PutPublishersPublisherF
 PutPublishersPublisherFidRestore restores a publisher
 */
 func (a *Client) PutPublishersPublisherFidRestore(params *PutPublishersPublisherFidRestoreParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutPublishersPublisherFidRestoreOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutPublishersPublisherFidRestoreParams()
 	}
@@ -691,17 +766,22 @@ func (a *Client) PutPublishersPublisherFidRestore(params *PutPublishersPublisher
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutPublishersPublisherFidRestoreOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutPublishersPublisherFidRestoreDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

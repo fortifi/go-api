@@ -38,7 +38,7 @@ const (
 )
 
 // for schema
-var subscriptionRefundTypeEnum []interface{}
+var subscriptionRefundTypeEnum []any
 
 func init() {
 	var res []SubscriptionRefundType

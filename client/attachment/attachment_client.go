@@ -63,7 +63,7 @@ type ClientService interface {
 PostAttachmentEntityFid creates an attachment
 */
 func (a *Client) PostAttachmentEntityFid(params *PostAttachmentEntityFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostAttachmentEntityFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostAttachmentEntityFidParams()
 	}
@@ -83,17 +83,22 @@ func (a *Client) PostAttachmentEntityFid(params *PostAttachmentEntityFidParams, 
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostAttachmentEntityFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostAttachmentEntityFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -61,11 +62,15 @@ func (m *InteractionVerificationResponse) validateInteractionTypes(formats strfm
 
 		if m.InteractionTypes[i] != nil {
 			if err := m.InteractionTypes[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("interactionTypes" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("interactionTypes" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -100,11 +105,15 @@ func (m *InteractionVerificationResponse) contextValidateInteractionTypes(ctx co
 			}
 
 			if err := m.InteractionTypes[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("interactionTypes" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("interactionTypes" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}

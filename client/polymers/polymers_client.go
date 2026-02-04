@@ -65,7 +65,7 @@ type ClientService interface {
 GetPolymersParentFidPolymerFid reads a polymer
 */
 func (a *Client) GetPolymersParentFidPolymerFid(params *GetPolymersParentFidPolymerFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPolymersParentFidPolymerFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetPolymersParentFidPolymerFidParams()
 	}
@@ -85,17 +85,22 @@ func (a *Client) GetPolymersParentFidPolymerFid(params *GetPolymersParentFidPoly
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetPolymersParentFidPolymerFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetPolymersParentFidPolymerFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -103,7 +108,7 @@ func (a *Client) GetPolymersParentFidPolymerFid(params *GetPolymersParentFidPoly
 PostPolymersParentFid creates a new polymer
 */
 func (a *Client) PostPolymersParentFid(params *PostPolymersParentFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostPolymersParentFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostPolymersParentFidParams()
 	}
@@ -123,17 +128,22 @@ func (a *Client) PostPolymersParentFid(params *PostPolymersParentFidParams, auth
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostPolymersParentFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostPolymersParentFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

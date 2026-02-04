@@ -68,7 +68,7 @@ const (
 )
 
 // for schema
-var customerLifecycleEnum []interface{}
+var customerLifecycleEnum []any
 
 func init() {
 	var res []CustomerLifecycle

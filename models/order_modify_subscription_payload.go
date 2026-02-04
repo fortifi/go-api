@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -106,11 +107,15 @@ func (m *OrderModifySubscriptionPayload) validateProperties(formats strfmt.Regis
 
 	if m.Properties != nil {
 		if err := m.Properties.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("properties")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("properties")
 			}
+
 			return err
 		}
 	}
@@ -146,11 +151,15 @@ func (m *OrderModifySubscriptionPayload) contextValidateProperties(ctx context.C
 		}
 
 		if err := m.Properties.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("properties")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("properties")
 			}
+
 			return err
 		}
 	}

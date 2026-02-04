@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -65,11 +66,15 @@ func (m *UpdateCcBccPayload) validateAddBcc(formats strfmt.Registry) error {
 
 		if m.AddBcc[i] != nil {
 			if err := m.AddBcc[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("addBcc" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("addBcc" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -91,11 +96,15 @@ func (m *UpdateCcBccPayload) validateAddCc(formats strfmt.Registry) error {
 
 		if m.AddCc[i] != nil {
 			if err := m.AddCc[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("addCc" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("addCc" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -134,11 +143,15 @@ func (m *UpdateCcBccPayload) contextValidateAddBcc(ctx context.Context, formats 
 			}
 
 			if err := m.AddBcc[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("addBcc" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("addBcc" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -159,11 +172,15 @@ func (m *UpdateCcBccPayload) contextValidateAddCc(ctx context.Context, formats s
 			}
 
 			if err := m.AddCc[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("addCc" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("addCc" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}

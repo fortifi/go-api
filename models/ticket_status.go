@@ -56,7 +56,7 @@ const (
 )
 
 // for schema
-var ticketStatusEnum []interface{}
+var ticketStatusEnum []any
 
 func init() {
 	var res []TicketStatus

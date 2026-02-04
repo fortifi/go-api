@@ -8,6 +8,7 @@ package customers
 import (
 	"context"
 	"encoding/json"
+	stderrors "errors"
 	"fmt"
 	"io"
 
@@ -25,7 +26,7 @@ type PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestReader str
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (any, error) {
 	switch response.Code() {
 	case 200:
 		result := NewPostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOK()
@@ -108,7 +109,7 @@ func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOK) re
 	o.Payload = new(PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOKBody)
 
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && !stderrors.Is(err, io.EOF) {
 		return err
 	}
 
@@ -182,7 +183,7 @@ func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestDefaul
 	o.Payload = new(models.Envelope)
 
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && !stderrors.Is(err, io.EOF) {
 		return err
 	}
 
@@ -272,11 +273,15 @@ func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOKBody
 
 	if o.Data != nil {
 		if err := o.Data.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("postCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOK" + "." + "data")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("postCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOK" + "." + "data")
 			}
+
 			return err
 		}
 	}
@@ -312,11 +317,15 @@ func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOKBody
 		}
 
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("postCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOK" + "." + "data")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("postCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOK" + "." + "data")
 			}
+
 			return err
 		}
 	}

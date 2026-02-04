@@ -156,7 +156,7 @@ func (m *PropertyDefinition) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-var propertyDefinitionTypeValidationTypePropEnum []interface{}
+var propertyDefinitionTypeValidationTypePropEnum []any
 
 func init() {
 	var res []string

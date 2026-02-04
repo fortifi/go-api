@@ -67,7 +67,7 @@ GetReservationsKeyApplicationBrandFid retrieves reservations
 This call will return information related to how a visitor arrived
 */
 func (a *Client) GetReservationsKeyApplicationBrandFid(params *GetReservationsKeyApplicationBrandFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetReservationsKeyApplicationBrandFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetReservationsKeyApplicationBrandFidParams()
 	}
@@ -87,17 +87,22 @@ func (a *Client) GetReservationsKeyApplicationBrandFid(params *GetReservationsKe
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetReservationsKeyApplicationBrandFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetReservationsKeyApplicationBrandFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -107,7 +112,7 @@ PostReservationsKeyApplicationBrandFidCustomerFid makes a new reservation
 Reserve against a key
 */
 func (a *Client) PostReservationsKeyApplicationBrandFidCustomerFid(params *PostReservationsKeyApplicationBrandFidCustomerFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostReservationsKeyApplicationBrandFidCustomerFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostReservationsKeyApplicationBrandFidCustomerFidParams()
 	}
@@ -127,17 +132,22 @@ func (a *Client) PostReservationsKeyApplicationBrandFidCustomerFid(params *PostR
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostReservationsKeyApplicationBrandFidCustomerFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostReservationsKeyApplicationBrandFidCustomerFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

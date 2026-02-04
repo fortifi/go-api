@@ -63,7 +63,7 @@ type ClientService interface {
 GetLicenceCheck retrieves a licence
 */
 func (a *Client) GetLicenceCheck(params *GetLicenceCheckParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetLicenceCheckOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetLicenceCheckParams()
 	}
@@ -83,17 +83,22 @@ func (a *Client) GetLicenceCheck(params *GetLicenceCheckParams, authInfo runtime
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetLicenceCheckOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetLicenceCheckDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

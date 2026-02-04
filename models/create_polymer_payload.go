@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -51,11 +52,15 @@ func (m *CreatePolymerPayload) validateData(formats strfmt.Registry) error {
 	}
 
 	if err := m.Data.Validate(formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
+		ve := new(errors.Validation)
+		if stderrors.As(err, &ve) {
 			return ve.ValidateName("data")
-		} else if ce, ok := err.(*errors.CompositeError); ok {
+		}
+		ce := new(errors.CompositeError)
+		if stderrors.As(err, &ce) {
 			return ce.ValidateName("data")
 		}
+
 		return err
 	}
 
@@ -79,11 +84,15 @@ func (m *CreatePolymerPayload) ContextValidate(ctx context.Context, formats strf
 func (m *CreatePolymerPayload) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := m.Data.ContextValidate(ctx, formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
+		ve := new(errors.Validation)
+		if stderrors.As(err, &ve) {
 			return ve.ValidateName("data")
-		} else if ce, ok := err.(*errors.CompositeError); ok {
+		}
+		ce := new(errors.CompositeError)
+		if stderrors.As(err, &ce) {
 			return ce.ValidateName("data")
 		}
+
 		return err
 	}
 

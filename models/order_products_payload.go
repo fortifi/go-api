@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -73,11 +74,15 @@ func (m *OrderProductsPayload) validateModifySubscriptions(formats strfmt.Regist
 
 		if m.ModifySubscriptions[i] != nil {
 			if err := m.ModifySubscriptions[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("modifySubscriptions" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("modifySubscriptions" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -99,11 +104,15 @@ func (m *OrderProductsPayload) validateNamesProductPriceFids(formats strfmt.Regi
 
 		if m.NamesProductPriceFids[i] != nil {
 			if err := m.NamesProductPriceFids[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("namesProductPriceFids" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("namesProductPriceFids" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -125,11 +134,15 @@ func (m *OrderProductsPayload) validateProducts(formats strfmt.Registry) error {
 
 		if m.Products[i] != nil {
 			if err := m.Products[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("products" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("products" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -151,11 +164,15 @@ func (m *OrderProductsPayload) validateQuantityProductPriceFids(formats strfmt.R
 
 		if m.QuantityProductPriceFids[i] != nil {
 			if err := m.QuantityProductPriceFids[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("quantityProductPriceFids" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("quantityProductPriceFids" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -202,11 +219,15 @@ func (m *OrderProductsPayload) contextValidateModifySubscriptions(ctx context.Co
 			}
 
 			if err := m.ModifySubscriptions[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("modifySubscriptions" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("modifySubscriptions" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -227,11 +248,15 @@ func (m *OrderProductsPayload) contextValidateNamesProductPriceFids(ctx context.
 			}
 
 			if err := m.NamesProductPriceFids[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("namesProductPriceFids" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("namesProductPriceFids" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -252,11 +277,15 @@ func (m *OrderProductsPayload) contextValidateProducts(ctx context.Context, form
 			}
 
 			if err := m.Products[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("products" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("products" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -277,11 +306,15 @@ func (m *OrderProductsPayload) contextValidateQuantityProductPriceFids(ctx conte
 			}
 
 			if err := m.QuantityProductPriceFids[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("quantityProductPriceFids" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("quantityProductPriceFids" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}

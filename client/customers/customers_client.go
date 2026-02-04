@@ -345,7 +345,7 @@ type ClientService interface {
 DeleteContactsContactFidAddressesAddressFid removes an address from a contact
 */
 func (a *Client) DeleteContactsContactFidAddressesAddressFid(params *DeleteContactsContactFidAddressesAddressFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteContactsContactFidAddressesAddressFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewDeleteContactsContactFidAddressesAddressFidParams()
 	}
@@ -365,17 +365,22 @@ func (a *Client) DeleteContactsContactFidAddressesAddressFid(params *DeleteConta
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*DeleteContactsContactFidAddressesAddressFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*DeleteContactsContactFidAddressesAddressFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -383,7 +388,7 @@ func (a *Client) DeleteContactsContactFidAddressesAddressFid(params *DeleteConta
 DeleteContactsContactFidEmailsEmailFid removes an email from a contact
 */
 func (a *Client) DeleteContactsContactFidEmailsEmailFid(params *DeleteContactsContactFidEmailsEmailFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteContactsContactFidEmailsEmailFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewDeleteContactsContactFidEmailsEmailFidParams()
 	}
@@ -403,17 +408,22 @@ func (a *Client) DeleteContactsContactFidEmailsEmailFid(params *DeleteContactsCo
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*DeleteContactsContactFidEmailsEmailFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*DeleteContactsContactFidEmailsEmailFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -421,7 +431,7 @@ func (a *Client) DeleteContactsContactFidEmailsEmailFid(params *DeleteContactsCo
 DeleteContactsContactFidPhonesPhoneFid removes a phone
 */
 func (a *Client) DeleteContactsContactFidPhonesPhoneFid(params *DeleteContactsContactFidPhonesPhoneFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteContactsContactFidPhonesPhoneFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewDeleteContactsContactFidPhonesPhoneFidParams()
 	}
@@ -441,17 +451,22 @@ func (a *Client) DeleteContactsContactFidPhonesPhoneFid(params *DeleteContactsCo
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*DeleteContactsContactFidPhonesPhoneFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*DeleteContactsContactFidPhonesPhoneFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -459,7 +474,7 @@ func (a *Client) DeleteContactsContactFidPhonesPhoneFid(params *DeleteContactsCo
 DeleteCustomersCustomerFid archives a customer
 */
 func (a *Client) DeleteCustomersCustomerFid(params *DeleteCustomersCustomerFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewDeleteCustomersCustomerFidParams()
 	}
@@ -479,17 +494,22 @@ func (a *Client) DeleteCustomersCustomerFid(params *DeleteCustomersCustomerFidPa
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*DeleteCustomersCustomerFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*DeleteCustomersCustomerFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -497,7 +517,7 @@ func (a *Client) DeleteCustomersCustomerFid(params *DeleteCustomersCustomerFidPa
 DeleteCustomersCustomerFidAddressesAddressFid removes an address
 */
 func (a *Client) DeleteCustomersCustomerFidAddressesAddressFid(params *DeleteCustomersCustomerFidAddressesAddressFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidAddressesAddressFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewDeleteCustomersCustomerFidAddressesAddressFidParams()
 	}
@@ -517,17 +537,22 @@ func (a *Client) DeleteCustomersCustomerFidAddressesAddressFid(params *DeleteCus
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*DeleteCustomersCustomerFidAddressesAddressFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*DeleteCustomersCustomerFidAddressesAddressFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -535,7 +560,7 @@ func (a *Client) DeleteCustomersCustomerFidAddressesAddressFid(params *DeleteCus
 DeleteCustomersCustomerFidContactsContactFid removes a contact
 */
 func (a *Client) DeleteCustomersCustomerFidContactsContactFid(params *DeleteCustomersCustomerFidContactsContactFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidContactsContactFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewDeleteCustomersCustomerFidContactsContactFidParams()
 	}
@@ -555,17 +580,22 @@ func (a *Client) DeleteCustomersCustomerFidContactsContactFid(params *DeleteCust
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*DeleteCustomersCustomerFidContactsContactFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*DeleteCustomersCustomerFidContactsContactFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -573,7 +603,7 @@ func (a *Client) DeleteCustomersCustomerFidContactsContactFid(params *DeleteCust
 DeleteCustomersCustomerFidEmailsEmailFid removes an email
 */
 func (a *Client) DeleteCustomersCustomerFidEmailsEmailFid(params *DeleteCustomersCustomerFidEmailsEmailFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidEmailsEmailFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewDeleteCustomersCustomerFidEmailsEmailFidParams()
 	}
@@ -593,17 +623,22 @@ func (a *Client) DeleteCustomersCustomerFidEmailsEmailFid(params *DeleteCustomer
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*DeleteCustomersCustomerFidEmailsEmailFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*DeleteCustomersCustomerFidEmailsEmailFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -611,7 +646,7 @@ func (a *Client) DeleteCustomersCustomerFidEmailsEmailFid(params *DeleteCustomer
 DeleteCustomersCustomerFidLoyal removes customer loyalty flag
 */
 func (a *Client) DeleteCustomersCustomerFidLoyal(params *DeleteCustomersCustomerFidLoyalParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidLoyalOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewDeleteCustomersCustomerFidLoyalParams()
 	}
@@ -631,17 +666,22 @@ func (a *Client) DeleteCustomersCustomerFidLoyal(params *DeleteCustomersCustomer
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*DeleteCustomersCustomerFidLoyalOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*DeleteCustomersCustomerFidLoyalDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -649,7 +689,7 @@ func (a *Client) DeleteCustomersCustomerFidLoyal(params *DeleteCustomersCustomer
 DeleteCustomersCustomerFidPaymentMethodsCardsCardFid delete customers customer fid payment methods cards card fid API
 */
 func (a *Client) DeleteCustomersCustomerFidPaymentMethodsCardsCardFid(params *DeleteCustomersCustomerFidPaymentMethodsCardsCardFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidPaymentMethodsCardsCardFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewDeleteCustomersCustomerFidPaymentMethodsCardsCardFidParams()
 	}
@@ -669,17 +709,22 @@ func (a *Client) DeleteCustomersCustomerFidPaymentMethodsCardsCardFid(params *De
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*DeleteCustomersCustomerFidPaymentMethodsCardsCardFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*DeleteCustomersCustomerFidPaymentMethodsCardsCardFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -687,7 +732,7 @@ func (a *Client) DeleteCustomersCustomerFidPaymentMethodsCardsCardFid(params *De
 DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFid archives a payment method
 */
 func (a *Client) DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFid(params *DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewDeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidParams()
 	}
@@ -707,17 +752,22 @@ func (a *Client) DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFid(params
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -725,7 +775,7 @@ func (a *Client) DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFid(params
 DeleteCustomersCustomerFidPhonesPhoneFid removes a phone
 */
 func (a *Client) DeleteCustomersCustomerFidPhonesPhoneFid(params *DeleteCustomersCustomerFidPhonesPhoneFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidPhonesPhoneFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewDeleteCustomersCustomerFidPhonesPhoneFidParams()
 	}
@@ -745,17 +795,22 @@ func (a *Client) DeleteCustomersCustomerFidPhonesPhoneFid(params *DeleteCustomer
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*DeleteCustomersCustomerFidPhonesPhoneFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*DeleteCustomersCustomerFidPhonesPhoneFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -763,7 +818,7 @@ func (a *Client) DeleteCustomersCustomerFidPhonesPhoneFid(params *DeleteCustomer
 DeleteCustomersCustomerFidVip removes customer v IP status
 */
 func (a *Client) DeleteCustomersCustomerFidVip(params *DeleteCustomersCustomerFidVipParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidVipOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewDeleteCustomersCustomerFidVipParams()
 	}
@@ -783,17 +838,22 @@ func (a *Client) DeleteCustomersCustomerFidVip(params *DeleteCustomersCustomerFi
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*DeleteCustomersCustomerFidVipOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*DeleteCustomersCustomerFidVipDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -801,7 +861,7 @@ func (a *Client) DeleteCustomersCustomerFidVip(params *DeleteCustomersCustomerFi
 GetContactsContactFidAddresses lists contact addresses
 */
 func (a *Client) GetContactsContactFidAddresses(params *GetContactsContactFidAddressesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetContactsContactFidAddressesOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetContactsContactFidAddressesParams()
 	}
@@ -821,17 +881,22 @@ func (a *Client) GetContactsContactFidAddresses(params *GetContactsContactFidAdd
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetContactsContactFidAddressesOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetContactsContactFidAddressesDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -839,7 +904,7 @@ func (a *Client) GetContactsContactFidAddresses(params *GetContactsContactFidAdd
 GetContactsContactFidEmails lists contact emails
 */
 func (a *Client) GetContactsContactFidEmails(params *GetContactsContactFidEmailsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetContactsContactFidEmailsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetContactsContactFidEmailsParams()
 	}
@@ -859,17 +924,22 @@ func (a *Client) GetContactsContactFidEmails(params *GetContactsContactFidEmails
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetContactsContactFidEmailsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetContactsContactFidEmailsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -877,7 +947,7 @@ func (a *Client) GetContactsContactFidEmails(params *GetContactsContactFidEmails
 GetContactsContactFidPhones lists contact phones
 */
 func (a *Client) GetContactsContactFidPhones(params *GetContactsContactFidPhonesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetContactsContactFidPhonesOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetContactsContactFidPhonesParams()
 	}
@@ -897,17 +967,22 @@ func (a *Client) GetContactsContactFidPhones(params *GetContactsContactFidPhones
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetContactsContactFidPhonesOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetContactsContactFidPhonesDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -915,7 +990,7 @@ func (a *Client) GetContactsContactFidPhones(params *GetContactsContactFidPhones
 GetCustomersCustomerFid retrieves a customer
 */
 func (a *Client) GetCustomersCustomerFid(params *GetCustomersCustomerFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidParams()
 	}
@@ -935,17 +1010,22 @@ func (a *Client) GetCustomersCustomerFid(params *GetCustomersCustomerFidParams, 
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -953,7 +1033,7 @@ func (a *Client) GetCustomersCustomerFid(params *GetCustomersCustomerFidParams, 
 GetCustomersCustomerFidAddresses lists customers addresses
 */
 func (a *Client) GetCustomersCustomerFidAddresses(params *GetCustomersCustomerFidAddressesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidAddressesOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidAddressesParams()
 	}
@@ -973,17 +1053,22 @@ func (a *Client) GetCustomersCustomerFidAddresses(params *GetCustomersCustomerFi
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidAddressesOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidAddressesDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -991,7 +1076,7 @@ func (a *Client) GetCustomersCustomerFidAddresses(params *GetCustomersCustomerFi
 GetCustomersCustomerFidChatSessions retrieves chat sessions for customer
 */
 func (a *Client) GetCustomersCustomerFidChatSessions(params *GetCustomersCustomerFidChatSessionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidChatSessionsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidChatSessionsParams()
 	}
@@ -1011,17 +1096,22 @@ func (a *Client) GetCustomersCustomerFidChatSessions(params *GetCustomersCustome
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidChatSessionsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidChatSessionsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1029,7 +1119,7 @@ func (a *Client) GetCustomersCustomerFidChatSessions(params *GetCustomersCustome
 GetCustomersCustomerFidContacts lists of people
 */
 func (a *Client) GetCustomersCustomerFidContacts(params *GetCustomersCustomerFidContactsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidContactsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidContactsParams()
 	}
@@ -1049,17 +1139,22 @@ func (a *Client) GetCustomersCustomerFidContacts(params *GetCustomersCustomerFid
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidContactsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidContactsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1067,7 +1162,7 @@ func (a *Client) GetCustomersCustomerFidContacts(params *GetCustomersCustomerFid
 GetCustomersCustomerFidContactsContactFid retrieves information about a contact
 */
 func (a *Client) GetCustomersCustomerFidContactsContactFid(params *GetCustomersCustomerFidContactsContactFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidContactsContactFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidContactsContactFidParams()
 	}
@@ -1087,17 +1182,22 @@ func (a *Client) GetCustomersCustomerFidContactsContactFid(params *GetCustomersC
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidContactsContactFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidContactsContactFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1105,7 +1205,7 @@ func (a *Client) GetCustomersCustomerFidContactsContactFid(params *GetCustomersC
 GetCustomersCustomerFidEmails lists customers emails
 */
 func (a *Client) GetCustomersCustomerFidEmails(params *GetCustomersCustomerFidEmailsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidEmailsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidEmailsParams()
 	}
@@ -1125,17 +1225,22 @@ func (a *Client) GetCustomersCustomerFidEmails(params *GetCustomersCustomerFidEm
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidEmailsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidEmailsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1143,7 +1248,7 @@ func (a *Client) GetCustomersCustomerFidEmails(params *GetCustomersCustomerFidEm
 GetCustomersCustomerFidInteractions lists customer interactions
 */
 func (a *Client) GetCustomersCustomerFidInteractions(params *GetCustomersCustomerFidInteractionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidInteractionsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidInteractionsParams()
 	}
@@ -1163,17 +1268,22 @@ func (a *Client) GetCustomersCustomerFidInteractions(params *GetCustomersCustome
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidInteractionsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidInteractionsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1181,7 +1291,7 @@ func (a *Client) GetCustomersCustomerFidInteractions(params *GetCustomersCustome
 GetCustomersCustomerFidInvoices lists of invoice summaries for given customer
 */
 func (a *Client) GetCustomersCustomerFidInvoices(params *GetCustomersCustomerFidInvoicesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidInvoicesOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidInvoicesParams()
 	}
@@ -1201,17 +1311,22 @@ func (a *Client) GetCustomersCustomerFidInvoices(params *GetCustomersCustomerFid
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidInvoicesOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidInvoicesDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1219,7 +1334,7 @@ func (a *Client) GetCustomersCustomerFidInvoices(params *GetCustomersCustomerFid
 GetCustomersCustomerFidInvoicesInvoiceFid retreives a specific itemised invoice
 */
 func (a *Client) GetCustomersCustomerFidInvoicesInvoiceFid(params *GetCustomersCustomerFidInvoicesInvoiceFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidInvoicesInvoiceFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidInvoicesInvoiceFidParams()
 	}
@@ -1239,17 +1354,22 @@ func (a *Client) GetCustomersCustomerFidInvoicesInvoiceFid(params *GetCustomersC
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidInvoicesInvoiceFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidInvoicesInvoiceFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1257,7 +1377,7 @@ func (a *Client) GetCustomersCustomerFidInvoicesInvoiceFid(params *GetCustomersC
 GetCustomersCustomerFidInvoicesInvoiceFidDownload retreives a specific itemised invoice p d f
 */
 func (a *Client) GetCustomersCustomerFidInvoicesInvoiceFidDownload(params *GetCustomersCustomerFidInvoicesInvoiceFidDownloadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidInvoicesInvoiceFidDownloadOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidInvoicesInvoiceFidDownloadParams()
 	}
@@ -1277,17 +1397,22 @@ func (a *Client) GetCustomersCustomerFidInvoicesInvoiceFidDownload(params *GetCu
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidInvoicesInvoiceFidDownloadOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidInvoicesInvoiceFidDownloadDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1295,7 +1420,7 @@ func (a *Client) GetCustomersCustomerFidInvoicesInvoiceFidDownload(params *GetCu
 GetCustomersCustomerFidNotifications lists push notification sent to a customer
 */
 func (a *Client) GetCustomersCustomerFidNotifications(params *GetCustomersCustomerFidNotificationsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidNotificationsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidNotificationsParams()
 	}
@@ -1315,17 +1440,22 @@ func (a *Client) GetCustomersCustomerFidNotifications(params *GetCustomersCustom
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidNotificationsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidNotificationsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1333,7 +1463,7 @@ func (a *Client) GetCustomersCustomerFidNotifications(params *GetCustomersCustom
 GetCustomersCustomerFidOrders lists customer orders
 */
 func (a *Client) GetCustomersCustomerFidOrders(params *GetCustomersCustomerFidOrdersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidOrdersOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidOrdersParams()
 	}
@@ -1353,17 +1483,22 @@ func (a *Client) GetCustomersCustomerFidOrders(params *GetCustomersCustomerFidOr
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidOrdersOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidOrdersDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1371,7 +1506,7 @@ func (a *Client) GetCustomersCustomerFidOrders(params *GetCustomersCustomerFidOr
 GetCustomersCustomerFidPaymentAccounts lists customers payment accounts
 */
 func (a *Client) GetCustomersCustomerFidPaymentAccounts(params *GetCustomersCustomerFidPaymentAccountsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidPaymentAccountsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidPaymentAccountsParams()
 	}
@@ -1391,17 +1526,22 @@ func (a *Client) GetCustomersCustomerFidPaymentAccounts(params *GetCustomersCust
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidPaymentAccountsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidPaymentAccountsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1409,7 +1549,7 @@ func (a *Client) GetCustomersCustomerFidPaymentAccounts(params *GetCustomersCust
 GetCustomersCustomerFidPaymentAccountsPaymentAccountFid retrieves payment account
 */
 func (a *Client) GetCustomersCustomerFidPaymentAccountsPaymentAccountFid(params *GetCustomersCustomerFidPaymentAccountsPaymentAccountFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidPaymentAccountsPaymentAccountFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidPaymentAccountsPaymentAccountFidParams()
 	}
@@ -1429,17 +1569,22 @@ func (a *Client) GetCustomersCustomerFidPaymentAccountsPaymentAccountFid(params 
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidPaymentAccountsPaymentAccountFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidPaymentAccountsPaymentAccountFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1447,7 +1592,7 @@ func (a *Client) GetCustomersCustomerFidPaymentAccountsPaymentAccountFid(params 
 GetCustomersCustomerFidPaymentMethods lists customers payment methods
 */
 func (a *Client) GetCustomersCustomerFidPaymentMethods(params *GetCustomersCustomerFidPaymentMethodsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidPaymentMethodsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidPaymentMethodsParams()
 	}
@@ -1467,17 +1612,22 @@ func (a *Client) GetCustomersCustomerFidPaymentMethods(params *GetCustomersCusto
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidPaymentMethodsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidPaymentMethodsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1485,7 +1635,7 @@ func (a *Client) GetCustomersCustomerFidPaymentMethods(params *GetCustomersCusto
 GetCustomersCustomerFidPaymentMethodsCards lists customers card payment methods
 */
 func (a *Client) GetCustomersCustomerFidPaymentMethodsCards(params *GetCustomersCustomerFidPaymentMethodsCardsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidPaymentMethodsCardsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidPaymentMethodsCardsParams()
 	}
@@ -1505,17 +1655,22 @@ func (a *Client) GetCustomersCustomerFidPaymentMethodsCards(params *GetCustomers
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidPaymentMethodsCardsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidPaymentMethodsCardsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1523,7 +1678,7 @@ func (a *Client) GetCustomersCustomerFidPaymentMethodsCards(params *GetCustomers
 GetCustomersCustomerFidPaymentMethodsPaymentMethodFid retrieves a payment method
 */
 func (a *Client) GetCustomersCustomerFidPaymentMethodsPaymentMethodFid(params *GetCustomersCustomerFidPaymentMethodsPaymentMethodFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidPaymentMethodsPaymentMethodFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidPaymentMethodsPaymentMethodFidParams()
 	}
@@ -1543,17 +1698,22 @@ func (a *Client) GetCustomersCustomerFidPaymentMethodsPaymentMethodFid(params *G
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidPaymentMethodsPaymentMethodFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidPaymentMethodsPaymentMethodFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1561,7 +1721,7 @@ func (a *Client) GetCustomersCustomerFidPaymentMethodsPaymentMethodFid(params *G
 GetCustomersCustomerFidPaymentsPaymentFid retrieves a payment
 */
 func (a *Client) GetCustomersCustomerFidPaymentsPaymentFid(params *GetCustomersCustomerFidPaymentsPaymentFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidPaymentsPaymentFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidPaymentsPaymentFidParams()
 	}
@@ -1581,17 +1741,22 @@ func (a *Client) GetCustomersCustomerFidPaymentsPaymentFid(params *GetCustomersC
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidPaymentsPaymentFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidPaymentsPaymentFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1599,7 +1764,7 @@ func (a *Client) GetCustomersCustomerFidPaymentsPaymentFid(params *GetCustomersC
 GetCustomersCustomerFidPhones lists customers phones
 */
 func (a *Client) GetCustomersCustomerFidPhones(params *GetCustomersCustomerFidPhonesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidPhonesOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidPhonesParams()
 	}
@@ -1619,17 +1784,22 @@ func (a *Client) GetCustomersCustomerFidPhones(params *GetCustomersCustomerFidPh
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidPhonesOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidPhonesDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1637,7 +1807,7 @@ func (a *Client) GetCustomersCustomerFidPhones(params *GetCustomersCustomerFidPh
 GetCustomersCustomerFidSentEmails lists emails sent to a customer
 */
 func (a *Client) GetCustomersCustomerFidSentEmails(params *GetCustomersCustomerFidSentEmailsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSentEmailsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidSentEmailsParams()
 	}
@@ -1657,17 +1827,22 @@ func (a *Client) GetCustomersCustomerFidSentEmails(params *GetCustomersCustomerF
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidSentEmailsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidSentEmailsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1675,7 +1850,7 @@ func (a *Client) GetCustomersCustomerFidSentEmails(params *GetCustomersCustomerF
 GetCustomersCustomerFidSubscriptions lists of subscription summaries for given customer
 */
 func (a *Client) GetCustomersCustomerFidSubscriptions(params *GetCustomersCustomerFidSubscriptionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidSubscriptionsParams()
 	}
@@ -1695,17 +1870,22 @@ func (a *Client) GetCustomersCustomerFidSubscriptions(params *GetCustomersCustom
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidSubscriptionsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidSubscriptionsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1713,7 +1893,7 @@ func (a *Client) GetCustomersCustomerFidSubscriptions(params *GetCustomersCustom
 GetCustomersCustomerFidSubscriptionsSubscriptionFid retreives a specific subscription
 */
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFid(params *GetCustomersCustomerFidSubscriptionsSubscriptionFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidSubscriptionsSubscriptionFidParams()
 	}
@@ -1733,17 +1913,22 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFid(params *Get
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidSubscriptionsSubscriptionFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidSubscriptionsSubscriptionFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1751,7 +1936,7 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFid(params *Get
 GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocations retreives a subscriptions resource allocations
 */
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocations(params *GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsParams()
 	}
@@ -1771,17 +1956,22 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocations(
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1789,7 +1979,7 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocations(
 GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlow retreives a list of active cancel flows
 */
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlow(params *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowParams()
 	}
@@ -1809,17 +1999,22 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlow(p
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1827,7 +2022,7 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlow(p
 GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearch retreives the state of a cancel flow
 */
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearch(params *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchParams()
 	}
@@ -1847,17 +2042,22 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFl
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1865,7 +2065,7 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFl
 GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptions retrieves cancel flow options
 */
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptions(params *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsParams()
 	}
@@ -1885,17 +2085,22 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFl
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1903,7 +2108,7 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFl
 GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasons retreives the available cancellation reasons for a subscription
 */
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasons(params *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsParams()
 	}
@@ -1923,17 +2128,22 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowRe
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1941,7 +2151,7 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowRe
 GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriods retreives the periods for a subscription
 */
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriods(params *GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsParams()
 	}
@@ -1961,17 +2171,22 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriods(para
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1979,7 +2194,7 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriods(para
 GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlow retreives a list of active retention flows
 */
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlow(params *GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowParams()
 	}
@@ -1999,17 +2214,22 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlo
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2017,7 +2237,7 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlo
 GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearch retreives the state of a retention flow
 */
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearch(params *GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchParams()
 	}
@@ -2037,17 +2257,22 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlo
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2055,7 +2280,7 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlo
 GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptions retrieves retention flow options
 */
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptions(params *GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsParams()
 	}
@@ -2075,17 +2300,22 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlo
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2093,7 +2323,7 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlo
 GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasons retreives the available retention reasons for a subscription
 */
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasons(params *GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsParams()
 	}
@@ -2113,17 +2343,22 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlo
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2131,7 +2366,7 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlo
 GetCustomersCustomerFidTickets gets support tickets for customer
 */
 func (a *Client) GetCustomersCustomerFidTickets(params *GetCustomersCustomerFidTicketsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidTicketsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidTicketsParams()
 	}
@@ -2151,17 +2386,22 @@ func (a *Client) GetCustomersCustomerFidTickets(params *GetCustomersCustomerFidT
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidTicketsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidTicketsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2169,7 +2409,7 @@ func (a *Client) GetCustomersCustomerFidTickets(params *GetCustomersCustomerFidT
 GetCustomersCustomerFidTicketsTicketFid retrieves a single ticket for a customer
 */
 func (a *Client) GetCustomersCustomerFidTicketsTicketFid(params *GetCustomersCustomerFidTicketsTicketFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidTicketsTicketFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidTicketsTicketFidParams()
 	}
@@ -2189,17 +2429,22 @@ func (a *Client) GetCustomersCustomerFidTicketsTicketFid(params *GetCustomersCus
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidTicketsTicketFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidTicketsTicketFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2207,7 +2452,7 @@ func (a *Client) GetCustomersCustomerFidTicketsTicketFid(params *GetCustomersCus
 GetCustomersCustomerFidTicketsTicketFidPosts retrieves ticket posts for a ticket
 */
 func (a *Client) GetCustomersCustomerFidTicketsTicketFidPosts(params *GetCustomersCustomerFidTicketsTicketFidPostsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidTicketsTicketFidPostsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidTicketsTicketFidPostsParams()
 	}
@@ -2227,17 +2472,22 @@ func (a *Client) GetCustomersCustomerFidTicketsTicketFidPosts(params *GetCustome
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidTicketsTicketFidPostsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidTicketsTicketFidPostsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2245,7 +2495,7 @@ func (a *Client) GetCustomersCustomerFidTicketsTicketFidPosts(params *GetCustome
 GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachments gets attachments for a ticket post
 */
 func (a *Client) GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachments(params *GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsParams()
 	}
@@ -2265,17 +2515,22 @@ func (a *Client) GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestamp
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2283,7 +2538,7 @@ func (a *Client) GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestamp
 GetCustomersFindByEmail finds a customer by brand and email address
 */
 func (a *Client) GetCustomersFindByEmail(params *GetCustomersFindByEmailParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersFindByEmailOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersFindByEmailParams()
 	}
@@ -2303,17 +2558,22 @@ func (a *Client) GetCustomersFindByEmail(params *GetCustomersFindByEmailParams, 
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersFindByEmailOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersFindByEmailDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2321,7 +2581,7 @@ func (a *Client) GetCustomersFindByEmail(params *GetCustomersFindByEmailParams, 
 GetCustomersFindByReference finds a customer by your reference
 */
 func (a *Client) GetCustomersFindByReference(params *GetCustomersFindByReferenceParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersFindByReferenceOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersFindByReferenceParams()
 	}
@@ -2341,17 +2601,22 @@ func (a *Client) GetCustomersFindByReference(params *GetCustomersFindByReference
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersFindByReferenceOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersFindByReferenceDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2359,7 +2624,7 @@ func (a *Client) GetCustomersFindByReference(params *GetCustomersFindByReference
 GetPaymentsTransactionTransactionID retrieves a payment by transaction ID
 */
 func (a *Client) GetPaymentsTransactionTransactionID(params *GetPaymentsTransactionTransactionIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPaymentsTransactionTransactionIDOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetPaymentsTransactionTransactionIDParams()
 	}
@@ -2379,17 +2644,22 @@ func (a *Client) GetPaymentsTransactionTransactionID(params *GetPaymentsTransact
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetPaymentsTransactionTransactionIDOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetPaymentsTransactionTransactionIDDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2397,7 +2667,7 @@ func (a *Client) GetPaymentsTransactionTransactionID(params *GetPaymentsTransact
 PostContactsContactFidAddresses adds an address to a contact
 */
 func (a *Client) PostContactsContactFidAddresses(params *PostContactsContactFidAddressesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostContactsContactFidAddressesOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostContactsContactFidAddressesParams()
 	}
@@ -2417,17 +2687,22 @@ func (a *Client) PostContactsContactFidAddresses(params *PostContactsContactFidA
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostContactsContactFidAddressesOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostContactsContactFidAddressesDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2435,7 +2710,7 @@ func (a *Client) PostContactsContactFidAddresses(params *PostContactsContactFidA
 PostContactsContactFidEmails adds an email address to a contact
 */
 func (a *Client) PostContactsContactFidEmails(params *PostContactsContactFidEmailsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostContactsContactFidEmailsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostContactsContactFidEmailsParams()
 	}
@@ -2455,17 +2730,22 @@ func (a *Client) PostContactsContactFidEmails(params *PostContactsContactFidEmai
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostContactsContactFidEmailsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostContactsContactFidEmailsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2473,7 +2753,7 @@ func (a *Client) PostContactsContactFidEmails(params *PostContactsContactFidEmai
 PostContactsContactFidPhones adds a phone number to a contact
 */
 func (a *Client) PostContactsContactFidPhones(params *PostContactsContactFidPhonesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostContactsContactFidPhonesOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostContactsContactFidPhonesParams()
 	}
@@ -2493,17 +2773,22 @@ func (a *Client) PostContactsContactFidPhones(params *PostContactsContactFidPhon
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostContactsContactFidPhonesOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostContactsContactFidPhonesDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2511,7 +2796,7 @@ func (a *Client) PostContactsContactFidPhones(params *PostContactsContactFidPhon
 PostCustomers creates a new customer
 */
 func (a *Client) PostCustomers(params *PostCustomersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostCustomersParams()
 	}
@@ -2531,17 +2816,22 @@ func (a *Client) PostCustomers(params *PostCustomersParams, authInfo runtime.Cli
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostCustomersOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2549,7 +2839,7 @@ func (a *Client) PostCustomers(params *PostCustomersParams, authInfo runtime.Cli
 PostCustomersCustomerFidAddresses adds an address to a customer
 */
 func (a *Client) PostCustomersCustomerFidAddresses(params *PostCustomersCustomerFidAddressesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidAddressesOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostCustomersCustomerFidAddressesParams()
 	}
@@ -2569,17 +2859,22 @@ func (a *Client) PostCustomersCustomerFidAddresses(params *PostCustomersCustomer
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostCustomersCustomerFidAddressesOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersCustomerFidAddressesDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2589,7 +2884,7 @@ PostCustomersCustomerFidAnonymize anonymizes customer data
 Anonymize customer data
 */
 func (a *Client) PostCustomersCustomerFidAnonymize(params *PostCustomersCustomerFidAnonymizeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidAnonymizeOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostCustomersCustomerFidAnonymizeParams()
 	}
@@ -2609,17 +2904,22 @@ func (a *Client) PostCustomersCustomerFidAnonymize(params *PostCustomersCustomer
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostCustomersCustomerFidAnonymizeOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersCustomerFidAnonymizeDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2627,7 +2927,7 @@ func (a *Client) PostCustomersCustomerFidAnonymize(params *PostCustomersCustomer
 PostCustomersCustomerFidContacts creates a new contact for a customer
 */
 func (a *Client) PostCustomersCustomerFidContacts(params *PostCustomersCustomerFidContactsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidContactsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostCustomersCustomerFidContactsParams()
 	}
@@ -2647,17 +2947,22 @@ func (a *Client) PostCustomersCustomerFidContacts(params *PostCustomersCustomerF
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostCustomersCustomerFidContactsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersCustomerFidContactsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2665,7 +2970,7 @@ func (a *Client) PostCustomersCustomerFidContacts(params *PostCustomersCustomerF
 PostCustomersCustomerFidEmails adds an email address to a customer
 */
 func (a *Client) PostCustomersCustomerFidEmails(params *PostCustomersCustomerFidEmailsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidEmailsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostCustomersCustomerFidEmailsParams()
 	}
@@ -2685,17 +2990,22 @@ func (a *Client) PostCustomersCustomerFidEmails(params *PostCustomersCustomerFid
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostCustomersCustomerFidEmailsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersCustomerFidEmailsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2703,7 +3013,7 @@ func (a *Client) PostCustomersCustomerFidEmails(params *PostCustomersCustomerFid
 PostCustomersCustomerFidInteractions creates an interaction
 */
 func (a *Client) PostCustomersCustomerFidInteractions(params *PostCustomersCustomerFidInteractionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidInteractionsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostCustomersCustomerFidInteractionsParams()
 	}
@@ -2723,17 +3033,22 @@ func (a *Client) PostCustomersCustomerFidInteractions(params *PostCustomersCusto
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostCustomersCustomerFidInteractionsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersCustomerFidInteractionsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2741,7 +3056,7 @@ func (a *Client) PostCustomersCustomerFidInteractions(params *PostCustomersCusto
 PostCustomersCustomerFidInvoicesInvoiceFidCreditNote adds a credit note to a customers invoice
 */
 func (a *Client) PostCustomersCustomerFidInvoicesInvoiceFidCreditNote(params *PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostCustomersCustomerFidInvoicesInvoiceFidCreditNoteParams()
 	}
@@ -2761,17 +3076,22 @@ func (a *Client) PostCustomersCustomerFidInvoicesInvoiceFidCreditNote(params *Po
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2779,7 +3099,7 @@ func (a *Client) PostCustomersCustomerFidInvoicesInvoiceFidCreditNote(params *Po
 PostCustomersCustomerFidNote saves a note against a customer
 */
 func (a *Client) PostCustomersCustomerFidNote(params *PostCustomersCustomerFidNoteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidNoteOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostCustomersCustomerFidNoteParams()
 	}
@@ -2799,17 +3119,22 @@ func (a *Client) PostCustomersCustomerFidNote(params *PostCustomersCustomerFidNo
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostCustomersCustomerFidNoteOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersCustomerFidNoteDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2817,7 +3142,7 @@ func (a *Client) PostCustomersCustomerFidNote(params *PostCustomersCustomerFidNo
 PostCustomersCustomerFidPaymentMethodsCardsCardFidLock post customers customer fid payment methods cards card fid lock API
 */
 func (a *Client) PostCustomersCustomerFidPaymentMethodsCardsCardFidLock(params *PostCustomersCustomerFidPaymentMethodsCardsCardFidLockParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidPaymentMethodsCardsCardFidLockOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostCustomersCustomerFidPaymentMethodsCardsCardFidLockParams()
 	}
@@ -2837,17 +3162,22 @@ func (a *Client) PostCustomersCustomerFidPaymentMethodsCardsCardFidLock(params *
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostCustomersCustomerFidPaymentMethodsCardsCardFidLockOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersCustomerFidPaymentMethodsCardsCardFidLockDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2855,7 +3185,7 @@ func (a *Client) PostCustomersCustomerFidPaymentMethodsCardsCardFidLock(params *
 PostCustomersCustomerFidPaymentMethodsPaypalComplete completes a paypal agreement created with initialise
 */
 func (a *Client) PostCustomersCustomerFidPaymentMethodsPaypalComplete(params *PostCustomersCustomerFidPaymentMethodsPaypalCompleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidPaymentMethodsPaypalCompleteOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostCustomersCustomerFidPaymentMethodsPaypalCompleteParams()
 	}
@@ -2875,17 +3205,22 @@ func (a *Client) PostCustomersCustomerFidPaymentMethodsPaypalComplete(params *Po
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostCustomersCustomerFidPaymentMethodsPaypalCompleteOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersCustomerFidPaymentMethodsPaypalCompleteDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2893,7 +3228,7 @@ func (a *Client) PostCustomersCustomerFidPaymentMethodsPaypalComplete(params *Po
 PostCustomersCustomerFidPaymentMethodsPaypalInitialise initialises a new paypal agreement for existing subscriptions
 */
 func (a *Client) PostCustomersCustomerFidPaymentMethodsPaypalInitialise(params *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidPaymentMethodsPaypalInitialiseOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostCustomersCustomerFidPaymentMethodsPaypalInitialiseParams()
 	}
@@ -2913,17 +3248,22 @@ func (a *Client) PostCustomersCustomerFidPaymentMethodsPaypalInitialise(params *
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostCustomersCustomerFidPaymentMethodsPaypalInitialiseOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersCustomerFidPaymentMethodsPaypalInitialiseDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2931,7 +3271,7 @@ func (a *Client) PostCustomersCustomerFidPaymentMethodsPaypalInitialise(params *
 PostCustomersCustomerFidPaymentsPaymentFidChargeback initiates a chargeback on a payment
 */
 func (a *Client) PostCustomersCustomerFidPaymentsPaymentFidChargeback(params *PostCustomersCustomerFidPaymentsPaymentFidChargebackParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidPaymentsPaymentFidChargebackOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostCustomersCustomerFidPaymentsPaymentFidChargebackParams()
 	}
@@ -2951,17 +3291,22 @@ func (a *Client) PostCustomersCustomerFidPaymentsPaymentFidChargeback(params *Po
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostCustomersCustomerFidPaymentsPaymentFidChargebackOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersCustomerFidPaymentsPaymentFidChargebackDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2969,7 +3314,7 @@ func (a *Client) PostCustomersCustomerFidPaymentsPaymentFidChargeback(params *Po
 PostCustomersCustomerFidPhones adds a phone number to a customer
 */
 func (a *Client) PostCustomersCustomerFidPhones(params *PostCustomersCustomerFidPhonesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidPhonesOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostCustomersCustomerFidPhonesParams()
 	}
@@ -2989,17 +3334,22 @@ func (a *Client) PostCustomersCustomerFidPhones(params *PostCustomersCustomerFid
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostCustomersCustomerFidPhonesOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersCustomerFidPhonesDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3009,7 +3359,7 @@ PostCustomersCustomerFidSar subjects access request
 Initiate a Subject Access Request.  A URL will be sent via a webhook (CustomerWHE::SUBJECT_ACCESS_REQUEST), once the archive is ready for download
 */
 func (a *Client) PostCustomersCustomerFidSar(params *PostCustomersCustomerFidSarParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSarOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostCustomersCustomerFidSarParams()
 	}
@@ -3029,17 +3379,22 @@ func (a *Client) PostCustomersCustomerFidSar(params *PostCustomersCustomerFidSar
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostCustomersCustomerFidSarOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersCustomerFidSarDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3047,7 +3402,7 @@ func (a *Client) PostCustomersCustomerFidSar(params *PostCustomersCustomerFidSar
 PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlow starts a cancel flow and retrieve its state
 */
 func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlow(params *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowParams()
 	}
@@ -3067,17 +3422,22 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlow(
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3085,7 +3445,7 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlow(
 PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowEmpty creates an empty cancel flow
 */
 func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowEmpty(params *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowEmptyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowEmptyOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowEmptyParams()
 	}
@@ -3105,17 +3465,22 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowE
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowEmptyOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowEmptyDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3123,7 +3488,7 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowE
 PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptions sets cancel flow options
 */
 func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptions(params *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsParams()
 	}
@@ -3143,17 +3508,22 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowF
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3161,7 +3531,7 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowF
 PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequest creates a cancel request for a subscription
 */
 func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequest(params *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestParams()
 	}
@@ -3181,17 +3551,22 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelReque
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3199,7 +3574,7 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelReque
 PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlow starts a retention flow and retrieve its state
 */
 func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlow(params *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowParams()
 	}
@@ -3219,17 +3594,22 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFl
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3237,7 +3617,7 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFl
 PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowEmpty creates an empty retention flow
 */
 func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowEmpty(params *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowEmptyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowEmptyOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowEmptyParams()
 	}
@@ -3257,17 +3637,22 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFl
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowEmptyOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowEmptyDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3275,7 +3660,7 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFl
 PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptions sets retention flow options
 */
 func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptions(params *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsParams()
 	}
@@ -3295,17 +3680,22 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFl
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3315,7 +3705,7 @@ PostCustomersCustomerFidTickets creates a new support ticket
 The attachments property is an array of unique filenames that have been created using ```/upload/uploadUrl```
 */
 func (a *Client) PostCustomersCustomerFidTickets(params *PostCustomersCustomerFidTicketsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidTicketsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostCustomersCustomerFidTicketsParams()
 	}
@@ -3335,17 +3725,22 @@ func (a *Client) PostCustomersCustomerFidTickets(params *PostCustomersCustomerFi
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostCustomersCustomerFidTicketsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersCustomerFidTicketsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3355,7 +3750,7 @@ PostCustomersCustomerFidTicketsTicketFidPosts posts a reply to a ticket
 The attachments property is an array of unique filenames that have been created using ```/upload/uploadUrl```
 */
 func (a *Client) PostCustomersCustomerFidTicketsTicketFidPosts(params *PostCustomersCustomerFidTicketsTicketFidPostsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidTicketsTicketFidPostsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostCustomersCustomerFidTicketsTicketFidPostsParams()
 	}
@@ -3375,17 +3770,22 @@ func (a *Client) PostCustomersCustomerFidTicketsTicketFidPosts(params *PostCusto
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostCustomersCustomerFidTicketsTicketFidPostsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersCustomerFidTicketsTicketFidPostsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3393,7 +3793,7 @@ func (a *Client) PostCustomersCustomerFidTicketsTicketFidPosts(params *PostCusto
 PutCustomersCustomerFid updates a customer
 */
 func (a *Client) PutCustomersCustomerFid(params *PutCustomersCustomerFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidParams()
 	}
@@ -3413,17 +3813,22 @@ func (a *Client) PutCustomersCustomerFid(params *PutCustomersCustomerFidParams, 
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3431,7 +3836,7 @@ func (a *Client) PutCustomersCustomerFid(params *PutCustomersCustomerFidParams, 
 PutCustomersCustomerFidAccountStatus updates a customers status
 */
 func (a *Client) PutCustomersCustomerFidAccountStatus(params *PutCustomersCustomerFidAccountStatusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidAccountStatusOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidAccountStatusParams()
 	}
@@ -3451,17 +3856,22 @@ func (a *Client) PutCustomersCustomerFidAccountStatus(params *PutCustomersCustom
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidAccountStatusOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidAccountStatusDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3469,7 +3879,7 @@ func (a *Client) PutCustomersCustomerFidAccountStatus(params *PutCustomersCustom
 PutCustomersCustomerFidAccountType updates a customers status
 */
 func (a *Client) PutCustomersCustomerFidAccountType(params *PutCustomersCustomerFidAccountTypeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidAccountTypeOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidAccountTypeParams()
 	}
@@ -3489,17 +3899,22 @@ func (a *Client) PutCustomersCustomerFidAccountType(params *PutCustomersCustomer
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidAccountTypeOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidAccountTypeDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3507,7 +3922,7 @@ func (a *Client) PutCustomersCustomerFidAccountType(params *PutCustomersCustomer
 PutCustomersCustomerFidBillingData updates a customers billing data
 */
 func (a *Client) PutCustomersCustomerFidBillingData(params *PutCustomersCustomerFidBillingDataParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidBillingDataOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidBillingDataParams()
 	}
@@ -3527,17 +3942,22 @@ func (a *Client) PutCustomersCustomerFidBillingData(params *PutCustomersCustomer
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidBillingDataOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidBillingDataDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3545,7 +3965,7 @@ func (a *Client) PutCustomersCustomerFidBillingData(params *PutCustomersCustomer
 PutCustomersCustomerFidChargeback marks customer as charged back this action cannot be undone
 */
 func (a *Client) PutCustomersCustomerFidChargeback(params *PutCustomersCustomerFidChargebackParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidChargebackOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidChargebackParams()
 	}
@@ -3565,17 +3985,22 @@ func (a *Client) PutCustomersCustomerFidChargeback(params *PutCustomersCustomerF
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidChargebackOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidChargebackDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3583,7 +4008,7 @@ func (a *Client) PutCustomersCustomerFidChargeback(params *PutCustomersCustomerF
 PutCustomersCustomerFidChargebacksChargebackFid actions a chargeback
 */
 func (a *Client) PutCustomersCustomerFidChargebacksChargebackFid(params *PutCustomersCustomerFidChargebacksChargebackFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidChargebacksChargebackFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidChargebacksChargebackFidParams()
 	}
@@ -3603,17 +4028,22 @@ func (a *Client) PutCustomersCustomerFidChargebacksChargebackFid(params *PutCust
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidChargebacksChargebackFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidChargebacksChargebackFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3621,7 +4051,7 @@ func (a *Client) PutCustomersCustomerFidChargebacksChargebackFid(params *PutCust
 PutCustomersCustomerFidContactsContactFid updates a contacts information
 */
 func (a *Client) PutCustomersCustomerFidContactsContactFid(params *PutCustomersCustomerFidContactsContactFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidContactsContactFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidContactsContactFidParams()
 	}
@@ -3641,17 +4071,22 @@ func (a *Client) PutCustomersCustomerFidContactsContactFid(params *PutCustomersC
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidContactsContactFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidContactsContactFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3659,7 +4094,7 @@ func (a *Client) PutCustomersCustomerFidContactsContactFid(params *PutCustomersC
 PutCustomersCustomerFidCurrency sets customer currency
 */
 func (a *Client) PutCustomersCustomerFidCurrency(params *PutCustomersCustomerFidCurrencyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidCurrencyOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidCurrencyParams()
 	}
@@ -3679,17 +4114,22 @@ func (a *Client) PutCustomersCustomerFidCurrency(params *PutCustomersCustomerFid
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidCurrencyOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidCurrencyDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3697,7 +4137,7 @@ func (a *Client) PutCustomersCustomerFidCurrency(params *PutCustomersCustomerFid
 PutCustomersCustomerFidExternalReference updates a customers external reference
 */
 func (a *Client) PutCustomersCustomerFidExternalReference(params *PutCustomersCustomerFidExternalReferenceParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidExternalReferenceOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidExternalReferenceParams()
 	}
@@ -3717,17 +4157,22 @@ func (a *Client) PutCustomersCustomerFidExternalReference(params *PutCustomersCu
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidExternalReferenceOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidExternalReferenceDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3735,7 +4180,7 @@ func (a *Client) PutCustomersCustomerFidExternalReference(params *PutCustomersCu
 PutCustomersCustomerFidFraud marks customer as fraudulent this action cannot be undone
 */
 func (a *Client) PutCustomersCustomerFidFraud(params *PutCustomersCustomerFidFraudParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidFraudOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidFraudParams()
 	}
@@ -3755,17 +4200,22 @@ func (a *Client) PutCustomersCustomerFidFraud(params *PutCustomersCustomerFidFra
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidFraudOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidFraudDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3773,7 +4223,7 @@ func (a *Client) PutCustomersCustomerFidFraud(params *PutCustomersCustomerFidFra
 PutCustomersCustomerFidInvoicesInvoiceFidRetry retries payment of invoice
 */
 func (a *Client) PutCustomersCustomerFidInvoicesInvoiceFidRetry(params *PutCustomersCustomerFidInvoicesInvoiceFidRetryParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidInvoicesInvoiceFidRetryOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidInvoicesInvoiceFidRetryParams()
 	}
@@ -3793,17 +4243,22 @@ func (a *Client) PutCustomersCustomerFidInvoicesInvoiceFidRetry(params *PutCusto
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidInvoicesInvoiceFidRetryOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidInvoicesInvoiceFidRetryDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3811,7 +4266,7 @@ func (a *Client) PutCustomersCustomerFidInvoicesInvoiceFidRetry(params *PutCusto
 PutCustomersCustomerFidInvoicesRetry retries payment of all customer invoices which are in invoice
 */
 func (a *Client) PutCustomersCustomerFidInvoicesRetry(params *PutCustomersCustomerFidInvoicesRetryParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidInvoicesRetryOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidInvoicesRetryParams()
 	}
@@ -3831,17 +4286,22 @@ func (a *Client) PutCustomersCustomerFidInvoicesRetry(params *PutCustomersCustom
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidInvoicesRetryOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidInvoicesRetryDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3849,7 +4309,7 @@ func (a *Client) PutCustomersCustomerFidInvoicesRetry(params *PutCustomersCustom
 PutCustomersCustomerFidLifecycleStage updates a customers lifecycle stage
 */
 func (a *Client) PutCustomersCustomerFidLifecycleStage(params *PutCustomersCustomerFidLifecycleStageParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidLifecycleStageOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidLifecycleStageParams()
 	}
@@ -3869,17 +4329,22 @@ func (a *Client) PutCustomersCustomerFidLifecycleStage(params *PutCustomersCusto
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidLifecycleStageOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidLifecycleStageDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3887,7 +4352,7 @@ func (a *Client) PutCustomersCustomerFidLifecycleStage(params *PutCustomersCusto
 PutCustomersCustomerFidLinkVisitor links visitor to customer record
 */
 func (a *Client) PutCustomersCustomerFidLinkVisitor(params *PutCustomersCustomerFidLinkVisitorParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidLinkVisitorOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidLinkVisitorParams()
 	}
@@ -3907,17 +4372,22 @@ func (a *Client) PutCustomersCustomerFidLinkVisitor(params *PutCustomersCustomer
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidLinkVisitorOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidLinkVisitorDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3925,7 +4395,7 @@ func (a *Client) PutCustomersCustomerFidLinkVisitor(params *PutCustomersCustomer
 PutCustomersCustomerFidLocation updates a customers location
 */
 func (a *Client) PutCustomersCustomerFidLocation(params *PutCustomersCustomerFidLocationParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidLocationOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidLocationParams()
 	}
@@ -3945,17 +4415,22 @@ func (a *Client) PutCustomersCustomerFidLocation(params *PutCustomersCustomerFid
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidLocationOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidLocationDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3963,7 +4438,7 @@ func (a *Client) PutCustomersCustomerFidLocation(params *PutCustomersCustomerFid
 PutCustomersCustomerFidLoyal sets customer loyalty flag
 */
 func (a *Client) PutCustomersCustomerFidLoyal(params *PutCustomersCustomerFidLoyalParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidLoyalOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidLoyalParams()
 	}
@@ -3983,17 +4458,22 @@ func (a *Client) PutCustomersCustomerFidLoyal(params *PutCustomersCustomerFidLoy
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidLoyalOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidLoyalDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4001,7 +4481,7 @@ func (a *Client) PutCustomersCustomerFidLoyal(params *PutCustomersCustomerFidLoy
 PutCustomersCustomerFidPaymentMethodsCardsCardFid updates a card
 */
 func (a *Client) PutCustomersCustomerFidPaymentMethodsCardsCardFid(params *PutCustomersCustomerFidPaymentMethodsCardsCardFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidPaymentMethodsCardsCardFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidPaymentMethodsCardsCardFidParams()
 	}
@@ -4021,17 +4501,22 @@ func (a *Client) PutCustomersCustomerFidPaymentMethodsCardsCardFid(params *PutCu
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidPaymentMethodsCardsCardFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidPaymentMethodsCardsCardFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4039,7 +4524,7 @@ func (a *Client) PutCustomersCustomerFidPaymentMethodsCardsCardFid(params *PutCu
 PutCustomersCustomerFidPaymentMethodsPaymentMethodFid updates a payment method
 */
 func (a *Client) PutCustomersCustomerFidPaymentMethodsPaymentMethodFid(params *PutCustomersCustomerFidPaymentMethodsPaymentMethodFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidPaymentMethodsPaymentMethodFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidPaymentMethodsPaymentMethodFidParams()
 	}
@@ -4059,17 +4544,22 @@ func (a *Client) PutCustomersCustomerFidPaymentMethodsPaymentMethodFid(params *P
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidPaymentMethodsPaymentMethodFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidPaymentMethodsPaymentMethodFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4077,7 +4567,7 @@ func (a *Client) PutCustomersCustomerFidPaymentMethodsPaymentMethodFid(params *P
 PutCustomersCustomerFidPaymentsPaymentFidRefund refunds a payment
 */
 func (a *Client) PutCustomersCustomerFidPaymentsPaymentFidRefund(params *PutCustomersCustomerFidPaymentsPaymentFidRefundParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidPaymentsPaymentFidRefundOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidPaymentsPaymentFidRefundParams()
 	}
@@ -4097,17 +4587,22 @@ func (a *Client) PutCustomersCustomerFidPaymentsPaymentFidRefund(params *PutCust
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidPaymentsPaymentFidRefundOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidPaymentsPaymentFidRefundDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4115,7 +4610,7 @@ func (a *Client) PutCustomersCustomerFidPaymentsPaymentFidRefund(params *PutCust
 PutCustomersCustomerFidPurchased marks customer as purchased this action cannot be undone
 */
 func (a *Client) PutCustomersCustomerFidPurchased(params *PutCustomersCustomerFidPurchasedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidPurchasedOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidPurchasedParams()
 	}
@@ -4135,17 +4630,22 @@ func (a *Client) PutCustomersCustomerFidPurchased(params *PutCustomersCustomerFi
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidPurchasedOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidPurchasedDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4153,7 +4653,7 @@ func (a *Client) PutCustomersCustomerFidPurchased(params *PutCustomersCustomerFi
 PutCustomersCustomerFidQualified marks customer as qualified this action cannot be undone
 */
 func (a *Client) PutCustomersCustomerFidQualified(params *PutCustomersCustomerFidQualifiedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidQualifiedOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidQualifiedParams()
 	}
@@ -4173,17 +4673,22 @@ func (a *Client) PutCustomersCustomerFidQualified(params *PutCustomersCustomerFi
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidQualifiedOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidQualifiedDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4191,7 +4696,7 @@ func (a *Client) PutCustomersCustomerFidQualified(params *PutCustomersCustomerFi
 PutCustomersCustomerFidSubscriptionType updates a customers status
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionType(params *PutCustomersCustomerFidSubscriptionTypeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionTypeOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionTypeParams()
 	}
@@ -4211,17 +4716,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionType(params *PutCustomersCus
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionTypeOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionTypeDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4229,7 +4739,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionType(params *PutCustomersCus
 PutCustomersCustomerFidSubscriptionsSubscriptionFid updates a subscription
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFid(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidParams()
 	}
@@ -4249,17 +4759,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFid(params *Put
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4267,7 +4782,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFid(params *Put
 PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOffer applies an offer to a subscription
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOffer(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferParams()
 	}
@@ -4287,17 +4802,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOffer(p
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4305,7 +4825,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOffer(p
 PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDays sets auto cancel days on a subscription
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDays(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysParams()
 	}
@@ -4325,17 +4845,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDa
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4343,7 +4868,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDa
 PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDays sets auto suspend days on a subscription
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDays(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysParams()
 	}
@@ -4363,17 +4888,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendD
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4381,7 +4911,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendD
 PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModification calculates the changes before a modification to a subscription
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModification(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationParams()
 	}
@@ -4401,17 +4931,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateMod
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4419,7 +4954,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateMod
 PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefund calculates the result of a potential refund on a subscription
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefund(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundParams()
 	}
@@ -4439,17 +4974,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRef
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4457,7 +4997,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRef
 PutCustomersCustomerFidSubscriptionsSubscriptionFidCancel cancels a subscripion returns subscription f ID
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCancel(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidCancelParams()
 	}
@@ -4477,17 +5017,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCancel(param
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4495,7 +5040,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCancel(param
 PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearch posts an action for a cancel flow and retrieve its latest state
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearch(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchParams()
 	}
@@ -4515,17 +5060,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFl
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4533,7 +5083,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFl
 PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandon abandons a cancel flow
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandon(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonParams()
 	}
@@ -4553,17 +5103,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFl
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4571,7 +5126,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFl
 PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoCharge disables auto charge on specific subscription
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoCharge(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeParams()
 	}
@@ -4591,17 +5146,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoC
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4609,7 +5169,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoC
 PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoCharge enables auto charge on specific subscription
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoCharge(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoChargeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoChargeOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoChargeParams()
 	}
@@ -4629,17 +5189,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoCh
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoChargeOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoChargeDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4647,7 +5212,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoCh
 PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModify modifies an existing subscription with a new price returns the new subscription
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModify(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyParams()
 	}
@@ -4667,17 +5232,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModify(
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4685,7 +5255,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModify(
 PutCustomersCustomerFidSubscriptionsSubscriptionFidModify modifies an existing subscription with a new price returns new open order to be completed
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidModify(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidModifyParams()
 	}
@@ -4705,17 +5275,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidModify(param
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4723,7 +5298,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidModify(param
 PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefund refunds a subscription period
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefund(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundParams()
 	}
@@ -4743,17 +5318,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPerio
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4761,7 +5341,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPerio
 PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenew pres renew an existing subscription with a different price returns new open order to be completed
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenew(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewParams()
 	}
@@ -4781,17 +5361,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenew(par
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4799,7 +5384,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenew(par
 PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetry retries the provisioning step
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetry(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryParams()
 	}
@@ -4819,17 +5404,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioning
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4837,7 +5427,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioning
 PutCustomersCustomerFidSubscriptionsSubscriptionFidReactivate reactivates a subscription returns subscription f ID
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidReactivate(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidReactivateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidReactivateOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidReactivateParams()
 	}
@@ -4857,17 +5447,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidReactivate(p
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidReactivateOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidReactivateDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4875,7 +5470,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidReactivate(p
 PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalMode sets the renewal mode of a subscription
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalMode(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeParams()
 	}
@@ -4895,17 +5490,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalMode(
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4913,7 +5513,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalMode(
 PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearch posts an action for a cancel flow and retrieve its latest state
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearch(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchParams()
 	}
@@ -4933,17 +5533,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlo
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4951,7 +5556,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlo
 PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandon abandons a retention flow
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandon(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonParams()
 	}
@@ -4971,17 +5576,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlo
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4989,7 +5599,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlo
 PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDays sets advance days on a subscription
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDays(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysParams()
 	}
@@ -5009,17 +5619,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDa
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -5027,7 +5642,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDa
 PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscription sets parent subscription on a subscription
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscription(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionParams()
 	}
@@ -5047,17 +5662,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSub
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -5065,7 +5685,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSub
 PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccount sets payment account for subscription if changing a payment method from an automatic payment method such as pay pal recurring payments any other subscriptions paid with the same agreement will be set to default payment method and the agreement will be cancelled
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccount(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountParams()
 	}
@@ -5085,17 +5705,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAc
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -5103,7 +5728,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAc
 PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspend suspends a subscription
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspend(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendParams()
 	}
@@ -5123,17 +5748,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspend(para
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -5141,7 +5771,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspend(para
 PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPrice modifies an existing subscription with a new price which will be used for the next renewal
 */
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPrice(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceParams()
 	}
@@ -5161,17 +5791,22 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewa
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -5179,7 +5814,7 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewa
 PutCustomersCustomerFidTestAccount marks a customer as a test account
 */
 func (a *Client) PutCustomersCustomerFidTestAccount(params *PutCustomersCustomerFidTestAccountParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidTestAccountOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidTestAccountParams()
 	}
@@ -5199,17 +5834,22 @@ func (a *Client) PutCustomersCustomerFidTestAccount(params *PutCustomersCustomer
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidTestAccountOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidTestAccountDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -5217,7 +5857,7 @@ func (a *Client) PutCustomersCustomerFidTestAccount(params *PutCustomersCustomer
 PutCustomersCustomerFidUpgradePaymentAccount upgrades customer from fortifi pay to chargehive
 */
 func (a *Client) PutCustomersCustomerFidUpgradePaymentAccount(params *PutCustomersCustomerFidUpgradePaymentAccountParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidUpgradePaymentAccountOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidUpgradePaymentAccountParams()
 	}
@@ -5237,17 +5877,22 @@ func (a *Client) PutCustomersCustomerFidUpgradePaymentAccount(params *PutCustome
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidUpgradePaymentAccountOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidUpgradePaymentAccountDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -5255,7 +5900,7 @@ func (a *Client) PutCustomersCustomerFidUpgradePaymentAccount(params *PutCustome
 PutCustomersCustomerFidVip sets customer as v IP
 */
 func (a *Client) PutCustomersCustomerFidVip(params *PutCustomersCustomerFidVipParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidVipOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutCustomersCustomerFidVipParams()
 	}
@@ -5275,17 +5920,22 @@ func (a *Client) PutCustomersCustomerFidVip(params *PutCustomersCustomerFidVipPa
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutCustomersCustomerFidVipOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutCustomersCustomerFidVipDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

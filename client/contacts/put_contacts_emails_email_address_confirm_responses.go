@@ -7,6 +7,7 @@ package contacts
 
 import (
 	"encoding/json"
+	stderrors "errors"
 	"fmt"
 	"io"
 
@@ -22,7 +23,7 @@ type PutContactsEmailsEmailAddressConfirmReader struct {
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *PutContactsEmailsEmailAddressConfirmReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *PutContactsEmailsEmailAddressConfirmReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (any, error) {
 	switch response.Code() {
 	case 200:
 		result := NewPutContactsEmailsEmailAddressConfirmOK()
@@ -165,7 +166,7 @@ func (o *PutContactsEmailsEmailAddressConfirmDefault) readResponse(response runt
 	o.Payload = new(models.Envelope)
 
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && !stderrors.Is(err, io.EOF) {
 		return err
 	}
 

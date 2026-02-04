@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -227,11 +228,15 @@ func (m *Product) validateDefaultPrice(formats strfmt.Registry) error {
 
 	if m.DefaultPrice != nil {
 		if err := m.DefaultPrice.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("defaultPrice")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("defaultPrice")
 			}
+
 			return err
 		}
 	}
@@ -267,11 +272,15 @@ func (m *Product) contextValidateDefaultPrice(ctx context.Context, formats strfm
 		}
 
 		if err := m.DefaultPrice.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("defaultPrice")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("defaultPrice")
 			}
+
 			return err
 		}
 	}

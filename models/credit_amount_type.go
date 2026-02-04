@@ -41,7 +41,7 @@ const (
 )
 
 // for schema
-var creditAmountTypeEnum []interface{}
+var creditAmountTypeEnum []any
 
 func init() {
 	var res []CreditAmountType

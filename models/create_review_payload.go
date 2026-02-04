@@ -98,7 +98,7 @@ func (m *CreateReviewPayload) validateLanguage(formats strfmt.Registry) error {
 	return nil
 }
 
-var createReviewPayloadTypeProviderPropEnum []interface{}
+var createReviewPayloadTypeProviderPropEnum []any
 
 func init() {
 	var res []string

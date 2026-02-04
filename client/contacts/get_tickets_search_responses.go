@@ -8,6 +8,7 @@ package contacts
 import (
 	"context"
 	"encoding/json"
+	stderrors "errors"
 	"fmt"
 	"io"
 	"strconv"
@@ -26,7 +27,7 @@ type GetTicketsSearchReader struct {
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *GetTicketsSearchReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *GetTicketsSearchReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (any, error) {
 	switch response.Code() {
 	case 200:
 		result := NewGetTicketsSearchOK()
@@ -109,7 +110,7 @@ func (o *GetTicketsSearchOK) readResponse(response runtime.ClientResponse, consu
 	o.Payload = new(GetTicketsSearchOKBody)
 
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && !stderrors.Is(err, io.EOF) {
 		return err
 	}
 
@@ -183,7 +184,7 @@ func (o *GetTicketsSearchDefault) readResponse(response runtime.ClientResponse, 
 	o.Payload = new(models.Envelope)
 
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && !stderrors.Is(err, io.EOF) {
 		return err
 	}
 
@@ -278,11 +279,15 @@ func (o *GetTicketsSearchOKBody) validateData(formats strfmt.Registry) error {
 
 		if o.Data[i] != nil {
 			if err := o.Data[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("getTicketsSearchOK" + "." + "data" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("getTicketsSearchOK" + "." + "data" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -322,11 +327,15 @@ func (o *GetTicketsSearchOKBody) contextValidateData(ctx context.Context, format
 			}
 
 			if err := o.Data[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("getTicketsSearchOK" + "." + "data" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("getTicketsSearchOK" + "." + "data" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}

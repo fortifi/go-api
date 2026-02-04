@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -115,11 +116,15 @@ func (m *FindTransactionResponse) validateDiscounts(formats strfmt.Registry) err
 
 		if m.Discounts[i] != nil {
 			if err := m.Discounts[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("discounts" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("discounts" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -141,11 +146,15 @@ func (m *FindTransactionResponse) validateItems(formats strfmt.Registry) error {
 
 		if m.Items[i] != nil {
 			if err := m.Items[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("items" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("items" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -167,11 +176,15 @@ func (m *FindTransactionResponse) validateSubscriptions(formats strfmt.Registry)
 
 		if m.Subscriptions[i] != nil {
 			if err := m.Subscriptions[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("subscriptions" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("subscriptions" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -193,11 +206,15 @@ func (m *FindTransactionResponse) validateTaxes(formats strfmt.Registry) error {
 
 		if m.Taxes[i] != nil {
 			if err := m.Taxes[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("taxes" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("taxes" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -244,11 +261,15 @@ func (m *FindTransactionResponse) contextValidateDiscounts(ctx context.Context, 
 			}
 
 			if err := m.Discounts[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("discounts" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("discounts" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -269,11 +290,15 @@ func (m *FindTransactionResponse) contextValidateItems(ctx context.Context, form
 			}
 
 			if err := m.Items[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("items" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("items" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -294,11 +319,15 @@ func (m *FindTransactionResponse) contextValidateSubscriptions(ctx context.Conte
 			}
 
 			if err := m.Subscriptions[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("subscriptions" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("subscriptions" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -319,11 +348,15 @@ func (m *FindTransactionResponse) contextValidateTaxes(ctx context.Context, form
 			}
 
 			if err := m.Taxes[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("taxes" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("taxes" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}

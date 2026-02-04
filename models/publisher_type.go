@@ -98,7 +98,7 @@ const (
 )
 
 // for schema
-var publisherTypeEnum []interface{}
+var publisherTypeEnum []any
 
 func init() {
 	var res []PublisherType

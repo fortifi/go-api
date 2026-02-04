@@ -8,6 +8,7 @@ package entities
 import (
 	"context"
 	"encoding/json"
+	stderrors "errors"
 	"fmt"
 	"io"
 
@@ -25,7 +26,7 @@ type GetEntitiesEntityFidPropertiesValuesPropertyNameReader struct {
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *GetEntitiesEntityFidPropertiesValuesPropertyNameReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *GetEntitiesEntityFidPropertiesValuesPropertyNameReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (any, error) {
 	switch response.Code() {
 	case 200:
 		result := NewGetEntitiesEntityFidPropertiesValuesPropertyNameOK()
@@ -108,7 +109,7 @@ func (o *GetEntitiesEntityFidPropertiesValuesPropertyNameOK) readResponse(respon
 	o.Payload = new(GetEntitiesEntityFidPropertiesValuesPropertyNameOKBody)
 
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && !stderrors.Is(err, io.EOF) {
 		return err
 	}
 
@@ -182,7 +183,7 @@ func (o *GetEntitiesEntityFidPropertiesValuesPropertyNameDefault) readResponse(r
 	o.Payload = new(models.Envelope)
 
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && !stderrors.Is(err, io.EOF) {
 		return err
 	}
 
@@ -272,11 +273,15 @@ func (o *GetEntitiesEntityFidPropertiesValuesPropertyNameOKBody) validateData(fo
 
 	if o.Data != nil {
 		if err := o.Data.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("getEntitiesEntityFidPropertiesValuesPropertyNameOK" + "." + "data")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("getEntitiesEntityFidPropertiesValuesPropertyNameOK" + "." + "data")
 			}
+
 			return err
 		}
 	}
@@ -312,11 +317,15 @@ func (o *GetEntitiesEntityFidPropertiesValuesPropertyNameOKBody) contextValidate
 		}
 
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("getEntitiesEntityFidPropertiesValuesPropertyNameOK" + "." + "data")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("getEntitiesEntityFidPropertiesValuesPropertyNameOK" + "." + "data")
 			}
+
 			return err
 		}
 	}

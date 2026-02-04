@@ -65,7 +65,7 @@ type ClientService interface {
 PostCustomersCustomerFidApplyCredit applies credit to a customer
 */
 func (a *Client) PostCustomersCustomerFidApplyCredit(params *PostCustomersCustomerFidApplyCreditParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidApplyCreditOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostCustomersCustomerFidApplyCreditParams()
 	}
@@ -85,17 +85,22 @@ func (a *Client) PostCustomersCustomerFidApplyCredit(params *PostCustomersCustom
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostCustomersCustomerFidApplyCreditOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersCustomerFidApplyCreditDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -103,7 +108,7 @@ func (a *Client) PostCustomersCustomerFidApplyCredit(params *PostCustomersCustom
 PostCustomersCustomerFidPaymentMethodsCreatePending creates a new pending payment method
 */
 func (a *Client) PostCustomersCustomerFidPaymentMethodsCreatePending(params *PostCustomersCustomerFidPaymentMethodsCreatePendingParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidPaymentMethodsCreatePendingOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostCustomersCustomerFidPaymentMethodsCreatePendingParams()
 	}
@@ -123,17 +128,22 @@ func (a *Client) PostCustomersCustomerFidPaymentMethodsCreatePending(params *Pos
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostCustomersCustomerFidPaymentMethodsCreatePendingOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersCustomerFidPaymentMethodsCreatePendingDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

@@ -63,7 +63,7 @@ type ClientService interface {
 PostTransactionsTransactionFidRetry retries a transaction
 */
 func (a *Client) PostTransactionsTransactionFidRetry(params *PostTransactionsTransactionFidRetryParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostTransactionsTransactionFidRetryOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostTransactionsTransactionFidRetryParams()
 	}
@@ -83,17 +83,22 @@ func (a *Client) PostTransactionsTransactionFidRetry(params *PostTransactionsTra
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostTransactionsTransactionFidRetryOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostTransactionsTransactionFidRetryDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

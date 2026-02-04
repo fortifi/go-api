@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -282,11 +283,15 @@ func (m *InvoiceSummary) validateCreditNotes(formats strfmt.Registry) error {
 
 		if m.CreditNotes[i] != nil {
 			if err := m.CreditNotes[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("creditNotes" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("creditNotes" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -365,11 +370,15 @@ func (m *InvoiceSummary) contextValidateCreditNotes(ctx context.Context, formats
 			}
 
 			if err := m.CreditNotes[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("creditNotes" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("creditNotes" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}

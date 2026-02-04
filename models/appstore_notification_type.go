@@ -41,7 +41,7 @@ const (
 )
 
 // for schema
-var appstoreNotificationTypeEnum []interface{}
+var appstoreNotificationTypeEnum []any
 
 func init() {
 	var res []AppstoreNotificationType

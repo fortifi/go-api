@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -182,11 +183,15 @@ func (m *RetentionFlowState) validateChoices(formats strfmt.Registry) error {
 
 		if m.Choices[i] != nil {
 			if err := m.Choices[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("choices" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("choices" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -204,11 +209,15 @@ func (m *RetentionFlowState) validateStepData(formats strfmt.Registry) error {
 
 	if m.StepData != nil {
 		if err := m.StepData.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("stepData")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("stepData")
 			}
+
 			return err
 		}
 	}
@@ -250,11 +259,15 @@ func (m *RetentionFlowState) contextValidateChoices(ctx context.Context, formats
 			}
 
 			if err := m.Choices[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("choices" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("choices" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -273,11 +286,15 @@ func (m *RetentionFlowState) contextValidateStepData(ctx context.Context, format
 		}
 
 		if err := m.StepData.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("stepData")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("stepData")
 			}
+
 			return err
 		}
 	}

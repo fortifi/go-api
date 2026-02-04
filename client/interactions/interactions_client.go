@@ -87,7 +87,7 @@ type ClientService interface {
 GetInteractionsInteractionFid gets an interaction
 */
 func (a *Client) GetInteractionsInteractionFid(params *GetInteractionsInteractionFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetInteractionsInteractionFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetInteractionsInteractionFidParams()
 	}
@@ -107,17 +107,22 @@ func (a *Client) GetInteractionsInteractionFid(params *GetInteractionsInteractio
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetInteractionsInteractionFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetInteractionsInteractionFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -125,7 +130,7 @@ func (a *Client) GetInteractionsInteractionFid(params *GetInteractionsInteractio
 GetInteractionsInteractionFidMessages gets all messages on an interaction
 */
 func (a *Client) GetInteractionsInteractionFidMessages(params *GetInteractionsInteractionFidMessagesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetInteractionsInteractionFidMessagesOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetInteractionsInteractionFidMessagesParams()
 	}
@@ -145,17 +150,22 @@ func (a *Client) GetInteractionsInteractionFidMessages(params *GetInteractionsIn
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetInteractionsInteractionFidMessagesOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetInteractionsInteractionFidMessagesDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -163,7 +173,7 @@ func (a *Client) GetInteractionsInteractionFidMessages(params *GetInteractionsIn
 GetInteractionsInviteInviteCodeStatus gets an interaction invite status
 */
 func (a *Client) GetInteractionsInviteInviteCodeStatus(params *GetInteractionsInviteInviteCodeStatusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetInteractionsInviteInviteCodeStatusOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetInteractionsInviteInviteCodeStatusParams()
 	}
@@ -183,17 +193,22 @@ func (a *Client) GetInteractionsInviteInviteCodeStatus(params *GetInteractionsIn
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetInteractionsInviteInviteCodeStatusOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetInteractionsInviteInviteCodeStatusDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -201,7 +216,7 @@ func (a *Client) GetInteractionsInviteInviteCodeStatus(params *GetInteractionsIn
 PostInteractionsInteractionFidAttachment creates an interaction attachment
 */
 func (a *Client) PostInteractionsInteractionFidAttachment(params *PostInteractionsInteractionFidAttachmentParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidAttachmentOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostInteractionsInteractionFidAttachmentParams()
 	}
@@ -221,17 +236,22 @@ func (a *Client) PostInteractionsInteractionFidAttachment(params *PostInteractio
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostInteractionsInteractionFidAttachmentOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostInteractionsInteractionFidAttachmentDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -239,7 +259,7 @@ func (a *Client) PostInteractionsInteractionFidAttachment(params *PostInteractio
 PostInteractionsInteractionFidClientConnected as client has connected to the interaction
 */
 func (a *Client) PostInteractionsInteractionFidClientConnected(params *PostInteractionsInteractionFidClientConnectedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidClientConnectedOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostInteractionsInteractionFidClientConnectedParams()
 	}
@@ -259,17 +279,22 @@ func (a *Client) PostInteractionsInteractionFidClientConnected(params *PostInter
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostInteractionsInteractionFidClientConnectedOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostInteractionsInteractionFidClientConnectedDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -277,7 +302,7 @@ func (a *Client) PostInteractionsInteractionFidClientConnected(params *PostInter
 PostInteractionsInteractionFidClientDisconnected as client has disconnected from the interaction
 */
 func (a *Client) PostInteractionsInteractionFidClientDisconnected(params *PostInteractionsInteractionFidClientDisconnectedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidClientDisconnectedOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostInteractionsInteractionFidClientDisconnectedParams()
 	}
@@ -297,17 +322,22 @@ func (a *Client) PostInteractionsInteractionFidClientDisconnected(params *PostIn
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostInteractionsInteractionFidClientDisconnectedOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostInteractionsInteractionFidClientDisconnectedDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -315,7 +345,7 @@ func (a *Client) PostInteractionsInteractionFidClientDisconnected(params *PostIn
 PostInteractionsInteractionFidCustomerClosed thes customer has purposely closed the interaction
 */
 func (a *Client) PostInteractionsInteractionFidCustomerClosed(params *PostInteractionsInteractionFidCustomerClosedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidCustomerClosedOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostInteractionsInteractionFidCustomerClosedParams()
 	}
@@ -335,17 +365,22 @@ func (a *Client) PostInteractionsInteractionFidCustomerClosed(params *PostIntera
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostInteractionsInteractionFidCustomerClosedOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostInteractionsInteractionFidCustomerClosedDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -353,7 +388,7 @@ func (a *Client) PostInteractionsInteractionFidCustomerClosed(params *PostIntera
 PostInteractionsInteractionFidFeedback submits feedback to an interaction
 */
 func (a *Client) PostInteractionsInteractionFidFeedback(params *PostInteractionsInteractionFidFeedbackParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidFeedbackOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostInteractionsInteractionFidFeedbackParams()
 	}
@@ -373,17 +408,22 @@ func (a *Client) PostInteractionsInteractionFidFeedback(params *PostInteractions
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostInteractionsInteractionFidFeedbackOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostInteractionsInteractionFidFeedbackDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -391,7 +431,7 @@ func (a *Client) PostInteractionsInteractionFidFeedback(params *PostInteractions
 PostInteractionsInteractionFidMessage adds a message to a interaction
 */
 func (a *Client) PostInteractionsInteractionFidMessage(params *PostInteractionsInteractionFidMessageParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidMessageOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostInteractionsInteractionFidMessageParams()
 	}
@@ -411,17 +451,22 @@ func (a *Client) PostInteractionsInteractionFidMessage(params *PostInteractionsI
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostInteractionsInteractionFidMessageOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostInteractionsInteractionFidMessageDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -429,7 +474,7 @@ func (a *Client) PostInteractionsInteractionFidMessage(params *PostInteractionsI
 PostInteractionsInteractionFidSendChatTranscript sends a chat transcript to the customer email
 */
 func (a *Client) PostInteractionsInteractionFidSendChatTranscript(params *PostInteractionsInteractionFidSendChatTranscriptParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidSendChatTranscriptOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostInteractionsInteractionFidSendChatTranscriptParams()
 	}
@@ -449,17 +494,22 @@ func (a *Client) PostInteractionsInteractionFidSendChatTranscript(params *PostIn
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostInteractionsInteractionFidSendChatTranscriptOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostInteractionsInteractionFidSendChatTranscriptDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -467,7 +517,7 @@ func (a *Client) PostInteractionsInteractionFidSendChatTranscript(params *PostIn
 PostInteractionsInvite creates an interaction invite
 */
 func (a *Client) PostInteractionsInvite(params *PostInteractionsInviteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInviteOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostInteractionsInviteParams()
 	}
@@ -487,17 +537,22 @@ func (a *Client) PostInteractionsInvite(params *PostInteractionsInviteParams, au
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostInteractionsInviteOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostInteractionsInviteDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -505,7 +560,7 @@ func (a *Client) PostInteractionsInvite(params *PostInteractionsInviteParams, au
 PostInteractionsInviteInviteCode accepts an interaction invite
 */
 func (a *Client) PostInteractionsInviteInviteCode(params *PostInteractionsInviteInviteCodeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInviteInviteCodeOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostInteractionsInviteInviteCodeParams()
 	}
@@ -525,17 +580,22 @@ func (a *Client) PostInteractionsInviteInviteCode(params *PostInteractionsInvite
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostInteractionsInviteInviteCodeOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostInteractionsInviteInviteCodeDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -543,7 +603,7 @@ func (a *Client) PostInteractionsInviteInviteCode(params *PostInteractionsInvite
 PostInteractionsJourney creates a customer journey
 */
 func (a *Client) PostInteractionsJourney(params *PostInteractionsJourneyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsJourneyOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostInteractionsJourneyParams()
 	}
@@ -563,17 +623,22 @@ func (a *Client) PostInteractionsJourney(params *PostInteractionsJourneyParams, 
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostInteractionsJourneyOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostInteractionsJourneyDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

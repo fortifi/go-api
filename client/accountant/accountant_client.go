@@ -67,7 +67,7 @@ PostAccountantTransactionSearch finds an account transaction
 Find an Account Transaction based on purchase information
 */
 func (a *Client) PostAccountantTransactionSearch(params *PostAccountantTransactionSearchParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostAccountantTransactionSearchOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostAccountantTransactionSearchParams()
 	}
@@ -87,17 +87,22 @@ func (a *Client) PostAccountantTransactionSearch(params *PostAccountantTransacti
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostAccountantTransactionSearchOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostAccountantTransactionSearchDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -107,7 +112,7 @@ PostAccountantTransactionsSearch finds multiple account transaction
 Find multiple Account Transaction based on purchase information
 */
 func (a *Client) PostAccountantTransactionsSearch(params *PostAccountantTransactionsSearchParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostAccountantTransactionsSearchOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostAccountantTransactionsSearchParams()
 	}
@@ -127,17 +132,22 @@ func (a *Client) PostAccountantTransactionsSearch(params *PostAccountantTransact
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostAccountantTransactionsSearchOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostAccountantTransactionsSearchDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

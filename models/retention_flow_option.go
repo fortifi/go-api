@@ -48,7 +48,7 @@ func (m *RetentionFlowOption) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-var retentionFlowOptionTypeTypePropEnum []interface{}
+var retentionFlowOptionTypeTypePropEnum []any
 
 func init() {
 	var res []string

@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -85,11 +86,15 @@ func (m *ReverseActionPayload) validateMetaData(formats strfmt.Registry) error {
 	}
 
 	if err := m.MetaData.Validate(formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
+		ve := new(errors.Validation)
+		if stderrors.As(err, &ve) {
 			return ve.ValidateName("metaData")
-		} else if ce, ok := err.(*errors.CompositeError); ok {
+		}
+		ce := new(errors.CompositeError)
+		if stderrors.As(err, &ce) {
 			return ce.ValidateName("metaData")
 		}
+
 		return err
 	}
 
@@ -102,11 +107,15 @@ func (m *ReverseActionPayload) validateReason(formats strfmt.Registry) error {
 	}
 
 	if err := m.Reason.Validate(formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
+		ve := new(errors.Validation)
+		if stderrors.As(err, &ve) {
 			return ve.ValidateName("reason")
-		} else if ce, ok := err.(*errors.CompositeError); ok {
+		}
+		ce := new(errors.CompositeError)
+		if stderrors.As(err, &ce) {
 			return ce.ValidateName("reason")
 		}
+
 		return err
 	}
 
@@ -146,11 +155,15 @@ func (m *ReverseActionPayload) ContextValidate(ctx context.Context, formats strf
 func (m *ReverseActionPayload) contextValidateMetaData(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := m.MetaData.ContextValidate(ctx, formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
+		ve := new(errors.Validation)
+		if stderrors.As(err, &ve) {
 			return ve.ValidateName("metaData")
-		} else if ce, ok := err.(*errors.CompositeError); ok {
+		}
+		ce := new(errors.CompositeError)
+		if stderrors.As(err, &ce) {
 			return ce.ValidateName("metaData")
 		}
+
 		return err
 	}
 
@@ -164,11 +177,15 @@ func (m *ReverseActionPayload) contextValidateReason(ctx context.Context, format
 	}
 
 	if err := m.Reason.ContextValidate(ctx, formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
+		ve := new(errors.Validation)
+		if stderrors.As(err, &ve) {
 			return ve.ValidateName("reason")
-		} else if ce, ok := err.(*errors.CompositeError); ok {
+		}
+		ce := new(errors.CompositeError)
+		if stderrors.As(err, &ce) {
 			return ce.ValidateName("reason")
 		}
+
 		return err
 	}
 

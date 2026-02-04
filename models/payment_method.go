@@ -89,7 +89,7 @@ const (
 )
 
 // for schema
-var paymentMethodEnum []interface{}
+var paymentMethodEnum []any
 
 func init() {
 	var res []PaymentMethod

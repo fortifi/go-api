@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -59,11 +60,15 @@ func (m *CalculateRefundPayload) validateSubscriptionRefundType(formats strfmt.R
 
 	if m.SubscriptionRefundType != nil {
 		if err := m.SubscriptionRefundType.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("subscriptionRefundType")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("subscriptionRefundType")
 			}
+
 			return err
 		}
 	}
@@ -90,11 +95,15 @@ func (m *CalculateRefundPayload) contextValidateSubscriptionRefundType(ctx conte
 	if m.SubscriptionRefundType != nil {
 
 		if err := m.SubscriptionRefundType.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("subscriptionRefundType")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("subscriptionRefundType")
 			}
+
 			return err
 		}
 	}
