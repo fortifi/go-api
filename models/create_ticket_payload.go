@@ -8,6 +8,7 @@ package models
 import (
 	"context"
 	"encoding/json"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -124,11 +125,15 @@ func (m *CreateTicketPayload) validateBcc(formats strfmt.Registry) error {
 
 		if m.Bcc[i] != nil {
 			if err := m.Bcc[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("bcc" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("bcc" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -150,11 +155,15 @@ func (m *CreateTicketPayload) validateCc(formats strfmt.Registry) error {
 
 		if m.Cc[i] != nil {
 			if err := m.Cc[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("cc" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("cc" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -164,7 +173,7 @@ func (m *CreateTicketPayload) validateCc(formats strfmt.Registry) error {
 	return nil
 }
 
-var createTicketPayloadTypeImpactPropEnum []interface{}
+var createTicketPayloadTypeImpactPropEnum []any
 
 func init() {
 	var res []string
@@ -215,7 +224,7 @@ func (m *CreateTicketPayload) validateImpact(formats strfmt.Registry) error {
 	return nil
 }
 
-var createTicketPayloadTypeTicketTypePropEnum []interface{}
+var createTicketPayloadTypeTicketTypePropEnum []any
 
 func init() {
 	var res []string
@@ -263,7 +272,7 @@ func (m *CreateTicketPayload) validateTicketType(formats strfmt.Registry) error 
 	return nil
 }
 
-var createTicketPayloadTypeUrgencyPropEnum []interface{}
+var createTicketPayloadTypeUrgencyPropEnum []any
 
 func init() {
 	var res []string
@@ -349,11 +358,15 @@ func (m *CreateTicketPayload) contextValidateBcc(ctx context.Context, formats st
 			}
 
 			if err := m.Bcc[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("bcc" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("bcc" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -374,11 +387,15 @@ func (m *CreateTicketPayload) contextValidateCc(ctx context.Context, formats str
 			}
 
 			if err := m.Cc[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("cc" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("cc" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}

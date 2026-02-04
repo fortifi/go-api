@@ -8,6 +8,7 @@ package products
 import (
 	"context"
 	"encoding/json"
+	stderrors "errors"
 	"fmt"
 	"io"
 
@@ -25,7 +26,7 @@ type GetProductsOffersOfferFidReader struct {
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *GetProductsOffersOfferFidReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *GetProductsOffersOfferFidReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (any, error) {
 	switch response.Code() {
 	case 200:
 		result := NewGetProductsOffersOfferFidOK()
@@ -108,7 +109,7 @@ func (o *GetProductsOffersOfferFidOK) readResponse(response runtime.ClientRespon
 	o.Payload = new(GetProductsOffersOfferFidOKBody)
 
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && !stderrors.Is(err, io.EOF) {
 		return err
 	}
 
@@ -182,7 +183,7 @@ func (o *GetProductsOffersOfferFidDefault) readResponse(response runtime.ClientR
 	o.Payload = new(models.Envelope)
 
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && !stderrors.Is(err, io.EOF) {
 		return err
 	}
 
@@ -272,11 +273,15 @@ func (o *GetProductsOffersOfferFidOKBody) validateData(formats strfmt.Registry) 
 
 	if o.Data != nil {
 		if err := o.Data.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("getProductsOffersOfferFidOK" + "." + "data")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("getProductsOffersOfferFidOK" + "." + "data")
 			}
+
 			return err
 		}
 	}
@@ -312,11 +317,15 @@ func (o *GetProductsOffersOfferFidOKBody) contextValidateData(ctx context.Contex
 		}
 
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("getProductsOffersOfferFidOK" + "." + "data")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("getProductsOffersOfferFidOK" + "." + "data")
 			}
+
 			return err
 		}
 	}

@@ -77,7 +77,7 @@ type ClientService interface {
 GetSupportChatEnabled checks if chat is enabled
 */
 func (a *Client) GetSupportChatEnabled(params *GetSupportChatEnabledParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetSupportChatEnabledOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetSupportChatEnabledParams()
 	}
@@ -97,17 +97,22 @@ func (a *Client) GetSupportChatEnabled(params *GetSupportChatEnabledParams, auth
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetSupportChatEnabledOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetSupportChatEnabledDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -115,7 +120,7 @@ func (a *Client) GetSupportChatEnabled(params *GetSupportChatEnabledParams, auth
 GetTicketsTicketFid gets a ticket
 */
 func (a *Client) GetTicketsTicketFid(params *GetTicketsTicketFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetTicketsTicketFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetTicketsTicketFidParams()
 	}
@@ -135,17 +140,22 @@ func (a *Client) GetTicketsTicketFid(params *GetTicketsTicketFidParams, authInfo
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetTicketsTicketFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetTicketsTicketFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -153,7 +163,7 @@ func (a *Client) GetTicketsTicketFid(params *GetTicketsTicketFidParams, authInfo
 GetTicketsTicketFidPosts retrieves ticket posts for a ticket
 */
 func (a *Client) GetTicketsTicketFidPosts(params *GetTicketsTicketFidPostsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetTicketsTicketFidPostsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetTicketsTicketFidPostsParams()
 	}
@@ -173,17 +183,22 @@ func (a *Client) GetTicketsTicketFidPosts(params *GetTicketsTicketFidPostsParams
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetTicketsTicketFidPostsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetTicketsTicketFidPostsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -193,7 +208,7 @@ PostInteractionsTicket creates an interaction ticket
 The attachments property is an array of unique filenames that have been created using ```/upload/uploadUrl```
 */
 func (a *Client) PostInteractionsTicket(params *PostInteractionsTicketParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsTicketOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostInteractionsTicketParams()
 	}
@@ -213,17 +228,22 @@ func (a *Client) PostInteractionsTicket(params *PostInteractionsTicketParams, au
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostInteractionsTicketOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostInteractionsTicketDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -233,7 +253,7 @@ PostTickets creates a support ticket
 The attachments property is an array of unique filenames that have been created using ```/upload/uploadUrl```
 */
 func (a *Client) PostTickets(params *PostTicketsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostTicketsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostTicketsParams()
 	}
@@ -253,17 +273,22 @@ func (a *Client) PostTickets(params *PostTicketsParams, authInfo runtime.ClientA
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostTicketsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostTicketsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -271,7 +296,7 @@ func (a *Client) PostTickets(params *PostTicketsParams, authInfo runtime.ClientA
 PostTicketsTicketFidNote creates a note against the ticket
 */
 func (a *Client) PostTicketsTicketFidNote(params *PostTicketsTicketFidNoteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostTicketsTicketFidNoteOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostTicketsTicketFidNoteParams()
 	}
@@ -291,17 +316,22 @@ func (a *Client) PostTicketsTicketFidNote(params *PostTicketsTicketFidNoteParams
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostTicketsTicketFidNoteOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostTicketsTicketFidNoteDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -309,7 +339,7 @@ func (a *Client) PostTicketsTicketFidNote(params *PostTicketsTicketFidNoteParams
 PutTicketsTicketFidStatus sets the status of a ticket
 */
 func (a *Client) PutTicketsTicketFidStatus(params *PutTicketsTicketFidStatusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutTicketsTicketFidStatusOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutTicketsTicketFidStatusParams()
 	}
@@ -329,17 +359,22 @@ func (a *Client) PutTicketsTicketFidStatus(params *PutTicketsTicketFidStatusPara
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutTicketsTicketFidStatusOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutTicketsTicketFidStatusDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -349,7 +384,7 @@ PutTicketsTicketFidUpdateCcBcc updates cc and bcc fields for ticket
 Set respective fields to add and remove Cc/Bcc fields
 */
 func (a *Client) PutTicketsTicketFidUpdateCcBcc(params *PutTicketsTicketFidUpdateCcBccParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutTicketsTicketFidUpdateCcBccOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutTicketsTicketFidUpdateCcBccParams()
 	}
@@ -369,17 +404,22 @@ func (a *Client) PutTicketsTicketFidUpdateCcBcc(params *PutTicketsTicketFidUpdat
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutTicketsTicketFidUpdateCcBccOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutTicketsTicketFidUpdateCcBccDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

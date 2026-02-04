@@ -18,7 +18,7 @@ import (
 type InteractionActionPayload struct {
 
 	// data
-	Data interface{} `json:"data,omitempty"`
+	Data any `json:"data,omitempty"`
 
 	// provider
 	Provider string `json:"provider,omitempty"`

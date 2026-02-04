@@ -44,7 +44,7 @@ const (
 )
 
 // for schema
-var reasonGroupTypeEnum []interface{}
+var reasonGroupTypeEnum []any
 
 func init() {
 	var res []ReasonGroupType

@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -119,11 +120,15 @@ func (m *CreateCustomerPayload) validateAccountStatus(formats strfmt.Registry) e
 	}
 
 	if err := m.AccountStatus.Validate(formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
+		ve := new(errors.Validation)
+		if stderrors.As(err, &ve) {
 			return ve.ValidateName("accountStatus")
-		} else if ce, ok := err.(*errors.CompositeError); ok {
+		}
+		ce := new(errors.CompositeError)
+		if stderrors.As(err, &ce) {
 			return ce.ValidateName("accountStatus")
 		}
+
 		return err
 	}
 
@@ -136,11 +141,15 @@ func (m *CreateCustomerPayload) validateAccountType(formats strfmt.Registry) err
 	}
 
 	if err := m.AccountType.Validate(formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
+		ve := new(errors.Validation)
+		if stderrors.As(err, &ve) {
 			return ve.ValidateName("accountType")
-		} else if ce, ok := err.(*errors.CompositeError); ok {
+		}
+		ce := new(errors.CompositeError)
+		if stderrors.As(err, &ce) {
 			return ce.ValidateName("accountType")
 		}
+
 		return err
 	}
 
@@ -162,11 +171,15 @@ func (m *CreateCustomerPayload) validateLifecycle(formats strfmt.Registry) error
 	}
 
 	if err := m.Lifecycle.Validate(formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
+		ve := new(errors.Validation)
+		if stderrors.As(err, &ve) {
 			return ve.ValidateName("lifecycle")
-		} else if ce, ok := err.(*errors.CompositeError); ok {
+		}
+		ce := new(errors.CompositeError)
+		if stderrors.As(err, &ce) {
 			return ce.ValidateName("lifecycle")
 		}
+
 		return err
 	}
 
@@ -179,11 +192,15 @@ func (m *CreateCustomerPayload) validateSubscriptionType(formats strfmt.Registry
 	}
 
 	if err := m.SubscriptionType.Validate(formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
+		ve := new(errors.Validation)
+		if stderrors.As(err, &ve) {
 			return ve.ValidateName("subscriptionType")
-		} else if ce, ok := err.(*errors.CompositeError); ok {
+		}
+		ce := new(errors.CompositeError)
+		if stderrors.As(err, &ce) {
 			return ce.ValidateName("subscriptionType")
 		}
+
 		return err
 	}
 
@@ -235,11 +252,15 @@ func (m *CreateCustomerPayload) contextValidateAccountStatus(ctx context.Context
 	}
 
 	if err := m.AccountStatus.ContextValidate(ctx, formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
+		ve := new(errors.Validation)
+		if stderrors.As(err, &ve) {
 			return ve.ValidateName("accountStatus")
-		} else if ce, ok := err.(*errors.CompositeError); ok {
+		}
+		ce := new(errors.CompositeError)
+		if stderrors.As(err, &ce) {
 			return ce.ValidateName("accountStatus")
 		}
+
 		return err
 	}
 
@@ -253,11 +274,15 @@ func (m *CreateCustomerPayload) contextValidateAccountType(ctx context.Context, 
 	}
 
 	if err := m.AccountType.ContextValidate(ctx, formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
+		ve := new(errors.Validation)
+		if stderrors.As(err, &ve) {
 			return ve.ValidateName("accountType")
-		} else if ce, ok := err.(*errors.CompositeError); ok {
+		}
+		ce := new(errors.CompositeError)
+		if stderrors.As(err, &ce) {
 			return ce.ValidateName("accountType")
 		}
+
 		return err
 	}
 
@@ -271,11 +296,15 @@ func (m *CreateCustomerPayload) contextValidateLifecycle(ctx context.Context, fo
 	}
 
 	if err := m.Lifecycle.ContextValidate(ctx, formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
+		ve := new(errors.Validation)
+		if stderrors.As(err, &ve) {
 			return ve.ValidateName("lifecycle")
-		} else if ce, ok := err.(*errors.CompositeError); ok {
+		}
+		ce := new(errors.CompositeError)
+		if stderrors.As(err, &ce) {
 			return ce.ValidateName("lifecycle")
 		}
+
 		return err
 	}
 
@@ -289,11 +318,15 @@ func (m *CreateCustomerPayload) contextValidateSubscriptionType(ctx context.Cont
 	}
 
 	if err := m.SubscriptionType.ContextValidate(ctx, formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
+		ve := new(errors.Validation)
+		if stderrors.As(err, &ve) {
 			return ve.ValidateName("subscriptionType")
-		} else if ce, ok := err.(*errors.CompositeError); ok {
+		}
+		ce := new(errors.CompositeError)
+		if stderrors.As(err, &ce) {
 			return ce.ValidateName("subscriptionType")
 		}
+
 		return err
 	}
 

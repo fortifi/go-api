@@ -8,6 +8,7 @@ package flow
 import (
 	"context"
 	"encoding/json"
+	stderrors "errors"
 	"fmt"
 	"io"
 
@@ -25,7 +26,7 @@ type PostFlowFlowFidLogReader struct {
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *PostFlowFlowFidLogReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *PostFlowFlowFidLogReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (any, error) {
 	switch response.Code() {
 	case 200:
 		result := NewPostFlowFlowFidLogOK()
@@ -108,7 +109,7 @@ func (o *PostFlowFlowFidLogOK) readResponse(response runtime.ClientResponse, con
 	o.Payload = new(PostFlowFlowFidLogOKBody)
 
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && !stderrors.Is(err, io.EOF) {
 		return err
 	}
 
@@ -182,7 +183,7 @@ func (o *PostFlowFlowFidLogDefault) readResponse(response runtime.ClientResponse
 	o.Payload = new(models.Envelope)
 
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && !stderrors.Is(err, io.EOF) {
 		return err
 	}
 
@@ -272,11 +273,15 @@ func (o *PostFlowFlowFidLogOKBody) validateData(formats strfmt.Registry) error {
 
 	if o.Data != nil {
 		if err := o.Data.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("postFlowFlowFidLogOK" + "." + "data")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("postFlowFlowFidLogOK" + "." + "data")
 			}
+
 			return err
 		}
 	}
@@ -312,11 +317,15 @@ func (o *PostFlowFlowFidLogOKBody) contextValidateData(ctx context.Context, form
 		}
 
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("postFlowFlowFidLogOK" + "." + "data")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("postFlowFlowFidLogOK" + "." + "data")
 			}
+
 			return err
 		}
 	}

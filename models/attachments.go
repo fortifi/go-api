@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -49,11 +50,15 @@ func (m *Attachments) validateAttachments(formats strfmt.Registry) error {
 
 		if m.Attachments[i] != nil {
 			if err := m.Attachments[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("attachments" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("attachments" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -88,11 +93,15 @@ func (m *Attachments) contextValidateAttachments(ctx context.Context, formats st
 			}
 
 			if err := m.Attachments[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("attachments" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("attachments" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}

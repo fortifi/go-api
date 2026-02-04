@@ -65,7 +65,7 @@ type ClientService interface {
 GetPresetChatSessionID gets a preset chat by ID
 */
 func (a *Client) GetPresetChatSessionID(params *GetPresetChatSessionIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPresetChatSessionIDOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetPresetChatSessionIDParams()
 	}
@@ -85,17 +85,22 @@ func (a *Client) GetPresetChatSessionID(params *GetPresetChatSessionIDParams, au
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetPresetChatSessionIDOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetPresetChatSessionIDDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -103,7 +108,7 @@ func (a *Client) GetPresetChatSessionID(params *GetPresetChatSessionIDParams, au
 PostPresetChat creates a preset chat instance
 */
 func (a *Client) PostPresetChat(params *PostPresetChatParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostPresetChatOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostPresetChatParams()
 	}
@@ -123,17 +128,22 @@ func (a *Client) PostPresetChat(params *PostPresetChatParams, authInfo runtime.C
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostPresetChatOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostPresetChatDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

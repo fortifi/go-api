@@ -80,7 +80,7 @@ const (
 )
 
 // for schema
-var paymentAccountTypeEnum []interface{}
+var paymentAccountTypeEnum []any
 
 func init() {
 	var res []PaymentAccountType

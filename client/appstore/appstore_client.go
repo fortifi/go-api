@@ -67,7 +67,7 @@ PostAppstoreCustomerFidApple posts a new apple notification
 Post a new Apple notification.
 */
 func (a *Client) PostAppstoreCustomerFidApple(params *PostAppstoreCustomerFidAppleParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostAppstoreCustomerFidAppleOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostAppstoreCustomerFidAppleParams()
 	}
@@ -87,17 +87,22 @@ func (a *Client) PostAppstoreCustomerFidApple(params *PostAppstoreCustomerFidApp
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostAppstoreCustomerFidAppleOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostAppstoreCustomerFidAppleDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -107,7 +112,7 @@ PostAppstoreCustomerFidGoogle posts a new google notification
 Post a new Google notification.
 */
 func (a *Client) PostAppstoreCustomerFidGoogle(params *PostAppstoreCustomerFidGoogleParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostAppstoreCustomerFidGoogleOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostAppstoreCustomerFidGoogleParams()
 	}
@@ -127,17 +132,22 @@ func (a *Client) PostAppstoreCustomerFidGoogle(params *PostAppstoreCustomerFidGo
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostAppstoreCustomerFidGoogleOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostAppstoreCustomerFidGoogleDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -65,11 +66,15 @@ func (m *TriggerActionPayload) validateAction(formats strfmt.Registry) error {
 
 	if m.Action != nil {
 		if err := m.Action.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("action")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("action")
 			}
+
 			return err
 		}
 	}
@@ -83,11 +88,15 @@ func (m *TriggerActionPayload) validateMetaData(formats strfmt.Registry) error {
 	}
 
 	if err := m.MetaData.Validate(formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
+		ve := new(errors.Validation)
+		if stderrors.As(err, &ve) {
 			return ve.ValidateName("metaData")
-		} else if ce, ok := err.(*errors.CompositeError); ok {
+		}
+		ce := new(errors.CompositeError)
+		if stderrors.As(err, &ce) {
 			return ce.ValidateName("metaData")
 		}
+
 		return err
 	}
 
@@ -133,11 +142,15 @@ func (m *TriggerActionPayload) contextValidateAction(ctx context.Context, format
 		}
 
 		if err := m.Action.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("action")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("action")
 			}
+
 			return err
 		}
 	}
@@ -148,11 +161,15 @@ func (m *TriggerActionPayload) contextValidateAction(ctx context.Context, format
 func (m *TriggerActionPayload) contextValidateMetaData(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := m.MetaData.ContextValidate(ctx, formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
+		ve := new(errors.Validation)
+		if stderrors.As(err, &ve) {
 			return ve.ValidateName("metaData")
-		} else if ce, ok := err.(*errors.CompositeError); ok {
+		}
+		ce := new(errors.CompositeError)
+		if stderrors.As(err, &ce) {
 			return ce.ValidateName("metaData")
 		}
+
 		return err
 	}
 

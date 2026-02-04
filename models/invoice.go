@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -319,11 +320,15 @@ func (m *Invoice) validateCreditNotes(formats strfmt.Registry) error {
 
 		if m.CreditNotes[i] != nil {
 			if err := m.CreditNotes[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("creditNotes" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("creditNotes" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -372,11 +377,15 @@ func (m *Invoice) validateInvoiceItems(formats strfmt.Registry) error {
 
 		if m.InvoiceItems[i] != nil {
 			if err := m.InvoiceItems[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("invoiceItems" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("invoiceItems" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -433,11 +442,15 @@ func (m *Invoice) contextValidateCreditNotes(ctx context.Context, formats strfmt
 			}
 
 			if err := m.CreditNotes[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("creditNotes" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("creditNotes" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -458,11 +471,15 @@ func (m *Invoice) contextValidateInvoiceItems(ctx context.Context, formats strfm
 			}
 
 			if err := m.InvoiceItems[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("invoiceItems" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("invoiceItems" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}

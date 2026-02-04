@@ -337,7 +337,7 @@ func (m *Payment) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-var paymentTypeStatusPropEnum []interface{}
+var paymentTypeStatusPropEnum []any
 
 func init() {
 	var res []string
@@ -371,7 +371,7 @@ func (m *Payment) validateStatus(formats strfmt.Registry) error {
 	return nil
 }
 
-var paymentTypeTypePropEnum []interface{}
+var paymentTypeTypePropEnum []any
 
 func init() {
 	var res []string

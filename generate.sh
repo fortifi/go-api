@@ -6,7 +6,8 @@ set -e
 
 # Make sure go swagger is installed
 echo -e "\033[4mEnsuring swagger generator...\033[0m"
-(brew update && brew upgrade go-swagger || true)
+(brew uninstall go-swagger || true) >/dev/null 2>&1
+go install github.com/go-swagger/go-swagger/cmd/swagger@latest
 
 # Get latest swagger spec from citadel
 echo -e "\033[4mGetting latest swagger...\033[0m"

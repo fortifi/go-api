@@ -123,7 +123,7 @@ func (m *UpsertDevicePayload) validateHardwareID(formats strfmt.Registry) error 
 	return nil
 }
 
-var upsertDevicePayloadTypeOptInStatusPropEnum []interface{}
+var upsertDevicePayloadTypeOptInStatusPropEnum []any
 
 func init() {
 	var res []string
@@ -165,7 +165,7 @@ func (m *UpsertDevicePayload) validateOptInStatus(formats strfmt.Registry) error
 	return nil
 }
 
-var upsertDevicePayloadTypePushSourcePropEnum []interface{}
+var upsertDevicePayloadTypePushSourcePropEnum []any
 
 func init() {
 	var res []string

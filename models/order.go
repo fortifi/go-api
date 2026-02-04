@@ -614,7 +614,7 @@ func (m *Order) validateOrderDate(formats strfmt.Registry) error {
 	return nil
 }
 
-var orderTypeOrderTypePropEnum []interface{}
+var orderTypeOrderTypePropEnum []any
 
 func init() {
 	var res []string

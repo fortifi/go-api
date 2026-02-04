@@ -65,7 +65,7 @@ type ClientService interface {
 GetReasonsGroups gets a list of all reason groups
 */
 func (a *Client) GetReasonsGroups(params *GetReasonsGroupsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetReasonsGroupsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetReasonsGroupsParams()
 	}
@@ -85,17 +85,22 @@ func (a *Client) GetReasonsGroups(params *GetReasonsGroupsParams, authInfo runti
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetReasonsGroupsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetReasonsGroupsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -103,7 +108,7 @@ func (a *Client) GetReasonsGroups(params *GetReasonsGroupsParams, authInfo runti
 GetReasonsGroupsReasonGroupFid gets all the reasons for the reason group
 */
 func (a *Client) GetReasonsGroupsReasonGroupFid(params *GetReasonsGroupsReasonGroupFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetReasonsGroupsReasonGroupFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetReasonsGroupsReasonGroupFidParams()
 	}
@@ -123,17 +128,22 @@ func (a *Client) GetReasonsGroupsReasonGroupFid(params *GetReasonsGroupsReasonGr
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetReasonsGroupsReasonGroupFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetReasonsGroupsReasonGroupFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

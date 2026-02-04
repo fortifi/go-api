@@ -8,6 +8,7 @@ package comments
 import (
 	"context"
 	"encoding/json"
+	stderrors "errors"
 	"fmt"
 	"io"
 
@@ -25,7 +26,7 @@ type PostCommentsReader struct {
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *PostCommentsReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *PostCommentsReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (any, error) {
 	switch response.Code() {
 	case 200:
 		result := NewPostCommentsOK()
@@ -108,7 +109,7 @@ func (o *PostCommentsOK) readResponse(response runtime.ClientResponse, consumer 
 	o.Payload = new(PostCommentsOKBody)
 
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && !stderrors.Is(err, io.EOF) {
 		return err
 	}
 
@@ -182,7 +183,7 @@ func (o *PostCommentsDefault) readResponse(response runtime.ClientResponse, cons
 	o.Payload = new(models.Envelope)
 
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && !stderrors.Is(err, io.EOF) {
 		return err
 	}
 
@@ -272,11 +273,15 @@ func (o *PostCommentsOKBody) validateData(formats strfmt.Registry) error {
 
 	if o.Data != nil {
 		if err := o.Data.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("postCommentsOK" + "." + "data")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("postCommentsOK" + "." + "data")
 			}
+
 			return err
 		}
 	}
@@ -312,11 +317,15 @@ func (o *PostCommentsOKBody) contextValidateData(ctx context.Context, formats st
 		}
 
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("postCommentsOK" + "." + "data")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("postCommentsOK" + "." + "data")
 			}
+
 			return err
 		}
 	}

@@ -65,7 +65,7 @@ type ClientService interface {
 DeleteDeviceHardwareID removes a device
 */
 func (a *Client) DeleteDeviceHardwareID(params *DeleteDeviceHardwareIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteDeviceHardwareIDOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewDeleteDeviceHardwareIDParams()
 	}
@@ -85,17 +85,22 @@ func (a *Client) DeleteDeviceHardwareID(params *DeleteDeviceHardwareIDParams, au
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*DeleteDeviceHardwareIDOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*DeleteDeviceHardwareIDDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -103,7 +108,7 @@ func (a *Client) DeleteDeviceHardwareID(params *DeleteDeviceHardwareIDParams, au
 PostDeviceUpsert creates a device or update and existing one
 */
 func (a *Client) PostDeviceUpsert(params *PostDeviceUpsertParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostDeviceUpsertOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostDeviceUpsertParams()
 	}
@@ -123,17 +128,22 @@ func (a *Client) PostDeviceUpsert(params *PostDeviceUpsertParams, authInfo runti
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostDeviceUpsertOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostDeviceUpsertDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

@@ -48,7 +48,7 @@ func (m *CancelFlowOption) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-var cancelFlowOptionTypeTypePropEnum []interface{}
+var cancelFlowOptionTypeTypePropEnum []any
 
 func init() {
 	var res []string

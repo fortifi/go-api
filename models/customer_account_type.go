@@ -53,7 +53,7 @@ const (
 )
 
 // for schema
-var customerAccountTypeEnum []interface{}
+var customerAccountTypeEnum []any
 
 func init() {
 	var res []CustomerAccountType

@@ -44,7 +44,7 @@ const (
 )
 
 // for schema
-var customerSubscriptionTypeEnum []interface{}
+var customerSubscriptionTypeEnum []any
 
 func init() {
 	var res []CustomerSubscriptionType

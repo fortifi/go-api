@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -21,7 +22,7 @@ type CreateInteractionInvitationPayload struct {
 	StartInteractionPayload
 
 	// context
-	Context interface{} `json:"context,omitempty"`
+	Context any `json:"context,omitempty"`
 
 	// earliest start time
 	EarliestStartTime string `json:"earliestStartTime,omitempty"`
@@ -71,7 +72,7 @@ func (m *CreateInteractionInvitationPayload) UnmarshalJSON(raw []byte) error {
 
 	// AO1
 	var dataAO1 struct {
-		Context interface{} `json:"context,omitempty"`
+		Context any `json:"context,omitempty"`
 
 		EarliestStartTime string `json:"earliestStartTime,omitempty"`
 
@@ -140,7 +141,7 @@ func (m CreateInteractionInvitationPayload) MarshalJSON() ([]byte, error) {
 	}
 	_parts = append(_parts, aO0)
 	var dataAO1 struct {
-		Context interface{} `json:"context,omitempty"`
+		Context any `json:"context,omitempty"`
 
 		EarliestStartTime string `json:"earliestStartTime,omitempty"`
 
@@ -233,11 +234,15 @@ func (m *CreateInteractionInvitationPayload) validateNotes(formats strfmt.Regist
 
 		if m.Notes[i] != nil {
 			if err := m.Notes[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("notes" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("notes" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -277,11 +282,15 @@ func (m *CreateInteractionInvitationPayload) contextValidateNotes(ctx context.Co
 			}
 
 			if err := m.Notes[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("notes" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("notes" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}

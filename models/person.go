@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -290,11 +291,15 @@ func (m *Person) validateAddresses(formats strfmt.Registry) error {
 
 	if m.Addresses != nil {
 		if err := m.Addresses.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("addresses")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("addresses")
 			}
+
 			return err
 		}
 	}
@@ -310,11 +315,15 @@ func (m *Person) validateEmails(formats strfmt.Registry) error {
 
 	if m.Emails != nil {
 		if err := m.Emails.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("emails")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("emails")
 			}
+
 			return err
 		}
 	}
@@ -330,11 +339,15 @@ func (m *Person) validatePhones(formats strfmt.Registry) error {
 
 	if m.Phones != nil {
 		if err := m.Phones.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("phones")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("phones")
 			}
+
 			return err
 		}
 	}
@@ -378,11 +391,15 @@ func (m *Person) contextValidateAddresses(ctx context.Context, formats strfmt.Re
 		}
 
 		if err := m.Addresses.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("addresses")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("addresses")
 			}
+
 			return err
 		}
 	}
@@ -399,11 +416,15 @@ func (m *Person) contextValidateEmails(ctx context.Context, formats strfmt.Regis
 		}
 
 		if err := m.Emails.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("emails")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("emails")
 			}
+
 			return err
 		}
 	}
@@ -420,11 +441,15 @@ func (m *Person) contextValidatePhones(ctx context.Context, formats strfmt.Regis
 		}
 
 		if err := m.Phones.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("phones")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("phones")
 			}
+
 			return err
 		}
 	}

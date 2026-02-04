@@ -71,7 +71,7 @@ type ClientService interface {
 GetIntegrationsVerifyUser verifies a user
 */
 func (a *Client) GetIntegrationsVerifyUser(params *GetIntegrationsVerifyUserParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetIntegrationsVerifyUserOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetIntegrationsVerifyUserParams()
 	}
@@ -91,17 +91,22 @@ func (a *Client) GetIntegrationsVerifyUser(params *GetIntegrationsVerifyUserPara
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetIntegrationsVerifyUserOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetIntegrationsVerifyUserDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -111,7 +116,7 @@ GetMe currents user
 Retrieve information about the current connected user (you)
 */
 func (a *Client) GetMe(params *GetMeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetMeOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetMeParams()
 	}
@@ -131,17 +136,22 @@ func (a *Client) GetMe(params *GetMeParams, authInfo runtime.ClientAuthInfoWrite
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetMeOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetMeDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -151,7 +161,7 @@ GetOrganisation currents organisation
 Retrieve information about the current organisation
 */
 func (a *Client) GetOrganisation(params *GetOrganisationParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetOrganisationOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetOrganisationParams()
 	}
@@ -171,17 +181,22 @@ func (a *Client) GetOrganisation(params *GetOrganisationParams, authInfo runtime
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetOrganisationOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetOrganisationDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -191,7 +206,7 @@ GetServiceAuthToken verifies service account get access token
 User service account credentials to retrieve an API token
 */
 func (a *Client) GetServiceAuthToken(params *GetServiceAuthTokenParams, opts ...ClientOption) (*GetServiceAuthTokenOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetServiceAuthTokenParams()
 	}
@@ -210,17 +225,22 @@ func (a *Client) GetServiceAuthToken(params *GetServiceAuthTokenParams, opts ...
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetServiceAuthTokenOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetServiceAuthTokenDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -230,7 +250,7 @@ GetVersion currents version
 Retrieve the current version of the Fortifi api
 */
 func (a *Client) GetVersion(params *GetVersionParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetVersionOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetVersionParams()
 	}
@@ -250,17 +270,22 @@ func (a *Client) GetVersion(params *GetVersionParams, authInfo runtime.ClientAut
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetVersionOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetVersionDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -42,11 +43,15 @@ func (m *SetAccountStatusPayload) validateAccountStatus(formats strfmt.Registry)
 	}
 
 	if err := m.AccountStatus.Validate(formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
+		ve := new(errors.Validation)
+		if stderrors.As(err, &ve) {
 			return ve.ValidateName("accountStatus")
-		} else if ce, ok := err.(*errors.CompositeError); ok {
+		}
+		ce := new(errors.CompositeError)
+		if stderrors.As(err, &ce) {
 			return ce.ValidateName("accountStatus")
 		}
+
 		return err
 	}
 
@@ -74,11 +79,15 @@ func (m *SetAccountStatusPayload) contextValidateAccountStatus(ctx context.Conte
 	}
 
 	if err := m.AccountStatus.ContextValidate(ctx, formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
+		ve := new(errors.Validation)
+		if stderrors.As(err, &ve) {
 			return ve.ValidateName("accountStatus")
-		} else if ce, ok := err.(*errors.CompositeError); ok {
+		}
+		ce := new(errors.CompositeError)
+		if stderrors.As(err, &ce) {
 			return ce.ValidateName("accountStatus")
 		}
+
 		return err
 	}
 

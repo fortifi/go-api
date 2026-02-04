@@ -119,7 +119,7 @@ type ClientService interface {
 DeleteProductsGroupsProductGroupFidProductsProductFid removes a product from the group
 */
 func (a *Client) DeleteProductsGroupsProductGroupFidProductsProductFid(params *DeleteProductsGroupsProductGroupFidProductsProductFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteProductsGroupsProductGroupFidProductsProductFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewDeleteProductsGroupsProductGroupFidProductsProductFidParams()
 	}
@@ -139,17 +139,22 @@ func (a *Client) DeleteProductsGroupsProductGroupFidProductsProductFid(params *D
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*DeleteProductsGroupsProductGroupFidProductsProductFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*DeleteProductsGroupsProductGroupFidProductsProductFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -157,7 +162,7 @@ func (a *Client) DeleteProductsGroupsProductGroupFidProductsProductFid(params *D
 GetProducts lists all products
 */
 func (a *Client) GetProducts(params *GetProductsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetProductsParams()
 	}
@@ -177,17 +182,22 @@ func (a *Client) GetProducts(params *GetProductsParams, authInfo runtime.ClientA
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetProductsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetProductsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -195,7 +205,7 @@ func (a *Client) GetProducts(params *GetProductsParams, authInfo runtime.ClientA
 GetProductsGroups gets a list of all product groups
 */
 func (a *Client) GetProductsGroups(params *GetProductsGroupsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsGroupsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetProductsGroupsParams()
 	}
@@ -215,17 +225,22 @@ func (a *Client) GetProductsGroups(params *GetProductsGroupsParams, authInfo run
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetProductsGroupsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetProductsGroupsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -233,7 +248,7 @@ func (a *Client) GetProductsGroups(params *GetProductsGroupsParams, authInfo run
 GetProductsGroupsProductGroupFid retrieves product group details
 */
 func (a *Client) GetProductsGroupsProductGroupFid(params *GetProductsGroupsProductGroupFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsGroupsProductGroupFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetProductsGroupsProductGroupFidParams()
 	}
@@ -253,17 +268,22 @@ func (a *Client) GetProductsGroupsProductGroupFid(params *GetProductsGroupsProdu
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetProductsGroupsProductGroupFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetProductsGroupsProductGroupFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -271,7 +291,7 @@ func (a *Client) GetProductsGroupsProductGroupFid(params *GetProductsGroupsProdu
 GetProductsGroupsProductGroupFidProducts gets a list of products belonging to the group
 */
 func (a *Client) GetProductsGroupsProductGroupFidProducts(params *GetProductsGroupsProductGroupFidProductsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsGroupsProductGroupFidProductsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetProductsGroupsProductGroupFidProductsParams()
 	}
@@ -291,17 +311,22 @@ func (a *Client) GetProductsGroupsProductGroupFidProducts(params *GetProductsGro
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetProductsGroupsProductGroupFidProductsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetProductsGroupsProductGroupFidProductsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -309,7 +334,7 @@ func (a *Client) GetProductsGroupsProductGroupFidProducts(params *GetProductsGro
 GetProductsOffers retrieves all offers
 */
 func (a *Client) GetProductsOffers(params *GetProductsOffersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsOffersOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetProductsOffersParams()
 	}
@@ -329,17 +354,22 @@ func (a *Client) GetProductsOffers(params *GetProductsOffersParams, authInfo run
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetProductsOffersOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetProductsOffersDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -347,7 +377,7 @@ func (a *Client) GetProductsOffers(params *GetProductsOffersParams, authInfo run
 GetProductsOffersOfferFid retrieves offer details
 */
 func (a *Client) GetProductsOffersOfferFid(params *GetProductsOffersOfferFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsOffersOfferFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetProductsOffersOfferFidParams()
 	}
@@ -367,17 +397,22 @@ func (a *Client) GetProductsOffersOfferFid(params *GetProductsOffersOfferFidPara
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetProductsOffersOfferFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetProductsOffersOfferFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -385,7 +420,7 @@ func (a *Client) GetProductsOffersOfferFid(params *GetProductsOffersOfferFidPara
 GetProductsProductFid retrieves product details
 */
 func (a *Client) GetProductsProductFid(params *GetProductsProductFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetProductsProductFidParams()
 	}
@@ -405,17 +440,22 @@ func (a *Client) GetProductsProductFid(params *GetProductsProductFidParams, auth
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetProductsProductFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetProductsProductFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -423,7 +463,7 @@ func (a *Client) GetProductsProductFid(params *GetProductsProductFidParams, auth
 GetProductsProductFidPricebands retrieves product price bands
 */
 func (a *Client) GetProductsProductFidPricebands(params *GetProductsProductFidPricebandsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidPricebandsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetProductsProductFidPricebandsParams()
 	}
@@ -443,17 +483,22 @@ func (a *Client) GetProductsProductFidPricebands(params *GetProductsProductFidPr
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetProductsProductFidPricebandsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetProductsProductFidPricebandsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -461,7 +506,7 @@ func (a *Client) GetProductsProductFidPricebands(params *GetProductsProductFidPr
 GetProductsProductFidPricebandsPriceBandFid retrieves product price band details
 */
 func (a *Client) GetProductsProductFidPricebandsPriceBandFid(params *GetProductsProductFidPricebandsPriceBandFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidPricebandsPriceBandFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetProductsProductFidPricebandsPriceBandFidParams()
 	}
@@ -481,17 +526,22 @@ func (a *Client) GetProductsProductFidPricebandsPriceBandFid(params *GetProducts
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetProductsProductFidPricebandsPriceBandFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetProductsProductFidPricebandsPriceBandFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -499,7 +549,7 @@ func (a *Client) GetProductsProductFidPricebandsPriceBandFid(params *GetProducts
 GetProductsProductFidPrices retrieves product prices
 */
 func (a *Client) GetProductsProductFidPrices(params *GetProductsProductFidPricesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidPricesOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetProductsProductFidPricesParams()
 	}
@@ -519,17 +569,22 @@ func (a *Client) GetProductsProductFidPrices(params *GetProductsProductFidPrices
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetProductsProductFidPricesOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetProductsProductFidPricesDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -537,7 +592,7 @@ func (a *Client) GetProductsProductFidPrices(params *GetProductsProductFidPrices
 GetProductsProductFidPricesPriceFid retrieves product price details
 */
 func (a *Client) GetProductsProductFidPricesPriceFid(params *GetProductsProductFidPricesPriceFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidPricesPriceFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetProductsProductFidPricesPriceFidParams()
 	}
@@ -557,17 +612,22 @@ func (a *Client) GetProductsProductFidPricesPriceFid(params *GetProductsProductF
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetProductsProductFidPricesPriceFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetProductsProductFidPricesPriceFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -575,7 +635,7 @@ func (a *Client) GetProductsProductFidPricesPriceFid(params *GetProductsProductF
 GetProductsProductFidSkus retrieves product s k us
 */
 func (a *Client) GetProductsProductFidSkus(params *GetProductsProductFidSkusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidSkusOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetProductsProductFidSkusParams()
 	}
@@ -595,17 +655,22 @@ func (a *Client) GetProductsProductFidSkus(params *GetProductsProductFidSkusPara
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetProductsProductFidSkusOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetProductsProductFidSkusDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -613,7 +678,7 @@ func (a *Client) GetProductsProductFidSkus(params *GetProductsProductFidSkusPara
 GetProductsProductFidSkusSkuFid retrieves product s k u details
 */
 func (a *Client) GetProductsProductFidSkusSkuFid(params *GetProductsProductFidSkusSkuFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidSkusSkuFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetProductsProductFidSkusSkuFidParams()
 	}
@@ -633,17 +698,22 @@ func (a *Client) GetProductsProductFidSkusSkuFid(params *GetProductsProductFidSk
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetProductsProductFidSkusSkuFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetProductsProductFidSkusSkuFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -651,7 +721,7 @@ func (a *Client) GetProductsProductFidSkusSkuFid(params *GetProductsProductFidSk
 PostProducts creates a new product
 */
 func (a *Client) PostProducts(params *PostProductsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostProductsParams()
 	}
@@ -671,17 +741,22 @@ func (a *Client) PostProducts(params *PostProductsParams, authInfo runtime.Clien
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostProductsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostProductsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -689,7 +764,7 @@ func (a *Client) PostProducts(params *PostProductsParams, authInfo runtime.Clien
 PostProductsGroups creates a new product group
 */
 func (a *Client) PostProductsGroups(params *PostProductsGroupsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsGroupsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostProductsGroupsParams()
 	}
@@ -709,17 +784,22 @@ func (a *Client) PostProductsGroups(params *PostProductsGroupsParams, authInfo r
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostProductsGroupsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostProductsGroupsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -727,7 +807,7 @@ func (a *Client) PostProductsGroups(params *PostProductsGroupsParams, authInfo r
 PostProductsGroupsProductGroupFidProductsProductFid adds a product to the group
 */
 func (a *Client) PostProductsGroupsProductGroupFidProductsProductFid(params *PostProductsGroupsProductGroupFidProductsProductFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsGroupsProductGroupFidProductsProductFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostProductsGroupsProductGroupFidProductsProductFidParams()
 	}
@@ -747,17 +827,22 @@ func (a *Client) PostProductsGroupsProductGroupFidProductsProductFid(params *Pos
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostProductsGroupsProductGroupFidProductsProductFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostProductsGroupsProductGroupFidProductsProductFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -765,7 +850,7 @@ func (a *Client) PostProductsGroupsProductGroupFidProductsProductFid(params *Pos
 PostProductsOffers creates a new offer
 */
 func (a *Client) PostProductsOffers(params *PostProductsOffersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsOffersOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostProductsOffersParams()
 	}
@@ -785,17 +870,22 @@ func (a *Client) PostProductsOffers(params *PostProductsOffersParams, authInfo r
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostProductsOffersOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostProductsOffersDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -803,7 +893,7 @@ func (a *Client) PostProductsOffers(params *PostProductsOffersParams, authInfo r
 PostProductsProductFidAvailabilityCheck checks product availability
 */
 func (a *Client) PostProductsProductFidAvailabilityCheck(params *PostProductsProductFidAvailabilityCheckParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsProductFidAvailabilityCheckOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostProductsProductFidAvailabilityCheckParams()
 	}
@@ -823,17 +913,22 @@ func (a *Client) PostProductsProductFidAvailabilityCheck(params *PostProductsPro
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostProductsProductFidAvailabilityCheckOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostProductsProductFidAvailabilityCheckDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -841,7 +936,7 @@ func (a *Client) PostProductsProductFidAvailabilityCheck(params *PostProductsPro
 PostProductsProductFidAvailabilityReserve reserves product
 */
 func (a *Client) PostProductsProductFidAvailabilityReserve(params *PostProductsProductFidAvailabilityReserveParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsProductFidAvailabilityReserveOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostProductsProductFidAvailabilityReserveParams()
 	}
@@ -861,17 +956,22 @@ func (a *Client) PostProductsProductFidAvailabilityReserve(params *PostProductsP
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostProductsProductFidAvailabilityReserveOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostProductsProductFidAvailabilityReserveDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -879,7 +979,7 @@ func (a *Client) PostProductsProductFidAvailabilityReserve(params *PostProductsP
 PostProductsProductFidPricebands creates a new product price band
 */
 func (a *Client) PostProductsProductFidPricebands(params *PostProductsProductFidPricebandsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsProductFidPricebandsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostProductsProductFidPricebandsParams()
 	}
@@ -899,17 +999,22 @@ func (a *Client) PostProductsProductFidPricebands(params *PostProductsProductFid
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostProductsProductFidPricebandsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostProductsProductFidPricebandsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -917,7 +1022,7 @@ func (a *Client) PostProductsProductFidPricebands(params *PostProductsProductFid
 PostProductsProductFidPrices creates a new product price
 */
 func (a *Client) PostProductsProductFidPrices(params *PostProductsProductFidPricesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsProductFidPricesOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostProductsProductFidPricesParams()
 	}
@@ -937,17 +1042,22 @@ func (a *Client) PostProductsProductFidPrices(params *PostProductsProductFidPric
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostProductsProductFidPricesOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostProductsProductFidPricesDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -955,7 +1065,7 @@ func (a *Client) PostProductsProductFidPrices(params *PostProductsProductFidPric
 PostProductsProductFidSkus creates a new product s k u
 */
 func (a *Client) PostProductsProductFidSkus(params *PostProductsProductFidSkusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsProductFidSkusOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostProductsProductFidSkusParams()
 	}
@@ -975,17 +1085,22 @@ func (a *Client) PostProductsProductFidSkus(params *PostProductsProductFidSkusPa
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostProductsProductFidSkusOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostProductsProductFidSkusDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -993,7 +1108,7 @@ func (a *Client) PostProductsProductFidSkus(params *PostProductsProductFidSkusPa
 PutProductsGroupsProductGroupFid updates product group details
 */
 func (a *Client) PutProductsGroupsProductGroupFid(params *PutProductsGroupsProductGroupFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsGroupsProductGroupFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutProductsGroupsProductGroupFidParams()
 	}
@@ -1013,17 +1128,22 @@ func (a *Client) PutProductsGroupsProductGroupFid(params *PutProductsGroupsProdu
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutProductsGroupsProductGroupFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutProductsGroupsProductGroupFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1031,7 +1151,7 @@ func (a *Client) PutProductsGroupsProductGroupFid(params *PutProductsGroupsProdu
 PutProductsOffersOfferFid updates offer details
 */
 func (a *Client) PutProductsOffersOfferFid(params *PutProductsOffersOfferFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsOffersOfferFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutProductsOffersOfferFidParams()
 	}
@@ -1051,17 +1171,22 @@ func (a *Client) PutProductsOffersOfferFid(params *PutProductsOffersOfferFidPara
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutProductsOffersOfferFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutProductsOffersOfferFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1069,7 +1194,7 @@ func (a *Client) PutProductsOffersOfferFid(params *PutProductsOffersOfferFidPara
 PutProductsProductFid updates product details
 */
 func (a *Client) PutProductsProductFid(params *PutProductsProductFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsProductFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutProductsProductFidParams()
 	}
@@ -1089,17 +1214,22 @@ func (a *Client) PutProductsProductFid(params *PutProductsProductFidParams, auth
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutProductsProductFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutProductsProductFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1107,7 +1237,7 @@ func (a *Client) PutProductsProductFid(params *PutProductsProductFidParams, auth
 PutProductsProductFidPricebandsPriceBandFid updates product price band details
 */
 func (a *Client) PutProductsProductFidPricebandsPriceBandFid(params *PutProductsProductFidPricebandsPriceBandFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsProductFidPricebandsPriceBandFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutProductsProductFidPricebandsPriceBandFidParams()
 	}
@@ -1127,17 +1257,22 @@ func (a *Client) PutProductsProductFidPricebandsPriceBandFid(params *PutProducts
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutProductsProductFidPricebandsPriceBandFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutProductsProductFidPricebandsPriceBandFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1145,7 +1280,7 @@ func (a *Client) PutProductsProductFidPricebandsPriceBandFid(params *PutProducts
 PutProductsProductFidPricesPriceFid updates product price details
 */
 func (a *Client) PutProductsProductFidPricesPriceFid(params *PutProductsProductFidPricesPriceFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsProductFidPricesPriceFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutProductsProductFidPricesPriceFidParams()
 	}
@@ -1165,17 +1300,22 @@ func (a *Client) PutProductsProductFidPricesPriceFid(params *PutProductsProductF
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutProductsProductFidPricesPriceFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutProductsProductFidPricesPriceFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1183,7 +1323,7 @@ func (a *Client) PutProductsProductFidPricesPriceFid(params *PutProductsProductF
 PutProductsProductFidSkusSkuFid updates product s k u details
 */
 func (a *Client) PutProductsProductFidSkusSkuFid(params *PutProductsProductFidSkusSkuFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsProductFidSkusSkuFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutProductsProductFidSkusSkuFidParams()
 	}
@@ -1203,17 +1343,22 @@ func (a *Client) PutProductsProductFidSkusSkuFid(params *PutProductsProductFidSk
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutProductsProductFidSkusSkuFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutProductsProductFidSkusSkuFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

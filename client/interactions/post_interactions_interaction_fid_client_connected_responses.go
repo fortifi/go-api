@@ -7,6 +7,7 @@ package interactions
 
 import (
 	"encoding/json"
+	stderrors "errors"
 	"fmt"
 	"io"
 
@@ -22,7 +23,7 @@ type PostInteractionsInteractionFidClientConnectedReader struct {
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *PostInteractionsInteractionFidClientConnectedReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *PostInteractionsInteractionFidClientConnectedReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (any, error) {
 	switch response.Code() {
 	case 200:
 		result := NewPostInteractionsInteractionFidClientConnectedOK()
@@ -105,7 +106,7 @@ func (o *PostInteractionsInteractionFidClientConnectedOK) readResponse(response 
 	o.Payload = new(models.Envelope)
 
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && !stderrors.Is(err, io.EOF) {
 		return err
 	}
 
@@ -179,7 +180,7 @@ func (o *PostInteractionsInteractionFidClientConnectedDefault) readResponse(resp
 	o.Payload = new(models.Envelope)
 
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && !stderrors.Is(err, io.EOF) {
 		return err
 	}
 

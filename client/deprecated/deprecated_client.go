@@ -75,7 +75,7 @@ type ClientService interface {
 DeleteAdvertisersAdvertiserFidApproved removes approved status on an advertiser
 */
 func (a *Client) DeleteAdvertisersAdvertiserFidApproved(params *DeleteAdvertisersAdvertiserFidApprovedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteAdvertisersAdvertiserFidApprovedOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewDeleteAdvertisersAdvertiserFidApprovedParams()
 	}
@@ -95,17 +95,22 @@ func (a *Client) DeleteAdvertisersAdvertiserFidApproved(params *DeleteAdvertiser
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*DeleteAdvertisersAdvertiserFidApprovedOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*DeleteAdvertisersAdvertiserFidApprovedDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -113,7 +118,7 @@ func (a *Client) DeleteAdvertisersAdvertiserFidApproved(params *DeleteAdvertiser
 GetAdvertisers lists advertisers
 */
 func (a *Client) GetAdvertisers(params *GetAdvertisersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetAdvertisersOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetAdvertisersParams()
 	}
@@ -133,17 +138,22 @@ func (a *Client) GetAdvertisers(params *GetAdvertisersParams, authInfo runtime.C
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetAdvertisersOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetAdvertisersDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -151,7 +161,7 @@ func (a *Client) GetAdvertisers(params *GetAdvertisersParams, authInfo runtime.C
 GetAdvertisersAdvertiserFid retrieves an advertiser
 */
 func (a *Client) GetAdvertisersAdvertiserFid(params *GetAdvertisersAdvertiserFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetAdvertisersAdvertiserFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetAdvertisersAdvertiserFidParams()
 	}
@@ -171,17 +181,22 @@ func (a *Client) GetAdvertisersAdvertiserFid(params *GetAdvertisersAdvertiserFid
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetAdvertisersAdvertiserFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetAdvertisersAdvertiserFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -189,7 +204,7 @@ func (a *Client) GetAdvertisersAdvertiserFid(params *GetAdvertisersAdvertiserFid
 GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFid retrieves an advertiser campaign
 */
 func (a *Client) GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFid(params *GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidParams()
 	}
@@ -209,17 +224,22 @@ func (a *Client) GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFid(param
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -227,7 +247,7 @@ func (a *Client) GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFid(param
 PostAdvertisers creates a new advertiser
 */
 func (a *Client) PostAdvertisers(params *PostAdvertisersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostAdvertisersOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostAdvertisersParams()
 	}
@@ -247,17 +267,22 @@ func (a *Client) PostAdvertisers(params *PostAdvertisersParams, authInfo runtime
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostAdvertisersOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostAdvertisersDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -265,7 +290,7 @@ func (a *Client) PostAdvertisers(params *PostAdvertisersParams, authInfo runtime
 PostAdvertisersAdvertiserFidCampaigns creates a new advertiser campaign
 */
 func (a *Client) PostAdvertisersAdvertiserFidCampaigns(params *PostAdvertisersAdvertiserFidCampaignsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostAdvertisersAdvertiserFidCampaignsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostAdvertisersAdvertiserFidCampaignsParams()
 	}
@@ -285,17 +310,22 @@ func (a *Client) PostAdvertisersAdvertiserFidCampaigns(params *PostAdvertisersAd
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostAdvertisersAdvertiserFidCampaignsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostAdvertisersAdvertiserFidCampaignsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -303,7 +333,7 @@ func (a *Client) PostAdvertisersAdvertiserFidCampaigns(params *PostAdvertisersAd
 PutAdvertisersAdvertiserFidApproved sets approved status on an advertiser
 */
 func (a *Client) PutAdvertisersAdvertiserFidApproved(params *PutAdvertisersAdvertiserFidApprovedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutAdvertisersAdvertiserFidApprovedOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutAdvertisersAdvertiserFidApprovedParams()
 	}
@@ -323,17 +353,22 @@ func (a *Client) PutAdvertisersAdvertiserFidApproved(params *PutAdvertisersAdver
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutAdvertisersAdvertiserFidApprovedOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutAdvertisersAdvertiserFidApprovedDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

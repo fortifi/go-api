@@ -45,7 +45,7 @@ func (m *AdvertiserPixel) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-var advertiserPixelTypeMethodPropEnum []interface{}
+var advertiserPixelTypeMethodPropEnum []any
 
 func init() {
 	var res []string

@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -82,11 +83,15 @@ func (m *InvoiceCreditNotePayload) validateCreditAmountType(formats strfmt.Regis
 
 	if m.CreditAmountType != nil {
 		if err := m.CreditAmountType.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("creditAmountType")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("creditAmountType")
 			}
+
 			return err
 		}
 	}
@@ -113,11 +118,15 @@ func (m *InvoiceCreditNotePayload) contextValidateCreditAmountType(ctx context.C
 	if m.CreditAmountType != nil {
 
 		if err := m.CreditAmountType.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("creditAmountType")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("creditAmountType")
 			}
+
 			return err
 		}
 	}

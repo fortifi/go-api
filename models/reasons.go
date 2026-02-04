@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -49,11 +50,15 @@ func (m *Reasons) validateReasons(formats strfmt.Registry) error {
 
 		if m.Reasons[i] != nil {
 			if err := m.Reasons[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("reasons" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("reasons" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -88,11 +93,15 @@ func (m *Reasons) contextValidateReasons(ctx context.Context, formats strfmt.Reg
 			}
 
 			if err := m.Reasons[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("reasons" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("reasons" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}

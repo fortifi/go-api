@@ -67,7 +67,7 @@ type ClientService interface {
 GetFinancePayments performs a payment search
 */
 func (a *Client) GetFinancePayments(params *GetFinancePaymentsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFinancePaymentsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetFinancePaymentsParams()
 	}
@@ -87,17 +87,22 @@ func (a *Client) GetFinancePayments(params *GetFinancePaymentsParams, authInfo r
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetFinancePaymentsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetFinancePaymentsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -105,7 +110,7 @@ func (a *Client) GetFinancePayments(params *GetFinancePaymentsParams, authInfo r
 GetPublishersPublisherFidFinanceCostImportCostImportFid retrieves the status of cost import
 */
 func (a *Client) GetPublishersPublisherFidFinanceCostImportCostImportFid(params *GetPublishersPublisherFidFinanceCostImportCostImportFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPublishersPublisherFidFinanceCostImportCostImportFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetPublishersPublisherFidFinanceCostImportCostImportFidParams()
 	}
@@ -125,17 +130,22 @@ func (a *Client) GetPublishersPublisherFidFinanceCostImportCostImportFid(params 
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetPublishersPublisherFidFinanceCostImportCostImportFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetPublishersPublisherFidFinanceCostImportCostImportFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -143,7 +153,7 @@ func (a *Client) GetPublishersPublisherFidFinanceCostImportCostImportFid(params 
 PostPublishersPublisherFidFinanceCostImport imports cost data
 */
 func (a *Client) PostPublishersPublisherFidFinanceCostImport(params *PostPublishersPublisherFidFinanceCostImportParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostPublishersPublisherFidFinanceCostImportOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostPublishersPublisherFidFinanceCostImportParams()
 	}
@@ -163,17 +173,22 @@ func (a *Client) PostPublishersPublisherFidFinanceCostImport(params *PostPublish
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostPublishersPublisherFidFinanceCostImportOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostPublishersPublisherFidFinanceCostImportDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

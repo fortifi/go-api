@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -54,11 +55,15 @@ func (m *ConfirmOrderPayload) validatePaymentServiceProcessor(formats strfmt.Reg
 	}
 
 	if err := m.PaymentServiceProcessor.Validate(formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
+		ve := new(errors.Validation)
+		if stderrors.As(err, &ve) {
 			return ve.ValidateName("paymentServiceProcessor")
-		} else if ce, ok := err.(*errors.CompositeError); ok {
+		}
+		ce := new(errors.CompositeError)
+		if stderrors.As(err, &ce) {
 			return ce.ValidateName("paymentServiceProcessor")
 		}
+
 		return err
 	}
 
@@ -86,11 +91,15 @@ func (m *ConfirmOrderPayload) contextValidatePaymentServiceProcessor(ctx context
 	}
 
 	if err := m.PaymentServiceProcessor.ContextValidate(ctx, formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
+		ve := new(errors.Validation)
+		if stderrors.As(err, &ve) {
 			return ve.ValidateName("paymentServiceProcessor")
-		} else if ce, ok := err.(*errors.CompositeError); ok {
+		}
+		ce := new(errors.CompositeError)
+		if stderrors.As(err, &ce) {
 			return ce.ValidateName("paymentServiceProcessor")
 		}
+
 		return err
 	}
 

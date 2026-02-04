@@ -41,7 +41,7 @@ const (
 )
 
 // for schema
-var discountTypeEnum []interface{}
+var discountTypeEnum []any
 
 func init() {
 	var res []DiscountType

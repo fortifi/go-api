@@ -41,7 +41,7 @@ const (
 )
 
 // for schema
-var reversalReasonEnum []interface{}
+var reversalReasonEnum []any
 
 func init() {
 	var res []ReversalReason

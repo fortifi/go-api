@@ -67,7 +67,7 @@ type ClientService interface {
 GetFeatureFlagsCustomerCustomerFid retrieves feature flags for a given customer and their active subscriptions
 */
 func (a *Client) GetFeatureFlagsCustomerCustomerFid(params *GetFeatureFlagsCustomerCustomerFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFeatureFlagsCustomerCustomerFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetFeatureFlagsCustomerCustomerFidParams()
 	}
@@ -87,17 +87,22 @@ func (a *Client) GetFeatureFlagsCustomerCustomerFid(params *GetFeatureFlagsCusto
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetFeatureFlagsCustomerCustomerFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetFeatureFlagsCustomerCustomerFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -105,7 +110,7 @@ func (a *Client) GetFeatureFlagsCustomerCustomerFid(params *GetFeatureFlagsCusto
 GetFeatureFlagsEntityCombined retrieves combined feature flags for a list of entities
 */
 func (a *Client) GetFeatureFlagsEntityCombined(params *GetFeatureFlagsEntityCombinedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFeatureFlagsEntityCombinedOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetFeatureFlagsEntityCombinedParams()
 	}
@@ -125,17 +130,22 @@ func (a *Client) GetFeatureFlagsEntityCombined(params *GetFeatureFlagsEntityComb
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetFeatureFlagsEntityCombinedOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetFeatureFlagsEntityCombinedDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -143,7 +153,7 @@ func (a *Client) GetFeatureFlagsEntityCombined(params *GetFeatureFlagsEntityComb
 GetFeatureFlagsPurchasePurchaseFid retrieves feature flags for a given entity
 */
 func (a *Client) GetFeatureFlagsPurchasePurchaseFid(params *GetFeatureFlagsPurchasePurchaseFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFeatureFlagsPurchasePurchaseFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetFeatureFlagsPurchasePurchaseFidParams()
 	}
@@ -163,17 +173,22 @@ func (a *Client) GetFeatureFlagsPurchasePurchaseFid(params *GetFeatureFlagsPurch
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetFeatureFlagsPurchasePurchaseFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetFeatureFlagsPurchasePurchaseFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

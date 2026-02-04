@@ -57,7 +57,7 @@ func (m *CreateCancelRequestPayload) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-var createCancelRequestPayloadTypeCancelTypePropEnum []interface{}
+var createCancelRequestPayloadTypeCancelTypePropEnum []any
 
 func init() {
 	var res []string

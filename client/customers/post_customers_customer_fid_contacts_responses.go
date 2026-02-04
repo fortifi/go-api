@@ -8,6 +8,7 @@ package customers
 import (
 	"context"
 	"encoding/json"
+	stderrors "errors"
 	"fmt"
 	"io"
 
@@ -25,7 +26,7 @@ type PostCustomersCustomerFidContactsReader struct {
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *PostCustomersCustomerFidContactsReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *PostCustomersCustomerFidContactsReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (any, error) {
 	switch response.Code() {
 	case 200:
 		result := NewPostCustomersCustomerFidContactsOK()
@@ -168,7 +169,7 @@ func (o *PostCustomersCustomerFidContactsDefault) readResponse(response runtime.
 	o.Payload = new(PostCustomersCustomerFidContactsDefaultBody)
 
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && !stderrors.Is(err, io.EOF) {
 		return err
 	}
 
@@ -258,11 +259,15 @@ func (o *PostCustomersCustomerFidContactsDefaultBody) validateData(formats strfm
 
 	if o.Data != nil {
 		if err := o.Data.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("PostCustomersCustomerFidContacts default" + "." + "data")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("PostCustomersCustomerFidContacts default" + "." + "data")
 			}
+
 			return err
 		}
 	}
@@ -298,11 +303,15 @@ func (o *PostCustomersCustomerFidContactsDefaultBody) contextValidateData(ctx co
 		}
 
 		if err := o.Data.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("PostCustomersCustomerFidContacts default" + "." + "data")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("PostCustomersCustomerFidContacts default" + "." + "data")
 			}
+
 			return err
 		}
 	}

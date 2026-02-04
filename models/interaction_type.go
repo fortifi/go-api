@@ -39,7 +39,7 @@ func (m *InteractionType) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-var interactionTypeTypeNamePropEnum []interface{}
+var interactionTypeTypeNamePropEnum []any
 
 func init() {
 	var res []string

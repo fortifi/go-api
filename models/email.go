@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -106,11 +107,15 @@ func (m *Email) validateMessageGroups(formats strfmt.Registry) error {
 
 	if m.MessageGroups != nil {
 		if err := m.MessageGroups.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("messageGroups")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("messageGroups")
 			}
+
 			return err
 		}
 	}
@@ -146,11 +151,15 @@ func (m *Email) contextValidateMessageGroups(ctx context.Context, formats strfmt
 		}
 
 		if err := m.MessageGroups.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("messageGroups")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("messageGroups")
 			}
+
 			return err
 		}
 	}

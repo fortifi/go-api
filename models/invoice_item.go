@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -134,11 +135,15 @@ func (m *InvoiceItem) validateSubItems(formats strfmt.Registry) error {
 
 		if m.SubItems[i] != nil {
 			if err := m.SubItems[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("subItems" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("subItems" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -178,11 +183,15 @@ func (m *InvoiceItem) contextValidateSubItems(ctx context.Context, formats strfm
 			}
 
 			if err := m.SubItems[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("subItems" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("subItems" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}

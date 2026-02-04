@@ -87,7 +87,7 @@ type ClientService interface {
 PutMessengerDeliveriesDeliveryFidUnsubscribe unsubscribes an email based on the delivery fid
 */
 func (a *Client) PutMessengerDeliveriesDeliveryFidUnsubscribe(params *PutMessengerDeliveriesDeliveryFidUnsubscribeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutMessengerDeliveriesDeliveryFidUnsubscribeOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutMessengerDeliveriesDeliveryFidUnsubscribeParams()
 	}
@@ -107,17 +107,22 @@ func (a *Client) PutMessengerDeliveriesDeliveryFidUnsubscribe(params *PutMesseng
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutMessengerDeliveriesDeliveryFidUnsubscribeOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutMessengerDeliveriesDeliveryFidUnsubscribeDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

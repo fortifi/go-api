@@ -50,7 +50,7 @@ const (
 )
 
 // for schema
-var paymentServiceProcessorEnum []interface{}
+var paymentServiceProcessorEnum []any
 
 func init() {
 	var res []PaymentServiceProcessor

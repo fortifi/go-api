@@ -50,7 +50,7 @@ const (
 )
 
 // for schema
-var cycleTermTypeEnum []interface{}
+var cycleTermTypeEnum []any
 
 func init() {
 	var res []CycleTermType

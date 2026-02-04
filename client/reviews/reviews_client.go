@@ -67,7 +67,7 @@ type ClientService interface {
 GetCustomersCustomerFidReviews lists reviews
 */
 func (a *Client) GetCustomersCustomerFidReviews(params *GetCustomersCustomerFidReviewsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidReviewsOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewGetCustomersCustomerFidReviewsParams()
 	}
@@ -87,17 +87,22 @@ func (a *Client) GetCustomersCustomerFidReviews(params *GetCustomersCustomerFidR
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*GetCustomersCustomerFidReviewsOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidReviewsDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -105,7 +110,7 @@ func (a *Client) GetCustomersCustomerFidReviews(params *GetCustomersCustomerFidR
 PostReview creates a new review and review audit
 */
 func (a *Client) PostReview(params *PostReviewParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostReviewOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPostReviewParams()
 	}
@@ -125,17 +130,22 @@ func (a *Client) PostReview(params *PostReviewParams, authInfo runtime.ClientAut
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PostReviewOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostReviewDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -143,7 +153,7 @@ func (a *Client) PostReview(params *PostReviewParams, authInfo runtime.ClientAut
 PutReviewReviewFid updates a review
 */
 func (a *Client) PutReviewReviewFid(params *PutReviewReviewFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutReviewReviewFidOK, error) {
-	// TODO: Validate the params before sending
+	// NOTE: parameters are not validated before sending
 	if params == nil {
 		params = NewPutReviewReviewFidParams()
 	}
@@ -163,17 +173,22 @@ func (a *Client) PutReviewReviewFid(params *PutReviewReviewFidParams, authInfo r
 	for _, opt := range opts {
 		opt(op)
 	}
-
 	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
+
+	// only one success response has to be checked
 	success, ok := result.(*PutReviewReviewFidOK)
 	if ok {
 		return success, nil
 	}
-	// unexpected success response
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PutReviewReviewFidDefault)
+
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

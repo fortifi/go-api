@@ -7,6 +7,7 @@ package customers
 
 import (
 	"encoding/json"
+	stderrors "errors"
 	"fmt"
 	"io"
 
@@ -22,7 +23,7 @@ type GetCustomersCustomerFidPaymentMethodsCardsReader struct {
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *GetCustomersCustomerFidPaymentMethodsCardsReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *GetCustomersCustomerFidPaymentMethodsCardsReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (any, error) {
 	switch response.Code() {
 	case 200:
 		result := NewGetCustomersCustomerFidPaymentMethodsCardsOK()
@@ -105,7 +106,7 @@ func (o *GetCustomersCustomerFidPaymentMethodsCardsOK) readResponse(response run
 	o.Payload = new(models.PaymentCards)
 
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && !stderrors.Is(err, io.EOF) {
 		return err
 	}
 
@@ -179,7 +180,7 @@ func (o *GetCustomersCustomerFidPaymentMethodsCardsDefault) readResponse(respons
 	o.Payload = new(models.Envelope)
 
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && !stderrors.Is(err, io.EOF) {
 		return err
 	}
 
