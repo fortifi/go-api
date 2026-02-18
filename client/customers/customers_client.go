@@ -202,6 +202,8 @@ type ClientService interface {
 
 	PostCustomersCustomerFidEmails(params *PostCustomersCustomerFidEmailsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidEmailsOK, error)
 
+	PostCustomersCustomerFidFinanceCalculateTax(params *PostCustomersCustomerFidFinanceCalculateTaxParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidFinanceCalculateTaxOK, error)
+
 	PostCustomersCustomerFidInteractions(params *PostCustomersCustomerFidInteractionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidInteractionsOK, error)
 
 	PostCustomersCustomerFidInvoicesInvoiceFidCreditNote(params *PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteOK, error)
@@ -3005,6 +3007,49 @@ func (a *Client) PostCustomersCustomerFidEmails(params *PostCustomersCustomerFid
 	//
 	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostCustomersCustomerFidEmailsDefault)
+
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PostCustomersCustomerFidFinanceCalculateTax calculates tax for a given amount
+*/
+func (a *Client) PostCustomersCustomerFidFinanceCalculateTax(params *PostCustomersCustomerFidFinanceCalculateTaxParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidFinanceCalculateTaxOK, error) {
+	// NOTE: parameters are not validated before sending
+	if params == nil {
+		params = NewPostCustomersCustomerFidFinanceCalculateTaxParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "PostCustomersCustomerFidFinanceCalculateTax",
+		Method:             "POST",
+		PathPattern:        "/customers/{customerFid}/finance/calculateTax",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PostCustomersCustomerFidFinanceCalculateTaxReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+
+	// only one success response has to be checked
+	success, ok := result.(*PostCustomersCustomerFidFinanceCalculateTaxOK)
+	if ok {
+		return success, nil
+	}
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
+	unexpectedSuccess := result.(*PostCustomersCustomerFidFinanceCalculateTaxDefault)
 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }

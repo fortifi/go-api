@@ -158,14 +158,16 @@ func (o *DeleteDeviceHardwareIDParams) WriteToRequest(r runtime.ClientRequest, r
 
 	if o.EntityFid != nil {
 
-		// form param entityFid
-		var frEntityFid string
+		// query param entityFid
+		var qrEntityFid string
+
 		if o.EntityFid != nil {
-			frEntityFid = *o.EntityFid
+			qrEntityFid = *o.EntityFid
 		}
-		fEntityFid := frEntityFid
-		if fEntityFid != "" {
-			if err := r.SetFormParam("entityFid", fEntityFid); err != nil {
+		qEntityFid := qrEntityFid
+		if qEntityFid != "" {
+
+			if err := r.SetQueryParam("entityFid", qEntityFid); err != nil {
 				return err
 			}
 		}
