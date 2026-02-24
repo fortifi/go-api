@@ -23,6 +23,15 @@ type TaxItemResponse struct {
 	// is inclusive
 	IsInclusive bool `json:"isInclusive,omitempty"`
 
+	// offer fid
+	OfferFid string `json:"offerFid,omitempty"`
+
+	// price fid
+	PriceFid string `json:"priceFid,omitempty"`
+
+	// product fid
+	ProductFid string `json:"productFid,omitempty"`
+
 	// rate breakdown
 	RateBreakdown []*TaxRateBreakdownResponse `json:"rateBreakdown"`
 

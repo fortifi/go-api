@@ -11,8 +11,8 @@ go install github.com/go-swagger/go-swagger/cmd/swagger@latest
 
 # Get latest swagger spec from citadel
 echo -e "\033[4mGetting latest swagger...\033[0m"
-rm -f swagger.yaml
-curl "https://api.fortifi.io/swagger.yaml" --output swagger.yaml
+#rm -f swagger.yaml
+#curl "https://api.fortifi.io/swagger.yaml" --output swagger.yaml
 
 # Generate new models & client from spec
 rm -rf client models

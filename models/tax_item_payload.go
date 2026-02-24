@@ -29,6 +29,9 @@ type TaxItemPayload struct {
 	// discount
 	Discount float32 `json:"discount,omitempty"`
 
+	// offer fid
+	OfferFid string `json:"offerFid,omitempty"`
+
 	// price fid
 	PriceFid string `json:"priceFid,omitempty"`
 
