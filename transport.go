@@ -9,7 +9,7 @@ import (
 
 type errorResponse struct {
 	Payload struct {
-		Data []interface{} `json:"data"`
+		Data []any `json:"data"`
 		Meta struct {
 			Code      int    `json:"code"`
 			Message   string `json:"message"`
@@ -28,7 +28,7 @@ func NewTransport(transport runtime.ClientTransport, clear func(transport runtim
 	return &Transport{original: transport, clear: clear}
 }
 
-func (t *Transport) Submit(operation *runtime.ClientOperation) (interface{}, error) {
+func (t *Transport) Submit(operation *runtime.ClientOperation) (any, error) {
 	resp, err := t.original.Submit(operation)
 
 	if err != nil {
