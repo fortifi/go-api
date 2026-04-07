@@ -115,6 +115,8 @@ type ClientService interface {
 
 	GetCustomersCustomerFidContactsContactFid(params *GetCustomersCustomerFidContactsContactFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidContactsContactFidOK, error)
 
+	GetCustomersCustomerFidDefaultAddress(params *GetCustomersCustomerFidDefaultAddressParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidDefaultAddressOK, error)
+
 	GetCustomersCustomerFidEmails(params *GetCustomersCustomerFidEmailsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidEmailsOK, error)
 
 	GetCustomersCustomerFidInteractions(params *GetCustomersCustomerFidInteractionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidInteractionsOK, error)
@@ -1196,6 +1198,49 @@ func (a *Client) GetCustomersCustomerFidContactsContactFid(params *GetCustomersC
 	//
 	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*GetCustomersCustomerFidContactsContactFidDefault)
+
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+GetCustomersCustomerFidDefaultAddress gets default address for a customer
+*/
+func (a *Client) GetCustomersCustomerFidDefaultAddress(params *GetCustomersCustomerFidDefaultAddressParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidDefaultAddressOK, error) {
+	// NOTE: parameters are not validated before sending
+	if params == nil {
+		params = NewGetCustomersCustomerFidDefaultAddressParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "GetCustomersCustomerFidDefaultAddress",
+		Method:             "GET",
+		PathPattern:        "/customers/{customerFid}/defaultAddress",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetCustomersCustomerFidDefaultAddressReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+
+	// only one success response has to be checked
+	success, ok := result.(*GetCustomersCustomerFidDefaultAddressOK)
+	if ok {
+		return success, nil
+	}
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
+	unexpectedSuccess := result.(*GetCustomersCustomerFidDefaultAddressDefault)
 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
