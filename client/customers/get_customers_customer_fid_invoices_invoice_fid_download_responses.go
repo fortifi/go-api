@@ -3,13 +3,16 @@
 package customers
 
 import (
+	"context"
 	"encoding/json"
 	stderrors "errors"
 	"fmt"
 	"io"
 
+	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
+	"github.com/go-openapi/swag"
 
 	"github.com/fortifi/go-api/models"
 )
@@ -51,7 +54,7 @@ GetCustomersCustomerFidInvoicesInvoiceFidDownloadOK describes a response with st
 Download URL
 */
 type GetCustomersCustomerFidInvoicesInvoiceFidDownloadOK struct {
-	Payload *models.InvoiceDownloadResponse
+	Payload *GetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBody
 }
 
 // IsSuccess returns true when this get customers customer fid invoices invoice fid download o k response has a 2xx status code
@@ -94,13 +97,13 @@ func (o *GetCustomersCustomerFidInvoicesInvoiceFidDownloadOK) String() string {
 	return fmt.Sprintf("[GET /customers/{customerFid}/invoices/{invoiceFid}/download][%d] getCustomersCustomerFidInvoicesInvoiceFidDownloadOK %s", 200, payload)
 }
 
-func (o *GetCustomersCustomerFidInvoicesInvoiceFidDownloadOK) GetPayload() *models.InvoiceDownloadResponse {
+func (o *GetCustomersCustomerFidInvoicesInvoiceFidDownloadOK) GetPayload() *GetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBody {
 	return o.Payload
 }
 
 func (o *GetCustomersCustomerFidInvoicesInvoiceFidDownloadOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.InvoiceDownloadResponse)
+	o.Payload = new(GetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBody)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && !stderrors.Is(err, io.EOF) {
@@ -181,5 +184,166 @@ func (o *GetCustomersCustomerFidInvoicesInvoiceFidDownloadDefault) readResponse(
 		return err
 	}
 
+	return nil
+}
+
+/*
+GetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBody get customers customer fid invoices invoice fid download o k body
+swagger:model GetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBody
+*/
+type GetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBody struct {
+	models.Envelope
+
+	// data
+	Data *models.InvoiceDownloadResponse `json:"data,omitempty"`
+}
+
+// UnmarshalJSON unmarshals this object from a JSON structure
+func (o *GetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBody) UnmarshalJSON(raw []byte) error {
+	// GetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBodyAO0
+	var getCustomersCustomerFidInvoicesInvoiceFidDownloadOKBodyAO0 models.Envelope
+	if err := swag.ReadJSON(raw, &getCustomersCustomerFidInvoicesInvoiceFidDownloadOKBodyAO0); err != nil {
+		return err
+	}
+	o.Envelope = getCustomersCustomerFidInvoicesInvoiceFidDownloadOKBodyAO0
+
+	// GetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBodyAO1
+	var dataGetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBodyAO1 struct {
+		Data *models.InvoiceDownloadResponse `json:"data,omitempty"`
+	}
+	if err := swag.ReadJSON(raw, &dataGetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBodyAO1); err != nil {
+		return err
+	}
+
+	o.Data = dataGetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBodyAO1.Data
+
+	return nil
+}
+
+// MarshalJSON marshals this object to a JSON structure
+func (o GetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBody) MarshalJSON() ([]byte, error) {
+	_parts := make([][]byte, 0, 2)
+
+	getCustomersCustomerFidInvoicesInvoiceFidDownloadOKBodyAO0, err := swag.WriteJSON(o.Envelope)
+	if err != nil {
+		return nil, err
+	}
+	_parts = append(_parts, getCustomersCustomerFidInvoicesInvoiceFidDownloadOKBodyAO0)
+	var dataGetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBodyAO1 struct {
+		Data *models.InvoiceDownloadResponse `json:"data,omitempty"`
+	}
+
+	dataGetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBodyAO1.Data = o.Data
+
+	jsonDataGetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBodyAO1, errGetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBodyAO1 := swag.WriteJSON(dataGetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBodyAO1)
+	if errGetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBodyAO1 != nil {
+		return nil, errGetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBodyAO1
+	}
+	_parts = append(_parts, jsonDataGetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBodyAO1)
+	return swag.ConcatJSON(_parts...), nil
+}
+
+// Validate validates this get customers customer fid invoices invoice fid download o k body
+func (o *GetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBody) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	// validation for a type composition with models.Envelope
+	if err := o.Envelope.Validate(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := o.validateData(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *GetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBody) validateData(formats strfmt.Registry) error {
+
+	if swag.IsZero(o.Data) { // not required
+		return nil
+	}
+
+	if o.Data != nil {
+		if err := o.Data.Validate(formats); err != nil {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
+				return ve.ValidateName("getCustomersCustomerFidInvoicesInvoiceFidDownloadOK" + "." + "data")
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
+				return ce.ValidateName("getCustomersCustomerFidInvoicesInvoiceFidDownloadOK" + "." + "data")
+			}
+
+			return err
+		}
+	}
+
+	return nil
+}
+
+// ContextValidate validate this get customers customer fid invoices invoice fid download o k body based on the context it is used
+func (o *GetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	// validation for a type composition with models.Envelope
+	if err := o.Envelope.ContextValidate(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := o.contextValidateData(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *GetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
+
+	if o.Data != nil {
+
+		if swag.IsZero(o.Data) { // not required
+			return nil
+		}
+
+		if err := o.Data.ContextValidate(ctx, formats); err != nil {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
+				return ve.ValidateName("getCustomersCustomerFidInvoicesInvoiceFidDownloadOK" + "." + "data")
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
+				return ce.ValidateName("getCustomersCustomerFidInvoicesInvoiceFidDownloadOK" + "." + "data")
+			}
+
+			return err
+		}
+	}
+
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (o *GetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBody) MarshalBinary() ([]byte, error) {
+	if o == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(o)
+}
+
+// UnmarshalBinary interface implementation
+func (o *GetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBody) UnmarshalBinary(b []byte) error {
+	var res GetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBody
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*o = res
 	return nil
 }
