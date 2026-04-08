@@ -8,7 +8,6 @@ import (
 	stderrors "errors"
 	"fmt"
 	"io"
-	"strconv"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -196,7 +195,7 @@ type GetMessengerListMessageGroupsOKBody struct {
 	models.Envelope
 
 	// data
-	Data []*models.MessageGroup `json:"data"`
+	Data *models.MessageGroups `json:"data,omitempty"`
 }
 
 // UnmarshalJSON unmarshals this object from a JSON structure
@@ -210,7 +209,7 @@ func (o *GetMessengerListMessageGroupsOKBody) UnmarshalJSON(raw []byte) error {
 
 	// GetMessengerListMessageGroupsOKBodyAO1
 	var dataGetMessengerListMessageGroupsOKBodyAO1 struct {
-		Data []*models.MessageGroup `json:"data"`
+		Data *models.MessageGroups `json:"data,omitempty"`
 	}
 	if err := swag.ReadJSON(raw, &dataGetMessengerListMessageGroupsOKBodyAO1); err != nil {
 		return err
@@ -231,7 +230,7 @@ func (o GetMessengerListMessageGroupsOKBody) MarshalJSON() ([]byte, error) {
 	}
 	_parts = append(_parts, getMessengerListMessageGroupsOKBodyAO0)
 	var dataGetMessengerListMessageGroupsOKBodyAO1 struct {
-		Data []*models.MessageGroup `json:"data"`
+		Data *models.MessageGroups `json:"data,omitempty"`
 	}
 
 	dataGetMessengerListMessageGroupsOKBodyAO1.Data = o.Data
@@ -269,26 +268,19 @@ func (o *GetMessengerListMessageGroupsOKBody) validateData(formats strfmt.Regist
 		return nil
 	}
 
-	for i := 0; i < len(o.Data); i++ {
-		if swag.IsZero(o.Data[i]) { // not required
-			continue
-		}
-
-		if o.Data[i] != nil {
-			if err := o.Data[i].Validate(formats); err != nil {
-				ve := new(errors.Validation)
-				if stderrors.As(err, &ve) {
-					return ve.ValidateName("getMessengerListMessageGroupsOK" + "." + "data" + "." + strconv.Itoa(i))
-				}
-				ce := new(errors.CompositeError)
-				if stderrors.As(err, &ce) {
-					return ce.ValidateName("getMessengerListMessageGroupsOK" + "." + "data" + "." + strconv.Itoa(i))
-				}
-
-				return err
+	if o.Data != nil {
+		if err := o.Data.Validate(formats); err != nil {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
+				return ve.ValidateName("getMessengerListMessageGroupsOK" + "." + "data")
 			}
-		}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
+				return ce.ValidateName("getMessengerListMessageGroupsOK" + "." + "data")
+			}
 
+			return err
+		}
 	}
 
 	return nil
@@ -315,28 +307,24 @@ func (o *GetMessengerListMessageGroupsOKBody) ContextValidate(ctx context.Contex
 
 func (o *GetMessengerListMessageGroupsOKBody) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
-	for i := 0; i < len(o.Data); i++ {
+	if o.Data != nil {
 
-		if o.Data[i] != nil {
-
-			if swag.IsZero(o.Data[i]) { // not required
-				return nil
-			}
-
-			if err := o.Data[i].ContextValidate(ctx, formats); err != nil {
-				ve := new(errors.Validation)
-				if stderrors.As(err, &ve) {
-					return ve.ValidateName("getMessengerListMessageGroupsOK" + "." + "data" + "." + strconv.Itoa(i))
-				}
-				ce := new(errors.CompositeError)
-				if stderrors.As(err, &ce) {
-					return ce.ValidateName("getMessengerListMessageGroupsOK" + "." + "data" + "." + strconv.Itoa(i))
-				}
-
-				return err
-			}
+		if swag.IsZero(o.Data) { // not required
+			return nil
 		}
 
+		if err := o.Data.ContextValidate(ctx, formats); err != nil {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
+				return ve.ValidateName("getMessengerListMessageGroupsOK" + "." + "data")
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
+				return ce.ValidateName("getMessengerListMessageGroupsOK" + "." + "data")
+			}
+
+			return err
+		}
 	}
 
 	return nil
