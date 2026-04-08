@@ -47,6 +47,9 @@ const (
 
 	// CustomerAccountTypeGroup captures enum value "group"
 	CustomerAccountTypeGroup CustomerAccountType = "group"
+
+	// CustomerAccountTypeAnonymous captures enum value "anonymous"
+	CustomerAccountTypeAnonymous CustomerAccountType = "anonymous"
 )
 
 // for schema
@@ -54,7 +57,7 @@ var customerAccountTypeEnum []any
 
 func init() {
 	var res []CustomerAccountType
-	if err := json.Unmarshal([]byte(`["unknown","student","charity","business","residential","enterprise","group"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["unknown","student","charity","business","residential","enterprise","group","anonymous"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {

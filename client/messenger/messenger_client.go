@@ -75,9 +75,54 @@ func WithContentTypeMultipartFormData(r *runtime.ClientOperation) {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
+	GetMessengerListMessageGroups(params *GetMessengerListMessageGroupsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetMessengerListMessageGroupsOK, error)
+
 	PutMessengerDeliveriesDeliveryFidUnsubscribe(params *PutMessengerDeliveriesDeliveryFidUnsubscribeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutMessengerDeliveriesDeliveryFidUnsubscribeOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
+}
+
+/*
+GetMessengerListMessageGroups lists message groups
+*/
+func (a *Client) GetMessengerListMessageGroups(params *GetMessengerListMessageGroupsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetMessengerListMessageGroupsOK, error) {
+	// NOTE: parameters are not validated before sending
+	if params == nil {
+		params = NewGetMessengerListMessageGroupsParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "GetMessengerListMessageGroups",
+		Method:             "GET",
+		PathPattern:        "/messenger/listMessageGroups",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetMessengerListMessageGroupsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+
+	// only one success response has to be checked
+	success, ok := result.(*GetMessengerListMessageGroupsOK)
+	if ok {
+		return success, nil
+	}
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
+	unexpectedSuccess := result.(*GetMessengerListMessageGroupsDefault)
+
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
 /*
