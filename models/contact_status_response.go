@@ -17,9 +17,6 @@ type ContactStatusResponse struct {
 	// group fid
 	GroupFid string `json:"groupFid,omitempty"`
 
-	// opt in
-	OptIn bool `json:"optIn,omitempty"`
-
 	// unsubscribed
 	Unsubscribed bool `json:"unsubscribed,omitempty"`
 }

@@ -26,6 +26,10 @@ type UpdateProductPricePayload struct {
 	// Max Length: 60
 	DisplayName string `json:"displayName,omitempty"`
 
+	// price band fid
+	// Max Length: 64
+	PriceBandFid string `json:"priceBandFid,omitempty"`
+
 	// suspend after days
 	SuspendAfterDays int32 `json:"suspendAfterDays,omitempty"`
 
@@ -45,6 +49,10 @@ func (m *UpdateProductPricePayload) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validatePriceBandFid(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateSuspendStyle(formats); err != nil {
 		res = append(res, err)
 	}
@@ -61,6 +69,18 @@ func (m *UpdateProductPricePayload) validateDisplayName(formats strfmt.Registry)
 	}
 
 	if err := validate.MaxLength("displayName", "body", m.DisplayName, 60); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *UpdateProductPricePayload) validatePriceBandFid(formats strfmt.Registry) error {
+	if swag.IsZero(m.PriceBandFid) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("priceBandFid", "body", m.PriceBandFid, 64); err != nil {
 		return err
 	}
 
