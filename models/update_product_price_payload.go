@@ -28,7 +28,7 @@ type UpdateProductPricePayload struct {
 
 	// price band fid
 	// Max Length: 64
-	PriceBandFid string `json:"priceBandFid,omitempty"`
+	PriceBandFid string `json:"priceBandFid"`
 
 	// suspend after days
 	SuspendAfterDays int32 `json:"suspendAfterDays,omitempty"`

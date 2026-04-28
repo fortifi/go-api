@@ -25,7 +25,7 @@ type UpdateProductSkuPayload struct {
 
 	// price band fid
 	// Max Length: 64
-	PriceBandFid string `json:"priceBandFid,omitempty"`
+	PriceBandFid string `json:"priceBandFid"`
 }
 
 // Validate validates this update product sku payload
