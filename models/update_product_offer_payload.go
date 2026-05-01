@@ -44,10 +44,10 @@ type UpdateProductOfferPayload struct {
 	Restrictive *bool `json:"restrictive,omitempty"`
 
 	// term
-	Term int32 `json:"term,omitempty"`
+	Term int32 `json:"term"`
 
 	// term type
-	TermType int32 `json:"termType,omitempty"`
+	TermType int32 `json:"termType"`
 }
 
 // Validate validates this update product offer payload
