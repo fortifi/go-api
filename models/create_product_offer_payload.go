@@ -41,6 +41,12 @@ type CreateProductOfferPayload struct {
 
 	// setup discount type
 	SetupDiscountType int32 `json:"setupDiscountType,omitempty"`
+
+	// term
+	Term int32 `json:"term"`
+
+	// term type
+	TermType int32 `json:"termType"`
 }
 
 // Validate validates this create product offer payload
