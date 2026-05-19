@@ -175,3 +175,7 @@ func (f *Instance) SetUser(u string) {
 func (f *Instance) SetKey(k string) {
 	f.key = k
 }
+
+func (f *Instance) GetExpiry() int64 {
+	return f.expiry
+}
