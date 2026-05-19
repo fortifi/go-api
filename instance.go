@@ -81,7 +81,7 @@ func (f *Instance) InitAPI() error {
 
 // GetAPIInstance returns current instance of fortifi API
 func (f *Instance) GetAPIInstance() (*client.FortifiAPI, error) {
-	if f.apiInstance != nil && time.Now().Unix() < (f.expiry-expiryBuffer) {
+	if f.apiInstance != nil && !f.hasExpired() {
 		return f.apiInstance, nil
 	}
 
@@ -105,7 +105,7 @@ func (f *Instance) GetAPIInstance() (*client.FortifiAPI, error) {
 		return nil, fmt.Errorf("Failed to authenticate with Fortifi: %s", err.Error())
 	}
 
-	f.apiInstance = client.New(NewTransport(transport, f.getNewToken), strfmt.Default)
+	f.apiInstance = client.New(NewTransport(transport, f.getNewToken, f.hasExpired), strfmt.Default)
 	return f.apiInstance, nil
 }
 
@@ -176,6 +176,7 @@ func (f *Instance) SetKey(k string) {
 	f.key = k
 }
 
-func (f *Instance) GetExpiry() int64 {
-	return f.expiry
+// hasExpired returns true if the token has expired, with an offset buffer
+func (f *Instance) hasExpired() bool {
+	return time.Now().Unix() >= (f.expiry - expiryBuffer)
 }
