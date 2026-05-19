@@ -81,7 +81,7 @@ func (f *Instance) InitAPI() error {
 
 // GetAPIInstance returns current instance of fortifi API
 func (f *Instance) GetAPIInstance() (*client.FortifiAPI, error) {
-	if f.apiInstance != nil && time.Now().Unix() < (f.expiry-expiryBuffer) {
+	if f.apiInstance != nil && !f.HasExpired() {
 		return f.apiInstance, nil
 	}
 
@@ -178,4 +178,9 @@ func (f *Instance) SetKey(k string) {
 
 func (f *Instance) GetExpiry() int64 {
 	return f.expiry
+}
+
+// HasExpired returns true if the token has expired, with an offset buffer
+func (f *Instance) HasExpired() bool {
+	return time.Now().Unix() >= (f.expiry - expiryBuffer)
 }
