@@ -20,15 +20,22 @@ type errorResponse struct {
 }
 
 type Transport struct {
-	original runtime.ClientTransport
-	clear    func(transport runtime.ClientTransport) error
+	original   runtime.ClientTransport
+	clear      func(transport runtime.ClientTransport) error
+	hasExpired func() bool
 }
 
-func NewTransport(transport runtime.ClientTransport, clear func(transport runtime.ClientTransport) error) *Transport {
-	return &Transport{original: transport, clear: clear}
+func NewTransport(transport runtime.ClientTransport, clear func(transport runtime.ClientTransport) error, hasExpired func() bool) *Transport {
+	return &Transport{original: transport, clear: clear, hasExpired: hasExpired}
 }
 
 func (t *Transport) Submit(operation *runtime.ClientOperation) (any, error) {
+	if t.hasExpired != nil && t.hasExpired() {
+		if clearErr := t.clear(t.original); clearErr != nil {
+			return nil, clearErr
+		}
+	}
+
 	resp, err := t.original.Submit(operation)
 
 	if err != nil {
