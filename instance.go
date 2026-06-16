@@ -109,7 +109,7 @@ func (f *Instance) GetAPIInstance() (*client.FortifiAPI, error) {
 	return f.apiInstance, nil
 }
 
-func (f *Instance) getNewToken(transport runtime.ClientTransport) error {
+func (f *Instance) getNewToken(transport runtime.ContextualTransport) error {
 	c := client.New(transport, strfmt.Default)
 	p := authentication.NewGetServiceAuthTokenParams()
 	p.Payload = &models.ServiceAccountCredentialsPayload{

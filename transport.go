@@ -1,6 +1,7 @@
 package api
 
 import (
+	"context"
 	"encoding/json"
 	"net/http"
 
@@ -20,23 +21,27 @@ type errorResponse struct {
 }
 
 type Transport struct {
-	original   runtime.ClientTransport
-	clear      func(transport runtime.ClientTransport) error
+	original   runtime.ContextualTransport
+	clear      func(transport runtime.ContextualTransport) error
 	hasExpired func() bool
 }
 
-func NewTransport(transport runtime.ClientTransport, clear func(transport runtime.ClientTransport) error, hasExpired func() bool) *Transport {
+func (t *Transport) Submit(operation *runtime.ClientOperation) (any, error) {
+	return t.SubmitContext(context.Background(), operation)
+}
+
+func NewTransport(transport runtime.ContextualTransport, clear func(transport runtime.ContextualTransport) error, hasExpired func() bool) *Transport {
 	return &Transport{original: transport, clear: clear, hasExpired: hasExpired}
 }
 
-func (t *Transport) Submit(operation *runtime.ClientOperation) (any, error) {
+func (t *Transport) SubmitContext(ctx context.Context, operation *runtime.ClientOperation) (any, error) {
 	if t.hasExpired != nil && t.hasExpired() {
 		if clearErr := t.clear(t.original); clearErr != nil {
 			return nil, clearErr
 		}
 	}
 
-	resp, err := t.original.Submit(operation)
+	resp, err := t.original.SubmitContext(ctx, operation)
 
 	if err != nil {
 		if rawR, ok := err.(runtime.ClientResponseStatus); ok && rawR.IsCode(http.StatusForbidden) {
@@ -48,7 +53,7 @@ func (t *Transport) Submit(operation *runtime.ClientOperation) (any, error) {
 			if env.Payload.Meta.Type == "InvalidTokenException" || env.Payload.Meta.Message == "A valid access token must be supplied" {
 				clearErr := t.clear(t.original)
 				if clearErr == nil {
-					return t.original.Submit(operation)
+					return t.original.SubmitContext(ctx, operation)
 				}
 			}
 		}
