@@ -21,6 +21,9 @@ type ModifySubscriptionPayload struct {
 	// Use a specific chargeID for this modification, or pass `true` to create a charge
 	ChargeID string `json:"chargeId,omitempty"`
 
+	// IP Address of the visitor
+	ClientIP string `json:"clientIp,omitempty"`
+
 	// Description of the modify subscription
 	Description string `json:"description,omitempty"`
 
@@ -34,8 +37,14 @@ type ModifySubscriptionPayload struct {
 	// Required: true
 	PriceFid *string `json:"priceFid"`
 
+	// publisher
+	Publisher *OrderPublisherPayload `json:"publisher,omitempty"`
+
 	// SKU or SkuFid to modify subscription with
 	Sku string `json:"sku,omitempty"`
+
+	// User Agent of the visitors browser 'HTTP_USER_AGENT'
+	UserAgent string `json:"userAgent,omitempty"`
 }
 
 // Validate validates this modify subscription payload
@@ -47,6 +56,10 @@ func (m *ModifySubscriptionPayload) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validatePriceFid(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePublisher(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -86,11 +99,38 @@ func (m *ModifySubscriptionPayload) validatePriceFid(formats strfmt.Registry) er
 	return nil
 }
 
+func (m *ModifySubscriptionPayload) validatePublisher(formats strfmt.Registry) error {
+	if typeutils.IsZero(m.Publisher) { // not required
+		return nil
+	}
+
+	if m.Publisher != nil {
+		if err := m.Publisher.Validate(formats); err != nil {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
+				return ve.ValidateName("publisher")
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
+				return ce.ValidateName("publisher")
+			}
+
+			return err
+		}
+	}
+
+	return nil
+}
+
 // ContextValidate validate this modify subscription payload based on the context it is used
 func (m *ModifySubscriptionPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.contextValidateMode(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePublisher(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -117,6 +157,31 @@ func (m *ModifySubscriptionPayload) contextValidateMode(ctx context.Context, for
 		}
 
 		return err
+	}
+
+	return nil
+}
+
+func (m *ModifySubscriptionPayload) contextValidatePublisher(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Publisher != nil {
+
+		if typeutils.IsZero(m.Publisher) { // not required
+			return nil
+		}
+
+		if err := m.Publisher.ContextValidate(ctx, formats); err != nil {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
+				return ve.ValidateName("publisher")
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
+				return ce.ValidateName("publisher")
+			}
+
+			return err
+		}
 	}
 
 	return nil
