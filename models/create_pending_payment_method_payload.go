@@ -23,6 +23,9 @@ type CreatePendingPaymentMethodPayload struct {
 	// expiry
 	Expiry string `json:"expiry,omitempty"`
 
+	// method type
+	MethodType string `json:"methodType,omitempty"`
+
 	// name
 	Name string `json:"name,omitempty"`
 
