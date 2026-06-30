@@ -30,7 +30,7 @@ type CreatePendingPaymentMethodPayload struct {
 	Name string `json:"name,omitempty"`
 
 	// scheme
-	Scheme string `json:"scheme,omitempty"`
+	Scheme string `json:"scheme"`
 
 	// token
 	Token string `json:"token,omitempty"`
