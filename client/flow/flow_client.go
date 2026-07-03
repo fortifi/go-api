@@ -63,6 +63,12 @@ type ClientService interface {
 	// DeleteFlowsFlowFidContext archive a retention flow.
 	DeleteFlowsFlowFidContext(ctx context.Context, params *DeleteFlowsFlowFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteFlowsFlowFidOK, error)
 
+	// DeleteFlowsFlowFidStepsStepFid archive a retention flow step.
+	DeleteFlowsFlowFidStepsStepFid(params *DeleteFlowsFlowFidStepsStepFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteFlowsFlowFidStepsStepFidOK, error)
+
+	// DeleteFlowsFlowFidStepsStepFidContext archive a retention flow step.
+	DeleteFlowsFlowFidStepsStepFidContext(ctx context.Context, params *DeleteFlowsFlowFidStepsStepFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteFlowsFlowFidStepsStepFidOK, error)
+
 	// GetFlows list retention flows.
 	GetFlows(params *GetFlowsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsOK, error)
 
@@ -182,6 +188,72 @@ func (a *Client) DeleteFlowsFlowFidContext(ctx context.Context, params *DeleteFl
 	//
 	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*DeleteFlowsFlowFidDefault)
+
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+DeleteFlowsFlowFidStepsStepFidarchives a retention flow step.
+
+This method does not support injected context.
+However, timeout and opentracing contexts are honored whenever enabled.
+
+If you need to pass a specific context, use [Client.DeleteFlowsFlowFidStepsStepFidContext] instead.
+*/
+func (a *Client) DeleteFlowsFlowFidStepsStepFid(params *DeleteFlowsFlowFidStepsStepFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteFlowsFlowFidStepsStepFidOK, error) {
+	var ctx context.Context
+	if params.inner.ctx != nil {
+		ctx = params.inner.ctx
+	} else {
+		ctx = context.Background()
+	}
+
+	return a.DeleteFlowsFlowFidStepsStepFidContext(ctx, params, authInfo, opts...)
+}
+
+/*
+DeleteFlowsFlowFidStepsStepFidContextarchives a retention flow step.
+
+Do not use the deprecated [DeleteFlowsFlowFidStepsStepFidParams.Context] with this method: it would be ignored.
+*/
+func (a *Client) DeleteFlowsFlowFidStepsStepFidContext(ctx context.Context, params *DeleteFlowsFlowFidStepsStepFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteFlowsFlowFidStepsStepFidOK, error) {
+	// NOTE: parameters are not validated before sending
+	if params == nil {
+		params = NewDeleteFlowsFlowFidStepsStepFidParams()
+	}
+
+	op := &runtime.ClientOperation{
+		ID:                 "DeleteFlowsFlowFidStepsStepFid",
+		Method:             "DELETE",
+		PathPattern:        "/flows/{flowFid}/steps/{stepFid}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &DeleteFlowsFlowFidStepsStepFidReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Client:             params.HTTPClient,
+	}
+
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.SubmitContext(ctx, op)
+	if err != nil {
+		return nil, err
+	}
+
+	// only one success response has to be checked
+	success, ok := result.(*DeleteFlowsFlowFidStepsStepFidOK)
+	if ok {
+		return success, nil
+	}
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
+	unexpectedSuccess := result.(*DeleteFlowsFlowFidStepsStepFidDefault)
 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
