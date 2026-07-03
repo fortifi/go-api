@@ -57,6 +57,12 @@ type ClientOption func(*runtime.ClientOperation)
 // ClientService is the interface for Client methods.
 type ClientService interface {
 
+	// DeleteFlowsFlowFid archive a retention flow.
+	DeleteFlowsFlowFid(params *DeleteFlowsFlowFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteFlowsFlowFidOK, error)
+
+	// DeleteFlowsFlowFidContext archive a retention flow.
+	DeleteFlowsFlowFidContext(ctx context.Context, params *DeleteFlowsFlowFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteFlowsFlowFidOK, error)
+
 	// GetFlows list retention flows.
 	GetFlows(params *GetFlowsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsOK, error)
 
@@ -112,6 +118,72 @@ type ClientService interface {
 	PutFlowsFlowFidStepsStepFidContext(ctx context.Context, params *PutFlowsFlowFidStepsStepFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutFlowsFlowFidStepsStepFidOK, error)
 
 	SetTransport(transport runtime.ContextualTransport)
+}
+
+/*
+DeleteFlowsFlowFidarchives a retention flow.
+
+This method does not support injected context.
+However, timeout and opentracing contexts are honored whenever enabled.
+
+If you need to pass a specific context, use [Client.DeleteFlowsFlowFidContext] instead.
+*/
+func (a *Client) DeleteFlowsFlowFid(params *DeleteFlowsFlowFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteFlowsFlowFidOK, error) {
+	var ctx context.Context
+	if params.inner.ctx != nil {
+		ctx = params.inner.ctx
+	} else {
+		ctx = context.Background()
+	}
+
+	return a.DeleteFlowsFlowFidContext(ctx, params, authInfo, opts...)
+}
+
+/*
+DeleteFlowsFlowFidContextarchives a retention flow.
+
+Do not use the deprecated [DeleteFlowsFlowFidParams.Context] with this method: it would be ignored.
+*/
+func (a *Client) DeleteFlowsFlowFidContext(ctx context.Context, params *DeleteFlowsFlowFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteFlowsFlowFidOK, error) {
+	// NOTE: parameters are not validated before sending
+	if params == nil {
+		params = NewDeleteFlowsFlowFidParams()
+	}
+
+	op := &runtime.ClientOperation{
+		ID:                 "DeleteFlowsFlowFid",
+		Method:             "DELETE",
+		PathPattern:        "/flows/{flowFid}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &DeleteFlowsFlowFidReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Client:             params.HTTPClient,
+	}
+
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.SubmitContext(ctx, op)
+	if err != nil {
+		return nil, err
+	}
+
+	// only one success response has to be checked
+	success, ok := result.(*DeleteFlowsFlowFidOK)
+	if ok {
+		return success, nil
+	}
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
+	unexpectedSuccess := result.(*DeleteFlowsFlowFidDefault)
+
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
 /*
