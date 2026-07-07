@@ -20,6 +20,10 @@ type UpdateFlowPayload struct {
 	// display name
 	// Max Length: 60
 	DisplayName string `json:"displayName,omitempty"`
+
+	// group
+	// Max Length: 50
+	Group string `json:"group,omitempty"`
 }
 
 // Validate validates this update flow payload
@@ -27,6 +31,10 @@ func (m *UpdateFlowPayload) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateDisplayName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateGroup(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -42,6 +50,18 @@ func (m *UpdateFlowPayload) validateDisplayName(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("displayName", "body", m.DisplayName, 60); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *UpdateFlowPayload) validateGroup(formats strfmt.Registry) error {
+	if typeutils.IsZero(m.Group) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("group", "body", m.Group, 50); err != nil {
 		return err
 	}
 
