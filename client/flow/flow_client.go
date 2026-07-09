@@ -57,13 +57,469 @@ type ClientOption func(*runtime.ClientOperation)
 // ClientService is the interface for Client methods.
 type ClientService interface {
 
+	// DeleteFlowsFlowFid archive a retention flow.
+	DeleteFlowsFlowFid(params *DeleteFlowsFlowFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteFlowsFlowFidOK, error)
+
+	// DeleteFlowsFlowFidContext archive a retention flow.
+	DeleteFlowsFlowFidContext(ctx context.Context, params *DeleteFlowsFlowFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteFlowsFlowFidOK, error)
+
+	// DeleteFlowsFlowFidStepsStepFid archive a retention flow step.
+	DeleteFlowsFlowFidStepsStepFid(params *DeleteFlowsFlowFidStepsStepFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteFlowsFlowFidStepsStepFidOK, error)
+
+	// DeleteFlowsFlowFidStepsStepFidContext archive a retention flow step.
+	DeleteFlowsFlowFidStepsStepFidContext(ctx context.Context, params *DeleteFlowsFlowFidStepsStepFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteFlowsFlowFidStepsStepFidOK, error)
+
+	// GetFlows list retention flows.
+	GetFlows(params *GetFlowsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsOK, error)
+
+	// GetFlowsContext list retention flows.
+	GetFlowsContext(ctx context.Context, params *GetFlowsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsOK, error)
+
+	// GetFlowsFlowFid retrieve retention flow details.
+	GetFlowsFlowFid(params *GetFlowsFlowFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsFlowFidOK, error)
+
+	// GetFlowsFlowFidContext retrieve retention flow details.
+	GetFlowsFlowFidContext(ctx context.Context, params *GetFlowsFlowFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsFlowFidOK, error)
+
+	// GetFlowsFlowFidSteps retrieve retention flow steps.
+	GetFlowsFlowFidSteps(params *GetFlowsFlowFidStepsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsFlowFidStepsOK, error)
+
+	// GetFlowsFlowFidStepsContext retrieve retention flow steps.
+	GetFlowsFlowFidStepsContext(ctx context.Context, params *GetFlowsFlowFidStepsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsFlowFidStepsOK, error)
+
+	// GetFlowsFlowFidStepsStepFid retrieve retention flow step details.
+	GetFlowsFlowFidStepsStepFid(params *GetFlowsFlowFidStepsStepFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsFlowFidStepsStepFidOK, error)
+
+	// GetFlowsFlowFidStepsStepFidContext retrieve retention flow step details.
+	GetFlowsFlowFidStepsStepFidContext(ctx context.Context, params *GetFlowsFlowFidStepsStepFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsFlowFidStepsStepFidOK, error)
+
 	// PostFlowFlowFidLog create flow.
 	PostFlowFlowFidLog(params *PostFlowFlowFidLogParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostFlowFlowFidLogOK, error)
 
 	// PostFlowFlowFidLogContext create flow.
 	PostFlowFlowFidLogContext(ctx context.Context, params *PostFlowFlowFidLogParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostFlowFlowFidLogOK, error)
 
+	// PostFlows create a new retention flow.
+	PostFlows(params *PostFlowsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostFlowsOK, error)
+
+	// PostFlowsContext create a new retention flow.
+	PostFlowsContext(ctx context.Context, params *PostFlowsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostFlowsOK, error)
+
+	// PostFlowsFlowFidSteps create a new retention flow step.
+	PostFlowsFlowFidSteps(params *PostFlowsFlowFidStepsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostFlowsFlowFidStepsOK, error)
+
+	// PostFlowsFlowFidStepsContext create a new retention flow step.
+	PostFlowsFlowFidStepsContext(ctx context.Context, params *PostFlowsFlowFidStepsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostFlowsFlowFidStepsOK, error)
+
+	// PutFlowsFlowFid update retention flow details.
+	PutFlowsFlowFid(params *PutFlowsFlowFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutFlowsFlowFidOK, error)
+
+	// PutFlowsFlowFidContext update retention flow details.
+	PutFlowsFlowFidContext(ctx context.Context, params *PutFlowsFlowFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutFlowsFlowFidOK, error)
+
+	// PutFlowsFlowFidStepsStepFid update retention flow step details.
+	PutFlowsFlowFidStepsStepFid(params *PutFlowsFlowFidStepsStepFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutFlowsFlowFidStepsStepFidOK, error)
+
+	// PutFlowsFlowFidStepsStepFidContext update retention flow step details.
+	PutFlowsFlowFidStepsStepFidContext(ctx context.Context, params *PutFlowsFlowFidStepsStepFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutFlowsFlowFidStepsStepFidOK, error)
+
 	SetTransport(transport runtime.ContextualTransport)
+}
+
+/*
+DeleteFlowsFlowFidarchives a retention flow.
+
+This method does not support injected context.
+However, timeout and opentracing contexts are honored whenever enabled.
+
+If you need to pass a specific context, use [Client.DeleteFlowsFlowFidContext] instead.
+*/
+func (a *Client) DeleteFlowsFlowFid(params *DeleteFlowsFlowFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteFlowsFlowFidOK, error) {
+	var ctx context.Context
+	if params.inner.ctx != nil {
+		ctx = params.inner.ctx
+	} else {
+		ctx = context.Background()
+	}
+
+	return a.DeleteFlowsFlowFidContext(ctx, params, authInfo, opts...)
+}
+
+/*
+DeleteFlowsFlowFidContextarchives a retention flow.
+
+Do not use the deprecated [DeleteFlowsFlowFidParams.Context] with this method: it would be ignored.
+*/
+func (a *Client) DeleteFlowsFlowFidContext(ctx context.Context, params *DeleteFlowsFlowFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteFlowsFlowFidOK, error) {
+	// NOTE: parameters are not validated before sending
+	if params == nil {
+		params = NewDeleteFlowsFlowFidParams()
+	}
+
+	op := &runtime.ClientOperation{
+		ID:                 "DeleteFlowsFlowFid",
+		Method:             "DELETE",
+		PathPattern:        "/flows/{flowFid}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &DeleteFlowsFlowFidReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Client:             params.HTTPClient,
+	}
+
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.SubmitContext(ctx, op)
+	if err != nil {
+		return nil, err
+	}
+
+	// only one success response has to be checked
+	success, ok := result.(*DeleteFlowsFlowFidOK)
+	if ok {
+		return success, nil
+	}
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
+	unexpectedSuccess := result.(*DeleteFlowsFlowFidDefault)
+
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+DeleteFlowsFlowFidStepsStepFidarchives a retention flow step.
+
+This method does not support injected context.
+However, timeout and opentracing contexts are honored whenever enabled.
+
+If you need to pass a specific context, use [Client.DeleteFlowsFlowFidStepsStepFidContext] instead.
+*/
+func (a *Client) DeleteFlowsFlowFidStepsStepFid(params *DeleteFlowsFlowFidStepsStepFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteFlowsFlowFidStepsStepFidOK, error) {
+	var ctx context.Context
+	if params.inner.ctx != nil {
+		ctx = params.inner.ctx
+	} else {
+		ctx = context.Background()
+	}
+
+	return a.DeleteFlowsFlowFidStepsStepFidContext(ctx, params, authInfo, opts...)
+}
+
+/*
+DeleteFlowsFlowFidStepsStepFidContextarchives a retention flow step.
+
+Do not use the deprecated [DeleteFlowsFlowFidStepsStepFidParams.Context] with this method: it would be ignored.
+*/
+func (a *Client) DeleteFlowsFlowFidStepsStepFidContext(ctx context.Context, params *DeleteFlowsFlowFidStepsStepFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteFlowsFlowFidStepsStepFidOK, error) {
+	// NOTE: parameters are not validated before sending
+	if params == nil {
+		params = NewDeleteFlowsFlowFidStepsStepFidParams()
+	}
+
+	op := &runtime.ClientOperation{
+		ID:                 "DeleteFlowsFlowFidStepsStepFid",
+		Method:             "DELETE",
+		PathPattern:        "/flows/{flowFid}/steps/{stepFid}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &DeleteFlowsFlowFidStepsStepFidReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Client:             params.HTTPClient,
+	}
+
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.SubmitContext(ctx, op)
+	if err != nil {
+		return nil, err
+	}
+
+	// only one success response has to be checked
+	success, ok := result.(*DeleteFlowsFlowFidStepsStepFidOK)
+	if ok {
+		return success, nil
+	}
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
+	unexpectedSuccess := result.(*DeleteFlowsFlowFidStepsStepFidDefault)
+
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+GetFlowslists retention flows.
+
+This method does not support injected context.
+However, timeout and opentracing contexts are honored whenever enabled.
+
+If you need to pass a specific context, use [Client.GetFlowsContext] instead.
+*/
+func (a *Client) GetFlows(params *GetFlowsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsOK, error) {
+	var ctx context.Context
+	if params.inner.ctx != nil {
+		ctx = params.inner.ctx
+	} else {
+		ctx = context.Background()
+	}
+
+	return a.GetFlowsContext(ctx, params, authInfo, opts...)
+}
+
+/*
+GetFlowsContextlists retention flows.
+
+Do not use the deprecated [GetFlowsParams.Context] with this method: it would be ignored.
+*/
+func (a *Client) GetFlowsContext(ctx context.Context, params *GetFlowsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsOK, error) {
+	// NOTE: parameters are not validated before sending
+	if params == nil {
+		params = NewGetFlowsParams()
+	}
+
+	op := &runtime.ClientOperation{
+		ID:                 "GetFlows",
+		Method:             "GET",
+		PathPattern:        "/flows",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetFlowsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Client:             params.HTTPClient,
+	}
+
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.SubmitContext(ctx, op)
+	if err != nil {
+		return nil, err
+	}
+
+	// only one success response has to be checked
+	success, ok := result.(*GetFlowsOK)
+	if ok {
+		return success, nil
+	}
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
+	unexpectedSuccess := result.(*GetFlowsDefault)
+
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+GetFlowsFlowFidretrieves retention flow details.
+
+This method does not support injected context.
+However, timeout and opentracing contexts are honored whenever enabled.
+
+If you need to pass a specific context, use [Client.GetFlowsFlowFidContext] instead.
+*/
+func (a *Client) GetFlowsFlowFid(params *GetFlowsFlowFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsFlowFidOK, error) {
+	var ctx context.Context
+	if params.inner.ctx != nil {
+		ctx = params.inner.ctx
+	} else {
+		ctx = context.Background()
+	}
+
+	return a.GetFlowsFlowFidContext(ctx, params, authInfo, opts...)
+}
+
+/*
+GetFlowsFlowFidContextretrieves retention flow details.
+
+Do not use the deprecated [GetFlowsFlowFidParams.Context] with this method: it would be ignored.
+*/
+func (a *Client) GetFlowsFlowFidContext(ctx context.Context, params *GetFlowsFlowFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsFlowFidOK, error) {
+	// NOTE: parameters are not validated before sending
+	if params == nil {
+		params = NewGetFlowsFlowFidParams()
+	}
+
+	op := &runtime.ClientOperation{
+		ID:                 "GetFlowsFlowFid",
+		Method:             "GET",
+		PathPattern:        "/flows/{flowFid}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetFlowsFlowFidReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Client:             params.HTTPClient,
+	}
+
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.SubmitContext(ctx, op)
+	if err != nil {
+		return nil, err
+	}
+
+	// only one success response has to be checked
+	success, ok := result.(*GetFlowsFlowFidOK)
+	if ok {
+		return success, nil
+	}
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
+	unexpectedSuccess := result.(*GetFlowsFlowFidDefault)
+
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+GetFlowsFlowFidStepsretrieves retention flow steps.
+
+This method does not support injected context.
+However, timeout and opentracing contexts are honored whenever enabled.
+
+If you need to pass a specific context, use [Client.GetFlowsFlowFidStepsContext] instead.
+*/
+func (a *Client) GetFlowsFlowFidSteps(params *GetFlowsFlowFidStepsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsFlowFidStepsOK, error) {
+	var ctx context.Context
+	if params.inner.ctx != nil {
+		ctx = params.inner.ctx
+	} else {
+		ctx = context.Background()
+	}
+
+	return a.GetFlowsFlowFidStepsContext(ctx, params, authInfo, opts...)
+}
+
+/*
+GetFlowsFlowFidStepsContextretrieves retention flow steps.
+
+Do not use the deprecated [GetFlowsFlowFidStepsParams.Context] with this method: it would be ignored.
+*/
+func (a *Client) GetFlowsFlowFidStepsContext(ctx context.Context, params *GetFlowsFlowFidStepsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsFlowFidStepsOK, error) {
+	// NOTE: parameters are not validated before sending
+	if params == nil {
+		params = NewGetFlowsFlowFidStepsParams()
+	}
+
+	op := &runtime.ClientOperation{
+		ID:                 "GetFlowsFlowFidSteps",
+		Method:             "GET",
+		PathPattern:        "/flows/{flowFid}/steps",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetFlowsFlowFidStepsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Client:             params.HTTPClient,
+	}
+
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.SubmitContext(ctx, op)
+	if err != nil {
+		return nil, err
+	}
+
+	// only one success response has to be checked
+	success, ok := result.(*GetFlowsFlowFidStepsOK)
+	if ok {
+		return success, nil
+	}
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
+	unexpectedSuccess := result.(*GetFlowsFlowFidStepsDefault)
+
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+GetFlowsFlowFidStepsStepFidretrieves retention flow step details.
+
+This method does not support injected context.
+However, timeout and opentracing contexts are honored whenever enabled.
+
+If you need to pass a specific context, use [Client.GetFlowsFlowFidStepsStepFidContext] instead.
+*/
+func (a *Client) GetFlowsFlowFidStepsStepFid(params *GetFlowsFlowFidStepsStepFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsFlowFidStepsStepFidOK, error) {
+	var ctx context.Context
+	if params.inner.ctx != nil {
+		ctx = params.inner.ctx
+	} else {
+		ctx = context.Background()
+	}
+
+	return a.GetFlowsFlowFidStepsStepFidContext(ctx, params, authInfo, opts...)
+}
+
+/*
+GetFlowsFlowFidStepsStepFidContextretrieves retention flow step details.
+
+Do not use the deprecated [GetFlowsFlowFidStepsStepFidParams.Context] with this method: it would be ignored.
+*/
+func (a *Client) GetFlowsFlowFidStepsStepFidContext(ctx context.Context, params *GetFlowsFlowFidStepsStepFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsFlowFidStepsStepFidOK, error) {
+	// NOTE: parameters are not validated before sending
+	if params == nil {
+		params = NewGetFlowsFlowFidStepsStepFidParams()
+	}
+
+	op := &runtime.ClientOperation{
+		ID:                 "GetFlowsFlowFidStepsStepFid",
+		Method:             "GET",
+		PathPattern:        "/flows/{flowFid}/steps/{stepFid}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetFlowsFlowFidStepsStepFidReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Client:             params.HTTPClient,
+	}
+
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.SubmitContext(ctx, op)
+	if err != nil {
+		return nil, err
+	}
+
+	// only one success response has to be checked
+	success, ok := result.(*GetFlowsFlowFidStepsStepFidOK)
+	if ok {
+		return success, nil
+	}
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
+	unexpectedSuccess := result.(*GetFlowsFlowFidStepsStepFidDefault)
+
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
 /*
@@ -128,6 +584,270 @@ func (a *Client) PostFlowFlowFidLogContext(ctx context.Context, params *PostFlow
 	//
 	// a default response is provided: fill this and return an error
 	unexpectedSuccess := result.(*PostFlowFlowFidLogDefault)
+
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PostFlowscreates a new retention flow.
+
+This method does not support injected context.
+However, timeout and opentracing contexts are honored whenever enabled.
+
+If you need to pass a specific context, use [Client.PostFlowsContext] instead.
+*/
+func (a *Client) PostFlows(params *PostFlowsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostFlowsOK, error) {
+	var ctx context.Context
+	if params.inner.ctx != nil {
+		ctx = params.inner.ctx
+	} else {
+		ctx = context.Background()
+	}
+
+	return a.PostFlowsContext(ctx, params, authInfo, opts...)
+}
+
+/*
+PostFlowsContextcreates a new retention flow.
+
+Do not use the deprecated [PostFlowsParams.Context] with this method: it would be ignored.
+*/
+func (a *Client) PostFlowsContext(ctx context.Context, params *PostFlowsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostFlowsOK, error) {
+	// NOTE: parameters are not validated before sending
+	if params == nil {
+		params = NewPostFlowsParams()
+	}
+
+	op := &runtime.ClientOperation{
+		ID:                 "PostFlows",
+		Method:             "POST",
+		PathPattern:        "/flows",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PostFlowsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Client:             params.HTTPClient,
+	}
+
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.SubmitContext(ctx, op)
+	if err != nil {
+		return nil, err
+	}
+
+	// only one success response has to be checked
+	success, ok := result.(*PostFlowsOK)
+	if ok {
+		return success, nil
+	}
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
+	unexpectedSuccess := result.(*PostFlowsDefault)
+
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PostFlowsFlowFidStepscreates a new retention flow step.
+
+This method does not support injected context.
+However, timeout and opentracing contexts are honored whenever enabled.
+
+If you need to pass a specific context, use [Client.PostFlowsFlowFidStepsContext] instead.
+*/
+func (a *Client) PostFlowsFlowFidSteps(params *PostFlowsFlowFidStepsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostFlowsFlowFidStepsOK, error) {
+	var ctx context.Context
+	if params.inner.ctx != nil {
+		ctx = params.inner.ctx
+	} else {
+		ctx = context.Background()
+	}
+
+	return a.PostFlowsFlowFidStepsContext(ctx, params, authInfo, opts...)
+}
+
+/*
+PostFlowsFlowFidStepsContextcreates a new retention flow step.
+
+Do not use the deprecated [PostFlowsFlowFidStepsParams.Context] with this method: it would be ignored.
+*/
+func (a *Client) PostFlowsFlowFidStepsContext(ctx context.Context, params *PostFlowsFlowFidStepsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostFlowsFlowFidStepsOK, error) {
+	// NOTE: parameters are not validated before sending
+	if params == nil {
+		params = NewPostFlowsFlowFidStepsParams()
+	}
+
+	op := &runtime.ClientOperation{
+		ID:                 "PostFlowsFlowFidSteps",
+		Method:             "POST",
+		PathPattern:        "/flows/{flowFid}/steps",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PostFlowsFlowFidStepsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Client:             params.HTTPClient,
+	}
+
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.SubmitContext(ctx, op)
+	if err != nil {
+		return nil, err
+	}
+
+	// only one success response has to be checked
+	success, ok := result.(*PostFlowsFlowFidStepsOK)
+	if ok {
+		return success, nil
+	}
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
+	unexpectedSuccess := result.(*PostFlowsFlowFidStepsDefault)
+
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PutFlowsFlowFidupdates retention flow details.
+
+This method does not support injected context.
+However, timeout and opentracing contexts are honored whenever enabled.
+
+If you need to pass a specific context, use [Client.PutFlowsFlowFidContext] instead.
+*/
+func (a *Client) PutFlowsFlowFid(params *PutFlowsFlowFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutFlowsFlowFidOK, error) {
+	var ctx context.Context
+	if params.inner.ctx != nil {
+		ctx = params.inner.ctx
+	} else {
+		ctx = context.Background()
+	}
+
+	return a.PutFlowsFlowFidContext(ctx, params, authInfo, opts...)
+}
+
+/*
+PutFlowsFlowFidContextupdates retention flow details.
+
+Do not use the deprecated [PutFlowsFlowFidParams.Context] with this method: it would be ignored.
+*/
+func (a *Client) PutFlowsFlowFidContext(ctx context.Context, params *PutFlowsFlowFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutFlowsFlowFidOK, error) {
+	// NOTE: parameters are not validated before sending
+	if params == nil {
+		params = NewPutFlowsFlowFidParams()
+	}
+
+	op := &runtime.ClientOperation{
+		ID:                 "PutFlowsFlowFid",
+		Method:             "PUT",
+		PathPattern:        "/flows/{flowFid}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PutFlowsFlowFidReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Client:             params.HTTPClient,
+	}
+
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.SubmitContext(ctx, op)
+	if err != nil {
+		return nil, err
+	}
+
+	// only one success response has to be checked
+	success, ok := result.(*PutFlowsFlowFidOK)
+	if ok {
+		return success, nil
+	}
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
+	unexpectedSuccess := result.(*PutFlowsFlowFidDefault)
+
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+PutFlowsFlowFidStepsStepFidupdates retention flow step details.
+
+This method does not support injected context.
+However, timeout and opentracing contexts are honored whenever enabled.
+
+If you need to pass a specific context, use [Client.PutFlowsFlowFidStepsStepFidContext] instead.
+*/
+func (a *Client) PutFlowsFlowFidStepsStepFid(params *PutFlowsFlowFidStepsStepFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutFlowsFlowFidStepsStepFidOK, error) {
+	var ctx context.Context
+	if params.inner.ctx != nil {
+		ctx = params.inner.ctx
+	} else {
+		ctx = context.Background()
+	}
+
+	return a.PutFlowsFlowFidStepsStepFidContext(ctx, params, authInfo, opts...)
+}
+
+/*
+PutFlowsFlowFidStepsStepFidContextupdates retention flow step details.
+
+Do not use the deprecated [PutFlowsFlowFidStepsStepFidParams.Context] with this method: it would be ignored.
+*/
+func (a *Client) PutFlowsFlowFidStepsStepFidContext(ctx context.Context, params *PutFlowsFlowFidStepsStepFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutFlowsFlowFidStepsStepFidOK, error) {
+	// NOTE: parameters are not validated before sending
+	if params == nil {
+		params = NewPutFlowsFlowFidStepsStepFidParams()
+	}
+
+	op := &runtime.ClientOperation{
+		ID:                 "PutFlowsFlowFidStepsStepFid",
+		Method:             "PUT",
+		PathPattern:        "/flows/{flowFid}/steps/{stepFid}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PutFlowsFlowFidStepsStepFidReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Client:             params.HTTPClient,
+	}
+
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.SubmitContext(ctx, op)
+	if err != nil {
+		return nil, err
+	}
+
+	// only one success response has to be checked
+	success, ok := result.(*PutFlowsFlowFidStepsStepFidOK)
+	if ok {
+		return success, nil
+	}
+
+	// unexpected success response.
+	//
+	// a default response is provided: fill this and return an error
+	unexpectedSuccess := result.(*PutFlowsFlowFidStepsStepFidDefault)
 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
