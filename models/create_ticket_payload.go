@@ -76,6 +76,11 @@ type CreateTicketPayload struct {
 	// Enum: ["generic","question","problem","incident"]
 	TicketType string `json:"ticketType,omitempty"`
 
+	// Creation time for backfilling historic tickets, in ISO 8601 standard with optional fractions of a second e.g 2015-12-05T13:11:59.888Z. Must not be in the future. Defaults to now.
+	//
+	// Format: date-time
+	Time strfmt.DateTime `json:"time,omitempty"`
+
 	// urgency
 	// Enum: ["triage","low","normal","high","urgent","emergency","critical"]
 	Urgency string `json:"urgency,omitempty"`
@@ -98,6 +103,10 @@ func (m *CreateTicketPayload) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateTicketType(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -264,6 +273,18 @@ func (m *CreateTicketPayload) validateTicketType(formats strfmt.Registry) error 
 
 	// value enum
 	if err := m.validateTicketTypeEnum("ticketType", "body", m.TicketType); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *CreateTicketPayload) validateTime(formats strfmt.Registry) error {
+	if typeutils.IsZero(m.Time) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("time", "body", "date-time", m.Time.String(), formats); err != nil {
 		return err
 	}
 

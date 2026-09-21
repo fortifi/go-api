@@ -37,6 +37,10 @@ type CreateCustomerPayload struct {
 	// Company registration number (If customer is a company)
 	CompanyNumber string `json:"companyNumber,omitempty"`
 
+	// ISO 3166-1 alpha-2 country code. Setting it here avoids a follow-up call to the customer location endpoint, and skips the IP geolocation lookup that runs when a customer is created without a country.
+	//
+	Country string `json:"country,omitempty"`
+
 	// Currency
 	Currency string `json:"currency,omitempty"`
 
