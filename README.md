@@ -39,6 +39,39 @@ Use Fortifi
 
 ```
 
+## Disable nesting for a call
+
+Pass `api.WithDisableNesting` as the final argument to a client method:
+
+```go
+response, err := instance.Customers.GetCustomersFindByReference(
+	params,
+	fortifi.GetAuthenticator(),
+	api.WithDisableNesting,
+)
+```
+
+This sends `Disable-Nesting: true` for that call, asking the server to skip
+automatic expansion of related FIDs. It also works with the `...Context`
+methods. Calls without this option retain the server's default behaviour,
+even when reusing the same parameters. The endpoint must honour the header;
+Citadel procedures may control nesting independently on their backend calls.
+
+To request compact related objects containing `id`, `fid`, and `displayName`,
+use `api.WithShortNesting` instead:
+
+```go
+response, err := instance.Customers.GetCustomersFindByReference(
+	params,
+	fortifi.GetAuthenticator(),
+	api.WithShortNesting,
+)
+```
+
+This sends `Short-Nesting: true` for that call and also supports `...Context`
+methods. If both options are supplied, the backend gives `Disable-Nesting`
+precedence.
+
 ## Prerequisite: Install go-swagger
 
 Before generating code, ensure you have the correct tap for go-swagger:
