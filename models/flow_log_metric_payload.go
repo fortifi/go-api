@@ -54,6 +54,9 @@ type FlowLogMetricPayload struct {
 	// purchase segment
 	PurchaseSegment string `json:"purchaseSegment,omitempty"`
 
+	// Retention flow type the action belongs to (cancel, pause, modify)
+	RetentionType string `json:"retentionType,omitempty"`
+
 	// session Id
 	// Required: true
 	SessionID *string `json:"sessionId"`
