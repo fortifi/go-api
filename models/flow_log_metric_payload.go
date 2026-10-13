@@ -4,10 +4,12 @@ package models
 
 import (
 	"context"
+	"encoding/json"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
+	"github.com/go-openapi/swag/typeutils"
 	"github.com/go-openapi/validate"
 )
 
@@ -54,6 +56,10 @@ type FlowLogMetricPayload struct {
 	// purchase segment
 	PurchaseSegment string `json:"purchaseSegment,omitempty"`
 
+	// Retention flow type the action belongs to
+	// Enum: ["cancel","pause","modify"]
+	RetentionType string `json:"retentionType,omitempty"`
+
 	// session Id
 	// Required: true
 	SessionID *string `json:"sessionId"`
@@ -82,6 +88,10 @@ func (m *FlowLogMetricPayload) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateRetentionType(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateSessionID(formats); err != nil {
 		res = append(res, err)
 	}
@@ -95,6 +105,51 @@ func (m *FlowLogMetricPayload) Validate(formats strfmt.Registry) error {
 func (m *FlowLogMetricPayload) validateAction(formats strfmt.Registry) error {
 
 	if err := validate.Required("action", "body", m.Action); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var flowLogMetricPayloadTypeRetentionTypePropEnum []any
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["cancel","pause","modify"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		flowLogMetricPayloadTypeRetentionTypePropEnum = append(flowLogMetricPayloadTypeRetentionTypePropEnum, v)
+	}
+}
+
+const (
+
+	// FlowLogMetricPayloadRetentionTypeCancel captures enum value "cancel"
+	FlowLogMetricPayloadRetentionTypeCancel string = "cancel"
+
+	// FlowLogMetricPayloadRetentionTypePause captures enum value "pause"
+	FlowLogMetricPayloadRetentionTypePause string = "pause"
+
+	// FlowLogMetricPayloadRetentionTypeModify captures enum value "modify"
+	FlowLogMetricPayloadRetentionTypeModify string = "modify"
+)
+
+// prop value enum
+func (m *FlowLogMetricPayload) validateRetentionTypeEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, flowLogMetricPayloadTypeRetentionTypePropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *FlowLogMetricPayload) validateRetentionType(formats strfmt.Registry) error {
+	if typeutils.IsZero(m.RetentionType) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateRetentionTypeEnum("retentionType", "body", m.RetentionType); err != nil {
 		return err
 	}
 
