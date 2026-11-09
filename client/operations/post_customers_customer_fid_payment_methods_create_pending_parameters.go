@@ -63,10 +63,9 @@ PostCustomersCustomerFidPaymentMethodsCreatePendingParams contains all the param
 */
 type PostCustomersCustomerFidPaymentMethodsCreatePendingParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// Payload.

@@ -52,12 +52,12 @@ type CalculatedSubscriptionModification struct {
 }
 
 // Validate validates this calculated subscription modification
-func (m *CalculatedSubscriptionModification) Validate(formats strfmt.Registry) error {
+func (m *CalculatedSubscriptionModification) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this calculated subscription modification based on context it is used
-func (m *CalculatedSubscriptionModification) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *CalculatedSubscriptionModification) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

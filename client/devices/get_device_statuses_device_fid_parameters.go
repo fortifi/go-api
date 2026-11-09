@@ -62,22 +62,19 @@ GetDeviceStatusesDeviceFidParams contains all the parameters to send to the API 
 */
 type GetDeviceStatusesDeviceFidParams struct {
 
-	/* BrandFid.
-
-	   Brand FID
-	*/
+	// BrandFid.
+	//
+	// Brand FID
 	BrandFid *string
 
-	/* DeviceFid.
-
-	   Device FID
-	*/
+	// DeviceFid.
+	//
+	// Device FID
 	DeviceFid string
 
-	/* GroupFid.
-
-	   Group FID
-	*/
+	// GroupFid.
+	//
+	// Group FID
 	GroupFid *string
 
 	HTTPClient *http.Client

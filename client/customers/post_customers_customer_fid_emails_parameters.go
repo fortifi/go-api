@@ -63,10 +63,9 @@ PostCustomersCustomerFidEmailsParams contains all the parameters to send to the 
 */
 type PostCustomersCustomerFidEmailsParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// EmailAddress.

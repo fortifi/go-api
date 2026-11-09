@@ -48,11 +48,9 @@ func NewGetFlowsOK() *GetFlowsOK {
 	return &GetFlowsOK{}
 }
 
-/*
-GetFlowsOK describes a response with status code 200, with default header values.
-
-List of flows
-*/
+// GetFlowsOK describes a response with status code 200, with default header values.
+//
+// List of flows
 type GetFlowsOK struct {
 	Payload *GetFlowsOKBody
 }
@@ -120,11 +118,9 @@ func NewGetFlowsDefault(code int) *GetFlowsDefault {
 	}
 }
 
-/*
-GetFlowsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetFlowsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetFlowsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetFlowsDefault) readResponse(response runtime.ClientResponse, consumer
 	return nil
 }
 
-/*
-GetFlowsOKBody get flows o k body
-swagger:model GetFlowsOKBody
-*/
+// GetFlowsOKBody get flows o k body
+//
+// swagger:model GetFlowsOKBody
 type GetFlowsOKBody struct {
 	models.Envelope
 

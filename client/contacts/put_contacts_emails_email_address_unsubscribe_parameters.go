@@ -62,28 +62,24 @@ PutContactsEmailsEmailAddressUnsubscribeParams contains all the parameters to se
 */
 type PutContactsEmailsEmailAddressUnsubscribeParams struct {
 
-	/* BrandFid.
-
-	   Brand to unsubscribe the email address from
-	*/
+	// BrandFid.
+	//
+	// Brand to unsubscribe the email address from
 	BrandFid *string
 
-	/* EmailAddress.
-
-	   Email Address
-	*/
+	// EmailAddress.
+	//
+	// Email Address
 	EmailAddress string
 
-	/* GroupFid.
-
-	   Group to unsubscribe the email address from
-	*/
+	// GroupFid.
+	//
+	// Group to unsubscribe the email address from
 	GroupFid *string
 
-	/* UnsubscribeType.
-
-	   Unsubscribe Level
-	*/
+	// UnsubscribeType.
+	//
+	// Unsubscribe Level
 	UnsubscribeType *string
 
 	HTTPClient *http.Client

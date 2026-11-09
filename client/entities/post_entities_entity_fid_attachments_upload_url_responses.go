@@ -48,11 +48,9 @@ func NewPostEntitiesEntityFidAttachmentsUploadURLOK() *PostEntitiesEntityFidAtta
 	return &PostEntitiesEntityFidAttachmentsUploadURLOK{}
 }
 
-/*
-PostEntitiesEntityFidAttachmentsUploadURLOK describes a response with status code 200, with default header values.
-
-Attachment upload URL
-*/
+// PostEntitiesEntityFidAttachmentsUploadURLOK describes a response with status code 200, with default header values.
+//
+// Attachment upload URL
 type PostEntitiesEntityFidAttachmentsUploadURLOK struct {
 	Payload *PostEntitiesEntityFidAttachmentsUploadURLOKBody
 }
@@ -120,11 +118,9 @@ func NewPostEntitiesEntityFidAttachmentsUploadURLDefault(code int) *PostEntities
 	}
 }
 
-/*
-PostEntitiesEntityFidAttachmentsUploadURLDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostEntitiesEntityFidAttachmentsUploadURLDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostEntitiesEntityFidAttachmentsUploadURLDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostEntitiesEntityFidAttachmentsUploadURLDefault) readResponse(response
 	return nil
 }
 
-/*
-PostEntitiesEntityFidAttachmentsUploadURLOKBody post entities entity fid attachments upload URL o k body
-swagger:model PostEntitiesEntityFidAttachmentsUploadURLOKBody
-*/
+// PostEntitiesEntityFidAttachmentsUploadURLOKBody post entities entity fid attachments upload URL o k body
+//
+// swagger:model PostEntitiesEntityFidAttachmentsUploadURLOKBody
 type PostEntitiesEntityFidAttachmentsUploadURLOKBody struct {
 	models.Envelope
 

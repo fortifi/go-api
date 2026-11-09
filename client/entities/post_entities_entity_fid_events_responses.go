@@ -44,11 +44,9 @@ func NewPostEntitiesEntityFidEventsOK() *PostEntitiesEntityFidEventsOK {
 	return &PostEntitiesEntityFidEventsOK{}
 }
 
-/*
-PostEntitiesEntityFidEventsOK describes a response with status code 200, with default header values.
-
-Event Triggered
-*/
+// PostEntitiesEntityFidEventsOK describes a response with status code 200, with default header values.
+//
+// Event Triggered
 type PostEntitiesEntityFidEventsOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPostEntitiesEntityFidEventsDefault(code int) *PostEntitiesEntityFidEvent
 	}
 }
 
-/*
-PostEntitiesEntityFidEventsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostEntitiesEntityFidEventsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostEntitiesEntityFidEventsDefault struct {
 	_statusCode int
 

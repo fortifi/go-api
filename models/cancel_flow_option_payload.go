@@ -22,12 +22,12 @@ type CancelFlowOptionPayload struct {
 }
 
 // Validate validates this cancel flow option payload
-func (m *CancelFlowOptionPayload) Validate(formats strfmt.Registry) error {
+func (m *CancelFlowOptionPayload) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this cancel flow option payload based on context it is used
-func (m *CancelFlowOptionPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *CancelFlowOptionPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

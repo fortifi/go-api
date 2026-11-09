@@ -66,10 +66,9 @@ type PutReviewReviewFidParams struct {
 	// Payload.
 	Payload *models.UpdateReviewPayload
 
-	/* ReviewFid.
-
-	   Review FID to use
-	*/
+	// ReviewFid.
+	//
+	// Review FID to use
 	ReviewFid string
 
 	HTTPClient *http.Client

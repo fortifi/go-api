@@ -62,16 +62,14 @@ GetCustomersCustomerFidPaymentAccountsPaymentAccountFidParams contains all the p
 */
 type GetCustomersCustomerFidPaymentAccountsPaymentAccountFidParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* PaymentAccountFid.
-
-	   Payment Account FID to use
-	*/
+	// PaymentAccountFid.
+	//
+	// Payment Account FID to use
 	PaymentAccountFid string
 
 	HTTPClient *http.Client

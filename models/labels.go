@@ -87,7 +87,7 @@ func (m *Labels) contextValidateLabels(ctx context.Context, formats strfmt.Regis
 		if m.Labels[i] != nil {
 
 			if typeutils.IsZero(m.Labels[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Labels[i].ContextValidate(ctx, formats); err != nil {

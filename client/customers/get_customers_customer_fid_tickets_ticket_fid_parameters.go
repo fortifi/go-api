@@ -62,16 +62,14 @@ GetCustomersCustomerFidTicketsTicketFidParams contains all the parameters to sen
 */
 type GetCustomersCustomerFidTicketsTicketFidParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* TicketFid.
-
-	   Ticket FID to use
-	*/
+	// TicketFid.
+	//
+	// Ticket FID to use
 	TicketFid string
 
 	HTTPClient *http.Client

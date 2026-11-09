@@ -144,7 +144,7 @@ func (m *ProductGroup) contextValidateProducts(ctx context.Context, formats strf
 		if m.Products[i] != nil {
 
 			if typeutils.IsZero(m.Products[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Products[i].ContextValidate(ctx, formats); err != nil {

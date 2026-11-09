@@ -63,10 +63,9 @@ PutProductsOffersOfferFidParams contains all the parameters to send to the API e
 */
 type PutProductsOffersOfferFidParams struct {
 
-	/* OfferFid.
-
-	   Offer FID or Coupon Code
-	*/
+	// OfferFid.
+	//
+	// Offer FID or Coupon Code
 	OfferFid string
 
 	// Payload.

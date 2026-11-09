@@ -48,11 +48,9 @@ func NewPostInteractionsInteractionFidCustomerClosedOK() *PostInteractionsIntera
 	return &PostInteractionsInteractionFidCustomerClosedOK{}
 }
 
-/*
-PostInteractionsInteractionFidCustomerClosedOK describes a response with status code 200, with default header values.
-
-Interaction Closed Response
-*/
+// PostInteractionsInteractionFidCustomerClosedOK describes a response with status code 200, with default header values.
+//
+// Interaction Closed Response
 type PostInteractionsInteractionFidCustomerClosedOK struct {
 	Payload *PostInteractionsInteractionFidCustomerClosedOKBody
 }
@@ -120,11 +118,9 @@ func NewPostInteractionsInteractionFidCustomerClosedDefault(code int) *PostInter
 	}
 }
 
-/*
-PostInteractionsInteractionFidCustomerClosedDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostInteractionsInteractionFidCustomerClosedDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostInteractionsInteractionFidCustomerClosedDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostInteractionsInteractionFidCustomerClosedDefault) readResponse(respo
 	return nil
 }
 
-/*
-PostInteractionsInteractionFidCustomerClosedOKBody post interactions interaction fid customer closed o k body
-swagger:model PostInteractionsInteractionFidCustomerClosedOKBody
-*/
+// PostInteractionsInteractionFidCustomerClosedOKBody post interactions interaction fid customer closed o k body
+//
+// swagger:model PostInteractionsInteractionFidCustomerClosedOKBody
 type PostInteractionsInteractionFidCustomerClosedOKBody struct {
 	models.Envelope
 

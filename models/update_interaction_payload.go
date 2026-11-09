@@ -28,12 +28,12 @@ type UpdateInteractionPayload struct {
 }
 
 // Validate validates this update interaction payload
-func (m *UpdateInteractionPayload) Validate(formats strfmt.Registry) error {
+func (m *UpdateInteractionPayload) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this update interaction payload based on context it is used
-func (m *UpdateInteractionPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *UpdateInteractionPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

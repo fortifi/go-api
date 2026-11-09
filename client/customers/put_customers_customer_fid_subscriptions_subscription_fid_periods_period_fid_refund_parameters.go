@@ -66,16 +66,14 @@ type PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundPa
 	// AddCreditToInvoice.
 	AddCreditToInvoice *bool
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* PeriodFid.
-
-	   Period FID to use
-	*/
+	// PeriodFid.
+	//
+	// Period FID to use
 	PeriodFid string
 
 	// Reason.
@@ -84,10 +82,9 @@ type PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundPa
 	// RefundAmount.
 	RefundAmount *float64
 
-	/* SubscriptionFid.
-
-	   Subscription FID to use
-	*/
+	// SubscriptionFid.
+	//
+	// Subscription FID to use
 	SubscriptionFid string
 
 	HTTPClient *http.Client

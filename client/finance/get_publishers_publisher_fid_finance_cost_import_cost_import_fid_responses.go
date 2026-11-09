@@ -48,11 +48,9 @@ func NewGetPublishersPublisherFidFinanceCostImportCostImportFidOK() *GetPublishe
 	return &GetPublishersPublisherFidFinanceCostImportCostImportFidOK{}
 }
 
-/*
-GetPublishersPublisherFidFinanceCostImportCostImportFidOK describes a response with status code 200, with default header values.
-
-Cost Import Status
-*/
+// GetPublishersPublisherFidFinanceCostImportCostImportFidOK describes a response with status code 200, with default header values.
+//
+// Cost Import Status
 type GetPublishersPublisherFidFinanceCostImportCostImportFidOK struct {
 	Payload *GetPublishersPublisherFidFinanceCostImportCostImportFidOKBody
 }
@@ -120,11 +118,9 @@ func NewGetPublishersPublisherFidFinanceCostImportCostImportFidDefault(code int)
 	}
 }
 
-/*
-GetPublishersPublisherFidFinanceCostImportCostImportFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetPublishersPublisherFidFinanceCostImportCostImportFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetPublishersPublisherFidFinanceCostImportCostImportFidDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetPublishersPublisherFidFinanceCostImportCostImportFidDefault) readRes
 	return nil
 }
 
-/*
-GetPublishersPublisherFidFinanceCostImportCostImportFidOKBody get publishers publisher fid finance cost import cost import fid o k body
-swagger:model GetPublishersPublisherFidFinanceCostImportCostImportFidOKBody
-*/
+// GetPublishersPublisherFidFinanceCostImportCostImportFidOKBody get publishers publisher fid finance cost import cost import fid o k body
+//
+// swagger:model GetPublishersPublisherFidFinanceCostImportCostImportFidOKBody
 type GetPublishersPublisherFidFinanceCostImportCostImportFidOKBody struct {
 	models.Envelope
 

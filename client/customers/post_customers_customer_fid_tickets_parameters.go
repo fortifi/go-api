@@ -66,40 +66,34 @@ type PostCustomersCustomerFidTicketsParams struct {
 	// Attachments.
 	Attachments []string
 
-	/* Content.
-
-	   Content of the support ticket
-	*/
+	// Content.
+	//
+	// Content of the support ticket
 	Content string
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* DepartmentFid.
-
-	   Department FID
-	*/
+	// DepartmentFid.
+	//
+	// Department FID
 	DepartmentFid *string
 
-	/* Recipient.
-
-	   Receiver email address e.g. support@yourdomain.com
-	*/
+	// Recipient.
+	//
+	// Receiver email address e.g. support@yourdomain.com
 	Recipient string
 
-	/* Sender.
-
-	   Sender email address e.g. user@customer.com
-	*/
+	// Sender.
+	//
+	// Sender email address e.g. user@customer.com
 	Sender string
 
-	/* Subject.
-
-	   Subject of the support ticket
-	*/
+	// Subject.
+	//
+	// Subject of the support ticket
 	Subject string
 
 	HTTPClient *http.Client

@@ -66,10 +66,9 @@ type PostCustomersCustomerFidPaymentMethodsCardsCardFidLockParams struct {
 	// CardFid.
 	CardFid string
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// ExpirySeconds.

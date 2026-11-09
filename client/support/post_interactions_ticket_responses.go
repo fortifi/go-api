@@ -48,11 +48,9 @@ func NewPostInteractionsTicketOK() *PostInteractionsTicketOK {
 	return &PostInteractionsTicketOK{}
 }
 
-/*
-PostInteractionsTicketOK describes a response with status code 200, with default header values.
-
-Ticket Information
-*/
+// PostInteractionsTicketOK describes a response with status code 200, with default header values.
+//
+// Ticket Information
 type PostInteractionsTicketOK struct {
 	Payload *PostInteractionsTicketOKBody
 }
@@ -120,11 +118,9 @@ func NewPostInteractionsTicketDefault(code int) *PostInteractionsTicketDefault {
 	}
 }
 
-/*
-PostInteractionsTicketDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostInteractionsTicketDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostInteractionsTicketDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostInteractionsTicketDefault) readResponse(response runtime.ClientResp
 	return nil
 }
 
-/*
-PostInteractionsTicketOKBody post interactions ticket o k body
-swagger:model PostInteractionsTicketOKBody
-*/
+// PostInteractionsTicketOKBody post interactions ticket o k body
+//
+// swagger:model PostInteractionsTicketOKBody
 type PostInteractionsTicketOKBody struct {
 	models.Envelope
 

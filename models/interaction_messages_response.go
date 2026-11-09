@@ -87,7 +87,7 @@ func (m *InteractionMessagesResponse) contextValidateMessages(ctx context.Contex
 		if m.Messages[i] != nil {
 
 			if typeutils.IsZero(m.Messages[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Messages[i].ContextValidate(ctx, formats); err != nil {

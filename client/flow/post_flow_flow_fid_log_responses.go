@@ -48,11 +48,9 @@ func NewPostFlowFlowFidLogOK() *PostFlowFlowFidLogOK {
 	return &PostFlowFlowFidLogOK{}
 }
 
-/*
-PostFlowFlowFidLogOK describes a response with status code 200, with default header values.
-
-Result of metric log
-*/
+// PostFlowFlowFidLogOK describes a response with status code 200, with default header values.
+//
+// Result of metric log
 type PostFlowFlowFidLogOK struct {
 	Payload *PostFlowFlowFidLogOKBody
 }
@@ -120,11 +118,9 @@ func NewPostFlowFlowFidLogDefault(code int) *PostFlowFlowFidLogDefault {
 	}
 }
 
-/*
-PostFlowFlowFidLogDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostFlowFlowFidLogDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostFlowFlowFidLogDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostFlowFlowFidLogDefault) readResponse(response runtime.ClientResponse
 	return nil
 }
 
-/*
-PostFlowFlowFidLogOKBody post flow flow fid log o k body
-swagger:model PostFlowFlowFidLogOKBody
-*/
+// PostFlowFlowFidLogOKBody post flow flow fid log o k body
+//
+// swagger:model PostFlowFlowFidLogOKBody
 type PostFlowFlowFidLogOKBody struct {
 	models.Envelope
 

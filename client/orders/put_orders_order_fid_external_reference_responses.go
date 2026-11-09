@@ -44,11 +44,9 @@ func NewPutOrdersOrderFidExternalReferenceOK() *PutOrdersOrderFidExternalReferen
 	return &PutOrdersOrderFidExternalReferenceOK{}
 }
 
-/*
-PutOrdersOrderFidExternalReferenceOK describes a response with status code 200, with default header values.
-
-External Reference Updated
-*/
+// PutOrdersOrderFidExternalReferenceOK describes a response with status code 200, with default header values.
+//
+// External Reference Updated
 type PutOrdersOrderFidExternalReferenceOK struct {
 	Payload *models.Envelope
 }
@@ -116,11 +114,9 @@ func NewPutOrdersOrderFidExternalReferenceDefault(code int) *PutOrdersOrderFidEx
 	}
 }
 
-/*
-PutOrdersOrderFidExternalReferenceDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutOrdersOrderFidExternalReferenceDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutOrdersOrderFidExternalReferenceDefault struct {
 	_statusCode int
 

@@ -63,22 +63,19 @@ PostCustomersCustomerFidPaymentMethodsPaypalCompleteParams contains all the para
 */
 type PostCustomersCustomerFidPaymentMethodsPaypalCompleteParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* PaymentServiceFid.
-
-	   Payment Service FID to use
-	*/
+	// PaymentServiceFid.
+	//
+	// Payment Service FID to use
 	PaymentServiceFid string
 
-	/* SubscriptionFids.
-
-	   Subscription FIDs
-	*/
+	// SubscriptionFids.
+	//
+	// Subscription FIDs
 	SubscriptionFids []string
 
 	// Token.

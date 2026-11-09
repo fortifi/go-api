@@ -48,11 +48,9 @@ func NewPutFlowsFlowFidOK() *PutFlowsFlowFidOK {
 	return &PutFlowsFlowFidOK{}
 }
 
-/*
-PutFlowsFlowFidOK describes a response with status code 200, with default header values.
-
-Updated flow details
-*/
+// PutFlowsFlowFidOK describes a response with status code 200, with default header values.
+//
+// Updated flow details
 type PutFlowsFlowFidOK struct {
 	Payload *PutFlowsFlowFidOKBody
 }
@@ -120,11 +118,9 @@ func NewPutFlowsFlowFidDefault(code int) *PutFlowsFlowFidDefault {
 	}
 }
 
-/*
-PutFlowsFlowFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutFlowsFlowFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutFlowsFlowFidDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PutFlowsFlowFidDefault) readResponse(response runtime.ClientResponse, c
 	return nil
 }
 
-/*
-PutFlowsFlowFidOKBody put flows flow fid o k body
-swagger:model PutFlowsFlowFidOKBody
-*/
+// PutFlowsFlowFidOKBody put flows flow fid o k body
+//
+// swagger:model PutFlowsFlowFidOKBody
 type PutFlowsFlowFidOKBody struct {
 	models.Envelope
 

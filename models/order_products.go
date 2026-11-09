@@ -87,7 +87,7 @@ func (m *OrderProducts) contextValidateProducts(ctx context.Context, formats str
 		if m.Products[i] != nil {
 
 			if typeutils.IsZero(m.Products[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Products[i].ContextValidate(ctx, formats); err != nil {

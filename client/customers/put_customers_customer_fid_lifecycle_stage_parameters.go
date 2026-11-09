@@ -62,10 +62,9 @@ PutCustomersCustomerFidLifecycleStageParams contains all the parameters to send 
 */
 type PutCustomersCustomerFidLifecycleStageParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// CustomerLifecycle.

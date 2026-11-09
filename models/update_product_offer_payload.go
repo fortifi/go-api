@@ -110,7 +110,7 @@ func (m *UpdateProductOfferPayload) validateExpiryDate(formats strfmt.Registry) 
 }
 
 // ContextValidate validates this update product offer payload based on context it is used
-func (m *UpdateProductOfferPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *UpdateProductOfferPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

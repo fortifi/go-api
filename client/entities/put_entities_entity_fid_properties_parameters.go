@@ -63,10 +63,9 @@ PutEntitiesEntityFidPropertiesParams contains all the parameters to send to the 
 */
 type PutEntitiesEntityFidPropertiesParams struct {
 
-	/* EntityFid.
-
-	   Entity FID to use
-	*/
+	// EntityFid.
+	//
+	// Entity FID to use
 	EntityFid string
 
 	// Payload.

@@ -48,11 +48,9 @@ func NewPostCustomersCustomerFidPaymentMethodsPaypalInitialiseOK() *PostCustomer
 	return &PostCustomersCustomerFidPaymentMethodsPaypalInitialiseOK{}
 }
 
-/*
-PostCustomersCustomerFidPaymentMethodsPaypalInitialiseOK describes a response with status code 200, with default header values.
-
-Redirect instructions
-*/
+// PostCustomersCustomerFidPaymentMethodsPaypalInitialiseOK describes a response with status code 200, with default header values.
+//
+// Redirect instructions
 type PostCustomersCustomerFidPaymentMethodsPaypalInitialiseOK struct {
 	Payload *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseOKBody
 }
@@ -120,11 +118,9 @@ func NewPostCustomersCustomerFidPaymentMethodsPaypalInitialiseDefault(code int) 
 	}
 }
 
-/*
-PostCustomersCustomerFidPaymentMethodsPaypalInitialiseDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostCustomersCustomerFidPaymentMethodsPaypalInitialiseDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostCustomersCustomerFidPaymentMethodsPaypalInitialiseDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseDefault) readResp
 	return nil
 }
 
-/*
-PostCustomersCustomerFidPaymentMethodsPaypalInitialiseOKBody post customers customer fid payment methods paypal initialise o k body
-swagger:model PostCustomersCustomerFidPaymentMethodsPaypalInitialiseOKBody
-*/
+// PostCustomersCustomerFidPaymentMethodsPaypalInitialiseOKBody post customers customer fid payment methods paypal initialise o k body
+//
+// swagger:model PostCustomersCustomerFidPaymentMethodsPaypalInitialiseOKBody
 type PostCustomersCustomerFidPaymentMethodsPaypalInitialiseOKBody struct {
 	models.Envelope
 

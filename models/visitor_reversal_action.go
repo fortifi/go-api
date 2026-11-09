@@ -37,12 +37,12 @@ type VisitorReversalAction struct {
 }
 
 // Validate validates this visitor reversal action
-func (m *VisitorReversalAction) Validate(formats strfmt.Registry) error {
+func (m *VisitorReversalAction) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this visitor reversal action based on context it is used
-func (m *VisitorReversalAction) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *VisitorReversalAction) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

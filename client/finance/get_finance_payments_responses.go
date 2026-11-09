@@ -48,11 +48,9 @@ func NewGetFinancePaymentsOK() *GetFinancePaymentsOK {
 	return &GetFinancePaymentsOK{}
 }
 
-/*
-GetFinancePaymentsOK describes a response with status code 200, with default header values.
-
-Transactions
-*/
+// GetFinancePaymentsOK describes a response with status code 200, with default header values.
+//
+// Transactions
 type GetFinancePaymentsOK struct {
 	Payload *GetFinancePaymentsOKBody
 }
@@ -120,11 +118,9 @@ func NewGetFinancePaymentsDefault(code int) *GetFinancePaymentsDefault {
 	}
 }
 
-/*
-GetFinancePaymentsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetFinancePaymentsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetFinancePaymentsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetFinancePaymentsDefault) readResponse(response runtime.ClientResponse
 	return nil
 }
 
-/*
-GetFinancePaymentsOKBody get finance payments o k body
-swagger:model GetFinancePaymentsOKBody
-*/
+// GetFinancePaymentsOKBody get finance payments o k body
+//
+// swagger:model GetFinancePaymentsOKBody
 type GetFinancePaymentsOKBody struct {
 	models.Envelope
 

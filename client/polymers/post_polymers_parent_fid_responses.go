@@ -48,11 +48,9 @@ func NewPostPolymersParentFidOK() *PostPolymersParentFidOK {
 	return &PostPolymersParentFidOK{}
 }
 
-/*
-PostPolymersParentFidOK describes a response with status code 200, with default header values.
-
-Polymer created
-*/
+// PostPolymersParentFidOK describes a response with status code 200, with default header values.
+//
+// Polymer created
 type PostPolymersParentFidOK struct {
 	Payload *PostPolymersParentFidOKBody
 }
@@ -120,11 +118,9 @@ func NewPostPolymersParentFidDefault(code int) *PostPolymersParentFidDefault {
 	}
 }
 
-/*
-PostPolymersParentFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostPolymersParentFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostPolymersParentFidDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostPolymersParentFidDefault) readResponse(response runtime.ClientRespo
 	return nil
 }
 
-/*
-PostPolymersParentFidOKBody post polymers parent fid o k body
-swagger:model PostPolymersParentFidOKBody
-*/
+// PostPolymersParentFidOKBody post polymers parent fid o k body
+//
+// swagger:model PostPolymersParentFidOKBody
 type PostPolymersParentFidOKBody struct {
 	models.Envelope
 

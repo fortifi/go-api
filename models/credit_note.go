@@ -64,7 +64,7 @@ func (m *CreditNote) validateDateCreated(formats strfmt.Registry) error {
 }
 
 // ContextValidate validates this credit note based on context it is used
-func (m *CreditNote) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *CreditNote) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

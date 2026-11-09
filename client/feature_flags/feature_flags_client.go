@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for feature flags API.
-*/
+// Client for feature flags API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -78,17 +76,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-GetFeatureFlagsCustomerCustomerFidretrieves feature flags for a given customer and their active subscriptions.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetFeatureFlagsCustomerCustomerFidContext] instead.
-*/
+// GetFeatureFlagsCustomerCustomerFid retrieves feature flags for a given customer and their active subscriptions.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetFeatureFlagsCustomerCustomerFidContext] instead.
 func (a *Client) GetFeatureFlagsCustomerCustomerFid(params *GetFeatureFlagsCustomerCustomerFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFeatureFlagsCustomerCustomerFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -97,11 +93,9 @@ func (a *Client) GetFeatureFlagsCustomerCustomerFid(params *GetFeatureFlagsCusto
 	return a.GetFeatureFlagsCustomerCustomerFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetFeatureFlagsCustomerCustomerFidContextretrieves feature flags for a given customer and their active subscriptions.
-
-Do not use the deprecated [GetFeatureFlagsCustomerCustomerFidParams.Context] with this method: it would be ignored.
-*/
+// GetFeatureFlagsCustomerCustomerFidContext retrieves feature flags for a given customer and their active subscriptions.
+//
+// Do not use the deprecated [GetFeatureFlagsCustomerCustomerFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetFeatureFlagsCustomerCustomerFidContext(ctx context.Context, params *GetFeatureFlagsCustomerCustomerFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFeatureFlagsCustomerCustomerFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -144,17 +138,15 @@ func (a *Client) GetFeatureFlagsCustomerCustomerFidContext(ctx context.Context, 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetFeatureFlagsEntityCombinedretrieves combined feature flags for a list of entities.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetFeatureFlagsEntityCombinedContext] instead.
-*/
+// GetFeatureFlagsEntityCombined retrieves combined feature flags for a list of entities.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetFeatureFlagsEntityCombinedContext] instead.
 func (a *Client) GetFeatureFlagsEntityCombined(params *GetFeatureFlagsEntityCombinedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFeatureFlagsEntityCombinedOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -163,11 +155,9 @@ func (a *Client) GetFeatureFlagsEntityCombined(params *GetFeatureFlagsEntityComb
 	return a.GetFeatureFlagsEntityCombinedContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetFeatureFlagsEntityCombinedContextretrieves combined feature flags for a list of entities.
-
-Do not use the deprecated [GetFeatureFlagsEntityCombinedParams.Context] with this method: it would be ignored.
-*/
+// GetFeatureFlagsEntityCombinedContext retrieves combined feature flags for a list of entities.
+//
+// Do not use the deprecated [GetFeatureFlagsEntityCombinedParams.Context] with this method: it would be ignored.
 func (a *Client) GetFeatureFlagsEntityCombinedContext(ctx context.Context, params *GetFeatureFlagsEntityCombinedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFeatureFlagsEntityCombinedOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -210,17 +200,15 @@ func (a *Client) GetFeatureFlagsEntityCombinedContext(ctx context.Context, param
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetFeatureFlagsPurchasePurchaseFidretrieves feature flags for a given entity.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetFeatureFlagsPurchasePurchaseFidContext] instead.
-*/
+// GetFeatureFlagsPurchasePurchaseFid retrieves feature flags for a given entity.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetFeatureFlagsPurchasePurchaseFidContext] instead.
 func (a *Client) GetFeatureFlagsPurchasePurchaseFid(params *GetFeatureFlagsPurchasePurchaseFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFeatureFlagsPurchasePurchaseFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -229,11 +217,9 @@ func (a *Client) GetFeatureFlagsPurchasePurchaseFid(params *GetFeatureFlagsPurch
 	return a.GetFeatureFlagsPurchasePurchaseFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetFeatureFlagsPurchasePurchaseFidContextretrieves feature flags for a given entity.
-
-Do not use the deprecated [GetFeatureFlagsPurchasePurchaseFidParams.Context] with this method: it would be ignored.
-*/
+// GetFeatureFlagsPurchasePurchaseFidContext retrieves feature flags for a given entity.
+//
+// Do not use the deprecated [GetFeatureFlagsPurchasePurchaseFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetFeatureFlagsPurchasePurchaseFidContext(ctx context.Context, params *GetFeatureFlagsPurchasePurchaseFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFeatureFlagsPurchasePurchaseFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

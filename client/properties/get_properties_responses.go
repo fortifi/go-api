@@ -48,11 +48,9 @@ func NewGetPropertiesOK() *GetPropertiesOK {
 	return &GetPropertiesOK{}
 }
 
-/*
-GetPropertiesOK describes a response with status code 200, with default header values.
-
-Defined Properties
-*/
+// GetPropertiesOK describes a response with status code 200, with default header values.
+//
+// Defined Properties
 type GetPropertiesOK struct {
 	Payload *GetPropertiesOKBody
 }
@@ -120,11 +118,9 @@ func NewGetPropertiesDefault(code int) *GetPropertiesDefault {
 	}
 }
 
-/*
-GetPropertiesDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetPropertiesDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetPropertiesDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetPropertiesDefault) readResponse(response runtime.ClientResponse, con
 	return nil
 }
 
-/*
-GetPropertiesOKBody get properties o k body
-swagger:model GetPropertiesOKBody
-*/
+// GetPropertiesOKBody get properties o k body
+//
+// swagger:model GetPropertiesOKBody
 type GetPropertiesOKBody struct {
 	models.Envelope
 

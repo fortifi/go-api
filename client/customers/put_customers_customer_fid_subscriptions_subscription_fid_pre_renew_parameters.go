@@ -62,22 +62,19 @@ PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewParams contains all t
 */
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* PriceFid.
-
-	   Price FID
-	*/
+	// PriceFid.
+	//
+	// Price FID
 	PriceFid string
 
-	/* SubscriptionFid.
-
-	   Subscription FID to use
-	*/
+	// SubscriptionFid.
+	//
+	// Subscription FID to use
 	SubscriptionFid string
 
 	HTTPClient *http.Client

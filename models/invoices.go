@@ -144,7 +144,7 @@ func (m *Invoices) contextValidateInvoices(ctx context.Context, formats strfmt.R
 		if m.Invoices[i] != nil {
 
 			if typeutils.IsZero(m.Invoices[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Invoices[i].ContextValidate(ctx, formats); err != nil {

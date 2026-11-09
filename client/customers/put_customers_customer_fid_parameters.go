@@ -62,10 +62,9 @@ PutCustomersCustomerFidParams contains all the parameters to send to the API end
 */
 type PutCustomersCustomerFidParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// DisplayName.

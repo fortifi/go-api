@@ -55,12 +55,12 @@ type PresetChatSession struct {
 }
 
 // Validate validates this preset chat session
-func (m *PresetChatSession) Validate(formats strfmt.Registry) error {
+func (m *PresetChatSession) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this preset chat session based on context it is used
-func (m *PresetChatSession) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *PresetChatSession) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

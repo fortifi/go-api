@@ -87,7 +87,7 @@ func (m *ProductPriceBands) contextValidatePricebands(ctx context.Context, forma
 		if m.Pricebands[i] != nil {
 
 			if typeutils.IsZero(m.Pricebands[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Pricebands[i].ContextValidate(ctx, formats); err != nil {

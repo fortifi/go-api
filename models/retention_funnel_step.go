@@ -28,12 +28,12 @@ type RetentionFunnelStep struct {
 }
 
 // Validate validates this retention funnel step
-func (m *RetentionFunnelStep) Validate(formats strfmt.Registry) error {
+func (m *RetentionFunnelStep) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this retention funnel step based on context it is used
-func (m *RetentionFunnelStep) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *RetentionFunnelStep) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

@@ -62,16 +62,14 @@ GetCustomersCustomerFidPaymentMethodsPaymentMethodFidParams contains all the par
 */
 type GetCustomersCustomerFidPaymentMethodsPaymentMethodFidParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* PaymentMethodFid.
-
-	   Payment Method FID to use
-	*/
+	// PaymentMethodFid.
+	//
+	// Payment Method FID to use
 	PaymentMethodFid string
 
 	HTTPClient *http.Client

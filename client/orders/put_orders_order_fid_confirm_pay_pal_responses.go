@@ -48,11 +48,9 @@ func NewPutOrdersOrderFidConfirmPayPalOK() *PutOrdersOrderFidConfirmPayPalOK {
 	return &PutOrdersOrderFidConfirmPayPalOK{}
 }
 
-/*
-PutOrdersOrderFidConfirmPayPalOK describes a response with status code 200, with default header values.
-
-Order confirmed and payment authroized
-*/
+// PutOrdersOrderFidConfirmPayPalOK describes a response with status code 200, with default header values.
+//
+// Order confirmed and payment authroized
 type PutOrdersOrderFidConfirmPayPalOK struct {
 	Payload *PutOrdersOrderFidConfirmPayPalOKBody
 }
@@ -120,11 +118,9 @@ func NewPutOrdersOrderFidConfirmPayPalDefault(code int) *PutOrdersOrderFidConfir
 	}
 }
 
-/*
-PutOrdersOrderFidConfirmPayPalDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutOrdersOrderFidConfirmPayPalDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutOrdersOrderFidConfirmPayPalDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PutOrdersOrderFidConfirmPayPalDefault) readResponse(response runtime.Cl
 	return nil
 }
 
-/*
-PutOrdersOrderFidConfirmPayPalOKBody put orders order fid confirm pay pal o k body
-swagger:model PutOrdersOrderFidConfirmPayPalOKBody
-*/
+// PutOrdersOrderFidConfirmPayPalOKBody put orders order fid confirm pay pal o k body
+//
+// swagger:model PutOrdersOrderFidConfirmPayPalOKBody
 type PutOrdersOrderFidConfirmPayPalOKBody struct {
 	models.Envelope
 

@@ -44,11 +44,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendOK() *PutCusto
 	return &PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendOK{}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendOK describes a response with status code 200, with default header values.
-
-Subscription suspended
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendOK describes a response with status code 200, with default header values.
+//
+// Subscription suspended
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendDefault(code i
 	}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendDefault struct {
 	_statusCode int
 

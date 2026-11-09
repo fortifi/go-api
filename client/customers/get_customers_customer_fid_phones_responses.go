@@ -44,11 +44,9 @@ func NewGetCustomersCustomerFidPhonesOK() *GetCustomersCustomerFidPhonesOK {
 	return &GetCustomersCustomerFidPhonesOK{}
 }
 
-/*
-GetCustomersCustomerFidPhonesOK describes a response with status code 200, with default header values.
-
-List of phones
-*/
+// GetCustomersCustomerFidPhonesOK describes a response with status code 200, with default header values.
+//
+// List of phones
 type GetCustomersCustomerFidPhonesOK struct {
 	Payload *models.Phones
 }
@@ -116,11 +114,9 @@ func NewGetCustomersCustomerFidPhonesDefault(code int) *GetCustomersCustomerFidP
 	}
 }
 
-/*
-GetCustomersCustomerFidPhonesDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetCustomersCustomerFidPhonesDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetCustomersCustomerFidPhonesDefault struct {
 	_statusCode int
 

@@ -44,11 +44,9 @@ func NewPostCustomersCustomerFidTicketsOK() *PostCustomersCustomerFidTicketsOK {
 	return &PostCustomersCustomerFidTicketsOK{}
 }
 
-/*
-PostCustomersCustomerFidTicketsOK describes a response with status code 200, with default header values.
-
-Ticket Created
-*/
+// PostCustomersCustomerFidTicketsOK describes a response with status code 200, with default header values.
+//
+// Ticket Created
 type PostCustomersCustomerFidTicketsOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPostCustomersCustomerFidTicketsDefault(code int) *PostCustomersCustomerF
 	}
 }
 
-/*
-PostCustomersCustomerFidTicketsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostCustomersCustomerFidTicketsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostCustomersCustomerFidTicketsDefault struct {
 	_statusCode int
 

@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for support API.
-*/
+// Client for support API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -108,17 +106,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-GetSupportChatEnabledchecks if chat is enabled.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetSupportChatEnabledContext] instead.
-*/
+// GetSupportChatEnabled checks if chat is enabled.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetSupportChatEnabledContext] instead.
 func (a *Client) GetSupportChatEnabled(params *GetSupportChatEnabledParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetSupportChatEnabledOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -127,11 +123,9 @@ func (a *Client) GetSupportChatEnabled(params *GetSupportChatEnabledParams, auth
 	return a.GetSupportChatEnabledContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetSupportChatEnabledContextchecks if chat is enabled.
-
-Do not use the deprecated [GetSupportChatEnabledParams.Context] with this method: it would be ignored.
-*/
+// GetSupportChatEnabledContext checks if chat is enabled.
+//
+// Do not use the deprecated [GetSupportChatEnabledParams.Context] with this method: it would be ignored.
 func (a *Client) GetSupportChatEnabledContext(ctx context.Context, params *GetSupportChatEnabledParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetSupportChatEnabledOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -174,17 +168,15 @@ func (a *Client) GetSupportChatEnabledContext(ctx context.Context, params *GetSu
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetTicketsTicketFidgets a ticket.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetTicketsTicketFidContext] instead.
-*/
+// GetTicketsTicketFid gets a ticket.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetTicketsTicketFidContext] instead.
 func (a *Client) GetTicketsTicketFid(params *GetTicketsTicketFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetTicketsTicketFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -193,11 +185,9 @@ func (a *Client) GetTicketsTicketFid(params *GetTicketsTicketFidParams, authInfo
 	return a.GetTicketsTicketFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetTicketsTicketFidContextgets a ticket.
-
-Do not use the deprecated [GetTicketsTicketFidParams.Context] with this method: it would be ignored.
-*/
+// GetTicketsTicketFidContext gets a ticket.
+//
+// Do not use the deprecated [GetTicketsTicketFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetTicketsTicketFidContext(ctx context.Context, params *GetTicketsTicketFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetTicketsTicketFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -240,17 +230,15 @@ func (a *Client) GetTicketsTicketFidContext(ctx context.Context, params *GetTick
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetTicketsTicketFidPostsretrieves ticket posts for a ticket.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetTicketsTicketFidPostsContext] instead.
-*/
+// GetTicketsTicketFidPosts retrieves ticket posts for a ticket.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetTicketsTicketFidPostsContext] instead.
 func (a *Client) GetTicketsTicketFidPosts(params *GetTicketsTicketFidPostsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetTicketsTicketFidPostsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -259,11 +247,9 @@ func (a *Client) GetTicketsTicketFidPosts(params *GetTicketsTicketFidPostsParams
 	return a.GetTicketsTicketFidPostsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetTicketsTicketFidPostsContextretrieves ticket posts for a ticket.
-
-Do not use the deprecated [GetTicketsTicketFidPostsParams.Context] with this method: it would be ignored.
-*/
+// GetTicketsTicketFidPostsContext retrieves ticket posts for a ticket.
+//
+// Do not use the deprecated [GetTicketsTicketFidPostsParams.Context] with this method: it would be ignored.
 func (a *Client) GetTicketsTicketFidPostsContext(ctx context.Context, params *GetTicketsTicketFidPostsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetTicketsTicketFidPostsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -306,21 +292,18 @@ func (a *Client) GetTicketsTicketFidPostsContext(ctx context.Context, params *Ge
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-	PostInteractionsTicketcreates an interaction ticket.
-
-	The attachments property is an array of unique filenames that have been created using ```/upload/uploadUrl```
-
-.
-
-	This method does not support injected context.
-	However, timeout and opentracing contexts are honored whenever enabled.
-
-	If you need to pass a specific context, use [Client.PostInteractionsTicketContext] instead.
-*/
+// PostInteractionsTicket creates an interaction ticket.
+//
+// The attachments property is an array of unique filenames that have been created using ```/upload/uploadUrl```
+// .
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostInteractionsTicketContext] instead.
 func (a *Client) PostInteractionsTicket(params *PostInteractionsTicketParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsTicketOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -329,15 +312,12 @@ func (a *Client) PostInteractionsTicket(params *PostInteractionsTicketParams, au
 	return a.PostInteractionsTicketContext(ctx, params, authInfo, opts...)
 }
 
-/*
-	PostInteractionsTicketContextcreates an interaction ticket.
-
-	The attachments property is an array of unique filenames that have been created using ```/upload/uploadUrl```
-
-.
-
-	Do not use the deprecated [PostInteractionsTicketParams.Context] with this method: it would be ignored.
-*/
+// PostInteractionsTicketContext creates an interaction ticket.
+//
+// The attachments property is an array of unique filenames that have been created using ```/upload/uploadUrl```
+// .
+//
+// Do not use the deprecated [PostInteractionsTicketParams.Context] with this method: it would be ignored.
 func (a *Client) PostInteractionsTicketContext(ctx context.Context, params *PostInteractionsTicketParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsTicketOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -380,21 +360,18 @@ func (a *Client) PostInteractionsTicketContext(ctx context.Context, params *Post
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-	PostTicketscreates a support ticket.
-
-	The attachments property is an array of unique filenames that have been created using ```/upload/uploadUrl```
-
-.
-
-	This method does not support injected context.
-	However, timeout and opentracing contexts are honored whenever enabled.
-
-	If you need to pass a specific context, use [Client.PostTicketsContext] instead.
-*/
+// PostTickets creates a support ticket.
+//
+// The attachments property is an array of unique filenames that have been created using ```/upload/uploadUrl```
+// .
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostTicketsContext] instead.
 func (a *Client) PostTickets(params *PostTicketsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostTicketsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -403,15 +380,12 @@ func (a *Client) PostTickets(params *PostTicketsParams, authInfo runtime.ClientA
 	return a.PostTicketsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-	PostTicketsContextcreates a support ticket.
-
-	The attachments property is an array of unique filenames that have been created using ```/upload/uploadUrl```
-
-.
-
-	Do not use the deprecated [PostTicketsParams.Context] with this method: it would be ignored.
-*/
+// PostTicketsContext creates a support ticket.
+//
+// The attachments property is an array of unique filenames that have been created using ```/upload/uploadUrl```
+// .
+//
+// Do not use the deprecated [PostTicketsParams.Context] with this method: it would be ignored.
 func (a *Client) PostTicketsContext(ctx context.Context, params *PostTicketsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostTicketsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -454,17 +428,15 @@ func (a *Client) PostTicketsContext(ctx context.Context, params *PostTicketsPara
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostTicketsTicketFidNotecreates a note against the ticket.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostTicketsTicketFidNoteContext] instead.
-*/
+// PostTicketsTicketFidNote creates a note against the ticket.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostTicketsTicketFidNoteContext] instead.
 func (a *Client) PostTicketsTicketFidNote(params *PostTicketsTicketFidNoteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostTicketsTicketFidNoteOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -473,11 +445,9 @@ func (a *Client) PostTicketsTicketFidNote(params *PostTicketsTicketFidNoteParams
 	return a.PostTicketsTicketFidNoteContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostTicketsTicketFidNoteContextcreates a note against the ticket.
-
-Do not use the deprecated [PostTicketsTicketFidNoteParams.Context] with this method: it would be ignored.
-*/
+// PostTicketsTicketFidNoteContext creates a note against the ticket.
+//
+// Do not use the deprecated [PostTicketsTicketFidNoteParams.Context] with this method: it would be ignored.
 func (a *Client) PostTicketsTicketFidNoteContext(ctx context.Context, params *PostTicketsTicketFidNoteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostTicketsTicketFidNoteOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -520,17 +490,15 @@ func (a *Client) PostTicketsTicketFidNoteContext(ctx context.Context, params *Po
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutTicketsTicketFidStatussets the status of a ticket.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutTicketsTicketFidStatusContext] instead.
-*/
+// PutTicketsTicketFidStatus sets the status of a ticket.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutTicketsTicketFidStatusContext] instead.
 func (a *Client) PutTicketsTicketFidStatus(params *PutTicketsTicketFidStatusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutTicketsTicketFidStatusOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -539,11 +507,9 @@ func (a *Client) PutTicketsTicketFidStatus(params *PutTicketsTicketFidStatusPara
 	return a.PutTicketsTicketFidStatusContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutTicketsTicketFidStatusContextsets the status of a ticket.
-
-Do not use the deprecated [PutTicketsTicketFidStatusParams.Context] with this method: it would be ignored.
-*/
+// PutTicketsTicketFidStatusContext sets the status of a ticket.
+//
+// Do not use the deprecated [PutTicketsTicketFidStatusParams.Context] with this method: it would be ignored.
 func (a *Client) PutTicketsTicketFidStatusContext(ctx context.Context, params *PutTicketsTicketFidStatusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutTicketsTicketFidStatusOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -586,21 +552,18 @@ func (a *Client) PutTicketsTicketFidStatusContext(ctx context.Context, params *P
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-	PutTicketsTicketFidUpdateCcBccupdates cc and bcc fields for ticket.
-
-	Set respective fields to add and remove Cc/Bcc fields
-
-.
-
-	This method does not support injected context.
-	However, timeout and opentracing contexts are honored whenever enabled.
-
-	If you need to pass a specific context, use [Client.PutTicketsTicketFidUpdateCcBccContext] instead.
-*/
+// PutTicketsTicketFidUpdateCcBcc updates cc and bcc fields for ticket.
+//
+// Set respective fields to add and remove Cc/Bcc fields
+// .
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutTicketsTicketFidUpdateCcBccContext] instead.
 func (a *Client) PutTicketsTicketFidUpdateCcBcc(params *PutTicketsTicketFidUpdateCcBccParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutTicketsTicketFidUpdateCcBccOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -609,15 +572,12 @@ func (a *Client) PutTicketsTicketFidUpdateCcBcc(params *PutTicketsTicketFidUpdat
 	return a.PutTicketsTicketFidUpdateCcBccContext(ctx, params, authInfo, opts...)
 }
 
-/*
-	PutTicketsTicketFidUpdateCcBccContextupdates cc and bcc fields for ticket.
-
-	Set respective fields to add and remove Cc/Bcc fields
-
-.
-
-	Do not use the deprecated [PutTicketsTicketFidUpdateCcBccParams.Context] with this method: it would be ignored.
-*/
+// PutTicketsTicketFidUpdateCcBccContext updates cc and bcc fields for ticket.
+//
+// Set respective fields to add and remove Cc/Bcc fields
+// .
+//
+// Do not use the deprecated [PutTicketsTicketFidUpdateCcBccParams.Context] with this method: it would be ignored.
 func (a *Client) PutTicketsTicketFidUpdateCcBccContext(ctx context.Context, params *PutTicketsTicketFidUpdateCcBccParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutTicketsTicketFidUpdateCcBccOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

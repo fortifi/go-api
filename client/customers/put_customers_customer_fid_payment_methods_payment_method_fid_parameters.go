@@ -63,19 +63,17 @@ PutCustomersCustomerFidPaymentMethodsPaymentMethodFidParams contains all the par
 */
 type PutCustomersCustomerFidPaymentMethodsPaymentMethodFidParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// Payload.
 	Payload *models.PaymentMethodUpdatePayload
 
-	/* PaymentMethodFid.
-
-	   Payment Method FID to use
-	*/
+	// PaymentMethodFid.
+	//
+	// Payment Method FID to use
 	PaymentMethodFid string
 
 	HTTPClient *http.Client

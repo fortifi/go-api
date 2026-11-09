@@ -62,22 +62,19 @@ GetEntitiesEntityFidConfigSectionNameItemsItemNameParams contains all the parame
 */
 type GetEntitiesEntityFidConfigSectionNameItemsItemNameParams struct {
 
-	/* EntityFid.
-
-	   Entity FID to use
-	*/
+	// EntityFid.
+	//
+	// Entity FID to use
 	EntityFid string
 
-	/* ItemName.
-
-	   Item Name
-	*/
+	// ItemName.
+	//
+	// Item Name
 	ItemName string
 
-	/* SectionName.
-
-	   Section Name
-	*/
+	// SectionName.
+	//
+	// Section Name
 	SectionName string
 
 	HTTPClient *http.Client

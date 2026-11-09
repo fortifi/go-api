@@ -63,10 +63,9 @@ GetCustomersCustomerFidOrdersParams contains all the parameters to send to the A
 */
 type GetCustomersCustomerFidOrdersParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// ExternalReference.

@@ -246,7 +246,7 @@ func (m *CreateInteractionTicketPayload) validateUrgency(formats strfmt.Registry
 }
 
 // ContextValidate validates this create interaction ticket payload based on context it is used
-func (m *CreateInteractionTicketPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *CreateInteractionTicketPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

@@ -62,19 +62,17 @@ PostEntitiesEntityFidConfigSectionNameParams contains all the parameters to send
 */
 type PostEntitiesEntityFidConfigSectionNameParams struct {
 
-	/* EntityFid.
-
-	   Entity FID to use
-	*/
+	// EntityFid.
+	//
+	// Entity FID to use
 	EntityFid string
 
 	// ItemName.
 	ItemName string
 
-	/* SectionName.
-
-	   Section Name
-	*/
+	// SectionName.
+	//
+	// Section Name
 	SectionName string
 
 	// Value.

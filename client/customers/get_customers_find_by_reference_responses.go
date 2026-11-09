@@ -48,11 +48,9 @@ func NewGetCustomersFindByReferenceOK() *GetCustomersFindByReferenceOK {
 	return &GetCustomersFindByReferenceOK{}
 }
 
-/*
-GetCustomersFindByReferenceOK describes a response with status code 200, with default header values.
-
-Located Customer
-*/
+// GetCustomersFindByReferenceOK describes a response with status code 200, with default header values.
+//
+// Located Customer
 type GetCustomersFindByReferenceOK struct {
 	Payload *GetCustomersFindByReferenceOKBody
 }
@@ -120,11 +118,9 @@ func NewGetCustomersFindByReferenceDefault(code int) *GetCustomersFindByReferenc
 	}
 }
 
-/*
-GetCustomersFindByReferenceDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetCustomersFindByReferenceDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetCustomersFindByReferenceDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetCustomersFindByReferenceDefault) readResponse(response runtime.Clien
 	return nil
 }
 
-/*
-GetCustomersFindByReferenceOKBody get customers find by reference o k body
-swagger:model GetCustomersFindByReferenceOKBody
-*/
+// GetCustomersFindByReferenceOKBody get customers find by reference o k body
+//
+// swagger:model GetCustomersFindByReferenceOKBody
 type GetCustomersFindByReferenceOKBody struct {
 	models.Envelope
 

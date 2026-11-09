@@ -63,10 +63,9 @@ PostEntitiesEntityFidAttachmentsUploadURLParams contains all the parameters to s
 */
 type PostEntitiesEntityFidAttachmentsUploadURLParams struct {
 
-	/* EntityFid.
-
-	   Entity FID to use
-	*/
+	// EntityFid.
+	//
+	// Entity FID to use
 	EntityFid string
 
 	// Payload.

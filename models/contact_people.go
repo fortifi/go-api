@@ -144,7 +144,7 @@ func (m *ContactPeople) contextValidateContacts(ctx context.Context, formats str
 		if m.Contacts[i] != nil {
 
 			if typeutils.IsZero(m.Contacts[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Contacts[i].ContextValidate(ctx, formats); err != nil {

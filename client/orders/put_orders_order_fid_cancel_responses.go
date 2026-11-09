@@ -48,11 +48,9 @@ func NewPutOrdersOrderFidCancelOK() *PutOrdersOrderFidCancelOK {
 	return &PutOrdersOrderFidCancelOK{}
 }
 
-/*
-PutOrdersOrderFidCancelOK describes a response with status code 200, with default header values.
-
-Order cancelled
-*/
+// PutOrdersOrderFidCancelOK describes a response with status code 200, with default header values.
+//
+// Order cancelled
 type PutOrdersOrderFidCancelOK struct {
 	Payload *PutOrdersOrderFidCancelOKBody
 }
@@ -120,11 +118,9 @@ func NewPutOrdersOrderFidCancelDefault(code int) *PutOrdersOrderFidCancelDefault
 	}
 }
 
-/*
-PutOrdersOrderFidCancelDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutOrdersOrderFidCancelDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutOrdersOrderFidCancelDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PutOrdersOrderFidCancelDefault) readResponse(response runtime.ClientRes
 	return nil
 }
 
-/*
-PutOrdersOrderFidCancelOKBody put orders order fid cancel o k body
-swagger:model PutOrdersOrderFidCancelOKBody
-*/
+// PutOrdersOrderFidCancelOKBody put orders order fid cancel o k body
+//
+// swagger:model PutOrdersOrderFidCancelOKBody
 type PutOrdersOrderFidCancelOKBody struct {
 	models.Envelope
 

@@ -62,16 +62,14 @@ GetEntitiesEntityFidConfigSectionNameParams contains all the parameters to send 
 */
 type GetEntitiesEntityFidConfigSectionNameParams struct {
 
-	/* EntityFid.
-
-	   Entity FID to use
-	*/
+	// EntityFid.
+	//
+	// Entity FID to use
 	EntityFid string
 
-	/* SectionName.
-
-	   Section Name
-	*/
+	// SectionName.
+	//
+	// Section Name
 	SectionName string
 
 	HTTPClient *http.Client

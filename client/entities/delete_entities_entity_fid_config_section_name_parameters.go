@@ -62,19 +62,17 @@ DeleteEntitiesEntityFidConfigSectionNameParams contains all the parameters to se
 */
 type DeleteEntitiesEntityFidConfigSectionNameParams struct {
 
-	/* EntityFid.
-
-	   Entity FID to use
-	*/
+	// EntityFid.
+	//
+	// Entity FID to use
 	EntityFid string
 
 	// ItemName.
 	ItemName *string
 
-	/* SectionName.
-
-	   Section Name
-	*/
+	// SectionName.
+	//
+	// Section Name
 	SectionName string
 
 	HTTPClient *http.Client

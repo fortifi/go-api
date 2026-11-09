@@ -48,11 +48,9 @@ func NewPostInteractionsInteractionFidSendChatTranscriptOK() *PostInteractionsIn
 	return &PostInteractionsInteractionFidSendChatTranscriptOK{}
 }
 
-/*
-PostInteractionsInteractionFidSendChatTranscriptOK describes a response with status code 200, with default header values.
-
-Chat Transcript Sent
-*/
+// PostInteractionsInteractionFidSendChatTranscriptOK describes a response with status code 200, with default header values.
+//
+// Chat Transcript Sent
 type PostInteractionsInteractionFidSendChatTranscriptOK struct {
 	Payload *PostInteractionsInteractionFidSendChatTranscriptOKBody
 }
@@ -120,11 +118,9 @@ func NewPostInteractionsInteractionFidSendChatTranscriptDefault(code int) *PostI
 	}
 }
 
-/*
-PostInteractionsInteractionFidSendChatTranscriptDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostInteractionsInteractionFidSendChatTranscriptDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostInteractionsInteractionFidSendChatTranscriptDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostInteractionsInteractionFidSendChatTranscriptDefault) readResponse(r
 	return nil
 }
 
-/*
-PostInteractionsInteractionFidSendChatTranscriptOKBody post interactions interaction fid send chat transcript o k body
-swagger:model PostInteractionsInteractionFidSendChatTranscriptOKBody
-*/
+// PostInteractionsInteractionFidSendChatTranscriptOKBody post interactions interaction fid send chat transcript o k body
+//
+// swagger:model PostInteractionsInteractionFidSendChatTranscriptOKBody
 type PostInteractionsInteractionFidSendChatTranscriptOKBody struct {
 	models.Envelope
 

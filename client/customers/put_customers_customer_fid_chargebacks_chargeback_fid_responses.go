@@ -48,11 +48,9 @@ func NewPutCustomersCustomerFidChargebacksChargebackFidOK() *PutCustomersCustome
 	return &PutCustomersCustomerFidChargebacksChargebackFidOK{}
 }
 
-/*
-PutCustomersCustomerFidChargebacksChargebackFidOK describes a response with status code 200, with default header values.
-
-Chargeback Actioned
-*/
+// PutCustomersCustomerFidChargebacksChargebackFidOK describes a response with status code 200, with default header values.
+//
+// Chargeback Actioned
 type PutCustomersCustomerFidChargebacksChargebackFidOK struct {
 	Payload *PutCustomersCustomerFidChargebacksChargebackFidOKBody
 }
@@ -120,11 +118,9 @@ func NewPutCustomersCustomerFidChargebacksChargebackFidDefault(code int) *PutCus
 	}
 }
 
-/*
-PutCustomersCustomerFidChargebacksChargebackFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutCustomersCustomerFidChargebacksChargebackFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutCustomersCustomerFidChargebacksChargebackFidDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PutCustomersCustomerFidChargebacksChargebackFidDefault) readResponse(re
 	return nil
 }
 
-/*
-PutCustomersCustomerFidChargebacksChargebackFidOKBody put customers customer fid chargebacks chargeback fid o k body
-swagger:model PutCustomersCustomerFidChargebacksChargebackFidOKBody
-*/
+// PutCustomersCustomerFidChargebacksChargebackFidOKBody put customers customer fid chargebacks chargeback fid o k body
+//
+// swagger:model PutCustomersCustomerFidChargebacksChargebackFidOKBody
 type PutCustomersCustomerFidChargebacksChargebackFidOKBody struct {
 	models.Envelope
 

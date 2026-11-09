@@ -87,7 +87,7 @@ func (m *CancelFlowReasons) contextValidateReasons(ctx context.Context, formats 
 		if m.Reasons[i] != nil {
 
 			if typeutils.IsZero(m.Reasons[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Reasons[i].ContextValidate(ctx, formats); err != nil {

@@ -62,10 +62,9 @@ PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeParams contains al
 */
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// Note.
@@ -77,10 +76,9 @@ type PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeParams struct
 	// RenewalMode.
 	RenewalMode string
 
-	/* SubscriptionFid.
-
-	   Subscription FID to use
-	*/
+	// SubscriptionFid.
+	//
+	// Subscription FID to use
 	SubscriptionFid string
 
 	HTTPClient *http.Client

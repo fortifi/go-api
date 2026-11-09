@@ -90,7 +90,7 @@ func (m *CreateJourneyTrackPayload) contextValidateData(ctx context.Context, for
 		if m.Data[i] != nil {
 
 			if typeutils.IsZero(m.Data[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Data[i].ContextValidate(ctx, formats); err != nil {
@@ -146,12 +146,12 @@ type CreateJourneyTrackPayloadDataItems0 struct {
 }
 
 // Validate validates this create journey track payload data items0
-func (m *CreateJourneyTrackPayloadDataItems0) Validate(formats strfmt.Registry) error {
+func (m *CreateJourneyTrackPayloadDataItems0) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this create journey track payload data items0 based on context it is used
-func (m *CreateJourneyTrackPayloadDataItems0) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *CreateJourneyTrackPayloadDataItems0) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

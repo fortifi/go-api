@@ -48,11 +48,9 @@ func NewPostCustomersOK() *PostCustomersOK {
 	return &PostCustomersOK{}
 }
 
-/*
-PostCustomersOK describes a response with status code 200, with default header values.
-
-Customer Created
-*/
+// PostCustomersOK describes a response with status code 200, with default header values.
+//
+// Customer Created
 type PostCustomersOK struct {
 	Payload *PostCustomersOKBody
 }
@@ -120,11 +118,9 @@ func NewPostCustomersDefault(code int) *PostCustomersDefault {
 	}
 }
 
-/*
-PostCustomersDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostCustomersDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostCustomersDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostCustomersDefault) readResponse(response runtime.ClientResponse, con
 	return nil
 }
 
-/*
-PostCustomersOKBody post customers o k body
-swagger:model PostCustomersOKBody
-*/
+// PostCustomersOKBody post customers o k body
+//
+// swagger:model PostCustomersOKBody
 type PostCustomersOKBody struct {
 	models.Envelope
 

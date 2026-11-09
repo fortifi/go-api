@@ -141,7 +141,7 @@ func (m *TaxItemResponse) contextValidateRateBreakdown(ctx context.Context, form
 		if m.RateBreakdown[i] != nil {
 
 			if typeutils.IsZero(m.RateBreakdown[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.RateBreakdown[i].ContextValidate(ctx, formats); err != nil {

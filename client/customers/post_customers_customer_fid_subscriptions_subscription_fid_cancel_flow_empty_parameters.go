@@ -63,19 +63,17 @@ PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowEmptyParams contai
 */
 type PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowEmptyParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// Payload.
 	Payload *models.StartCancelFlowPayload
 
-	/* SubscriptionFid.
-
-	   Subscription FID to use
-	*/
+	// SubscriptionFid.
+	//
+	// Subscription FID to use
 	SubscriptionFid string
 
 	HTTPClient *http.Client

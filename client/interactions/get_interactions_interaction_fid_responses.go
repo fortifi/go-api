@@ -48,11 +48,9 @@ func NewGetInteractionsInteractionFidOK() *GetInteractionsInteractionFidOK {
 	return &GetInteractionsInteractionFidOK{}
 }
 
-/*
-GetInteractionsInteractionFidOK describes a response with status code 200, with default header values.
-
-Interaction
-*/
+// GetInteractionsInteractionFidOK describes a response with status code 200, with default header values.
+//
+// Interaction
 type GetInteractionsInteractionFidOK struct {
 	Payload *GetInteractionsInteractionFidOKBody
 }
@@ -120,11 +118,9 @@ func NewGetInteractionsInteractionFidDefault(code int) *GetInteractionsInteracti
 	}
 }
 
-/*
-GetInteractionsInteractionFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetInteractionsInteractionFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetInteractionsInteractionFidDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetInteractionsInteractionFidDefault) readResponse(response runtime.Cli
 	return nil
 }
 
-/*
-GetInteractionsInteractionFidOKBody get interactions interaction fid o k body
-swagger:model GetInteractionsInteractionFidOKBody
-*/
+// GetInteractionsInteractionFidOKBody get interactions interaction fid o k body
+//
+// swagger:model GetInteractionsInteractionFidOKBody
 type GetInteractionsInteractionFidOKBody struct {
 	models.Envelope
 

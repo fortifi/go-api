@@ -31,12 +31,12 @@ type CommentResponse struct {
 }
 
 // Validate validates this comment response
-func (m *CommentResponse) Validate(formats strfmt.Registry) error {
+func (m *CommentResponse) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this comment response based on context it is used
-func (m *CommentResponse) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *CommentResponse) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

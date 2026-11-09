@@ -64,34 +64,29 @@ GetContactsSearchParams contains all the parameters to send to the API endpoint
 */
 type GetContactsSearchParams struct {
 
-	/* Email.
-
-	   Email address to search for
-	*/
+	// Email.
+	//
+	// Email address to search for
 	Email []string
 
-	/* FirstName.
-
-	   First name to search for
-	*/
+	// FirstName.
+	//
+	// First name to search for
 	FirstName *string
 
-	/* LastName.
-
-	   Last name to search for
-	*/
+	// LastName.
+	//
+	// Last name to search for
 	LastName *string
 
-	/* Limit.
-
-	   Maximum number of records per page (default: 20)
-	*/
+	// Limit.
+	//
+	// Maximum number of records per page (default: 20)
 	Limit *int64
 
-	/* Page.
-
-	   Page number (default: 1)
-	*/
+	// Page.
+	//
+	// Page number (default: 1)
 	Page *int64
 
 	HTTPClient *http.Client

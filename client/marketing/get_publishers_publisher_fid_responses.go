@@ -48,11 +48,9 @@ func NewGetPublishersPublisherFidOK() *GetPublishersPublisherFidOK {
 	return &GetPublishersPublisherFidOK{}
 }
 
-/*
-GetPublishersPublisherFidOK describes a response with status code 200, with default header values.
-
-Loaded Publisher
-*/
+// GetPublishersPublisherFidOK describes a response with status code 200, with default header values.
+//
+// Loaded Publisher
 type GetPublishersPublisherFidOK struct {
 	Payload *GetPublishersPublisherFidOKBody
 }
@@ -120,11 +118,9 @@ func NewGetPublishersPublisherFidDefault(code int) *GetPublishersPublisherFidDef
 	}
 }
 
-/*
-GetPublishersPublisherFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetPublishersPublisherFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetPublishersPublisherFidDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetPublishersPublisherFidDefault) readResponse(response runtime.ClientR
 	return nil
 }
 
-/*
-GetPublishersPublisherFidOKBody get publishers publisher fid o k body
-swagger:model GetPublishersPublisherFidOKBody
-*/
+// GetPublishersPublisherFidOKBody get publishers publisher fid o k body
+//
+// swagger:model GetPublishersPublisherFidOKBody
 type GetPublishersPublisherFidOKBody struct {
 	models.Envelope
 

@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for comments API.
-*/
+// Client for comments API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -66,17 +64,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-PostCommentsapplies a comment note against a data node.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostCommentsContext] instead.
-*/
+// PostComments applies a comment note against a data node.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCommentsContext] instead.
 func (a *Client) PostComments(params *PostCommentsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCommentsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -85,11 +81,9 @@ func (a *Client) PostComments(params *PostCommentsParams, authInfo runtime.Clien
 	return a.PostCommentsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostCommentsContextapplies a comment note against a data node.
-
-Do not use the deprecated [PostCommentsParams.Context] with this method: it would be ignored.
-*/
+// PostCommentsContext applies a comment note against a data node.
+//
+// Do not use the deprecated [PostCommentsParams.Context] with this method: it would be ignored.
 func (a *Client) PostCommentsContext(ctx context.Context, params *PostCommentsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCommentsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

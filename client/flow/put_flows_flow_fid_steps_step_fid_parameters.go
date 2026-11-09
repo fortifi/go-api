@@ -63,19 +63,17 @@ PutFlowsFlowFidStepsStepFidParams contains all the parameters to send to the API
 */
 type PutFlowsFlowFidStepsStepFidParams struct {
 
-	/* FlowFid.
-
-	   Flow FID to use
-	*/
+	// FlowFid.
+	//
+	// Flow FID to use
 	FlowFid string
 
 	// Payload.
 	Payload *models.UpdateFlowStepPayload
 
-	/* StepFid.
-
-	   Flow Step FID to use
-	*/
+	// StepFid.
+	//
+	// Flow Step FID to use
 	StepFid string
 
 	HTTPClient *http.Client

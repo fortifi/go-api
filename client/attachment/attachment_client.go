@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for attachment API.
-*/
+// Client for attachment API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -66,17 +64,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-PostAttachmentEntityFidcreates an attachment.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostAttachmentEntityFidContext] instead.
-*/
+// PostAttachmentEntityFid creates an attachment.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostAttachmentEntityFidContext] instead.
 func (a *Client) PostAttachmentEntityFid(params *PostAttachmentEntityFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostAttachmentEntityFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -85,11 +81,9 @@ func (a *Client) PostAttachmentEntityFid(params *PostAttachmentEntityFidParams, 
 	return a.PostAttachmentEntityFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostAttachmentEntityFidContextcreates an attachment.
-
-Do not use the deprecated [PostAttachmentEntityFidParams.Context] with this method: it would be ignored.
-*/
+// PostAttachmentEntityFidContext creates an attachment.
+//
+// Do not use the deprecated [PostAttachmentEntityFidParams.Context] with this method: it would be ignored.
 func (a *Client) PostAttachmentEntityFidContext(ctx context.Context, params *PostAttachmentEntityFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostAttachmentEntityFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

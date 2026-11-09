@@ -63,10 +63,9 @@ GetCustomersCustomerFidParams contains all the parameters to send to the API end
 */
 type GetCustomersCustomerFidParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// RetrieveBillingData.

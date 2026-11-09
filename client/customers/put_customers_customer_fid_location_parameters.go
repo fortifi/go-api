@@ -63,10 +63,9 @@ PutCustomersCustomerFidLocationParams contains all the parameters to send to the
 */
 type PutCustomersCustomerFidLocationParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// Payload.

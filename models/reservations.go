@@ -87,7 +87,7 @@ func (m *Reservations) contextValidateReservations(ctx context.Context, formats 
 		if m.Reservations[i] != nil {
 
 			if typeutils.IsZero(m.Reservations[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Reservations[i].ContextValidate(ctx, formats); err != nil {

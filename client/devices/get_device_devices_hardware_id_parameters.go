@@ -62,10 +62,9 @@ GetDeviceDevicesHardwareIDParams contains all the parameters to send to the API 
 */
 type GetDeviceDevicesHardwareIDParams struct {
 
-	/* HardwareID.
-
-	   Hardware ID
-	*/
+	// HardwareID.
+	//
+	// Hardware ID
 	HardwareID string
 
 	HTTPClient *http.Client

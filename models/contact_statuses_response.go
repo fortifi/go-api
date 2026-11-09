@@ -87,7 +87,7 @@ func (m *ContactStatusesResponse) contextValidateStatuses(ctx context.Context, f
 		if m.Statuses[i] != nil {
 
 			if typeutils.IsZero(m.Statuses[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Statuses[i].ContextValidate(ctx, formats); err != nil {

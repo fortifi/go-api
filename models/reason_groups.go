@@ -87,7 +87,7 @@ func (m *ReasonGroups) contextValidateReasonGroups(ctx context.Context, formats 
 		if m.ReasonGroups[i] != nil {
 
 			if typeutils.IsZero(m.ReasonGroups[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.ReasonGroups[i].ContextValidate(ctx, formats); err != nil {

@@ -22,12 +22,12 @@ type TaxRateBreakdownResponse struct {
 }
 
 // Validate validates this tax rate breakdown response
-func (m *TaxRateBreakdownResponse) Validate(formats strfmt.Registry) error {
+func (m *TaxRateBreakdownResponse) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this tax rate breakdown response based on context it is used
-func (m *TaxRateBreakdownResponse) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *TaxRateBreakdownResponse) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

@@ -55,12 +55,12 @@ type CustomerFlags struct {
 }
 
 // Validate validates this customer flags
-func (m *CustomerFlags) Validate(formats strfmt.Registry) error {
+func (m *CustomerFlags) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this customer flags based on context it is used
-func (m *CustomerFlags) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *CustomerFlags) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

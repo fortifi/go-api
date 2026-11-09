@@ -48,11 +48,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchA
 	return &PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonOK{}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonOK describes a response with status code 200, with default header values.
-
-Cancel Flow State
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonOK describes a response with status code 200, with default header values.
+//
+// Cancel Flow State
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonOK struct {
 	Payload *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonOKBody
 }
@@ -120,11 +118,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchA
 	}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearch
 	return nil
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonOKBody put customers customer fid subscriptions subscription fid cancel flow flow search abandon o k body
-swagger:model PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonOKBody
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonOKBody put customers customer fid subscriptions subscription fid cancel flow flow search abandon o k body
+//
+// swagger:model PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonOKBody
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonOKBody struct {
 	models.Envelope
 

@@ -48,11 +48,9 @@ func NewPostCustomersCustomerFidAnonymizeOK() *PostCustomersCustomerFidAnonymize
 	return &PostCustomersCustomerFidAnonymizeOK{}
 }
 
-/*
-PostCustomersCustomerFidAnonymizeOK describes a response with status code 200, with default header values.
-
-Anonymize Request
-*/
+// PostCustomersCustomerFidAnonymizeOK describes a response with status code 200, with default header values.
+//
+// Anonymize Request
 type PostCustomersCustomerFidAnonymizeOK struct {
 	Payload *PostCustomersCustomerFidAnonymizeOKBody
 }
@@ -120,11 +118,9 @@ func NewPostCustomersCustomerFidAnonymizeDefault(code int) *PostCustomersCustome
 	}
 }
 
-/*
-PostCustomersCustomerFidAnonymizeDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostCustomersCustomerFidAnonymizeDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostCustomersCustomerFidAnonymizeDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostCustomersCustomerFidAnonymizeDefault) readResponse(response runtime
 	return nil
 }
 
-/*
-PostCustomersCustomerFidAnonymizeOKBody post customers customer fid anonymize o k body
-swagger:model PostCustomersCustomerFidAnonymizeOKBody
-*/
+// PostCustomersCustomerFidAnonymizeOKBody post customers customer fid anonymize o k body
+//
+// swagger:model PostCustomersCustomerFidAnonymizeOKBody
 type PostCustomersCustomerFidAnonymizeOKBody struct {
 	models.Envelope
 

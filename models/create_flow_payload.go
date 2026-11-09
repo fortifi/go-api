@@ -75,7 +75,7 @@ func (m *CreateFlowPayload) validateGroup(formats strfmt.Registry) error {
 }
 
 // ContextValidate validates this create flow payload based on context it is used
-func (m *CreateFlowPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *CreateFlowPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

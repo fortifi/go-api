@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for reviews API.
-*/
+// Client for reviews API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -78,17 +76,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-GetCustomersCustomerFidReviewslists reviews.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidReviewsContext] instead.
-*/
+// GetCustomersCustomerFidReviews lists reviews.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidReviewsContext] instead.
 func (a *Client) GetCustomersCustomerFidReviews(params *GetCustomersCustomerFidReviewsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidReviewsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -97,11 +93,9 @@ func (a *Client) GetCustomersCustomerFidReviews(params *GetCustomersCustomerFidR
 	return a.GetCustomersCustomerFidReviewsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidReviewsContextlists reviews.
-
-Do not use the deprecated [GetCustomersCustomerFidReviewsParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidReviewsContext lists reviews.
+//
+// Do not use the deprecated [GetCustomersCustomerFidReviewsParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidReviewsContext(ctx context.Context, params *GetCustomersCustomerFidReviewsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidReviewsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -144,17 +138,15 @@ func (a *Client) GetCustomersCustomerFidReviewsContext(ctx context.Context, para
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostReviewcreates a new review and review audit.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostReviewContext] instead.
-*/
+// PostReview creates a new review and review audit.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostReviewContext] instead.
 func (a *Client) PostReview(params *PostReviewParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostReviewOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -163,11 +155,9 @@ func (a *Client) PostReview(params *PostReviewParams, authInfo runtime.ClientAut
 	return a.PostReviewContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostReviewContextcreates a new review and review audit.
-
-Do not use the deprecated [PostReviewParams.Context] with this method: it would be ignored.
-*/
+// PostReviewContext creates a new review and review audit.
+//
+// Do not use the deprecated [PostReviewParams.Context] with this method: it would be ignored.
 func (a *Client) PostReviewContext(ctx context.Context, params *PostReviewParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostReviewOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -210,17 +200,15 @@ func (a *Client) PostReviewContext(ctx context.Context, params *PostReviewParams
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutReviewReviewFidupdates a review.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutReviewReviewFidContext] instead.
-*/
+// PutReviewReviewFid updates a review.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutReviewReviewFidContext] instead.
 func (a *Client) PutReviewReviewFid(params *PutReviewReviewFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutReviewReviewFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -229,11 +217,9 @@ func (a *Client) PutReviewReviewFid(params *PutReviewReviewFidParams, authInfo r
 	return a.PutReviewReviewFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutReviewReviewFidContextupdates a review.
-
-Do not use the deprecated [PutReviewReviewFidParams.Context] with this method: it would be ignored.
-*/
+// PutReviewReviewFidContext updates a review.
+//
+// Do not use the deprecated [PutReviewReviewFidParams.Context] with this method: it would be ignored.
 func (a *Client) PutReviewReviewFidContext(ctx context.Context, params *PutReviewReviewFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutReviewReviewFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

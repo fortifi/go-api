@@ -48,11 +48,9 @@ func NewGetPublishersPublisherFidCampaignsPublisherCampaignFidOK() *GetPublisher
 	return &GetPublishersPublisherFidCampaignsPublisherCampaignFidOK{}
 }
 
-/*
-GetPublishersPublisherFidCampaignsPublisherCampaignFidOK describes a response with status code 200, with default header values.
-
-Loaded Campaign
-*/
+// GetPublishersPublisherFidCampaignsPublisherCampaignFidOK describes a response with status code 200, with default header values.
+//
+// Loaded Campaign
 type GetPublishersPublisherFidCampaignsPublisherCampaignFidOK struct {
 	Payload *GetPublishersPublisherFidCampaignsPublisherCampaignFidOKBody
 }
@@ -120,11 +118,9 @@ func NewGetPublishersPublisherFidCampaignsPublisherCampaignFidDefault(code int) 
 	}
 }
 
-/*
-GetPublishersPublisherFidCampaignsPublisherCampaignFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetPublishersPublisherFidCampaignsPublisherCampaignFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetPublishersPublisherFidCampaignsPublisherCampaignFidDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetPublishersPublisherFidCampaignsPublisherCampaignFidDefault) readResp
 	return nil
 }
 
-/*
-GetPublishersPublisherFidCampaignsPublisherCampaignFidOKBody get publishers publisher fid campaigns publisher campaign fid o k body
-swagger:model GetPublishersPublisherFidCampaignsPublisherCampaignFidOKBody
-*/
+// GetPublishersPublisherFidCampaignsPublisherCampaignFidOKBody get publishers publisher fid campaigns publisher campaign fid o k body
+//
+// swagger:model GetPublishersPublisherFidCampaignsPublisherCampaignFidOKBody
 type GetPublishersPublisherFidCampaignsPublisherCampaignFidOKBody struct {
 	models.Envelope
 

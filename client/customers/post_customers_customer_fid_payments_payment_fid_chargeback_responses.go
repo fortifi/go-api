@@ -48,11 +48,9 @@ func NewPostCustomersCustomerFidPaymentsPaymentFidChargebackOK() *PostCustomersC
 	return &PostCustomersCustomerFidPaymentsPaymentFidChargebackOK{}
 }
 
-/*
-PostCustomersCustomerFidPaymentsPaymentFidChargebackOK describes a response with status code 200, with default header values.
-
-Chargeback Opened
-*/
+// PostCustomersCustomerFidPaymentsPaymentFidChargebackOK describes a response with status code 200, with default header values.
+//
+// Chargeback Opened
 type PostCustomersCustomerFidPaymentsPaymentFidChargebackOK struct {
 	Payload *PostCustomersCustomerFidPaymentsPaymentFidChargebackOKBody
 }
@@ -120,11 +118,9 @@ func NewPostCustomersCustomerFidPaymentsPaymentFidChargebackDefault(code int) *P
 	}
 }
 
-/*
-PostCustomersCustomerFidPaymentsPaymentFidChargebackDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostCustomersCustomerFidPaymentsPaymentFidChargebackDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostCustomersCustomerFidPaymentsPaymentFidChargebackDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostCustomersCustomerFidPaymentsPaymentFidChargebackDefault) readRespon
 	return nil
 }
 
-/*
-PostCustomersCustomerFidPaymentsPaymentFidChargebackOKBody post customers customer fid payments payment fid chargeback o k body
-swagger:model PostCustomersCustomerFidPaymentsPaymentFidChargebackOKBody
-*/
+// PostCustomersCustomerFidPaymentsPaymentFidChargebackOKBody post customers customer fid payments payment fid chargeback o k body
+//
+// swagger:model PostCustomersCustomerFidPaymentsPaymentFidChargebackOKBody
 type PostCustomersCustomerFidPaymentsPaymentFidChargebackOKBody struct {
 	models.Envelope
 

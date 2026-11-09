@@ -62,16 +62,14 @@ DeleteContactsContactFidAddressesAddressFidParams contains all the parameters to
 */
 type DeleteContactsContactFidAddressesAddressFidParams struct {
 
-	/* AddressFid.
-
-	   Address FID to use
-	*/
+	// AddressFid.
+	//
+	// Address FID to use
 	AddressFid string
 
-	/* ContactFid.
-
-	   Contact FID to use
-	*/
+	// ContactFid.
+	//
+	// Contact FID to use
 	ContactFid string
 
 	HTTPClient *http.Client

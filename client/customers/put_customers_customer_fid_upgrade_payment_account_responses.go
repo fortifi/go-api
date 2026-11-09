@@ -44,11 +44,9 @@ func NewPutCustomersCustomerFidUpgradePaymentAccountOK() *PutCustomersCustomerFi
 	return &PutCustomersCustomerFidUpgradePaymentAccountOK{}
 }
 
-/*
-PutCustomersCustomerFidUpgradePaymentAccountOK describes a response with status code 200, with default header values.
-
-Customer queued for upgrade or already upgraded
-*/
+// PutCustomersCustomerFidUpgradePaymentAccountOK describes a response with status code 200, with default header values.
+//
+// Customer queued for upgrade or already upgraded
 type PutCustomersCustomerFidUpgradePaymentAccountOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutCustomersCustomerFidUpgradePaymentAccountDefault(code int) *PutCustom
 	}
 }
 
-/*
-PutCustomersCustomerFidUpgradePaymentAccountDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutCustomersCustomerFidUpgradePaymentAccountDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutCustomersCustomerFidUpgradePaymentAccountDefault struct {
 	_statusCode int
 

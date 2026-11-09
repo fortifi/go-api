@@ -44,11 +44,9 @@ func NewDeletePublishersPublisherFidOK() *DeletePublishersPublisherFidOK {
 	return &DeletePublishersPublisherFidOK{}
 }
 
-/*
-DeletePublishersPublisherFidOK describes a response with status code 200, with default header values.
-
-Publisher Deleted
-*/
+// DeletePublishersPublisherFidOK describes a response with status code 200, with default header values.
+//
+// Publisher Deleted
 type DeletePublishersPublisherFidOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewDeletePublishersPublisherFidDefault(code int) *DeletePublishersPublisher
 	}
 }
 
-/*
-DeletePublishersPublisherFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// DeletePublishersPublisherFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type DeletePublishersPublisherFidDefault struct {
 	_statusCode int
 

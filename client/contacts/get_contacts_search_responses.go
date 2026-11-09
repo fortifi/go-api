@@ -49,11 +49,9 @@ func NewGetContactsSearchOK() *GetContactsSearchOK {
 	return &GetContactsSearchOK{}
 }
 
-/*
-GetContactsSearchOK describes a response with status code 200, with default header values.
-
-List of contacts found
-*/
+// GetContactsSearchOK describes a response with status code 200, with default header values.
+//
+// List of contacts found
 type GetContactsSearchOK struct {
 	Payload *GetContactsSearchOKBody
 }
@@ -121,11 +119,9 @@ func NewGetContactsSearchDefault(code int) *GetContactsSearchDefault {
 	}
 }
 
-/*
-GetContactsSearchDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetContactsSearchDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetContactsSearchDefault struct {
 	_statusCode int
 
@@ -188,10 +184,9 @@ func (o *GetContactsSearchDefault) readResponse(response runtime.ClientResponse,
 	return nil
 }
 
-/*
-GetContactsSearchOKBody get contacts search o k body
-swagger:model GetContactsSearchOKBody
-*/
+// GetContactsSearchOKBody get contacts search o k body
+//
+// swagger:model GetContactsSearchOKBody
 type GetContactsSearchOKBody struct {
 	models.Envelope
 
@@ -320,7 +315,7 @@ func (o *GetContactsSearchOKBody) contextValidateData(ctx context.Context, forma
 		if o.Data[i] != nil {
 
 			if typeutils.IsZero(o.Data[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := o.Data[i].ContextValidate(ctx, formats); err != nil {

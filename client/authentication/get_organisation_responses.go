@@ -48,11 +48,9 @@ func NewGetOrganisationOK() *GetOrganisationOK {
 	return &GetOrganisationOK{}
 }
 
-/*
-GetOrganisationOK describes a response with status code 200, with default header values.
-
-Organisation Information
-*/
+// GetOrganisationOK describes a response with status code 200, with default header values.
+//
+// Organisation Information
 type GetOrganisationOK struct {
 	Payload *GetOrganisationOKBody
 }
@@ -120,11 +118,9 @@ func NewGetOrganisationDefault(code int) *GetOrganisationDefault {
 	}
 }
 
-/*
-GetOrganisationDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetOrganisationDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetOrganisationDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetOrganisationDefault) readResponse(response runtime.ClientResponse, c
 	return nil
 }
 
-/*
-GetOrganisationOKBody get organisation o k body
-swagger:model GetOrganisationOKBody
-*/
+// GetOrganisationOKBody get organisation o k body
+//
+// swagger:model GetOrganisationOKBody
 type GetOrganisationOKBody struct {
 	models.Envelope
 

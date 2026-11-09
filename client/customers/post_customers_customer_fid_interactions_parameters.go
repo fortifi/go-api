@@ -62,16 +62,14 @@ PostCustomersCustomerFidInteractionsParams contains all the parameters to send t
 */
 type PostCustomersCustomerFidInteractionsParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* InteractionType.
-
-	   Interaction Type
-	*/
+	// InteractionType.
+	//
+	// Interaction Type
 	InteractionType string
 
 	HTTPClient *http.Client

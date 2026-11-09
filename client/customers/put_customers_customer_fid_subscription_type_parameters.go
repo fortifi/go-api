@@ -63,10 +63,9 @@ PutCustomersCustomerFidSubscriptionTypeParams contains all the parameters to sen
 */
 type PutCustomersCustomerFidSubscriptionTypeParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// Payload.

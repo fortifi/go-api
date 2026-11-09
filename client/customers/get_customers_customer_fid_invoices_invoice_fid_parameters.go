@@ -62,16 +62,14 @@ GetCustomersCustomerFidInvoicesInvoiceFidParams contains all the parameters to s
 */
 type GetCustomersCustomerFidInvoicesInvoiceFidParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* InvoiceFid.
-
-	   Invoice Fid to use
-	*/
+	// InvoiceFid.
+	//
+	// Invoice Fid to use
 	InvoiceFid string
 
 	HTTPClient *http.Client

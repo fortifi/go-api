@@ -48,11 +48,9 @@ func NewGetServiceAuthTokenOK() *GetServiceAuthTokenOK {
 	return &GetServiceAuthTokenOK{}
 }
 
-/*
-GetServiceAuthTokenOK describes a response with status code 200, with default header values.
-
-Token
-*/
+// GetServiceAuthTokenOK describes a response with status code 200, with default header values.
+//
+// Token
 type GetServiceAuthTokenOK struct {
 	Payload *GetServiceAuthTokenOKBody
 }
@@ -120,11 +118,9 @@ func NewGetServiceAuthTokenDefault(code int) *GetServiceAuthTokenDefault {
 	}
 }
 
-/*
-GetServiceAuthTokenDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetServiceAuthTokenDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetServiceAuthTokenDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetServiceAuthTokenDefault) readResponse(response runtime.ClientRespons
 	return nil
 }
 
-/*
-GetServiceAuthTokenOKBody get service auth token o k body
-swagger:model GetServiceAuthTokenOKBody
-*/
+// GetServiceAuthTokenOKBody get service auth token o k body
+//
+// swagger:model GetServiceAuthTokenOKBody
 type GetServiceAuthTokenOKBody struct {
 	models.Envelope
 

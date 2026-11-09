@@ -48,11 +48,9 @@ func NewPostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOK() *P
 	return &PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOK{}
 }
 
-/*
-PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOK describes a response with status code 200, with default header values.
-
-Boolean Response
-*/
+// PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOK describes a response with status code 200, with default header values.
+//
+// Boolean Response
 type PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOK struct {
 	Payload *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOKBody
 }
@@ -120,11 +118,9 @@ func NewPostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestDefault
 	}
 }
 
-/*
-PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestDefaul
 	return nil
 }
 
-/*
-PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOKBody post customers customer fid subscriptions subscription fid cancel request o k body
-swagger:model PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOKBody
-*/
+// PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOKBody post customers customer fid subscriptions subscription fid cancel request o k body
+//
+// swagger:model PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOKBody
 type PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOKBody struct {
 	models.Envelope
 

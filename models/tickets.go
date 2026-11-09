@@ -144,7 +144,7 @@ func (m *Tickets) contextValidateTickets(ctx context.Context, formats strfmt.Reg
 		if m.Tickets[i] != nil {
 
 			if typeutils.IsZero(m.Tickets[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Tickets[i].ContextValidate(ctx, formats); err != nil {

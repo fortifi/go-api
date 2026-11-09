@@ -63,10 +63,9 @@ PostContactsContactFidAddressesParams contains all the parameters to send to the
 */
 type PostContactsContactFidAddressesParams struct {
 
-	/* ContactFid.
-
-	   Contact FID to use
-	*/
+	// ContactFid.
+	//
+	// Contact FID to use
 	ContactFid string
 
 	// Payload.

@@ -73,6 +73,6 @@ func (m ReversalReason) Validate(formats strfmt.Registry) error {
 }
 
 // ContextValidate validates this reversal reason based on context it is used
-func (m ReversalReason) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m ReversalReason) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }

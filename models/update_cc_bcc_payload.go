@@ -137,7 +137,7 @@ func (m *UpdateCcBccPayload) contextValidateAddBcc(ctx context.Context, formats 
 		if m.AddBcc[i] != nil {
 
 			if typeutils.IsZero(m.AddBcc[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.AddBcc[i].ContextValidate(ctx, formats); err != nil {
@@ -166,7 +166,7 @@ func (m *UpdateCcBccPayload) contextValidateAddCc(ctx context.Context, formats s
 		if m.AddCc[i] != nil {
 
 			if typeutils.IsZero(m.AddCc[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.AddCc[i].ContextValidate(ctx, formats); err != nil {

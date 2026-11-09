@@ -48,11 +48,9 @@ func NewPutOrdersOrderFidTriggerOnDemandOK() *PutOrdersOrderFidTriggerOnDemandOK
 	return &PutOrdersOrderFidTriggerOnDemandOK{}
 }
 
-/*
-PutOrdersOrderFidTriggerOnDemandOK describes a response with status code 200, with default header values.
-
-Order OnDemand Trigger result
-*/
+// PutOrdersOrderFidTriggerOnDemandOK describes a response with status code 200, with default header values.
+//
+// Order OnDemand Trigger result
 type PutOrdersOrderFidTriggerOnDemandOK struct {
 	Payload *PutOrdersOrderFidTriggerOnDemandOKBody
 }
@@ -120,11 +118,9 @@ func NewPutOrdersOrderFidTriggerOnDemandDefault(code int) *PutOrdersOrderFidTrig
 	}
 }
 
-/*
-PutOrdersOrderFidTriggerOnDemandDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutOrdersOrderFidTriggerOnDemandDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutOrdersOrderFidTriggerOnDemandDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PutOrdersOrderFidTriggerOnDemandDefault) readResponse(response runtime.
 	return nil
 }
 
-/*
-PutOrdersOrderFidTriggerOnDemandOKBody put orders order fid trigger on demand o k body
-swagger:model PutOrdersOrderFidTriggerOnDemandOKBody
-*/
+// PutOrdersOrderFidTriggerOnDemandOKBody put orders order fid trigger on demand o k body
+//
+// swagger:model PutOrdersOrderFidTriggerOnDemandOKBody
 type PutOrdersOrderFidTriggerOnDemandOKBody struct {
 	models.Envelope
 

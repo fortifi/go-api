@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for reasons API.
-*/
+// Client for reasons API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -72,17 +70,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-GetReasonsGroupsgets a list of all reason groups.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetReasonsGroupsContext] instead.
-*/
+// GetReasonsGroups gets a list of all reason groups.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetReasonsGroupsContext] instead.
 func (a *Client) GetReasonsGroups(params *GetReasonsGroupsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetReasonsGroupsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -91,11 +87,9 @@ func (a *Client) GetReasonsGroups(params *GetReasonsGroupsParams, authInfo runti
 	return a.GetReasonsGroupsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetReasonsGroupsContextgets a list of all reason groups.
-
-Do not use the deprecated [GetReasonsGroupsParams.Context] with this method: it would be ignored.
-*/
+// GetReasonsGroupsContext gets a list of all reason groups.
+//
+// Do not use the deprecated [GetReasonsGroupsParams.Context] with this method: it would be ignored.
 func (a *Client) GetReasonsGroupsContext(ctx context.Context, params *GetReasonsGroupsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetReasonsGroupsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -138,17 +132,15 @@ func (a *Client) GetReasonsGroupsContext(ctx context.Context, params *GetReasons
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetReasonsGroupsReasonGroupFidgets all the reasons for the reason group.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetReasonsGroupsReasonGroupFidContext] instead.
-*/
+// GetReasonsGroupsReasonGroupFid gets all the reasons for the reason group.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetReasonsGroupsReasonGroupFidContext] instead.
 func (a *Client) GetReasonsGroupsReasonGroupFid(params *GetReasonsGroupsReasonGroupFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetReasonsGroupsReasonGroupFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -157,11 +149,9 @@ func (a *Client) GetReasonsGroupsReasonGroupFid(params *GetReasonsGroupsReasonGr
 	return a.GetReasonsGroupsReasonGroupFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetReasonsGroupsReasonGroupFidContextgets all the reasons for the reason group.
-
-Do not use the deprecated [GetReasonsGroupsReasonGroupFidParams.Context] with this method: it would be ignored.
-*/
+// GetReasonsGroupsReasonGroupFidContext gets all the reasons for the reason group.
+//
+// Do not use the deprecated [GetReasonsGroupsReasonGroupFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetReasonsGroupsReasonGroupFidContext(ctx context.Context, params *GetReasonsGroupsReasonGroupFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetReasonsGroupsReasonGroupFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

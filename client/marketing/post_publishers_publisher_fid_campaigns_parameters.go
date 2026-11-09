@@ -66,10 +66,9 @@ type PostPublishersPublisherFidCampaignsParams struct {
 	// Payload.
 	Payload *models.CreatePublisherCampaignPayload
 
-	/* PublisherFid.
-
-	   Publisher FID to use
-	*/
+	// PublisherFid.
+	//
+	// Publisher FID to use
 	PublisherFid string
 
 	HTTPClient *http.Client

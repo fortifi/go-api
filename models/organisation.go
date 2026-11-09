@@ -31,12 +31,12 @@ type Organisation struct {
 }
 
 // Validate validates this organisation
-func (m *Organisation) Validate(formats strfmt.Registry) error {
+func (m *Organisation) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this organisation based on context it is used
-func (m *Organisation) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *Organisation) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

@@ -62,19 +62,17 @@ PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountParams conta
 */
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// PaymentAccountFid.
 	PaymentAccountFid *string
 
-	/* SubscriptionFid.
-
-	   Subscription FID to use
-	*/
+	// SubscriptionFid.
+	//
+	// Subscription FID to use
 	SubscriptionFid string
 
 	HTTPClient *http.Client

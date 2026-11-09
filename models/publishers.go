@@ -144,7 +144,7 @@ func (m *Publishers) contextValidatePublishers(ctx context.Context, formats strf
 		if m.Publishers[i] != nil {
 
 			if typeutils.IsZero(m.Publishers[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Publishers[i].ContextValidate(ctx, formats); err != nil {

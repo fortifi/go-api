@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for deprecated API.
-*/
+// Client for deprecated API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -102,17 +100,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-DeleteAdvertisersAdvertiserFidApprovedremoves approved status on an advertiser.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.DeleteAdvertisersAdvertiserFidApprovedContext] instead.
-*/
+// DeleteAdvertisersAdvertiserFidApproved removes approved status on an advertiser.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.DeleteAdvertisersAdvertiserFidApprovedContext] instead.
 func (a *Client) DeleteAdvertisersAdvertiserFidApproved(params *DeleteAdvertisersAdvertiserFidApprovedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteAdvertisersAdvertiserFidApprovedOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -121,11 +117,9 @@ func (a *Client) DeleteAdvertisersAdvertiserFidApproved(params *DeleteAdvertiser
 	return a.DeleteAdvertisersAdvertiserFidApprovedContext(ctx, params, authInfo, opts...)
 }
 
-/*
-DeleteAdvertisersAdvertiserFidApprovedContextremoves approved status on an advertiser.
-
-Do not use the deprecated [DeleteAdvertisersAdvertiserFidApprovedParams.Context] with this method: it would be ignored.
-*/
+// DeleteAdvertisersAdvertiserFidApprovedContext removes approved status on an advertiser.
+//
+// Do not use the deprecated [DeleteAdvertisersAdvertiserFidApprovedParams.Context] with this method: it would be ignored.
 func (a *Client) DeleteAdvertisersAdvertiserFidApprovedContext(ctx context.Context, params *DeleteAdvertisersAdvertiserFidApprovedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteAdvertisersAdvertiserFidApprovedOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -168,17 +162,15 @@ func (a *Client) DeleteAdvertisersAdvertiserFidApprovedContext(ctx context.Conte
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetAdvertiserslists advertisers.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetAdvertisersContext] instead.
-*/
+// GetAdvertisers lists advertisers.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetAdvertisersContext] instead.
 func (a *Client) GetAdvertisers(params *GetAdvertisersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetAdvertisersOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -187,11 +179,9 @@ func (a *Client) GetAdvertisers(params *GetAdvertisersParams, authInfo runtime.C
 	return a.GetAdvertisersContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetAdvertisersContextlists advertisers.
-
-Do not use the deprecated [GetAdvertisersParams.Context] with this method: it would be ignored.
-*/
+// GetAdvertisersContext lists advertisers.
+//
+// Do not use the deprecated [GetAdvertisersParams.Context] with this method: it would be ignored.
 func (a *Client) GetAdvertisersContext(ctx context.Context, params *GetAdvertisersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetAdvertisersOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -234,17 +224,15 @@ func (a *Client) GetAdvertisersContext(ctx context.Context, params *GetAdvertise
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetAdvertisersAdvertiserFidretrieves an advertiser.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetAdvertisersAdvertiserFidContext] instead.
-*/
+// GetAdvertisersAdvertiserFid retrieves an advertiser.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetAdvertisersAdvertiserFidContext] instead.
 func (a *Client) GetAdvertisersAdvertiserFid(params *GetAdvertisersAdvertiserFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetAdvertisersAdvertiserFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -253,11 +241,9 @@ func (a *Client) GetAdvertisersAdvertiserFid(params *GetAdvertisersAdvertiserFid
 	return a.GetAdvertisersAdvertiserFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetAdvertisersAdvertiserFidContextretrieves an advertiser.
-
-Do not use the deprecated [GetAdvertisersAdvertiserFidParams.Context] with this method: it would be ignored.
-*/
+// GetAdvertisersAdvertiserFidContext retrieves an advertiser.
+//
+// Do not use the deprecated [GetAdvertisersAdvertiserFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetAdvertisersAdvertiserFidContext(ctx context.Context, params *GetAdvertisersAdvertiserFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetAdvertisersAdvertiserFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -300,17 +286,15 @@ func (a *Client) GetAdvertisersAdvertiserFidContext(ctx context.Context, params 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidretrieves an advertiser campaign.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidContext] instead.
-*/
+// GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFid retrieves an advertiser campaign.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidContext] instead.
 func (a *Client) GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFid(params *GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -319,11 +303,9 @@ func (a *Client) GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFid(param
 	return a.GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidContextretrieves an advertiser campaign.
-
-Do not use the deprecated [GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidParams.Context] with this method: it would be ignored.
-*/
+// GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidContext retrieves an advertiser campaign.
+//
+// Do not use the deprecated [GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidContext(ctx context.Context, params *GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -366,17 +348,15 @@ func (a *Client) GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidContex
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostAdvertiserscreates a new advertiser.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostAdvertisersContext] instead.
-*/
+// PostAdvertisers creates a new advertiser.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostAdvertisersContext] instead.
 func (a *Client) PostAdvertisers(params *PostAdvertisersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostAdvertisersOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -385,11 +365,9 @@ func (a *Client) PostAdvertisers(params *PostAdvertisersParams, authInfo runtime
 	return a.PostAdvertisersContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostAdvertisersContextcreates a new advertiser.
-
-Do not use the deprecated [PostAdvertisersParams.Context] with this method: it would be ignored.
-*/
+// PostAdvertisersContext creates a new advertiser.
+//
+// Do not use the deprecated [PostAdvertisersParams.Context] with this method: it would be ignored.
 func (a *Client) PostAdvertisersContext(ctx context.Context, params *PostAdvertisersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostAdvertisersOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -432,17 +410,15 @@ func (a *Client) PostAdvertisersContext(ctx context.Context, params *PostAdverti
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostAdvertisersAdvertiserFidCampaignscreates a new advertiser campaign.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostAdvertisersAdvertiserFidCampaignsContext] instead.
-*/
+// PostAdvertisersAdvertiserFidCampaigns creates a new advertiser campaign.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostAdvertisersAdvertiserFidCampaignsContext] instead.
 func (a *Client) PostAdvertisersAdvertiserFidCampaigns(params *PostAdvertisersAdvertiserFidCampaignsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostAdvertisersAdvertiserFidCampaignsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -451,11 +427,9 @@ func (a *Client) PostAdvertisersAdvertiserFidCampaigns(params *PostAdvertisersAd
 	return a.PostAdvertisersAdvertiserFidCampaignsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostAdvertisersAdvertiserFidCampaignsContextcreates a new advertiser campaign.
-
-Do not use the deprecated [PostAdvertisersAdvertiserFidCampaignsParams.Context] with this method: it would be ignored.
-*/
+// PostAdvertisersAdvertiserFidCampaignsContext creates a new advertiser campaign.
+//
+// Do not use the deprecated [PostAdvertisersAdvertiserFidCampaignsParams.Context] with this method: it would be ignored.
 func (a *Client) PostAdvertisersAdvertiserFidCampaignsContext(ctx context.Context, params *PostAdvertisersAdvertiserFidCampaignsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostAdvertisersAdvertiserFidCampaignsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -498,17 +472,15 @@ func (a *Client) PostAdvertisersAdvertiserFidCampaignsContext(ctx context.Contex
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutAdvertisersAdvertiserFidApprovedsets approved status on an advertiser.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutAdvertisersAdvertiserFidApprovedContext] instead.
-*/
+// PutAdvertisersAdvertiserFidApproved sets approved status on an advertiser.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutAdvertisersAdvertiserFidApprovedContext] instead.
 func (a *Client) PutAdvertisersAdvertiserFidApproved(params *PutAdvertisersAdvertiserFidApprovedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutAdvertisersAdvertiserFidApprovedOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -517,11 +489,9 @@ func (a *Client) PutAdvertisersAdvertiserFidApproved(params *PutAdvertisersAdver
 	return a.PutAdvertisersAdvertiserFidApprovedContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutAdvertisersAdvertiserFidApprovedContextsets approved status on an advertiser.
-
-Do not use the deprecated [PutAdvertisersAdvertiserFidApprovedParams.Context] with this method: it would be ignored.
-*/
+// PutAdvertisersAdvertiserFidApprovedContext sets approved status on an advertiser.
+//
+// Do not use the deprecated [PutAdvertisersAdvertiserFidApprovedParams.Context] with this method: it would be ignored.
 func (a *Client) PutAdvertisersAdvertiserFidApprovedContext(ctx context.Context, params *PutAdvertisersAdvertiserFidApprovedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutAdvertisersAdvertiserFidApprovedOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

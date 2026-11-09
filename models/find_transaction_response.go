@@ -255,7 +255,7 @@ func (m *FindTransactionResponse) contextValidateDiscounts(ctx context.Context, 
 		if m.Discounts[i] != nil {
 
 			if typeutils.IsZero(m.Discounts[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Discounts[i].ContextValidate(ctx, formats); err != nil {
@@ -284,7 +284,7 @@ func (m *FindTransactionResponse) contextValidateItems(ctx context.Context, form
 		if m.Items[i] != nil {
 
 			if typeutils.IsZero(m.Items[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Items[i].ContextValidate(ctx, formats); err != nil {
@@ -313,7 +313,7 @@ func (m *FindTransactionResponse) contextValidateSubscriptions(ctx context.Conte
 		if m.Subscriptions[i] != nil {
 
 			if typeutils.IsZero(m.Subscriptions[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Subscriptions[i].ContextValidate(ctx, formats); err != nil {
@@ -342,7 +342,7 @@ func (m *FindTransactionResponse) contextValidateTaxes(ctx context.Context, form
 		if m.Taxes[i] != nil {
 
 			if typeutils.IsZero(m.Taxes[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Taxes[i].ContextValidate(ctx, formats); err != nil {

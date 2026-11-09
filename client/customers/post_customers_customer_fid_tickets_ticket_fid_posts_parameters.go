@@ -63,19 +63,17 @@ PostCustomersCustomerFidTicketsTicketFidPostsParams contains all the parameters 
 */
 type PostCustomersCustomerFidTicketsTicketFidPostsParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// Payload.
 	Payload *models.TicketReplyPayload
 
-	/* TicketFid.
-
-	   Ticket FID to use
-	*/
+	// TicketFid.
+	//
+	// Ticket FID to use
 	TicketFid string
 
 	HTTPClient *http.Client

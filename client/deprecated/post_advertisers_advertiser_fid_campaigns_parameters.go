@@ -63,10 +63,9 @@ PostAdvertisersAdvertiserFidCampaignsParams contains all the parameters to send 
 */
 type PostAdvertisersAdvertiserFidCampaignsParams struct {
 
-	/* AdvertiserFid.
-
-	   Advertiser FID to use
-	*/
+	// AdvertiserFid.
+	//
+	// Advertiser FID to use
 	AdvertiserFid string
 
 	// Payload.

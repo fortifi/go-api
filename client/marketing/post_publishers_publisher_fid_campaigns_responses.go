@@ -48,11 +48,9 @@ func NewPostPublishersPublisherFidCampaignsOK() *PostPublishersPublisherFidCampa
 	return &PostPublishersPublisherFidCampaignsOK{}
 }
 
-/*
-PostPublishersPublisherFidCampaignsOK describes a response with status code 200, with default header values.
-
-Campaign Created
-*/
+// PostPublishersPublisherFidCampaignsOK describes a response with status code 200, with default header values.
+//
+// Campaign Created
 type PostPublishersPublisherFidCampaignsOK struct {
 	Payload *PostPublishersPublisherFidCampaignsOKBody
 }
@@ -120,11 +118,9 @@ func NewPostPublishersPublisherFidCampaignsDefault(code int) *PostPublishersPubl
 	}
 }
 
-/*
-PostPublishersPublisherFidCampaignsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostPublishersPublisherFidCampaignsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostPublishersPublisherFidCampaignsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostPublishersPublisherFidCampaignsDefault) readResponse(response runti
 	return nil
 }
 
-/*
-PostPublishersPublisherFidCampaignsOKBody post publishers publisher fid campaigns o k body
-swagger:model PostPublishersPublisherFidCampaignsOKBody
-*/
+// PostPublishersPublisherFidCampaignsOKBody post publishers publisher fid campaigns o k body
+//
+// swagger:model PostPublishersPublisherFidCampaignsOKBody
 type PostPublishersPublisherFidCampaignsOKBody struct {
 	models.Envelope
 

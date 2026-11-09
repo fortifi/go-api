@@ -48,11 +48,9 @@ func NewGetReasonsGroupsOK() *GetReasonsGroupsOK {
 	return &GetReasonsGroupsOK{}
 }
 
-/*
-GetReasonsGroupsOK describes a response with status code 200, with default header values.
-
-Reason groups
-*/
+// GetReasonsGroupsOK describes a response with status code 200, with default header values.
+//
+// Reason groups
 type GetReasonsGroupsOK struct {
 	Payload *GetReasonsGroupsOKBody
 }
@@ -120,11 +118,9 @@ func NewGetReasonsGroupsDefault(code int) *GetReasonsGroupsDefault {
 	}
 }
 
-/*
-GetReasonsGroupsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetReasonsGroupsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetReasonsGroupsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetReasonsGroupsDefault) readResponse(response runtime.ClientResponse, 
 	return nil
 }
 
-/*
-GetReasonsGroupsOKBody get reasons groups o k body
-swagger:model GetReasonsGroupsOKBody
-*/
+// GetReasonsGroupsOKBody get reasons groups o k body
+//
+// swagger:model GetReasonsGroupsOKBody
 type GetReasonsGroupsOKBody struct {
 	models.Envelope
 

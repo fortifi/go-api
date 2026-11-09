@@ -44,11 +44,9 @@ func NewPutContactsEmailsEmailAddressSubscribeOK() *PutContactsEmailsEmailAddres
 	return &PutContactsEmailsEmailAddressSubscribeOK{}
 }
 
-/*
-PutContactsEmailsEmailAddressSubscribeOK describes a response with status code 200, with default header values.
-
-Email Address Subscribed
-*/
+// PutContactsEmailsEmailAddressSubscribeOK describes a response with status code 200, with default header values.
+//
+// Email Address Subscribed
 type PutContactsEmailsEmailAddressSubscribeOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutContactsEmailsEmailAddressSubscribeDefault(code int) *PutContactsEmai
 	}
 }
 
-/*
-PutContactsEmailsEmailAddressSubscribeDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutContactsEmailsEmailAddressSubscribeDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutContactsEmailsEmailAddressSubscribeDefault struct {
 	_statusCode int
 

@@ -72,7 +72,7 @@ func (m *CreateFlowStepPayload) validateKey(formats strfmt.Registry) error {
 }
 
 // ContextValidate validates this create flow step payload based on context it is used
-func (m *CreateFlowStepPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *CreateFlowStepPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

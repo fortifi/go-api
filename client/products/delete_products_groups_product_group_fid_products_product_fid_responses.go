@@ -48,11 +48,9 @@ func NewDeleteProductsGroupsProductGroupFidProductsProductFidOK() *DeleteProduct
 	return &DeleteProductsGroupsProductGroupFidProductsProductFidOK{}
 }
 
-/*
-DeleteProductsGroupsProductGroupFidProductsProductFidOK describes a response with status code 200, with default header values.
-
-Product removed from group successfully
-*/
+// DeleteProductsGroupsProductGroupFidProductsProductFidOK describes a response with status code 200, with default header values.
+//
+// Product removed from group successfully
 type DeleteProductsGroupsProductGroupFidProductsProductFidOK struct {
 	Payload *DeleteProductsGroupsProductGroupFidProductsProductFidOKBody
 }
@@ -120,11 +118,9 @@ func NewDeleteProductsGroupsProductGroupFidProductsProductFidDefault(code int) *
 	}
 }
 
-/*
-DeleteProductsGroupsProductGroupFidProductsProductFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// DeleteProductsGroupsProductGroupFidProductsProductFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type DeleteProductsGroupsProductGroupFidProductsProductFidDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *DeleteProductsGroupsProductGroupFidProductsProductFidDefault) readRespo
 	return nil
 }
 
-/*
-DeleteProductsGroupsProductGroupFidProductsProductFidOKBody delete products groups product group fid products product fid o k body
-swagger:model DeleteProductsGroupsProductGroupFidProductsProductFidOKBody
-*/
+// DeleteProductsGroupsProductGroupFidProductsProductFidOKBody delete products groups product group fid products product fid o k body
+//
+// swagger:model DeleteProductsGroupsProductGroupFidProductsProductFidOKBody
 type DeleteProductsGroupsProductGroupFidProductsProductFidOKBody struct {
 	models.Envelope
 

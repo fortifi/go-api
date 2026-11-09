@@ -48,11 +48,9 @@ func NewPostCustomersCustomerFidApplyCreditOK() *PostCustomersCustomerFidApplyCr
 	return &PostCustomersCustomerFidApplyCreditOK{}
 }
 
-/*
-PostCustomersCustomerFidApplyCreditOK describes a response with status code 200, with default header values.
-
-Credit Applied
-*/
+// PostCustomersCustomerFidApplyCreditOK describes a response with status code 200, with default header values.
+//
+// Credit Applied
 type PostCustomersCustomerFidApplyCreditOK struct {
 	Payload *PostCustomersCustomerFidApplyCreditOKBody
 }
@@ -120,11 +118,9 @@ func NewPostCustomersCustomerFidApplyCreditDefault(code int) *PostCustomersCusto
 	}
 }
 
-/*
-PostCustomersCustomerFidApplyCreditDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostCustomersCustomerFidApplyCreditDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostCustomersCustomerFidApplyCreditDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostCustomersCustomerFidApplyCreditDefault) readResponse(response runti
 	return nil
 }
 
-/*
-PostCustomersCustomerFidApplyCreditOKBody post customers customer fid apply credit o k body
-swagger:model PostCustomersCustomerFidApplyCreditOKBody
-*/
+// PostCustomersCustomerFidApplyCreditOKBody post customers customer fid apply credit o k body
+//
+// swagger:model PostCustomersCustomerFidApplyCreditOKBody
 type PostCustomersCustomerFidApplyCreditOKBody struct {
 	models.Envelope
 

@@ -63,19 +63,17 @@ PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationParams c
 */
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// Payload.
 	Payload *models.ModifySubscriptionPayload
 
-	/* SubscriptionFid.
-
-	   Subscription FID to use
-	*/
+	// SubscriptionFid.
+	//
+	// Subscription FID to use
 	SubscriptionFid string
 
 	HTTPClient *http.Client

@@ -44,11 +44,9 @@ func NewPostAccountVerificationOK() *PostAccountVerificationOK {
 	return &PostAccountVerificationOK{}
 }
 
-/*
-PostAccountVerificationOK describes a response with status code 200, with default header values.
-
-Account Verification
-*/
+// PostAccountVerificationOK describes a response with status code 200, with default header values.
+//
+// Account Verification
 type PostAccountVerificationOK struct {
 	Payload *models.AccountVerificationResponse
 }
@@ -116,11 +114,9 @@ func NewPostAccountVerificationDefault(code int) *PostAccountVerificationDefault
 	}
 }
 
-/*
-PostAccountVerificationDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostAccountVerificationDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostAccountVerificationDefault struct {
 	_statusCode int
 

@@ -25,12 +25,12 @@ type EntityFeatureFlag struct {
 }
 
 // Validate validates this entity feature flag
-func (m *EntityFeatureFlag) Validate(formats strfmt.Registry) error {
+func (m *EntityFeatureFlag) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this entity feature flag based on context it is used
-func (m *EntityFeatureFlag) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *EntityFeatureFlag) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

@@ -48,11 +48,9 @@ func NewGetMessengerListMessageGroupsOK() *GetMessengerListMessageGroupsOK {
 	return &GetMessengerListMessageGroupsOK{}
 }
 
-/*
-GetMessengerListMessageGroupsOK describes a response with status code 200, with default header values.
-
-List of Message Groups
-*/
+// GetMessengerListMessageGroupsOK describes a response with status code 200, with default header values.
+//
+// List of Message Groups
 type GetMessengerListMessageGroupsOK struct {
 	Payload *GetMessengerListMessageGroupsOKBody
 }
@@ -120,11 +118,9 @@ func NewGetMessengerListMessageGroupsDefault(code int) *GetMessengerListMessageG
 	}
 }
 
-/*
-GetMessengerListMessageGroupsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetMessengerListMessageGroupsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetMessengerListMessageGroupsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetMessengerListMessageGroupsDefault) readResponse(response runtime.Cli
 	return nil
 }
 
-/*
-GetMessengerListMessageGroupsOKBody get messenger list message groups o k body
-swagger:model GetMessengerListMessageGroupsOKBody
-*/
+// GetMessengerListMessageGroupsOKBody get messenger list message groups o k body
+//
+// swagger:model GetMessengerListMessageGroupsOKBody
 type GetMessengerListMessageGroupsOKBody struct {
 	models.Envelope
 

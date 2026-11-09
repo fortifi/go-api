@@ -48,11 +48,9 @@ func NewGetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmen
 	return &GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsOK{}
 }
 
-/*
-GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsOK describes a response with status code 200, with default header values.
-
-List of ticket attachments
-*/
+// GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsOK describes a response with status code 200, with default header values.
+//
+// List of ticket attachments
 type GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsOK struct {
 	Payload *GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsOKBody
 }
@@ -120,11 +118,9 @@ func NewGetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmen
 	}
 }
 
-/*
-GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachme
 	return nil
 }
 
-/*
-GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsOKBody get customers customer fid tickets ticket fid posts ticket post timestamp attachments o k body
-swagger:model GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsOKBody
-*/
+// GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsOKBody get customers customer fid tickets ticket fid posts ticket post timestamp attachments o k body
+//
+// swagger:model GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsOKBody
 type GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsOKBody struct {
 	models.Envelope
 

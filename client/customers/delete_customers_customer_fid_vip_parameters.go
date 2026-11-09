@@ -62,10 +62,9 @@ DeleteCustomersCustomerFidVipParams contains all the parameters to send to the A
 */
 type DeleteCustomersCustomerFidVipParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	HTTPClient *http.Client

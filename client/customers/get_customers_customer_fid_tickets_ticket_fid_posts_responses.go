@@ -48,11 +48,9 @@ func NewGetCustomersCustomerFidTicketsTicketFidPostsOK() *GetCustomersCustomerFi
 	return &GetCustomersCustomerFidTicketsTicketFidPostsOK{}
 }
 
-/*
-GetCustomersCustomerFidTicketsTicketFidPostsOK describes a response with status code 200, with default header values.
-
-Ticket Data
-*/
+// GetCustomersCustomerFidTicketsTicketFidPostsOK describes a response with status code 200, with default header values.
+//
+// Ticket Data
 type GetCustomersCustomerFidTicketsTicketFidPostsOK struct {
 	Payload *GetCustomersCustomerFidTicketsTicketFidPostsOKBody
 }
@@ -120,11 +118,9 @@ func NewGetCustomersCustomerFidTicketsTicketFidPostsDefault(code int) *GetCustom
 	}
 }
 
-/*
-GetCustomersCustomerFidTicketsTicketFidPostsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetCustomersCustomerFidTicketsTicketFidPostsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetCustomersCustomerFidTicketsTicketFidPostsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetCustomersCustomerFidTicketsTicketFidPostsDefault) readResponse(respo
 	return nil
 }
 
-/*
-GetCustomersCustomerFidTicketsTicketFidPostsOKBody get customers customer fid tickets ticket fid posts o k body
-swagger:model GetCustomersCustomerFidTicketsTicketFidPostsOKBody
-*/
+// GetCustomersCustomerFidTicketsTicketFidPostsOKBody get customers customer fid tickets ticket fid posts o k body
+//
+// swagger:model GetCustomersCustomerFidTicketsTicketFidPostsOKBody
 type GetCustomersCustomerFidTicketsTicketFidPostsOKBody struct {
 	models.Envelope
 

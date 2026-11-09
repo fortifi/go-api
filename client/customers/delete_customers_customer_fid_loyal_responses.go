@@ -44,11 +44,9 @@ func NewDeleteCustomersCustomerFidLoyalOK() *DeleteCustomersCustomerFidLoyalOK {
 	return &DeleteCustomersCustomerFidLoyalOK{}
 }
 
-/*
-DeleteCustomersCustomerFidLoyalOK describes a response with status code 200, with default header values.
-
-Customer No Longer Loyal
-*/
+// DeleteCustomersCustomerFidLoyalOK describes a response with status code 200, with default header values.
+//
+// Customer No Longer Loyal
 type DeleteCustomersCustomerFidLoyalOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewDeleteCustomersCustomerFidLoyalDefault(code int) *DeleteCustomersCustome
 	}
 }
 
-/*
-DeleteCustomersCustomerFidLoyalDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// DeleteCustomersCustomerFidLoyalDefault describes a response with status code -1, with default header values.
+//
+// Error
 type DeleteCustomersCustomerFidLoyalDefault struct {
 	_statusCode int
 

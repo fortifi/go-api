@@ -44,11 +44,9 @@ func NewDeleteCustomersCustomerFidOK() *DeleteCustomersCustomerFidOK {
 	return &DeleteCustomersCustomerFidOK{}
 }
 
-/*
-DeleteCustomersCustomerFidOK describes a response with status code 200, with default header values.
-
-Customer Archived
-*/
+// DeleteCustomersCustomerFidOK describes a response with status code 200, with default header values.
+//
+// Customer Archived
 type DeleteCustomersCustomerFidOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewDeleteCustomersCustomerFidDefault(code int) *DeleteCustomersCustomerFidD
 	}
 }
 
-/*
-DeleteCustomersCustomerFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// DeleteCustomersCustomerFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type DeleteCustomersCustomerFidDefault struct {
 	_statusCode int
 

@@ -63,19 +63,17 @@ PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundParams contain
 */
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// Payload.
 	Payload *models.CalculateRefundPayload
 
-	/* SubscriptionFid.
-
-	   Subscription FID to use
-	*/
+	// SubscriptionFid.
+	//
+	// Subscription FID to use
 	SubscriptionFid string
 
 	HTTPClient *http.Client

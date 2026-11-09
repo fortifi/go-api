@@ -62,10 +62,9 @@ DeleteOrdersOrderFidOffersOfferFidParams contains all the parameters to send to 
 */
 type DeleteOrdersOrderFidOffersOfferFidParams struct {
 
-	/* OfferFid.
-
-	   Offer FID or Coupon Code
-	*/
+	// OfferFid.
+	//
+	// Offer FID or Coupon Code
 	OfferFid string
 
 	// OrderFid.

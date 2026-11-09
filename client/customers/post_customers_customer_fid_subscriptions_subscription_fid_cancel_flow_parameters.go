@@ -63,19 +63,17 @@ PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowParams contains al
 */
 type PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// Payload.
 	Payload *models.ActionCancelFlowPayload
 
-	/* SubscriptionFid.
-
-	   Subscription FID to use
-	*/
+	// SubscriptionFid.
+	//
+	// Subscription FID to use
 	SubscriptionFid string
 
 	HTTPClient *http.Client

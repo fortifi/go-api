@@ -61,12 +61,12 @@ type CardUpdatePayload struct {
 }
 
 // Validate validates this card update payload
-func (m *CardUpdatePayload) Validate(formats strfmt.Registry) error {
+func (m *CardUpdatePayload) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this card update payload based on context it is used
-func (m *CardUpdatePayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *CardUpdatePayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

@@ -63,10 +63,9 @@ PostCustomersCustomerFidFinanceCalculateTaxParams contains all the parameters to
 */
 type PostCustomersCustomerFidFinanceCalculateTaxParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// Payload.

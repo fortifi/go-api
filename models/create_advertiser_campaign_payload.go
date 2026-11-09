@@ -62,7 +62,7 @@ func (m *CreateAdvertiserCampaignPayload) validateDisplayName(formats strfmt.Reg
 }
 
 // ContextValidate validates this create advertiser campaign payload based on context it is used
-func (m *CreateAdvertiserCampaignPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *CreateAdvertiserCampaignPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

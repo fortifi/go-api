@@ -62,16 +62,14 @@ DeleteContactsContactFidEmailsEmailFidParams contains all the parameters to send
 */
 type DeleteContactsContactFidEmailsEmailFidParams struct {
 
-	/* ContactFid.
-
-	   Contact FID to use
-	*/
+	// ContactFid.
+	//
+	// Contact FID to use
 	ContactFid string
 
-	/* EmailFid.
-
-	   Email FID to use
-	*/
+	// EmailFid.
+	//
+	// Email FID to use
 	EmailFid string
 
 	HTTPClient *http.Client

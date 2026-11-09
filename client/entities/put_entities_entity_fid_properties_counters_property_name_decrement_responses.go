@@ -44,11 +44,9 @@ func NewPutEntitiesEntityFidPropertiesCountersPropertyNameDecrementOK() *PutEnti
 	return &PutEntitiesEntityFidPropertiesCountersPropertyNameDecrementOK{}
 }
 
-/*
-PutEntitiesEntityFidPropertiesCountersPropertyNameDecrementOK describes a response with status code 200, with default header values.
-
-Counter Decremented
-*/
+// PutEntitiesEntityFidPropertiesCountersPropertyNameDecrementOK describes a response with status code 200, with default header values.
+//
+// Counter Decremented
 type PutEntitiesEntityFidPropertiesCountersPropertyNameDecrementOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutEntitiesEntityFidPropertiesCountersPropertyNameDecrementDefault(code 
 	}
 }
 
-/*
-PutEntitiesEntityFidPropertiesCountersPropertyNameDecrementDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutEntitiesEntityFidPropertiesCountersPropertyNameDecrementDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutEntitiesEntityFidPropertiesCountersPropertyNameDecrementDefault struct {
 	_statusCode int
 

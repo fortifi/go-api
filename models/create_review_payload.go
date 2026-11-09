@@ -160,7 +160,7 @@ func (m *CreateReviewPayload) validateRating(formats strfmt.Registry) error {
 }
 
 // ContextValidate validates this create review payload based on context it is used
-func (m *CreateReviewPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *CreateReviewPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

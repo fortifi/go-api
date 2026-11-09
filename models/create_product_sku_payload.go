@@ -92,7 +92,7 @@ func (m *CreateProductSkuPayload) validateSku(formats strfmt.Registry) error {
 }
 
 // ContextValidate validates this create product sku payload based on context it is used
-func (m *CreateProductSkuPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *CreateProductSkuPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

@@ -62,16 +62,14 @@ GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsParams conta
 */
 type GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* SubscriptionFid.
-
-	   Subscription FID to use
-	*/
+	// SubscriptionFid.
+	//
+	// Subscription FID to use
 	SubscriptionFid string
 
 	HTTPClient *http.Client

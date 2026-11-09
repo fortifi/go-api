@@ -44,11 +44,9 @@ func NewPostOrdersOrderFidOffersOK() *PostOrdersOrderFidOffersOK {
 	return &PostOrdersOrderFidOffersOK{}
 }
 
-/*
-PostOrdersOrderFidOffersOK describes a response with status code 200, with default header values.
-
-Offer added to the order successfully
-*/
+// PostOrdersOrderFidOffersOK describes a response with status code 200, with default header values.
+//
+// Offer added to the order successfully
 type PostOrdersOrderFidOffersOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPostOrdersOrderFidOffersDefault(code int) *PostOrdersOrderFidOffersDefau
 	}
 }
 
-/*
-PostOrdersOrderFidOffersDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostOrdersOrderFidOffersDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostOrdersOrderFidOffersDefault struct {
 	_statusCode int
 

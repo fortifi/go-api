@@ -63,34 +63,29 @@ GetCustomersCustomerFidContactsContactFidParams contains all the parameters to s
 */
 type GetCustomersCustomerFidContactsContactFidParams struct {
 
-	/* AllAddresses.
-
-	   Load all addresses
-	*/
+	// AllAddresses.
+	//
+	// Load all addresses
 	AllAddresses *bool
 
-	/* AllEmails.
-
-	   Load all emails
-	*/
+	// AllEmails.
+	//
+	// Load all emails
 	AllEmails *bool
 
-	/* AllPhones.
-
-	   Load all phones
-	*/
+	// AllPhones.
+	//
+	// Load all phones
 	AllPhones *bool
 
-	/* ContactFid.
-
-	   Contact FID to use
-	*/
+	// ContactFid.
+	//
+	// Contact FID to use
 	ContactFid string
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	HTTPClient *http.Client

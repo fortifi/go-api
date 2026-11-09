@@ -87,7 +87,7 @@ func (m *RetentionFlowOptionsPayload) contextValidateOptions(ctx context.Context
 		if m.Options[i] != nil {
 
 			if typeutils.IsZero(m.Options[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Options[i].ContextValidate(ctx, formats); err != nil {

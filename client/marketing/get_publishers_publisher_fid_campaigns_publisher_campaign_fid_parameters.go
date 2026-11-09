@@ -62,16 +62,14 @@ GetPublishersPublisherFidCampaignsPublisherCampaignFidParams contains all the pa
 */
 type GetPublishersPublisherFidCampaignsPublisherCampaignFidParams struct {
 
-	/* PublisherCampaignFid.
-
-	   Publisher Campaign FID to use
-	*/
+	// PublisherCampaignFid.
+	//
+	// Publisher Campaign FID to use
 	PublisherCampaignFid string
 
-	/* PublisherFid.
-
-	   Publisher FID to use
-	*/
+	// PublisherFid.
+	//
+	// Publisher FID to use
 	PublisherFid string
 
 	HTTPClient *http.Client

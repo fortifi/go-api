@@ -46,12 +46,12 @@ type SentEmail struct {
 }
 
 // Validate validates this sent email
-func (m *SentEmail) Validate(formats strfmt.Registry) error {
+func (m *SentEmail) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this sent email based on context it is used
-func (m *SentEmail) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *SentEmail) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

@@ -48,11 +48,9 @@ func NewPostFlowsOK() *PostFlowsOK {
 	return &PostFlowsOK{}
 }
 
-/*
-PostFlowsOK describes a response with status code 200, with default header values.
-
-Flow created successfully
-*/
+// PostFlowsOK describes a response with status code 200, with default header values.
+//
+// Flow created successfully
 type PostFlowsOK struct {
 	Payload *PostFlowsOKBody
 }
@@ -120,11 +118,9 @@ func NewPostFlowsDefault(code int) *PostFlowsDefault {
 	}
 }
 
-/*
-PostFlowsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostFlowsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostFlowsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostFlowsDefault) readResponse(response runtime.ClientResponse, consume
 	return nil
 }
 
-/*
-PostFlowsOKBody post flows o k body
-swagger:model PostFlowsOKBody
-*/
+// PostFlowsOKBody post flows o k body
+//
+// swagger:model PostFlowsOKBody
 type PostFlowsOKBody struct {
 	models.Envelope
 

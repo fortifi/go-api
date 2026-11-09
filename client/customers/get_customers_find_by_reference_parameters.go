@@ -63,10 +63,9 @@ GetCustomersFindByReferenceParams contains all the parameters to send to the API
 */
 type GetCustomersFindByReferenceParams struct {
 
-	/* Reference.
-
-	   Your reference for the customer
-	*/
+	// Reference.
+	//
+	// Your reference for the customer
 	Reference *string
 
 	// RetrieveBillingData.

@@ -48,11 +48,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceOK(
 	return &PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceOK{}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceOK describes a response with status code 200, with default header values.
-
-Subscription price updated
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceOK describes a response with status code 200, with default header values.
+//
+// Subscription price updated
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceOK struct {
 	Payload *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceOKBody
 }
@@ -120,11 +118,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceDef
 	}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceDe
 	return nil
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceOKBody put customers customer fid subscriptions subscription fid update renewal price o k body
-swagger:model PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceOKBody
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceOKBody put customers customer fid subscriptions subscription fid update renewal price o k body
+//
+// swagger:model PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceOKBody
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceOKBody struct {
 	models.Envelope
 

@@ -61,7 +61,7 @@ func (m *ActionableRetentionFlowPayload) validateTime(formats strfmt.Registry) e
 }
 
 // ContextValidate validates this actionable retention flow payload based on context it is used
-func (m *ActionableRetentionFlowPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *ActionableRetentionFlowPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

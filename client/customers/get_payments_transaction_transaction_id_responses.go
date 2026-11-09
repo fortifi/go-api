@@ -48,11 +48,9 @@ func NewGetPaymentsTransactionTransactionIDOK() *GetPaymentsTransactionTransacti
 	return &GetPaymentsTransactionTransactionIDOK{}
 }
 
-/*
-GetPaymentsTransactionTransactionIDOK describes a response with status code 200, with default header values.
-
-Loaded Payment
-*/
+// GetPaymentsTransactionTransactionIDOK describes a response with status code 200, with default header values.
+//
+// Loaded Payment
 type GetPaymentsTransactionTransactionIDOK struct {
 	Payload *GetPaymentsTransactionTransactionIDOKBody
 }
@@ -120,11 +118,9 @@ func NewGetPaymentsTransactionTransactionIDDefault(code int) *GetPaymentsTransac
 	}
 }
 
-/*
-GetPaymentsTransactionTransactionIDDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetPaymentsTransactionTransactionIDDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetPaymentsTransactionTransactionIDDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetPaymentsTransactionTransactionIDDefault) readResponse(response runti
 	return nil
 }
 
-/*
-GetPaymentsTransactionTransactionIDOKBody get payments transaction transaction ID o k body
-swagger:model GetPaymentsTransactionTransactionIDOKBody
-*/
+// GetPaymentsTransactionTransactionIDOKBody get payments transaction transaction ID o k body
+//
+// swagger:model GetPaymentsTransactionTransactionIDOKBody
 type GetPaymentsTransactionTransactionIDOKBody struct {
 	models.Envelope
 

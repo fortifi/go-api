@@ -37,12 +37,12 @@ type CreatePendingPaymentMethodPayload struct {
 }
 
 // Validate validates this create pending payment method payload
-func (m *CreatePendingPaymentMethodPayload) Validate(formats strfmt.Registry) error {
+func (m *CreatePendingPaymentMethodPayload) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this create pending payment method payload based on context it is used
-func (m *CreatePendingPaymentMethodPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *CreatePendingPaymentMethodPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

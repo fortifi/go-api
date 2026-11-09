@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for accountant API.
-*/
+// Client for accountant API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -72,21 +70,18 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-	PostAccountantTransactionSearchfinds an account transaction.
-
-	Find an Account Transaction based on purchase information
-
-.
-
-	This method does not support injected context.
-	However, timeout and opentracing contexts are honored whenever enabled.
-
-	If you need to pass a specific context, use [Client.PostAccountantTransactionSearchContext] instead.
-*/
+// PostAccountantTransactionSearch finds an account transaction.
+//
+// Find an Account Transaction based on purchase information
+// .
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostAccountantTransactionSearchContext] instead.
 func (a *Client) PostAccountantTransactionSearch(params *PostAccountantTransactionSearchParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostAccountantTransactionSearchOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -95,15 +90,12 @@ func (a *Client) PostAccountantTransactionSearch(params *PostAccountantTransacti
 	return a.PostAccountantTransactionSearchContext(ctx, params, authInfo, opts...)
 }
 
-/*
-	PostAccountantTransactionSearchContextfinds an account transaction.
-
-	Find an Account Transaction based on purchase information
-
-.
-
-	Do not use the deprecated [PostAccountantTransactionSearchParams.Context] with this method: it would be ignored.
-*/
+// PostAccountantTransactionSearchContext finds an account transaction.
+//
+// Find an Account Transaction based on purchase information
+// .
+//
+// Do not use the deprecated [PostAccountantTransactionSearchParams.Context] with this method: it would be ignored.
 func (a *Client) PostAccountantTransactionSearchContext(ctx context.Context, params *PostAccountantTransactionSearchParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostAccountantTransactionSearchOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -146,21 +138,18 @@ func (a *Client) PostAccountantTransactionSearchContext(ctx context.Context, par
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-	PostAccountantTransactionsSearchfinds multiple account transaction.
-
-	Find multiple Account Transaction based on purchase information
-
-.
-
-	This method does not support injected context.
-	However, timeout and opentracing contexts are honored whenever enabled.
-
-	If you need to pass a specific context, use [Client.PostAccountantTransactionsSearchContext] instead.
-*/
+// PostAccountantTransactionsSearch finds multiple account transaction.
+//
+// Find multiple Account Transaction based on purchase information
+// .
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostAccountantTransactionsSearchContext] instead.
 func (a *Client) PostAccountantTransactionsSearch(params *PostAccountantTransactionsSearchParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostAccountantTransactionsSearchOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -169,15 +158,12 @@ func (a *Client) PostAccountantTransactionsSearch(params *PostAccountantTransact
 	return a.PostAccountantTransactionsSearchContext(ctx, params, authInfo, opts...)
 }
 
-/*
-	PostAccountantTransactionsSearchContextfinds multiple account transaction.
-
-	Find multiple Account Transaction based on purchase information
-
-.
-
-	Do not use the deprecated [PostAccountantTransactionsSearchParams.Context] with this method: it would be ignored.
-*/
+// PostAccountantTransactionsSearchContext finds multiple account transaction.
+//
+// Find multiple Account Transaction based on purchase information
+// .
+//
+// Do not use the deprecated [PostAccountantTransactionsSearchParams.Context] with this method: it would be ignored.
 func (a *Client) PostAccountantTransactionsSearchContext(ctx context.Context, params *PostAccountantTransactionsSearchParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostAccountantTransactionsSearchOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

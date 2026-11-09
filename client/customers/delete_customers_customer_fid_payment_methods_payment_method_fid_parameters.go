@@ -62,16 +62,14 @@ DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidParams contains all the 
 */
 type DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* PaymentMethodFid.
-
-	   Payment Method FID to use
-	*/
+	// PaymentMethodFid.
+	//
+	// Payment Method FID to use
 	PaymentMethodFid string
 
 	HTTPClient *http.Client

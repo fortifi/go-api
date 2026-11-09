@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for properties API.
-*/
+// Client for properties API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -90,17 +88,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-GetPropertiesgets defined properties.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetPropertiesContext] instead.
-*/
+// GetProperties gets defined properties.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetPropertiesContext] instead.
 func (a *Client) GetProperties(params *GetPropertiesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPropertiesOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -109,11 +105,9 @@ func (a *Client) GetProperties(params *GetPropertiesParams, authInfo runtime.Cli
 	return a.GetPropertiesContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetPropertiesContextgets defined properties.
-
-Do not use the deprecated [GetPropertiesParams.Context] with this method: it would be ignored.
-*/
+// GetPropertiesContext gets defined properties.
+//
+// Do not use the deprecated [GetPropertiesParams.Context] with this method: it would be ignored.
 func (a *Client) GetPropertiesContext(ctx context.Context, params *GetPropertiesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPropertiesOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

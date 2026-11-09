@@ -48,11 +48,9 @@ func NewPostProductsProductFidAvailabilityReserveOK() *PostProductsProductFidAva
 	return &PostProductsProductFidAvailabilityReserveOK{}
 }
 
-/*
-PostProductsProductFidAvailabilityReserveOK describes a response with status code 200, with default header values.
-
-Result of reservation
-*/
+// PostProductsProductFidAvailabilityReserveOK describes a response with status code 200, with default header values.
+//
+// Result of reservation
 type PostProductsProductFidAvailabilityReserveOK struct {
 	Payload *PostProductsProductFidAvailabilityReserveOKBody
 }
@@ -120,11 +118,9 @@ func NewPostProductsProductFidAvailabilityReserveDefault(code int) *PostProducts
 	}
 }
 
-/*
-PostProductsProductFidAvailabilityReserveDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostProductsProductFidAvailabilityReserveDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostProductsProductFidAvailabilityReserveDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostProductsProductFidAvailabilityReserveDefault) readResponse(response
 	return nil
 }
 
-/*
-PostProductsProductFidAvailabilityReserveOKBody post products product fid availability reserve o k body
-swagger:model PostProductsProductFidAvailabilityReserveOKBody
-*/
+// PostProductsProductFidAvailabilityReserveOKBody post products product fid availability reserve o k body
+//
+// swagger:model PostProductsProductFidAvailabilityReserveOKBody
 type PostProductsProductFidAvailabilityReserveOKBody struct {
 	models.Envelope
 

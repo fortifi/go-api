@@ -95,7 +95,7 @@ func (m *AdvertiserPixel) validateMethod(formats strfmt.Registry) error {
 }
 
 // ContextValidate validates this advertiser pixel based on context it is used
-func (m *AdvertiserPixel) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *AdvertiserPixel) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

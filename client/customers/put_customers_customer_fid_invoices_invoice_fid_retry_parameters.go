@@ -62,16 +62,14 @@ PutCustomersCustomerFidInvoicesInvoiceFidRetryParams contains all the parameters
 */
 type PutCustomersCustomerFidInvoicesInvoiceFidRetryParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* InvoiceFid.
-
-	   Invoice Fid to use
-	*/
+	// InvoiceFid.
+	//
+	// Invoice Fid to use
 	InvoiceFid string
 
 	HTTPClient *http.Client

@@ -44,11 +44,9 @@ func NewPutCustomersCustomerFidLifecycleStageOK() *PutCustomersCustomerFidLifecy
 	return &PutCustomersCustomerFidLifecycleStageOK{}
 }
 
-/*
-PutCustomersCustomerFidLifecycleStageOK describes a response with status code 200, with default header values.
-
-Customer lifecycle updated
-*/
+// PutCustomersCustomerFidLifecycleStageOK describes a response with status code 200, with default header values.
+//
+// Customer lifecycle updated
 type PutCustomersCustomerFidLifecycleStageOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutCustomersCustomerFidLifecycleStageDefault(code int) *PutCustomersCust
 	}
 }
 
-/*
-PutCustomersCustomerFidLifecycleStageDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutCustomersCustomerFidLifecycleStageDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutCustomersCustomerFidLifecycleStageDefault struct {
 	_statusCode int
 

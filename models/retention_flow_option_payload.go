@@ -22,12 +22,12 @@ type RetentionFlowOptionPayload struct {
 }
 
 // Validate validates this retention flow option payload
-func (m *RetentionFlowOptionPayload) Validate(formats strfmt.Registry) error {
+func (m *RetentionFlowOptionPayload) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this retention flow option payload based on context it is used
-func (m *RetentionFlowOptionPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *RetentionFlowOptionPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

@@ -62,10 +62,9 @@ PutContactsEmailsEmailAddressConfirmParams contains all the parameters to send t
 */
 type PutContactsEmailsEmailAddressConfirmParams struct {
 
-	/* EmailAddress.
-
-	   Email Address
-	*/
+	// EmailAddress.
+	//
+	// Email Address
 	EmailAddress string
 
 	HTTPClient *http.Client

@@ -22,12 +22,12 @@ type PropertyFlag struct {
 }
 
 // Validate validates this property flag
-func (m *PropertyFlag) Validate(formats strfmt.Registry) error {
+func (m *PropertyFlag) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this property flag based on context it is used
-func (m *PropertyFlag) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *PropertyFlag) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

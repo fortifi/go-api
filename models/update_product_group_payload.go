@@ -52,7 +52,7 @@ func (m *UpdateProductGroupPayload) validateDisplayName(formats strfmt.Registry)
 }
 
 // ContextValidate validates this update product group payload based on context it is used
-func (m *UpdateProductGroupPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *UpdateProductGroupPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

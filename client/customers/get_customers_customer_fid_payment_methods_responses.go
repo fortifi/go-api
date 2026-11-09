@@ -48,11 +48,9 @@ func NewGetCustomersCustomerFidPaymentMethodsOK() *GetCustomersCustomerFidPaymen
 	return &GetCustomersCustomerFidPaymentMethodsOK{}
 }
 
-/*
-GetCustomersCustomerFidPaymentMethodsOK describes a response with status code 200, with default header values.
-
-List of payment methods
-*/
+// GetCustomersCustomerFidPaymentMethodsOK describes a response with status code 200, with default header values.
+//
+// List of payment methods
 type GetCustomersCustomerFidPaymentMethodsOK struct {
 	Payload *GetCustomersCustomerFidPaymentMethodsOKBody
 }
@@ -120,11 +118,9 @@ func NewGetCustomersCustomerFidPaymentMethodsDefault(code int) *GetCustomersCust
 	}
 }
 
-/*
-GetCustomersCustomerFidPaymentMethodsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetCustomersCustomerFidPaymentMethodsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetCustomersCustomerFidPaymentMethodsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetCustomersCustomerFidPaymentMethodsDefault) readResponse(response run
 	return nil
 }
 
-/*
-GetCustomersCustomerFidPaymentMethodsOKBody get customers customer fid payment methods o k body
-swagger:model GetCustomersCustomerFidPaymentMethodsOKBody
-*/
+// GetCustomersCustomerFidPaymentMethodsOKBody get customers customer fid payment methods o k body
+//
+// swagger:model GetCustomersCustomerFidPaymentMethodsOKBody
 type GetCustomersCustomerFidPaymentMethodsOKBody struct {
 	models.Envelope
 

@@ -22,12 +22,12 @@ type KeyValuePayload struct {
 }
 
 // Validate validates this key value payload
-func (m *KeyValuePayload) Validate(formats strfmt.Registry) error {
+func (m *KeyValuePayload) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this key value payload based on context it is used
-func (m *KeyValuePayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *KeyValuePayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

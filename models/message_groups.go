@@ -87,7 +87,7 @@ func (m *MessageGroups) contextValidateGroups(ctx context.Context, formats strfm
 		if m.Groups[i] != nil {
 
 			if typeutils.IsZero(m.Groups[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Groups[i].ContextValidate(ctx, formats); err != nil {

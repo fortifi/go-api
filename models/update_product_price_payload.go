@@ -101,7 +101,7 @@ func (m *UpdateProductPricePayload) validateSuspendStyle(formats strfmt.Registry
 }
 
 // ContextValidate validates this update product price payload based on context it is used
-func (m *UpdateProductPricePayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *UpdateProductPricePayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

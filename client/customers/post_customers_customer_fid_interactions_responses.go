@@ -48,11 +48,9 @@ func NewPostCustomersCustomerFidInteractionsOK() *PostCustomersCustomerFidIntera
 	return &PostCustomersCustomerFidInteractionsOK{}
 }
 
-/*
-PostCustomersCustomerFidInteractionsOK describes a response with status code 200, with default header values.
-
-Create Interaction Response
-*/
+// PostCustomersCustomerFidInteractionsOK describes a response with status code 200, with default header values.
+//
+// Create Interaction Response
 type PostCustomersCustomerFidInteractionsOK struct {
 	Payload *PostCustomersCustomerFidInteractionsOKBody
 }
@@ -120,11 +118,9 @@ func NewPostCustomersCustomerFidInteractionsDefault(code int) *PostCustomersCust
 	}
 }
 
-/*
-PostCustomersCustomerFidInteractionsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostCustomersCustomerFidInteractionsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostCustomersCustomerFidInteractionsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostCustomersCustomerFidInteractionsDefault) readResponse(response runt
 	return nil
 }
 
-/*
-PostCustomersCustomerFidInteractionsOKBody post customers customer fid interactions o k body
-swagger:model PostCustomersCustomerFidInteractionsOKBody
-*/
+// PostCustomersCustomerFidInteractionsOKBody post customers customer fid interactions o k body
+//
+// swagger:model PostCustomersCustomerFidInteractionsOKBody
 type PostCustomersCustomerFidInteractionsOKBody struct {
 	models.Envelope
 

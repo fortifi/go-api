@@ -44,11 +44,9 @@ func NewPutEntitiesEntityFidLabelsAssignOK() *PutEntitiesEntityFidLabelsAssignOK
 	return &PutEntitiesEntityFidLabelsAssignOK{}
 }
 
-/*
-PutEntitiesEntityFidLabelsAssignOK describes a response with status code 200, with default header values.
-
-Properties Saved
-*/
+// PutEntitiesEntityFidLabelsAssignOK describes a response with status code 200, with default header values.
+//
+// Properties Saved
 type PutEntitiesEntityFidLabelsAssignOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutEntitiesEntityFidLabelsAssignDefault(code int) *PutEntitiesEntityFidL
 	}
 }
 
-/*
-PutEntitiesEntityFidLabelsAssignDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutEntitiesEntityFidLabelsAssignDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutEntitiesEntityFidLabelsAssignDefault struct {
 	_statusCode int
 

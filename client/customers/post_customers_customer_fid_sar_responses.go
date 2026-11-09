@@ -48,11 +48,9 @@ func NewPostCustomersCustomerFidSarOK() *PostCustomersCustomerFidSarOK {
 	return &PostCustomersCustomerFidSarOK{}
 }
 
-/*
-PostCustomersCustomerFidSarOK describes a response with status code 200, with default header values.
-
-Subject Access Request
-*/
+// PostCustomersCustomerFidSarOK describes a response with status code 200, with default header values.
+//
+// Subject Access Request
 type PostCustomersCustomerFidSarOK struct {
 	Payload *PostCustomersCustomerFidSarOKBody
 }
@@ -120,11 +118,9 @@ func NewPostCustomersCustomerFidSarDefault(code int) *PostCustomersCustomerFidSa
 	}
 }
 
-/*
-PostCustomersCustomerFidSarDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostCustomersCustomerFidSarDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostCustomersCustomerFidSarDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostCustomersCustomerFidSarDefault) readResponse(response runtime.Clien
 	return nil
 }
 
-/*
-PostCustomersCustomerFidSarOKBody post customers customer fid sar o k body
-swagger:model PostCustomersCustomerFidSarOKBody
-*/
+// PostCustomersCustomerFidSarOKBody post customers customer fid sar o k body
+//
+// swagger:model PostCustomersCustomerFidSarOKBody
 type PostCustomersCustomerFidSarOKBody struct {
 	models.Envelope
 

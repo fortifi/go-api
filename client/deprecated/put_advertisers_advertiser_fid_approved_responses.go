@@ -44,11 +44,9 @@ func NewPutAdvertisersAdvertiserFidApprovedOK() *PutAdvertisersAdvertiserFidAppr
 	return &PutAdvertisersAdvertiserFidApprovedOK{}
 }
 
-/*
-PutAdvertisersAdvertiserFidApprovedOK describes a response with status code 200, with default header values.
-
-Approved Advertiser
-*/
+// PutAdvertisersAdvertiserFidApprovedOK describes a response with status code 200, with default header values.
+//
+// Approved Advertiser
 type PutAdvertisersAdvertiserFidApprovedOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutAdvertisersAdvertiserFidApprovedDefault(code int) *PutAdvertisersAdve
 	}
 }
 
-/*
-PutAdvertisersAdvertiserFidApprovedDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutAdvertisersAdvertiserFidApprovedDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutAdvertisersAdvertiserFidApprovedDefault struct {
 	_statusCode int
 

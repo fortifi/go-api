@@ -70,12 +70,12 @@ type CreateCustomerContactPayload struct {
 }
 
 // Validate validates this create customer contact payload
-func (m *CreateCustomerContactPayload) Validate(formats strfmt.Registry) error {
+func (m *CreateCustomerContactPayload) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this create customer contact payload based on context it is used
-func (m *CreateCustomerContactPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *CreateCustomerContactPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

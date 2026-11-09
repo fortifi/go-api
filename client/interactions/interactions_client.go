@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for interactions API.
-*/
+// Client for interactions API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -138,17 +136,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-GetInteractionsInteractionFidgets an interaction.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetInteractionsInteractionFidContext] instead.
-*/
+// GetInteractionsInteractionFid gets an interaction.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetInteractionsInteractionFidContext] instead.
 func (a *Client) GetInteractionsInteractionFid(params *GetInteractionsInteractionFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetInteractionsInteractionFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -157,11 +153,9 @@ func (a *Client) GetInteractionsInteractionFid(params *GetInteractionsInteractio
 	return a.GetInteractionsInteractionFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetInteractionsInteractionFidContextgets an interaction.
-
-Do not use the deprecated [GetInteractionsInteractionFidParams.Context] with this method: it would be ignored.
-*/
+// GetInteractionsInteractionFidContext gets an interaction.
+//
+// Do not use the deprecated [GetInteractionsInteractionFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetInteractionsInteractionFidContext(ctx context.Context, params *GetInteractionsInteractionFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetInteractionsInteractionFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -204,17 +198,15 @@ func (a *Client) GetInteractionsInteractionFidContext(ctx context.Context, param
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetInteractionsInteractionFidMessagesgets all messages on an interaction.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetInteractionsInteractionFidMessagesContext] instead.
-*/
+// GetInteractionsInteractionFidMessages gets all messages on an interaction.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetInteractionsInteractionFidMessagesContext] instead.
 func (a *Client) GetInteractionsInteractionFidMessages(params *GetInteractionsInteractionFidMessagesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetInteractionsInteractionFidMessagesOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -223,11 +215,9 @@ func (a *Client) GetInteractionsInteractionFidMessages(params *GetInteractionsIn
 	return a.GetInteractionsInteractionFidMessagesContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetInteractionsInteractionFidMessagesContextgets all messages on an interaction.
-
-Do not use the deprecated [GetInteractionsInteractionFidMessagesParams.Context] with this method: it would be ignored.
-*/
+// GetInteractionsInteractionFidMessagesContext gets all messages on an interaction.
+//
+// Do not use the deprecated [GetInteractionsInteractionFidMessagesParams.Context] with this method: it would be ignored.
 func (a *Client) GetInteractionsInteractionFidMessagesContext(ctx context.Context, params *GetInteractionsInteractionFidMessagesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetInteractionsInteractionFidMessagesOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -270,17 +260,15 @@ func (a *Client) GetInteractionsInteractionFidMessagesContext(ctx context.Contex
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetInteractionsInviteInviteCodeStatusgets an interaction invite status.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetInteractionsInviteInviteCodeStatusContext] instead.
-*/
+// GetInteractionsInviteInviteCodeStatus gets an interaction invite status.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetInteractionsInviteInviteCodeStatusContext] instead.
 func (a *Client) GetInteractionsInviteInviteCodeStatus(params *GetInteractionsInviteInviteCodeStatusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetInteractionsInviteInviteCodeStatusOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -289,11 +277,9 @@ func (a *Client) GetInteractionsInviteInviteCodeStatus(params *GetInteractionsIn
 	return a.GetInteractionsInviteInviteCodeStatusContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetInteractionsInviteInviteCodeStatusContextgets an interaction invite status.
-
-Do not use the deprecated [GetInteractionsInviteInviteCodeStatusParams.Context] with this method: it would be ignored.
-*/
+// GetInteractionsInviteInviteCodeStatusContext gets an interaction invite status.
+//
+// Do not use the deprecated [GetInteractionsInviteInviteCodeStatusParams.Context] with this method: it would be ignored.
 func (a *Client) GetInteractionsInviteInviteCodeStatusContext(ctx context.Context, params *GetInteractionsInviteInviteCodeStatusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetInteractionsInviteInviteCodeStatusOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -336,17 +322,15 @@ func (a *Client) GetInteractionsInviteInviteCodeStatusContext(ctx context.Contex
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostInteractionsInteractionFidAttachmentcreates an interaction attachment.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostInteractionsInteractionFidAttachmentContext] instead.
-*/
+// PostInteractionsInteractionFidAttachment creates an interaction attachment.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostInteractionsInteractionFidAttachmentContext] instead.
 func (a *Client) PostInteractionsInteractionFidAttachment(params *PostInteractionsInteractionFidAttachmentParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidAttachmentOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -355,11 +339,9 @@ func (a *Client) PostInteractionsInteractionFidAttachment(params *PostInteractio
 	return a.PostInteractionsInteractionFidAttachmentContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostInteractionsInteractionFidAttachmentContextcreates an interaction attachment.
-
-Do not use the deprecated [PostInteractionsInteractionFidAttachmentParams.Context] with this method: it would be ignored.
-*/
+// PostInteractionsInteractionFidAttachmentContext creates an interaction attachment.
+//
+// Do not use the deprecated [PostInteractionsInteractionFidAttachmentParams.Context] with this method: it would be ignored.
 func (a *Client) PostInteractionsInteractionFidAttachmentContext(ctx context.Context, params *PostInteractionsInteractionFidAttachmentParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidAttachmentOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -402,17 +384,15 @@ func (a *Client) PostInteractionsInteractionFidAttachmentContext(ctx context.Con
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostInteractionsInteractionFidClientConnectedas client has connected to the interaction.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostInteractionsInteractionFidClientConnectedContext] instead.
-*/
+// PostInteractionsInteractionFidClientConnected as client has connected to the interaction.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostInteractionsInteractionFidClientConnectedContext] instead.
 func (a *Client) PostInteractionsInteractionFidClientConnected(params *PostInteractionsInteractionFidClientConnectedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidClientConnectedOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -421,11 +401,9 @@ func (a *Client) PostInteractionsInteractionFidClientConnected(params *PostInter
 	return a.PostInteractionsInteractionFidClientConnectedContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostInteractionsInteractionFidClientConnectedContextas client has connected to the interaction.
-
-Do not use the deprecated [PostInteractionsInteractionFidClientConnectedParams.Context] with this method: it would be ignored.
-*/
+// PostInteractionsInteractionFidClientConnectedContext as client has connected to the interaction.
+//
+// Do not use the deprecated [PostInteractionsInteractionFidClientConnectedParams.Context] with this method: it would be ignored.
 func (a *Client) PostInteractionsInteractionFidClientConnectedContext(ctx context.Context, params *PostInteractionsInteractionFidClientConnectedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidClientConnectedOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -468,17 +446,15 @@ func (a *Client) PostInteractionsInteractionFidClientConnectedContext(ctx contex
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostInteractionsInteractionFidClientDisconnectedas client has disconnected from the interaction.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostInteractionsInteractionFidClientDisconnectedContext] instead.
-*/
+// PostInteractionsInteractionFidClientDisconnected as client has disconnected from the interaction.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostInteractionsInteractionFidClientDisconnectedContext] instead.
 func (a *Client) PostInteractionsInteractionFidClientDisconnected(params *PostInteractionsInteractionFidClientDisconnectedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidClientDisconnectedOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -487,11 +463,9 @@ func (a *Client) PostInteractionsInteractionFidClientDisconnected(params *PostIn
 	return a.PostInteractionsInteractionFidClientDisconnectedContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostInteractionsInteractionFidClientDisconnectedContextas client has disconnected from the interaction.
-
-Do not use the deprecated [PostInteractionsInteractionFidClientDisconnectedParams.Context] with this method: it would be ignored.
-*/
+// PostInteractionsInteractionFidClientDisconnectedContext as client has disconnected from the interaction.
+//
+// Do not use the deprecated [PostInteractionsInteractionFidClientDisconnectedParams.Context] with this method: it would be ignored.
 func (a *Client) PostInteractionsInteractionFidClientDisconnectedContext(ctx context.Context, params *PostInteractionsInteractionFidClientDisconnectedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidClientDisconnectedOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -534,17 +508,15 @@ func (a *Client) PostInteractionsInteractionFidClientDisconnectedContext(ctx con
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostInteractionsInteractionFidCustomerClosedthes customer has purposely closed the interaction.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostInteractionsInteractionFidCustomerClosedContext] instead.
-*/
+// PostInteractionsInteractionFidCustomerClosed thes customer has purposely closed the interaction.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostInteractionsInteractionFidCustomerClosedContext] instead.
 func (a *Client) PostInteractionsInteractionFidCustomerClosed(params *PostInteractionsInteractionFidCustomerClosedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidCustomerClosedOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -553,11 +525,9 @@ func (a *Client) PostInteractionsInteractionFidCustomerClosed(params *PostIntera
 	return a.PostInteractionsInteractionFidCustomerClosedContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostInteractionsInteractionFidCustomerClosedContextthes customer has purposely closed the interaction.
-
-Do not use the deprecated [PostInteractionsInteractionFidCustomerClosedParams.Context] with this method: it would be ignored.
-*/
+// PostInteractionsInteractionFidCustomerClosedContext thes customer has purposely closed the interaction.
+//
+// Do not use the deprecated [PostInteractionsInteractionFidCustomerClosedParams.Context] with this method: it would be ignored.
 func (a *Client) PostInteractionsInteractionFidCustomerClosedContext(ctx context.Context, params *PostInteractionsInteractionFidCustomerClosedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidCustomerClosedOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -600,17 +570,15 @@ func (a *Client) PostInteractionsInteractionFidCustomerClosedContext(ctx context
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostInteractionsInteractionFidFeedbacksubmits feedback to an interaction.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostInteractionsInteractionFidFeedbackContext] instead.
-*/
+// PostInteractionsInteractionFidFeedback submits feedback to an interaction.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostInteractionsInteractionFidFeedbackContext] instead.
 func (a *Client) PostInteractionsInteractionFidFeedback(params *PostInteractionsInteractionFidFeedbackParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidFeedbackOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -619,11 +587,9 @@ func (a *Client) PostInteractionsInteractionFidFeedback(params *PostInteractions
 	return a.PostInteractionsInteractionFidFeedbackContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostInteractionsInteractionFidFeedbackContextsubmits feedback to an interaction.
-
-Do not use the deprecated [PostInteractionsInteractionFidFeedbackParams.Context] with this method: it would be ignored.
-*/
+// PostInteractionsInteractionFidFeedbackContext submits feedback to an interaction.
+//
+// Do not use the deprecated [PostInteractionsInteractionFidFeedbackParams.Context] with this method: it would be ignored.
 func (a *Client) PostInteractionsInteractionFidFeedbackContext(ctx context.Context, params *PostInteractionsInteractionFidFeedbackParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidFeedbackOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -666,17 +632,15 @@ func (a *Client) PostInteractionsInteractionFidFeedbackContext(ctx context.Conte
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostInteractionsInteractionFidMessageadds a message to a interaction.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostInteractionsInteractionFidMessageContext] instead.
-*/
+// PostInteractionsInteractionFidMessage adds a message to a interaction.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostInteractionsInteractionFidMessageContext] instead.
 func (a *Client) PostInteractionsInteractionFidMessage(params *PostInteractionsInteractionFidMessageParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidMessageOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -685,11 +649,9 @@ func (a *Client) PostInteractionsInteractionFidMessage(params *PostInteractionsI
 	return a.PostInteractionsInteractionFidMessageContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostInteractionsInteractionFidMessageContextadds a message to a interaction.
-
-Do not use the deprecated [PostInteractionsInteractionFidMessageParams.Context] with this method: it would be ignored.
-*/
+// PostInteractionsInteractionFidMessageContext adds a message to a interaction.
+//
+// Do not use the deprecated [PostInteractionsInteractionFidMessageParams.Context] with this method: it would be ignored.
 func (a *Client) PostInteractionsInteractionFidMessageContext(ctx context.Context, params *PostInteractionsInteractionFidMessageParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidMessageOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -732,17 +694,15 @@ func (a *Client) PostInteractionsInteractionFidMessageContext(ctx context.Contex
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostInteractionsInteractionFidSendChatTranscriptsends a chat transcript to the customer email.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostInteractionsInteractionFidSendChatTranscriptContext] instead.
-*/
+// PostInteractionsInteractionFidSendChatTranscript sends a chat transcript to the customer email.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostInteractionsInteractionFidSendChatTranscriptContext] instead.
 func (a *Client) PostInteractionsInteractionFidSendChatTranscript(params *PostInteractionsInteractionFidSendChatTranscriptParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidSendChatTranscriptOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -751,11 +711,9 @@ func (a *Client) PostInteractionsInteractionFidSendChatTranscript(params *PostIn
 	return a.PostInteractionsInteractionFidSendChatTranscriptContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostInteractionsInteractionFidSendChatTranscriptContextsends a chat transcript to the customer email.
-
-Do not use the deprecated [PostInteractionsInteractionFidSendChatTranscriptParams.Context] with this method: it would be ignored.
-*/
+// PostInteractionsInteractionFidSendChatTranscriptContext sends a chat transcript to the customer email.
+//
+// Do not use the deprecated [PostInteractionsInteractionFidSendChatTranscriptParams.Context] with this method: it would be ignored.
 func (a *Client) PostInteractionsInteractionFidSendChatTranscriptContext(ctx context.Context, params *PostInteractionsInteractionFidSendChatTranscriptParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInteractionFidSendChatTranscriptOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -798,17 +756,15 @@ func (a *Client) PostInteractionsInteractionFidSendChatTranscriptContext(ctx con
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostInteractionsInvitecreates an interaction invite.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostInteractionsInviteContext] instead.
-*/
+// PostInteractionsInvite creates an interaction invite.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostInteractionsInviteContext] instead.
 func (a *Client) PostInteractionsInvite(params *PostInteractionsInviteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInviteOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -817,11 +773,9 @@ func (a *Client) PostInteractionsInvite(params *PostInteractionsInviteParams, au
 	return a.PostInteractionsInviteContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostInteractionsInviteContextcreates an interaction invite.
-
-Do not use the deprecated [PostInteractionsInviteParams.Context] with this method: it would be ignored.
-*/
+// PostInteractionsInviteContext creates an interaction invite.
+//
+// Do not use the deprecated [PostInteractionsInviteParams.Context] with this method: it would be ignored.
 func (a *Client) PostInteractionsInviteContext(ctx context.Context, params *PostInteractionsInviteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInviteOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -864,17 +818,15 @@ func (a *Client) PostInteractionsInviteContext(ctx context.Context, params *Post
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostInteractionsInviteInviteCodeaccepts an interaction invite.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostInteractionsInviteInviteCodeContext] instead.
-*/
+// PostInteractionsInviteInviteCode accepts an interaction invite.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostInteractionsInviteInviteCodeContext] instead.
 func (a *Client) PostInteractionsInviteInviteCode(params *PostInteractionsInviteInviteCodeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInviteInviteCodeOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -883,11 +835,9 @@ func (a *Client) PostInteractionsInviteInviteCode(params *PostInteractionsInvite
 	return a.PostInteractionsInviteInviteCodeContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostInteractionsInviteInviteCodeContextaccepts an interaction invite.
-
-Do not use the deprecated [PostInteractionsInviteInviteCodeParams.Context] with this method: it would be ignored.
-*/
+// PostInteractionsInviteInviteCodeContext accepts an interaction invite.
+//
+// Do not use the deprecated [PostInteractionsInviteInviteCodeParams.Context] with this method: it would be ignored.
 func (a *Client) PostInteractionsInviteInviteCodeContext(ctx context.Context, params *PostInteractionsInviteInviteCodeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsInviteInviteCodeOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -930,17 +880,15 @@ func (a *Client) PostInteractionsInviteInviteCodeContext(ctx context.Context, pa
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostInteractionsJourneycreates a customer journey.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostInteractionsJourneyContext] instead.
-*/
+// PostInteractionsJourney creates a customer journey.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostInteractionsJourneyContext] instead.
 func (a *Client) PostInteractionsJourney(params *PostInteractionsJourneyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsJourneyOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -949,11 +897,9 @@ func (a *Client) PostInteractionsJourney(params *PostInteractionsJourneyParams, 
 	return a.PostInteractionsJourneyContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostInteractionsJourneyContextcreates a customer journey.
-
-Do not use the deprecated [PostInteractionsJourneyParams.Context] with this method: it would be ignored.
-*/
+// PostInteractionsJourneyContext creates a customer journey.
+//
+// Do not use the deprecated [PostInteractionsJourneyParams.Context] with this method: it would be ignored.
 func (a *Client) PostInteractionsJourneyContext(ctx context.Context, params *PostInteractionsJourneyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostInteractionsJourneyOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

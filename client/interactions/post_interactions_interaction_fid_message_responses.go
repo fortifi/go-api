@@ -48,11 +48,9 @@ func NewPostInteractionsInteractionFidMessageOK() *PostInteractionsInteractionFi
 	return &PostInteractionsInteractionFidMessageOK{}
 }
 
-/*
-PostInteractionsInteractionFidMessageOK describes a response with status code 200, with default header values.
-
-Add Message Response
-*/
+// PostInteractionsInteractionFidMessageOK describes a response with status code 200, with default header values.
+//
+// Add Message Response
 type PostInteractionsInteractionFidMessageOK struct {
 	Payload *PostInteractionsInteractionFidMessageOKBody
 }
@@ -120,11 +118,9 @@ func NewPostInteractionsInteractionFidMessageDefault(code int) *PostInteractions
 	}
 }
 
-/*
-PostInteractionsInteractionFidMessageDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostInteractionsInteractionFidMessageDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostInteractionsInteractionFidMessageDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostInteractionsInteractionFidMessageDefault) readResponse(response run
 	return nil
 }
 
-/*
-PostInteractionsInteractionFidMessageOKBody post interactions interaction fid message o k body
-swagger:model PostInteractionsInteractionFidMessageOKBody
-*/
+// PostInteractionsInteractionFidMessageOKBody post interactions interaction fid message o k body
+//
+// swagger:model PostInteractionsInteractionFidMessageOKBody
 type PostInteractionsInteractionFidMessageOKBody struct {
 	models.Envelope
 

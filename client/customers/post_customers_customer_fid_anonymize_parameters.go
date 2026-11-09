@@ -72,10 +72,9 @@ type PostCustomersCustomerFidAnonymizeParams struct {
 	// Customer.
 	Customer *bool
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// Emails.

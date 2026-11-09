@@ -213,7 +213,7 @@ func (m *OrderProductsPayload) contextValidateModifySubscriptions(ctx context.Co
 		if m.ModifySubscriptions[i] != nil {
 
 			if typeutils.IsZero(m.ModifySubscriptions[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.ModifySubscriptions[i].ContextValidate(ctx, formats); err != nil {
@@ -242,7 +242,7 @@ func (m *OrderProductsPayload) contextValidateNamesProductPriceFids(ctx context.
 		if m.NamesProductPriceFids[i] != nil {
 
 			if typeutils.IsZero(m.NamesProductPriceFids[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.NamesProductPriceFids[i].ContextValidate(ctx, formats); err != nil {
@@ -271,7 +271,7 @@ func (m *OrderProductsPayload) contextValidateProducts(ctx context.Context, form
 		if m.Products[i] != nil {
 
 			if typeutils.IsZero(m.Products[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Products[i].ContextValidate(ctx, formats); err != nil {
@@ -300,7 +300,7 @@ func (m *OrderProductsPayload) contextValidateQuantityProductPriceFids(ctx conte
 		if m.QuantityProductPriceFids[i] != nil {
 
 			if typeutils.IsZero(m.QuantityProductPriceFids[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.QuantityProductPriceFids[i].ContextValidate(ctx, formats); err != nil {

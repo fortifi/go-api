@@ -48,11 +48,9 @@ func NewGetMeOK() *GetMeOK {
 	return &GetMeOK{}
 }
 
-/*
-GetMeOK describes a response with status code 200, with default header values.
-
-User Information
-*/
+// GetMeOK describes a response with status code 200, with default header values.
+//
+// User Information
 type GetMeOK struct {
 	Payload *GetMeOKBody
 }
@@ -120,11 +118,9 @@ func NewGetMeDefault(code int) *GetMeDefault {
 	}
 }
 
-/*
-GetMeDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetMeDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetMeDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetMeDefault) readResponse(response runtime.ClientResponse, consumer ru
 	return nil
 }
 
-/*
-GetMeOKBody get me o k body
-swagger:model GetMeOKBody
-*/
+// GetMeOKBody get me o k body
+//
+// swagger:model GetMeOKBody
 type GetMeOKBody struct {
 	models.Envelope
 

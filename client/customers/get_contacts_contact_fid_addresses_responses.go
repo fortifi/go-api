@@ -44,11 +44,9 @@ func NewGetContactsContactFidAddressesOK() *GetContactsContactFidAddressesOK {
 	return &GetContactsContactFidAddressesOK{}
 }
 
-/*
-GetContactsContactFidAddressesOK describes a response with status code 200, with default header values.
-
-List of addresses
-*/
+// GetContactsContactFidAddressesOK describes a response with status code 200, with default header values.
+//
+// List of addresses
 type GetContactsContactFidAddressesOK struct {
 	Payload *models.Addresses
 }
@@ -116,11 +114,9 @@ func NewGetContactsContactFidAddressesDefault(code int) *GetContactsContactFidAd
 	}
 }
 
-/*
-GetContactsContactFidAddressesDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetContactsContactFidAddressesDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetContactsContactFidAddressesDefault struct {
 	_statusCode int
 

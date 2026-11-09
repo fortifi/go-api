@@ -22,12 +22,12 @@ type PropertyValue struct {
 }
 
 // Validate validates this property value
-func (m *PropertyValue) Validate(formats strfmt.Registry) error {
+func (m *PropertyValue) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this property value based on context it is used
-func (m *PropertyValue) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *PropertyValue) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

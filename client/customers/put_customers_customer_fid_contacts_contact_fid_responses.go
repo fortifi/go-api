@@ -44,11 +44,9 @@ func NewPutCustomersCustomerFidContactsContactFidOK() *PutCustomersCustomerFidCo
 	return &PutCustomersCustomerFidContactsContactFidOK{}
 }
 
-/*
-PutCustomersCustomerFidContactsContactFidOK describes a response with status code 200, with default header values.
-
-Contact Updated
-*/
+// PutCustomersCustomerFidContactsContactFidOK describes a response with status code 200, with default header values.
+//
+// Contact Updated
 type PutCustomersCustomerFidContactsContactFidOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutCustomersCustomerFidContactsContactFidDefault(code int) *PutCustomers
 	}
 }
 
-/*
-PutCustomersCustomerFidContactsContactFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutCustomersCustomerFidContactsContactFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutCustomersCustomerFidContactsContactFidDefault struct {
 	_statusCode int
 

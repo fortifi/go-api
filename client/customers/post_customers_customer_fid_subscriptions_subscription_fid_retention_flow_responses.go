@@ -48,11 +48,9 @@ func NewPostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK() *P
 	return &PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK{}
 }
 
-/*
-PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK describes a response with status code 200, with default header values.
-
-Retention Flow State
-*/
+// PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK describes a response with status code 200, with default header values.
+//
+// Retention Flow State
 type PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK struct {
 	Payload *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOKBody
 }
@@ -120,11 +118,9 @@ func NewPostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowDefault
 	}
 }
 
-/*
-PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowDefaul
 	return nil
 }
 
-/*
-PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOKBody post customers customer fid subscriptions subscription fid retention flow o k body
-swagger:model PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOKBody
-*/
+// PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOKBody post customers customer fid subscriptions subscription fid retention flow o k body
+//
+// swagger:model PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOKBody
 type PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOKBody struct {
 	models.Envelope
 

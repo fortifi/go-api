@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for account API.
-*/
+// Client for account API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -66,17 +64,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-PostAccountVerificationmains entry for verification.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostAccountVerificationContext] instead.
-*/
+// PostAccountVerification mains entry for verification.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostAccountVerificationContext] instead.
 func (a *Client) PostAccountVerification(params *PostAccountVerificationParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostAccountVerificationOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -85,11 +81,9 @@ func (a *Client) PostAccountVerification(params *PostAccountVerificationParams, 
 	return a.PostAccountVerificationContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostAccountVerificationContextmains entry for verification.
-
-Do not use the deprecated [PostAccountVerificationParams.Context] with this method: it would be ignored.
-*/
+// PostAccountVerificationContext mains entry for verification.
+//
+// Do not use the deprecated [PostAccountVerificationParams.Context] with this method: it would be ignored.
 func (a *Client) PostAccountVerificationContext(ctx context.Context, params *PostAccountVerificationParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostAccountVerificationOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

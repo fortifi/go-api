@@ -34,12 +34,12 @@ type ContactStatusResponse struct {
 }
 
 // Validate validates this contact status response
-func (m *ContactStatusResponse) Validate(formats strfmt.Registry) error {
+func (m *ContactStatusResponse) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this contact status response based on context it is used
-func (m *ContactStatusResponse) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *ContactStatusResponse) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

@@ -44,11 +44,9 @@ func NewPutOrdersOrderFidProductsOrderProductFidQuantityOK() *PutOrdersOrderFidP
 	return &PutOrdersOrderFidProductsOrderProductFidQuantityOK{}
 }
 
-/*
-PutOrdersOrderFidProductsOrderProductFidQuantityOK describes a response with status code 200, with default header values.
-
-Quantity updated
-*/
+// PutOrdersOrderFidProductsOrderProductFidQuantityOK describes a response with status code 200, with default header values.
+//
+// Quantity updated
 type PutOrdersOrderFidProductsOrderProductFidQuantityOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutOrdersOrderFidProductsOrderProductFidQuantityDefault(code int) *PutOr
 	}
 }
 
-/*
-PutOrdersOrderFidProductsOrderProductFidQuantityDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutOrdersOrderFidProductsOrderProductFidQuantityDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutOrdersOrderFidProductsOrderProductFidQuantityDefault struct {
 	_statusCode int
 

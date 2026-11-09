@@ -62,10 +62,9 @@ DeleteCustomersCustomerFidLoyalParams contains all the parameters to send to the
 */
 type DeleteCustomersCustomerFidLoyalParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	HTTPClient *http.Client

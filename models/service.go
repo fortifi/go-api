@@ -64,12 +64,12 @@ type Service struct {
 }
 
 // Validate validates this service
-func (m *Service) Validate(formats strfmt.Registry) error {
+func (m *Service) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this service based on context it is used
-func (m *Service) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *Service) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

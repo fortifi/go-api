@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for polymers API.
-*/
+// Client for polymers API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -72,17 +70,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-GetPolymersParentFidPolymerFidreads a polymer.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetPolymersParentFidPolymerFidContext] instead.
-*/
+// GetPolymersParentFidPolymerFid reads a polymer.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetPolymersParentFidPolymerFidContext] instead.
 func (a *Client) GetPolymersParentFidPolymerFid(params *GetPolymersParentFidPolymerFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPolymersParentFidPolymerFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -91,11 +87,9 @@ func (a *Client) GetPolymersParentFidPolymerFid(params *GetPolymersParentFidPoly
 	return a.GetPolymersParentFidPolymerFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetPolymersParentFidPolymerFidContextreads a polymer.
-
-Do not use the deprecated [GetPolymersParentFidPolymerFidParams.Context] with this method: it would be ignored.
-*/
+// GetPolymersParentFidPolymerFidContext reads a polymer.
+//
+// Do not use the deprecated [GetPolymersParentFidPolymerFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetPolymersParentFidPolymerFidContext(ctx context.Context, params *GetPolymersParentFidPolymerFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPolymersParentFidPolymerFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -138,17 +132,15 @@ func (a *Client) GetPolymersParentFidPolymerFidContext(ctx context.Context, para
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostPolymersParentFidcreates a new polymer.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostPolymersParentFidContext] instead.
-*/
+// PostPolymersParentFid creates a new polymer.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostPolymersParentFidContext] instead.
 func (a *Client) PostPolymersParentFid(params *PostPolymersParentFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostPolymersParentFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -157,11 +149,9 @@ func (a *Client) PostPolymersParentFid(params *PostPolymersParentFidParams, auth
 	return a.PostPolymersParentFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostPolymersParentFidContextcreates a new polymer.
-
-Do not use the deprecated [PostPolymersParentFidParams.Context] with this method: it would be ignored.
-*/
+// PostPolymersParentFidContext creates a new polymer.
+//
+// Do not use the deprecated [PostPolymersParentFidParams.Context] with this method: it would be ignored.
 func (a *Client) PostPolymersParentFidContext(ctx context.Context, params *PostPolymersParentFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostPolymersParentFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

@@ -52,12 +52,12 @@ type OfferPriceResponse struct {
 }
 
 // Validate validates this offer price response
-func (m *OfferPriceResponse) Validate(formats strfmt.Registry) error {
+func (m *OfferPriceResponse) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this offer price response based on context it is used
-func (m *OfferPriceResponse) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *OfferPriceResponse) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

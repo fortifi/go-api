@@ -48,11 +48,9 @@ func NewPostUploadUploadURLOK() *PostUploadUploadURLOK {
 	return &PostUploadUploadURLOK{}
 }
 
-/*
-PostUploadUploadURLOK describes a response with status code 200, with default header values.
-
-Attachment upload URL
-*/
+// PostUploadUploadURLOK describes a response with status code 200, with default header values.
+//
+// Attachment upload URL
 type PostUploadUploadURLOK struct {
 	Payload *PostUploadUploadURLOKBody
 }
@@ -120,11 +118,9 @@ func NewPostUploadUploadURLDefault(code int) *PostUploadUploadURLDefault {
 	}
 }
 
-/*
-PostUploadUploadURLDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostUploadUploadURLDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostUploadUploadURLDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostUploadUploadURLDefault) readResponse(response runtime.ClientRespons
 	return nil
 }
 
-/*
-PostUploadUploadURLOKBody post upload upload URL o k body
-swagger:model PostUploadUploadURLOKBody
-*/
+// PostUploadUploadURLOKBody post upload upload URL o k body
+//
+// swagger:model PostUploadUploadURLOKBody
 type PostUploadUploadURLOKBody struct {
 	models.Envelope
 

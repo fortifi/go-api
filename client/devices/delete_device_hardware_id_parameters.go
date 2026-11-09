@@ -62,16 +62,14 @@ DeleteDeviceHardwareIDParams contains all the parameters to send to the API endp
 */
 type DeleteDeviceHardwareIDParams struct {
 
-	/* EntityFid.
-
-	   Entity FID assigned to the device (CST or CONT)
-	*/
+	// EntityFid.
+	//
+	// Entity FID assigned to the device (CST or CONT)
 	EntityFid *string
 
-	/* HardwareID.
-
-	   Hardware ID
-	*/
+	// HardwareID.
+	//
+	// Hardware ID
 	HardwareID string
 
 	HTTPClient *http.Client

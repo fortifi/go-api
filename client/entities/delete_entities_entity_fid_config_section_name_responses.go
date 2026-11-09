@@ -44,11 +44,9 @@ func NewDeleteEntitiesEntityFidConfigSectionNameOK() *DeleteEntitiesEntityFidCon
 	return &DeleteEntitiesEntityFidConfigSectionNameOK{}
 }
 
-/*
-DeleteEntitiesEntityFidConfigSectionNameOK describes a response with status code 200, with default header values.
-
-Config Item Deleted
-*/
+// DeleteEntitiesEntityFidConfigSectionNameOK describes a response with status code 200, with default header values.
+//
+// Config Item Deleted
 type DeleteEntitiesEntityFidConfigSectionNameOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewDeleteEntitiesEntityFidConfigSectionNameDefault(code int) *DeleteEntitie
 	}
 }
 
-/*
-DeleteEntitiesEntityFidConfigSectionNameDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// DeleteEntitiesEntityFidConfigSectionNameDefault describes a response with status code -1, with default header values.
+//
+// Error
 type DeleteEntitiesEntityFidConfigSectionNameDefault struct {
 	_statusCode int
 

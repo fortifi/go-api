@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for devices API.
-*/
+// Client for devices API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -84,17 +82,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-DeleteDeviceHardwareIDremoves a device.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.DeleteDeviceHardwareIDContext] instead.
-*/
+// DeleteDeviceHardwareID removes a device.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.DeleteDeviceHardwareIDContext] instead.
 func (a *Client) DeleteDeviceHardwareID(params *DeleteDeviceHardwareIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteDeviceHardwareIDOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -103,11 +99,9 @@ func (a *Client) DeleteDeviceHardwareID(params *DeleteDeviceHardwareIDParams, au
 	return a.DeleteDeviceHardwareIDContext(ctx, params, authInfo, opts...)
 }
 
-/*
-DeleteDeviceHardwareIDContextremoves a device.
-
-Do not use the deprecated [DeleteDeviceHardwareIDParams.Context] with this method: it would be ignored.
-*/
+// DeleteDeviceHardwareIDContext removes a device.
+//
+// Do not use the deprecated [DeleteDeviceHardwareIDParams.Context] with this method: it would be ignored.
 func (a *Client) DeleteDeviceHardwareIDContext(ctx context.Context, params *DeleteDeviceHardwareIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteDeviceHardwareIDOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -150,17 +144,15 @@ func (a *Client) DeleteDeviceHardwareIDContext(ctx context.Context, params *Dele
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetDeviceDevicesHardwareIDgets devices by hardware ID.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetDeviceDevicesHardwareIDContext] instead.
-*/
+// GetDeviceDevicesHardwareID gets devices by hardware ID.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetDeviceDevicesHardwareIDContext] instead.
 func (a *Client) GetDeviceDevicesHardwareID(params *GetDeviceDevicesHardwareIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetDeviceDevicesHardwareIDOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -169,11 +161,9 @@ func (a *Client) GetDeviceDevicesHardwareID(params *GetDeviceDevicesHardwareIDPa
 	return a.GetDeviceDevicesHardwareIDContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetDeviceDevicesHardwareIDContextgets devices by hardware ID.
-
-Do not use the deprecated [GetDeviceDevicesHardwareIDParams.Context] with this method: it would be ignored.
-*/
+// GetDeviceDevicesHardwareIDContext gets devices by hardware ID.
+//
+// Do not use the deprecated [GetDeviceDevicesHardwareIDParams.Context] with this method: it would be ignored.
 func (a *Client) GetDeviceDevicesHardwareIDContext(ctx context.Context, params *GetDeviceDevicesHardwareIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetDeviceDevicesHardwareIDOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -216,17 +206,15 @@ func (a *Client) GetDeviceDevicesHardwareIDContext(ctx context.Context, params *
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetDeviceStatusesDeviceFidlists contact status.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetDeviceStatusesDeviceFidContext] instead.
-*/
+// GetDeviceStatusesDeviceFid lists contact status.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetDeviceStatusesDeviceFidContext] instead.
 func (a *Client) GetDeviceStatusesDeviceFid(params *GetDeviceStatusesDeviceFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetDeviceStatusesDeviceFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -235,11 +223,9 @@ func (a *Client) GetDeviceStatusesDeviceFid(params *GetDeviceStatusesDeviceFidPa
 	return a.GetDeviceStatusesDeviceFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetDeviceStatusesDeviceFidContextlists contact status.
-
-Do not use the deprecated [GetDeviceStatusesDeviceFidParams.Context] with this method: it would be ignored.
-*/
+// GetDeviceStatusesDeviceFidContext lists contact status.
+//
+// Do not use the deprecated [GetDeviceStatusesDeviceFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetDeviceStatusesDeviceFidContext(ctx context.Context, params *GetDeviceStatusesDeviceFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetDeviceStatusesDeviceFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -282,17 +268,15 @@ func (a *Client) GetDeviceStatusesDeviceFidContext(ctx context.Context, params *
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostDeviceUpsertcreates a device or update and existing one.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostDeviceUpsertContext] instead.
-*/
+// PostDeviceUpsert creates a device or update and existing one.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostDeviceUpsertContext] instead.
 func (a *Client) PostDeviceUpsert(params *PostDeviceUpsertParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostDeviceUpsertOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -301,11 +285,9 @@ func (a *Client) PostDeviceUpsert(params *PostDeviceUpsertParams, authInfo runti
 	return a.PostDeviceUpsertContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostDeviceUpsertContextcreates a device or update and existing one.
-
-Do not use the deprecated [PostDeviceUpsertParams.Context] with this method: it would be ignored.
-*/
+// PostDeviceUpsertContext creates a device or update and existing one.
+//
+// Do not use the deprecated [PostDeviceUpsertParams.Context] with this method: it would be ignored.
 func (a *Client) PostDeviceUpsertContext(ctx context.Context, params *PostDeviceUpsertParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostDeviceUpsertOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

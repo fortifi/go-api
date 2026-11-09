@@ -68,10 +68,9 @@ type PutCustomersCustomerFidBillingDataParams struct {
 	// CompanyNumber.
 	CompanyNumber *string
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// KnownIP.

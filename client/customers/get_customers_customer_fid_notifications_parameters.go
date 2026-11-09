@@ -62,10 +62,9 @@ GetCustomersCustomerFidNotificationsParams contains all the parameters to send t
 */
 type GetCustomersCustomerFidNotificationsParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	HTTPClient *http.Client

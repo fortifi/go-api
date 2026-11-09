@@ -48,11 +48,9 @@ func NewPostInteractionsInviteOK() *PostInteractionsInviteOK {
 	return &PostInteractionsInviteOK{}
 }
 
-/*
-PostInteractionsInviteOK describes a response with status code 200, with default header values.
-
-Successfully create an interaction invite
-*/
+// PostInteractionsInviteOK describes a response with status code 200, with default header values.
+//
+// Successfully create an interaction invite
 type PostInteractionsInviteOK struct {
 	Payload *PostInteractionsInviteOKBody
 }
@@ -120,11 +118,9 @@ func NewPostInteractionsInviteDefault(code int) *PostInteractionsInviteDefault {
 	}
 }
 
-/*
-PostInteractionsInviteDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostInteractionsInviteDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostInteractionsInviteDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostInteractionsInviteDefault) readResponse(response runtime.ClientResp
 	return nil
 }
 
-/*
-PostInteractionsInviteOKBody post interactions invite o k body
-swagger:model PostInteractionsInviteOKBody
-*/
+// PostInteractionsInviteOKBody post interactions invite o k body
+//
+// swagger:model PostInteractionsInviteOKBody
 type PostInteractionsInviteOKBody struct {
 	models.Envelope
 

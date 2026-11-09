@@ -69,10 +69,9 @@ type PostReservationsKeyApplicationBrandFidCustomerFidParams struct {
 	// BrandFid.
 	BrandFid string
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// Key.

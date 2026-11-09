@@ -22,12 +22,12 @@ type UpdateReviewPayload struct {
 }
 
 // Validate validates this update review payload
-func (m *UpdateReviewPayload) Validate(formats strfmt.Registry) error {
+func (m *UpdateReviewPayload) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this update review payload based on context it is used
-func (m *UpdateReviewPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *UpdateReviewPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

@@ -62,16 +62,14 @@ PutOrdersOrderFidExternalReferenceParams contains all the parameters to send to 
 */
 type PutOrdersOrderFidExternalReferenceParams struct {
 
-	/* DisplayName.
-
-	   New Display Name
-	*/
+	// DisplayName.
+	//
+	// New Display Name
 	DisplayName *string
 
-	/* ExternalReference.
-
-	   New External Reference
-	*/
+	// ExternalReference.
+	//
+	// New External Reference
 	ExternalReference string
 
 	// OrderFid.

@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for entities API.
-*/
+// Client for entities API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -204,17 +202,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-DeleteEntitiesEntityFidConfigSectionNameremoves a config section or property from an entity.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.DeleteEntitiesEntityFidConfigSectionNameContext] instead.
-*/
+// DeleteEntitiesEntityFidConfigSectionName removes a config section or property from an entity.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.DeleteEntitiesEntityFidConfigSectionNameContext] instead.
 func (a *Client) DeleteEntitiesEntityFidConfigSectionName(params *DeleteEntitiesEntityFidConfigSectionNameParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteEntitiesEntityFidConfigSectionNameOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -223,11 +219,9 @@ func (a *Client) DeleteEntitiesEntityFidConfigSectionName(params *DeleteEntities
 	return a.DeleteEntitiesEntityFidConfigSectionNameContext(ctx, params, authInfo, opts...)
 }
 
-/*
-DeleteEntitiesEntityFidConfigSectionNameContextremoves a config section or property from an entity.
-
-Do not use the deprecated [DeleteEntitiesEntityFidConfigSectionNameParams.Context] with this method: it would be ignored.
-*/
+// DeleteEntitiesEntityFidConfigSectionNameContext removes a config section or property from an entity.
+//
+// Do not use the deprecated [DeleteEntitiesEntityFidConfigSectionNameParams.Context] with this method: it would be ignored.
 func (a *Client) DeleteEntitiesEntityFidConfigSectionNameContext(ctx context.Context, params *DeleteEntitiesEntityFidConfigSectionNameParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteEntitiesEntityFidConfigSectionNameOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -270,17 +264,15 @@ func (a *Client) DeleteEntitiesEntityFidConfigSectionNameContext(ctx context.Con
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-DeleteEntitiesEntityFidPropertiesCountersPropertyNameremoves a counter from an entity.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.DeleteEntitiesEntityFidPropertiesCountersPropertyNameContext] instead.
-*/
+// DeleteEntitiesEntityFidPropertiesCountersPropertyName removes a counter from an entity.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.DeleteEntitiesEntityFidPropertiesCountersPropertyNameContext] instead.
 func (a *Client) DeleteEntitiesEntityFidPropertiesCountersPropertyName(params *DeleteEntitiesEntityFidPropertiesCountersPropertyNameParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteEntitiesEntityFidPropertiesCountersPropertyNameOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -289,11 +281,9 @@ func (a *Client) DeleteEntitiesEntityFidPropertiesCountersPropertyName(params *D
 	return a.DeleteEntitiesEntityFidPropertiesCountersPropertyNameContext(ctx, params, authInfo, opts...)
 }
 
-/*
-DeleteEntitiesEntityFidPropertiesCountersPropertyNameContextremoves a counter from an entity.
-
-Do not use the deprecated [DeleteEntitiesEntityFidPropertiesCountersPropertyNameParams.Context] with this method: it would be ignored.
-*/
+// DeleteEntitiesEntityFidPropertiesCountersPropertyNameContext removes a counter from an entity.
+//
+// Do not use the deprecated [DeleteEntitiesEntityFidPropertiesCountersPropertyNameParams.Context] with this method: it would be ignored.
 func (a *Client) DeleteEntitiesEntityFidPropertiesCountersPropertyNameContext(ctx context.Context, params *DeleteEntitiesEntityFidPropertiesCountersPropertyNameParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteEntitiesEntityFidPropertiesCountersPropertyNameOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -336,17 +326,15 @@ func (a *Client) DeleteEntitiesEntityFidPropertiesCountersPropertyNameContext(ct
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-DeleteEntitiesEntityFidPropertiesFlagsPropertyNameremoves a flag from an entity.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.DeleteEntitiesEntityFidPropertiesFlagsPropertyNameContext] instead.
-*/
+// DeleteEntitiesEntityFidPropertiesFlagsPropertyName removes a flag from an entity.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.DeleteEntitiesEntityFidPropertiesFlagsPropertyNameContext] instead.
 func (a *Client) DeleteEntitiesEntityFidPropertiesFlagsPropertyName(params *DeleteEntitiesEntityFidPropertiesFlagsPropertyNameParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteEntitiesEntityFidPropertiesFlagsPropertyNameOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -355,11 +343,9 @@ func (a *Client) DeleteEntitiesEntityFidPropertiesFlagsPropertyName(params *Dele
 	return a.DeleteEntitiesEntityFidPropertiesFlagsPropertyNameContext(ctx, params, authInfo, opts...)
 }
 
-/*
-DeleteEntitiesEntityFidPropertiesFlagsPropertyNameContextremoves a flag from an entity.
-
-Do not use the deprecated [DeleteEntitiesEntityFidPropertiesFlagsPropertyNameParams.Context] with this method: it would be ignored.
-*/
+// DeleteEntitiesEntityFidPropertiesFlagsPropertyNameContext removes a flag from an entity.
+//
+// Do not use the deprecated [DeleteEntitiesEntityFidPropertiesFlagsPropertyNameParams.Context] with this method: it would be ignored.
 func (a *Client) DeleteEntitiesEntityFidPropertiesFlagsPropertyNameContext(ctx context.Context, params *DeleteEntitiesEntityFidPropertiesFlagsPropertyNameParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteEntitiesEntityFidPropertiesFlagsPropertyNameOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -402,17 +388,15 @@ func (a *Client) DeleteEntitiesEntityFidPropertiesFlagsPropertyNameContext(ctx c
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-DeleteEntitiesEntityFidPropertiesValuesPropertyNameremoves a value property from an entity.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.DeleteEntitiesEntityFidPropertiesValuesPropertyNameContext] instead.
-*/
+// DeleteEntitiesEntityFidPropertiesValuesPropertyName removes a value property from an entity.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.DeleteEntitiesEntityFidPropertiesValuesPropertyNameContext] instead.
 func (a *Client) DeleteEntitiesEntityFidPropertiesValuesPropertyName(params *DeleteEntitiesEntityFidPropertiesValuesPropertyNameParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteEntitiesEntityFidPropertiesValuesPropertyNameOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -421,11 +405,9 @@ func (a *Client) DeleteEntitiesEntityFidPropertiesValuesPropertyName(params *Del
 	return a.DeleteEntitiesEntityFidPropertiesValuesPropertyNameContext(ctx, params, authInfo, opts...)
 }
 
-/*
-DeleteEntitiesEntityFidPropertiesValuesPropertyNameContextremoves a value property from an entity.
-
-Do not use the deprecated [DeleteEntitiesEntityFidPropertiesValuesPropertyNameParams.Context] with this method: it would be ignored.
-*/
+// DeleteEntitiesEntityFidPropertiesValuesPropertyNameContext removes a value property from an entity.
+//
+// Do not use the deprecated [DeleteEntitiesEntityFidPropertiesValuesPropertyNameParams.Context] with this method: it would be ignored.
 func (a *Client) DeleteEntitiesEntityFidPropertiesValuesPropertyNameContext(ctx context.Context, params *DeleteEntitiesEntityFidPropertiesValuesPropertyNameParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteEntitiesEntityFidPropertiesValuesPropertyNameOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -468,17 +450,15 @@ func (a *Client) DeleteEntitiesEntityFidPropertiesValuesPropertyNameContext(ctx 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetEntitiesEntityFidConfigSectionNameretrieves a config section.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetEntitiesEntityFidConfigSectionNameContext] instead.
-*/
+// GetEntitiesEntityFidConfigSectionName retrieves a config section.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetEntitiesEntityFidConfigSectionNameContext] instead.
 func (a *Client) GetEntitiesEntityFidConfigSectionName(params *GetEntitiesEntityFidConfigSectionNameParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetEntitiesEntityFidConfigSectionNameOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -487,11 +467,9 @@ func (a *Client) GetEntitiesEntityFidConfigSectionName(params *GetEntitiesEntity
 	return a.GetEntitiesEntityFidConfigSectionNameContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetEntitiesEntityFidConfigSectionNameContextretrieves a config section.
-
-Do not use the deprecated [GetEntitiesEntityFidConfigSectionNameParams.Context] with this method: it would be ignored.
-*/
+// GetEntitiesEntityFidConfigSectionNameContext retrieves a config section.
+//
+// Do not use the deprecated [GetEntitiesEntityFidConfigSectionNameParams.Context] with this method: it would be ignored.
 func (a *Client) GetEntitiesEntityFidConfigSectionNameContext(ctx context.Context, params *GetEntitiesEntityFidConfigSectionNameParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetEntitiesEntityFidConfigSectionNameOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -534,17 +512,15 @@ func (a *Client) GetEntitiesEntityFidConfigSectionNameContext(ctx context.Contex
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetEntitiesEntityFidConfigSectionNameItemsItemNameretrieves a config item.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetEntitiesEntityFidConfigSectionNameItemsItemNameContext] instead.
-*/
+// GetEntitiesEntityFidConfigSectionNameItemsItemName retrieves a config item.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetEntitiesEntityFidConfigSectionNameItemsItemNameContext] instead.
 func (a *Client) GetEntitiesEntityFidConfigSectionNameItemsItemName(params *GetEntitiesEntityFidConfigSectionNameItemsItemNameParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetEntitiesEntityFidConfigSectionNameItemsItemNameOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -553,11 +529,9 @@ func (a *Client) GetEntitiesEntityFidConfigSectionNameItemsItemName(params *GetE
 	return a.GetEntitiesEntityFidConfigSectionNameItemsItemNameContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetEntitiesEntityFidConfigSectionNameItemsItemNameContextretrieves a config item.
-
-Do not use the deprecated [GetEntitiesEntityFidConfigSectionNameItemsItemNameParams.Context] with this method: it would be ignored.
-*/
+// GetEntitiesEntityFidConfigSectionNameItemsItemNameContext retrieves a config item.
+//
+// Do not use the deprecated [GetEntitiesEntityFidConfigSectionNameItemsItemNameParams.Context] with this method: it would be ignored.
 func (a *Client) GetEntitiesEntityFidConfigSectionNameItemsItemNameContext(ctx context.Context, params *GetEntitiesEntityFidConfigSectionNameItemsItemNameParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetEntitiesEntityFidConfigSectionNameItemsItemNameOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -600,17 +574,15 @@ func (a *Client) GetEntitiesEntityFidConfigSectionNameItemsItemNameContext(ctx c
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetEntitiesEntityFidLabelsgets all labels for an entity.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetEntitiesEntityFidLabelsContext] instead.
-*/
+// GetEntitiesEntityFidLabels gets all labels for an entity.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetEntitiesEntityFidLabelsContext] instead.
 func (a *Client) GetEntitiesEntityFidLabels(params *GetEntitiesEntityFidLabelsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetEntitiesEntityFidLabelsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -619,11 +591,9 @@ func (a *Client) GetEntitiesEntityFidLabels(params *GetEntitiesEntityFidLabelsPa
 	return a.GetEntitiesEntityFidLabelsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetEntitiesEntityFidLabelsContextgets all labels for an entity.
-
-Do not use the deprecated [GetEntitiesEntityFidLabelsParams.Context] with this method: it would be ignored.
-*/
+// GetEntitiesEntityFidLabelsContext gets all labels for an entity.
+//
+// Do not use the deprecated [GetEntitiesEntityFidLabelsParams.Context] with this method: it would be ignored.
 func (a *Client) GetEntitiesEntityFidLabelsContext(ctx context.Context, params *GetEntitiesEntityFidLabelsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetEntitiesEntityFidLabelsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -666,17 +636,15 @@ func (a *Client) GetEntitiesEntityFidLabelsContext(ctx context.Context, params *
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetEntitiesEntityFidPropertiesgets all properties for an entity.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetEntitiesEntityFidPropertiesContext] instead.
-*/
+// GetEntitiesEntityFidProperties gets all properties for an entity.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetEntitiesEntityFidPropertiesContext] instead.
 func (a *Client) GetEntitiesEntityFidProperties(params *GetEntitiesEntityFidPropertiesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetEntitiesEntityFidPropertiesOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -685,11 +653,9 @@ func (a *Client) GetEntitiesEntityFidProperties(params *GetEntitiesEntityFidProp
 	return a.GetEntitiesEntityFidPropertiesContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetEntitiesEntityFidPropertiesContextgets all properties for an entity.
-
-Do not use the deprecated [GetEntitiesEntityFidPropertiesParams.Context] with this method: it would be ignored.
-*/
+// GetEntitiesEntityFidPropertiesContext gets all properties for an entity.
+//
+// Do not use the deprecated [GetEntitiesEntityFidPropertiesParams.Context] with this method: it would be ignored.
 func (a *Client) GetEntitiesEntityFidPropertiesContext(ctx context.Context, params *GetEntitiesEntityFidPropertiesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetEntitiesEntityFidPropertiesOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -732,17 +698,15 @@ func (a *Client) GetEntitiesEntityFidPropertiesContext(ctx context.Context, para
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetEntitiesEntityFidPropertiesFlagsPropertyNamegets a flag property from an entity.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetEntitiesEntityFidPropertiesFlagsPropertyNameContext] instead.
-*/
+// GetEntitiesEntityFidPropertiesFlagsPropertyName gets a flag property from an entity.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetEntitiesEntityFidPropertiesFlagsPropertyNameContext] instead.
 func (a *Client) GetEntitiesEntityFidPropertiesFlagsPropertyName(params *GetEntitiesEntityFidPropertiesFlagsPropertyNameParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetEntitiesEntityFidPropertiesFlagsPropertyNameOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -751,11 +715,9 @@ func (a *Client) GetEntitiesEntityFidPropertiesFlagsPropertyName(params *GetEnti
 	return a.GetEntitiesEntityFidPropertiesFlagsPropertyNameContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetEntitiesEntityFidPropertiesFlagsPropertyNameContextgets a flag property from an entity.
-
-Do not use the deprecated [GetEntitiesEntityFidPropertiesFlagsPropertyNameParams.Context] with this method: it would be ignored.
-*/
+// GetEntitiesEntityFidPropertiesFlagsPropertyNameContext gets a flag property from an entity.
+//
+// Do not use the deprecated [GetEntitiesEntityFidPropertiesFlagsPropertyNameParams.Context] with this method: it would be ignored.
 func (a *Client) GetEntitiesEntityFidPropertiesFlagsPropertyNameContext(ctx context.Context, params *GetEntitiesEntityFidPropertiesFlagsPropertyNameParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetEntitiesEntityFidPropertiesFlagsPropertyNameOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -798,17 +760,15 @@ func (a *Client) GetEntitiesEntityFidPropertiesFlagsPropertyNameContext(ctx cont
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetEntitiesEntityFidPropertiesValuesPropertyNamegets a property value from an entity.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetEntitiesEntityFidPropertiesValuesPropertyNameContext] instead.
-*/
+// GetEntitiesEntityFidPropertiesValuesPropertyName gets a property value from an entity.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetEntitiesEntityFidPropertiesValuesPropertyNameContext] instead.
 func (a *Client) GetEntitiesEntityFidPropertiesValuesPropertyName(params *GetEntitiesEntityFidPropertiesValuesPropertyNameParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetEntitiesEntityFidPropertiesValuesPropertyNameOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -817,11 +777,9 @@ func (a *Client) GetEntitiesEntityFidPropertiesValuesPropertyName(params *GetEnt
 	return a.GetEntitiesEntityFidPropertiesValuesPropertyNameContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetEntitiesEntityFidPropertiesValuesPropertyNameContextgets a property value from an entity.
-
-Do not use the deprecated [GetEntitiesEntityFidPropertiesValuesPropertyNameParams.Context] with this method: it would be ignored.
-*/
+// GetEntitiesEntityFidPropertiesValuesPropertyNameContext gets a property value from an entity.
+//
+// Do not use the deprecated [GetEntitiesEntityFidPropertiesValuesPropertyNameParams.Context] with this method: it would be ignored.
 func (a *Client) GetEntitiesEntityFidPropertiesValuesPropertyNameContext(ctx context.Context, params *GetEntitiesEntityFidPropertiesValuesPropertyNameParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetEntitiesEntityFidPropertiesValuesPropertyNameOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -864,17 +822,15 @@ func (a *Client) GetEntitiesEntityFidPropertiesValuesPropertyNameContext(ctx con
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostEntitiesEntityFidAttachmentsUploadURLcreates an upload url.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostEntitiesEntityFidAttachmentsUploadURLContext] instead.
-*/
+// PostEntitiesEntityFidAttachmentsUploadURL creates an upload url.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostEntitiesEntityFidAttachmentsUploadURLContext] instead.
 func (a *Client) PostEntitiesEntityFidAttachmentsUploadURL(params *PostEntitiesEntityFidAttachmentsUploadURLParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostEntitiesEntityFidAttachmentsUploadURLOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -883,11 +839,9 @@ func (a *Client) PostEntitiesEntityFidAttachmentsUploadURL(params *PostEntitiesE
 	return a.PostEntitiesEntityFidAttachmentsUploadURLContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostEntitiesEntityFidAttachmentsUploadURLContextcreates an upload url.
-
-Do not use the deprecated [PostEntitiesEntityFidAttachmentsUploadURLParams.Context] with this method: it would be ignored.
-*/
+// PostEntitiesEntityFidAttachmentsUploadURLContext creates an upload url.
+//
+// Do not use the deprecated [PostEntitiesEntityFidAttachmentsUploadURLParams.Context] with this method: it would be ignored.
 func (a *Client) PostEntitiesEntityFidAttachmentsUploadURLContext(ctx context.Context, params *PostEntitiesEntityFidAttachmentsUploadURLParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostEntitiesEntityFidAttachmentsUploadURLOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -930,17 +884,15 @@ func (a *Client) PostEntitiesEntityFidAttachmentsUploadURLContext(ctx context.Co
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostEntitiesEntityFidConfigSectionNamewrites a config item.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostEntitiesEntityFidConfigSectionNameContext] instead.
-*/
+// PostEntitiesEntityFidConfigSectionName writes a config item.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostEntitiesEntityFidConfigSectionNameContext] instead.
 func (a *Client) PostEntitiesEntityFidConfigSectionName(params *PostEntitiesEntityFidConfigSectionNameParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostEntitiesEntityFidConfigSectionNameOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -949,11 +901,9 @@ func (a *Client) PostEntitiesEntityFidConfigSectionName(params *PostEntitiesEnti
 	return a.PostEntitiesEntityFidConfigSectionNameContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostEntitiesEntityFidConfigSectionNameContextwrites a config item.
-
-Do not use the deprecated [PostEntitiesEntityFidConfigSectionNameParams.Context] with this method: it would be ignored.
-*/
+// PostEntitiesEntityFidConfigSectionNameContext writes a config item.
+//
+// Do not use the deprecated [PostEntitiesEntityFidConfigSectionNameParams.Context] with this method: it would be ignored.
 func (a *Client) PostEntitiesEntityFidConfigSectionNameContext(ctx context.Context, params *PostEntitiesEntityFidConfigSectionNameParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostEntitiesEntityFidConfigSectionNameOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -996,17 +946,15 @@ func (a *Client) PostEntitiesEntityFidConfigSectionNameContext(ctx context.Conte
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostEntitiesEntityFidEventstriggers a new event.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostEntitiesEntityFidEventsContext] instead.
-*/
+// PostEntitiesEntityFidEvents triggers a new event.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostEntitiesEntityFidEventsContext] instead.
 func (a *Client) PostEntitiesEntityFidEvents(params *PostEntitiesEntityFidEventsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostEntitiesEntityFidEventsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1015,11 +963,9 @@ func (a *Client) PostEntitiesEntityFidEvents(params *PostEntitiesEntityFidEvents
 	return a.PostEntitiesEntityFidEventsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostEntitiesEntityFidEventsContexttriggers a new event.
-
-Do not use the deprecated [PostEntitiesEntityFidEventsParams.Context] with this method: it would be ignored.
-*/
+// PostEntitiesEntityFidEventsContext triggers a new event.
+//
+// Do not use the deprecated [PostEntitiesEntityFidEventsParams.Context] with this method: it would be ignored.
 func (a *Client) PostEntitiesEntityFidEventsContext(ctx context.Context, params *PostEntitiesEntityFidEventsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostEntitiesEntityFidEventsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1062,21 +1008,18 @@ func (a *Client) PostEntitiesEntityFidEventsContext(ctx context.Context, params 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-	PostUploadUploadURLcreates an upload attachment url.
-
-	This call will give you a URL to PUT files to and a unique filename. You can upload files to the URL like this: ```curl -X PUT -d @filename -H 'content-type: text/plain' 'url'```
-
-.
-
-	This method does not support injected context.
-	However, timeout and opentracing contexts are honored whenever enabled.
-
-	If you need to pass a specific context, use [Client.PostUploadUploadURLContext] instead.
-*/
+// PostUploadUploadURL creates an upload attachment url.
+//
+// This call will give you a URL to PUT files to and a unique filename. You can upload files to the URL like this: ```curl -X PUT -d @filename -H 'content-type: text/plain' 'url'```
+// .
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostUploadUploadURLContext] instead.
 func (a *Client) PostUploadUploadURL(params *PostUploadUploadURLParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostUploadUploadURLOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1085,15 +1028,12 @@ func (a *Client) PostUploadUploadURL(params *PostUploadUploadURLParams, authInfo
 	return a.PostUploadUploadURLContext(ctx, params, authInfo, opts...)
 }
 
-/*
-	PostUploadUploadURLContextcreates an upload attachment url.
-
-	This call will give you a URL to PUT files to and a unique filename. You can upload files to the URL like this: ```curl -X PUT -d @filename -H 'content-type: text/plain' 'url'```
-
-.
-
-	Do not use the deprecated [PostUploadUploadURLParams.Context] with this method: it would be ignored.
-*/
+// PostUploadUploadURLContext creates an upload attachment url.
+//
+// This call will give you a URL to PUT files to and a unique filename. You can upload files to the URL like this: ```curl -X PUT -d @filename -H 'content-type: text/plain' 'url'```
+// .
+//
+// Do not use the deprecated [PostUploadUploadURLParams.Context] with this method: it would be ignored.
 func (a *Client) PostUploadUploadURLContext(ctx context.Context, params *PostUploadUploadURLParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostUploadUploadURLOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1136,17 +1076,15 @@ func (a *Client) PostUploadUploadURLContext(ctx context.Context, params *PostUpl
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutEntitiesEntityFidLabelsAssignassigns label to entity.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutEntitiesEntityFidLabelsAssignContext] instead.
-*/
+// PutEntitiesEntityFidLabelsAssign assigns label to entity.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutEntitiesEntityFidLabelsAssignContext] instead.
 func (a *Client) PutEntitiesEntityFidLabelsAssign(params *PutEntitiesEntityFidLabelsAssignParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutEntitiesEntityFidLabelsAssignOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1155,11 +1093,9 @@ func (a *Client) PutEntitiesEntityFidLabelsAssign(params *PutEntitiesEntityFidLa
 	return a.PutEntitiesEntityFidLabelsAssignContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutEntitiesEntityFidLabelsAssignContextassigns label to entity.
-
-Do not use the deprecated [PutEntitiesEntityFidLabelsAssignParams.Context] with this method: it would be ignored.
-*/
+// PutEntitiesEntityFidLabelsAssignContext assigns label to entity.
+//
+// Do not use the deprecated [PutEntitiesEntityFidLabelsAssignParams.Context] with this method: it would be ignored.
 func (a *Client) PutEntitiesEntityFidLabelsAssignContext(ctx context.Context, params *PutEntitiesEntityFidLabelsAssignParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutEntitiesEntityFidLabelsAssignOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1202,17 +1138,15 @@ func (a *Client) PutEntitiesEntityFidLabelsAssignContext(ctx context.Context, pa
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutEntitiesEntityFidPropertieswrites multiple entity properties.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutEntitiesEntityFidPropertiesContext] instead.
-*/
+// PutEntitiesEntityFidProperties writes multiple entity properties.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutEntitiesEntityFidPropertiesContext] instead.
 func (a *Client) PutEntitiesEntityFidProperties(params *PutEntitiesEntityFidPropertiesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutEntitiesEntityFidPropertiesOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1221,11 +1155,9 @@ func (a *Client) PutEntitiesEntityFidProperties(params *PutEntitiesEntityFidProp
 	return a.PutEntitiesEntityFidPropertiesContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutEntitiesEntityFidPropertiesContextwrites multiple entity properties.
-
-Do not use the deprecated [PutEntitiesEntityFidPropertiesParams.Context] with this method: it would be ignored.
-*/
+// PutEntitiesEntityFidPropertiesContext writes multiple entity properties.
+//
+// Do not use the deprecated [PutEntitiesEntityFidPropertiesParams.Context] with this method: it would be ignored.
 func (a *Client) PutEntitiesEntityFidPropertiesContext(ctx context.Context, params *PutEntitiesEntityFidPropertiesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutEntitiesEntityFidPropertiesOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1268,17 +1200,15 @@ func (a *Client) PutEntitiesEntityFidPropertiesContext(ctx context.Context, para
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutEntitiesEntityFidPropertiesCountersPropertyNameDecrementdecrements an entity counter.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutEntitiesEntityFidPropertiesCountersPropertyNameDecrementContext] instead.
-*/
+// PutEntitiesEntityFidPropertiesCountersPropertyNameDecrement decrements an entity counter.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutEntitiesEntityFidPropertiesCountersPropertyNameDecrementContext] instead.
 func (a *Client) PutEntitiesEntityFidPropertiesCountersPropertyNameDecrement(params *PutEntitiesEntityFidPropertiesCountersPropertyNameDecrementParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutEntitiesEntityFidPropertiesCountersPropertyNameDecrementOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1287,11 +1217,9 @@ func (a *Client) PutEntitiesEntityFidPropertiesCountersPropertyNameDecrement(par
 	return a.PutEntitiesEntityFidPropertiesCountersPropertyNameDecrementContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutEntitiesEntityFidPropertiesCountersPropertyNameDecrementContextdecrements an entity counter.
-
-Do not use the deprecated [PutEntitiesEntityFidPropertiesCountersPropertyNameDecrementParams.Context] with this method: it would be ignored.
-*/
+// PutEntitiesEntityFidPropertiesCountersPropertyNameDecrementContext decrements an entity counter.
+//
+// Do not use the deprecated [PutEntitiesEntityFidPropertiesCountersPropertyNameDecrementParams.Context] with this method: it would be ignored.
 func (a *Client) PutEntitiesEntityFidPropertiesCountersPropertyNameDecrementContext(ctx context.Context, params *PutEntitiesEntityFidPropertiesCountersPropertyNameDecrementParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutEntitiesEntityFidPropertiesCountersPropertyNameDecrementOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1334,17 +1262,15 @@ func (a *Client) PutEntitiesEntityFidPropertiesCountersPropertyNameDecrementCont
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementincrements an entity counter.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementContext] instead.
-*/
+// PutEntitiesEntityFidPropertiesCountersPropertyNameIncrement increments an entity counter.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementContext] instead.
 func (a *Client) PutEntitiesEntityFidPropertiesCountersPropertyNameIncrement(params *PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1353,11 +1279,9 @@ func (a *Client) PutEntitiesEntityFidPropertiesCountersPropertyNameIncrement(par
 	return a.PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementContextincrements an entity counter.
-
-Do not use the deprecated [PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementParams.Context] with this method: it would be ignored.
-*/
+// PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementContext increments an entity counter.
+//
+// Do not use the deprecated [PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementParams.Context] with this method: it would be ignored.
 func (a *Client) PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementContext(ctx context.Context, params *PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1400,17 +1324,15 @@ func (a *Client) PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementCont
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutEntitiesEntityFidPropertiesFlagsPropertyNamewrites an entity flag.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutEntitiesEntityFidPropertiesFlagsPropertyNameContext] instead.
-*/
+// PutEntitiesEntityFidPropertiesFlagsPropertyName writes an entity flag.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutEntitiesEntityFidPropertiesFlagsPropertyNameContext] instead.
 func (a *Client) PutEntitiesEntityFidPropertiesFlagsPropertyName(params *PutEntitiesEntityFidPropertiesFlagsPropertyNameParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutEntitiesEntityFidPropertiesFlagsPropertyNameOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1419,11 +1341,9 @@ func (a *Client) PutEntitiesEntityFidPropertiesFlagsPropertyName(params *PutEnti
 	return a.PutEntitiesEntityFidPropertiesFlagsPropertyNameContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutEntitiesEntityFidPropertiesFlagsPropertyNameContextwrites an entity flag.
-
-Do not use the deprecated [PutEntitiesEntityFidPropertiesFlagsPropertyNameParams.Context] with this method: it would be ignored.
-*/
+// PutEntitiesEntityFidPropertiesFlagsPropertyNameContext writes an entity flag.
+//
+// Do not use the deprecated [PutEntitiesEntityFidPropertiesFlagsPropertyNameParams.Context] with this method: it would be ignored.
 func (a *Client) PutEntitiesEntityFidPropertiesFlagsPropertyNameContext(ctx context.Context, params *PutEntitiesEntityFidPropertiesFlagsPropertyNameParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutEntitiesEntityFidPropertiesFlagsPropertyNameOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1466,17 +1386,15 @@ func (a *Client) PutEntitiesEntityFidPropertiesFlagsPropertyNameContext(ctx cont
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutEntitiesEntityFidPropertiesValuesPropertyNamewrites an entity value property.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutEntitiesEntityFidPropertiesValuesPropertyNameContext] instead.
-*/
+// PutEntitiesEntityFidPropertiesValuesPropertyName writes an entity value property.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutEntitiesEntityFidPropertiesValuesPropertyNameContext] instead.
 func (a *Client) PutEntitiesEntityFidPropertiesValuesPropertyName(params *PutEntitiesEntityFidPropertiesValuesPropertyNameParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutEntitiesEntityFidPropertiesValuesPropertyNameOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1485,11 +1403,9 @@ func (a *Client) PutEntitiesEntityFidPropertiesValuesPropertyName(params *PutEnt
 	return a.PutEntitiesEntityFidPropertiesValuesPropertyNameContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutEntitiesEntityFidPropertiesValuesPropertyNameContextwrites an entity value property.
-
-Do not use the deprecated [PutEntitiesEntityFidPropertiesValuesPropertyNameParams.Context] with this method: it would be ignored.
-*/
+// PutEntitiesEntityFidPropertiesValuesPropertyNameContext writes an entity value property.
+//
+// Do not use the deprecated [PutEntitiesEntityFidPropertiesValuesPropertyNameParams.Context] with this method: it would be ignored.
 func (a *Client) PutEntitiesEntityFidPropertiesValuesPropertyNameContext(ctx context.Context, params *PutEntitiesEntityFidPropertiesValuesPropertyNameParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutEntitiesEntityFidPropertiesValuesPropertyNameOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

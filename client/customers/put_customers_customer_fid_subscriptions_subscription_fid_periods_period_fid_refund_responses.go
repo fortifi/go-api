@@ -44,11 +44,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefun
 	return &PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundOK{}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundOK describes a response with status code 200, with default header values.
-
-Refund Actioned
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundOK describes a response with status code 200, with default header values.
+//
+// Refund Actioned
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefun
 	}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundDefault struct {
 	_statusCode int
 

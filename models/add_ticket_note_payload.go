@@ -87,7 +87,7 @@ func (m *AddTicketNotePayload) contextValidateNotes(ctx context.Context, formats
 		if m.Notes[i] != nil {
 
 			if typeutils.IsZero(m.Notes[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Notes[i].ContextValidate(ctx, formats); err != nil {

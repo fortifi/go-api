@@ -48,11 +48,9 @@ func NewPostReviewOK() *PostReviewOK {
 	return &PostReviewOK{}
 }
 
-/*
-PostReviewOK describes a response with status code 200, with default header values.
-
-Review created
-*/
+// PostReviewOK describes a response with status code 200, with default header values.
+//
+// Review created
 type PostReviewOK struct {
 	Payload *PostReviewOKBody
 }
@@ -120,11 +118,9 @@ func NewPostReviewDefault(code int) *PostReviewDefault {
 	}
 }
 
-/*
-PostReviewDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostReviewDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostReviewDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostReviewDefault) readResponse(response runtime.ClientResponse, consum
 	return nil
 }
 
-/*
-PostReviewOKBody post review o k body
-swagger:model PostReviewOKBody
-*/
+// PostReviewOKBody post review o k body
+//
+// swagger:model PostReviewOKBody
 type PostReviewOKBody struct {
 	models.Envelope
 

@@ -48,11 +48,9 @@ func NewGetSupportChatEnabledOK() *GetSupportChatEnabledOK {
 	return &GetSupportChatEnabledOK{}
 }
 
-/*
-GetSupportChatEnabledOK describes a response with status code 200, with default header values.
-
-Chat Enabled
-*/
+// GetSupportChatEnabledOK describes a response with status code 200, with default header values.
+//
+// Chat Enabled
 type GetSupportChatEnabledOK struct {
 	Payload *GetSupportChatEnabledOKBody
 }
@@ -120,11 +118,9 @@ func NewGetSupportChatEnabledDefault(code int) *GetSupportChatEnabledDefault {
 	}
 }
 
-/*
-GetSupportChatEnabledDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetSupportChatEnabledDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetSupportChatEnabledDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetSupportChatEnabledDefault) readResponse(response runtime.ClientRespo
 	return nil
 }
 
-/*
-GetSupportChatEnabledOKBody get support chat enabled o k body
-swagger:model GetSupportChatEnabledOKBody
-*/
+// GetSupportChatEnabledOKBody get support chat enabled o k body
+//
+// swagger:model GetSupportChatEnabledOKBody
 type GetSupportChatEnabledOKBody struct {
 	models.Envelope
 

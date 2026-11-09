@@ -47,11 +47,9 @@ func NewGetVersionOK() *GetVersionOK {
 	return &GetVersionOK{}
 }
 
-/*
-GetVersionOK describes a response with status code 200, with default header values.
-
-Version
-*/
+// GetVersionOK describes a response with status code 200, with default header values.
+//
+// Version
 type GetVersionOK struct {
 	Payload *GetVersionOKBody
 }
@@ -119,11 +117,9 @@ func NewGetVersionDefault(code int) *GetVersionDefault {
 	}
 }
 
-/*
-GetVersionDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetVersionDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetVersionDefault struct {
 	_statusCode int
 
@@ -186,10 +182,9 @@ func (o *GetVersionDefault) readResponse(response runtime.ClientResponse, consum
 	return nil
 }
 
-/*
-GetVersionOKBody get version o k body
-swagger:model GetVersionOKBody
-*/
+// GetVersionOKBody get version o k body
+//
+// swagger:model GetVersionOKBody
 type GetVersionOKBody struct {
 	models.Envelope
 

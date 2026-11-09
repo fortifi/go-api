@@ -48,11 +48,9 @@ func NewGetCustomersCustomerFidChatSessionsOK() *GetCustomersCustomerFidChatSess
 	return &GetCustomersCustomerFidChatSessionsOK{}
 }
 
-/*
-GetCustomersCustomerFidChatSessionsOK describes a response with status code 200, with default header values.
-
-Chat sessions
-*/
+// GetCustomersCustomerFidChatSessionsOK describes a response with status code 200, with default header values.
+//
+// Chat sessions
 type GetCustomersCustomerFidChatSessionsOK struct {
 	Payload *GetCustomersCustomerFidChatSessionsOKBody
 }
@@ -120,11 +118,9 @@ func NewGetCustomersCustomerFidChatSessionsDefault(code int) *GetCustomersCustom
 	}
 }
 
-/*
-GetCustomersCustomerFidChatSessionsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetCustomersCustomerFidChatSessionsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetCustomersCustomerFidChatSessionsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetCustomersCustomerFidChatSessionsDefault) readResponse(response runti
 	return nil
 }
 
-/*
-GetCustomersCustomerFidChatSessionsOKBody get customers customer fid chat sessions o k body
-swagger:model GetCustomersCustomerFidChatSessionsOKBody
-*/
+// GetCustomersCustomerFidChatSessionsOKBody get customers customer fid chat sessions o k body
+//
+// swagger:model GetCustomersCustomerFidChatSessionsOKBody
 type GetCustomersCustomerFidChatSessionsOKBody struct {
 	models.Envelope
 

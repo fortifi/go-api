@@ -44,11 +44,9 @@ func NewPutPublishersPublisherFidEnableOK() *PutPublishersPublisherFidEnableOK {
 	return &PutPublishersPublisherFidEnableOK{}
 }
 
-/*
-PutPublishersPublisherFidEnableOK describes a response with status code 200, with default header values.
-
-Publisher enabled
-*/
+// PutPublishersPublisherFidEnableOK describes a response with status code 200, with default header values.
+//
+// Publisher enabled
 type PutPublishersPublisherFidEnableOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutPublishersPublisherFidEnableDefault(code int) *PutPublishersPublisher
 	}
 }
 
-/*
-PutPublishersPublisherFidEnableDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutPublishersPublisherFidEnableDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutPublishersPublisherFidEnableDefault struct {
 	_statusCode int
 

@@ -22,12 +22,12 @@ type FraudScanMetaData struct {
 }
 
 // Validate validates this fraud scan meta data
-func (m *FraudScanMetaData) Validate(formats strfmt.Registry) error {
+func (m *FraudScanMetaData) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this fraud scan meta data based on context it is used
-func (m *FraudScanMetaData) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *FraudScanMetaData) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

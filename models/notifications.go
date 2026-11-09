@@ -87,7 +87,7 @@ func (m *Notifications) contextValidateNotifications(ctx context.Context, format
 		if m.Notifications[i] != nil {
 
 			if typeutils.IsZero(m.Notifications[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Notifications[i].ContextValidate(ctx, formats); err != nil {

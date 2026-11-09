@@ -28,12 +28,12 @@ type IntegrationUser struct {
 }
 
 // Validate validates this integration user
-func (m *IntegrationUser) Validate(formats strfmt.Registry) error {
+func (m *IntegrationUser) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this integration user based on context it is used
-func (m *IntegrationUser) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *IntegrationUser) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

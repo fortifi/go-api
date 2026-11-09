@@ -37,12 +37,12 @@ type SetCustomerLocationPayload struct {
 }
 
 // Validate validates this set customer location payload
-func (m *SetCustomerLocationPayload) Validate(formats strfmt.Registry) error {
+func (m *SetCustomerLocationPayload) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this set customer location payload based on context it is used
-func (m *SetCustomerLocationPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *SetCustomerLocationPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

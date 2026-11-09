@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for marketing API.
-*/
+// Client for marketing API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -156,17 +154,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-DeletePublishersPublisherFiddeletes a publisher.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.DeletePublishersPublisherFidContext] instead.
-*/
+// DeletePublishersPublisherFid deletes a publisher.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.DeletePublishersPublisherFidContext] instead.
 func (a *Client) DeletePublishersPublisherFid(params *DeletePublishersPublisherFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeletePublishersPublisherFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -175,11 +171,9 @@ func (a *Client) DeletePublishersPublisherFid(params *DeletePublishersPublisherF
 	return a.DeletePublishersPublisherFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-DeletePublishersPublisherFidContextdeletes a publisher.
-
-Do not use the deprecated [DeletePublishersPublisherFidParams.Context] with this method: it would be ignored.
-*/
+// DeletePublishersPublisherFidContext deletes a publisher.
+//
+// Do not use the deprecated [DeletePublishersPublisherFidParams.Context] with this method: it would be ignored.
 func (a *Client) DeletePublishersPublisherFidContext(ctx context.Context, params *DeletePublishersPublisherFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeletePublishersPublisherFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -222,17 +216,15 @@ func (a *Client) DeletePublishersPublisherFidContext(ctx context.Context, params
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-DeletePublishersPublisherFidApprovedremoves approved status on an publisher.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.DeletePublishersPublisherFidApprovedContext] instead.
-*/
+// DeletePublishersPublisherFidApproved removes approved status on an publisher.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.DeletePublishersPublisherFidApprovedContext] instead.
 func (a *Client) DeletePublishersPublisherFidApproved(params *DeletePublishersPublisherFidApprovedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeletePublishersPublisherFidApprovedOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -241,11 +233,9 @@ func (a *Client) DeletePublishersPublisherFidApproved(params *DeletePublishersPu
 	return a.DeletePublishersPublisherFidApprovedContext(ctx, params, authInfo, opts...)
 }
 
-/*
-DeletePublishersPublisherFidApprovedContextremoves approved status on an publisher.
-
-Do not use the deprecated [DeletePublishersPublisherFidApprovedParams.Context] with this method: it would be ignored.
-*/
+// DeletePublishersPublisherFidApprovedContext removes approved status on an publisher.
+//
+// Do not use the deprecated [DeletePublishersPublisherFidApprovedParams.Context] with this method: it would be ignored.
 func (a *Client) DeletePublishersPublisherFidApprovedContext(ctx context.Context, params *DeletePublishersPublisherFidApprovedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeletePublishersPublisherFidApprovedOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -288,17 +278,15 @@ func (a *Client) DeletePublishersPublisherFidApprovedContext(ctx context.Context
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetPublisherslists publishers.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetPublishersContext] instead.
-*/
+// GetPublishers lists publishers.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetPublishersContext] instead.
 func (a *Client) GetPublishers(params *GetPublishersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPublishersOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -307,11 +295,9 @@ func (a *Client) GetPublishers(params *GetPublishersParams, authInfo runtime.Cli
 	return a.GetPublishersContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetPublishersContextlists publishers.
-
-Do not use the deprecated [GetPublishersParams.Context] with this method: it would be ignored.
-*/
+// GetPublishersContext lists publishers.
+//
+// Do not use the deprecated [GetPublishersParams.Context] with this method: it would be ignored.
 func (a *Client) GetPublishersContext(ctx context.Context, params *GetPublishersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPublishersOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -354,17 +340,15 @@ func (a *Client) GetPublishersContext(ctx context.Context, params *GetPublishers
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetPublishersPublisherFidretrieves a publisher.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetPublishersPublisherFidContext] instead.
-*/
+// GetPublishersPublisherFid retrieves a publisher.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetPublishersPublisherFidContext] instead.
 func (a *Client) GetPublishersPublisherFid(params *GetPublishersPublisherFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPublishersPublisherFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -373,11 +357,9 @@ func (a *Client) GetPublishersPublisherFid(params *GetPublishersPublisherFidPara
 	return a.GetPublishersPublisherFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetPublishersPublisherFidContextretrieves a publisher.
-
-Do not use the deprecated [GetPublishersPublisherFidParams.Context] with this method: it would be ignored.
-*/
+// GetPublishersPublisherFidContext retrieves a publisher.
+//
+// Do not use the deprecated [GetPublishersPublisherFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetPublishersPublisherFidContext(ctx context.Context, params *GetPublishersPublisherFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPublishersPublisherFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -420,17 +402,15 @@ func (a *Client) GetPublishersPublisherFidContext(ctx context.Context, params *G
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetPublishersPublisherFidCampaignslists campaigns.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetPublishersPublisherFidCampaignsContext] instead.
-*/
+// GetPublishersPublisherFidCampaigns lists campaigns.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetPublishersPublisherFidCampaignsContext] instead.
 func (a *Client) GetPublishersPublisherFidCampaigns(params *GetPublishersPublisherFidCampaignsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPublishersPublisherFidCampaignsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -439,11 +419,9 @@ func (a *Client) GetPublishersPublisherFidCampaigns(params *GetPublishersPublish
 	return a.GetPublishersPublisherFidCampaignsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetPublishersPublisherFidCampaignsContextlists campaigns.
-
-Do not use the deprecated [GetPublishersPublisherFidCampaignsParams.Context] with this method: it would be ignored.
-*/
+// GetPublishersPublisherFidCampaignsContext lists campaigns.
+//
+// Do not use the deprecated [GetPublishersPublisherFidCampaignsParams.Context] with this method: it would be ignored.
 func (a *Client) GetPublishersPublisherFidCampaignsContext(ctx context.Context, params *GetPublishersPublisherFidCampaignsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPublishersPublisherFidCampaignsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -486,17 +464,15 @@ func (a *Client) GetPublishersPublisherFidCampaignsContext(ctx context.Context, 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetPublishersPublisherFidCampaignsPublisherCampaignFidretrieves a publisher campaign.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetPublishersPublisherFidCampaignsPublisherCampaignFidContext] instead.
-*/
+// GetPublishersPublisherFidCampaignsPublisherCampaignFid retrieves a publisher campaign.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetPublishersPublisherFidCampaignsPublisherCampaignFidContext] instead.
 func (a *Client) GetPublishersPublisherFidCampaignsPublisherCampaignFid(params *GetPublishersPublisherFidCampaignsPublisherCampaignFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPublishersPublisherFidCampaignsPublisherCampaignFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -505,11 +481,9 @@ func (a *Client) GetPublishersPublisherFidCampaignsPublisherCampaignFid(params *
 	return a.GetPublishersPublisherFidCampaignsPublisherCampaignFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetPublishersPublisherFidCampaignsPublisherCampaignFidContextretrieves a publisher campaign.
-
-Do not use the deprecated [GetPublishersPublisherFidCampaignsPublisherCampaignFidParams.Context] with this method: it would be ignored.
-*/
+// GetPublishersPublisherFidCampaignsPublisherCampaignFidContext retrieves a publisher campaign.
+//
+// Do not use the deprecated [GetPublishersPublisherFidCampaignsPublisherCampaignFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetPublishersPublisherFidCampaignsPublisherCampaignFidContext(ctx context.Context, params *GetPublishersPublisherFidCampaignsPublisherCampaignFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPublishersPublisherFidCampaignsPublisherCampaignFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -552,19 +526,17 @@ func (a *Client) GetPublishersPublisherFidCampaignsPublisherCampaignFidContext(c
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetVisitorsVisitorIDretrieves information about a visitor.
-
-This call will return information related to how a visitor arrived.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetVisitorsVisitorIDContext] instead.
-*/
+// GetVisitorsVisitorID retrieves information about a visitor.
+//
+// This call will return information related to how a visitor arrived.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetVisitorsVisitorIDContext] instead.
 func (a *Client) GetVisitorsVisitorID(params *GetVisitorsVisitorIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetVisitorsVisitorIDOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -573,13 +545,11 @@ func (a *Client) GetVisitorsVisitorID(params *GetVisitorsVisitorIDParams, authIn
 	return a.GetVisitorsVisitorIDContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetVisitorsVisitorIDContextretrieves information about a visitor.
-
-This call will return information related to how a visitor arrived.
-
-Do not use the deprecated [GetVisitorsVisitorIDParams.Context] with this method: it would be ignored.
-*/
+// GetVisitorsVisitorIDContext retrieves information about a visitor.
+//
+// This call will return information related to how a visitor arrived.
+//
+// Do not use the deprecated [GetVisitorsVisitorIDParams.Context] with this method: it would be ignored.
 func (a *Client) GetVisitorsVisitorIDContext(ctx context.Context, params *GetVisitorsVisitorIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetVisitorsVisitorIDOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -622,19 +592,17 @@ func (a *Client) GetVisitorsVisitorIDContext(ctx context.Context, params *GetVis
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetVisitorsVisitorIDPixelsretrieves pending pixels for this visitor.
-
-This call will release pixels from the pending queue on read.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetVisitorsVisitorIDPixelsContext] instead.
-*/
+// GetVisitorsVisitorIDPixels retrieves pending pixels for this visitor.
+//
+// This call will release pixels from the pending queue on read.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetVisitorsVisitorIDPixelsContext] instead.
 func (a *Client) GetVisitorsVisitorIDPixels(params *GetVisitorsVisitorIDPixelsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetVisitorsVisitorIDPixelsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -643,13 +611,11 @@ func (a *Client) GetVisitorsVisitorIDPixels(params *GetVisitorsVisitorIDPixelsPa
 	return a.GetVisitorsVisitorIDPixelsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetVisitorsVisitorIDPixelsContextretrieves pending pixels for this visitor.
-
-This call will release pixels from the pending queue on read.
-
-Do not use the deprecated [GetVisitorsVisitorIDPixelsParams.Context] with this method: it would be ignored.
-*/
+// GetVisitorsVisitorIDPixelsContext retrieves pending pixels for this visitor.
+//
+// This call will release pixels from the pending queue on read.
+//
+// Do not use the deprecated [GetVisitorsVisitorIDPixelsParams.Context] with this method: it would be ignored.
 func (a *Client) GetVisitorsVisitorIDPixelsContext(ctx context.Context, params *GetVisitorsVisitorIDPixelsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetVisitorsVisitorIDPixelsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -692,17 +658,15 @@ func (a *Client) GetVisitorsVisitorIDPixelsContext(ctx context.Context, params *
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostPublisherscreates a new publisher.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostPublishersContext] instead.
-*/
+// PostPublishers creates a new publisher.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostPublishersContext] instead.
 func (a *Client) PostPublishers(params *PostPublishersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostPublishersOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -711,11 +675,9 @@ func (a *Client) PostPublishers(params *PostPublishersParams, authInfo runtime.C
 	return a.PostPublishersContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostPublishersContextcreates a new publisher.
-
-Do not use the deprecated [PostPublishersParams.Context] with this method: it would be ignored.
-*/
+// PostPublishersContext creates a new publisher.
+//
+// Do not use the deprecated [PostPublishersParams.Context] with this method: it would be ignored.
 func (a *Client) PostPublishersContext(ctx context.Context, params *PostPublishersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostPublishersOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -758,17 +720,15 @@ func (a *Client) PostPublishersContext(ctx context.Context, params *PostPublishe
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostPublishersPublisherFidCampaignscreates a new publisher campaign.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostPublishersPublisherFidCampaignsContext] instead.
-*/
+// PostPublishersPublisherFidCampaigns creates a new publisher campaign.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostPublishersPublisherFidCampaignsContext] instead.
 func (a *Client) PostPublishersPublisherFidCampaigns(params *PostPublishersPublisherFidCampaignsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostPublishersPublisherFidCampaignsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -777,11 +737,9 @@ func (a *Client) PostPublishersPublisherFidCampaigns(params *PostPublishersPubli
 	return a.PostPublishersPublisherFidCampaignsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostPublishersPublisherFidCampaignsContextcreates a new publisher campaign.
-
-Do not use the deprecated [PostPublishersPublisherFidCampaignsParams.Context] with this method: it would be ignored.
-*/
+// PostPublishersPublisherFidCampaignsContext creates a new publisher campaign.
+//
+// Do not use the deprecated [PostPublishersPublisherFidCampaignsParams.Context] with this method: it would be ignored.
 func (a *Client) PostPublishersPublisherFidCampaignsContext(ctx context.Context, params *PostPublishersPublisherFidCampaignsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostPublishersPublisherFidCampaignsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -824,21 +782,18 @@ func (a *Client) PostPublishersPublisherFidCampaignsContext(ctx context.Context,
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-	PostVisitorsVisitorIDActionsActionKeytracks an action.
-
-	Track an action such as a lead or acquisition
-
-.
-
-	This method does not support injected context.
-	However, timeout and opentracing contexts are honored whenever enabled.
-
-	If you need to pass a specific context, use [Client.PostVisitorsVisitorIDActionsActionKeyContext] instead.
-*/
+// PostVisitorsVisitorIDActionsActionKey tracks an action.
+//
+// Track an action such as a lead or acquisition
+// .
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostVisitorsVisitorIDActionsActionKeyContext] instead.
 func (a *Client) PostVisitorsVisitorIDActionsActionKey(params *PostVisitorsVisitorIDActionsActionKeyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostVisitorsVisitorIDActionsActionKeyOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -847,15 +802,12 @@ func (a *Client) PostVisitorsVisitorIDActionsActionKey(params *PostVisitorsVisit
 	return a.PostVisitorsVisitorIDActionsActionKeyContext(ctx, params, authInfo, opts...)
 }
 
-/*
-	PostVisitorsVisitorIDActionsActionKeyContexttracks an action.
-
-	Track an action such as a lead or acquisition
-
-.
-
-	Do not use the deprecated [PostVisitorsVisitorIDActionsActionKeyParams.Context] with this method: it would be ignored.
-*/
+// PostVisitorsVisitorIDActionsActionKeyContext tracks an action.
+//
+// Track an action such as a lead or acquisition
+// .
+//
+// Do not use the deprecated [PostVisitorsVisitorIDActionsActionKeyParams.Context] with this method: it would be ignored.
 func (a *Client) PostVisitorsVisitorIDActionsActionKeyContext(ctx context.Context, params *PostVisitorsVisitorIDActionsActionKeyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostVisitorsVisitorIDActionsActionKeyOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -898,21 +850,18 @@ func (a *Client) PostVisitorsVisitorIDActionsActionKeyContext(ctx context.Contex
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-	PostVisitorsVisitorIDActionsActionKeyReversereverses a previously tracked action.
-
-	When an action has been reversed, e.g. cancelled, refunded
-
-.
-
-	This method does not support injected context.
-	However, timeout and opentracing contexts are honored whenever enabled.
-
-	If you need to pass a specific context, use [Client.PostVisitorsVisitorIDActionsActionKeyReverseContext] instead.
-*/
+// PostVisitorsVisitorIDActionsActionKeyReverse reverses a previously tracked action.
+//
+// When an action has been reversed, e.g. cancelled, refunded
+// .
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostVisitorsVisitorIDActionsActionKeyReverseContext] instead.
 func (a *Client) PostVisitorsVisitorIDActionsActionKeyReverse(params *PostVisitorsVisitorIDActionsActionKeyReverseParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostVisitorsVisitorIDActionsActionKeyReverseOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -921,15 +870,12 @@ func (a *Client) PostVisitorsVisitorIDActionsActionKeyReverse(params *PostVisito
 	return a.PostVisitorsVisitorIDActionsActionKeyReverseContext(ctx, params, authInfo, opts...)
 }
 
-/*
-	PostVisitorsVisitorIDActionsActionKeyReverseContextreverses a previously tracked action.
-
-	When an action has been reversed, e.g. cancelled, refunded
-
-.
-
-	Do not use the deprecated [PostVisitorsVisitorIDActionsActionKeyReverseParams.Context] with this method: it would be ignored.
-*/
+// PostVisitorsVisitorIDActionsActionKeyReverseContext reverses a previously tracked action.
+//
+// When an action has been reversed, e.g. cancelled, refunded
+// .
+//
+// Do not use the deprecated [PostVisitorsVisitorIDActionsActionKeyReverseParams.Context] with this method: it would be ignored.
 func (a *Client) PostVisitorsVisitorIDActionsActionKeyReverseContext(ctx context.Context, params *PostVisitorsVisitorIDActionsActionKeyReverseParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostVisitorsVisitorIDActionsActionKeyReverseOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -972,17 +918,15 @@ func (a *Client) PostVisitorsVisitorIDActionsActionKeyReverseContext(ctx context
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutPublishersPublisherFidApprovedsets approved status on an publisher.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutPublishersPublisherFidApprovedContext] instead.
-*/
+// PutPublishersPublisherFidApproved sets approved status on an publisher.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutPublishersPublisherFidApprovedContext] instead.
 func (a *Client) PutPublishersPublisherFidApproved(params *PutPublishersPublisherFidApprovedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutPublishersPublisherFidApprovedOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -991,11 +935,9 @@ func (a *Client) PutPublishersPublisherFidApproved(params *PutPublishersPublishe
 	return a.PutPublishersPublisherFidApprovedContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutPublishersPublisherFidApprovedContextsets approved status on an publisher.
-
-Do not use the deprecated [PutPublishersPublisherFidApprovedParams.Context] with this method: it would be ignored.
-*/
+// PutPublishersPublisherFidApprovedContext sets approved status on an publisher.
+//
+// Do not use the deprecated [PutPublishersPublisherFidApprovedParams.Context] with this method: it would be ignored.
 func (a *Client) PutPublishersPublisherFidApprovedContext(ctx context.Context, params *PutPublishersPublisherFidApprovedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutPublishersPublisherFidApprovedOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1038,17 +980,15 @@ func (a *Client) PutPublishersPublisherFidApprovedContext(ctx context.Context, p
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutPublishersPublisherFidDisabledisables a publisher.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutPublishersPublisherFidDisableContext] instead.
-*/
+// PutPublishersPublisherFidDisable disables a publisher.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutPublishersPublisherFidDisableContext] instead.
 func (a *Client) PutPublishersPublisherFidDisable(params *PutPublishersPublisherFidDisableParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutPublishersPublisherFidDisableOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1057,11 +997,9 @@ func (a *Client) PutPublishersPublisherFidDisable(params *PutPublishersPublisher
 	return a.PutPublishersPublisherFidDisableContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutPublishersPublisherFidDisableContextdisables a publisher.
-
-Do not use the deprecated [PutPublishersPublisherFidDisableParams.Context] with this method: it would be ignored.
-*/
+// PutPublishersPublisherFidDisableContext disables a publisher.
+//
+// Do not use the deprecated [PutPublishersPublisherFidDisableParams.Context] with this method: it would be ignored.
 func (a *Client) PutPublishersPublisherFidDisableContext(ctx context.Context, params *PutPublishersPublisherFidDisableParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutPublishersPublisherFidDisableOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1104,17 +1042,15 @@ func (a *Client) PutPublishersPublisherFidDisableContext(ctx context.Context, pa
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutPublishersPublisherFidEnableenables a publisher.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutPublishersPublisherFidEnableContext] instead.
-*/
+// PutPublishersPublisherFidEnable enables a publisher.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutPublishersPublisherFidEnableContext] instead.
 func (a *Client) PutPublishersPublisherFidEnable(params *PutPublishersPublisherFidEnableParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutPublishersPublisherFidEnableOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1123,11 +1059,9 @@ func (a *Client) PutPublishersPublisherFidEnable(params *PutPublishersPublisherF
 	return a.PutPublishersPublisherFidEnableContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutPublishersPublisherFidEnableContextenables a publisher.
-
-Do not use the deprecated [PutPublishersPublisherFidEnableParams.Context] with this method: it would be ignored.
-*/
+// PutPublishersPublisherFidEnableContext enables a publisher.
+//
+// Do not use the deprecated [PutPublishersPublisherFidEnableParams.Context] with this method: it would be ignored.
 func (a *Client) PutPublishersPublisherFidEnableContext(ctx context.Context, params *PutPublishersPublisherFidEnableParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutPublishersPublisherFidEnableOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1170,17 +1104,15 @@ func (a *Client) PutPublishersPublisherFidEnableContext(ctx context.Context, par
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutPublishersPublisherFidRestorerestores a publisher.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutPublishersPublisherFidRestoreContext] instead.
-*/
+// PutPublishersPublisherFidRestore restores a publisher.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutPublishersPublisherFidRestoreContext] instead.
 func (a *Client) PutPublishersPublisherFidRestore(params *PutPublishersPublisherFidRestoreParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutPublishersPublisherFidRestoreOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1189,11 +1121,9 @@ func (a *Client) PutPublishersPublisherFidRestore(params *PutPublishersPublisher
 	return a.PutPublishersPublisherFidRestoreContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutPublishersPublisherFidRestoreContextrestores a publisher.
-
-Do not use the deprecated [PutPublishersPublisherFidRestoreParams.Context] with this method: it would be ignored.
-*/
+// PutPublishersPublisherFidRestoreContext restores a publisher.
+//
+// Do not use the deprecated [PutPublishersPublisherFidRestoreParams.Context] with this method: it would be ignored.
 func (a *Client) PutPublishersPublisherFidRestoreContext(ctx context.Context, params *PutPublishersPublisherFidRestoreParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutPublishersPublisherFidRestoreOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

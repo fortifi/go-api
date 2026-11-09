@@ -34,12 +34,12 @@ type DeviceResponse struct {
 }
 
 // Validate validates this device response
-func (m *DeviceResponse) Validate(formats strfmt.Registry) error {
+func (m *DeviceResponse) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this device response based on context it is used
-func (m *DeviceResponse) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *DeviceResponse) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

@@ -166,7 +166,7 @@ func (m *FlowLogMetricPayload) validateSessionID(formats strfmt.Registry) error 
 }
 
 // ContextValidate validates this flow log metric payload based on context it is used
-func (m *FlowLogMetricPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *FlowLogMetricPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for transaction API.
-*/
+// Client for transaction API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -66,17 +64,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-PostTransactionsTransactionFidRetryretries a transaction.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostTransactionsTransactionFidRetryContext] instead.
-*/
+// PostTransactionsTransactionFidRetry retries a transaction.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostTransactionsTransactionFidRetryContext] instead.
 func (a *Client) PostTransactionsTransactionFidRetry(params *PostTransactionsTransactionFidRetryParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostTransactionsTransactionFidRetryOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -85,11 +81,9 @@ func (a *Client) PostTransactionsTransactionFidRetry(params *PostTransactionsTra
 	return a.PostTransactionsTransactionFidRetryContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostTransactionsTransactionFidRetryContextretries a transaction.
-
-Do not use the deprecated [PostTransactionsTransactionFidRetryParams.Context] with this method: it would be ignored.
-*/
+// PostTransactionsTransactionFidRetryContext retries a transaction.
+//
+// Do not use the deprecated [PostTransactionsTransactionFidRetryParams.Context] with this method: it would be ignored.
 func (a *Client) PostTransactionsTransactionFidRetryContext(ctx context.Context, params *PostTransactionsTransactionFidRetryParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostTransactionsTransactionFidRetryOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

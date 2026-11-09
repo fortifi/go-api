@@ -73,12 +73,12 @@ type MessengerActionPayload struct {
 }
 
 // Validate validates this messenger action payload
-func (m *MessengerActionPayload) Validate(formats strfmt.Registry) error {
+func (m *MessengerActionPayload) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this messenger action payload based on context it is used
-func (m *MessengerActionPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *MessengerActionPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

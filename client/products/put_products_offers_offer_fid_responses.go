@@ -48,11 +48,9 @@ func NewPutProductsOffersOfferFidOK() *PutProductsOffersOfferFidOK {
 	return &PutProductsOffersOfferFidOK{}
 }
 
-/*
-PutProductsOffersOfferFidOK describes a response with status code 200, with default header values.
-
-Updated offer details
-*/
+// PutProductsOffersOfferFidOK describes a response with status code 200, with default header values.
+//
+// Updated offer details
 type PutProductsOffersOfferFidOK struct {
 	Payload *PutProductsOffersOfferFidOKBody
 }
@@ -120,11 +118,9 @@ func NewPutProductsOffersOfferFidDefault(code int) *PutProductsOffersOfferFidDef
 	}
 }
 
-/*
-PutProductsOffersOfferFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutProductsOffersOfferFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutProductsOffersOfferFidDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PutProductsOffersOfferFidDefault) readResponse(response runtime.ClientR
 	return nil
 }
 
-/*
-PutProductsOffersOfferFidOKBody put products offers offer fid o k body
-swagger:model PutProductsOffersOfferFidOKBody
-*/
+// PutProductsOffersOfferFidOKBody put products offers offer fid o k body
+//
+// swagger:model PutProductsOffersOfferFidOKBody
 type PutProductsOffersOfferFidOKBody struct {
 	models.Envelope
 

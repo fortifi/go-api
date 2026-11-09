@@ -48,11 +48,9 @@ func NewGetCustomersCustomerFidAddressesOK() *GetCustomersCustomerFidAddressesOK
 	return &GetCustomersCustomerFidAddressesOK{}
 }
 
-/*
-GetCustomersCustomerFidAddressesOK describes a response with status code 200, with default header values.
-
-List of addresses
-*/
+// GetCustomersCustomerFidAddressesOK describes a response with status code 200, with default header values.
+//
+// List of addresses
 type GetCustomersCustomerFidAddressesOK struct {
 	Payload *GetCustomersCustomerFidAddressesOKBody
 }
@@ -120,11 +118,9 @@ func NewGetCustomersCustomerFidAddressesDefault(code int) *GetCustomersCustomerF
 	}
 }
 
-/*
-GetCustomersCustomerFidAddressesDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetCustomersCustomerFidAddressesDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetCustomersCustomerFidAddressesDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetCustomersCustomerFidAddressesDefault) readResponse(response runtime.
 	return nil
 }
 
-/*
-GetCustomersCustomerFidAddressesOKBody get customers customer fid addresses o k body
-swagger:model GetCustomersCustomerFidAddressesOKBody
-*/
+// GetCustomersCustomerFidAddressesOKBody get customers customer fid addresses o k body
+//
+// swagger:model GetCustomersCustomerFidAddressesOKBody
 type GetCustomersCustomerFidAddressesOKBody struct {
 	models.Envelope
 

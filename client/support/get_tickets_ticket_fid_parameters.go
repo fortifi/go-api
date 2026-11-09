@@ -62,10 +62,9 @@ GetTicketsTicketFidParams contains all the parameters to send to the API endpoin
 */
 type GetTicketsTicketFidParams struct {
 
-	/* TicketFid.
-
-	   Ticket FID to use
-	*/
+	// TicketFid.
+	//
+	// Ticket FID to use
 	TicketFid string
 
 	HTTPClient *http.Client

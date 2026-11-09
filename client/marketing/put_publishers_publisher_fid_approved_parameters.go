@@ -62,10 +62,9 @@ PutPublishersPublisherFidApprovedParams contains all the parameters to send to t
 */
 type PutPublishersPublisherFidApprovedParams struct {
 
-	/* PublisherFid.
-
-	   Publisher FID to use
-	*/
+	// PublisherFid.
+	//
+	// Publisher FID to use
 	PublisherFid string
 
 	HTTPClient *http.Client

@@ -62,10 +62,9 @@ GetPublishersPublisherFidParams contains all the parameters to send to the API e
 */
 type GetPublishersPublisherFidParams struct {
 
-	/* PublisherFid.
-
-	   Publisher FID to use
-	*/
+	// PublisherFid.
+	//
+	// Publisher FID to use
 	PublisherFid string
 
 	HTTPClient *http.Client

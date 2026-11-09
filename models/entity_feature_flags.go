@@ -87,7 +87,7 @@ func (m *EntityFeatureFlags) contextValidateFeatureFlags(ctx context.Context, fo
 		if m.FeatureFlags[i] != nil {
 
 			if typeutils.IsZero(m.FeatureFlags[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.FeatureFlags[i].ContextValidate(ctx, formats); err != nil {

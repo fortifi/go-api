@@ -66,25 +66,22 @@ type PostCustomersCustomerFidPaymentMethodsPaypalInitialiseParams struct {
 	// CancelURL.
 	CancelURL string
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// FailURL.
 	FailURL string
 
-	/* PaymentServiceFid.
-
-	   Payment Service FID to use
-	*/
+	// PaymentServiceFid.
+	//
+	// Payment Service FID to use
 	PaymentServiceFid string
 
-	/* SubscriptionFids.
-
-	   Subscription FIDs
-	*/
+	// SubscriptionFids.
+	//
+	// Subscription FIDs
 	SubscriptionFids []string
 
 	// SuccessURL.

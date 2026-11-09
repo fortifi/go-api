@@ -22,12 +22,12 @@ type CreateInteraction struct {
 }
 
 // Validate validates this create interaction
-func (m *CreateInteraction) Validate(formats strfmt.Registry) error {
+func (m *CreateInteraction) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this create interaction based on context it is used
-func (m *CreateInteraction) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *CreateInteraction) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

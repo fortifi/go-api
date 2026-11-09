@@ -61,7 +61,7 @@ func (m *ActionableCancelFlowPayload) validateTime(formats strfmt.Registry) erro
 }
 
 // ContextValidate validates this actionable cancel flow payload based on context it is used
-func (m *ActionableCancelFlowPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *ActionableCancelFlowPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

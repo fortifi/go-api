@@ -44,11 +44,9 @@ func NewPostCustomersCustomerFidPaymentMethodsPaypalCompleteOK() *PostCustomersC
 	return &PostCustomersCustomerFidPaymentMethodsPaypalCompleteOK{}
 }
 
-/*
-PostCustomersCustomerFidPaymentMethodsPaypalCompleteOK describes a response with status code 200, with default header values.
-
-Successfully created agreement
-*/
+// PostCustomersCustomerFidPaymentMethodsPaypalCompleteOK describes a response with status code 200, with default header values.
+//
+// Successfully created agreement
 type PostCustomersCustomerFidPaymentMethodsPaypalCompleteOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPostCustomersCustomerFidPaymentMethodsPaypalCompleteDefault(code int) *P
 	}
 }
 
-/*
-PostCustomersCustomerFidPaymentMethodsPaypalCompleteDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostCustomersCustomerFidPaymentMethodsPaypalCompleteDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostCustomersCustomerFidPaymentMethodsPaypalCompleteDefault struct {
 	_statusCode int
 

@@ -121,6 +121,6 @@ func (m PaymentMethod) Validate(formats strfmt.Registry) error {
 }
 
 // ContextValidate validates this payment method based on context it is used
-func (m PaymentMethod) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m PaymentMethod) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }

@@ -25,12 +25,12 @@ type TaxItemPayload struct {
 }
 
 // Validate validates this tax item payload
-func (m *TaxItemPayload) Validate(formats strfmt.Registry) error {
+func (m *TaxItemPayload) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this tax item payload based on context it is used
-func (m *TaxItemPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *TaxItemPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

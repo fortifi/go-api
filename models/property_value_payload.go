@@ -19,12 +19,12 @@ type PropertyValuePayload struct {
 }
 
 // Validate validates this property value payload
-func (m *PropertyValuePayload) Validate(formats strfmt.Registry) error {
+func (m *PropertyValuePayload) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this property value payload based on context it is used
-func (m *PropertyValuePayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *PropertyValuePayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

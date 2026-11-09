@@ -44,11 +44,9 @@ func NewPutCustomersCustomerFidLoyalOK() *PutCustomersCustomerFidLoyalOK {
 	return &PutCustomersCustomerFidLoyalOK{}
 }
 
-/*
-PutCustomersCustomerFidLoyalOK describes a response with status code 200, with default header values.
-
-Customer Loyalty Acknowledged
-*/
+// PutCustomersCustomerFidLoyalOK describes a response with status code 200, with default header values.
+//
+// Customer Loyalty Acknowledged
 type PutCustomersCustomerFidLoyalOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutCustomersCustomerFidLoyalDefault(code int) *PutCustomersCustomerFidLo
 	}
 }
 
-/*
-PutCustomersCustomerFidLoyalDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutCustomersCustomerFidLoyalDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutCustomersCustomerFidLoyalDefault struct {
 	_statusCode int
 

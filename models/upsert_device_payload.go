@@ -209,7 +209,7 @@ func (m *UpsertDevicePayload) validatePushSource(formats strfmt.Registry) error 
 }
 
 // ContextValidate validates this upsert device payload based on context it is used
-func (m *UpsertDevicePayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *UpsertDevicePayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

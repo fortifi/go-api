@@ -44,11 +44,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysOK() *P
 	return &PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysOK{}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysOK describes a response with status code 200, with default header values.
-
-Auto cancel days set
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysOK describes a response with status code 200, with default header values.
+//
+// Auto cancel days set
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysDefault
 	}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysDefault struct {
 	_statusCode int
 

@@ -62,10 +62,9 @@ GetProductsOffersOfferFidParams contains all the parameters to send to the API e
 */
 type GetProductsOffersOfferFidParams struct {
 
-	/* OfferFid.
-
-	   Offer FID or Coupon Code
-	*/
+	// OfferFid.
+	//
+	// Offer FID or Coupon Code
 	OfferFid string
 
 	HTTPClient *http.Client

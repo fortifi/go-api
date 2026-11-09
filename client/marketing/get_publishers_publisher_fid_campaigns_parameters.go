@@ -63,22 +63,19 @@ GetPublishersPublisherFidCampaignsParams contains all the parameters to send to 
 */
 type GetPublishersPublisherFidCampaignsParams struct {
 
-	/* Limit.
-
-	   Maximum number of records per page (default: 20)
-	*/
+	// Limit.
+	//
+	// Maximum number of records per page (default: 20)
 	Limit *int64
 
-	/* Page.
-
-	   Page number (default: 1)
-	*/
+	// Page.
+	//
+	// Page number (default: 1)
 	Page *int64
 
-	/* PublisherFid.
-
-	   Publisher FID to use
-	*/
+	// PublisherFid.
+	//
+	// Publisher FID to use
 	PublisherFid string
 
 	HTTPClient *http.Client

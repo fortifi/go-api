@@ -62,10 +62,9 @@ PutPublishersPublisherFidEnableParams contains all the parameters to send to the
 */
 type PutPublishersPublisherFidEnableParams struct {
 
-	/* PublisherFid.
-
-	   Publisher FID to use
-	*/
+	// PublisherFid.
+	//
+	// Publisher FID to use
 	PublisherFid string
 
 	HTTPClient *http.Client

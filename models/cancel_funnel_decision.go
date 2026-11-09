@@ -22,12 +22,12 @@ type CancelFunnelDecision struct {
 }
 
 // Validate validates this cancel funnel decision
-func (m *CancelFunnelDecision) Validate(formats strfmt.Registry) error {
+func (m *CancelFunnelDecision) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this cancel funnel decision based on context it is used
-func (m *CancelFunnelDecision) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *CancelFunnelDecision) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

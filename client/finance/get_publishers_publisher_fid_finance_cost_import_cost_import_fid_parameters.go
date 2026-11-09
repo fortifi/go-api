@@ -62,16 +62,14 @@ GetPublishersPublisherFidFinanceCostImportCostImportFidParams contains all the p
 */
 type GetPublishersPublisherFidFinanceCostImportCostImportFidParams struct {
 
-	/* CostImportFid.
-
-	   Cost Import FID to use
-	*/
+	// CostImportFid.
+	//
+	// Cost Import FID to use
 	CostImportFid string
 
-	/* PublisherFid.
-
-	   Publisher FID to use
-	*/
+	// PublisherFid.
+	//
+	// Publisher FID to use
 	PublisherFid string
 
 	HTTPClient *http.Client

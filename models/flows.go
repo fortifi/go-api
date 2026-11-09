@@ -87,7 +87,7 @@ func (m *Flows) contextValidateFlows(ctx context.Context, formats strfmt.Registr
 		if m.Flows[i] != nil {
 
 			if typeutils.IsZero(m.Flows[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Flows[i].ContextValidate(ctx, formats); err != nil {

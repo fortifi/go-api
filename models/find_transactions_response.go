@@ -87,7 +87,7 @@ func (m *FindTransactionsResponse) contextValidateTransactions(ctx context.Conte
 		if m.Transactions[i] != nil {
 
 			if typeutils.IsZero(m.Transactions[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Transactions[i].ContextValidate(ctx, formats); err != nil {

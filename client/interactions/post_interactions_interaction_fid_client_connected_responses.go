@@ -44,11 +44,9 @@ func NewPostInteractionsInteractionFidClientConnectedOK() *PostInteractionsInter
 	return &PostInteractionsInteractionFidClientConnectedOK{}
 }
 
-/*
-PostInteractionsInteractionFidClientConnectedOK describes a response with status code 200, with default header values.
-
-Client Connected
-*/
+// PostInteractionsInteractionFidClientConnectedOK describes a response with status code 200, with default header values.
+//
+// Client Connected
 type PostInteractionsInteractionFidClientConnectedOK struct {
 	Payload *models.Envelope
 }
@@ -116,11 +114,9 @@ func NewPostInteractionsInteractionFidClientConnectedDefault(code int) *PostInte
 	}
 }
 
-/*
-PostInteractionsInteractionFidClientConnectedDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostInteractionsInteractionFidClientConnectedDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostInteractionsInteractionFidClientConnectedDefault struct {
 	_statusCode int
 

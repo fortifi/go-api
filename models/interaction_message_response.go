@@ -43,12 +43,12 @@ type InteractionMessageResponse struct {
 }
 
 // Validate validates this interaction message response
-func (m *InteractionMessageResponse) Validate(formats strfmt.Registry) error {
+func (m *InteractionMessageResponse) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this interaction message response based on context it is used
-func (m *InteractionMessageResponse) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *InteractionMessageResponse) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

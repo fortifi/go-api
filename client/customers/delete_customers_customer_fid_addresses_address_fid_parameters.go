@@ -62,16 +62,14 @@ DeleteCustomersCustomerFidAddressesAddressFidParams contains all the parameters 
 */
 type DeleteCustomersCustomerFidAddressesAddressFidParams struct {
 
-	/* AddressFid.
-
-	   Address FID to use
-	*/
+	// AddressFid.
+	//
+	// Address FID to use
 	AddressFid string
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	HTTPClient *http.Client

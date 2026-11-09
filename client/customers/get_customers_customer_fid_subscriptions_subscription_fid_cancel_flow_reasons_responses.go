@@ -48,11 +48,9 @@ func NewGetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsOK()
 	return &GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsOK{}
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsOK describes a response with status code 200, with default header values.
-
-Cancel Flow Reasons
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsOK describes a response with status code 200, with default header values.
+//
+// Cancel Flow Reasons
 type GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsOK struct {
 	Payload *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsOKBody
 }
@@ -120,11 +118,9 @@ func NewGetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsDefa
 	}
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsDef
 	return nil
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsOKBody get customers customer fid subscriptions subscription fid cancel flow reasons o k body
-swagger:model GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsOKBody
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsOKBody get customers customer fid subscriptions subscription fid cancel flow reasons o k body
+//
+// swagger:model GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsOKBody
 type GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsOKBody struct {
 	models.Envelope
 

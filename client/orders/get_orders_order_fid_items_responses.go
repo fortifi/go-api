@@ -48,11 +48,9 @@ func NewGetOrdersOrderFidItemsOK() *GetOrdersOrderFidItemsOK {
 	return &GetOrdersOrderFidItemsOK{}
 }
 
-/*
-GetOrdersOrderFidItemsOK describes a response with status code 200, with default header values.
-
-List of order items
-*/
+// GetOrdersOrderFidItemsOK describes a response with status code 200, with default header values.
+//
+// List of order items
 type GetOrdersOrderFidItemsOK struct {
 	Payload *GetOrdersOrderFidItemsOKBody
 }
@@ -120,11 +118,9 @@ func NewGetOrdersOrderFidItemsDefault(code int) *GetOrdersOrderFidItemsDefault {
 	}
 }
 
-/*
-GetOrdersOrderFidItemsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetOrdersOrderFidItemsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetOrdersOrderFidItemsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetOrdersOrderFidItemsDefault) readResponse(response runtime.ClientResp
 	return nil
 }
 
-/*
-GetOrdersOrderFidItemsOKBody get orders order fid items o k body
-swagger:model GetOrdersOrderFidItemsOKBody
-*/
+// GetOrdersOrderFidItemsOKBody get orders order fid items o k body
+//
+// swagger:model GetOrdersOrderFidItemsOKBody
 type GetOrdersOrderFidItemsOKBody struct {
 	models.Envelope
 

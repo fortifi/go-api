@@ -48,11 +48,9 @@ func NewPostVisitorsVisitorIDActionsActionKeyReverseOK() *PostVisitorsVisitorIDA
 	return &PostVisitorsVisitorIDActionsActionKeyReverseOK{}
 }
 
-/*
-PostVisitorsVisitorIDActionsActionKeyReverseOK describes a response with status code 200, with default header values.
-
-Action Reversed
-*/
+// PostVisitorsVisitorIDActionsActionKeyReverseOK describes a response with status code 200, with default header values.
+//
+// Action Reversed
 type PostVisitorsVisitorIDActionsActionKeyReverseOK struct {
 	Payload *PostVisitorsVisitorIDActionsActionKeyReverseOKBody
 }
@@ -120,11 +118,9 @@ func NewPostVisitorsVisitorIDActionsActionKeyReverseDefault(code int) *PostVisit
 	}
 }
 
-/*
-PostVisitorsVisitorIDActionsActionKeyReverseDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostVisitorsVisitorIDActionsActionKeyReverseDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostVisitorsVisitorIDActionsActionKeyReverseDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostVisitorsVisitorIDActionsActionKeyReverseDefault) readResponse(respo
 	return nil
 }
 
-/*
-PostVisitorsVisitorIDActionsActionKeyReverseOKBody post visitors visitor ID actions action key reverse o k body
-swagger:model PostVisitorsVisitorIDActionsActionKeyReverseOKBody
-*/
+// PostVisitorsVisitorIDActionsActionKeyReverseOKBody post visitors visitor ID actions action key reverse o k body
+//
+// swagger:model PostVisitorsVisitorIDActionsActionKeyReverseOKBody
 type PostVisitorsVisitorIDActionsActionKeyReverseOKBody struct {
 	models.Envelope
 

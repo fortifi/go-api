@@ -62,10 +62,9 @@ PutAdvertisersAdvertiserFidApprovedParams contains all the parameters to send to
 */
 type PutAdvertisersAdvertiserFidApprovedParams struct {
 
-	/* AdvertiserFid.
-
-	   Advertiser FID to use
-	*/
+	// AdvertiserFid.
+	//
+	// Advertiser FID to use
 	AdvertiserFid string
 
 	HTTPClient *http.Client

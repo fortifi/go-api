@@ -48,11 +48,9 @@ func NewGetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsOK() *GetC
 	return &GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsOK{}
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsOK describes a response with status code 200, with default header values.
-
-Loaded allocations
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsOK describes a response with status code 200, with default header values.
+//
+// Loaded allocations
 type GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsOK struct {
 	Payload *GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsOKBody
 }
@@ -120,11 +118,9 @@ func NewGetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsDefault(co
 	}
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsDefault) 
 	return nil
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsOKBody get customers customer fid subscriptions subscription fid allocations o k body
-swagger:model GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsOKBody
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsOKBody get customers customer fid subscriptions subscription fid allocations o k body
+//
+// swagger:model GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsOKBody
 type GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsOKBody struct {
 	models.Envelope
 

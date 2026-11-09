@@ -93,7 +93,7 @@ func (m *AvailabilityCheckResponse) contextValidateSuggestions(ctx context.Conte
 		if m.Suggestions[i] != nil {
 
 			if typeutils.IsZero(m.Suggestions[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Suggestions[i].ContextValidate(ctx, formats); err != nil {

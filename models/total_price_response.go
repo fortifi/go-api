@@ -43,12 +43,12 @@ type TotalPriceResponse struct {
 }
 
 // Validate validates this total price response
-func (m *TotalPriceResponse) Validate(formats strfmt.Registry) error {
+func (m *TotalPriceResponse) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this total price response based on context it is used
-func (m *TotalPriceResponse) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *TotalPriceResponse) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

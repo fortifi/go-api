@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for customers API.
-*/
+// Client for customers API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -878,17 +876,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-DeleteContactsContactFidAddressesAddressFidremoves an address from a contact.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.DeleteContactsContactFidAddressesAddressFidContext] instead.
-*/
+// DeleteContactsContactFidAddressesAddressFid removes an address from a contact.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.DeleteContactsContactFidAddressesAddressFidContext] instead.
 func (a *Client) DeleteContactsContactFidAddressesAddressFid(params *DeleteContactsContactFidAddressesAddressFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteContactsContactFidAddressesAddressFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -897,11 +893,9 @@ func (a *Client) DeleteContactsContactFidAddressesAddressFid(params *DeleteConta
 	return a.DeleteContactsContactFidAddressesAddressFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-DeleteContactsContactFidAddressesAddressFidContextremoves an address from a contact.
-
-Do not use the deprecated [DeleteContactsContactFidAddressesAddressFidParams.Context] with this method: it would be ignored.
-*/
+// DeleteContactsContactFidAddressesAddressFidContext removes an address from a contact.
+//
+// Do not use the deprecated [DeleteContactsContactFidAddressesAddressFidParams.Context] with this method: it would be ignored.
 func (a *Client) DeleteContactsContactFidAddressesAddressFidContext(ctx context.Context, params *DeleteContactsContactFidAddressesAddressFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteContactsContactFidAddressesAddressFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -944,17 +938,15 @@ func (a *Client) DeleteContactsContactFidAddressesAddressFidContext(ctx context.
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-DeleteContactsContactFidEmailsEmailFidremoves an email from a contact.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.DeleteContactsContactFidEmailsEmailFidContext] instead.
-*/
+// DeleteContactsContactFidEmailsEmailFid removes an email from a contact.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.DeleteContactsContactFidEmailsEmailFidContext] instead.
 func (a *Client) DeleteContactsContactFidEmailsEmailFid(params *DeleteContactsContactFidEmailsEmailFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteContactsContactFidEmailsEmailFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -963,11 +955,9 @@ func (a *Client) DeleteContactsContactFidEmailsEmailFid(params *DeleteContactsCo
 	return a.DeleteContactsContactFidEmailsEmailFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-DeleteContactsContactFidEmailsEmailFidContextremoves an email from a contact.
-
-Do not use the deprecated [DeleteContactsContactFidEmailsEmailFidParams.Context] with this method: it would be ignored.
-*/
+// DeleteContactsContactFidEmailsEmailFidContext removes an email from a contact.
+//
+// Do not use the deprecated [DeleteContactsContactFidEmailsEmailFidParams.Context] with this method: it would be ignored.
 func (a *Client) DeleteContactsContactFidEmailsEmailFidContext(ctx context.Context, params *DeleteContactsContactFidEmailsEmailFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteContactsContactFidEmailsEmailFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1010,17 +1000,15 @@ func (a *Client) DeleteContactsContactFidEmailsEmailFidContext(ctx context.Conte
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-DeleteContactsContactFidPhonesPhoneFidremoves a phone.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.DeleteContactsContactFidPhonesPhoneFidContext] instead.
-*/
+// DeleteContactsContactFidPhonesPhoneFid removes a phone.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.DeleteContactsContactFidPhonesPhoneFidContext] instead.
 func (a *Client) DeleteContactsContactFidPhonesPhoneFid(params *DeleteContactsContactFidPhonesPhoneFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteContactsContactFidPhonesPhoneFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1029,11 +1017,9 @@ func (a *Client) DeleteContactsContactFidPhonesPhoneFid(params *DeleteContactsCo
 	return a.DeleteContactsContactFidPhonesPhoneFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-DeleteContactsContactFidPhonesPhoneFidContextremoves a phone.
-
-Do not use the deprecated [DeleteContactsContactFidPhonesPhoneFidParams.Context] with this method: it would be ignored.
-*/
+// DeleteContactsContactFidPhonesPhoneFidContext removes a phone.
+//
+// Do not use the deprecated [DeleteContactsContactFidPhonesPhoneFidParams.Context] with this method: it would be ignored.
 func (a *Client) DeleteContactsContactFidPhonesPhoneFidContext(ctx context.Context, params *DeleteContactsContactFidPhonesPhoneFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteContactsContactFidPhonesPhoneFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1076,17 +1062,15 @@ func (a *Client) DeleteContactsContactFidPhonesPhoneFidContext(ctx context.Conte
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-DeleteCustomersCustomerFidarchives a customer.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.DeleteCustomersCustomerFidContext] instead.
-*/
+// DeleteCustomersCustomerFid archives a customer.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.DeleteCustomersCustomerFidContext] instead.
 func (a *Client) DeleteCustomersCustomerFid(params *DeleteCustomersCustomerFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1095,11 +1079,9 @@ func (a *Client) DeleteCustomersCustomerFid(params *DeleteCustomersCustomerFidPa
 	return a.DeleteCustomersCustomerFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-DeleteCustomersCustomerFidContextarchives a customer.
-
-Do not use the deprecated [DeleteCustomersCustomerFidParams.Context] with this method: it would be ignored.
-*/
+// DeleteCustomersCustomerFidContext archives a customer.
+//
+// Do not use the deprecated [DeleteCustomersCustomerFidParams.Context] with this method: it would be ignored.
 func (a *Client) DeleteCustomersCustomerFidContext(ctx context.Context, params *DeleteCustomersCustomerFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1142,17 +1124,15 @@ func (a *Client) DeleteCustomersCustomerFidContext(ctx context.Context, params *
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-DeleteCustomersCustomerFidAddressesAddressFidremoves an address.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.DeleteCustomersCustomerFidAddressesAddressFidContext] instead.
-*/
+// DeleteCustomersCustomerFidAddressesAddressFid removes an address.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.DeleteCustomersCustomerFidAddressesAddressFidContext] instead.
 func (a *Client) DeleteCustomersCustomerFidAddressesAddressFid(params *DeleteCustomersCustomerFidAddressesAddressFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidAddressesAddressFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1161,11 +1141,9 @@ func (a *Client) DeleteCustomersCustomerFidAddressesAddressFid(params *DeleteCus
 	return a.DeleteCustomersCustomerFidAddressesAddressFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-DeleteCustomersCustomerFidAddressesAddressFidContextremoves an address.
-
-Do not use the deprecated [DeleteCustomersCustomerFidAddressesAddressFidParams.Context] with this method: it would be ignored.
-*/
+// DeleteCustomersCustomerFidAddressesAddressFidContext removes an address.
+//
+// Do not use the deprecated [DeleteCustomersCustomerFidAddressesAddressFidParams.Context] with this method: it would be ignored.
 func (a *Client) DeleteCustomersCustomerFidAddressesAddressFidContext(ctx context.Context, params *DeleteCustomersCustomerFidAddressesAddressFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidAddressesAddressFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1208,17 +1186,15 @@ func (a *Client) DeleteCustomersCustomerFidAddressesAddressFidContext(ctx contex
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-DeleteCustomersCustomerFidContactsContactFidremoves a contact.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.DeleteCustomersCustomerFidContactsContactFidContext] instead.
-*/
+// DeleteCustomersCustomerFidContactsContactFid removes a contact.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.DeleteCustomersCustomerFidContactsContactFidContext] instead.
 func (a *Client) DeleteCustomersCustomerFidContactsContactFid(params *DeleteCustomersCustomerFidContactsContactFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidContactsContactFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1227,11 +1203,9 @@ func (a *Client) DeleteCustomersCustomerFidContactsContactFid(params *DeleteCust
 	return a.DeleteCustomersCustomerFidContactsContactFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-DeleteCustomersCustomerFidContactsContactFidContextremoves a contact.
-
-Do not use the deprecated [DeleteCustomersCustomerFidContactsContactFidParams.Context] with this method: it would be ignored.
-*/
+// DeleteCustomersCustomerFidContactsContactFidContext removes a contact.
+//
+// Do not use the deprecated [DeleteCustomersCustomerFidContactsContactFidParams.Context] with this method: it would be ignored.
 func (a *Client) DeleteCustomersCustomerFidContactsContactFidContext(ctx context.Context, params *DeleteCustomersCustomerFidContactsContactFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidContactsContactFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1274,17 +1248,15 @@ func (a *Client) DeleteCustomersCustomerFidContactsContactFidContext(ctx context
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-DeleteCustomersCustomerFidEmailsEmailFidremoves an email.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.DeleteCustomersCustomerFidEmailsEmailFidContext] instead.
-*/
+// DeleteCustomersCustomerFidEmailsEmailFid removes an email.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.DeleteCustomersCustomerFidEmailsEmailFidContext] instead.
 func (a *Client) DeleteCustomersCustomerFidEmailsEmailFid(params *DeleteCustomersCustomerFidEmailsEmailFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidEmailsEmailFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1293,11 +1265,9 @@ func (a *Client) DeleteCustomersCustomerFidEmailsEmailFid(params *DeleteCustomer
 	return a.DeleteCustomersCustomerFidEmailsEmailFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-DeleteCustomersCustomerFidEmailsEmailFidContextremoves an email.
-
-Do not use the deprecated [DeleteCustomersCustomerFidEmailsEmailFidParams.Context] with this method: it would be ignored.
-*/
+// DeleteCustomersCustomerFidEmailsEmailFidContext removes an email.
+//
+// Do not use the deprecated [DeleteCustomersCustomerFidEmailsEmailFidParams.Context] with this method: it would be ignored.
 func (a *Client) DeleteCustomersCustomerFidEmailsEmailFidContext(ctx context.Context, params *DeleteCustomersCustomerFidEmailsEmailFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidEmailsEmailFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1340,17 +1310,15 @@ func (a *Client) DeleteCustomersCustomerFidEmailsEmailFidContext(ctx context.Con
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-DeleteCustomersCustomerFidLoyalremoves customer loyalty flag.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.DeleteCustomersCustomerFidLoyalContext] instead.
-*/
+// DeleteCustomersCustomerFidLoyal removes customer loyalty flag.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.DeleteCustomersCustomerFidLoyalContext] instead.
 func (a *Client) DeleteCustomersCustomerFidLoyal(params *DeleteCustomersCustomerFidLoyalParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidLoyalOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1359,11 +1327,9 @@ func (a *Client) DeleteCustomersCustomerFidLoyal(params *DeleteCustomersCustomer
 	return a.DeleteCustomersCustomerFidLoyalContext(ctx, params, authInfo, opts...)
 }
 
-/*
-DeleteCustomersCustomerFidLoyalContextremoves customer loyalty flag.
-
-Do not use the deprecated [DeleteCustomersCustomerFidLoyalParams.Context] with this method: it would be ignored.
-*/
+// DeleteCustomersCustomerFidLoyalContext removes customer loyalty flag.
+//
+// Do not use the deprecated [DeleteCustomersCustomerFidLoyalParams.Context] with this method: it would be ignored.
 func (a *Client) DeleteCustomersCustomerFidLoyalContext(ctx context.Context, params *DeleteCustomersCustomerFidLoyalParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidLoyalOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1406,17 +1372,15 @@ func (a *Client) DeleteCustomersCustomerFidLoyalContext(ctx context.Context, par
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-DeleteCustomersCustomerFidPaymentMethodsCardsCardFiddelete customers customer fid payment methods cards card fid API.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.DeleteCustomersCustomerFidPaymentMethodsCardsCardFidContext] instead.
-*/
+// DeleteCustomersCustomerFidPaymentMethodsCardsCardFid delete customers customer fid payment methods cards card fid API.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.DeleteCustomersCustomerFidPaymentMethodsCardsCardFidContext] instead.
 func (a *Client) DeleteCustomersCustomerFidPaymentMethodsCardsCardFid(params *DeleteCustomersCustomerFidPaymentMethodsCardsCardFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidPaymentMethodsCardsCardFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1425,11 +1389,9 @@ func (a *Client) DeleteCustomersCustomerFidPaymentMethodsCardsCardFid(params *De
 	return a.DeleteCustomersCustomerFidPaymentMethodsCardsCardFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-DeleteCustomersCustomerFidPaymentMethodsCardsCardFidContextdelete customers customer fid payment methods cards card fid API.
-
-Do not use the deprecated [DeleteCustomersCustomerFidPaymentMethodsCardsCardFidParams.Context] with this method: it would be ignored.
-*/
+// DeleteCustomersCustomerFidPaymentMethodsCardsCardFidContext delete customers customer fid payment methods cards card fid API.
+//
+// Do not use the deprecated [DeleteCustomersCustomerFidPaymentMethodsCardsCardFidParams.Context] with this method: it would be ignored.
 func (a *Client) DeleteCustomersCustomerFidPaymentMethodsCardsCardFidContext(ctx context.Context, params *DeleteCustomersCustomerFidPaymentMethodsCardsCardFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidPaymentMethodsCardsCardFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1472,17 +1434,15 @@ func (a *Client) DeleteCustomersCustomerFidPaymentMethodsCardsCardFidContext(ctx
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidarchives a payment method.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidContext] instead.
-*/
+// DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFid archives a payment method.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidContext] instead.
 func (a *Client) DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFid(params *DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1491,11 +1451,9 @@ func (a *Client) DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFid(params
 	return a.DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidContextarchives a payment method.
-
-Do not use the deprecated [DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidParams.Context] with this method: it would be ignored.
-*/
+// DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidContext archives a payment method.
+//
+// Do not use the deprecated [DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidParams.Context] with this method: it would be ignored.
 func (a *Client) DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidContext(ctx context.Context, params *DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1538,17 +1496,15 @@ func (a *Client) DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidContext
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-DeleteCustomersCustomerFidPhonesPhoneFidremoves a phone.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.DeleteCustomersCustomerFidPhonesPhoneFidContext] instead.
-*/
+// DeleteCustomersCustomerFidPhonesPhoneFid removes a phone.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.DeleteCustomersCustomerFidPhonesPhoneFidContext] instead.
 func (a *Client) DeleteCustomersCustomerFidPhonesPhoneFid(params *DeleteCustomersCustomerFidPhonesPhoneFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidPhonesPhoneFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1557,11 +1513,9 @@ func (a *Client) DeleteCustomersCustomerFidPhonesPhoneFid(params *DeleteCustomer
 	return a.DeleteCustomersCustomerFidPhonesPhoneFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-DeleteCustomersCustomerFidPhonesPhoneFidContextremoves a phone.
-
-Do not use the deprecated [DeleteCustomersCustomerFidPhonesPhoneFidParams.Context] with this method: it would be ignored.
-*/
+// DeleteCustomersCustomerFidPhonesPhoneFidContext removes a phone.
+//
+// Do not use the deprecated [DeleteCustomersCustomerFidPhonesPhoneFidParams.Context] with this method: it would be ignored.
 func (a *Client) DeleteCustomersCustomerFidPhonesPhoneFidContext(ctx context.Context, params *DeleteCustomersCustomerFidPhonesPhoneFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidPhonesPhoneFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1604,17 +1558,15 @@ func (a *Client) DeleteCustomersCustomerFidPhonesPhoneFidContext(ctx context.Con
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-DeleteCustomersCustomerFidVipremoves customer v IP status.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.DeleteCustomersCustomerFidVipContext] instead.
-*/
+// DeleteCustomersCustomerFidVip removes customer v IP status.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.DeleteCustomersCustomerFidVipContext] instead.
 func (a *Client) DeleteCustomersCustomerFidVip(params *DeleteCustomersCustomerFidVipParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidVipOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1623,11 +1575,9 @@ func (a *Client) DeleteCustomersCustomerFidVip(params *DeleteCustomersCustomerFi
 	return a.DeleteCustomersCustomerFidVipContext(ctx, params, authInfo, opts...)
 }
 
-/*
-DeleteCustomersCustomerFidVipContextremoves customer v IP status.
-
-Do not use the deprecated [DeleteCustomersCustomerFidVipParams.Context] with this method: it would be ignored.
-*/
+// DeleteCustomersCustomerFidVipContext removes customer v IP status.
+//
+// Do not use the deprecated [DeleteCustomersCustomerFidVipParams.Context] with this method: it would be ignored.
 func (a *Client) DeleteCustomersCustomerFidVipContext(ctx context.Context, params *DeleteCustomersCustomerFidVipParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCustomersCustomerFidVipOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1670,17 +1620,15 @@ func (a *Client) DeleteCustomersCustomerFidVipContext(ctx context.Context, param
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetContactsContactFidAddresseslists contact addresses.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetContactsContactFidAddressesContext] instead.
-*/
+// GetContactsContactFidAddresses lists contact addresses.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetContactsContactFidAddressesContext] instead.
 func (a *Client) GetContactsContactFidAddresses(params *GetContactsContactFidAddressesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetContactsContactFidAddressesOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1689,11 +1637,9 @@ func (a *Client) GetContactsContactFidAddresses(params *GetContactsContactFidAdd
 	return a.GetContactsContactFidAddressesContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetContactsContactFidAddressesContextlists contact addresses.
-
-Do not use the deprecated [GetContactsContactFidAddressesParams.Context] with this method: it would be ignored.
-*/
+// GetContactsContactFidAddressesContext lists contact addresses.
+//
+// Do not use the deprecated [GetContactsContactFidAddressesParams.Context] with this method: it would be ignored.
 func (a *Client) GetContactsContactFidAddressesContext(ctx context.Context, params *GetContactsContactFidAddressesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetContactsContactFidAddressesOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1736,17 +1682,15 @@ func (a *Client) GetContactsContactFidAddressesContext(ctx context.Context, para
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetContactsContactFidEmailslists contact emails.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetContactsContactFidEmailsContext] instead.
-*/
+// GetContactsContactFidEmails lists contact emails.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetContactsContactFidEmailsContext] instead.
 func (a *Client) GetContactsContactFidEmails(params *GetContactsContactFidEmailsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetContactsContactFidEmailsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1755,11 +1699,9 @@ func (a *Client) GetContactsContactFidEmails(params *GetContactsContactFidEmails
 	return a.GetContactsContactFidEmailsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetContactsContactFidEmailsContextlists contact emails.
-
-Do not use the deprecated [GetContactsContactFidEmailsParams.Context] with this method: it would be ignored.
-*/
+// GetContactsContactFidEmailsContext lists contact emails.
+//
+// Do not use the deprecated [GetContactsContactFidEmailsParams.Context] with this method: it would be ignored.
 func (a *Client) GetContactsContactFidEmailsContext(ctx context.Context, params *GetContactsContactFidEmailsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetContactsContactFidEmailsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1802,17 +1744,15 @@ func (a *Client) GetContactsContactFidEmailsContext(ctx context.Context, params 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetContactsContactFidPhoneslists contact phones.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetContactsContactFidPhonesContext] instead.
-*/
+// GetContactsContactFidPhones lists contact phones.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetContactsContactFidPhonesContext] instead.
 func (a *Client) GetContactsContactFidPhones(params *GetContactsContactFidPhonesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetContactsContactFidPhonesOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1821,11 +1761,9 @@ func (a *Client) GetContactsContactFidPhones(params *GetContactsContactFidPhones
 	return a.GetContactsContactFidPhonesContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetContactsContactFidPhonesContextlists contact phones.
-
-Do not use the deprecated [GetContactsContactFidPhonesParams.Context] with this method: it would be ignored.
-*/
+// GetContactsContactFidPhonesContext lists contact phones.
+//
+// Do not use the deprecated [GetContactsContactFidPhonesParams.Context] with this method: it would be ignored.
 func (a *Client) GetContactsContactFidPhonesContext(ctx context.Context, params *GetContactsContactFidPhonesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetContactsContactFidPhonesOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1868,17 +1806,15 @@ func (a *Client) GetContactsContactFidPhonesContext(ctx context.Context, params 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidretrieves a customer.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidContext] instead.
-*/
+// GetCustomersCustomerFid retrieves a customer.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidContext] instead.
 func (a *Client) GetCustomersCustomerFid(params *GetCustomersCustomerFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1887,11 +1823,9 @@ func (a *Client) GetCustomersCustomerFid(params *GetCustomersCustomerFidParams, 
 	return a.GetCustomersCustomerFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidContextretrieves a customer.
-
-Do not use the deprecated [GetCustomersCustomerFidParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidContext retrieves a customer.
+//
+// Do not use the deprecated [GetCustomersCustomerFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidContext(ctx context.Context, params *GetCustomersCustomerFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1934,17 +1868,15 @@ func (a *Client) GetCustomersCustomerFidContext(ctx context.Context, params *Get
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidAddresseslists customers addresses.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidAddressesContext] instead.
-*/
+// GetCustomersCustomerFidAddresses lists customers addresses.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidAddressesContext] instead.
 func (a *Client) GetCustomersCustomerFidAddresses(params *GetCustomersCustomerFidAddressesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidAddressesOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1953,11 +1885,9 @@ func (a *Client) GetCustomersCustomerFidAddresses(params *GetCustomersCustomerFi
 	return a.GetCustomersCustomerFidAddressesContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidAddressesContextlists customers addresses.
-
-Do not use the deprecated [GetCustomersCustomerFidAddressesParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidAddressesContext lists customers addresses.
+//
+// Do not use the deprecated [GetCustomersCustomerFidAddressesParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidAddressesContext(ctx context.Context, params *GetCustomersCustomerFidAddressesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidAddressesOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -2000,17 +1930,15 @@ func (a *Client) GetCustomersCustomerFidAddressesContext(ctx context.Context, pa
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidChatSessionsretrieves chat sessions for customer.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidChatSessionsContext] instead.
-*/
+// GetCustomersCustomerFidChatSessions retrieves chat sessions for customer.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidChatSessionsContext] instead.
 func (a *Client) GetCustomersCustomerFidChatSessions(params *GetCustomersCustomerFidChatSessionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidChatSessionsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -2019,11 +1947,9 @@ func (a *Client) GetCustomersCustomerFidChatSessions(params *GetCustomersCustome
 	return a.GetCustomersCustomerFidChatSessionsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidChatSessionsContextretrieves chat sessions for customer.
-
-Do not use the deprecated [GetCustomersCustomerFidChatSessionsParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidChatSessionsContext retrieves chat sessions for customer.
+//
+// Do not use the deprecated [GetCustomersCustomerFidChatSessionsParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidChatSessionsContext(ctx context.Context, params *GetCustomersCustomerFidChatSessionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidChatSessionsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -2066,17 +1992,15 @@ func (a *Client) GetCustomersCustomerFidChatSessionsContext(ctx context.Context,
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidContactStatuslists contact status for a given email address.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidContactStatusContext] instead.
-*/
+// GetCustomersCustomerFidContactStatus lists contact status for a given email address.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidContactStatusContext] instead.
 func (a *Client) GetCustomersCustomerFidContactStatus(params *GetCustomersCustomerFidContactStatusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidContactStatusOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -2085,11 +2009,9 @@ func (a *Client) GetCustomersCustomerFidContactStatus(params *GetCustomersCustom
 	return a.GetCustomersCustomerFidContactStatusContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidContactStatusContextlists contact status for a given email address.
-
-Do not use the deprecated [GetCustomersCustomerFidContactStatusParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidContactStatusContext lists contact status for a given email address.
+//
+// Do not use the deprecated [GetCustomersCustomerFidContactStatusParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidContactStatusContext(ctx context.Context, params *GetCustomersCustomerFidContactStatusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidContactStatusOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -2132,17 +2054,15 @@ func (a *Client) GetCustomersCustomerFidContactStatusContext(ctx context.Context
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidContactslists of people.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidContactsContext] instead.
-*/
+// GetCustomersCustomerFidContacts lists of people.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidContactsContext] instead.
 func (a *Client) GetCustomersCustomerFidContacts(params *GetCustomersCustomerFidContactsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidContactsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -2151,11 +2071,9 @@ func (a *Client) GetCustomersCustomerFidContacts(params *GetCustomersCustomerFid
 	return a.GetCustomersCustomerFidContactsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidContactsContextlists of people.
-
-Do not use the deprecated [GetCustomersCustomerFidContactsParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidContactsContext lists of people.
+//
+// Do not use the deprecated [GetCustomersCustomerFidContactsParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidContactsContext(ctx context.Context, params *GetCustomersCustomerFidContactsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidContactsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -2198,17 +2116,15 @@ func (a *Client) GetCustomersCustomerFidContactsContext(ctx context.Context, par
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidContactsContactFidretrieves information about a contact.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidContactsContactFidContext] instead.
-*/
+// GetCustomersCustomerFidContactsContactFid retrieves information about a contact.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidContactsContactFidContext] instead.
 func (a *Client) GetCustomersCustomerFidContactsContactFid(params *GetCustomersCustomerFidContactsContactFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidContactsContactFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -2217,11 +2133,9 @@ func (a *Client) GetCustomersCustomerFidContactsContactFid(params *GetCustomersC
 	return a.GetCustomersCustomerFidContactsContactFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidContactsContactFidContextretrieves information about a contact.
-
-Do not use the deprecated [GetCustomersCustomerFidContactsContactFidParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidContactsContactFidContext retrieves information about a contact.
+//
+// Do not use the deprecated [GetCustomersCustomerFidContactsContactFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidContactsContactFidContext(ctx context.Context, params *GetCustomersCustomerFidContactsContactFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidContactsContactFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -2264,17 +2178,15 @@ func (a *Client) GetCustomersCustomerFidContactsContactFidContext(ctx context.Co
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidDefaultAddressgets default address for a customer.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidDefaultAddressContext] instead.
-*/
+// GetCustomersCustomerFidDefaultAddress gets default address for a customer.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidDefaultAddressContext] instead.
 func (a *Client) GetCustomersCustomerFidDefaultAddress(params *GetCustomersCustomerFidDefaultAddressParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidDefaultAddressOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -2283,11 +2195,9 @@ func (a *Client) GetCustomersCustomerFidDefaultAddress(params *GetCustomersCusto
 	return a.GetCustomersCustomerFidDefaultAddressContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidDefaultAddressContextgets default address for a customer.
-
-Do not use the deprecated [GetCustomersCustomerFidDefaultAddressParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidDefaultAddressContext gets default address for a customer.
+//
+// Do not use the deprecated [GetCustomersCustomerFidDefaultAddressParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidDefaultAddressContext(ctx context.Context, params *GetCustomersCustomerFidDefaultAddressParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidDefaultAddressOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -2330,17 +2240,15 @@ func (a *Client) GetCustomersCustomerFidDefaultAddressContext(ctx context.Contex
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidEmailslists customers emails.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidEmailsContext] instead.
-*/
+// GetCustomersCustomerFidEmails lists customers emails.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidEmailsContext] instead.
 func (a *Client) GetCustomersCustomerFidEmails(params *GetCustomersCustomerFidEmailsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidEmailsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -2349,11 +2257,9 @@ func (a *Client) GetCustomersCustomerFidEmails(params *GetCustomersCustomerFidEm
 	return a.GetCustomersCustomerFidEmailsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidEmailsContextlists customers emails.
-
-Do not use the deprecated [GetCustomersCustomerFidEmailsParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidEmailsContext lists customers emails.
+//
+// Do not use the deprecated [GetCustomersCustomerFidEmailsParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidEmailsContext(ctx context.Context, params *GetCustomersCustomerFidEmailsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidEmailsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -2396,17 +2302,15 @@ func (a *Client) GetCustomersCustomerFidEmailsContext(ctx context.Context, param
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidInteractionslists customer interactions.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidInteractionsContext] instead.
-*/
+// GetCustomersCustomerFidInteractions lists customer interactions.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidInteractionsContext] instead.
 func (a *Client) GetCustomersCustomerFidInteractions(params *GetCustomersCustomerFidInteractionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidInteractionsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -2415,11 +2319,9 @@ func (a *Client) GetCustomersCustomerFidInteractions(params *GetCustomersCustome
 	return a.GetCustomersCustomerFidInteractionsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidInteractionsContextlists customer interactions.
-
-Do not use the deprecated [GetCustomersCustomerFidInteractionsParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidInteractionsContext lists customer interactions.
+//
+// Do not use the deprecated [GetCustomersCustomerFidInteractionsParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidInteractionsContext(ctx context.Context, params *GetCustomersCustomerFidInteractionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidInteractionsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -2462,17 +2364,15 @@ func (a *Client) GetCustomersCustomerFidInteractionsContext(ctx context.Context,
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidInvoiceslists of invoice summaries for given customer.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidInvoicesContext] instead.
-*/
+// GetCustomersCustomerFidInvoices lists of invoice summaries for given customer.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidInvoicesContext] instead.
 func (a *Client) GetCustomersCustomerFidInvoices(params *GetCustomersCustomerFidInvoicesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidInvoicesOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -2481,11 +2381,9 @@ func (a *Client) GetCustomersCustomerFidInvoices(params *GetCustomersCustomerFid
 	return a.GetCustomersCustomerFidInvoicesContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidInvoicesContextlists of invoice summaries for given customer.
-
-Do not use the deprecated [GetCustomersCustomerFidInvoicesParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidInvoicesContext lists of invoice summaries for given customer.
+//
+// Do not use the deprecated [GetCustomersCustomerFidInvoicesParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidInvoicesContext(ctx context.Context, params *GetCustomersCustomerFidInvoicesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidInvoicesOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -2528,17 +2426,15 @@ func (a *Client) GetCustomersCustomerFidInvoicesContext(ctx context.Context, par
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidInvoicesInvoiceFidretreives a specific itemised invoice.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidInvoicesInvoiceFidContext] instead.
-*/
+// GetCustomersCustomerFidInvoicesInvoiceFid retreives a specific itemised invoice.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidInvoicesInvoiceFidContext] instead.
 func (a *Client) GetCustomersCustomerFidInvoicesInvoiceFid(params *GetCustomersCustomerFidInvoicesInvoiceFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidInvoicesInvoiceFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -2547,11 +2443,9 @@ func (a *Client) GetCustomersCustomerFidInvoicesInvoiceFid(params *GetCustomersC
 	return a.GetCustomersCustomerFidInvoicesInvoiceFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidInvoicesInvoiceFidContextretreives a specific itemised invoice.
-
-Do not use the deprecated [GetCustomersCustomerFidInvoicesInvoiceFidParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidInvoicesInvoiceFidContext retreives a specific itemised invoice.
+//
+// Do not use the deprecated [GetCustomersCustomerFidInvoicesInvoiceFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidInvoicesInvoiceFidContext(ctx context.Context, params *GetCustomersCustomerFidInvoicesInvoiceFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidInvoicesInvoiceFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -2594,17 +2488,15 @@ func (a *Client) GetCustomersCustomerFidInvoicesInvoiceFidContext(ctx context.Co
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidInvoicesInvoiceFidDownloadretreives a specific itemised invoice p d f.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidInvoicesInvoiceFidDownloadContext] instead.
-*/
+// GetCustomersCustomerFidInvoicesInvoiceFidDownload retreives a specific itemised invoice p d f.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidInvoicesInvoiceFidDownloadContext] instead.
 func (a *Client) GetCustomersCustomerFidInvoicesInvoiceFidDownload(params *GetCustomersCustomerFidInvoicesInvoiceFidDownloadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidInvoicesInvoiceFidDownloadOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -2613,11 +2505,9 @@ func (a *Client) GetCustomersCustomerFidInvoicesInvoiceFidDownload(params *GetCu
 	return a.GetCustomersCustomerFidInvoicesInvoiceFidDownloadContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidInvoicesInvoiceFidDownloadContextretreives a specific itemised invoice p d f.
-
-Do not use the deprecated [GetCustomersCustomerFidInvoicesInvoiceFidDownloadParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidInvoicesInvoiceFidDownloadContext retreives a specific itemised invoice p d f.
+//
+// Do not use the deprecated [GetCustomersCustomerFidInvoicesInvoiceFidDownloadParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidInvoicesInvoiceFidDownloadContext(ctx context.Context, params *GetCustomersCustomerFidInvoicesInvoiceFidDownloadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidInvoicesInvoiceFidDownloadOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -2660,17 +2550,15 @@ func (a *Client) GetCustomersCustomerFidInvoicesInvoiceFidDownloadContext(ctx co
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidNotificationslists push notification sent to a customer.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidNotificationsContext] instead.
-*/
+// GetCustomersCustomerFidNotifications lists push notification sent to a customer.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidNotificationsContext] instead.
 func (a *Client) GetCustomersCustomerFidNotifications(params *GetCustomersCustomerFidNotificationsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidNotificationsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -2679,11 +2567,9 @@ func (a *Client) GetCustomersCustomerFidNotifications(params *GetCustomersCustom
 	return a.GetCustomersCustomerFidNotificationsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidNotificationsContextlists push notification sent to a customer.
-
-Do not use the deprecated [GetCustomersCustomerFidNotificationsParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidNotificationsContext lists push notification sent to a customer.
+//
+// Do not use the deprecated [GetCustomersCustomerFidNotificationsParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidNotificationsContext(ctx context.Context, params *GetCustomersCustomerFidNotificationsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidNotificationsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -2726,17 +2612,15 @@ func (a *Client) GetCustomersCustomerFidNotificationsContext(ctx context.Context
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidOrderslists customer orders.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidOrdersContext] instead.
-*/
+// GetCustomersCustomerFidOrders lists customer orders.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidOrdersContext] instead.
 func (a *Client) GetCustomersCustomerFidOrders(params *GetCustomersCustomerFidOrdersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidOrdersOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -2745,11 +2629,9 @@ func (a *Client) GetCustomersCustomerFidOrders(params *GetCustomersCustomerFidOr
 	return a.GetCustomersCustomerFidOrdersContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidOrdersContextlists customer orders.
-
-Do not use the deprecated [GetCustomersCustomerFidOrdersParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidOrdersContext lists customer orders.
+//
+// Do not use the deprecated [GetCustomersCustomerFidOrdersParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidOrdersContext(ctx context.Context, params *GetCustomersCustomerFidOrdersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidOrdersOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -2792,17 +2674,15 @@ func (a *Client) GetCustomersCustomerFidOrdersContext(ctx context.Context, param
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidPaymentAccountslists customers payment accounts.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidPaymentAccountsContext] instead.
-*/
+// GetCustomersCustomerFidPaymentAccounts lists customers payment accounts.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidPaymentAccountsContext] instead.
 func (a *Client) GetCustomersCustomerFidPaymentAccounts(params *GetCustomersCustomerFidPaymentAccountsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidPaymentAccountsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -2811,11 +2691,9 @@ func (a *Client) GetCustomersCustomerFidPaymentAccounts(params *GetCustomersCust
 	return a.GetCustomersCustomerFidPaymentAccountsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidPaymentAccountsContextlists customers payment accounts.
-
-Do not use the deprecated [GetCustomersCustomerFidPaymentAccountsParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidPaymentAccountsContext lists customers payment accounts.
+//
+// Do not use the deprecated [GetCustomersCustomerFidPaymentAccountsParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidPaymentAccountsContext(ctx context.Context, params *GetCustomersCustomerFidPaymentAccountsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidPaymentAccountsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -2858,17 +2736,15 @@ func (a *Client) GetCustomersCustomerFidPaymentAccountsContext(ctx context.Conte
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidPaymentAccountsPaymentAccountFidretrieves payment account.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidPaymentAccountsPaymentAccountFidContext] instead.
-*/
+// GetCustomersCustomerFidPaymentAccountsPaymentAccountFid retrieves payment account.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidPaymentAccountsPaymentAccountFidContext] instead.
 func (a *Client) GetCustomersCustomerFidPaymentAccountsPaymentAccountFid(params *GetCustomersCustomerFidPaymentAccountsPaymentAccountFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidPaymentAccountsPaymentAccountFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -2877,11 +2753,9 @@ func (a *Client) GetCustomersCustomerFidPaymentAccountsPaymentAccountFid(params 
 	return a.GetCustomersCustomerFidPaymentAccountsPaymentAccountFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidPaymentAccountsPaymentAccountFidContextretrieves payment account.
-
-Do not use the deprecated [GetCustomersCustomerFidPaymentAccountsPaymentAccountFidParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidPaymentAccountsPaymentAccountFidContext retrieves payment account.
+//
+// Do not use the deprecated [GetCustomersCustomerFidPaymentAccountsPaymentAccountFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidPaymentAccountsPaymentAccountFidContext(ctx context.Context, params *GetCustomersCustomerFidPaymentAccountsPaymentAccountFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidPaymentAccountsPaymentAccountFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -2924,17 +2798,15 @@ func (a *Client) GetCustomersCustomerFidPaymentAccountsPaymentAccountFidContext(
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidPaymentMethodslists customers payment methods.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidPaymentMethodsContext] instead.
-*/
+// GetCustomersCustomerFidPaymentMethods lists customers payment methods.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidPaymentMethodsContext] instead.
 func (a *Client) GetCustomersCustomerFidPaymentMethods(params *GetCustomersCustomerFidPaymentMethodsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidPaymentMethodsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -2943,11 +2815,9 @@ func (a *Client) GetCustomersCustomerFidPaymentMethods(params *GetCustomersCusto
 	return a.GetCustomersCustomerFidPaymentMethodsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidPaymentMethodsContextlists customers payment methods.
-
-Do not use the deprecated [GetCustomersCustomerFidPaymentMethodsParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidPaymentMethodsContext lists customers payment methods.
+//
+// Do not use the deprecated [GetCustomersCustomerFidPaymentMethodsParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidPaymentMethodsContext(ctx context.Context, params *GetCustomersCustomerFidPaymentMethodsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidPaymentMethodsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -2990,17 +2860,15 @@ func (a *Client) GetCustomersCustomerFidPaymentMethodsContext(ctx context.Contex
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidPaymentMethodsCardslists customers card payment methods.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidPaymentMethodsCardsContext] instead.
-*/
+// GetCustomersCustomerFidPaymentMethodsCards lists customers card payment methods.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidPaymentMethodsCardsContext] instead.
 func (a *Client) GetCustomersCustomerFidPaymentMethodsCards(params *GetCustomersCustomerFidPaymentMethodsCardsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidPaymentMethodsCardsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -3009,11 +2877,9 @@ func (a *Client) GetCustomersCustomerFidPaymentMethodsCards(params *GetCustomers
 	return a.GetCustomersCustomerFidPaymentMethodsCardsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidPaymentMethodsCardsContextlists customers card payment methods.
-
-Do not use the deprecated [GetCustomersCustomerFidPaymentMethodsCardsParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidPaymentMethodsCardsContext lists customers card payment methods.
+//
+// Do not use the deprecated [GetCustomersCustomerFidPaymentMethodsCardsParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidPaymentMethodsCardsContext(ctx context.Context, params *GetCustomersCustomerFidPaymentMethodsCardsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidPaymentMethodsCardsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -3056,17 +2922,15 @@ func (a *Client) GetCustomersCustomerFidPaymentMethodsCardsContext(ctx context.C
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidPaymentMethodsPaymentMethodFidretrieves a payment method.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidPaymentMethodsPaymentMethodFidContext] instead.
-*/
+// GetCustomersCustomerFidPaymentMethodsPaymentMethodFid retrieves a payment method.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidPaymentMethodsPaymentMethodFidContext] instead.
 func (a *Client) GetCustomersCustomerFidPaymentMethodsPaymentMethodFid(params *GetCustomersCustomerFidPaymentMethodsPaymentMethodFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidPaymentMethodsPaymentMethodFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -3075,11 +2939,9 @@ func (a *Client) GetCustomersCustomerFidPaymentMethodsPaymentMethodFid(params *G
 	return a.GetCustomersCustomerFidPaymentMethodsPaymentMethodFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidPaymentMethodsPaymentMethodFidContextretrieves a payment method.
-
-Do not use the deprecated [GetCustomersCustomerFidPaymentMethodsPaymentMethodFidParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidPaymentMethodsPaymentMethodFidContext retrieves a payment method.
+//
+// Do not use the deprecated [GetCustomersCustomerFidPaymentMethodsPaymentMethodFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidPaymentMethodsPaymentMethodFidContext(ctx context.Context, params *GetCustomersCustomerFidPaymentMethodsPaymentMethodFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidPaymentMethodsPaymentMethodFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -3122,17 +2984,15 @@ func (a *Client) GetCustomersCustomerFidPaymentMethodsPaymentMethodFidContext(ct
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidPaymentsPaymentFidretrieves a payment.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidPaymentsPaymentFidContext] instead.
-*/
+// GetCustomersCustomerFidPaymentsPaymentFid retrieves a payment.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidPaymentsPaymentFidContext] instead.
 func (a *Client) GetCustomersCustomerFidPaymentsPaymentFid(params *GetCustomersCustomerFidPaymentsPaymentFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidPaymentsPaymentFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -3141,11 +3001,9 @@ func (a *Client) GetCustomersCustomerFidPaymentsPaymentFid(params *GetCustomersC
 	return a.GetCustomersCustomerFidPaymentsPaymentFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidPaymentsPaymentFidContextretrieves a payment.
-
-Do not use the deprecated [GetCustomersCustomerFidPaymentsPaymentFidParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidPaymentsPaymentFidContext retrieves a payment.
+//
+// Do not use the deprecated [GetCustomersCustomerFidPaymentsPaymentFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidPaymentsPaymentFidContext(ctx context.Context, params *GetCustomersCustomerFidPaymentsPaymentFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidPaymentsPaymentFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -3188,17 +3046,15 @@ func (a *Client) GetCustomersCustomerFidPaymentsPaymentFidContext(ctx context.Co
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidPhoneslists customers phones.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidPhonesContext] instead.
-*/
+// GetCustomersCustomerFidPhones lists customers phones.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidPhonesContext] instead.
 func (a *Client) GetCustomersCustomerFidPhones(params *GetCustomersCustomerFidPhonesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidPhonesOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -3207,11 +3063,9 @@ func (a *Client) GetCustomersCustomerFidPhones(params *GetCustomersCustomerFidPh
 	return a.GetCustomersCustomerFidPhonesContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidPhonesContextlists customers phones.
-
-Do not use the deprecated [GetCustomersCustomerFidPhonesParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidPhonesContext lists customers phones.
+//
+// Do not use the deprecated [GetCustomersCustomerFidPhonesParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidPhonesContext(ctx context.Context, params *GetCustomersCustomerFidPhonesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidPhonesOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -3254,17 +3108,15 @@ func (a *Client) GetCustomersCustomerFidPhonesContext(ctx context.Context, param
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidSentEmailslists emails sent to a customer.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidSentEmailsContext] instead.
-*/
+// GetCustomersCustomerFidSentEmails lists emails sent to a customer.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidSentEmailsContext] instead.
 func (a *Client) GetCustomersCustomerFidSentEmails(params *GetCustomersCustomerFidSentEmailsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSentEmailsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -3273,11 +3125,9 @@ func (a *Client) GetCustomersCustomerFidSentEmails(params *GetCustomersCustomerF
 	return a.GetCustomersCustomerFidSentEmailsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidSentEmailsContextlists emails sent to a customer.
-
-Do not use the deprecated [GetCustomersCustomerFidSentEmailsParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidSentEmailsContext lists emails sent to a customer.
+//
+// Do not use the deprecated [GetCustomersCustomerFidSentEmailsParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidSentEmailsContext(ctx context.Context, params *GetCustomersCustomerFidSentEmailsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSentEmailsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -3320,17 +3170,15 @@ func (a *Client) GetCustomersCustomerFidSentEmailsContext(ctx context.Context, p
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidSubscriptionslists of subscription summaries for given customer.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidSubscriptionsContext] instead.
-*/
+// GetCustomersCustomerFidSubscriptions lists of subscription summaries for given customer.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidSubscriptionsContext] instead.
 func (a *Client) GetCustomersCustomerFidSubscriptions(params *GetCustomersCustomerFidSubscriptionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -3339,11 +3187,9 @@ func (a *Client) GetCustomersCustomerFidSubscriptions(params *GetCustomersCustom
 	return a.GetCustomersCustomerFidSubscriptionsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsContextlists of subscription summaries for given customer.
-
-Do not use the deprecated [GetCustomersCustomerFidSubscriptionsParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidSubscriptionsContext lists of subscription summaries for given customer.
+//
+// Do not use the deprecated [GetCustomersCustomerFidSubscriptionsParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidSubscriptionsContext(ctx context.Context, params *GetCustomersCustomerFidSubscriptionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -3386,17 +3232,15 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsContext(ctx context.Context
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidretreives a specific subscription.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidSubscriptionsSubscriptionFidContext] instead.
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFid retreives a specific subscription.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidSubscriptionsSubscriptionFidContext] instead.
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFid(params *GetCustomersCustomerFidSubscriptionsSubscriptionFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -3405,11 +3249,9 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFid(params *Get
 	return a.GetCustomersCustomerFidSubscriptionsSubscriptionFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidContextretreives a specific subscription.
-
-Do not use the deprecated [GetCustomersCustomerFidSubscriptionsSubscriptionFidParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidContext retreives a specific subscription.
+//
+// Do not use the deprecated [GetCustomersCustomerFidSubscriptionsSubscriptionFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidContext(ctx context.Context, params *GetCustomersCustomerFidSubscriptionsSubscriptionFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -3452,17 +3294,15 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidContext(ctx 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsretreives a subscriptions resource allocations.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsContext] instead.
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocations retreives a subscriptions resource allocations.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsContext] instead.
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocations(params *GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -3471,11 +3311,9 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocations(
 	return a.GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsContextretreives a subscriptions resource allocations.
-
-Do not use the deprecated [GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsContext retreives a subscriptions resource allocations.
+//
+// Do not use the deprecated [GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsContext(ctx context.Context, params *GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -3518,17 +3356,15 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidAllocationsC
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowretreives a list of active cancel flows.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowContext] instead.
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlow retreives a list of active cancel flows.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowContext] instead.
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlow(params *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -3537,11 +3373,9 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlow(p
 	return a.GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowContextretreives a list of active cancel flows.
-
-Do not use the deprecated [GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowContext retreives a list of active cancel flows.
+//
+// Do not use the deprecated [GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowContext(ctx context.Context, params *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -3584,17 +3418,15 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowCo
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchretreives the state of a cancel flow.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchContext] instead.
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearch retreives the state of a cancel flow.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchContext] instead.
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearch(params *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -3603,11 +3435,9 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFl
 	return a.GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchContextretreives the state of a cancel flow.
-
-Do not use the deprecated [GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchContext retreives the state of a cancel flow.
+//
+// Do not use the deprecated [GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchContext(ctx context.Context, params *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -3650,17 +3480,15 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFl
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsretrieves cancel flow options.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsContext] instead.
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptions retrieves cancel flow options.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsContext] instead.
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptions(params *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -3669,11 +3497,9 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFl
 	return a.GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsContextretrieves cancel flow options.
-
-Do not use the deprecated [GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsContext retrieves cancel flow options.
+//
+// Do not use the deprecated [GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsContext(ctx context.Context, params *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -3716,17 +3542,15 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFl
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsretreives the available cancellation reasons for a subscription.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsContext] instead.
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasons retreives the available cancellation reasons for a subscription.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsContext] instead.
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasons(params *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -3735,11 +3559,9 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowRe
 	return a.GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsContextretreives the available cancellation reasons for a subscription.
-
-Do not use the deprecated [GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsContext retreives the available cancellation reasons for a subscription.
+//
+// Do not use the deprecated [GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsContext(ctx context.Context, params *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowReasonsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -3782,17 +3604,15 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowRe
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsretreives the periods for a subscription.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsContext] instead.
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriods retreives the periods for a subscription.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsContext] instead.
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriods(params *GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -3801,11 +3621,9 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriods(para
 	return a.GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsContextretreives the periods for a subscription.
-
-Do not use the deprecated [GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsContext retreives the periods for a subscription.
+//
+// Do not use the deprecated [GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsContext(ctx context.Context, params *GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -3848,17 +3666,15 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsConte
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowretreives a list of active retention flows.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowContext] instead.
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlow retreives a list of active retention flows.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowContext] instead.
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlow(params *GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -3867,11 +3683,9 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlo
 	return a.GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowContextretreives a list of active retention flows.
-
-Do not use the deprecated [GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowContext retreives a list of active retention flows.
+//
+// Do not use the deprecated [GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowContext(ctx context.Context, params *GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -3914,17 +3728,15 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlo
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchretreives the state of a retention flow.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchContext] instead.
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearch retreives the state of a retention flow.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchContext] instead.
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearch(params *GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -3933,11 +3745,9 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlo
 	return a.GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchContextretreives the state of a retention flow.
-
-Do not use the deprecated [GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchContext retreives the state of a retention flow.
+//
+// Do not use the deprecated [GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchContext(ctx context.Context, params *GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -3980,17 +3790,15 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlo
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsretrieves retention flow options.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsContext] instead.
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptions retrieves retention flow options.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsContext] instead.
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptions(params *GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -3999,11 +3807,9 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlo
 	return a.GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsContextretrieves retention flow options.
-
-Do not use the deprecated [GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsContext retrieves retention flow options.
+//
+// Do not use the deprecated [GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsContext(ctx context.Context, params *GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -4046,17 +3852,15 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlo
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsretreives the available retention reasons for a subscription.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsContext] instead.
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasons retreives the available retention reasons for a subscription.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsContext] instead.
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasons(params *GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -4065,11 +3869,9 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlo
 	return a.GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsContextretreives the available retention reasons for a subscription.
-
-Do not use the deprecated [GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsContext retreives the available retention reasons for a subscription.
+//
+// Do not use the deprecated [GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsContext(ctx context.Context, params *GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -4112,17 +3914,15 @@ func (a *Client) GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlo
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidTicketsgets support tickets for customer.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidTicketsContext] instead.
-*/
+// GetCustomersCustomerFidTickets gets support tickets for customer.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidTicketsContext] instead.
 func (a *Client) GetCustomersCustomerFidTickets(params *GetCustomersCustomerFidTicketsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidTicketsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -4131,11 +3931,9 @@ func (a *Client) GetCustomersCustomerFidTickets(params *GetCustomersCustomerFidT
 	return a.GetCustomersCustomerFidTicketsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidTicketsContextgets support tickets for customer.
-
-Do not use the deprecated [GetCustomersCustomerFidTicketsParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidTicketsContext gets support tickets for customer.
+//
+// Do not use the deprecated [GetCustomersCustomerFidTicketsParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidTicketsContext(ctx context.Context, params *GetCustomersCustomerFidTicketsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidTicketsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -4178,17 +3976,15 @@ func (a *Client) GetCustomersCustomerFidTicketsContext(ctx context.Context, para
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidTicketsTicketFidretrieves a single ticket for a customer.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidTicketsTicketFidContext] instead.
-*/
+// GetCustomersCustomerFidTicketsTicketFid retrieves a single ticket for a customer.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidTicketsTicketFidContext] instead.
 func (a *Client) GetCustomersCustomerFidTicketsTicketFid(params *GetCustomersCustomerFidTicketsTicketFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidTicketsTicketFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -4197,11 +3993,9 @@ func (a *Client) GetCustomersCustomerFidTicketsTicketFid(params *GetCustomersCus
 	return a.GetCustomersCustomerFidTicketsTicketFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidTicketsTicketFidContextretrieves a single ticket for a customer.
-
-Do not use the deprecated [GetCustomersCustomerFidTicketsTicketFidParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidTicketsTicketFidContext retrieves a single ticket for a customer.
+//
+// Do not use the deprecated [GetCustomersCustomerFidTicketsTicketFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidTicketsTicketFidContext(ctx context.Context, params *GetCustomersCustomerFidTicketsTicketFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidTicketsTicketFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -4244,17 +4038,15 @@ func (a *Client) GetCustomersCustomerFidTicketsTicketFidContext(ctx context.Cont
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidTicketsTicketFidPostsretrieves ticket posts for a ticket.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidTicketsTicketFidPostsContext] instead.
-*/
+// GetCustomersCustomerFidTicketsTicketFidPosts retrieves ticket posts for a ticket.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidTicketsTicketFidPostsContext] instead.
 func (a *Client) GetCustomersCustomerFidTicketsTicketFidPosts(params *GetCustomersCustomerFidTicketsTicketFidPostsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidTicketsTicketFidPostsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -4263,11 +4055,9 @@ func (a *Client) GetCustomersCustomerFidTicketsTicketFidPosts(params *GetCustome
 	return a.GetCustomersCustomerFidTicketsTicketFidPostsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidTicketsTicketFidPostsContextretrieves ticket posts for a ticket.
-
-Do not use the deprecated [GetCustomersCustomerFidTicketsTicketFidPostsParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidTicketsTicketFidPostsContext retrieves ticket posts for a ticket.
+//
+// Do not use the deprecated [GetCustomersCustomerFidTicketsTicketFidPostsParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidTicketsTicketFidPostsContext(ctx context.Context, params *GetCustomersCustomerFidTicketsTicketFidPostsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidTicketsTicketFidPostsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -4310,17 +4100,15 @@ func (a *Client) GetCustomersCustomerFidTicketsTicketFidPostsContext(ctx context
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsgets attachments for a ticket post.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsContext] instead.
-*/
+// GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachments gets attachments for a ticket post.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsContext] instead.
 func (a *Client) GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachments(params *GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -4329,11 +4117,9 @@ func (a *Client) GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestamp
 	return a.GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsContextgets attachments for a ticket post.
-
-Do not use the deprecated [GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsContext gets attachments for a ticket post.
+//
+// Do not use the deprecated [GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsContext(ctx context.Context, params *GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -4376,17 +4162,15 @@ func (a *Client) GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestamp
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersFindByEmailfinds a customer by brand and email address.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersFindByEmailContext] instead.
-*/
+// GetCustomersFindByEmail finds a customer by brand and email address.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersFindByEmailContext] instead.
 func (a *Client) GetCustomersFindByEmail(params *GetCustomersFindByEmailParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersFindByEmailOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -4395,11 +4179,9 @@ func (a *Client) GetCustomersFindByEmail(params *GetCustomersFindByEmailParams, 
 	return a.GetCustomersFindByEmailContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersFindByEmailContextfinds a customer by brand and email address.
-
-Do not use the deprecated [GetCustomersFindByEmailParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersFindByEmailContext finds a customer by brand and email address.
+//
+// Do not use the deprecated [GetCustomersFindByEmailParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersFindByEmailContext(ctx context.Context, params *GetCustomersFindByEmailParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersFindByEmailOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -4442,17 +4224,15 @@ func (a *Client) GetCustomersFindByEmailContext(ctx context.Context, params *Get
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetCustomersFindByReferencefinds a customer by your reference.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetCustomersFindByReferenceContext] instead.
-*/
+// GetCustomersFindByReference finds a customer by your reference.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetCustomersFindByReferenceContext] instead.
 func (a *Client) GetCustomersFindByReference(params *GetCustomersFindByReferenceParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersFindByReferenceOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -4461,11 +4241,9 @@ func (a *Client) GetCustomersFindByReference(params *GetCustomersFindByReference
 	return a.GetCustomersFindByReferenceContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetCustomersFindByReferenceContextfinds a customer by your reference.
-
-Do not use the deprecated [GetCustomersFindByReferenceParams.Context] with this method: it would be ignored.
-*/
+// GetCustomersFindByReferenceContext finds a customer by your reference.
+//
+// Do not use the deprecated [GetCustomersFindByReferenceParams.Context] with this method: it would be ignored.
 func (a *Client) GetCustomersFindByReferenceContext(ctx context.Context, params *GetCustomersFindByReferenceParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCustomersFindByReferenceOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -4508,17 +4286,15 @@ func (a *Client) GetCustomersFindByReferenceContext(ctx context.Context, params 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetPaymentsTransactionTransactionIDretrieves a payment by transaction ID.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetPaymentsTransactionTransactionIDContext] instead.
-*/
+// GetPaymentsTransactionTransactionID retrieves a payment by transaction ID.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetPaymentsTransactionTransactionIDContext] instead.
 func (a *Client) GetPaymentsTransactionTransactionID(params *GetPaymentsTransactionTransactionIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPaymentsTransactionTransactionIDOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -4527,11 +4303,9 @@ func (a *Client) GetPaymentsTransactionTransactionID(params *GetPaymentsTransact
 	return a.GetPaymentsTransactionTransactionIDContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetPaymentsTransactionTransactionIDContextretrieves a payment by transaction ID.
-
-Do not use the deprecated [GetPaymentsTransactionTransactionIDParams.Context] with this method: it would be ignored.
-*/
+// GetPaymentsTransactionTransactionIDContext retrieves a payment by transaction ID.
+//
+// Do not use the deprecated [GetPaymentsTransactionTransactionIDParams.Context] with this method: it would be ignored.
 func (a *Client) GetPaymentsTransactionTransactionIDContext(ctx context.Context, params *GetPaymentsTransactionTransactionIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPaymentsTransactionTransactionIDOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -4574,17 +4348,15 @@ func (a *Client) GetPaymentsTransactionTransactionIDContext(ctx context.Context,
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostContactsContactFidAddressesadds an address to a contact.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostContactsContactFidAddressesContext] instead.
-*/
+// PostContactsContactFidAddresses adds an address to a contact.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostContactsContactFidAddressesContext] instead.
 func (a *Client) PostContactsContactFidAddresses(params *PostContactsContactFidAddressesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostContactsContactFidAddressesOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -4593,11 +4365,9 @@ func (a *Client) PostContactsContactFidAddresses(params *PostContactsContactFidA
 	return a.PostContactsContactFidAddressesContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostContactsContactFidAddressesContextadds an address to a contact.
-
-Do not use the deprecated [PostContactsContactFidAddressesParams.Context] with this method: it would be ignored.
-*/
+// PostContactsContactFidAddressesContext adds an address to a contact.
+//
+// Do not use the deprecated [PostContactsContactFidAddressesParams.Context] with this method: it would be ignored.
 func (a *Client) PostContactsContactFidAddressesContext(ctx context.Context, params *PostContactsContactFidAddressesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostContactsContactFidAddressesOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -4640,17 +4410,15 @@ func (a *Client) PostContactsContactFidAddressesContext(ctx context.Context, par
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostContactsContactFidEmailsadds an email address to a contact.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostContactsContactFidEmailsContext] instead.
-*/
+// PostContactsContactFidEmails adds an email address to a contact.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostContactsContactFidEmailsContext] instead.
 func (a *Client) PostContactsContactFidEmails(params *PostContactsContactFidEmailsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostContactsContactFidEmailsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -4659,11 +4427,9 @@ func (a *Client) PostContactsContactFidEmails(params *PostContactsContactFidEmai
 	return a.PostContactsContactFidEmailsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostContactsContactFidEmailsContextadds an email address to a contact.
-
-Do not use the deprecated [PostContactsContactFidEmailsParams.Context] with this method: it would be ignored.
-*/
+// PostContactsContactFidEmailsContext adds an email address to a contact.
+//
+// Do not use the deprecated [PostContactsContactFidEmailsParams.Context] with this method: it would be ignored.
 func (a *Client) PostContactsContactFidEmailsContext(ctx context.Context, params *PostContactsContactFidEmailsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostContactsContactFidEmailsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -4706,17 +4472,15 @@ func (a *Client) PostContactsContactFidEmailsContext(ctx context.Context, params
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostContactsContactFidPhonesadds a phone number to a contact.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostContactsContactFidPhonesContext] instead.
-*/
+// PostContactsContactFidPhones adds a phone number to a contact.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostContactsContactFidPhonesContext] instead.
 func (a *Client) PostContactsContactFidPhones(params *PostContactsContactFidPhonesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostContactsContactFidPhonesOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -4725,11 +4489,9 @@ func (a *Client) PostContactsContactFidPhones(params *PostContactsContactFidPhon
 	return a.PostContactsContactFidPhonesContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostContactsContactFidPhonesContextadds a phone number to a contact.
-
-Do not use the deprecated [PostContactsContactFidPhonesParams.Context] with this method: it would be ignored.
-*/
+// PostContactsContactFidPhonesContext adds a phone number to a contact.
+//
+// Do not use the deprecated [PostContactsContactFidPhonesParams.Context] with this method: it would be ignored.
 func (a *Client) PostContactsContactFidPhonesContext(ctx context.Context, params *PostContactsContactFidPhonesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostContactsContactFidPhonesOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -4772,17 +4534,15 @@ func (a *Client) PostContactsContactFidPhonesContext(ctx context.Context, params
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostCustomerscreates a new customer.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostCustomersContext] instead.
-*/
+// PostCustomers creates a new customer.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersContext] instead.
 func (a *Client) PostCustomers(params *PostCustomersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -4791,11 +4551,9 @@ func (a *Client) PostCustomers(params *PostCustomersParams, authInfo runtime.Cli
 	return a.PostCustomersContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostCustomersContextcreates a new customer.
-
-Do not use the deprecated [PostCustomersParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersContext creates a new customer.
+//
+// Do not use the deprecated [PostCustomersParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersContext(ctx context.Context, params *PostCustomersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -4838,17 +4596,15 @@ func (a *Client) PostCustomersContext(ctx context.Context, params *PostCustomers
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostCustomersCustomerFidAddressesadds an address to a customer.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostCustomersCustomerFidAddressesContext] instead.
-*/
+// PostCustomersCustomerFidAddresses adds an address to a customer.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersCustomerFidAddressesContext] instead.
 func (a *Client) PostCustomersCustomerFidAddresses(params *PostCustomersCustomerFidAddressesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidAddressesOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -4857,11 +4613,9 @@ func (a *Client) PostCustomersCustomerFidAddresses(params *PostCustomersCustomer
 	return a.PostCustomersCustomerFidAddressesContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostCustomersCustomerFidAddressesContextadds an address to a customer.
-
-Do not use the deprecated [PostCustomersCustomerFidAddressesParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersCustomerFidAddressesContext adds an address to a customer.
+//
+// Do not use the deprecated [PostCustomersCustomerFidAddressesParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersCustomerFidAddressesContext(ctx context.Context, params *PostCustomersCustomerFidAddressesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidAddressesOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -4904,21 +4658,18 @@ func (a *Client) PostCustomersCustomerFidAddressesContext(ctx context.Context, p
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-	PostCustomersCustomerFidAnonymizeanonymizes customer data.
-
-	Anonymize customer data
-
-.
-
-	This method does not support injected context.
-	However, timeout and opentracing contexts are honored whenever enabled.
-
-	If you need to pass a specific context, use [Client.PostCustomersCustomerFidAnonymizeContext] instead.
-*/
+// PostCustomersCustomerFidAnonymize anonymizes customer data.
+//
+// Anonymize customer data
+// .
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersCustomerFidAnonymizeContext] instead.
 func (a *Client) PostCustomersCustomerFidAnonymize(params *PostCustomersCustomerFidAnonymizeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidAnonymizeOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -4927,15 +4678,12 @@ func (a *Client) PostCustomersCustomerFidAnonymize(params *PostCustomersCustomer
 	return a.PostCustomersCustomerFidAnonymizeContext(ctx, params, authInfo, opts...)
 }
 
-/*
-	PostCustomersCustomerFidAnonymizeContextanonymizes customer data.
-
-	Anonymize customer data
-
-.
-
-	Do not use the deprecated [PostCustomersCustomerFidAnonymizeParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersCustomerFidAnonymizeContext anonymizes customer data.
+//
+// Anonymize customer data
+// .
+//
+// Do not use the deprecated [PostCustomersCustomerFidAnonymizeParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersCustomerFidAnonymizeContext(ctx context.Context, params *PostCustomersCustomerFidAnonymizeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidAnonymizeOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -4978,17 +4726,15 @@ func (a *Client) PostCustomersCustomerFidAnonymizeContext(ctx context.Context, p
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostCustomersCustomerFidContactscreates a new contact for a customer.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostCustomersCustomerFidContactsContext] instead.
-*/
+// PostCustomersCustomerFidContacts creates a new contact for a customer.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersCustomerFidContactsContext] instead.
 func (a *Client) PostCustomersCustomerFidContacts(params *PostCustomersCustomerFidContactsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidContactsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -4997,11 +4743,9 @@ func (a *Client) PostCustomersCustomerFidContacts(params *PostCustomersCustomerF
 	return a.PostCustomersCustomerFidContactsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostCustomersCustomerFidContactsContextcreates a new contact for a customer.
-
-Do not use the deprecated [PostCustomersCustomerFidContactsParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersCustomerFidContactsContext creates a new contact for a customer.
+//
+// Do not use the deprecated [PostCustomersCustomerFidContactsParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersCustomerFidContactsContext(ctx context.Context, params *PostCustomersCustomerFidContactsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidContactsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -5044,17 +4788,15 @@ func (a *Client) PostCustomersCustomerFidContactsContext(ctx context.Context, pa
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostCustomersCustomerFidEmailsadds an email address to a customer.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostCustomersCustomerFidEmailsContext] instead.
-*/
+// PostCustomersCustomerFidEmails adds an email address to a customer.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersCustomerFidEmailsContext] instead.
 func (a *Client) PostCustomersCustomerFidEmails(params *PostCustomersCustomerFidEmailsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidEmailsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -5063,11 +4805,9 @@ func (a *Client) PostCustomersCustomerFidEmails(params *PostCustomersCustomerFid
 	return a.PostCustomersCustomerFidEmailsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostCustomersCustomerFidEmailsContextadds an email address to a customer.
-
-Do not use the deprecated [PostCustomersCustomerFidEmailsParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersCustomerFidEmailsContext adds an email address to a customer.
+//
+// Do not use the deprecated [PostCustomersCustomerFidEmailsParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersCustomerFidEmailsContext(ctx context.Context, params *PostCustomersCustomerFidEmailsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidEmailsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -5110,17 +4850,15 @@ func (a *Client) PostCustomersCustomerFidEmailsContext(ctx context.Context, para
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostCustomersCustomerFidFinanceCalculateTaxcalculates tax for a given amount.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostCustomersCustomerFidFinanceCalculateTaxContext] instead.
-*/
+// PostCustomersCustomerFidFinanceCalculateTax calculates tax for a given amount.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersCustomerFidFinanceCalculateTaxContext] instead.
 func (a *Client) PostCustomersCustomerFidFinanceCalculateTax(params *PostCustomersCustomerFidFinanceCalculateTaxParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidFinanceCalculateTaxOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -5129,11 +4867,9 @@ func (a *Client) PostCustomersCustomerFidFinanceCalculateTax(params *PostCustome
 	return a.PostCustomersCustomerFidFinanceCalculateTaxContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostCustomersCustomerFidFinanceCalculateTaxContextcalculates tax for a given amount.
-
-Do not use the deprecated [PostCustomersCustomerFidFinanceCalculateTaxParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersCustomerFidFinanceCalculateTaxContext calculates tax for a given amount.
+//
+// Do not use the deprecated [PostCustomersCustomerFidFinanceCalculateTaxParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersCustomerFidFinanceCalculateTaxContext(ctx context.Context, params *PostCustomersCustomerFidFinanceCalculateTaxParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidFinanceCalculateTaxOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -5176,17 +4912,15 @@ func (a *Client) PostCustomersCustomerFidFinanceCalculateTaxContext(ctx context.
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostCustomersCustomerFidInteractionscreates an interaction.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostCustomersCustomerFidInteractionsContext] instead.
-*/
+// PostCustomersCustomerFidInteractions creates an interaction.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersCustomerFidInteractionsContext] instead.
 func (a *Client) PostCustomersCustomerFidInteractions(params *PostCustomersCustomerFidInteractionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidInteractionsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -5195,11 +4929,9 @@ func (a *Client) PostCustomersCustomerFidInteractions(params *PostCustomersCusto
 	return a.PostCustomersCustomerFidInteractionsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostCustomersCustomerFidInteractionsContextcreates an interaction.
-
-Do not use the deprecated [PostCustomersCustomerFidInteractionsParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersCustomerFidInteractionsContext creates an interaction.
+//
+// Do not use the deprecated [PostCustomersCustomerFidInteractionsParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersCustomerFidInteractionsContext(ctx context.Context, params *PostCustomersCustomerFidInteractionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidInteractionsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -5242,17 +4974,15 @@ func (a *Client) PostCustomersCustomerFidInteractionsContext(ctx context.Context
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteadds a credit note to a customers invoice.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteContext] instead.
-*/
+// PostCustomersCustomerFidInvoicesInvoiceFidCreditNote adds a credit note to a customers invoice.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteContext] instead.
 func (a *Client) PostCustomersCustomerFidInvoicesInvoiceFidCreditNote(params *PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -5261,11 +4991,9 @@ func (a *Client) PostCustomersCustomerFidInvoicesInvoiceFidCreditNote(params *Po
 	return a.PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteContextadds a credit note to a customers invoice.
-
-Do not use the deprecated [PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteContext adds a credit note to a customers invoice.
+//
+// Do not use the deprecated [PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteContext(ctx context.Context, params *PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -5308,17 +5036,15 @@ func (a *Client) PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteContext(ctx
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostCustomersCustomerFidNotesaves a note against a customer.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostCustomersCustomerFidNoteContext] instead.
-*/
+// PostCustomersCustomerFidNote saves a note against a customer.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersCustomerFidNoteContext] instead.
 func (a *Client) PostCustomersCustomerFidNote(params *PostCustomersCustomerFidNoteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidNoteOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -5327,11 +5053,9 @@ func (a *Client) PostCustomersCustomerFidNote(params *PostCustomersCustomerFidNo
 	return a.PostCustomersCustomerFidNoteContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostCustomersCustomerFidNoteContextsaves a note against a customer.
-
-Do not use the deprecated [PostCustomersCustomerFidNoteParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersCustomerFidNoteContext saves a note against a customer.
+//
+// Do not use the deprecated [PostCustomersCustomerFidNoteParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersCustomerFidNoteContext(ctx context.Context, params *PostCustomersCustomerFidNoteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidNoteOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -5374,17 +5098,15 @@ func (a *Client) PostCustomersCustomerFidNoteContext(ctx context.Context, params
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostCustomersCustomerFidPaymentMethodsCardsCardFidLockpost customers customer fid payment methods cards card fid lock API.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostCustomersCustomerFidPaymentMethodsCardsCardFidLockContext] instead.
-*/
+// PostCustomersCustomerFidPaymentMethodsCardsCardFidLock post customers customer fid payment methods cards card fid lock API.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersCustomerFidPaymentMethodsCardsCardFidLockContext] instead.
 func (a *Client) PostCustomersCustomerFidPaymentMethodsCardsCardFidLock(params *PostCustomersCustomerFidPaymentMethodsCardsCardFidLockParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidPaymentMethodsCardsCardFidLockOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -5393,11 +5115,9 @@ func (a *Client) PostCustomersCustomerFidPaymentMethodsCardsCardFidLock(params *
 	return a.PostCustomersCustomerFidPaymentMethodsCardsCardFidLockContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostCustomersCustomerFidPaymentMethodsCardsCardFidLockContextpost customers customer fid payment methods cards card fid lock API.
-
-Do not use the deprecated [PostCustomersCustomerFidPaymentMethodsCardsCardFidLockParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersCustomerFidPaymentMethodsCardsCardFidLockContext post customers customer fid payment methods cards card fid lock API.
+//
+// Do not use the deprecated [PostCustomersCustomerFidPaymentMethodsCardsCardFidLockParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersCustomerFidPaymentMethodsCardsCardFidLockContext(ctx context.Context, params *PostCustomersCustomerFidPaymentMethodsCardsCardFidLockParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidPaymentMethodsCardsCardFidLockOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -5440,17 +5160,15 @@ func (a *Client) PostCustomersCustomerFidPaymentMethodsCardsCardFidLockContext(c
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostCustomersCustomerFidPaymentMethodsPaypalCompletecompletes a paypal agreement created with initialise.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostCustomersCustomerFidPaymentMethodsPaypalCompleteContext] instead.
-*/
+// PostCustomersCustomerFidPaymentMethodsPaypalComplete completes a paypal agreement created with initialise.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersCustomerFidPaymentMethodsPaypalCompleteContext] instead.
 func (a *Client) PostCustomersCustomerFidPaymentMethodsPaypalComplete(params *PostCustomersCustomerFidPaymentMethodsPaypalCompleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidPaymentMethodsPaypalCompleteOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -5459,11 +5177,9 @@ func (a *Client) PostCustomersCustomerFidPaymentMethodsPaypalComplete(params *Po
 	return a.PostCustomersCustomerFidPaymentMethodsPaypalCompleteContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostCustomersCustomerFidPaymentMethodsPaypalCompleteContextcompletes a paypal agreement created with initialise.
-
-Do not use the deprecated [PostCustomersCustomerFidPaymentMethodsPaypalCompleteParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersCustomerFidPaymentMethodsPaypalCompleteContext completes a paypal agreement created with initialise.
+//
+// Do not use the deprecated [PostCustomersCustomerFidPaymentMethodsPaypalCompleteParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersCustomerFidPaymentMethodsPaypalCompleteContext(ctx context.Context, params *PostCustomersCustomerFidPaymentMethodsPaypalCompleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidPaymentMethodsPaypalCompleteOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -5506,17 +5222,15 @@ func (a *Client) PostCustomersCustomerFidPaymentMethodsPaypalCompleteContext(ctx
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostCustomersCustomerFidPaymentMethodsPaypalInitialiseinitialises a new paypal agreement for existing subscriptions.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostCustomersCustomerFidPaymentMethodsPaypalInitialiseContext] instead.
-*/
+// PostCustomersCustomerFidPaymentMethodsPaypalInitialise initialises a new paypal agreement for existing subscriptions.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersCustomerFidPaymentMethodsPaypalInitialiseContext] instead.
 func (a *Client) PostCustomersCustomerFidPaymentMethodsPaypalInitialise(params *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidPaymentMethodsPaypalInitialiseOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -5525,11 +5239,9 @@ func (a *Client) PostCustomersCustomerFidPaymentMethodsPaypalInitialise(params *
 	return a.PostCustomersCustomerFidPaymentMethodsPaypalInitialiseContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostCustomersCustomerFidPaymentMethodsPaypalInitialiseContextinitialises a new paypal agreement for existing subscriptions.
-
-Do not use the deprecated [PostCustomersCustomerFidPaymentMethodsPaypalInitialiseParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersCustomerFidPaymentMethodsPaypalInitialiseContext initialises a new paypal agreement for existing subscriptions.
+//
+// Do not use the deprecated [PostCustomersCustomerFidPaymentMethodsPaypalInitialiseParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersCustomerFidPaymentMethodsPaypalInitialiseContext(ctx context.Context, params *PostCustomersCustomerFidPaymentMethodsPaypalInitialiseParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidPaymentMethodsPaypalInitialiseOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -5572,17 +5284,15 @@ func (a *Client) PostCustomersCustomerFidPaymentMethodsPaypalInitialiseContext(c
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostCustomersCustomerFidPaymentsPaymentFidChargebackinitiates a chargeback on a payment.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostCustomersCustomerFidPaymentsPaymentFidChargebackContext] instead.
-*/
+// PostCustomersCustomerFidPaymentsPaymentFidChargeback initiates a chargeback on a payment.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersCustomerFidPaymentsPaymentFidChargebackContext] instead.
 func (a *Client) PostCustomersCustomerFidPaymentsPaymentFidChargeback(params *PostCustomersCustomerFidPaymentsPaymentFidChargebackParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidPaymentsPaymentFidChargebackOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -5591,11 +5301,9 @@ func (a *Client) PostCustomersCustomerFidPaymentsPaymentFidChargeback(params *Po
 	return a.PostCustomersCustomerFidPaymentsPaymentFidChargebackContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostCustomersCustomerFidPaymentsPaymentFidChargebackContextinitiates a chargeback on a payment.
-
-Do not use the deprecated [PostCustomersCustomerFidPaymentsPaymentFidChargebackParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersCustomerFidPaymentsPaymentFidChargebackContext initiates a chargeback on a payment.
+//
+// Do not use the deprecated [PostCustomersCustomerFidPaymentsPaymentFidChargebackParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersCustomerFidPaymentsPaymentFidChargebackContext(ctx context.Context, params *PostCustomersCustomerFidPaymentsPaymentFidChargebackParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidPaymentsPaymentFidChargebackOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -5638,17 +5346,15 @@ func (a *Client) PostCustomersCustomerFidPaymentsPaymentFidChargebackContext(ctx
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostCustomersCustomerFidPhonesadds a phone number to a customer.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostCustomersCustomerFidPhonesContext] instead.
-*/
+// PostCustomersCustomerFidPhones adds a phone number to a customer.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersCustomerFidPhonesContext] instead.
 func (a *Client) PostCustomersCustomerFidPhones(params *PostCustomersCustomerFidPhonesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidPhonesOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -5657,11 +5363,9 @@ func (a *Client) PostCustomersCustomerFidPhones(params *PostCustomersCustomerFid
 	return a.PostCustomersCustomerFidPhonesContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostCustomersCustomerFidPhonesContextadds a phone number to a customer.
-
-Do not use the deprecated [PostCustomersCustomerFidPhonesParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersCustomerFidPhonesContext adds a phone number to a customer.
+//
+// Do not use the deprecated [PostCustomersCustomerFidPhonesParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersCustomerFidPhonesContext(ctx context.Context, params *PostCustomersCustomerFidPhonesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidPhonesOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -5704,21 +5408,18 @@ func (a *Client) PostCustomersCustomerFidPhonesContext(ctx context.Context, para
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-	PostCustomersCustomerFidSarsubjects access request.
-
-	Initiate a Subject Access Request.  A URL will be sent via a webhook (CustomerWHE::SUBJECT_ACCESS_REQUEST), once the archive is ready for download
-
-.
-
-	This method does not support injected context.
-	However, timeout and opentracing contexts are honored whenever enabled.
-
-	If you need to pass a specific context, use [Client.PostCustomersCustomerFidSarContext] instead.
-*/
+// PostCustomersCustomerFidSar subjects access request.
+//
+// Initiate a Subject Access Request.  A URL will be sent via a webhook (CustomerWHE::SUBJECT_ACCESS_REQUEST), once the archive is ready for download
+// .
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersCustomerFidSarContext] instead.
 func (a *Client) PostCustomersCustomerFidSar(params *PostCustomersCustomerFidSarParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSarOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -5727,15 +5428,12 @@ func (a *Client) PostCustomersCustomerFidSar(params *PostCustomersCustomerFidSar
 	return a.PostCustomersCustomerFidSarContext(ctx, params, authInfo, opts...)
 }
 
-/*
-	PostCustomersCustomerFidSarContextsubjects access request.
-
-	Initiate a Subject Access Request.  A URL will be sent via a webhook (CustomerWHE::SUBJECT_ACCESS_REQUEST), once the archive is ready for download
-
-.
-
-	Do not use the deprecated [PostCustomersCustomerFidSarParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersCustomerFidSarContext subjects access request.
+//
+// Initiate a Subject Access Request.  A URL will be sent via a webhook (CustomerWHE::SUBJECT_ACCESS_REQUEST), once the archive is ready for download
+// .
+//
+// Do not use the deprecated [PostCustomersCustomerFidSarParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersCustomerFidSarContext(ctx context.Context, params *PostCustomersCustomerFidSarParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSarOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -5778,17 +5476,15 @@ func (a *Client) PostCustomersCustomerFidSarContext(ctx context.Context, params 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowstarts a cancel flow and retrieve its state.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowContext] instead.
-*/
+// PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlow starts a cancel flow and retrieve its state.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowContext] instead.
 func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlow(params *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -5797,11 +5493,9 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlow(
 	return a.PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowContextstarts a cancel flow and retrieve its state.
-
-Do not use the deprecated [PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowContext starts a cancel flow and retrieve its state.
+//
+// Do not use the deprecated [PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowContext(ctx context.Context, params *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -5844,17 +5538,15 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowC
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowEmptycreates an empty cancel flow.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowEmptyContext] instead.
-*/
+// PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowEmpty creates an empty cancel flow.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowEmptyContext] instead.
 func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowEmpty(params *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowEmptyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowEmptyOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -5863,11 +5555,9 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowE
 	return a.PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowEmptyContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowEmptyContextcreates an empty cancel flow.
-
-Do not use the deprecated [PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowEmptyParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowEmptyContext creates an empty cancel flow.
+//
+// Do not use the deprecated [PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowEmptyParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowEmptyContext(ctx context.Context, params *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowEmptyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowEmptyOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -5910,17 +5600,15 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowE
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionssets cancel flow options.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsContext] instead.
-*/
+// PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptions sets cancel flow options.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsContext] instead.
 func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptions(params *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -5929,11 +5617,9 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowF
 	return a.PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsContextsets cancel flow options.
-
-Do not use the deprecated [PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsContext sets cancel flow options.
+//
+// Do not use the deprecated [PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsContext(ctx context.Context, params *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -5976,17 +5662,15 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowF
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestcreates a cancel request for a subscription.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestContext] instead.
-*/
+// PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequest creates a cancel request for a subscription.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestContext] instead.
 func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequest(params *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -5995,11 +5679,9 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelReque
 	return a.PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestContextcreates a cancel request for a subscription.
-
-Do not use the deprecated [PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestContext creates a cancel request for a subscription.
+//
+// Do not use the deprecated [PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestContext(ctx context.Context, params *PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelRequestOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -6042,17 +5724,15 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidCancelReque
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowstarts a retention flow and retrieve its state.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowContext] instead.
-*/
+// PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlow starts a retention flow and retrieve its state.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowContext] instead.
 func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlow(params *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -6061,11 +5741,9 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFl
 	return a.PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowContextstarts a retention flow and retrieve its state.
-
-Do not use the deprecated [PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowContext starts a retention flow and retrieve its state.
+//
+// Do not use the deprecated [PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowContext(ctx context.Context, params *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -6108,17 +5786,15 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFl
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowEmptycreates an empty retention flow.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowEmptyContext] instead.
-*/
+// PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowEmpty creates an empty retention flow.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowEmptyContext] instead.
 func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowEmpty(params *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowEmptyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowEmptyOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -6127,11 +5803,9 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFl
 	return a.PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowEmptyContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowEmptyContextcreates an empty retention flow.
-
-Do not use the deprecated [PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowEmptyParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowEmptyContext creates an empty retention flow.
+//
+// Do not use the deprecated [PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowEmptyParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowEmptyContext(ctx context.Context, params *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowEmptyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowEmptyOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -6174,17 +5848,15 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFl
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionssets retention flow options.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsContext] instead.
-*/
+// PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptions sets retention flow options.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsContext] instead.
 func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptions(params *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -6193,11 +5865,9 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFl
 	return a.PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsContextsets retention flow options.
-
-Do not use the deprecated [PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsContext sets retention flow options.
+//
+// Do not use the deprecated [PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsContext(ctx context.Context, params *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -6240,21 +5910,18 @@ func (a *Client) PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFl
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-	PostCustomersCustomerFidTicketscreates a new support ticket.
-
-	The attachments property is an array of unique filenames that have been created using ```/upload/uploadUrl```
-
-.
-
-	This method does not support injected context.
-	However, timeout and opentracing contexts are honored whenever enabled.
-
-	If you need to pass a specific context, use [Client.PostCustomersCustomerFidTicketsContext] instead.
-*/
+// PostCustomersCustomerFidTickets creates a new support ticket.
+//
+// The attachments property is an array of unique filenames that have been created using ```/upload/uploadUrl```
+// .
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersCustomerFidTicketsContext] instead.
 func (a *Client) PostCustomersCustomerFidTickets(params *PostCustomersCustomerFidTicketsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidTicketsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -6263,15 +5930,12 @@ func (a *Client) PostCustomersCustomerFidTickets(params *PostCustomersCustomerFi
 	return a.PostCustomersCustomerFidTicketsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-	PostCustomersCustomerFidTicketsContextcreates a new support ticket.
-
-	The attachments property is an array of unique filenames that have been created using ```/upload/uploadUrl```
-
-.
-
-	Do not use the deprecated [PostCustomersCustomerFidTicketsParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersCustomerFidTicketsContext creates a new support ticket.
+//
+// The attachments property is an array of unique filenames that have been created using ```/upload/uploadUrl```
+// .
+//
+// Do not use the deprecated [PostCustomersCustomerFidTicketsParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersCustomerFidTicketsContext(ctx context.Context, params *PostCustomersCustomerFidTicketsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidTicketsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -6314,21 +5978,18 @@ func (a *Client) PostCustomersCustomerFidTicketsContext(ctx context.Context, par
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-	PostCustomersCustomerFidTicketsTicketFidPostsposts a reply to a ticket.
-
-	The attachments property is an array of unique filenames that have been created using ```/upload/uploadUrl```
-
-.
-
-	This method does not support injected context.
-	However, timeout and opentracing contexts are honored whenever enabled.
-
-	If you need to pass a specific context, use [Client.PostCustomersCustomerFidTicketsTicketFidPostsContext] instead.
-*/
+// PostCustomersCustomerFidTicketsTicketFidPosts posts a reply to a ticket.
+//
+// The attachments property is an array of unique filenames that have been created using ```/upload/uploadUrl```
+// .
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersCustomerFidTicketsTicketFidPostsContext] instead.
 func (a *Client) PostCustomersCustomerFidTicketsTicketFidPosts(params *PostCustomersCustomerFidTicketsTicketFidPostsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidTicketsTicketFidPostsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -6337,15 +5998,12 @@ func (a *Client) PostCustomersCustomerFidTicketsTicketFidPosts(params *PostCusto
 	return a.PostCustomersCustomerFidTicketsTicketFidPostsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-	PostCustomersCustomerFidTicketsTicketFidPostsContextposts a reply to a ticket.
-
-	The attachments property is an array of unique filenames that have been created using ```/upload/uploadUrl```
-
-.
-
-	Do not use the deprecated [PostCustomersCustomerFidTicketsTicketFidPostsParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersCustomerFidTicketsTicketFidPostsContext posts a reply to a ticket.
+//
+// The attachments property is an array of unique filenames that have been created using ```/upload/uploadUrl```
+// .
+//
+// Do not use the deprecated [PostCustomersCustomerFidTicketsTicketFidPostsParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersCustomerFidTicketsTicketFidPostsContext(ctx context.Context, params *PostCustomersCustomerFidTicketsTicketFidPostsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidTicketsTicketFidPostsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -6388,17 +6046,15 @@ func (a *Client) PostCustomersCustomerFidTicketsTicketFidPostsContext(ctx contex
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidupdates a customer.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidContext] instead.
-*/
+// PutCustomersCustomerFid updates a customer.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidContext] instead.
 func (a *Client) PutCustomersCustomerFid(params *PutCustomersCustomerFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -6407,11 +6063,9 @@ func (a *Client) PutCustomersCustomerFid(params *PutCustomersCustomerFidParams, 
 	return a.PutCustomersCustomerFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidContextupdates a customer.
-
-Do not use the deprecated [PutCustomersCustomerFidParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidContext updates a customer.
+//
+// Do not use the deprecated [PutCustomersCustomerFidParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidContext(ctx context.Context, params *PutCustomersCustomerFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -6454,17 +6108,15 @@ func (a *Client) PutCustomersCustomerFidContext(ctx context.Context, params *Put
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidAccountStatusupdates a customers status.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidAccountStatusContext] instead.
-*/
+// PutCustomersCustomerFidAccountStatus updates a customers status.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidAccountStatusContext] instead.
 func (a *Client) PutCustomersCustomerFidAccountStatus(params *PutCustomersCustomerFidAccountStatusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidAccountStatusOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -6473,11 +6125,9 @@ func (a *Client) PutCustomersCustomerFidAccountStatus(params *PutCustomersCustom
 	return a.PutCustomersCustomerFidAccountStatusContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidAccountStatusContextupdates a customers status.
-
-Do not use the deprecated [PutCustomersCustomerFidAccountStatusParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidAccountStatusContext updates a customers status.
+//
+// Do not use the deprecated [PutCustomersCustomerFidAccountStatusParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidAccountStatusContext(ctx context.Context, params *PutCustomersCustomerFidAccountStatusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidAccountStatusOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -6520,17 +6170,15 @@ func (a *Client) PutCustomersCustomerFidAccountStatusContext(ctx context.Context
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidAccountTypeupdates a customers status.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidAccountTypeContext] instead.
-*/
+// PutCustomersCustomerFidAccountType updates a customers status.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidAccountTypeContext] instead.
 func (a *Client) PutCustomersCustomerFidAccountType(params *PutCustomersCustomerFidAccountTypeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidAccountTypeOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -6539,11 +6187,9 @@ func (a *Client) PutCustomersCustomerFidAccountType(params *PutCustomersCustomer
 	return a.PutCustomersCustomerFidAccountTypeContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidAccountTypeContextupdates a customers status.
-
-Do not use the deprecated [PutCustomersCustomerFidAccountTypeParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidAccountTypeContext updates a customers status.
+//
+// Do not use the deprecated [PutCustomersCustomerFidAccountTypeParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidAccountTypeContext(ctx context.Context, params *PutCustomersCustomerFidAccountTypeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidAccountTypeOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -6586,17 +6232,15 @@ func (a *Client) PutCustomersCustomerFidAccountTypeContext(ctx context.Context, 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidBillingDataupdates a customers billing data.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidBillingDataContext] instead.
-*/
+// PutCustomersCustomerFidBillingData updates a customers billing data.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidBillingDataContext] instead.
 func (a *Client) PutCustomersCustomerFidBillingData(params *PutCustomersCustomerFidBillingDataParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidBillingDataOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -6605,11 +6249,9 @@ func (a *Client) PutCustomersCustomerFidBillingData(params *PutCustomersCustomer
 	return a.PutCustomersCustomerFidBillingDataContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidBillingDataContextupdates a customers billing data.
-
-Do not use the deprecated [PutCustomersCustomerFidBillingDataParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidBillingDataContext updates a customers billing data.
+//
+// Do not use the deprecated [PutCustomersCustomerFidBillingDataParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidBillingDataContext(ctx context.Context, params *PutCustomersCustomerFidBillingDataParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidBillingDataOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -6652,17 +6294,15 @@ func (a *Client) PutCustomersCustomerFidBillingDataContext(ctx context.Context, 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidChargebackmarks customer as charged back this action cannot be undone.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidChargebackContext] instead.
-*/
+// PutCustomersCustomerFidChargeback marks customer as charged back this action cannot be undone.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidChargebackContext] instead.
 func (a *Client) PutCustomersCustomerFidChargeback(params *PutCustomersCustomerFidChargebackParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidChargebackOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -6671,11 +6311,9 @@ func (a *Client) PutCustomersCustomerFidChargeback(params *PutCustomersCustomerF
 	return a.PutCustomersCustomerFidChargebackContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidChargebackContextmarks customer as charged back this action cannot be undone.
-
-Do not use the deprecated [PutCustomersCustomerFidChargebackParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidChargebackContext marks customer as charged back this action cannot be undone.
+//
+// Do not use the deprecated [PutCustomersCustomerFidChargebackParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidChargebackContext(ctx context.Context, params *PutCustomersCustomerFidChargebackParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidChargebackOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -6718,17 +6356,15 @@ func (a *Client) PutCustomersCustomerFidChargebackContext(ctx context.Context, p
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidChargebacksChargebackFidactions a chargeback.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidChargebacksChargebackFidContext] instead.
-*/
+// PutCustomersCustomerFidChargebacksChargebackFid actions a chargeback.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidChargebacksChargebackFidContext] instead.
 func (a *Client) PutCustomersCustomerFidChargebacksChargebackFid(params *PutCustomersCustomerFidChargebacksChargebackFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidChargebacksChargebackFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -6737,11 +6373,9 @@ func (a *Client) PutCustomersCustomerFidChargebacksChargebackFid(params *PutCust
 	return a.PutCustomersCustomerFidChargebacksChargebackFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidChargebacksChargebackFidContextactions a chargeback.
-
-Do not use the deprecated [PutCustomersCustomerFidChargebacksChargebackFidParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidChargebacksChargebackFidContext actions a chargeback.
+//
+// Do not use the deprecated [PutCustomersCustomerFidChargebacksChargebackFidParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidChargebacksChargebackFidContext(ctx context.Context, params *PutCustomersCustomerFidChargebacksChargebackFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidChargebacksChargebackFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -6784,17 +6418,15 @@ func (a *Client) PutCustomersCustomerFidChargebacksChargebackFidContext(ctx cont
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidContactsContactFidupdates a contacts information.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidContactsContactFidContext] instead.
-*/
+// PutCustomersCustomerFidContactsContactFid updates a contacts information.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidContactsContactFidContext] instead.
 func (a *Client) PutCustomersCustomerFidContactsContactFid(params *PutCustomersCustomerFidContactsContactFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidContactsContactFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -6803,11 +6435,9 @@ func (a *Client) PutCustomersCustomerFidContactsContactFid(params *PutCustomersC
 	return a.PutCustomersCustomerFidContactsContactFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidContactsContactFidContextupdates a contacts information.
-
-Do not use the deprecated [PutCustomersCustomerFidContactsContactFidParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidContactsContactFidContext updates a contacts information.
+//
+// Do not use the deprecated [PutCustomersCustomerFidContactsContactFidParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidContactsContactFidContext(ctx context.Context, params *PutCustomersCustomerFidContactsContactFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidContactsContactFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -6850,17 +6480,15 @@ func (a *Client) PutCustomersCustomerFidContactsContactFidContext(ctx context.Co
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidCurrencysets customer currency.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidCurrencyContext] instead.
-*/
+// PutCustomersCustomerFidCurrency sets customer currency.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidCurrencyContext] instead.
 func (a *Client) PutCustomersCustomerFidCurrency(params *PutCustomersCustomerFidCurrencyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidCurrencyOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -6869,11 +6497,9 @@ func (a *Client) PutCustomersCustomerFidCurrency(params *PutCustomersCustomerFid
 	return a.PutCustomersCustomerFidCurrencyContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidCurrencyContextsets customer currency.
-
-Do not use the deprecated [PutCustomersCustomerFidCurrencyParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidCurrencyContext sets customer currency.
+//
+// Do not use the deprecated [PutCustomersCustomerFidCurrencyParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidCurrencyContext(ctx context.Context, params *PutCustomersCustomerFidCurrencyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidCurrencyOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -6916,17 +6542,15 @@ func (a *Client) PutCustomersCustomerFidCurrencyContext(ctx context.Context, par
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidExternalReferenceupdates a customers external reference.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidExternalReferenceContext] instead.
-*/
+// PutCustomersCustomerFidExternalReference updates a customers external reference.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidExternalReferenceContext] instead.
 func (a *Client) PutCustomersCustomerFidExternalReference(params *PutCustomersCustomerFidExternalReferenceParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidExternalReferenceOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -6935,11 +6559,9 @@ func (a *Client) PutCustomersCustomerFidExternalReference(params *PutCustomersCu
 	return a.PutCustomersCustomerFidExternalReferenceContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidExternalReferenceContextupdates a customers external reference.
-
-Do not use the deprecated [PutCustomersCustomerFidExternalReferenceParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidExternalReferenceContext updates a customers external reference.
+//
+// Do not use the deprecated [PutCustomersCustomerFidExternalReferenceParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidExternalReferenceContext(ctx context.Context, params *PutCustomersCustomerFidExternalReferenceParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidExternalReferenceOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -6982,17 +6604,15 @@ func (a *Client) PutCustomersCustomerFidExternalReferenceContext(ctx context.Con
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidFraudmarks customer as fraudulent this action cannot be undone.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidFraudContext] instead.
-*/
+// PutCustomersCustomerFidFraud marks customer as fraudulent this action cannot be undone.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidFraudContext] instead.
 func (a *Client) PutCustomersCustomerFidFraud(params *PutCustomersCustomerFidFraudParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidFraudOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -7001,11 +6621,9 @@ func (a *Client) PutCustomersCustomerFidFraud(params *PutCustomersCustomerFidFra
 	return a.PutCustomersCustomerFidFraudContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidFraudContextmarks customer as fraudulent this action cannot be undone.
-
-Do not use the deprecated [PutCustomersCustomerFidFraudParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidFraudContext marks customer as fraudulent this action cannot be undone.
+//
+// Do not use the deprecated [PutCustomersCustomerFidFraudParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidFraudContext(ctx context.Context, params *PutCustomersCustomerFidFraudParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidFraudOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -7048,17 +6666,15 @@ func (a *Client) PutCustomersCustomerFidFraudContext(ctx context.Context, params
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidInvoicesInvoiceFidRetryretries payment of invoice.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidInvoicesInvoiceFidRetryContext] instead.
-*/
+// PutCustomersCustomerFidInvoicesInvoiceFidRetry retries payment of invoice.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidInvoicesInvoiceFidRetryContext] instead.
 func (a *Client) PutCustomersCustomerFidInvoicesInvoiceFidRetry(params *PutCustomersCustomerFidInvoicesInvoiceFidRetryParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidInvoicesInvoiceFidRetryOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -7067,11 +6683,9 @@ func (a *Client) PutCustomersCustomerFidInvoicesInvoiceFidRetry(params *PutCusto
 	return a.PutCustomersCustomerFidInvoicesInvoiceFidRetryContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidInvoicesInvoiceFidRetryContextretries payment of invoice.
-
-Do not use the deprecated [PutCustomersCustomerFidInvoicesInvoiceFidRetryParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidInvoicesInvoiceFidRetryContext retries payment of invoice.
+//
+// Do not use the deprecated [PutCustomersCustomerFidInvoicesInvoiceFidRetryParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidInvoicesInvoiceFidRetryContext(ctx context.Context, params *PutCustomersCustomerFidInvoicesInvoiceFidRetryParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidInvoicesInvoiceFidRetryOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -7114,17 +6728,15 @@ func (a *Client) PutCustomersCustomerFidInvoicesInvoiceFidRetryContext(ctx conte
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidInvoicesRetryretries payment of all customer invoices which are in invoice.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidInvoicesRetryContext] instead.
-*/
+// PutCustomersCustomerFidInvoicesRetry retries payment of all customer invoices which are in invoice.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidInvoicesRetryContext] instead.
 func (a *Client) PutCustomersCustomerFidInvoicesRetry(params *PutCustomersCustomerFidInvoicesRetryParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidInvoicesRetryOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -7133,11 +6745,9 @@ func (a *Client) PutCustomersCustomerFidInvoicesRetry(params *PutCustomersCustom
 	return a.PutCustomersCustomerFidInvoicesRetryContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidInvoicesRetryContextretries payment of all customer invoices which are in invoice.
-
-Do not use the deprecated [PutCustomersCustomerFidInvoicesRetryParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidInvoicesRetryContext retries payment of all customer invoices which are in invoice.
+//
+// Do not use the deprecated [PutCustomersCustomerFidInvoicesRetryParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidInvoicesRetryContext(ctx context.Context, params *PutCustomersCustomerFidInvoicesRetryParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidInvoicesRetryOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -7180,17 +6790,15 @@ func (a *Client) PutCustomersCustomerFidInvoicesRetryContext(ctx context.Context
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidLifecycleStageupdates a customers lifecycle stage.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidLifecycleStageContext] instead.
-*/
+// PutCustomersCustomerFidLifecycleStage updates a customers lifecycle stage.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidLifecycleStageContext] instead.
 func (a *Client) PutCustomersCustomerFidLifecycleStage(params *PutCustomersCustomerFidLifecycleStageParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidLifecycleStageOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -7199,11 +6807,9 @@ func (a *Client) PutCustomersCustomerFidLifecycleStage(params *PutCustomersCusto
 	return a.PutCustomersCustomerFidLifecycleStageContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidLifecycleStageContextupdates a customers lifecycle stage.
-
-Do not use the deprecated [PutCustomersCustomerFidLifecycleStageParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidLifecycleStageContext updates a customers lifecycle stage.
+//
+// Do not use the deprecated [PutCustomersCustomerFidLifecycleStageParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidLifecycleStageContext(ctx context.Context, params *PutCustomersCustomerFidLifecycleStageParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidLifecycleStageOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -7246,17 +6852,15 @@ func (a *Client) PutCustomersCustomerFidLifecycleStageContext(ctx context.Contex
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidLinkVisitorlinks visitor to customer record.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidLinkVisitorContext] instead.
-*/
+// PutCustomersCustomerFidLinkVisitor links visitor to customer record.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidLinkVisitorContext] instead.
 func (a *Client) PutCustomersCustomerFidLinkVisitor(params *PutCustomersCustomerFidLinkVisitorParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidLinkVisitorOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -7265,11 +6869,9 @@ func (a *Client) PutCustomersCustomerFidLinkVisitor(params *PutCustomersCustomer
 	return a.PutCustomersCustomerFidLinkVisitorContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidLinkVisitorContextlinks visitor to customer record.
-
-Do not use the deprecated [PutCustomersCustomerFidLinkVisitorParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidLinkVisitorContext links visitor to customer record.
+//
+// Do not use the deprecated [PutCustomersCustomerFidLinkVisitorParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidLinkVisitorContext(ctx context.Context, params *PutCustomersCustomerFidLinkVisitorParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidLinkVisitorOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -7312,17 +6914,15 @@ func (a *Client) PutCustomersCustomerFidLinkVisitorContext(ctx context.Context, 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidLocationupdates a customers location.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidLocationContext] instead.
-*/
+// PutCustomersCustomerFidLocation updates a customers location.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidLocationContext] instead.
 func (a *Client) PutCustomersCustomerFidLocation(params *PutCustomersCustomerFidLocationParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidLocationOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -7331,11 +6931,9 @@ func (a *Client) PutCustomersCustomerFidLocation(params *PutCustomersCustomerFid
 	return a.PutCustomersCustomerFidLocationContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidLocationContextupdates a customers location.
-
-Do not use the deprecated [PutCustomersCustomerFidLocationParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidLocationContext updates a customers location.
+//
+// Do not use the deprecated [PutCustomersCustomerFidLocationParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidLocationContext(ctx context.Context, params *PutCustomersCustomerFidLocationParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidLocationOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -7378,17 +6976,15 @@ func (a *Client) PutCustomersCustomerFidLocationContext(ctx context.Context, par
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidLoyalsets customer loyalty flag.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidLoyalContext] instead.
-*/
+// PutCustomersCustomerFidLoyal sets customer loyalty flag.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidLoyalContext] instead.
 func (a *Client) PutCustomersCustomerFidLoyal(params *PutCustomersCustomerFidLoyalParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidLoyalOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -7397,11 +6993,9 @@ func (a *Client) PutCustomersCustomerFidLoyal(params *PutCustomersCustomerFidLoy
 	return a.PutCustomersCustomerFidLoyalContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidLoyalContextsets customer loyalty flag.
-
-Do not use the deprecated [PutCustomersCustomerFidLoyalParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidLoyalContext sets customer loyalty flag.
+//
+// Do not use the deprecated [PutCustomersCustomerFidLoyalParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidLoyalContext(ctx context.Context, params *PutCustomersCustomerFidLoyalParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidLoyalOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -7444,17 +7038,15 @@ func (a *Client) PutCustomersCustomerFidLoyalContext(ctx context.Context, params
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidPaymentMethodsCardsCardFidupdates a card.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidPaymentMethodsCardsCardFidContext] instead.
-*/
+// PutCustomersCustomerFidPaymentMethodsCardsCardFid updates a card.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidPaymentMethodsCardsCardFidContext] instead.
 func (a *Client) PutCustomersCustomerFidPaymentMethodsCardsCardFid(params *PutCustomersCustomerFidPaymentMethodsCardsCardFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidPaymentMethodsCardsCardFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -7463,11 +7055,9 @@ func (a *Client) PutCustomersCustomerFidPaymentMethodsCardsCardFid(params *PutCu
 	return a.PutCustomersCustomerFidPaymentMethodsCardsCardFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidPaymentMethodsCardsCardFidContextupdates a card.
-
-Do not use the deprecated [PutCustomersCustomerFidPaymentMethodsCardsCardFidParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidPaymentMethodsCardsCardFidContext updates a card.
+//
+// Do not use the deprecated [PutCustomersCustomerFidPaymentMethodsCardsCardFidParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidPaymentMethodsCardsCardFidContext(ctx context.Context, params *PutCustomersCustomerFidPaymentMethodsCardsCardFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidPaymentMethodsCardsCardFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -7510,17 +7100,15 @@ func (a *Client) PutCustomersCustomerFidPaymentMethodsCardsCardFidContext(ctx co
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidPaymentMethodsPaymentMethodFidupdates a payment method.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidPaymentMethodsPaymentMethodFidContext] instead.
-*/
+// PutCustomersCustomerFidPaymentMethodsPaymentMethodFid updates a payment method.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidPaymentMethodsPaymentMethodFidContext] instead.
 func (a *Client) PutCustomersCustomerFidPaymentMethodsPaymentMethodFid(params *PutCustomersCustomerFidPaymentMethodsPaymentMethodFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidPaymentMethodsPaymentMethodFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -7529,11 +7117,9 @@ func (a *Client) PutCustomersCustomerFidPaymentMethodsPaymentMethodFid(params *P
 	return a.PutCustomersCustomerFidPaymentMethodsPaymentMethodFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidPaymentMethodsPaymentMethodFidContextupdates a payment method.
-
-Do not use the deprecated [PutCustomersCustomerFidPaymentMethodsPaymentMethodFidParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidPaymentMethodsPaymentMethodFidContext updates a payment method.
+//
+// Do not use the deprecated [PutCustomersCustomerFidPaymentMethodsPaymentMethodFidParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidPaymentMethodsPaymentMethodFidContext(ctx context.Context, params *PutCustomersCustomerFidPaymentMethodsPaymentMethodFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidPaymentMethodsPaymentMethodFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -7576,17 +7162,15 @@ func (a *Client) PutCustomersCustomerFidPaymentMethodsPaymentMethodFidContext(ct
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidPaymentsPaymentFidRefundrefunds a payment.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidPaymentsPaymentFidRefundContext] instead.
-*/
+// PutCustomersCustomerFidPaymentsPaymentFidRefund refunds a payment.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidPaymentsPaymentFidRefundContext] instead.
 func (a *Client) PutCustomersCustomerFidPaymentsPaymentFidRefund(params *PutCustomersCustomerFidPaymentsPaymentFidRefundParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidPaymentsPaymentFidRefundOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -7595,11 +7179,9 @@ func (a *Client) PutCustomersCustomerFidPaymentsPaymentFidRefund(params *PutCust
 	return a.PutCustomersCustomerFidPaymentsPaymentFidRefundContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidPaymentsPaymentFidRefundContextrefunds a payment.
-
-Do not use the deprecated [PutCustomersCustomerFidPaymentsPaymentFidRefundParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidPaymentsPaymentFidRefundContext refunds a payment.
+//
+// Do not use the deprecated [PutCustomersCustomerFidPaymentsPaymentFidRefundParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidPaymentsPaymentFidRefundContext(ctx context.Context, params *PutCustomersCustomerFidPaymentsPaymentFidRefundParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidPaymentsPaymentFidRefundOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -7642,17 +7224,15 @@ func (a *Client) PutCustomersCustomerFidPaymentsPaymentFidRefundContext(ctx cont
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidPurchasedmarks customer as purchased this action cannot be undone.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidPurchasedContext] instead.
-*/
+// PutCustomersCustomerFidPurchased marks customer as purchased this action cannot be undone.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidPurchasedContext] instead.
 func (a *Client) PutCustomersCustomerFidPurchased(params *PutCustomersCustomerFidPurchasedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidPurchasedOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -7661,11 +7241,9 @@ func (a *Client) PutCustomersCustomerFidPurchased(params *PutCustomersCustomerFi
 	return a.PutCustomersCustomerFidPurchasedContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidPurchasedContextmarks customer as purchased this action cannot be undone.
-
-Do not use the deprecated [PutCustomersCustomerFidPurchasedParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidPurchasedContext marks customer as purchased this action cannot be undone.
+//
+// Do not use the deprecated [PutCustomersCustomerFidPurchasedParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidPurchasedContext(ctx context.Context, params *PutCustomersCustomerFidPurchasedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidPurchasedOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -7708,17 +7286,15 @@ func (a *Client) PutCustomersCustomerFidPurchasedContext(ctx context.Context, pa
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidQualifiedmarks customer as qualified this action cannot be undone.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidQualifiedContext] instead.
-*/
+// PutCustomersCustomerFidQualified marks customer as qualified this action cannot be undone.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidQualifiedContext] instead.
 func (a *Client) PutCustomersCustomerFidQualified(params *PutCustomersCustomerFidQualifiedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidQualifiedOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -7727,11 +7303,9 @@ func (a *Client) PutCustomersCustomerFidQualified(params *PutCustomersCustomerFi
 	return a.PutCustomersCustomerFidQualifiedContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidQualifiedContextmarks customer as qualified this action cannot be undone.
-
-Do not use the deprecated [PutCustomersCustomerFidQualifiedParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidQualifiedContext marks customer as qualified this action cannot be undone.
+//
+// Do not use the deprecated [PutCustomersCustomerFidQualifiedParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidQualifiedContext(ctx context.Context, params *PutCustomersCustomerFidQualifiedParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidQualifiedOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -7774,17 +7348,15 @@ func (a *Client) PutCustomersCustomerFidQualifiedContext(ctx context.Context, pa
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionTypeupdates a customers status.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionTypeContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionType updates a customers status.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionTypeContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionType(params *PutCustomersCustomerFidSubscriptionTypeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionTypeOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -7793,11 +7365,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionType(params *PutCustomersCus
 	return a.PutCustomersCustomerFidSubscriptionTypeContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionTypeContextupdates a customers status.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionTypeParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionTypeContext updates a customers status.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionTypeParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionTypeContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionTypeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionTypeOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -7840,17 +7410,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionTypeContext(ctx context.Cont
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidupdates a subscription.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFid updates a subscription.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFid(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -7859,11 +7427,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFid(params *Put
 	return a.PutCustomersCustomerFidSubscriptionsSubscriptionFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidContextupdates a subscription.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidContext updates a subscription.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionsSubscriptionFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -7906,17 +7472,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidContext(ctx 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferapplies an offer to a subscription.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOffer applies an offer to a subscription.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOffer(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -7925,11 +7489,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOffer(p
 	return a.PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferContextapplies an offer to a subscription.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferContext applies an offer to a subscription.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -7972,17 +7534,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidApplyOfferCo
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDayssets auto cancel days on a subscription.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDays sets auto cancel days on a subscription.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDays(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -7991,11 +7551,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDa
 	return a.PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysContextsets auto cancel days on a subscription.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysContext sets auto cancel days on a subscription.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDaysOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -8038,17 +7596,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoCancelDa
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDayssets auto suspend days on a subscription.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDays sets auto suspend days on a subscription.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDays(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -8057,11 +7613,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendD
 	return a.PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysContextsets auto suspend days on a subscription.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysContext sets auto suspend days on a subscription.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendDaysOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -8104,17 +7658,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidAutoSuspendD
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationcalculates the changes before a modification to a subscription.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModification calculates the changes before a modification to a subscription.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModification(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -8123,11 +7675,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateMod
 	return a.PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationContextcalculates the changes before a modification to a subscription.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationContext calculates the changes before a modification to a subscription.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -8170,17 +7720,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateMod
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundcalculates the result of a potential refund on a subscription.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefund calculates the result of a potential refund on a subscription.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefund(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -8189,11 +7737,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRef
 	return a.PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundContextcalculates the result of a potential refund on a subscription.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundContext calculates the result of a potential refund on a subscription.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRefundOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -8236,17 +7782,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateRef
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelcancels a subscripion returns subscription f ID.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidCancel cancels a subscripion returns subscription f ID.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCancel(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -8255,11 +7799,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCancel(param
 	return a.PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelContextcancels a subscripion returns subscription f ID.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelContext cancels a subscripion returns subscription f ID.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -8302,17 +7844,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelContex
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchposts an action for a cancel flow and retrieve its latest state.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearch posts an action for a cancel flow and retrieve its latest state.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearch(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -8321,11 +7861,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFl
 	return a.PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchContextposts an action for a cancel flow and retrieve its latest state.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchContext posts an action for a cancel flow and retrieve its latest state.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -8368,17 +7906,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFl
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonabandons a cancel flow.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandon abandons a cancel flow.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandon(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -8387,11 +7923,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFl
 	return a.PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonContextabandons a cancel flow.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonContext abandons a cancel flow.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchAbandonOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -8434,17 +7968,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFl
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargedisables auto charge on specific subscription.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoCharge disables auto charge on specific subscription.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoCharge(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -8453,11 +7985,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoC
 	return a.PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeContextdisables auto charge on specific subscription.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeContext disables auto charge on specific subscription.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -8500,17 +8030,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoC
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoChargeenables auto charge on specific subscription.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoChargeContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoCharge enables auto charge on specific subscription.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoChargeContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoCharge(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoChargeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoChargeOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -8519,11 +8047,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoCh
 	return a.PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoChargeContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoChargeContextenables auto charge on specific subscription.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoChargeParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoChargeContext enables auto charge on specific subscription.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoChargeParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoChargeContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoChargeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoChargeOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -8566,17 +8092,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidEnableAutoCh
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifymodifies an existing subscription with a new price returns the new subscription.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModify modifies an existing subscription with a new price returns the new subscription.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModify(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -8585,11 +8109,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModify(
 	return a.PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyContextmodifies an existing subscription with a new price returns the new subscription.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyContext modifies an existing subscription with a new price returns the new subscription.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -8632,17 +8154,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyC
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidModifymodifies an existing subscription with a new price returns new open order to be completed.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidModify modifies an existing subscription with a new price returns new open order to be completed.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidModify(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -8651,11 +8171,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidModify(param
 	return a.PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyContextmodifies an existing subscription with a new price returns new open order to be completed.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyContext modifies an existing subscription with a new price returns new open order to be completed.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -8698,17 +8216,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidModifyContex
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundrefunds a subscription period.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefund refunds a subscription period.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefund(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -8717,11 +8233,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPerio
 	return a.PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundContextrefunds a subscription period.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundContext refunds a subscription period.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPeriodFidRefundOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -8764,17 +8278,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsPerio
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewpres renew an existing subscription with a different price returns new open order to be completed.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenew pres renew an existing subscription with a different price returns new open order to be completed.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenew(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -8783,11 +8295,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenew(par
 	return a.PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewContextpres renew an existing subscription with a different price returns new open order to be completed.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewContext pres renew an existing subscription with a different price returns new open order to be completed.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -8830,17 +8340,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidPreRenewCont
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryretries the provisioning step.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetry retries the provisioning step.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetry(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -8849,11 +8357,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioning
 	return a.PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryContextretries the provisioning step.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryContext retries the provisioning step.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -8896,17 +8402,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioning
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidReactivatereactivates a subscription returns subscription f ID.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidReactivateContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidReactivate reactivates a subscription returns subscription f ID.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidReactivateContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidReactivate(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidReactivateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidReactivateOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -8915,11 +8419,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidReactivate(p
 	return a.PutCustomersCustomerFidSubscriptionsSubscriptionFidReactivateContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidReactivateContextreactivates a subscription returns subscription f ID.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidReactivateParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidReactivateContext reactivates a subscription returns subscription f ID.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidReactivateParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidReactivateContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionsSubscriptionFidReactivateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidReactivateOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -8962,17 +8464,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidReactivateCo
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModesets the renewal mode of a subscription.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalMode sets the renewal mode of a subscription.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalMode(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -8981,11 +8481,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalMode(
 	return a.PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeContextsets the renewal mode of a subscription.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeContext sets the renewal mode of a subscription.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -9028,17 +8526,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeC
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchposts an action for a cancel flow and retrieve its latest state.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearch posts an action for a cancel flow and retrieve its latest state.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearch(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -9047,11 +8543,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlo
 	return a.PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchContextposts an action for a cancel flow and retrieve its latest state.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchContext posts an action for a cancel flow and retrieve its latest state.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -9094,17 +8588,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlo
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonabandons a retention flow.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandon abandons a retention flow.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandon(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -9113,11 +8605,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlo
 	return a.PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonContextabandons a retention flow.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonContext abandons a retention flow.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -9160,17 +8650,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlo
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDayssets advance days on a subscription.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDays sets advance days on a subscription.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDays(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -9179,11 +8667,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDa
 	return a.PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysContextsets advance days on a subscription.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysContext sets advance days on a subscription.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -9226,17 +8712,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDa
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionsets parent subscription on a subscription.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscription sets parent subscription on a subscription.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscription(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -9245,11 +8729,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSub
 	return a.PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionContextsets parent subscription on a subscription.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionContext sets parent subscription on a subscription.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -9292,17 +8774,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSub
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountsets payment account for subscription if changing a payment method from an automatic payment method such as pay pal recurring payments any other subscriptions paid with the same agreement will be set to default payment method and the agreement will be cancelled.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccount sets payment account for subscription if changing a payment method from an automatic payment method such as pay pal recurring payments any other subscriptions paid with the same agreement will be set to default payment method and the agreement will be cancelled.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccount(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -9311,11 +8791,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAc
 	return a.PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountContextsets payment account for subscription if changing a payment method from an automatic payment method such as pay pal recurring payments any other subscriptions paid with the same agreement will be set to default payment method and the agreement will be cancelled.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountContext sets payment account for subscription if changing a payment method from an automatic payment method such as pay pal recurring payments any other subscriptions paid with the same agreement will be set to default payment method and the agreement will be cancelled.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAccountOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -9358,17 +8836,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSetPaymentAc
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendsuspends a subscription.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspend suspends a subscription.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspend(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -9377,11 +8853,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspend(para
 	return a.PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendContextsuspends a subscription.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendContext suspends a subscription.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -9424,17 +8898,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidSuspendConte
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPricemodifies an existing subscription with a new price which will be used for the next renewal.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceContext] instead.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPrice modifies an existing subscription with a new price which will be used for the next renewal.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceContext] instead.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPrice(params *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -9443,11 +8915,9 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewa
 	return a.PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceContextmodifies an existing subscription with a new price which will be used for the next renewal.
-
-Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceContext modifies an existing subscription with a new price which will be used for the next renewal.
+//
+// Do not use the deprecated [PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceContext(ctx context.Context, params *PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewalPriceOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -9490,17 +8960,15 @@ func (a *Client) PutCustomersCustomerFidSubscriptionsSubscriptionFidUpdateRenewa
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidTestAccountmarks a customer as a test account.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidTestAccountContext] instead.
-*/
+// PutCustomersCustomerFidTestAccount marks a customer as a test account.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidTestAccountContext] instead.
 func (a *Client) PutCustomersCustomerFidTestAccount(params *PutCustomersCustomerFidTestAccountParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidTestAccountOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -9509,11 +8977,9 @@ func (a *Client) PutCustomersCustomerFidTestAccount(params *PutCustomersCustomer
 	return a.PutCustomersCustomerFidTestAccountContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidTestAccountContextmarks a customer as a test account.
-
-Do not use the deprecated [PutCustomersCustomerFidTestAccountParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidTestAccountContext marks a customer as a test account.
+//
+// Do not use the deprecated [PutCustomersCustomerFidTestAccountParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidTestAccountContext(ctx context.Context, params *PutCustomersCustomerFidTestAccountParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidTestAccountOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -9556,17 +9022,15 @@ func (a *Client) PutCustomersCustomerFidTestAccountContext(ctx context.Context, 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidUpgradePaymentAccountupgrades customer from fortifi pay to chargehive.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidUpgradePaymentAccountContext] instead.
-*/
+// PutCustomersCustomerFidUpgradePaymentAccount upgrades customer from fortifi pay to chargehive.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidUpgradePaymentAccountContext] instead.
 func (a *Client) PutCustomersCustomerFidUpgradePaymentAccount(params *PutCustomersCustomerFidUpgradePaymentAccountParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidUpgradePaymentAccountOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -9575,11 +9039,9 @@ func (a *Client) PutCustomersCustomerFidUpgradePaymentAccount(params *PutCustome
 	return a.PutCustomersCustomerFidUpgradePaymentAccountContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidUpgradePaymentAccountContextupgrades customer from fortifi pay to chargehive.
-
-Do not use the deprecated [PutCustomersCustomerFidUpgradePaymentAccountParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidUpgradePaymentAccountContext upgrades customer from fortifi pay to chargehive.
+//
+// Do not use the deprecated [PutCustomersCustomerFidUpgradePaymentAccountParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidUpgradePaymentAccountContext(ctx context.Context, params *PutCustomersCustomerFidUpgradePaymentAccountParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidUpgradePaymentAccountOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -9622,17 +9084,15 @@ func (a *Client) PutCustomersCustomerFidUpgradePaymentAccountContext(ctx context
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutCustomersCustomerFidVipsets customer as v IP.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutCustomersCustomerFidVipContext] instead.
-*/
+// PutCustomersCustomerFidVip sets customer as v IP.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutCustomersCustomerFidVipContext] instead.
 func (a *Client) PutCustomersCustomerFidVip(params *PutCustomersCustomerFidVipParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidVipOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -9641,11 +9101,9 @@ func (a *Client) PutCustomersCustomerFidVip(params *PutCustomersCustomerFidVipPa
 	return a.PutCustomersCustomerFidVipContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutCustomersCustomerFidVipContextsets customer as v IP.
-
-Do not use the deprecated [PutCustomersCustomerFidVipParams.Context] with this method: it would be ignored.
-*/
+// PutCustomersCustomerFidVipContext sets customer as v IP.
+//
+// Do not use the deprecated [PutCustomersCustomerFidVipParams.Context] with this method: it would be ignored.
 func (a *Client) PutCustomersCustomerFidVipContext(ctx context.Context, params *PutCustomersCustomerFidVipParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutCustomersCustomerFidVipOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

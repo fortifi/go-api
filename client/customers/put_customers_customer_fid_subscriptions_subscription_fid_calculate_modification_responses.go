@@ -48,11 +48,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModification
 	return &PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationOK{}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationOK describes a response with status code 200, with default header values.
-
-Calculated result of modification
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationOK describes a response with status code 200, with default header values.
+//
+// Calculated result of modification
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationOK struct {
 	Payload *PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationOKBody
 }
@@ -120,11 +118,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModification
 	}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificatio
 	return nil
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationOKBody put customers customer fid subscriptions subscription fid calculate modification o k body
-swagger:model PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationOKBody
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationOKBody put customers customer fid subscriptions subscription fid calculate modification o k body
+//
+// swagger:model PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationOKBody
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidCalculateModificationOKBody struct {
 	models.Envelope
 

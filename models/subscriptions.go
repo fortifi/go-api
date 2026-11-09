@@ -144,7 +144,7 @@ func (m *Subscriptions) contextValidateSubscriptions(ctx context.Context, format
 		if m.Subscriptions[i] != nil {
 
 			if typeutils.IsZero(m.Subscriptions[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Subscriptions[i].ContextValidate(ctx, formats); err != nil {
