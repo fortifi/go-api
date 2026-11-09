@@ -22,12 +22,12 @@ type OrderVerification struct {
 }
 
 // Validate validates this order verification
-func (m *OrderVerification) Validate(formats strfmt.Registry) error {
+func (m *OrderVerification) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this order verification based on context it is used
-func (m *OrderVerification) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *OrderVerification) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

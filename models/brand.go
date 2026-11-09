@@ -25,12 +25,12 @@ type Brand struct {
 }
 
 // Validate validates this brand
-func (m *Brand) Validate(formats strfmt.Registry) error {
+func (m *Brand) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this brand based on context it is used
-func (m *Brand) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *Brand) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

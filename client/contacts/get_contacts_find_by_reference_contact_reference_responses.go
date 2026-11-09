@@ -48,11 +48,9 @@ func NewGetContactsFindByReferenceContactReferenceOK() *GetContactsFindByReferen
 	return &GetContactsFindByReferenceContactReferenceOK{}
 }
 
-/*
-GetContactsFindByReferenceContactReferenceOK describes a response with status code 200, with default header values.
-
-Person info
-*/
+// GetContactsFindByReferenceContactReferenceOK describes a response with status code 200, with default header values.
+//
+// Person info
 type GetContactsFindByReferenceContactReferenceOK struct {
 	Payload *GetContactsFindByReferenceContactReferenceOKBody
 }
@@ -120,11 +118,9 @@ func NewGetContactsFindByReferenceContactReferenceDefault(code int) *GetContacts
 	}
 }
 
-/*
-GetContactsFindByReferenceContactReferenceDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetContactsFindByReferenceContactReferenceDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetContactsFindByReferenceContactReferenceDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetContactsFindByReferenceContactReferenceDefault) readResponse(respons
 	return nil
 }
 
-/*
-GetContactsFindByReferenceContactReferenceOKBody get contacts find by reference contact reference o k body
-swagger:model GetContactsFindByReferenceContactReferenceOKBody
-*/
+// GetContactsFindByReferenceContactReferenceOKBody get contacts find by reference contact reference o k body
+//
+// swagger:model GetContactsFindByReferenceContactReferenceOKBody
 type GetContactsFindByReferenceContactReferenceOKBody struct {
 	models.Envelope
 

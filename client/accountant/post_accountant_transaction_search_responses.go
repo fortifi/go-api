@@ -48,11 +48,9 @@ func NewPostAccountantTransactionSearchOK() *PostAccountantTransactionSearchOK {
 	return &PostAccountantTransactionSearchOK{}
 }
 
-/*
-PostAccountantTransactionSearchOK describes a response with status code 200, with default header values.
-
-Find Transaction Response
-*/
+// PostAccountantTransactionSearchOK describes a response with status code 200, with default header values.
+//
+// Find Transaction Response
 type PostAccountantTransactionSearchOK struct {
 	Payload *PostAccountantTransactionSearchOKBody
 }
@@ -120,11 +118,9 @@ func NewPostAccountantTransactionSearchDefault(code int) *PostAccountantTransact
 	}
 }
 
-/*
-PostAccountantTransactionSearchDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostAccountantTransactionSearchDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostAccountantTransactionSearchDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostAccountantTransactionSearchDefault) readResponse(response runtime.C
 	return nil
 }
 
-/*
-PostAccountantTransactionSearchOKBody post accountant transaction search o k body
-swagger:model PostAccountantTransactionSearchOKBody
-*/
+// PostAccountantTransactionSearchOKBody post accountant transaction search o k body
+//
+// swagger:model PostAccountantTransactionSearchOKBody
 type PostAccountantTransactionSearchOKBody struct {
 	models.Envelope
 

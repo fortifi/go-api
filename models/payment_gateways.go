@@ -144,7 +144,7 @@ func (m *PaymentGateways) contextValidateGateways(ctx context.Context, formats s
 		if m.Gateways[i] != nil {
 
 			if typeutils.IsZero(m.Gateways[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Gateways[i].ContextValidate(ctx, formats); err != nil {

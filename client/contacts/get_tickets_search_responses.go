@@ -49,11 +49,9 @@ func NewGetTicketsSearchOK() *GetTicketsSearchOK {
 	return &GetTicketsSearchOK{}
 }
 
-/*
-GetTicketsSearchOK describes a response with status code 200, with default header values.
-
-Ticket Search Results
-*/
+// GetTicketsSearchOK describes a response with status code 200, with default header values.
+//
+// Ticket Search Results
 type GetTicketsSearchOK struct {
 	Payload *GetTicketsSearchOKBody
 }
@@ -121,11 +119,9 @@ func NewGetTicketsSearchDefault(code int) *GetTicketsSearchDefault {
 	}
 }
 
-/*
-GetTicketsSearchDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetTicketsSearchDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetTicketsSearchDefault struct {
 	_statusCode int
 
@@ -188,10 +184,9 @@ func (o *GetTicketsSearchDefault) readResponse(response runtime.ClientResponse, 
 	return nil
 }
 
-/*
-GetTicketsSearchOKBody get tickets search o k body
-swagger:model GetTicketsSearchOKBody
-*/
+// GetTicketsSearchOKBody get tickets search o k body
+//
+// swagger:model GetTicketsSearchOKBody
 type GetTicketsSearchOKBody struct {
 	models.Envelope
 
@@ -320,7 +315,7 @@ func (o *GetTicketsSearchOKBody) contextValidateData(ctx context.Context, format
 		if o.Data[i] != nil {
 
 			if typeutils.IsZero(o.Data[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := o.Data[i].ContextValidate(ctx, formats); err != nil {

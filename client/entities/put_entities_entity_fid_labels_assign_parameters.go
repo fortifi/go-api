@@ -62,10 +62,9 @@ PutEntitiesEntityFidLabelsAssignParams contains all the parameters to send to th
 */
 type PutEntitiesEntityFidLabelsAssignParams struct {
 
-	/* EntityFid.
-
-	   Entity FID to use
-	*/
+	// EntityFid.
+	//
+	// Entity FID to use
 	EntityFid string
 
 	// Label.

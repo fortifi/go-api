@@ -63,36 +63,31 @@ PostCustomersCustomerFidApplyCreditParams contains all the parameters to send to
 */
 type PostCustomersCustomerFidApplyCreditParams struct {
 
-	/* Amount.
-
-	   Amount to apply
-
-	   Format: float
-	*/
+	// Amount.
+	//
+	// Amount to apply
+	//
+	// Format: float
 	Amount float32
 
-	/* Currency.
-
-	   Currency code
-	*/
+	// Currency.
+	//
+	// Currency code
 	Currency *string
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* Description.
-
-	   Payment Description
-	*/
+	// Description.
+	//
+	// Payment Description
 	Description *string
 
-	/* Reference.
-
-	   Payment Reference
-	*/
+	// Reference.
+	//
+	// Payment Reference
 	Reference *string
 
 	HTTPClient *http.Client

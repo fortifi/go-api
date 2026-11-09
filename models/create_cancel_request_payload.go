@@ -101,7 +101,7 @@ func (m *CreateCancelRequestPayload) validateCancelType(formats strfmt.Registry)
 }
 
 // ContextValidate validates this create cancel request payload based on context it is used
-func (m *CreateCancelRequestPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *CreateCancelRequestPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

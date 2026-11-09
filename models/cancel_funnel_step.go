@@ -28,12 +28,12 @@ type CancelFunnelStep struct {
 }
 
 // Validate validates this cancel funnel step
-func (m *CancelFunnelStep) Validate(formats strfmt.Registry) error {
+func (m *CancelFunnelStep) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this cancel funnel step based on context it is used
-func (m *CancelFunnelStep) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *CancelFunnelStep) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

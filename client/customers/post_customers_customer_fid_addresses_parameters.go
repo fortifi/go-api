@@ -63,10 +63,9 @@ PostCustomersCustomerFidAddressesParams contains all the parameters to send to t
 */
 type PostCustomersCustomerFidAddressesParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// Payload.

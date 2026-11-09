@@ -44,11 +44,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyOK() *PutC
 	return &PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyOK{}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyOK describes a response with status code 200, with default header values.
-
-Modify Successful
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyOK describes a response with status code 200, with default header values.
+//
+// Modify Successful
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyDefault(co
 	}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidForceModifyDefault struct {
 	_statusCode int
 

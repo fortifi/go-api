@@ -48,11 +48,9 @@ func NewPostInteractionsJourneyOK() *PostInteractionsJourneyOK {
 	return &PostInteractionsJourneyOK{}
 }
 
-/*
-PostInteractionsJourneyOK describes a response with status code 200, with default header values.
-
-Customer Journey Created
-*/
+// PostInteractionsJourneyOK describes a response with status code 200, with default header values.
+//
+// Customer Journey Created
 type PostInteractionsJourneyOK struct {
 	Payload *PostInteractionsJourneyOKBody
 }
@@ -120,11 +118,9 @@ func NewPostInteractionsJourneyDefault(code int) *PostInteractionsJourneyDefault
 	}
 }
 
-/*
-PostInteractionsJourneyDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostInteractionsJourneyDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostInteractionsJourneyDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostInteractionsJourneyDefault) readResponse(response runtime.ClientRes
 	return nil
 }
 
-/*
-PostInteractionsJourneyOKBody post interactions journey o k body
-swagger:model PostInteractionsJourneyOKBody
-*/
+// PostInteractionsJourneyOKBody post interactions journey o k body
+//
+// swagger:model PostInteractionsJourneyOKBody
 type PostInteractionsJourneyOKBody struct {
 	models.Envelope
 

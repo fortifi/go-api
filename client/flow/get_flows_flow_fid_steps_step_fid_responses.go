@@ -48,11 +48,9 @@ func NewGetFlowsFlowFidStepsStepFidOK() *GetFlowsFlowFidStepsStepFidOK {
 	return &GetFlowsFlowFidStepsStepFidOK{}
 }
 
-/*
-GetFlowsFlowFidStepsStepFidOK describes a response with status code 200, with default header values.
-
-Step details
-*/
+// GetFlowsFlowFidStepsStepFidOK describes a response with status code 200, with default header values.
+//
+// Step details
 type GetFlowsFlowFidStepsStepFidOK struct {
 	Payload *GetFlowsFlowFidStepsStepFidOKBody
 }
@@ -120,11 +118,9 @@ func NewGetFlowsFlowFidStepsStepFidDefault(code int) *GetFlowsFlowFidStepsStepFi
 	}
 }
 
-/*
-GetFlowsFlowFidStepsStepFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetFlowsFlowFidStepsStepFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetFlowsFlowFidStepsStepFidDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetFlowsFlowFidStepsStepFidDefault) readResponse(response runtime.Clien
 	return nil
 }
 
-/*
-GetFlowsFlowFidStepsStepFidOKBody get flows flow fid steps step fid o k body
-swagger:model GetFlowsFlowFidStepsStepFidOKBody
-*/
+// GetFlowsFlowFidStepsStepFidOKBody get flows flow fid steps step fid o k body
+//
+// swagger:model GetFlowsFlowFidStepsStepFidOKBody
 type GetFlowsFlowFidStepsStepFidOKBody struct {
 	models.Envelope
 

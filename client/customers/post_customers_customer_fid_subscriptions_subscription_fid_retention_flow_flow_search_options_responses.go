@@ -48,11 +48,9 @@ func NewPostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSea
 	return &PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOK{}
 }
 
-/*
-PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOK describes a response with status code 200, with default header values.
-
-Create Retention Flow Options
-*/
+// PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOK describes a response with status code 200, with default header values.
+//
+// Create Retention Flow Options
 type PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOK struct {
 	Payload *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOKBody
 }
@@ -120,11 +118,9 @@ func NewPostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSea
 	}
 }
 
-/*
-PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSe
 	return nil
 }
 
-/*
-PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOKBody post customers customer fid subscriptions subscription fid retention flow flow search options o k body
-swagger:model PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOKBody
-*/
+// PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOKBody post customers customer fid subscriptions subscription fid retention flow flow search options o k body
+//
+// swagger:model PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOKBody
 type PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsOKBody struct {
 	models.Envelope
 

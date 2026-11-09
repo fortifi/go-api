@@ -48,11 +48,9 @@ func NewPostProductsProductFidAvailabilityCheckOK() *PostProductsProductFidAvail
 	return &PostProductsProductFidAvailabilityCheckOK{}
 }
 
-/*
-PostProductsProductFidAvailabilityCheckOK describes a response with status code 200, with default header values.
-
-Result of availability check
-*/
+// PostProductsProductFidAvailabilityCheckOK describes a response with status code 200, with default header values.
+//
+// Result of availability check
 type PostProductsProductFidAvailabilityCheckOK struct {
 	Payload *PostProductsProductFidAvailabilityCheckOKBody
 }
@@ -120,11 +118,9 @@ func NewPostProductsProductFidAvailabilityCheckDefault(code int) *PostProductsPr
 	}
 }
 
-/*
-PostProductsProductFidAvailabilityCheckDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostProductsProductFidAvailabilityCheckDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostProductsProductFidAvailabilityCheckDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostProductsProductFidAvailabilityCheckDefault) readResponse(response r
 	return nil
 }
 
-/*
-PostProductsProductFidAvailabilityCheckOKBody post products product fid availability check o k body
-swagger:model PostProductsProductFidAvailabilityCheckOKBody
-*/
+// PostProductsProductFidAvailabilityCheckOKBody post products product fid availability check o k body
+//
+// swagger:model PostProductsProductFidAvailabilityCheckOKBody
 type PostProductsProductFidAvailabilityCheckOKBody struct {
 	models.Envelope
 

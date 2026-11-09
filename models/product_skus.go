@@ -87,7 +87,7 @@ func (m *ProductSkus) contextValidateSkus(ctx context.Context, formats strfmt.Re
 		if m.Skus[i] != nil {
 
 			if typeutils.IsZero(m.Skus[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Skus[i].ContextValidate(ctx, formats); err != nil {

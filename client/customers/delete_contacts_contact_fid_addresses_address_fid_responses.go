@@ -44,11 +44,9 @@ func NewDeleteContactsContactFidAddressesAddressFidOK() *DeleteContactsContactFi
 	return &DeleteContactsContactFidAddressesAddressFidOK{}
 }
 
-/*
-DeleteContactsContactFidAddressesAddressFidOK describes a response with status code 200, with default header values.
-
-Address removed
-*/
+// DeleteContactsContactFidAddressesAddressFidOK describes a response with status code 200, with default header values.
+//
+// Address removed
 type DeleteContactsContactFidAddressesAddressFidOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewDeleteContactsContactFidAddressesAddressFidDefault(code int) *DeleteCont
 	}
 }
 
-/*
-DeleteContactsContactFidAddressesAddressFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// DeleteContactsContactFidAddressesAddressFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type DeleteContactsContactFidAddressesAddressFidDefault struct {
 	_statusCode int
 

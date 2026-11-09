@@ -62,16 +62,14 @@ DeleteFlowsFlowFidStepsStepFidParams contains all the parameters to send to the 
 */
 type DeleteFlowsFlowFidStepsStepFidParams struct {
 
-	/* FlowFid.
-
-	   Flow FID to use
-	*/
+	// FlowFid.
+	//
+	// Flow FID to use
 	FlowFid string
 
-	/* StepFid.
-
-	   Flow Step FID to use
-	*/
+	// StepFid.
+	//
+	// Flow Step FID to use
 	StepFid string
 
 	HTTPClient *http.Client

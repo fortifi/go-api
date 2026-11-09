@@ -44,11 +44,9 @@ func NewDeletePublishersPublisherFidApprovedOK() *DeletePublishersPublisherFidAp
 	return &DeletePublishersPublisherFidApprovedOK{}
 }
 
-/*
-DeletePublishersPublisherFidApprovedOK describes a response with status code 200, with default header values.
-
-Publisher no longer approved
-*/
+// DeletePublishersPublisherFidApprovedOK describes a response with status code 200, with default header values.
+//
+// Publisher no longer approved
 type DeletePublishersPublisherFidApprovedOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewDeletePublishersPublisherFidApprovedDefault(code int) *DeletePublishersP
 	}
 }
 
-/*
-DeletePublishersPublisherFidApprovedDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// DeletePublishersPublisherFidApprovedDefault describes a response with status code -1, with default header values.
+//
+// Error
 type DeletePublishersPublisherFidApprovedDefault struct {
 	_statusCode int
 

@@ -48,11 +48,9 @@ func NewGetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchO
 	return &GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOK{}
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOK describes a response with status code 200, with default header values.
-
-Cancel Flow State
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOK describes a response with status code 200, with default header values.
+//
+// Cancel Flow State
 type GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOK struct {
 	Payload *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOKBody
 }
@@ -120,11 +118,9 @@ func NewGetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchD
 	}
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearch
 	return nil
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOKBody get customers customer fid subscriptions subscription fid cancel flow flow search o k body
-swagger:model GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOKBody
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOKBody get customers customer fid subscriptions subscription fid cancel flow flow search o k body
+//
+// swagger:model GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOKBody
 type GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOKBody struct {
 	models.Envelope
 

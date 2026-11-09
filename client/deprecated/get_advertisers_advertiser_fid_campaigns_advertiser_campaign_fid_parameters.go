@@ -62,16 +62,14 @@ GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidParams contains all the
 */
 type GetAdvertisersAdvertiserFidCampaignsAdvertiserCampaignFidParams struct {
 
-	/* AdvertiserCampaignFid.
-
-	   Advertiser Campaign FID to use
-	*/
+	// AdvertiserCampaignFid.
+	//
+	// Advertiser Campaign FID to use
 	AdvertiserCampaignFid string
 
-	/* AdvertiserFid.
-
-	   Advertiser FID to use
-	*/
+	// AdvertiserFid.
+	//
+	// Advertiser FID to use
 	AdvertiserFid string
 
 	HTTPClient *http.Client

@@ -90,7 +90,7 @@ func (m *FlowSteps) contextValidateSteps(ctx context.Context, formats strfmt.Reg
 		if m.Steps[i] != nil {
 
 			if typeutils.IsZero(m.Steps[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Steps[i].ContextValidate(ctx, formats); err != nil {

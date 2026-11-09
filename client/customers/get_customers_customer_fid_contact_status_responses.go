@@ -48,11 +48,9 @@ func NewGetCustomersCustomerFidContactStatusOK() *GetCustomersCustomerFidContact
 	return &GetCustomersCustomerFidContactStatusOK{}
 }
 
-/*
-GetCustomersCustomerFidContactStatusOK describes a response with status code 200, with default header values.
-
-List of Contact Status
-*/
+// GetCustomersCustomerFidContactStatusOK describes a response with status code 200, with default header values.
+//
+// List of Contact Status
 type GetCustomersCustomerFidContactStatusOK struct {
 	Payload *GetCustomersCustomerFidContactStatusOKBody
 }
@@ -120,11 +118,9 @@ func NewGetCustomersCustomerFidContactStatusDefault(code int) *GetCustomersCusto
 	}
 }
 
-/*
-GetCustomersCustomerFidContactStatusDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetCustomersCustomerFidContactStatusDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetCustomersCustomerFidContactStatusDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetCustomersCustomerFidContactStatusDefault) readResponse(response runt
 	return nil
 }
 
-/*
-GetCustomersCustomerFidContactStatusOKBody get customers customer fid contact status o k body
-swagger:model GetCustomersCustomerFidContactStatusOKBody
-*/
+// GetCustomersCustomerFidContactStatusOKBody get customers customer fid contact status o k body
+//
+// swagger:model GetCustomersCustomerFidContactStatusOKBody
 type GetCustomersCustomerFidContactStatusOKBody struct {
 	models.Envelope
 

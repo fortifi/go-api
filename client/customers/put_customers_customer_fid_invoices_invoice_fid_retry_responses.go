@@ -44,11 +44,9 @@ func NewPutCustomersCustomerFidInvoicesInvoiceFidRetryOK() *PutCustomersCustomer
 	return &PutCustomersCustomerFidInvoicesInvoiceFidRetryOK{}
 }
 
-/*
-PutCustomersCustomerFidInvoicesInvoiceFidRetryOK describes a response with status code 200, with default header values.
-
-Invoice set to retry payment
-*/
+// PutCustomersCustomerFidInvoicesInvoiceFidRetryOK describes a response with status code 200, with default header values.
+//
+// Invoice set to retry payment
 type PutCustomersCustomerFidInvoicesInvoiceFidRetryOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutCustomersCustomerFidInvoicesInvoiceFidRetryDefault(code int) *PutCust
 	}
 }
 
-/*
-PutCustomersCustomerFidInvoicesInvoiceFidRetryDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutCustomersCustomerFidInvoicesInvoiceFidRetryDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutCustomersCustomerFidInvoicesInvoiceFidRetryDefault struct {
 	_statusCode int
 

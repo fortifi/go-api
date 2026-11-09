@@ -62,18 +62,16 @@ PutCustomersCustomerFidFraudParams contains all the parameters to send to the AP
 */
 type PutCustomersCustomerFidFraudParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* IsoTime.
-
-	   Time in ISO 8601 standard with optional fractions of a second e.g 2015-12-05T13:11:59.888Z
-
-	   Format: date-time
-	*/
+	// IsoTime.
+	//
+	// Time in ISO 8601 standard with optional fractions of a second e.g 2015-12-05T13:11:59.888Z
+	//
+	// Format: date-time
 	IsoTime *strfmt.DateTime
 
 	HTTPClient *http.Client

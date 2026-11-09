@@ -48,11 +48,9 @@ func NewPostAppstoreCustomerFidAppleOK() *PostAppstoreCustomerFidAppleOK {
 	return &PostAppstoreCustomerFidAppleOK{}
 }
 
-/*
-PostAppstoreCustomerFidAppleOK describes a response with status code 200, with default header values.
-
-Bool Response
-*/
+// PostAppstoreCustomerFidAppleOK describes a response with status code 200, with default header values.
+//
+// Bool Response
 type PostAppstoreCustomerFidAppleOK struct {
 	Payload *PostAppstoreCustomerFidAppleOKBody
 }
@@ -120,11 +118,9 @@ func NewPostAppstoreCustomerFidAppleDefault(code int) *PostAppstoreCustomerFidAp
 	}
 }
 
-/*
-PostAppstoreCustomerFidAppleDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostAppstoreCustomerFidAppleDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostAppstoreCustomerFidAppleDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostAppstoreCustomerFidAppleDefault) readResponse(response runtime.Clie
 	return nil
 }
 
-/*
-PostAppstoreCustomerFidAppleOKBody post appstore customer fid apple o k body
-swagger:model PostAppstoreCustomerFidAppleOKBody
-*/
+// PostAppstoreCustomerFidAppleOKBody post appstore customer fid apple o k body
+//
+// swagger:model PostAppstoreCustomerFidAppleOKBody
 type PostAppstoreCustomerFidAppleOKBody struct {
 	models.Envelope
 

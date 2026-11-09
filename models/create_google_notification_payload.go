@@ -99,7 +99,7 @@ func (m *CreateGoogleNotificationPayload) validateSubscriptionID(formats strfmt.
 }
 
 // ContextValidate validates this create google notification payload based on context it is used
-func (m *CreateGoogleNotificationPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *CreateGoogleNotificationPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

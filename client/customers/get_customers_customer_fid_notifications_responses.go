@@ -44,11 +44,9 @@ func NewGetCustomersCustomerFidNotificationsOK() *GetCustomersCustomerFidNotific
 	return &GetCustomersCustomerFidNotificationsOK{}
 }
 
-/*
-GetCustomersCustomerFidNotificationsOK describes a response with status code 200, with default header values.
-
-List of Notifications sent to Customer
-*/
+// GetCustomersCustomerFidNotificationsOK describes a response with status code 200, with default header values.
+//
+// List of Notifications sent to Customer
 type GetCustomersCustomerFidNotificationsOK struct {
 	Payload *models.Notifications
 }
@@ -116,11 +114,9 @@ func NewGetCustomersCustomerFidNotificationsDefault(code int) *GetCustomersCusto
 	}
 }
 
-/*
-GetCustomersCustomerFidNotificationsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetCustomersCustomerFidNotificationsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetCustomersCustomerFidNotificationsDefault struct {
 	_statusCode int
 

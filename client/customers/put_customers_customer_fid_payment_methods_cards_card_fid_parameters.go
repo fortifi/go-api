@@ -66,10 +66,9 @@ type PutCustomersCustomerFidPaymentMethodsCardsCardFidParams struct {
 	// CardFid.
 	CardFid string
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// Payload.

@@ -62,88 +62,74 @@ PutCustomersCustomerFidContactsContactFidParams contains all the parameters to s
 */
 type PutCustomersCustomerFidContactsContactFidParams struct {
 
-	/* Birthday.
-
-	   Birthday
-	*/
+	// Birthday.
+	//
+	// Birthday
 	Birthday *string
 
-	/* ContactFid.
-
-	   Contact FID to use
-	*/
+	// ContactFid.
+	//
+	// Contact FID to use
 	ContactFid string
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* DefaultAddressFid.
-
-	   Default Address FID
-	*/
+	// DefaultAddressFid.
+	//
+	// Default Address FID
 	DefaultAddressFid *string
 
-	/* DefaultEmailFid.
-
-	   Default Email FID
-	*/
+	// DefaultEmailFid.
+	//
+	// Default Email FID
 	DefaultEmailFid *string
 
-	/* DefaultPhoneFid.
-
-	   Default Phone FID
-	*/
+	// DefaultPhoneFid.
+	//
+	// Default Phone FID
 	DefaultPhoneFid *string
 
-	/* ExternalReference.
-
-	   External Reference
-	*/
+	// ExternalReference.
+	//
+	// External Reference
 	ExternalReference *string
 
-	/* FirstName.
-
-	   First Name
-	*/
+	// FirstName.
+	//
+	// First Name
 	FirstName *string
 
-	/* JobTitle.
-
-	   Job Title
-	*/
+	// JobTitle.
+	//
+	// Job Title
 	JobTitle *string
 
-	/* LastName.
-
-	   Last Name
-	*/
+	// LastName.
+	//
+	// Last Name
 	LastName *string
 
-	/* MiddleNames.
-
-	   Middle Names
-	*/
+	// MiddleNames.
+	//
+	// Middle Names
 	MiddleNames *string
 
-	/* Nickname.
-
-	   Nickname
-	*/
+	// Nickname.
+	//
+	// Nickname
 	Nickname *string
 
-	/* Prefix.
-
-	   Prefix
-	*/
+	// Prefix.
+	//
+	// Prefix
 	Prefix *string
 
-	/* Suffix.
-
-	   Suffix
-	*/
+	// Suffix.
+	//
+	// Suffix
 	Suffix *string
 
 	HTTPClient *http.Client

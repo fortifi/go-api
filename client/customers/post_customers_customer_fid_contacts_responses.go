@@ -48,11 +48,9 @@ func NewPostCustomersCustomerFidContactsOK() *PostCustomersCustomerFidContactsOK
 	return &PostCustomersCustomerFidContactsOK{}
 }
 
-/*
-PostCustomersCustomerFidContactsOK describes a response with status code 200, with default header values.
-
-FID of the new contact
-*/
+// PostCustomersCustomerFidContactsOK describes a response with status code 200, with default header values.
+//
+// FID of the new contact
 type PostCustomersCustomerFidContactsOK struct {
 }
 
@@ -106,11 +104,9 @@ func NewPostCustomersCustomerFidContactsDefault(code int) *PostCustomersCustomer
 	}
 }
 
-/*
-PostCustomersCustomerFidContactsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostCustomersCustomerFidContactsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostCustomersCustomerFidContactsDefault struct {
 	_statusCode int
 
@@ -173,10 +169,9 @@ func (o *PostCustomersCustomerFidContactsDefault) readResponse(response runtime.
 	return nil
 }
 
-/*
-PostCustomersCustomerFidContactsDefaultBody post customers customer fid contacts default body
-swagger:model PostCustomersCustomerFidContactsDefaultBody
-*/
+// PostCustomersCustomerFidContactsDefaultBody post customers customer fid contacts default body
+//
+// swagger:model PostCustomersCustomerFidContactsDefaultBody
 type PostCustomersCustomerFidContactsDefaultBody struct {
 	models.Envelope
 

@@ -63,10 +63,9 @@ PostContactsContactFidEmailsParams contains all the parameters to send to the AP
 */
 type PostContactsContactFidEmailsParams struct {
 
-	/* ContactFid.
-
-	   Contact FID to use
-	*/
+	// ContactFid.
+	//
+	// Contact FID to use
 	ContactFid string
 
 	// EmailAddress.

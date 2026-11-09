@@ -31,12 +31,12 @@ type CalculateSubscriptionRefund struct {
 }
 
 // Validate validates this calculate subscription refund
-func (m *CalculateSubscriptionRefund) Validate(formats strfmt.Registry) error {
+func (m *CalculateSubscriptionRefund) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this calculate subscription refund based on context it is used
-func (m *CalculateSubscriptionRefund) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *CalculateSubscriptionRefund) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

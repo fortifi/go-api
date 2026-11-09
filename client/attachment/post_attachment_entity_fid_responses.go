@@ -48,11 +48,9 @@ func NewPostAttachmentEntityFidOK() *PostAttachmentEntityFidOK {
 	return &PostAttachmentEntityFidOK{}
 }
 
-/*
-PostAttachmentEntityFidOK describes a response with status code 200, with default header values.
-
-Attachment Successfully Created
-*/
+// PostAttachmentEntityFidOK describes a response with status code 200, with default header values.
+//
+// Attachment Successfully Created
 type PostAttachmentEntityFidOK struct {
 	Payload *PostAttachmentEntityFidOKBody
 }
@@ -120,11 +118,9 @@ func NewPostAttachmentEntityFidDefault(code int) *PostAttachmentEntityFidDefault
 	}
 }
 
-/*
-PostAttachmentEntityFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostAttachmentEntityFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostAttachmentEntityFidDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostAttachmentEntityFidDefault) readResponse(response runtime.ClientRes
 	return nil
 }
 
-/*
-PostAttachmentEntityFidOKBody post attachment entity fid o k body
-swagger:model PostAttachmentEntityFidOKBody
-*/
+// PostAttachmentEntityFidOKBody post attachment entity fid o k body
+//
+// swagger:model PostAttachmentEntityFidOKBody
 type PostAttachmentEntityFidOKBody struct {
 	models.Envelope
 

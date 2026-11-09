@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for orders API.
-*/
+// Client for orders API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -210,17 +208,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-DeleteOrdersOrderFidOffersOfferFidremoves an offer from an order.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.DeleteOrdersOrderFidOffersOfferFidContext] instead.
-*/
+// DeleteOrdersOrderFidOffersOfferFid removes an offer from an order.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.DeleteOrdersOrderFidOffersOfferFidContext] instead.
 func (a *Client) DeleteOrdersOrderFidOffersOfferFid(params *DeleteOrdersOrderFidOffersOfferFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteOrdersOrderFidOffersOfferFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -229,11 +225,9 @@ func (a *Client) DeleteOrdersOrderFidOffersOfferFid(params *DeleteOrdersOrderFid
 	return a.DeleteOrdersOrderFidOffersOfferFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-DeleteOrdersOrderFidOffersOfferFidContextremoves an offer from an order.
-
-Do not use the deprecated [DeleteOrdersOrderFidOffersOfferFidParams.Context] with this method: it would be ignored.
-*/
+// DeleteOrdersOrderFidOffersOfferFidContext removes an offer from an order.
+//
+// Do not use the deprecated [DeleteOrdersOrderFidOffersOfferFidParams.Context] with this method: it would be ignored.
 func (a *Client) DeleteOrdersOrderFidOffersOfferFidContext(ctx context.Context, params *DeleteOrdersOrderFidOffersOfferFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteOrdersOrderFidOffersOfferFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -276,17 +270,15 @@ func (a *Client) DeleteOrdersOrderFidOffersOfferFidContext(ctx context.Context, 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-DeleteOrdersOrderFidProductsOrderProductFidremoves a product from an order.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.DeleteOrdersOrderFidProductsOrderProductFidContext] instead.
-*/
+// DeleteOrdersOrderFidProductsOrderProductFid removes a product from an order.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.DeleteOrdersOrderFidProductsOrderProductFidContext] instead.
 func (a *Client) DeleteOrdersOrderFidProductsOrderProductFid(params *DeleteOrdersOrderFidProductsOrderProductFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteOrdersOrderFidProductsOrderProductFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -295,11 +287,9 @@ func (a *Client) DeleteOrdersOrderFidProductsOrderProductFid(params *DeleteOrder
 	return a.DeleteOrdersOrderFidProductsOrderProductFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-DeleteOrdersOrderFidProductsOrderProductFidContextremoves a product from an order.
-
-Do not use the deprecated [DeleteOrdersOrderFidProductsOrderProductFidParams.Context] with this method: it would be ignored.
-*/
+// DeleteOrdersOrderFidProductsOrderProductFidContext removes a product from an order.
+//
+// Do not use the deprecated [DeleteOrdersOrderFidProductsOrderProductFidParams.Context] with this method: it would be ignored.
 func (a *Client) DeleteOrdersOrderFidProductsOrderProductFidContext(ctx context.Context, params *DeleteOrdersOrderFidProductsOrderProductFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteOrdersOrderFidProductsOrderProductFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -342,17 +332,15 @@ func (a *Client) DeleteOrdersOrderFidProductsOrderProductFidContext(ctx context.
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetOrdersOrderFidretrieves an order.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetOrdersOrderFidContext] instead.
-*/
+// GetOrdersOrderFid retrieves an order.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetOrdersOrderFidContext] instead.
 func (a *Client) GetOrdersOrderFid(params *GetOrdersOrderFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetOrdersOrderFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -361,11 +349,9 @@ func (a *Client) GetOrdersOrderFid(params *GetOrdersOrderFidParams, authInfo run
 	return a.GetOrdersOrderFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetOrdersOrderFidContextretrieves an order.
-
-Do not use the deprecated [GetOrdersOrderFidParams.Context] with this method: it would be ignored.
-*/
+// GetOrdersOrderFidContext retrieves an order.
+//
+// Do not use the deprecated [GetOrdersOrderFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetOrdersOrderFidContext(ctx context.Context, params *GetOrdersOrderFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetOrdersOrderFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -408,17 +394,15 @@ func (a *Client) GetOrdersOrderFidContext(ctx context.Context, params *GetOrders
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetOrdersOrderFidFraudScanretrieves fraud scan.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetOrdersOrderFidFraudScanContext] instead.
-*/
+// GetOrdersOrderFidFraudScan retrieves fraud scan.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetOrdersOrderFidFraudScanContext] instead.
 func (a *Client) GetOrdersOrderFidFraudScan(params *GetOrdersOrderFidFraudScanParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetOrdersOrderFidFraudScanOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -427,11 +411,9 @@ func (a *Client) GetOrdersOrderFidFraudScan(params *GetOrdersOrderFidFraudScanPa
 	return a.GetOrdersOrderFidFraudScanContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetOrdersOrderFidFraudScanContextretrieves fraud scan.
-
-Do not use the deprecated [GetOrdersOrderFidFraudScanParams.Context] with this method: it would be ignored.
-*/
+// GetOrdersOrderFidFraudScanContext retrieves fraud scan.
+//
+// Do not use the deprecated [GetOrdersOrderFidFraudScanParams.Context] with this method: it would be ignored.
 func (a *Client) GetOrdersOrderFidFraudScanContext(ctx context.Context, params *GetOrdersOrderFidFraudScanParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetOrdersOrderFidFraudScanOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -474,17 +456,15 @@ func (a *Client) GetOrdersOrderFidFraudScanContext(ctx context.Context, params *
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetOrdersOrderFidItemslists an orders items.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetOrdersOrderFidItemsContext] instead.
-*/
+// GetOrdersOrderFidItems lists an orders items.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetOrdersOrderFidItemsContext] instead.
 func (a *Client) GetOrdersOrderFidItems(params *GetOrdersOrderFidItemsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetOrdersOrderFidItemsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -493,11 +473,9 @@ func (a *Client) GetOrdersOrderFidItems(params *GetOrdersOrderFidItemsParams, au
 	return a.GetOrdersOrderFidItemsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetOrdersOrderFidItemsContextlists an orders items.
-
-Do not use the deprecated [GetOrdersOrderFidItemsParams.Context] with this method: it would be ignored.
-*/
+// GetOrdersOrderFidItemsContext lists an orders items.
+//
+// Do not use the deprecated [GetOrdersOrderFidItemsParams.Context] with this method: it would be ignored.
 func (a *Client) GetOrdersOrderFidItemsContext(ctx context.Context, params *GetOrdersOrderFidItemsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetOrdersOrderFidItemsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -540,17 +518,15 @@ func (a *Client) GetOrdersOrderFidItemsContext(ctx context.Context, params *GetO
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetOrdersOrderFidProductsretrieves order products.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetOrdersOrderFidProductsContext] instead.
-*/
+// GetOrdersOrderFidProducts retrieves order products.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetOrdersOrderFidProductsContext] instead.
 func (a *Client) GetOrdersOrderFidProducts(params *GetOrdersOrderFidProductsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetOrdersOrderFidProductsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -559,11 +535,9 @@ func (a *Client) GetOrdersOrderFidProducts(params *GetOrdersOrderFidProductsPara
 	return a.GetOrdersOrderFidProductsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetOrdersOrderFidProductsContextretrieves order products.
-
-Do not use the deprecated [GetOrdersOrderFidProductsParams.Context] with this method: it would be ignored.
-*/
+// GetOrdersOrderFidProductsContext retrieves order products.
+//
+// Do not use the deprecated [GetOrdersOrderFidProductsParams.Context] with this method: it would be ignored.
 func (a *Client) GetOrdersOrderFidProductsContext(ctx context.Context, params *GetOrdersOrderFidProductsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetOrdersOrderFidProductsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -606,17 +580,15 @@ func (a *Client) GetOrdersOrderFidProductsContext(ctx context.Context, params *G
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostOrderscreates a new order.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostOrdersContext] instead.
-*/
+// PostOrders creates a new order.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostOrdersContext] instead.
 func (a *Client) PostOrders(params *PostOrdersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostOrdersOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -625,11 +597,9 @@ func (a *Client) PostOrders(params *PostOrdersParams, authInfo runtime.ClientAut
 	return a.PostOrdersContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostOrdersContextcreates a new order.
-
-Do not use the deprecated [PostOrdersParams.Context] with this method: it would be ignored.
-*/
+// PostOrdersContext creates a new order.
+//
+// Do not use the deprecated [PostOrdersParams.Context] with this method: it would be ignored.
 func (a *Client) PostOrdersContext(ctx context.Context, params *PostOrdersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostOrdersOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -672,17 +642,15 @@ func (a *Client) PostOrdersContext(ctx context.Context, params *PostOrdersParams
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostOrdersOrderFidOffersadds an offer to an order.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostOrdersOrderFidOffersContext] instead.
-*/
+// PostOrdersOrderFidOffers adds an offer to an order.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostOrdersOrderFidOffersContext] instead.
 func (a *Client) PostOrdersOrderFidOffers(params *PostOrdersOrderFidOffersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostOrdersOrderFidOffersOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -691,11 +659,9 @@ func (a *Client) PostOrdersOrderFidOffers(params *PostOrdersOrderFidOffersParams
 	return a.PostOrdersOrderFidOffersContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostOrdersOrderFidOffersContextadds an offer to an order.
-
-Do not use the deprecated [PostOrdersOrderFidOffersParams.Context] with this method: it would be ignored.
-*/
+// PostOrdersOrderFidOffersContext adds an offer to an order.
+//
+// Do not use the deprecated [PostOrdersOrderFidOffersParams.Context] with this method: it would be ignored.
 func (a *Client) PostOrdersOrderFidOffersContext(ctx context.Context, params *PostOrdersOrderFidOffersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostOrdersOrderFidOffersOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -738,17 +704,15 @@ func (a *Client) PostOrdersOrderFidOffersContext(ctx context.Context, params *Po
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostOrdersOrderFidProductsadds a product to an order.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostOrdersOrderFidProductsContext] instead.
-*/
+// PostOrdersOrderFidProducts adds a product to an order.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostOrdersOrderFidProductsContext] instead.
 func (a *Client) PostOrdersOrderFidProducts(params *PostOrdersOrderFidProductsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostOrdersOrderFidProductsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -757,11 +721,9 @@ func (a *Client) PostOrdersOrderFidProducts(params *PostOrdersOrderFidProductsPa
 	return a.PostOrdersOrderFidProductsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostOrdersOrderFidProductsContextadds a product to an order.
-
-Do not use the deprecated [PostOrdersOrderFidProductsParams.Context] with this method: it would be ignored.
-*/
+// PostOrdersOrderFidProductsContext adds a product to an order.
+//
+// Do not use the deprecated [PostOrdersOrderFidProductsParams.Context] with this method: it would be ignored.
 func (a *Client) PostOrdersOrderFidProductsContext(ctx context.Context, params *PostOrdersOrderFidProductsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostOrdersOrderFidProductsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -804,17 +766,15 @@ func (a *Client) PostOrdersOrderFidProductsContext(ctx context.Context, params *
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutOrdersOrderFidCancelcancels an order.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutOrdersOrderFidCancelContext] instead.
-*/
+// PutOrdersOrderFidCancel cancels an order.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutOrdersOrderFidCancelContext] instead.
 func (a *Client) PutOrdersOrderFidCancel(params *PutOrdersOrderFidCancelParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidCancelOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -823,11 +783,9 @@ func (a *Client) PutOrdersOrderFidCancel(params *PutOrdersOrderFidCancelParams, 
 	return a.PutOrdersOrderFidCancelContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutOrdersOrderFidCancelContextcancels an order.
-
-Do not use the deprecated [PutOrdersOrderFidCancelParams.Context] with this method: it would be ignored.
-*/
+// PutOrdersOrderFidCancelContext cancels an order.
+//
+// Do not use the deprecated [PutOrdersOrderFidCancelParams.Context] with this method: it would be ignored.
 func (a *Client) PutOrdersOrderFidCancelContext(ctx context.Context, params *PutOrdersOrderFidCancelParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidCancelOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -870,17 +828,15 @@ func (a *Client) PutOrdersOrderFidCancelContext(ctx context.Context, params *Put
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutOrdersOrderFidConfirmCardconfirms an order authorize the payment.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutOrdersOrderFidConfirmCardContext] instead.
-*/
+// PutOrdersOrderFidConfirmCard confirms an order authorize the payment.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutOrdersOrderFidConfirmCardContext] instead.
 func (a *Client) PutOrdersOrderFidConfirmCard(params *PutOrdersOrderFidConfirmCardParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidConfirmCardOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -889,11 +845,9 @@ func (a *Client) PutOrdersOrderFidConfirmCard(params *PutOrdersOrderFidConfirmCa
 	return a.PutOrdersOrderFidConfirmCardContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutOrdersOrderFidConfirmCardContextconfirms an order authorize the payment.
-
-Do not use the deprecated [PutOrdersOrderFidConfirmCardParams.Context] with this method: it would be ignored.
-*/
+// PutOrdersOrderFidConfirmCardContext confirms an order authorize the payment.
+//
+// Do not use the deprecated [PutOrdersOrderFidConfirmCardParams.Context] with this method: it would be ignored.
 func (a *Client) PutOrdersOrderFidConfirmCardContext(ctx context.Context, params *PutOrdersOrderFidConfirmCardParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidConfirmCardOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -936,17 +890,15 @@ func (a *Client) PutOrdersOrderFidConfirmCardContext(ctx context.Context, params
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutOrdersOrderFidConfirmPayPalconfirms an order authorize the payment.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutOrdersOrderFidConfirmPayPalContext] instead.
-*/
+// PutOrdersOrderFidConfirmPayPal confirms an order authorize the payment.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutOrdersOrderFidConfirmPayPalContext] instead.
 func (a *Client) PutOrdersOrderFidConfirmPayPal(params *PutOrdersOrderFidConfirmPayPalParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidConfirmPayPalOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -955,11 +907,9 @@ func (a *Client) PutOrdersOrderFidConfirmPayPal(params *PutOrdersOrderFidConfirm
 	return a.PutOrdersOrderFidConfirmPayPalContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutOrdersOrderFidConfirmPayPalContextconfirms an order authorize the payment.
-
-Do not use the deprecated [PutOrdersOrderFidConfirmPayPalParams.Context] with this method: it would be ignored.
-*/
+// PutOrdersOrderFidConfirmPayPalContext confirms an order authorize the payment.
+//
+// Do not use the deprecated [PutOrdersOrderFidConfirmPayPalParams.Context] with this method: it would be ignored.
 func (a *Client) PutOrdersOrderFidConfirmPayPalContext(ctx context.Context, params *PutOrdersOrderFidConfirmPayPalParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidConfirmPayPalOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1002,17 +952,15 @@ func (a *Client) PutOrdersOrderFidConfirmPayPalContext(ctx context.Context, para
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutOrdersOrderFidExternalReferencesets the external reference on an order.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutOrdersOrderFidExternalReferenceContext] instead.
-*/
+// PutOrdersOrderFidExternalReference sets the external reference on an order.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutOrdersOrderFidExternalReferenceContext] instead.
 func (a *Client) PutOrdersOrderFidExternalReference(params *PutOrdersOrderFidExternalReferenceParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidExternalReferenceOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1021,11 +969,9 @@ func (a *Client) PutOrdersOrderFidExternalReference(params *PutOrdersOrderFidExt
 	return a.PutOrdersOrderFidExternalReferenceContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutOrdersOrderFidExternalReferenceContextsets the external reference on an order.
-
-Do not use the deprecated [PutOrdersOrderFidExternalReferenceParams.Context] with this method: it would be ignored.
-*/
+// PutOrdersOrderFidExternalReferenceContext sets the external reference on an order.
+//
+// Do not use the deprecated [PutOrdersOrderFidExternalReferenceParams.Context] with this method: it would be ignored.
 func (a *Client) PutOrdersOrderFidExternalReferenceContext(ctx context.Context, params *PutOrdersOrderFidExternalReferenceParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidExternalReferenceOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1068,17 +1014,15 @@ func (a *Client) PutOrdersOrderFidExternalReferenceContext(ctx context.Context, 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutOrdersOrderFidFinalizemarks an order as finalized.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutOrdersOrderFidFinalizeContext] instead.
-*/
+// PutOrdersOrderFidFinalize marks an order as finalized.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutOrdersOrderFidFinalizeContext] instead.
 func (a *Client) PutOrdersOrderFidFinalize(params *PutOrdersOrderFidFinalizeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidFinalizeOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1087,11 +1031,9 @@ func (a *Client) PutOrdersOrderFidFinalize(params *PutOrdersOrderFidFinalizePara
 	return a.PutOrdersOrderFidFinalizeContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutOrdersOrderFidFinalizeContextmarks an order as finalized.
-
-Do not use the deprecated [PutOrdersOrderFidFinalizeParams.Context] with this method: it would be ignored.
-*/
+// PutOrdersOrderFidFinalizeContext marks an order as finalized.
+//
+// Do not use the deprecated [PutOrdersOrderFidFinalizeParams.Context] with this method: it would be ignored.
 func (a *Client) PutOrdersOrderFidFinalizeContext(ctx context.Context, params *PutOrdersOrderFidFinalizeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidFinalizeOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1134,17 +1076,15 @@ func (a *Client) PutOrdersOrderFidFinalizeContext(ctx context.Context, params *P
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutOrdersOrderFidItemsProductFidOrderItemFidupdates an order item.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutOrdersOrderFidItemsProductFidOrderItemFidContext] instead.
-*/
+// PutOrdersOrderFidItemsProductFidOrderItemFid updates an order item.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutOrdersOrderFidItemsProductFidOrderItemFidContext] instead.
 func (a *Client) PutOrdersOrderFidItemsProductFidOrderItemFid(params *PutOrdersOrderFidItemsProductFidOrderItemFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidItemsProductFidOrderItemFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1153,11 +1093,9 @@ func (a *Client) PutOrdersOrderFidItemsProductFidOrderItemFid(params *PutOrdersO
 	return a.PutOrdersOrderFidItemsProductFidOrderItemFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutOrdersOrderFidItemsProductFidOrderItemFidContextupdates an order item.
-
-Do not use the deprecated [PutOrdersOrderFidItemsProductFidOrderItemFidParams.Context] with this method: it would be ignored.
-*/
+// PutOrdersOrderFidItemsProductFidOrderItemFidContext updates an order item.
+//
+// Do not use the deprecated [PutOrdersOrderFidItemsProductFidOrderItemFidParams.Context] with this method: it would be ignored.
 func (a *Client) PutOrdersOrderFidItemsProductFidOrderItemFidContext(ctx context.Context, params *PutOrdersOrderFidItemsProductFidOrderItemFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidItemsProductFidOrderItemFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1200,17 +1138,15 @@ func (a *Client) PutOrdersOrderFidItemsProductFidOrderItemFidContext(ctx context
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutOrdersOrderFidProductssets the products on an order.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutOrdersOrderFidProductsContext] instead.
-*/
+// PutOrdersOrderFidProducts sets the products on an order.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutOrdersOrderFidProductsContext] instead.
 func (a *Client) PutOrdersOrderFidProducts(params *PutOrdersOrderFidProductsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidProductsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1219,11 +1155,9 @@ func (a *Client) PutOrdersOrderFidProducts(params *PutOrdersOrderFidProductsPara
 	return a.PutOrdersOrderFidProductsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutOrdersOrderFidProductsContextsets the products on an order.
-
-Do not use the deprecated [PutOrdersOrderFidProductsParams.Context] with this method: it would be ignored.
-*/
+// PutOrdersOrderFidProductsContext sets the products on an order.
+//
+// Do not use the deprecated [PutOrdersOrderFidProductsParams.Context] with this method: it would be ignored.
 func (a *Client) PutOrdersOrderFidProductsContext(ctx context.Context, params *PutOrdersOrderFidProductsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidProductsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1266,17 +1200,15 @@ func (a *Client) PutOrdersOrderFidProductsContext(ctx context.Context, params *P
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutOrdersOrderFidProductsOrderProductFidQuantitysets the quantity of a product on an order.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutOrdersOrderFidProductsOrderProductFidQuantityContext] instead.
-*/
+// PutOrdersOrderFidProductsOrderProductFidQuantity sets the quantity of a product on an order.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutOrdersOrderFidProductsOrderProductFidQuantityContext] instead.
 func (a *Client) PutOrdersOrderFidProductsOrderProductFidQuantity(params *PutOrdersOrderFidProductsOrderProductFidQuantityParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidProductsOrderProductFidQuantityOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1285,11 +1217,9 @@ func (a *Client) PutOrdersOrderFidProductsOrderProductFidQuantity(params *PutOrd
 	return a.PutOrdersOrderFidProductsOrderProductFidQuantityContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutOrdersOrderFidProductsOrderProductFidQuantityContextsets the quantity of a product on an order.
-
-Do not use the deprecated [PutOrdersOrderFidProductsOrderProductFidQuantityParams.Context] with this method: it would be ignored.
-*/
+// PutOrdersOrderFidProductsOrderProductFidQuantityContext sets the quantity of a product on an order.
+//
+// Do not use the deprecated [PutOrdersOrderFidProductsOrderProductFidQuantityParams.Context] with this method: it would be ignored.
 func (a *Client) PutOrdersOrderFidProductsOrderProductFidQuantityContext(ctx context.Context, params *PutOrdersOrderFidProductsOrderProductFidQuantityParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidProductsOrderProductFidQuantityOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1332,17 +1262,15 @@ func (a *Client) PutOrdersOrderFidProductsOrderProductFidQuantityContext(ctx con
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutOrdersOrderFidProductsOrderProductFidSetInitialTermsets the initial term of a product on an order.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutOrdersOrderFidProductsOrderProductFidSetInitialTermContext] instead.
-*/
+// PutOrdersOrderFidProductsOrderProductFidSetInitialTerm sets the initial term of a product on an order.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutOrdersOrderFidProductsOrderProductFidSetInitialTermContext] instead.
 func (a *Client) PutOrdersOrderFidProductsOrderProductFidSetInitialTerm(params *PutOrdersOrderFidProductsOrderProductFidSetInitialTermParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidProductsOrderProductFidSetInitialTermOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1351,11 +1279,9 @@ func (a *Client) PutOrdersOrderFidProductsOrderProductFidSetInitialTerm(params *
 	return a.PutOrdersOrderFidProductsOrderProductFidSetInitialTermContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutOrdersOrderFidProductsOrderProductFidSetInitialTermContextsets the initial term of a product on an order.
-
-Do not use the deprecated [PutOrdersOrderFidProductsOrderProductFidSetInitialTermParams.Context] with this method: it would be ignored.
-*/
+// PutOrdersOrderFidProductsOrderProductFidSetInitialTermContext sets the initial term of a product on an order.
+//
+// Do not use the deprecated [PutOrdersOrderFidProductsOrderProductFidSetInitialTermParams.Context] with this method: it would be ignored.
 func (a *Client) PutOrdersOrderFidProductsOrderProductFidSetInitialTermContext(ctx context.Context, params *PutOrdersOrderFidProductsOrderProductFidSetInitialTermParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidProductsOrderProductFidSetInitialTermOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1398,17 +1324,15 @@ func (a *Client) PutOrdersOrderFidProductsOrderProductFidSetInitialTermContext(c
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutOrdersOrderFidSetChargeIDsets a charge hive com charge ID on an order.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutOrdersOrderFidSetChargeIDContext] instead.
-*/
+// PutOrdersOrderFidSetChargeID sets a charge hive com charge ID on an order.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutOrdersOrderFidSetChargeIDContext] instead.
 func (a *Client) PutOrdersOrderFidSetChargeID(params *PutOrdersOrderFidSetChargeIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidSetChargeIDOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1417,11 +1341,9 @@ func (a *Client) PutOrdersOrderFidSetChargeID(params *PutOrdersOrderFidSetCharge
 	return a.PutOrdersOrderFidSetChargeIDContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutOrdersOrderFidSetChargeIDContextsets a charge hive com charge ID on an order.
-
-Do not use the deprecated [PutOrdersOrderFidSetChargeIDParams.Context] with this method: it would be ignored.
-*/
+// PutOrdersOrderFidSetChargeIDContext sets a charge hive com charge ID on an order.
+//
+// Do not use the deprecated [PutOrdersOrderFidSetChargeIDParams.Context] with this method: it would be ignored.
 func (a *Client) PutOrdersOrderFidSetChargeIDContext(ctx context.Context, params *PutOrdersOrderFidSetChargeIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidSetChargeIDOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1464,17 +1386,15 @@ func (a *Client) PutOrdersOrderFidSetChargeIDContext(ctx context.Context, params
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutOrdersOrderFidTriggerOnDemandtriggers on demand schedule for an order.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutOrdersOrderFidTriggerOnDemandContext] instead.
-*/
+// PutOrdersOrderFidTriggerOnDemand triggers on demand schedule for an order.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutOrdersOrderFidTriggerOnDemandContext] instead.
 func (a *Client) PutOrdersOrderFidTriggerOnDemand(params *PutOrdersOrderFidTriggerOnDemandParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidTriggerOnDemandOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1483,11 +1403,9 @@ func (a *Client) PutOrdersOrderFidTriggerOnDemand(params *PutOrdersOrderFidTrigg
 	return a.PutOrdersOrderFidTriggerOnDemandContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutOrdersOrderFidTriggerOnDemandContexttriggers on demand schedule for an order.
-
-Do not use the deprecated [PutOrdersOrderFidTriggerOnDemandParams.Context] with this method: it would be ignored.
-*/
+// PutOrdersOrderFidTriggerOnDemandContext triggers on demand schedule for an order.
+//
+// Do not use the deprecated [PutOrdersOrderFidTriggerOnDemandParams.Context] with this method: it would be ignored.
 func (a *Client) PutOrdersOrderFidTriggerOnDemandContext(ctx context.Context, params *PutOrdersOrderFidTriggerOnDemandParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidTriggerOnDemandOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1530,17 +1448,15 @@ func (a *Client) PutOrdersOrderFidTriggerOnDemandContext(ctx context.Context, pa
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutOrdersOrderFidVerifyverifies an order returning any security urls.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutOrdersOrderFidVerifyContext] instead.
-*/
+// PutOrdersOrderFidVerify verifies an order returning any security urls.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutOrdersOrderFidVerifyContext] instead.
 func (a *Client) PutOrdersOrderFidVerify(params *PutOrdersOrderFidVerifyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidVerifyOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1549,11 +1465,9 @@ func (a *Client) PutOrdersOrderFidVerify(params *PutOrdersOrderFidVerifyParams, 
 	return a.PutOrdersOrderFidVerifyContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutOrdersOrderFidVerifyContextverifies an order returning any security urls.
-
-Do not use the deprecated [PutOrdersOrderFidVerifyParams.Context] with this method: it would be ignored.
-*/
+// PutOrdersOrderFidVerifyContext verifies an order returning any security urls.
+//
+// Do not use the deprecated [PutOrdersOrderFidVerifyParams.Context] with this method: it would be ignored.
 func (a *Client) PutOrdersOrderFidVerifyContext(ctx context.Context, params *PutOrdersOrderFidVerifyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutOrdersOrderFidVerifyOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

@@ -76,6 +76,6 @@ func (m CustomerSubscriptionType) Validate(formats strfmt.Registry) error {
 }
 
 // ContextValidate validates this customer subscription type based on context it is used
-func (m CustomerSubscriptionType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m CustomerSubscriptionType) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }

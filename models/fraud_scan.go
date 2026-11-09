@@ -102,7 +102,7 @@ func (m *FraudScan) contextValidateMetaDataItems(ctx context.Context, formats st
 		if m.MetaDataItems[i] != nil {
 
 			if typeutils.IsZero(m.MetaDataItems[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.MetaDataItems[i].ContextValidate(ctx, formats); err != nil {

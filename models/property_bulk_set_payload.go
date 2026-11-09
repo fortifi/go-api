@@ -210,7 +210,7 @@ func (m *PropertyBulkSetPayload) contextValidateDecrementCounters(ctx context.Co
 		if m.DecrementCounters[i] != nil {
 
 			if typeutils.IsZero(m.DecrementCounters[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.DecrementCounters[i].ContextValidate(ctx, formats); err != nil {
@@ -239,7 +239,7 @@ func (m *PropertyBulkSetPayload) contextValidateFlags(ctx context.Context, forma
 		if m.Flags[i] != nil {
 
 			if typeutils.IsZero(m.Flags[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Flags[i].ContextValidate(ctx, formats); err != nil {
@@ -268,7 +268,7 @@ func (m *PropertyBulkSetPayload) contextValidateIncrementCounters(ctx context.Co
 		if m.IncrementCounters[i] != nil {
 
 			if typeutils.IsZero(m.IncrementCounters[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.IncrementCounters[i].ContextValidate(ctx, formats); err != nil {
@@ -297,7 +297,7 @@ func (m *PropertyBulkSetPayload) contextValidateValues(ctx context.Context, form
 		if m.Values[i] != nil {
 
 			if typeutils.IsZero(m.Values[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Values[i].ContextValidate(ctx, formats); err != nil {

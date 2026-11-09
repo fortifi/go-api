@@ -187,7 +187,7 @@ func (m *CreateAppleNotificationPayload) validateSubscriptionID(formats strfmt.R
 }
 
 // ContextValidate validates this create apple notification payload based on context it is used
-func (m *CreateAppleNotificationPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *CreateAppleNotificationPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

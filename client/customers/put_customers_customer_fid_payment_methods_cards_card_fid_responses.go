@@ -44,11 +44,9 @@ func NewPutCustomersCustomerFidPaymentMethodsCardsCardFidOK() *PutCustomersCusto
 	return &PutCustomersCustomerFidPaymentMethodsCardsCardFidOK{}
 }
 
-/*
-PutCustomersCustomerFidPaymentMethodsCardsCardFidOK describes a response with status code 200, with default header values.
-
-Card Updated
-*/
+// PutCustomersCustomerFidPaymentMethodsCardsCardFidOK describes a response with status code 200, with default header values.
+//
+// Card Updated
 type PutCustomersCustomerFidPaymentMethodsCardsCardFidOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutCustomersCustomerFidPaymentMethodsCardsCardFidDefault(code int) *PutC
 	}
 }
 
-/*
-PutCustomersCustomerFidPaymentMethodsCardsCardFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutCustomersCustomerFidPaymentMethodsCardsCardFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutCustomersCustomerFidPaymentMethodsCardsCardFidDefault struct {
 	_statusCode int
 

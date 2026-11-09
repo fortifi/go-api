@@ -62,10 +62,9 @@ PutContactsPhonePhoneNumberConfirmParams contains all the parameters to send to 
 */
 type PutContactsPhonePhoneNumberConfirmParams struct {
 
-	/* PhoneNumber.
-
-	   Phone Number
-	*/
+	// PhoneNumber.
+	//
+	// Phone Number
 	PhoneNumber string
 
 	HTTPClient *http.Client

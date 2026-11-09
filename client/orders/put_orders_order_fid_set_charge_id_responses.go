@@ -44,11 +44,9 @@ func NewPutOrdersOrderFidSetChargeIDOK() *PutOrdersOrderFidSetChargeIDOK {
 	return &PutOrdersOrderFidSetChargeIDOK{}
 }
 
-/*
-PutOrdersOrderFidSetChargeIDOK describes a response with status code 200, with default header values.
-
-Charge ID Accepted
-*/
+// PutOrdersOrderFidSetChargeIDOK describes a response with status code 200, with default header values.
+//
+// Charge ID Accepted
 type PutOrdersOrderFidSetChargeIDOK struct {
 	Payload *models.Envelope
 }
@@ -116,11 +114,9 @@ func NewPutOrdersOrderFidSetChargeIDDefault(code int) *PutOrdersOrderFidSetCharg
 	}
 }
 
-/*
-PutOrdersOrderFidSetChargeIDDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutOrdersOrderFidSetChargeIDDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutOrdersOrderFidSetChargeIDDefault struct {
 	_statusCode int
 

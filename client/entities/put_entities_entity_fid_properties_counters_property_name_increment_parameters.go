@@ -63,19 +63,17 @@ PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementParams contains all t
 */
 type PutEntitiesEntityFidPropertiesCountersPropertyNameIncrementParams struct {
 
-	/* EntityFid.
-
-	   Entity FID to use
-	*/
+	// EntityFid.
+	//
+	// Entity FID to use
 	EntityFid string
 
 	// Payload.
 	Payload *models.PropertyCounterPayload
 
-	/* PropertyName.
-
-	   Property Name
-	*/
+	// PropertyName.
+	//
+	// Property Name
 	PropertyName string
 
 	HTTPClient *http.Client

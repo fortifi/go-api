@@ -48,11 +48,9 @@ func NewGetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsOK() *GetCusto
 	return &GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsOK{}
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsOK describes a response with status code 200, with default header values.
-
-A purchase period
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsOK describes a response with status code 200, with default header values.
+//
+// A purchase period
 type GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsOK struct {
 	Payload *GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsOKBody
 }
@@ -120,11 +118,9 @@ func NewGetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsDefault(code i
 	}
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsDefault) read
 	return nil
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsOKBody get customers customer fid subscriptions subscription fid periods o k body
-swagger:model GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsOKBody
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsOKBody get customers customer fid subscriptions subscription fid periods o k body
+//
+// swagger:model GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsOKBody
 type GetCustomersCustomerFidSubscriptionsSubscriptionFidPeriodsOKBody struct {
 	models.Envelope
 

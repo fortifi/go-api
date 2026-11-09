@@ -62,16 +62,14 @@ PutCustomersCustomerFidExternalReferenceParams contains all the parameters to se
 */
 type PutCustomersCustomerFidExternalReferenceParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* ExternalReference.
-
-	   New External Reference
-	*/
+	// ExternalReference.
+	//
+	// New External Reference
 	ExternalReference string
 
 	HTTPClient *http.Client

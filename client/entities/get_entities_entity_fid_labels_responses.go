@@ -48,11 +48,9 @@ func NewGetEntitiesEntityFidLabelsOK() *GetEntitiesEntityFidLabelsOK {
 	return &GetEntitiesEntityFidLabelsOK{}
 }
 
-/*
-GetEntitiesEntityFidLabelsOK describes a response with status code 200, with default header values.
-
-Labels
-*/
+// GetEntitiesEntityFidLabelsOK describes a response with status code 200, with default header values.
+//
+// Labels
 type GetEntitiesEntityFidLabelsOK struct {
 	Payload *GetEntitiesEntityFidLabelsOKBody
 }
@@ -120,11 +118,9 @@ func NewGetEntitiesEntityFidLabelsDefault(code int) *GetEntitiesEntityFidLabelsD
 	}
 }
 
-/*
-GetEntitiesEntityFidLabelsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetEntitiesEntityFidLabelsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetEntitiesEntityFidLabelsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetEntitiesEntityFidLabelsDefault) readResponse(response runtime.Client
 	return nil
 }
 
-/*
-GetEntitiesEntityFidLabelsOKBody get entities entity fid labels o k body
-swagger:model GetEntitiesEntityFidLabelsOKBody
-*/
+// GetEntitiesEntityFidLabelsOKBody get entities entity fid labels o k body
+//
+// swagger:model GetEntitiesEntityFidLabelsOKBody
 type GetEntitiesEntityFidLabelsOKBody struct {
 	models.Envelope
 

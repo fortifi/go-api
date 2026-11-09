@@ -63,34 +63,29 @@ GetCustomersCustomerFidTicketsParams contains all the parameters to send to the 
 */
 type GetCustomersCustomerFidTicketsParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* Limit.
-
-	   Maximum number of records per page (default: 20)
-	*/
+	// Limit.
+	//
+	// Maximum number of records per page (default: 20)
 	Limit *int64
 
-	/* Page.
-
-	   Page number (default: 1)
-	*/
+	// Page.
+	//
+	// Page number (default: 1)
 	Page *int64
 
-	/* SortBy.
-
-	   Sort the tickets by a specific field (default: dateCreated)
-	*/
+	// SortBy.
+	//
+	// Sort the tickets by a specific field (default: dateCreated)
 	SortBy *string
 
-	/* SortDirection.
-
-	   Sort the tickets in a specific order (default: ASC)
-	*/
+	// SortDirection.
+	//
+	// Sort the tickets in a specific order (default: ASC)
 	SortDirection *string
 
 	HTTPClient *http.Client

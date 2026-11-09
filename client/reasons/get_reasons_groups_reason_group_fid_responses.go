@@ -48,11 +48,9 @@ func NewGetReasonsGroupsReasonGroupFidOK() *GetReasonsGroupsReasonGroupFidOK {
 	return &GetReasonsGroupsReasonGroupFidOK{}
 }
 
-/*
-GetReasonsGroupsReasonGroupFidOK describes a response with status code 200, with default header values.
-
-Reason Group retrieved
-*/
+// GetReasonsGroupsReasonGroupFidOK describes a response with status code 200, with default header values.
+//
+// Reason Group retrieved
 type GetReasonsGroupsReasonGroupFidOK struct {
 	Payload *GetReasonsGroupsReasonGroupFidOKBody
 }
@@ -120,11 +118,9 @@ func NewGetReasonsGroupsReasonGroupFidDefault(code int) *GetReasonsGroupsReasonG
 	}
 }
 
-/*
-GetReasonsGroupsReasonGroupFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetReasonsGroupsReasonGroupFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetReasonsGroupsReasonGroupFidDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetReasonsGroupsReasonGroupFidDefault) readResponse(response runtime.Cl
 	return nil
 }
 
-/*
-GetReasonsGroupsReasonGroupFidOKBody get reasons groups reason group fid o k body
-swagger:model GetReasonsGroupsReasonGroupFidOKBody
-*/
+// GetReasonsGroupsReasonGroupFidOKBody get reasons groups reason group fid o k body
+//
+// swagger:model GetReasonsGroupsReasonGroupFidOKBody
 type GetReasonsGroupsReasonGroupFidOKBody struct {
 	models.Envelope
 

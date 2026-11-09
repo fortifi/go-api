@@ -48,11 +48,9 @@ func NewPostProductsOK() *PostProductsOK {
 	return &PostProductsOK{}
 }
 
-/*
-PostProductsOK describes a response with status code 200, with default header values.
-
-Product created successfully
-*/
+// PostProductsOK describes a response with status code 200, with default header values.
+//
+// Product created successfully
 type PostProductsOK struct {
 	Payload *PostProductsOKBody
 }
@@ -120,11 +118,9 @@ func NewPostProductsDefault(code int) *PostProductsDefault {
 	}
 }
 
-/*
-PostProductsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostProductsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostProductsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostProductsDefault) readResponse(response runtime.ClientResponse, cons
 	return nil
 }
 
-/*
-PostProductsOKBody post products o k body
-swagger:model PostProductsOKBody
-*/
+// PostProductsOKBody post products o k body
+//
+// swagger:model PostProductsOKBody
 type PostProductsOKBody struct {
 	models.Envelope
 

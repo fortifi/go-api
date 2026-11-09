@@ -87,7 +87,7 @@ func (m *PaymentCards) contextValidateCards(ctx context.Context, formats strfmt.
 		if m.Cards[i] != nil {
 
 			if typeutils.IsZero(m.Cards[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Cards[i].ContextValidate(ctx, formats); err != nil {

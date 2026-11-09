@@ -44,11 +44,9 @@ func NewPutContactsDeviceHardwareIDUnsubscribeOK() *PutContactsDeviceHardwareIDU
 	return &PutContactsDeviceHardwareIDUnsubscribeOK{}
 }
 
-/*
-PutContactsDeviceHardwareIDUnsubscribeOK describes a response with status code 200, with default header values.
-
-Device Unsubscribed
-*/
+// PutContactsDeviceHardwareIDUnsubscribeOK describes a response with status code 200, with default header values.
+//
+// Device Unsubscribed
 type PutContactsDeviceHardwareIDUnsubscribeOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutContactsDeviceHardwareIDUnsubscribeDefault(code int) *PutContactsDevi
 	}
 }
 
-/*
-PutContactsDeviceHardwareIDUnsubscribeDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutContactsDeviceHardwareIDUnsubscribeDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutContactsDeviceHardwareIDUnsubscribeDefault struct {
 	_statusCode int
 

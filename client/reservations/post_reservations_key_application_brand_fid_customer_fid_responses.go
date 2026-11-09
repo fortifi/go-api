@@ -48,11 +48,9 @@ func NewPostReservationsKeyApplicationBrandFidCustomerFidOK() *PostReservationsK
 	return &PostReservationsKeyApplicationBrandFidCustomerFidOK{}
 }
 
-/*
-PostReservationsKeyApplicationBrandFidCustomerFidOK describes a response with status code 200, with default header values.
-
-Pixels
-*/
+// PostReservationsKeyApplicationBrandFidCustomerFidOK describes a response with status code 200, with default header values.
+//
+// Pixels
 type PostReservationsKeyApplicationBrandFidCustomerFidOK struct {
 	Payload *PostReservationsKeyApplicationBrandFidCustomerFidOKBody
 }
@@ -120,11 +118,9 @@ func NewPostReservationsKeyApplicationBrandFidCustomerFidDefault(code int) *Post
 	}
 }
 
-/*
-PostReservationsKeyApplicationBrandFidCustomerFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostReservationsKeyApplicationBrandFidCustomerFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostReservationsKeyApplicationBrandFidCustomerFidDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostReservationsKeyApplicationBrandFidCustomerFidDefault) readResponse(
 	return nil
 }
 
-/*
-PostReservationsKeyApplicationBrandFidCustomerFidOKBody post reservations key application brand fid customer fid o k body
-swagger:model PostReservationsKeyApplicationBrandFidCustomerFidOKBody
-*/
+// PostReservationsKeyApplicationBrandFidCustomerFidOKBody post reservations key application brand fid customer fid o k body
+//
+// swagger:model PostReservationsKeyApplicationBrandFidCustomerFidOKBody
 type PostReservationsKeyApplicationBrandFidCustomerFidOKBody struct {
 	models.Envelope
 

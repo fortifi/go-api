@@ -48,11 +48,9 @@ func NewGetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchO
 	return &GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsOK{}
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsOK describes a response with status code 200, with default header values.
-
-Cancel Flow Options
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsOK describes a response with status code 200, with default header values.
+//
+// Cancel Flow Options
 type GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsOK struct {
 	Payload *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsOKBody
 }
@@ -120,11 +118,9 @@ func NewGetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchO
 	}
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearch
 	return nil
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsOKBody get customers customer fid subscriptions subscription fid cancel flow flow search options o k body
-swagger:model GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsOKBody
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsOKBody get customers customer fid subscriptions subscription fid cancel flow flow search options o k body
+//
+// swagger:model GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsOKBody
 type GetCustomersCustomerFidSubscriptionsSubscriptionFidCancelFlowFlowSearchOptionsOKBody struct {
 	models.Envelope
 

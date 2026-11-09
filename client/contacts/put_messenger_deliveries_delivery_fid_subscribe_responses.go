@@ -44,11 +44,9 @@ func NewPutMessengerDeliveriesDeliveryFidSubscribeOK() *PutMessengerDeliveriesDe
 	return &PutMessengerDeliveriesDeliveryFidSubscribeOK{}
 }
 
-/*
-PutMessengerDeliveriesDeliveryFidSubscribeOK describes a response with status code 200, with default header values.
-
-Email Address Subscribed
-*/
+// PutMessengerDeliveriesDeliveryFidSubscribeOK describes a response with status code 200, with default header values.
+//
+// Email Address Subscribed
 type PutMessengerDeliveriesDeliveryFidSubscribeOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutMessengerDeliveriesDeliveryFidSubscribeDefault(code int) *PutMessenge
 	}
 }
 
-/*
-PutMessengerDeliveriesDeliveryFidSubscribeDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutMessengerDeliveriesDeliveryFidSubscribeDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutMessengerDeliveriesDeliveryFidSubscribeDefault struct {
 	_statusCode int
 

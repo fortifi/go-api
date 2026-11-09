@@ -48,11 +48,9 @@ func NewGetCustomersFindByEmailOK() *GetCustomersFindByEmailOK {
 	return &GetCustomersFindByEmailOK{}
 }
 
-/*
-GetCustomersFindByEmailOK describes a response with status code 200, with default header values.
-
-Located Customer
-*/
+// GetCustomersFindByEmailOK describes a response with status code 200, with default header values.
+//
+// Located Customer
 type GetCustomersFindByEmailOK struct {
 	Payload *GetCustomersFindByEmailOKBody
 }
@@ -120,11 +118,9 @@ func NewGetCustomersFindByEmailDefault(code int) *GetCustomersFindByEmailDefault
 	}
 }
 
-/*
-GetCustomersFindByEmailDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetCustomersFindByEmailDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetCustomersFindByEmailDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetCustomersFindByEmailDefault) readResponse(response runtime.ClientRes
 	return nil
 }
 
-/*
-GetCustomersFindByEmailOKBody get customers find by email o k body
-swagger:model GetCustomersFindByEmailOKBody
-*/
+// GetCustomersFindByEmailOKBody get customers find by email o k body
+//
+// swagger:model GetCustomersFindByEmailOKBody
 type GetCustomersFindByEmailOKBody struct {
 	models.Envelope
 

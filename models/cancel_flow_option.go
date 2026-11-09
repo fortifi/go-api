@@ -89,7 +89,7 @@ func (m *CancelFlowOption) validateType(formats strfmt.Registry) error {
 }
 
 // ContextValidate validates this cancel flow option based on context it is used
-func (m *CancelFlowOption) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *CancelFlowOption) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

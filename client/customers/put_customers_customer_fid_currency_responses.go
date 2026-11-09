@@ -44,11 +44,9 @@ func NewPutCustomersCustomerFidCurrencyOK() *PutCustomersCustomerFidCurrencyOK {
 	return &PutCustomersCustomerFidCurrencyOK{}
 }
 
-/*
-PutCustomersCustomerFidCurrencyOK describes a response with status code 200, with default header values.
-
-Customer Currency Updated
-*/
+// PutCustomersCustomerFidCurrencyOK describes a response with status code 200, with default header values.
+//
+// Customer Currency Updated
 type PutCustomersCustomerFidCurrencyOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutCustomersCustomerFidCurrencyDefault(code int) *PutCustomersCustomerFi
 	}
 }
 
-/*
-PutCustomersCustomerFidCurrencyDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutCustomersCustomerFidCurrencyDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutCustomersCustomerFidCurrencyDefault struct {
 	_statusCode int
 

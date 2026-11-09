@@ -144,7 +144,7 @@ func (m *ResourceAllocations) contextValidateAllocations(ctx context.Context, fo
 		if m.Allocations[i] != nil {
 
 			if typeutils.IsZero(m.Allocations[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Allocations[i].ContextValidate(ctx, formats); err != nil {

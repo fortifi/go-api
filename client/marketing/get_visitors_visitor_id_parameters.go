@@ -62,13 +62,12 @@ GetVisitorsVisitorIDParams contains all the parameters to send to the API endpoi
 */
 type GetVisitorsVisitorIDParams struct {
 
-	/* VisitorID.
-
-	     'Visitor ID from the cookie.
-	If providing a pre-linked external reference, should be set to 'byref'.
-	If no visitor ID is known, client IP should be provided and visitorId should be set to 'unknown''
-
-	*/
+	// VisitorID.
+	//
+	// 'Visitor ID from the cookie.
+	// If providing a pre-linked external reference, should be set to 'byref'.
+	// If no visitor ID is known, client IP should be provided and visitorId should be set to 'unknown''
+	//
 	VisitorID string
 
 	HTTPClient *http.Client

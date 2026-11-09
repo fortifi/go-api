@@ -73,6 +73,6 @@ func (m DiscountType) Validate(formats strfmt.Registry) error {
 }
 
 // ContextValidate validates this discount type based on context it is used
-func (m DiscountType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m DiscountType) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }

@@ -62,10 +62,9 @@ GetCustomersCustomerFidPaymentMethodsParams contains all the parameters to send 
 */
 type GetCustomersCustomerFidPaymentMethodsParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	HTTPClient *http.Client

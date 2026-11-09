@@ -45,7 +45,7 @@ func (m *SendChatTranscriptPayload) validateEmail(formats strfmt.Registry) error
 }
 
 // ContextValidate validates this send chat transcript payload based on context it is used
-func (m *SendChatTranscriptPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *SendChatTranscriptPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

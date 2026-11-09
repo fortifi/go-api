@@ -62,10 +62,9 @@ DeletePublishersPublisherFidApprovedParams contains all the parameters to send t
 */
 type DeletePublishersPublisherFidApprovedParams struct {
 
-	/* PublisherFid.
-
-	   Publisher FID to use
-	*/
+	// PublisherFid.
+	//
+	// Publisher FID to use
 	PublisherFid string
 
 	HTTPClient *http.Client

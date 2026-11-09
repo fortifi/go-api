@@ -44,11 +44,9 @@ func NewPostCustomersCustomerFidAddressesOK() *PostCustomersCustomerFidAddresses
 	return &PostCustomersCustomerFidAddressesOK{}
 }
 
-/*
-PostCustomersCustomerFidAddressesOK describes a response with status code 200, with default header values.
-
-Address Added
-*/
+// PostCustomersCustomerFidAddressesOK describes a response with status code 200, with default header values.
+//
+// Address Added
 type PostCustomersCustomerFidAddressesOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPostCustomersCustomerFidAddressesDefault(code int) *PostCustomersCustome
 	}
 }
 
-/*
-PostCustomersCustomerFidAddressesDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostCustomersCustomerFidAddressesDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostCustomersCustomerFidAddressesDefault struct {
 	_statusCode int
 

@@ -48,11 +48,9 @@ func NewPostCustomersCustomerFidInvoicesInvoiceFidCreditNoteOK() *PostCustomersC
 	return &PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteOK{}
 }
 
-/*
-PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteOK describes a response with status code 200, with default header values.
-
-Credit Note Added
-*/
+// PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteOK describes a response with status code 200, with default header values.
+//
+// Credit Note Added
 type PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteOK struct {
 	Payload *PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteOKBody
 }
@@ -120,11 +118,9 @@ func NewPostCustomersCustomerFidInvoicesInvoiceFidCreditNoteDefault(code int) *P
 	}
 }
 
-/*
-PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteDefault) readRespon
 	return nil
 }
 
-/*
-PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteOKBody post customers customer fid invoices invoice fid credit note o k body
-swagger:model PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteOKBody
-*/
+// PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteOKBody post customers customer fid invoices invoice fid credit note o k body
+//
+// swagger:model PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteOKBody
 type PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteOKBody struct {
 	models.Envelope
 

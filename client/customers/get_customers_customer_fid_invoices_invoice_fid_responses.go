@@ -44,11 +44,9 @@ func NewGetCustomersCustomerFidInvoicesInvoiceFidOK() *GetCustomersCustomerFidIn
 	return &GetCustomersCustomerFidInvoicesInvoiceFidOK{}
 }
 
-/*
-GetCustomersCustomerFidInvoicesInvoiceFidOK describes a response with status code 200, with default header values.
-
-Loaded invoice
-*/
+// GetCustomersCustomerFidInvoicesInvoiceFidOK describes a response with status code 200, with default header values.
+//
+// Loaded invoice
 type GetCustomersCustomerFidInvoicesInvoiceFidOK struct {
 	Payload *models.Invoice
 }
@@ -116,11 +114,9 @@ func NewGetCustomersCustomerFidInvoicesInvoiceFidDefault(code int) *GetCustomers
 	}
 }
 
-/*
-GetCustomersCustomerFidInvoicesInvoiceFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetCustomersCustomerFidInvoicesInvoiceFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetCustomersCustomerFidInvoicesInvoiceFidDefault struct {
 	_statusCode int
 

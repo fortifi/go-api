@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for chat API.
-*/
+// Client for chat API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -72,17 +70,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-GetPresetChatSessionIDgets a preset chat by ID.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetPresetChatSessionIDContext] instead.
-*/
+// GetPresetChatSessionID gets a preset chat by ID.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetPresetChatSessionIDContext] instead.
 func (a *Client) GetPresetChatSessionID(params *GetPresetChatSessionIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPresetChatSessionIDOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -91,11 +87,9 @@ func (a *Client) GetPresetChatSessionID(params *GetPresetChatSessionIDParams, au
 	return a.GetPresetChatSessionIDContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetPresetChatSessionIDContextgets a preset chat by ID.
-
-Do not use the deprecated [GetPresetChatSessionIDParams.Context] with this method: it would be ignored.
-*/
+// GetPresetChatSessionIDContext gets a preset chat by ID.
+//
+// Do not use the deprecated [GetPresetChatSessionIDParams.Context] with this method: it would be ignored.
 func (a *Client) GetPresetChatSessionIDContext(ctx context.Context, params *GetPresetChatSessionIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPresetChatSessionIDOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -138,17 +132,15 @@ func (a *Client) GetPresetChatSessionIDContext(ctx context.Context, params *GetP
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostPresetChatcreates a preset chat instance.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostPresetChatContext] instead.
-*/
+// PostPresetChat creates a preset chat instance.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostPresetChatContext] instead.
 func (a *Client) PostPresetChat(params *PostPresetChatParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostPresetChatOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -157,11 +149,9 @@ func (a *Client) PostPresetChat(params *PostPresetChatParams, authInfo runtime.C
 	return a.PostPresetChatContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostPresetChatContextcreates a preset chat instance.
-
-Do not use the deprecated [PostPresetChatParams.Context] with this method: it would be ignored.
-*/
+// PostPresetChatContext creates a preset chat instance.
+//
+// Do not use the deprecated [PostPresetChatParams.Context] with this method: it would be ignored.
 func (a *Client) PostPresetChatContext(ctx context.Context, params *PostPresetChatParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostPresetChatOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

@@ -22,12 +22,12 @@ type RetentionFunnelDecision struct {
 }
 
 // Validate validates this retention funnel decision
-func (m *RetentionFunnelDecision) Validate(formats strfmt.Registry) error {
+func (m *RetentionFunnelDecision) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this retention funnel decision based on context it is used
-func (m *RetentionFunnelDecision) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *RetentionFunnelDecision) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

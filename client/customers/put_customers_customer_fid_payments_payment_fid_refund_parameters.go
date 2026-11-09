@@ -63,40 +63,34 @@ PutCustomersCustomerFidPaymentsPaymentFidRefundParams contains all the parameter
 */
 type PutCustomersCustomerFidPaymentsPaymentFidRefundParams struct {
 
-	/* AddCreditToInvoice.
-
-	   Add Credit to Invoice
-	*/
+	// AddCreditToInvoice.
+	//
+	// Add Credit to Invoice
 	AddCreditToInvoice bool
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* PaymentFid.
-
-	   Payment FID to use
-	*/
+	// PaymentFid.
+	//
+	// Payment FID to use
 	PaymentFid string
 
-	/* ReasonFid.
-
-	   Reason FID
-	*/
+	// ReasonFid.
+	//
+	// Reason FID
 	ReasonFid string
 
-	/* RefundType.
-
-	   Refund Type
-	*/
+	// RefundType.
+	//
+	// Refund Type
 	RefundType string
 
-	/* TotalRefund.
-
-	   Total Refund
-	*/
+	// TotalRefund.
+	//
+	// Total Refund
 	TotalRefund float64
 
 	HTTPClient *http.Client

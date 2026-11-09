@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for contacts API.
-*/
+// Client for contacts API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -144,17 +142,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-GetContactsFindByReferenceContactReferencefinds a person with a reference.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetContactsFindByReferenceContactReferenceContext] instead.
-*/
+// GetContactsFindByReferenceContactReference finds a person with a reference.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetContactsFindByReferenceContactReferenceContext] instead.
 func (a *Client) GetContactsFindByReferenceContactReference(params *GetContactsFindByReferenceContactReferenceParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetContactsFindByReferenceContactReferenceOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -163,11 +159,9 @@ func (a *Client) GetContactsFindByReferenceContactReference(params *GetContactsF
 	return a.GetContactsFindByReferenceContactReferenceContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetContactsFindByReferenceContactReferenceContextfinds a person with a reference.
-
-Do not use the deprecated [GetContactsFindByReferenceContactReferenceParams.Context] with this method: it would be ignored.
-*/
+// GetContactsFindByReferenceContactReferenceContext finds a person with a reference.
+//
+// Do not use the deprecated [GetContactsFindByReferenceContactReferenceParams.Context] with this method: it would be ignored.
 func (a *Client) GetContactsFindByReferenceContactReferenceContext(ctx context.Context, params *GetContactsFindByReferenceContactReferenceParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetContactsFindByReferenceContactReferenceOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -210,17 +204,15 @@ func (a *Client) GetContactsFindByReferenceContactReferenceContext(ctx context.C
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetContactsSearchsearches for contacts.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetContactsSearchContext] instead.
-*/
+// GetContactsSearch searches for contacts.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetContactsSearchContext] instead.
 func (a *Client) GetContactsSearch(params *GetContactsSearchParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetContactsSearchOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -229,11 +221,9 @@ func (a *Client) GetContactsSearch(params *GetContactsSearchParams, authInfo run
 	return a.GetContactsSearchContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetContactsSearchContextsearches for contacts.
-
-Do not use the deprecated [GetContactsSearchParams.Context] with this method: it would be ignored.
-*/
+// GetContactsSearchContext searches for contacts.
+//
+// Do not use the deprecated [GetContactsSearchParams.Context] with this method: it would be ignored.
 func (a *Client) GetContactsSearchContext(ctx context.Context, params *GetContactsSearchParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetContactsSearchOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -276,17 +266,15 @@ func (a *Client) GetContactsSearchContext(ctx context.Context, params *GetContac
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetTicketsSearchsearches for tickets.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetTicketsSearchContext] instead.
-*/
+// GetTicketsSearch searches for tickets.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetTicketsSearchContext] instead.
 func (a *Client) GetTicketsSearch(params *GetTicketsSearchParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetTicketsSearchOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -295,11 +283,9 @@ func (a *Client) GetTicketsSearch(params *GetTicketsSearchParams, authInfo runti
 	return a.GetTicketsSearchContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetTicketsSearchContextsearches for tickets.
-
-Do not use the deprecated [GetTicketsSearchParams.Context] with this method: it would be ignored.
-*/
+// GetTicketsSearchContext searches for tickets.
+//
+// Do not use the deprecated [GetTicketsSearchParams.Context] with this method: it would be ignored.
 func (a *Client) GetTicketsSearchContext(ctx context.Context, params *GetTicketsSearchParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetTicketsSearchOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -342,17 +328,15 @@ func (a *Client) GetTicketsSearchContext(ctx context.Context, params *GetTickets
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutContactsDeviceHardwareIDSubscribesubscribes an device.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutContactsDeviceHardwareIDSubscribeContext] instead.
-*/
+// PutContactsDeviceHardwareIDSubscribe subscribes an device.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutContactsDeviceHardwareIDSubscribeContext] instead.
 func (a *Client) PutContactsDeviceHardwareIDSubscribe(params *PutContactsDeviceHardwareIDSubscribeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutContactsDeviceHardwareIDSubscribeOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -361,11 +345,9 @@ func (a *Client) PutContactsDeviceHardwareIDSubscribe(params *PutContactsDeviceH
 	return a.PutContactsDeviceHardwareIDSubscribeContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutContactsDeviceHardwareIDSubscribeContextsubscribes an device.
-
-Do not use the deprecated [PutContactsDeviceHardwareIDSubscribeParams.Context] with this method: it would be ignored.
-*/
+// PutContactsDeviceHardwareIDSubscribeContext subscribes an device.
+//
+// Do not use the deprecated [PutContactsDeviceHardwareIDSubscribeParams.Context] with this method: it would be ignored.
 func (a *Client) PutContactsDeviceHardwareIDSubscribeContext(ctx context.Context, params *PutContactsDeviceHardwareIDSubscribeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutContactsDeviceHardwareIDSubscribeOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -408,17 +390,15 @@ func (a *Client) PutContactsDeviceHardwareIDSubscribeContext(ctx context.Context
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutContactsDeviceHardwareIDUnsubscribeunsubscribes a device.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutContactsDeviceHardwareIDUnsubscribeContext] instead.
-*/
+// PutContactsDeviceHardwareIDUnsubscribe unsubscribes a device.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutContactsDeviceHardwareIDUnsubscribeContext] instead.
 func (a *Client) PutContactsDeviceHardwareIDUnsubscribe(params *PutContactsDeviceHardwareIDUnsubscribeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutContactsDeviceHardwareIDUnsubscribeOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -427,11 +407,9 @@ func (a *Client) PutContactsDeviceHardwareIDUnsubscribe(params *PutContactsDevic
 	return a.PutContactsDeviceHardwareIDUnsubscribeContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutContactsDeviceHardwareIDUnsubscribeContextunsubscribes a device.
-
-Do not use the deprecated [PutContactsDeviceHardwareIDUnsubscribeParams.Context] with this method: it would be ignored.
-*/
+// PutContactsDeviceHardwareIDUnsubscribeContext unsubscribes a device.
+//
+// Do not use the deprecated [PutContactsDeviceHardwareIDUnsubscribeParams.Context] with this method: it would be ignored.
 func (a *Client) PutContactsDeviceHardwareIDUnsubscribeContext(ctx context.Context, params *PutContactsDeviceHardwareIDUnsubscribeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutContactsDeviceHardwareIDUnsubscribeOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -474,17 +452,15 @@ func (a *Client) PutContactsDeviceHardwareIDUnsubscribeContext(ctx context.Conte
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutContactsEmailsEmailAddressConfirmconfirms email address.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutContactsEmailsEmailAddressConfirmContext] instead.
-*/
+// PutContactsEmailsEmailAddressConfirm confirms email address.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutContactsEmailsEmailAddressConfirmContext] instead.
 func (a *Client) PutContactsEmailsEmailAddressConfirm(params *PutContactsEmailsEmailAddressConfirmParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutContactsEmailsEmailAddressConfirmOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -493,11 +469,9 @@ func (a *Client) PutContactsEmailsEmailAddressConfirm(params *PutContactsEmailsE
 	return a.PutContactsEmailsEmailAddressConfirmContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutContactsEmailsEmailAddressConfirmContextconfirms email address.
-
-Do not use the deprecated [PutContactsEmailsEmailAddressConfirmParams.Context] with this method: it would be ignored.
-*/
+// PutContactsEmailsEmailAddressConfirmContext confirms email address.
+//
+// Do not use the deprecated [PutContactsEmailsEmailAddressConfirmParams.Context] with this method: it would be ignored.
 func (a *Client) PutContactsEmailsEmailAddressConfirmContext(ctx context.Context, params *PutContactsEmailsEmailAddressConfirmParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutContactsEmailsEmailAddressConfirmOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -540,17 +514,15 @@ func (a *Client) PutContactsEmailsEmailAddressConfirmContext(ctx context.Context
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutContactsEmailsEmailAddressSubscribesubscribes an email address.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutContactsEmailsEmailAddressSubscribeContext] instead.
-*/
+// PutContactsEmailsEmailAddressSubscribe subscribes an email address.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutContactsEmailsEmailAddressSubscribeContext] instead.
 func (a *Client) PutContactsEmailsEmailAddressSubscribe(params *PutContactsEmailsEmailAddressSubscribeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutContactsEmailsEmailAddressSubscribeOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -559,11 +531,9 @@ func (a *Client) PutContactsEmailsEmailAddressSubscribe(params *PutContactsEmail
 	return a.PutContactsEmailsEmailAddressSubscribeContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutContactsEmailsEmailAddressSubscribeContextsubscribes an email address.
-
-Do not use the deprecated [PutContactsEmailsEmailAddressSubscribeParams.Context] with this method: it would be ignored.
-*/
+// PutContactsEmailsEmailAddressSubscribeContext subscribes an email address.
+//
+// Do not use the deprecated [PutContactsEmailsEmailAddressSubscribeParams.Context] with this method: it would be ignored.
 func (a *Client) PutContactsEmailsEmailAddressSubscribeContext(ctx context.Context, params *PutContactsEmailsEmailAddressSubscribeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutContactsEmailsEmailAddressSubscribeOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -606,17 +576,15 @@ func (a *Client) PutContactsEmailsEmailAddressSubscribeContext(ctx context.Conte
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutContactsEmailsEmailAddressUnsubscribeunsubscribes an email address.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutContactsEmailsEmailAddressUnsubscribeContext] instead.
-*/
+// PutContactsEmailsEmailAddressUnsubscribe unsubscribes an email address.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutContactsEmailsEmailAddressUnsubscribeContext] instead.
 func (a *Client) PutContactsEmailsEmailAddressUnsubscribe(params *PutContactsEmailsEmailAddressUnsubscribeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutContactsEmailsEmailAddressUnsubscribeOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -625,11 +593,9 @@ func (a *Client) PutContactsEmailsEmailAddressUnsubscribe(params *PutContactsEma
 	return a.PutContactsEmailsEmailAddressUnsubscribeContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutContactsEmailsEmailAddressUnsubscribeContextunsubscribes an email address.
-
-Do not use the deprecated [PutContactsEmailsEmailAddressUnsubscribeParams.Context] with this method: it would be ignored.
-*/
+// PutContactsEmailsEmailAddressUnsubscribeContext unsubscribes an email address.
+//
+// Do not use the deprecated [PutContactsEmailsEmailAddressUnsubscribeParams.Context] with this method: it would be ignored.
 func (a *Client) PutContactsEmailsEmailAddressUnsubscribeContext(ctx context.Context, params *PutContactsEmailsEmailAddressUnsubscribeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutContactsEmailsEmailAddressUnsubscribeOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -672,17 +638,15 @@ func (a *Client) PutContactsEmailsEmailAddressUnsubscribeContext(ctx context.Con
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutContactsPhonePhoneNumberConfirmconfirms phone number.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutContactsPhonePhoneNumberConfirmContext] instead.
-*/
+// PutContactsPhonePhoneNumberConfirm confirms phone number.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutContactsPhonePhoneNumberConfirmContext] instead.
 func (a *Client) PutContactsPhonePhoneNumberConfirm(params *PutContactsPhonePhoneNumberConfirmParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutContactsPhonePhoneNumberConfirmOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -691,11 +655,9 @@ func (a *Client) PutContactsPhonePhoneNumberConfirm(params *PutContactsPhonePhon
 	return a.PutContactsPhonePhoneNumberConfirmContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutContactsPhonePhoneNumberConfirmContextconfirms phone number.
-
-Do not use the deprecated [PutContactsPhonePhoneNumberConfirmParams.Context] with this method: it would be ignored.
-*/
+// PutContactsPhonePhoneNumberConfirmContext confirms phone number.
+//
+// Do not use the deprecated [PutContactsPhonePhoneNumberConfirmParams.Context] with this method: it would be ignored.
 func (a *Client) PutContactsPhonePhoneNumberConfirmContext(ctx context.Context, params *PutContactsPhonePhoneNumberConfirmParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutContactsPhonePhoneNumberConfirmOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -738,17 +700,15 @@ func (a *Client) PutContactsPhonePhoneNumberConfirmContext(ctx context.Context, 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutMessengerDeliveriesDeliveryFidSubscribesubscribes an email based on the delivery fid.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutMessengerDeliveriesDeliveryFidSubscribeContext] instead.
-*/
+// PutMessengerDeliveriesDeliveryFidSubscribe subscribes an email based on the delivery fid.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutMessengerDeliveriesDeliveryFidSubscribeContext] instead.
 func (a *Client) PutMessengerDeliveriesDeliveryFidSubscribe(params *PutMessengerDeliveriesDeliveryFidSubscribeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutMessengerDeliveriesDeliveryFidSubscribeOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -757,11 +717,9 @@ func (a *Client) PutMessengerDeliveriesDeliveryFidSubscribe(params *PutMessenger
 	return a.PutMessengerDeliveriesDeliveryFidSubscribeContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutMessengerDeliveriesDeliveryFidSubscribeContextsubscribes an email based on the delivery fid.
-
-Do not use the deprecated [PutMessengerDeliveriesDeliveryFidSubscribeParams.Context] with this method: it would be ignored.
-*/
+// PutMessengerDeliveriesDeliveryFidSubscribeContext subscribes an email based on the delivery fid.
+//
+// Do not use the deprecated [PutMessengerDeliveriesDeliveryFidSubscribeParams.Context] with this method: it would be ignored.
 func (a *Client) PutMessengerDeliveriesDeliveryFidSubscribeContext(ctx context.Context, params *PutMessengerDeliveriesDeliveryFidSubscribeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutMessengerDeliveriesDeliveryFidSubscribeOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

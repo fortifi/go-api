@@ -63,22 +63,20 @@ PostVisitorsVisitorIDActionsActionKeyReverseParams contains all the parameters t
 */
 type PostVisitorsVisitorIDActionsActionKeyReverseParams struct {
 
-	/* ActionKey.
-
-	   Action key of the action to reverse e.g. lead
-	*/
+	// ActionKey.
+	//
+	// Action key of the action to reverse e.g. lead
 	ActionKey string
 
 	// Payload.
 	Payload *models.ReverseActionPayload
 
-	/* VisitorID.
-
-	     'Visitor ID from the cookie.
-	If providing a pre-linked external reference, should be set to 'byref'.
-	If no visitor ID is known, client IP should be provided and visitorId should be set to 'unknown''
-
-	*/
+	// VisitorID.
+	//
+	// 'Visitor ID from the cookie.
+	// If providing a pre-linked external reference, should be set to 'byref'.
+	// If no visitor ID is known, client IP should be provided and visitorId should be set to 'unknown''
+	//
 	VisitorID string
 
 	HTTPClient *http.Client

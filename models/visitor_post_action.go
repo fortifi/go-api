@@ -114,7 +114,7 @@ func (m *VisitorPostAction) contextValidatePixels(ctx context.Context, formats s
 		if m.Pixels[i] != nil {
 
 			if typeutils.IsZero(m.Pixels[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Pixels[i].ContextValidate(ctx, formats); err != nil {

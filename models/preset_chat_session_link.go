@@ -22,12 +22,12 @@ type PresetChatSessionLink struct {
 }
 
 // Validate validates this preset chat session link
-func (m *PresetChatSessionLink) Validate(formats strfmt.Registry) error {
+func (m *PresetChatSessionLink) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this preset chat session link based on context it is used
-func (m *PresetChatSessionLink) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *PresetChatSessionLink) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

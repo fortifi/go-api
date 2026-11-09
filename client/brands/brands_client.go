@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for brands API.
-*/
+// Client for brands API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -66,21 +64,18 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-	GetBrandsyours brand.
-
-	Retrieve a list of all the brands within your Fortifi account
-
-.
-
-	This method does not support injected context.
-	However, timeout and opentracing contexts are honored whenever enabled.
-
-	If you need to pass a specific context, use [Client.GetBrandsContext] instead.
-*/
+// GetBrands yours brand.
+//
+// Retrieve a list of all the brands within your Fortifi account
+// .
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetBrandsContext] instead.
 func (a *Client) GetBrands(params *GetBrandsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetBrandsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -89,15 +84,12 @@ func (a *Client) GetBrands(params *GetBrandsParams, authInfo runtime.ClientAuthI
 	return a.GetBrandsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-	GetBrandsContextyours brand.
-
-	Retrieve a list of all the brands within your Fortifi account
-
-.
-
-	Do not use the deprecated [GetBrandsParams.Context] with this method: it would be ignored.
-*/
+// GetBrandsContext yours brand.
+//
+// Retrieve a list of all the brands within your Fortifi account
+// .
+//
+// Do not use the deprecated [GetBrandsParams.Context] with this method: it would be ignored.
 func (a *Client) GetBrandsContext(ctx context.Context, params *GetBrandsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetBrandsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

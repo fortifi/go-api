@@ -63,10 +63,9 @@ PostFlowFlowFidLogParams contains all the parameters to send to the API endpoint
 */
 type PostFlowFlowFidLogParams struct {
 
-	/* FlowFid.
-
-	   Flow FID to use
-	*/
+	// FlowFid.
+	//
+	// Flow FID to use
 	FlowFid string
 
 	// Payload.

@@ -62,16 +62,14 @@ PutCustomersCustomerFidLinkVisitorParams contains all the parameters to send to 
 */
 type PutCustomersCustomerFidLinkVisitorParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* VisitorID.
-
-	   Visitors Id
-	*/
+	// VisitorID.
+	//
+	// Visitors Id
 	VisitorID string
 
 	HTTPClient *http.Client

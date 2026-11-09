@@ -48,11 +48,9 @@ func NewGetPresetChatSessionIDOK() *GetPresetChatSessionIDOK {
 	return &GetPresetChatSessionIDOK{}
 }
 
-/*
-GetPresetChatSessionIDOK describes a response with status code 200, with default header values.
-
-Preset Chat Session
-*/
+// GetPresetChatSessionIDOK describes a response with status code 200, with default header values.
+//
+// Preset Chat Session
 type GetPresetChatSessionIDOK struct {
 	Payload *GetPresetChatSessionIDOKBody
 }
@@ -120,11 +118,9 @@ func NewGetPresetChatSessionIDDefault(code int) *GetPresetChatSessionIDDefault {
 	}
 }
 
-/*
-GetPresetChatSessionIDDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetPresetChatSessionIDDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetPresetChatSessionIDDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetPresetChatSessionIDDefault) readResponse(response runtime.ClientResp
 	return nil
 }
 
-/*
-GetPresetChatSessionIDOKBody get preset chat session ID o k body
-swagger:model GetPresetChatSessionIDOKBody
-*/
+// GetPresetChatSessionIDOKBody get preset chat session ID o k body
+//
+// swagger:model GetPresetChatSessionIDOKBody
 type GetPresetChatSessionIDOKBody struct {
 	models.Envelope
 

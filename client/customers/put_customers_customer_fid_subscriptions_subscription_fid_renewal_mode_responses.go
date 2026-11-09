@@ -44,11 +44,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeOK() *PutC
 	return &PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeOK{}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeOK describes a response with status code 200, with default header values.
-
-Renewal mode set
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeOK describes a response with status code 200, with default header values.
+//
+// Renewal mode set
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeDefault(co
 	}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidRenewalModeDefault struct {
 	_statusCode int
 

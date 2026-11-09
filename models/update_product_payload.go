@@ -147,7 +147,7 @@ func (m *UpdateProductPayload) validateSuspendReasonFid(formats strfmt.Registry)
 }
 
 // ContextValidate validates this update product payload based on context it is used
-func (m *UpdateProductPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *UpdateProductPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

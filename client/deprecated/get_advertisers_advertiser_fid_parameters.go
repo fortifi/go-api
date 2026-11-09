@@ -62,10 +62,9 @@ GetAdvertisersAdvertiserFidParams contains all the parameters to send to the API
 */
 type GetAdvertisersAdvertiserFidParams struct {
 
-	/* AdvertiserFid.
-
-	   Advertiser FID to use
-	*/
+	// AdvertiserFid.
+	//
+	// Advertiser FID to use
 	AdvertiserFid string
 
 	HTTPClient *http.Client

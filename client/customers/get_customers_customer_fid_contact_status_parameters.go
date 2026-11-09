@@ -62,16 +62,14 @@ GetCustomersCustomerFidContactStatusParams contains all the parameters to send t
 */
 type GetCustomersCustomerFidContactStatusParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* EmailAddress.
-
-	   Email Address to list contact status for
-	*/
+	// EmailAddress.
+	//
+	// Email Address to list contact status for
 	EmailAddress string
 
 	HTTPClient *http.Client

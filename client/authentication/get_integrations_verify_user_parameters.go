@@ -62,16 +62,14 @@ GetIntegrationsVerifyUserParams contains all the parameters to send to the API e
 */
 type GetIntegrationsVerifyUserParams struct {
 
-	/* RemoteIP.
-
-	   IP of the user connecting
-	*/
+	// RemoteIP.
+	//
+	// IP of the user connecting
 	RemoteIP string
 
-	/* VerifyKey.
-
-	   Verify key found in ?fortifiverify=VERIFYKEY
-	*/
+	// VerifyKey.
+	//
+	// Verify key found in ?fortifiverify=VERIFYKEY
 	VerifyKey string
 
 	HTTPClient *http.Client

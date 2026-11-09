@@ -99,7 +99,7 @@ func (m *InteractionVerificationResponse) contextValidateInteractionTypes(ctx co
 		if m.InteractionTypes[i] != nil {
 
 			if typeutils.IsZero(m.InteractionTypes[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.InteractionTypes[i].ContextValidate(ctx, formats); err != nil {

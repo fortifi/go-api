@@ -44,11 +44,9 @@ func NewDeleteEntitiesEntityFidPropertiesCountersPropertyNameOK() *DeleteEntitie
 	return &DeleteEntitiesEntityFidPropertiesCountersPropertyNameOK{}
 }
 
-/*
-DeleteEntitiesEntityFidPropertiesCountersPropertyNameOK describes a response with status code 200, with default header values.
-
-Property Deleted
-*/
+// DeleteEntitiesEntityFidPropertiesCountersPropertyNameOK describes a response with status code 200, with default header values.
+//
+// Property Deleted
 type DeleteEntitiesEntityFidPropertiesCountersPropertyNameOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewDeleteEntitiesEntityFidPropertiesCountersPropertyNameDefault(code int) *
 	}
 }
 
-/*
-DeleteEntitiesEntityFidPropertiesCountersPropertyNameDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// DeleteEntitiesEntityFidPropertiesCountersPropertyNameDefault describes a response with status code -1, with default header values.
+//
+// Error
 type DeleteEntitiesEntityFidPropertiesCountersPropertyNameDefault struct {
 	_statusCode int
 

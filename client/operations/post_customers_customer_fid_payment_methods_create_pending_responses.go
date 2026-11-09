@@ -48,11 +48,9 @@ func NewPostCustomersCustomerFidPaymentMethodsCreatePendingOK() *PostCustomersCu
 	return &PostCustomersCustomerFidPaymentMethodsCreatePendingOK{}
 }
 
-/*
-PostCustomersCustomerFidPaymentMethodsCreatePendingOK describes a response with status code 200, with default header values.
-
-Pending Payment Method Created
-*/
+// PostCustomersCustomerFidPaymentMethodsCreatePendingOK describes a response with status code 200, with default header values.
+//
+// Pending Payment Method Created
 type PostCustomersCustomerFidPaymentMethodsCreatePendingOK struct {
 	Payload *PostCustomersCustomerFidPaymentMethodsCreatePendingOKBody
 }
@@ -120,11 +118,9 @@ func NewPostCustomersCustomerFidPaymentMethodsCreatePendingDefault(code int) *Po
 	}
 }
 
-/*
-PostCustomersCustomerFidPaymentMethodsCreatePendingDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostCustomersCustomerFidPaymentMethodsCreatePendingDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostCustomersCustomerFidPaymentMethodsCreatePendingDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostCustomersCustomerFidPaymentMethodsCreatePendingDefault) readRespons
 	return nil
 }
 
-/*
-PostCustomersCustomerFidPaymentMethodsCreatePendingOKBody post customers customer fid payment methods create pending o k body
-swagger:model PostCustomersCustomerFidPaymentMethodsCreatePendingOKBody
-*/
+// PostCustomersCustomerFidPaymentMethodsCreatePendingOKBody post customers customer fid payment methods create pending o k body
+//
+// swagger:model PostCustomersCustomerFidPaymentMethodsCreatePendingOKBody
 type PostCustomersCustomerFidPaymentMethodsCreatePendingOKBody struct {
 	models.Envelope
 

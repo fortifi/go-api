@@ -48,11 +48,9 @@ func NewGetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSear
 	return &GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOK{}
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOK describes a response with status code 200, with default header values.
-
-Retention Flow State
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOK describes a response with status code 200, with default header values.
+//
+// Retention Flow State
 type GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOK struct {
 	Payload *GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOKBody
 }
@@ -120,11 +118,9 @@ func NewGetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSear
 	}
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSea
 	return nil
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOKBody get customers customer fid subscriptions subscription fid retention flow flow search o k body
-swagger:model GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOKBody
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOKBody get customers customer fid subscriptions subscription fid retention flow flow search o k body
+//
+// swagger:model GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOKBody
 type GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOKBody struct {
 	models.Envelope
 

@@ -62,16 +62,14 @@ DeleteCustomersCustomerFidEmailsEmailFidParams contains all the parameters to se
 */
 type DeleteCustomersCustomerFidEmailsEmailFidParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* EmailFid.
-
-	   Email FID to use
-	*/
+	// EmailFid.
+	//
+	// Email FID to use
 	EmailFid string
 
 	HTTPClient *http.Client

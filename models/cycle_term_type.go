@@ -82,6 +82,6 @@ func (m CycleTermType) Validate(formats strfmt.Registry) error {
 }
 
 // ContextValidate validates this cycle term type based on context it is used
-func (m CycleTermType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m CycleTermType) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }

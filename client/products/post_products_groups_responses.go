@@ -48,11 +48,9 @@ func NewPostProductsGroupsOK() *PostProductsGroupsOK {
 	return &PostProductsGroupsOK{}
 }
 
-/*
-PostProductsGroupsOK describes a response with status code 200, with default header values.
-
-Product group created successfully
-*/
+// PostProductsGroupsOK describes a response with status code 200, with default header values.
+//
+// Product group created successfully
 type PostProductsGroupsOK struct {
 	Payload *PostProductsGroupsOKBody
 }
@@ -120,11 +118,9 @@ func NewPostProductsGroupsDefault(code int) *PostProductsGroupsDefault {
 	}
 }
 
-/*
-PostProductsGroupsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostProductsGroupsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostProductsGroupsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostProductsGroupsDefault) readResponse(response runtime.ClientResponse
 	return nil
 }
 
-/*
-PostProductsGroupsOKBody post products groups o k body
-swagger:model PostProductsGroupsOKBody
-*/
+// PostProductsGroupsOKBody post products groups o k body
+//
+// swagger:model PostProductsGroupsOKBody
 type PostProductsGroupsOKBody struct {
 	models.Envelope
 

@@ -49,7 +49,7 @@ func (m *UpdateFlowStepPayload) validateDisplayName(formats strfmt.Registry) err
 }
 
 // ContextValidate validates this update flow step payload based on context it is used
-func (m *UpdateFlowStepPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *UpdateFlowStepPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

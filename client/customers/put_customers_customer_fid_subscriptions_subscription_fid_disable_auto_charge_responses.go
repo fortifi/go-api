@@ -44,11 +44,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeOK()
 	return &PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeOK{}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeOK describes a response with status code 200, with default header values.
-
-Auto charge disabled
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeOK describes a response with status code 200, with default header values.
+//
+// Auto charge disabled
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeDefa
 	}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidDisableAutoChargeDefault struct {
 	_statusCode int
 

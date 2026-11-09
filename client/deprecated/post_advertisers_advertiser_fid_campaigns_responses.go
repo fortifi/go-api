@@ -48,11 +48,9 @@ func NewPostAdvertisersAdvertiserFidCampaignsOK() *PostAdvertisersAdvertiserFidC
 	return &PostAdvertisersAdvertiserFidCampaignsOK{}
 }
 
-/*
-PostAdvertisersAdvertiserFidCampaignsOK describes a response with status code 200, with default header values.
-
-Campaign Created
-*/
+// PostAdvertisersAdvertiserFidCampaignsOK describes a response with status code 200, with default header values.
+//
+// Campaign Created
 type PostAdvertisersAdvertiserFidCampaignsOK struct {
 	Payload *PostAdvertisersAdvertiserFidCampaignsOKBody
 }
@@ -120,11 +118,9 @@ func NewPostAdvertisersAdvertiserFidCampaignsDefault(code int) *PostAdvertisersA
 	}
 }
 
-/*
-PostAdvertisersAdvertiserFidCampaignsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostAdvertisersAdvertiserFidCampaignsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostAdvertisersAdvertiserFidCampaignsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostAdvertisersAdvertiserFidCampaignsDefault) readResponse(response run
 	return nil
 }
 
-/*
-PostAdvertisersAdvertiserFidCampaignsOKBody post advertisers advertiser fid campaigns o k body
-swagger:model PostAdvertisersAdvertiserFidCampaignsOKBody
-*/
+// PostAdvertisersAdvertiserFidCampaignsOKBody post advertisers advertiser fid campaigns o k body
+//
+// swagger:model PostAdvertisersAdvertiserFidCampaignsOKBody
 type PostAdvertisersAdvertiserFidCampaignsOKBody struct {
 	models.Envelope
 

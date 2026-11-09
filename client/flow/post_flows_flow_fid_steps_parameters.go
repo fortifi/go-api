@@ -63,10 +63,9 @@ PostFlowsFlowFidStepsParams contains all the parameters to send to the API endpo
 */
 type PostFlowsFlowFidStepsParams struct {
 
-	/* FlowFid.
-
-	   Flow FID to use
-	*/
+	// FlowFid.
+	//
+	// Flow FID to use
 	FlowFid string
 
 	// Payload.

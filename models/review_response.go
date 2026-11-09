@@ -55,12 +55,12 @@ type ReviewResponse struct {
 }
 
 // Validate validates this review response
-func (m *ReviewResponse) Validate(formats strfmt.Registry) error {
+func (m *ReviewResponse) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this review response based on context it is used
-func (m *ReviewResponse) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *ReviewResponse) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

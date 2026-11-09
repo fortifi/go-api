@@ -48,11 +48,9 @@ func NewGetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK() *Ge
 	return &GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK{}
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK describes a response with status code 200, with default header values.
-
-List Of Retention Flows
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK describes a response with status code 200, with default header values.
+//
+// List Of Retention Flows
 type GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOK struct {
 	Payload *GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOKBody
 }
@@ -120,11 +118,9 @@ func NewGetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowDefault(
 	}
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowDefault
 	return nil
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOKBody get customers customer fid subscriptions subscription fid retention flow o k body
-swagger:model GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOKBody
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOKBody get customers customer fid subscriptions subscription fid retention flow o k body
+//
+// swagger:model GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOKBody
 type GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowOKBody struct {
 	models.Envelope
 

@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for operations API.
-*/
+// Client for operations API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -72,17 +70,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-PostCustomersCustomerFidApplyCreditapplies credit to a customer.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostCustomersCustomerFidApplyCreditContext] instead.
-*/
+// PostCustomersCustomerFidApplyCredit applies credit to a customer.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersCustomerFidApplyCreditContext] instead.
 func (a *Client) PostCustomersCustomerFidApplyCredit(params *PostCustomersCustomerFidApplyCreditParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidApplyCreditOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -91,11 +87,9 @@ func (a *Client) PostCustomersCustomerFidApplyCredit(params *PostCustomersCustom
 	return a.PostCustomersCustomerFidApplyCreditContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostCustomersCustomerFidApplyCreditContextapplies credit to a customer.
-
-Do not use the deprecated [PostCustomersCustomerFidApplyCreditParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersCustomerFidApplyCreditContext applies credit to a customer.
+//
+// Do not use the deprecated [PostCustomersCustomerFidApplyCreditParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersCustomerFidApplyCreditContext(ctx context.Context, params *PostCustomersCustomerFidApplyCreditParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidApplyCreditOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -138,17 +132,15 @@ func (a *Client) PostCustomersCustomerFidApplyCreditContext(ctx context.Context,
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostCustomersCustomerFidPaymentMethodsCreatePendingcreates a new pending payment method.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostCustomersCustomerFidPaymentMethodsCreatePendingContext] instead.
-*/
+// PostCustomersCustomerFidPaymentMethodsCreatePending creates a new pending payment method.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostCustomersCustomerFidPaymentMethodsCreatePendingContext] instead.
 func (a *Client) PostCustomersCustomerFidPaymentMethodsCreatePending(params *PostCustomersCustomerFidPaymentMethodsCreatePendingParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidPaymentMethodsCreatePendingOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -157,11 +149,9 @@ func (a *Client) PostCustomersCustomerFidPaymentMethodsCreatePending(params *Pos
 	return a.PostCustomersCustomerFidPaymentMethodsCreatePendingContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostCustomersCustomerFidPaymentMethodsCreatePendingContextcreates a new pending payment method.
-
-Do not use the deprecated [PostCustomersCustomerFidPaymentMethodsCreatePendingParams.Context] with this method: it would be ignored.
-*/
+// PostCustomersCustomerFidPaymentMethodsCreatePendingContext creates a new pending payment method.
+//
+// Do not use the deprecated [PostCustomersCustomerFidPaymentMethodsCreatePendingParams.Context] with this method: it would be ignored.
 func (a *Client) PostCustomersCustomerFidPaymentMethodsCreatePendingContext(ctx context.Context, params *PostCustomersCustomerFidPaymentMethodsCreatePendingParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostCustomersCustomerFidPaymentMethodsCreatePendingOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

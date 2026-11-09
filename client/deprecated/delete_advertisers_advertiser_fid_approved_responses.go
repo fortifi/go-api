@@ -44,11 +44,9 @@ func NewDeleteAdvertisersAdvertiserFidApprovedOK() *DeleteAdvertisersAdvertiserF
 	return &DeleteAdvertisersAdvertiserFidApprovedOK{}
 }
 
-/*
-DeleteAdvertisersAdvertiserFidApprovedOK describes a response with status code 200, with default header values.
-
-Advertiser no longer approved
-*/
+// DeleteAdvertisersAdvertiserFidApprovedOK describes a response with status code 200, with default header values.
+//
+// Advertiser no longer approved
 type DeleteAdvertisersAdvertiserFidApprovedOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewDeleteAdvertisersAdvertiserFidApprovedDefault(code int) *DeleteAdvertise
 	}
 }
 
-/*
-DeleteAdvertisersAdvertiserFidApprovedDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// DeleteAdvertisersAdvertiserFidApprovedDefault describes a response with status code -1, with default header values.
+//
+// Error
 type DeleteAdvertisersAdvertiserFidApprovedDefault struct {
 	_statusCode int
 

@@ -63,16 +63,14 @@ PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteParams contains all the para
 */
 type PostCustomersCustomerFidInvoicesInvoiceFidCreditNoteParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* InvoiceFid.
-
-	   Invoice Fid to use
-	*/
+	// InvoiceFid.
+	//
+	// Invoice Fid to use
 	InvoiceFid string
 
 	// Payload.

@@ -233,7 +233,7 @@ func (m *CreateOrderPayload) contextValidateModifySubscriptions(ctx context.Cont
 		if m.ModifySubscriptions[i] != nil {
 
 			if typeutils.IsZero(m.ModifySubscriptions[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.ModifySubscriptions[i].ContextValidate(ctx, formats); err != nil {
@@ -262,7 +262,7 @@ func (m *CreateOrderPayload) contextValidateProducts(ctx context.Context, format
 		if m.Products[i] != nil {
 
 			if typeutils.IsZero(m.Products[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Products[i].ContextValidate(ctx, formats); err != nil {

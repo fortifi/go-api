@@ -48,11 +48,9 @@ func NewGetPublishersOK() *GetPublishersOK {
 	return &GetPublishersOK{}
 }
 
-/*
-GetPublishersOK describes a response with status code 200, with default header values.
-
-List of publishers
-*/
+// GetPublishersOK describes a response with status code 200, with default header values.
+//
+// List of publishers
 type GetPublishersOK struct {
 	Payload *GetPublishersOKBody
 }
@@ -120,11 +118,9 @@ func NewGetPublishersDefault(code int) *GetPublishersDefault {
 	}
 }
 
-/*
-GetPublishersDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetPublishersDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetPublishersDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetPublishersDefault) readResponse(response runtime.ClientResponse, con
 	return nil
 }
 
-/*
-GetPublishersOKBody get publishers o k body
-swagger:model GetPublishersOKBody
-*/
+// GetPublishersOKBody get publishers o k body
+//
+// swagger:model GetPublishersOKBody
 type GetPublishersOKBody struct {
 	models.Envelope
 

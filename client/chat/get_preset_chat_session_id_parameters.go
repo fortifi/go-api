@@ -62,10 +62,9 @@ GetPresetChatSessionIDParams contains all the parameters to send to the API endp
 */
 type GetPresetChatSessionIDParams struct {
 
-	/* SessionID.
-
-	   The session id of a fortifi chat
-	*/
+	// SessionID.
+	//
+	// The session id of a fortifi chat
 	SessionID string
 
 	HTTPClient *http.Client

@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for licence API.
-*/
+// Client for licence API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -66,17 +64,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-GetLicenceCheckretrieves a licence.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetLicenceCheckContext] instead.
-*/
+// GetLicenceCheck retrieves a licence.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetLicenceCheckContext] instead.
 func (a *Client) GetLicenceCheck(params *GetLicenceCheckParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetLicenceCheckOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -85,11 +81,9 @@ func (a *Client) GetLicenceCheck(params *GetLicenceCheckParams, authInfo runtime
 	return a.GetLicenceCheckContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetLicenceCheckContextretrieves a licence.
-
-Do not use the deprecated [GetLicenceCheckParams.Context] with this method: it would be ignored.
-*/
+// GetLicenceCheckContext retrieves a licence.
+//
+// Do not use the deprecated [GetLicenceCheckParams.Context] with this method: it would be ignored.
 func (a *Client) GetLicenceCheckContext(ctx context.Context, params *GetLicenceCheckParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetLicenceCheckOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

@@ -48,11 +48,9 @@ func NewGetBrandsOK() *GetBrandsOK {
 	return &GetBrandsOK{}
 }
 
-/*
-GetBrandsOK describes a response with status code 200, with default header values.
-
-Brand Information
-*/
+// GetBrandsOK describes a response with status code 200, with default header values.
+//
+// Brand Information
 type GetBrandsOK struct {
 	Payload *GetBrandsOKBody
 }
@@ -120,11 +118,9 @@ func NewGetBrandsDefault(code int) *GetBrandsDefault {
 	}
 }
 
-/*
-GetBrandsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetBrandsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetBrandsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetBrandsDefault) readResponse(response runtime.ClientResponse, consume
 	return nil
 }
 
-/*
-GetBrandsOKBody get brands o k body
-swagger:model GetBrandsOKBody
-*/
+// GetBrandsOKBody get brands o k body
+//
+// swagger:model GetBrandsOKBody
 type GetBrandsOKBody struct {
 	models.Envelope
 

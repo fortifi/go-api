@@ -48,11 +48,9 @@ func NewGetFeatureFlagsCustomerCustomerFidOK() *GetFeatureFlagsCustomerCustomerF
 	return &GetFeatureFlagsCustomerCustomerFidOK{}
 }
 
-/*
-GetFeatureFlagsCustomerCustomerFidOK describes a response with status code 200, with default header values.
-
-Entity Feature Flags Retrieved
-*/
+// GetFeatureFlagsCustomerCustomerFidOK describes a response with status code 200, with default header values.
+//
+// Entity Feature Flags Retrieved
 type GetFeatureFlagsCustomerCustomerFidOK struct {
 	Payload *GetFeatureFlagsCustomerCustomerFidOKBody
 }
@@ -120,11 +118,9 @@ func NewGetFeatureFlagsCustomerCustomerFidDefault(code int) *GetFeatureFlagsCust
 	}
 }
 
-/*
-GetFeatureFlagsCustomerCustomerFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetFeatureFlagsCustomerCustomerFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetFeatureFlagsCustomerCustomerFidDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetFeatureFlagsCustomerCustomerFidDefault) readResponse(response runtim
 	return nil
 }
 
-/*
-GetFeatureFlagsCustomerCustomerFidOKBody get feature flags customer customer fid o k body
-swagger:model GetFeatureFlagsCustomerCustomerFidOKBody
-*/
+// GetFeatureFlagsCustomerCustomerFidOKBody get feature flags customer customer fid o k body
+//
+// swagger:model GetFeatureFlagsCustomerCustomerFidOKBody
 type GetFeatureFlagsCustomerCustomerFidOKBody struct {
 	models.Envelope
 

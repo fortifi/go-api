@@ -48,11 +48,9 @@ func NewGetDeviceStatusesDeviceFidOK() *GetDeviceStatusesDeviceFidOK {
 	return &GetDeviceStatusesDeviceFidOK{}
 }
 
-/*
-GetDeviceStatusesDeviceFidOK describes a response with status code 200, with default header values.
-
-Contact statuses
-*/
+// GetDeviceStatusesDeviceFidOK describes a response with status code 200, with default header values.
+//
+// Contact statuses
 type GetDeviceStatusesDeviceFidOK struct {
 	Payload *GetDeviceStatusesDeviceFidOKBody
 }
@@ -120,11 +118,9 @@ func NewGetDeviceStatusesDeviceFidDefault(code int) *GetDeviceStatusesDeviceFidD
 	}
 }
 
-/*
-GetDeviceStatusesDeviceFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetDeviceStatusesDeviceFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetDeviceStatusesDeviceFidDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetDeviceStatusesDeviceFidDefault) readResponse(response runtime.Client
 	return nil
 }
 
-/*
-GetDeviceStatusesDeviceFidOKBody get device statuses device fid o k body
-swagger:model GetDeviceStatusesDeviceFidOKBody
-*/
+// GetDeviceStatusesDeviceFidOKBody get device statuses device fid o k body
+//
+// swagger:model GetDeviceStatusesDeviceFidOKBody
 type GetDeviceStatusesDeviceFidOKBody struct {
 	models.Envelope
 

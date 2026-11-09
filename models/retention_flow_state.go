@@ -253,7 +253,7 @@ func (m *RetentionFlowState) contextValidateChoices(ctx context.Context, formats
 		if m.Choices[i] != nil {
 
 			if typeutils.IsZero(m.Choices[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Choices[i].ContextValidate(ctx, formats); err != nil {

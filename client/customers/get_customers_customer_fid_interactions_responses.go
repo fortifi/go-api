@@ -44,11 +44,9 @@ func NewGetCustomersCustomerFidInteractionsOK() *GetCustomersCustomerFidInteract
 	return &GetCustomersCustomerFidInteractionsOK{}
 }
 
-/*
-GetCustomersCustomerFidInteractionsOK describes a response with status code 200, with default header values.
-
-List Customer Interactions
-*/
+// GetCustomersCustomerFidInteractionsOK describes a response with status code 200, with default header values.
+//
+// List Customer Interactions
 type GetCustomersCustomerFidInteractionsOK struct {
 	Payload *models.CustomerInteractions
 }
@@ -116,11 +114,9 @@ func NewGetCustomersCustomerFidInteractionsDefault(code int) *GetCustomersCustom
 	}
 }
 
-/*
-GetCustomersCustomerFidInteractionsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetCustomersCustomerFidInteractionsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetCustomersCustomerFidInteractionsDefault struct {
 	_statusCode int
 

@@ -22,12 +22,12 @@ type PropertyCounter struct {
 }
 
 // Validate validates this property counter
-func (m *PropertyCounter) Validate(formats strfmt.Registry) error {
+func (m *PropertyCounter) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this property counter based on context it is used
-func (m *PropertyCounter) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *PropertyCounter) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

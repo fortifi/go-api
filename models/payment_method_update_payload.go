@@ -37,12 +37,12 @@ type PaymentMethodUpdatePayload struct {
 }
 
 // Validate validates this payment method update payload
-func (m *PaymentMethodUpdatePayload) Validate(formats strfmt.Registry) error {
+func (m *PaymentMethodUpdatePayload) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this payment method update payload based on context it is used
-func (m *PaymentMethodUpdatePayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *PaymentMethodUpdatePayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

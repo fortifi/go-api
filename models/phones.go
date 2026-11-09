@@ -87,7 +87,7 @@ func (m *Phones) contextValidatePhones(ctx context.Context, formats strfmt.Regis
 		if m.Phones[i] != nil {
 
 			if typeutils.IsZero(m.Phones[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Phones[i].ContextValidate(ctx, formats); err != nil {

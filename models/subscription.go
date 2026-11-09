@@ -142,6 +142,9 @@ type Subscription struct {
 	// renewal advance days
 	RenewalAdvanceDays int32 `json:"renewalAdvanceDays,omitempty"`
 
+	// How the subscription behaves at its next renewal: renew-and-charge, renew-and-do-not-charge or do-not-renew
+	RenewalMode string `json:"renewalMode,omitempty"`
+
 	// setup amount
 	SetupAmount float32 `json:"setupAmount,omitempty"`
 
@@ -277,6 +280,8 @@ func (m *Subscription) UnmarshalJSON(raw []byte) error {
 
 		RenewalAdvanceDays int32 `json:"renewalAdvanceDays,omitempty"`
 
+		RenewalMode string `json:"renewalMode,omitempty"`
+
 		SetupAmount float32 `json:"setupAmount,omitempty"`
 
 		SetupDiscount float32 `json:"setupDiscount,omitempty"`
@@ -384,6 +389,8 @@ func (m *Subscription) UnmarshalJSON(raw []byte) error {
 	m.RenewDate = dataAO1.RenewDate
 
 	m.RenewalAdvanceDays = dataAO1.RenewalAdvanceDays
+
+	m.RenewalMode = dataAO1.RenewalMode
 
 	m.SetupAmount = dataAO1.SetupAmount
 
@@ -502,6 +509,8 @@ func (m Subscription) MarshalJSON() ([]byte, error) {
 
 		RenewalAdvanceDays int32 `json:"renewalAdvanceDays,omitempty"`
 
+		RenewalMode string `json:"renewalMode,omitempty"`
+
 		SetupAmount float32 `json:"setupAmount,omitempty"`
 
 		SetupDiscount float32 `json:"setupDiscount,omitempty"`
@@ -606,6 +615,8 @@ func (m Subscription) MarshalJSON() ([]byte, error) {
 	dataAO1.RenewDate = m.RenewDate
 
 	dataAO1.RenewalAdvanceDays = m.RenewalAdvanceDays
+
+	dataAO1.RenewalMode = m.RenewalMode
 
 	dataAO1.SetupAmount = m.SetupAmount
 

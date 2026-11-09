@@ -73,6 +73,6 @@ func (m CreditAmountType) Validate(formats strfmt.Registry) error {
 }
 
 // ContextValidate validates this credit amount type based on context it is used
-func (m CreditAmountType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m CreditAmountType) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }

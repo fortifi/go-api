@@ -40,12 +40,12 @@ type InteractionInviteStatusResponse struct {
 }
 
 // Validate validates this interaction invite status response
-func (m *InteractionInviteStatusResponse) Validate(formats strfmt.Registry) error {
+func (m *InteractionInviteStatusResponse) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this interaction invite status response based on context it is used
-func (m *InteractionInviteStatusResponse) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *InteractionInviteStatusResponse) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

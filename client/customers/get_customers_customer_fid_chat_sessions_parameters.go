@@ -63,22 +63,19 @@ GetCustomersCustomerFidChatSessionsParams contains all the parameters to send to
 */
 type GetCustomersCustomerFidChatSessionsParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* Limit.
-
-	   Maximum number of records per page (default: 20)
-	*/
+	// Limit.
+	//
+	// Maximum number of records per page (default: 20)
 	Limit *int64
 
-	/* Page.
-
-	   Page number (default: 1)
-	*/
+	// Page.
+	//
+	// Page number (default: 1)
 	Page *int64
 
 	HTTPClient *http.Client

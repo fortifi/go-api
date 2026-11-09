@@ -44,11 +44,9 @@ func NewGetCustomersCustomerFidEmailsOK() *GetCustomersCustomerFidEmailsOK {
 	return &GetCustomersCustomerFidEmailsOK{}
 }
 
-/*
-GetCustomersCustomerFidEmailsOK describes a response with status code 200, with default header values.
-
-List of emails
-*/
+// GetCustomersCustomerFidEmailsOK describes a response with status code 200, with default header values.
+//
+// List of emails
 type GetCustomersCustomerFidEmailsOK struct {
 	Payload *models.Emails
 }
@@ -116,11 +114,9 @@ func NewGetCustomersCustomerFidEmailsDefault(code int) *GetCustomersCustomerFidE
 	}
 }
 
-/*
-GetCustomersCustomerFidEmailsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetCustomersCustomerFidEmailsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetCustomersCustomerFidEmailsDefault struct {
 	_statusCode int
 

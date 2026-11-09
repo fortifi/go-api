@@ -48,11 +48,9 @@ func NewPostPublishersOK() *PostPublishersOK {
 	return &PostPublishersOK{}
 }
 
-/*
-PostPublishersOK describes a response with status code 200, with default header values.
-
-Publisher Created
-*/
+// PostPublishersOK describes a response with status code 200, with default header values.
+//
+// Publisher Created
 type PostPublishersOK struct {
 	Payload *PostPublishersOKBody
 }
@@ -120,11 +118,9 @@ func NewPostPublishersDefault(code int) *PostPublishersDefault {
 	}
 }
 
-/*
-PostPublishersDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostPublishersDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostPublishersDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostPublishersDefault) readResponse(response runtime.ClientResponse, co
 	return nil
 }
 
-/*
-PostPublishersOKBody post publishers o k body
-swagger:model PostPublishersOKBody
-*/
+// PostPublishersOKBody post publishers o k body
+//
+// swagger:model PostPublishersOKBody
 type PostPublishersOKBody struct {
 	models.Envelope
 

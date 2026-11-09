@@ -167,7 +167,7 @@ func (m *CreatePresetChatSessionPayload) contextValidateLabels(ctx context.Conte
 		if m.Labels[i] != nil {
 
 			if typeutils.IsZero(m.Labels[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Labels[i].ContextValidate(ctx, formats); err != nil {
@@ -196,7 +196,7 @@ func (m *CreatePresetChatSessionPayload) contextValidateNotes(ctx context.Contex
 		if m.Notes[i] != nil {
 
 			if typeutils.IsZero(m.Notes[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Notes[i].ContextValidate(ctx, formats); err != nil {

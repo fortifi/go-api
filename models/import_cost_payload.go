@@ -25,12 +25,12 @@ type ImportCostPayload struct {
 }
 
 // Validate validates this import cost payload
-func (m *ImportCostPayload) Validate(formats strfmt.Registry) error {
+func (m *ImportCostPayload) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this import cost payload based on context it is used
-func (m *ImportCostPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *ImportCostPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

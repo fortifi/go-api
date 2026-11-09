@@ -63,10 +63,9 @@ PostAppstoreCustomerFidAppleParams contains all the parameters to send to the AP
 */
 type PostAppstoreCustomerFidAppleParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// Payload.

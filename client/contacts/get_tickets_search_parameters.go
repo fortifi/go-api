@@ -63,38 +63,33 @@ GetTicketsSearchParams contains all the parameters to send to the API endpoint
 */
 type GetTicketsSearchParams struct {
 
-	/* AfterTimestamp.
-
-	   Show posts after timestamp
-
-	   Format: int64
-	*/
+	// AfterTimestamp.
+	//
+	// Show posts after timestamp
+	//
+	// Format: int64
 	AfterTimestamp *int64
 
-	/* BeforeTimestamp.
-
-	   Show posts before timestamp
-
-	   Format: int64
-	*/
+	// BeforeTimestamp.
+	//
+	// Show posts before timestamp
+	//
+	// Format: int64
 	BeforeTimestamp *int64
 
-	/* Limit.
-
-	   Maximum number of records per page (default: 20)
-	*/
+	// Limit.
+	//
+	// Maximum number of records per page (default: 20)
 	Limit *int64
 
-	/* Page.
-
-	   Page number (default: 1)
-	*/
+	// Page.
+	//
+	// Page number (default: 1)
 	Page *int64
 
-	/* Subject.
-
-	   Filter by subject
-	*/
+	// Subject.
+	//
+	// Filter by subject
 	Subject *string
 
 	HTTPClient *http.Client

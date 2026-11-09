@@ -63,10 +63,9 @@ PostAttachmentEntityFidParams contains all the parameters to send to the API end
 */
 type PostAttachmentEntityFidParams struct {
 
-	/* EntityFid.
-
-	   Entity FID to use
-	*/
+	// EntityFid.
+	//
+	// Entity FID to use
 	EntityFid string
 
 	// Payload.

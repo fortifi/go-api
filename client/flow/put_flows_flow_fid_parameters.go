@@ -63,10 +63,9 @@ PutFlowsFlowFidParams contains all the parameters to send to the API endpoint
 */
 type PutFlowsFlowFidParams struct {
 
-	/* FlowFid.
-
-	   Flow FID to use
-	*/
+	// FlowFid.
+	//
+	// Flow FID to use
 	FlowFid string
 
 	// Payload.

@@ -103,6 +103,6 @@ func (m AdvertiserType) Validate(formats strfmt.Registry) error {
 }
 
 // ContextValidate validates this advertiser type based on context it is used
-func (m AdvertiserType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m AdvertiserType) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }

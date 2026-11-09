@@ -48,11 +48,9 @@ func NewPutOrdersOrderFidVerifyOK() *PutOrdersOrderFidVerifyOK {
 	return &PutOrdersOrderFidVerifyOK{}
 }
 
-/*
-PutOrdersOrderFidVerifyOK describes a response with status code 200, with default header values.
-
-Order payment account verified
-*/
+// PutOrdersOrderFidVerifyOK describes a response with status code 200, with default header values.
+//
+// Order payment account verified
 type PutOrdersOrderFidVerifyOK struct {
 	Payload *PutOrdersOrderFidVerifyOKBody
 }
@@ -120,11 +118,9 @@ func NewPutOrdersOrderFidVerifyDefault(code int) *PutOrdersOrderFidVerifyDefault
 	}
 }
 
-/*
-PutOrdersOrderFidVerifyDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutOrdersOrderFidVerifyDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutOrdersOrderFidVerifyDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PutOrdersOrderFidVerifyDefault) readResponse(response runtime.ClientRes
 	return nil
 }
 
-/*
-PutOrdersOrderFidVerifyOKBody put orders order fid verify o k body
-swagger:model PutOrdersOrderFidVerifyOKBody
-*/
+// PutOrdersOrderFidVerifyOKBody put orders order fid verify o k body
+//
+// swagger:model PutOrdersOrderFidVerifyOKBody
 type PutOrdersOrderFidVerifyOKBody struct {
 	models.Envelope
 

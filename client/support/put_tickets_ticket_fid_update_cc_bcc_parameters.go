@@ -66,10 +66,9 @@ type PutTicketsTicketFidUpdateCcBccParams struct {
 	// Payload.
 	Payload *models.UpdateCcBccPayload
 
-	/* TicketFid.
-
-	   Ticket FID to use
-	*/
+	// TicketFid.
+	//
+	// Ticket FID to use
 	TicketFid string
 
 	HTTPClient *http.Client

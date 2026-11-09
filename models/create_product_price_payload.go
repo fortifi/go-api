@@ -211,7 +211,7 @@ func (m *CreateProductPricePayload) validateTerminationType(formats strfmt.Regis
 }
 
 // ContextValidate validates this create product price payload based on context it is used
-func (m *CreateProductPricePayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *CreateProductPricePayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

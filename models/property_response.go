@@ -22,12 +22,12 @@ type PropertyResponse struct {
 }
 
 // Validate validates this property response
-func (m *PropertyResponse) Validate(formats strfmt.Registry) error {
+func (m *PropertyResponse) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this property response based on context it is used
-func (m *PropertyResponse) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *PropertyResponse) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

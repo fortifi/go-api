@@ -48,11 +48,9 @@ func NewGetLicenceCheckOK() *GetLicenceCheckOK {
 	return &GetLicenceCheckOK{}
 }
 
-/*
-GetLicenceCheckOK describes a response with status code 200, with default header values.
-
-Licence Information
-*/
+// GetLicenceCheckOK describes a response with status code 200, with default header values.
+//
+// Licence Information
 type GetLicenceCheckOK struct {
 	Payload *GetLicenceCheckOKBody
 }
@@ -120,11 +118,9 @@ func NewGetLicenceCheckDefault(code int) *GetLicenceCheckDefault {
 	}
 }
 
-/*
-GetLicenceCheckDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetLicenceCheckDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetLicenceCheckDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetLicenceCheckDefault) readResponse(response runtime.ClientResponse, c
 	return nil
 }
 
-/*
-GetLicenceCheckOKBody get licence check o k body
-swagger:model GetLicenceCheckOKBody
-*/
+// GetLicenceCheckOKBody get licence check o k body
+//
+// swagger:model GetLicenceCheckOKBody
 type GetLicenceCheckOKBody struct {
 	models.Envelope
 

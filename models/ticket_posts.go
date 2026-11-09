@@ -87,7 +87,7 @@ func (m *TicketPosts) contextValidatePosts(ctx context.Context, formats strfmt.R
 		if m.Posts[i] != nil {
 
 			if typeutils.IsZero(m.Posts[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Posts[i].ContextValidate(ctx, formats); err != nil {

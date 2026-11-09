@@ -44,11 +44,9 @@ func NewPutContactsEmailsEmailAddressUnsubscribeOK() *PutContactsEmailsEmailAddr
 	return &PutContactsEmailsEmailAddressUnsubscribeOK{}
 }
 
-/*
-PutContactsEmailsEmailAddressUnsubscribeOK describes a response with status code 200, with default header values.
-
-Email Address Unsubscribed
-*/
+// PutContactsEmailsEmailAddressUnsubscribeOK describes a response with status code 200, with default header values.
+//
+// Email Address Unsubscribed
 type PutContactsEmailsEmailAddressUnsubscribeOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutContactsEmailsEmailAddressUnsubscribeDefault(code int) *PutContactsEm
 	}
 }
 
-/*
-PutContactsEmailsEmailAddressUnsubscribeDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutContactsEmailsEmailAddressUnsubscribeDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutContactsEmailsEmailAddressUnsubscribeDefault struct {
 	_statusCode int
 

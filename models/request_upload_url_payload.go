@@ -28,12 +28,12 @@ type RequestUploadURLPayload struct {
 }
 
 // Validate validates this request upload Url payload
-func (m *RequestUploadURLPayload) Validate(formats strfmt.Registry) error {
+func (m *RequestUploadURLPayload) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this request upload Url payload based on context it is used
-func (m *RequestUploadURLPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *RequestUploadURLPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

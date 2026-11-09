@@ -48,11 +48,9 @@ func NewGetCustomersCustomerFidInvoicesInvoiceFidDownloadOK() *GetCustomersCusto
 	return &GetCustomersCustomerFidInvoicesInvoiceFidDownloadOK{}
 }
 
-/*
-GetCustomersCustomerFidInvoicesInvoiceFidDownloadOK describes a response with status code 200, with default header values.
-
-Download URL
-*/
+// GetCustomersCustomerFidInvoicesInvoiceFidDownloadOK describes a response with status code 200, with default header values.
+//
+// Download URL
 type GetCustomersCustomerFidInvoicesInvoiceFidDownloadOK struct {
 	Payload *GetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBody
 }
@@ -120,11 +118,9 @@ func NewGetCustomersCustomerFidInvoicesInvoiceFidDownloadDefault(code int) *GetC
 	}
 }
 
-/*
-GetCustomersCustomerFidInvoicesInvoiceFidDownloadDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetCustomersCustomerFidInvoicesInvoiceFidDownloadDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetCustomersCustomerFidInvoicesInvoiceFidDownloadDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetCustomersCustomerFidInvoicesInvoiceFidDownloadDefault) readResponse(
 	return nil
 }
 
-/*
-GetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBody get customers customer fid invoices invoice fid download o k body
-swagger:model GetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBody
-*/
+// GetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBody get customers customer fid invoices invoice fid download o k body
+//
+// swagger:model GetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBody
 type GetCustomersCustomerFidInvoicesInvoiceFidDownloadOKBody struct {
 	models.Envelope
 

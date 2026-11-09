@@ -73,6 +73,6 @@ func (m AppstoreNotificationType) Validate(formats strfmt.Registry) error {
 }
 
 // ContextValidate validates this appstore notification type based on context it is used
-func (m AppstoreNotificationType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m AppstoreNotificationType) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }

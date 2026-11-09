@@ -62,16 +62,14 @@ DeleteCustomersCustomerFidPhonesPhoneFidParams contains all the parameters to se
 */
 type DeleteCustomersCustomerFidPhonesPhoneFidParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* PhoneFid.
-
-	   Phone FID to use
-	*/
+	// PhoneFid.
+	//
+	// Phone FID to use
 	PhoneFid string
 
 	HTTPClient *http.Client

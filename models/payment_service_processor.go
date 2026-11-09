@@ -82,6 +82,6 @@ func (m PaymentServiceProcessor) Validate(formats strfmt.Registry) error {
 }
 
 // ContextValidate validates this payment service processor based on context it is used
-func (m PaymentServiceProcessor) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m PaymentServiceProcessor) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }

@@ -87,7 +87,7 @@ func (m *CustomerInteractions) contextValidateChats(ctx context.Context, formats
 		if m.Chats[i] != nil {
 
 			if typeutils.IsZero(m.Chats[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Chats[i].ContextValidate(ctx, formats); err != nil {

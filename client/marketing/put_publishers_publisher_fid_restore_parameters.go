@@ -62,10 +62,9 @@ PutPublishersPublisherFidRestoreParams contains all the parameters to send to th
 */
 type PutPublishersPublisherFidRestoreParams struct {
 
-	/* PublisherFid.
-
-	   Publisher FID to use
-	*/
+	// PublisherFid.
+	//
+	// Publisher FID to use
 	PublisherFid string
 
 	HTTPClient *http.Client

@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for finance API.
-*/
+// Client for finance API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -78,17 +76,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-GetFinancePaymentsperforms a payment search.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetFinancePaymentsContext] instead.
-*/
+// GetFinancePayments performs a payment search.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetFinancePaymentsContext] instead.
 func (a *Client) GetFinancePayments(params *GetFinancePaymentsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFinancePaymentsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -97,11 +93,9 @@ func (a *Client) GetFinancePayments(params *GetFinancePaymentsParams, authInfo r
 	return a.GetFinancePaymentsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetFinancePaymentsContextperforms a payment search.
-
-Do not use the deprecated [GetFinancePaymentsParams.Context] with this method: it would be ignored.
-*/
+// GetFinancePaymentsContext performs a payment search.
+//
+// Do not use the deprecated [GetFinancePaymentsParams.Context] with this method: it would be ignored.
 func (a *Client) GetFinancePaymentsContext(ctx context.Context, params *GetFinancePaymentsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFinancePaymentsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -144,17 +138,15 @@ func (a *Client) GetFinancePaymentsContext(ctx context.Context, params *GetFinan
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetPublishersPublisherFidFinanceCostImportCostImportFidretrieves the status of cost import.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetPublishersPublisherFidFinanceCostImportCostImportFidContext] instead.
-*/
+// GetPublishersPublisherFidFinanceCostImportCostImportFid retrieves the status of cost import.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetPublishersPublisherFidFinanceCostImportCostImportFidContext] instead.
 func (a *Client) GetPublishersPublisherFidFinanceCostImportCostImportFid(params *GetPublishersPublisherFidFinanceCostImportCostImportFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPublishersPublisherFidFinanceCostImportCostImportFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -163,11 +155,9 @@ func (a *Client) GetPublishersPublisherFidFinanceCostImportCostImportFid(params 
 	return a.GetPublishersPublisherFidFinanceCostImportCostImportFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetPublishersPublisherFidFinanceCostImportCostImportFidContextretrieves the status of cost import.
-
-Do not use the deprecated [GetPublishersPublisherFidFinanceCostImportCostImportFidParams.Context] with this method: it would be ignored.
-*/
+// GetPublishersPublisherFidFinanceCostImportCostImportFidContext retrieves the status of cost import.
+//
+// Do not use the deprecated [GetPublishersPublisherFidFinanceCostImportCostImportFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetPublishersPublisherFidFinanceCostImportCostImportFidContext(ctx context.Context, params *GetPublishersPublisherFidFinanceCostImportCostImportFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPublishersPublisherFidFinanceCostImportCostImportFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -210,17 +200,15 @@ func (a *Client) GetPublishersPublisherFidFinanceCostImportCostImportFidContext(
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostPublishersPublisherFidFinanceCostImportimports cost data.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostPublishersPublisherFidFinanceCostImportContext] instead.
-*/
+// PostPublishersPublisherFidFinanceCostImport imports cost data.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostPublishersPublisherFidFinanceCostImportContext] instead.
 func (a *Client) PostPublishersPublisherFidFinanceCostImport(params *PostPublishersPublisherFidFinanceCostImportParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostPublishersPublisherFidFinanceCostImportOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -229,11 +217,9 @@ func (a *Client) PostPublishersPublisherFidFinanceCostImport(params *PostPublish
 	return a.PostPublishersPublisherFidFinanceCostImportContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostPublishersPublisherFidFinanceCostImportContextimports cost data.
-
-Do not use the deprecated [PostPublishersPublisherFidFinanceCostImportParams.Context] with this method: it would be ignored.
-*/
+// PostPublishersPublisherFidFinanceCostImportContext imports cost data.
+//
+// Do not use the deprecated [PostPublishersPublisherFidFinanceCostImportParams.Context] with this method: it would be ignored.
 func (a *Client) PostPublishersPublisherFidFinanceCostImportContext(ctx context.Context, params *PostPublishersPublisherFidFinanceCostImportParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostPublishersPublisherFidFinanceCostImportOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

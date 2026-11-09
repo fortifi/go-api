@@ -48,11 +48,9 @@ func NewPostVisitorsVisitorIDActionsActionKeyOK() *PostVisitorsVisitorIDActionsA
 	return &PostVisitorsVisitorIDActionsActionKeyOK{}
 }
 
-/*
-PostVisitorsVisitorIDActionsActionKeyOK describes a response with status code 200, with default header values.
-
-Action Tracked
-*/
+// PostVisitorsVisitorIDActionsActionKeyOK describes a response with status code 200, with default header values.
+//
+// Action Tracked
 type PostVisitorsVisitorIDActionsActionKeyOK struct {
 	Payload *PostVisitorsVisitorIDActionsActionKeyOKBody
 }
@@ -120,11 +118,9 @@ func NewPostVisitorsVisitorIDActionsActionKeyDefault(code int) *PostVisitorsVisi
 	}
 }
 
-/*
-PostVisitorsVisitorIDActionsActionKeyDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostVisitorsVisitorIDActionsActionKeyDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostVisitorsVisitorIDActionsActionKeyDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostVisitorsVisitorIDActionsActionKeyDefault) readResponse(response run
 	return nil
 }
 
-/*
-PostVisitorsVisitorIDActionsActionKeyOKBody post visitors visitor ID actions action key o k body
-swagger:model PostVisitorsVisitorIDActionsActionKeyOKBody
-*/
+// PostVisitorsVisitorIDActionsActionKeyOKBody post visitors visitor ID actions action key o k body
+//
+// swagger:model PostVisitorsVisitorIDActionsActionKeyOKBody
 type PostVisitorsVisitorIDActionsActionKeyOKBody struct {
 	models.Envelope
 

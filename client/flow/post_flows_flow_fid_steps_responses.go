@@ -48,11 +48,9 @@ func NewPostFlowsFlowFidStepsOK() *PostFlowsFlowFidStepsOK {
 	return &PostFlowsFlowFidStepsOK{}
 }
 
-/*
-PostFlowsFlowFidStepsOK describes a response with status code 200, with default header values.
-
-Step created successfully
-*/
+// PostFlowsFlowFidStepsOK describes a response with status code 200, with default header values.
+//
+// Step created successfully
 type PostFlowsFlowFidStepsOK struct {
 	Payload *PostFlowsFlowFidStepsOKBody
 }
@@ -120,11 +118,9 @@ func NewPostFlowsFlowFidStepsDefault(code int) *PostFlowsFlowFidStepsDefault {
 	}
 }
 
-/*
-PostFlowsFlowFidStepsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostFlowsFlowFidStepsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostFlowsFlowFidStepsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostFlowsFlowFidStepsDefault) readResponse(response runtime.ClientRespo
 	return nil
 }
 
-/*
-PostFlowsFlowFidStepsOKBody post flows flow fid steps o k body
-swagger:model PostFlowsFlowFidStepsOKBody
-*/
+// PostFlowsFlowFidStepsOKBody post flows flow fid steps o k body
+//
+// swagger:model PostFlowsFlowFidStepsOKBody
 type PostFlowsFlowFidStepsOKBody struct {
 	models.Envelope
 

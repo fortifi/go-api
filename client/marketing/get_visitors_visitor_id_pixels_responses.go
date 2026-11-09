@@ -49,11 +49,9 @@ func NewGetVisitorsVisitorIDPixelsOK() *GetVisitorsVisitorIDPixelsOK {
 	return &GetVisitorsVisitorIDPixelsOK{}
 }
 
-/*
-GetVisitorsVisitorIDPixelsOK describes a response with status code 200, with default header values.
-
-Pixels
-*/
+// GetVisitorsVisitorIDPixelsOK describes a response with status code 200, with default header values.
+//
+// Pixels
 type GetVisitorsVisitorIDPixelsOK struct {
 	Payload *GetVisitorsVisitorIDPixelsOKBody
 }
@@ -121,11 +119,9 @@ func NewGetVisitorsVisitorIDPixelsDefault(code int) *GetVisitorsVisitorIDPixelsD
 	}
 }
 
-/*
-GetVisitorsVisitorIDPixelsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetVisitorsVisitorIDPixelsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetVisitorsVisitorIDPixelsDefault struct {
 	_statusCode int
 
@@ -188,10 +184,9 @@ func (o *GetVisitorsVisitorIDPixelsDefault) readResponse(response runtime.Client
 	return nil
 }
 
-/*
-GetVisitorsVisitorIDPixelsOKBody get visitors visitor ID pixels o k body
-swagger:model GetVisitorsVisitorIDPixelsOKBody
-*/
+// GetVisitorsVisitorIDPixelsOKBody get visitors visitor ID pixels o k body
+//
+// swagger:model GetVisitorsVisitorIDPixelsOKBody
 type GetVisitorsVisitorIDPixelsOKBody struct {
 	models.Envelope
 
@@ -320,7 +315,7 @@ func (o *GetVisitorsVisitorIDPixelsOKBody) contextValidateData(ctx context.Conte
 		if o.Data[i] != nil {
 
 			if typeutils.IsZero(o.Data[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := o.Data[i].ContextValidate(ctx, formats); err != nil {

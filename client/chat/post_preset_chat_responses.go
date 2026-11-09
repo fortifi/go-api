@@ -48,11 +48,9 @@ func NewPostPresetChatOK() *PostPresetChatOK {
 	return &PostPresetChatOK{}
 }
 
-/*
-PostPresetChatOK describes a response with status code 200, with default header values.
-
-Device created/updated
-*/
+// PostPresetChatOK describes a response with status code 200, with default header values.
+//
+// Device created/updated
 type PostPresetChatOK struct {
 	Payload *PostPresetChatOKBody
 }
@@ -120,11 +118,9 @@ func NewPostPresetChatDefault(code int) *PostPresetChatDefault {
 	}
 }
 
-/*
-PostPresetChatDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostPresetChatDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostPresetChatDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostPresetChatDefault) readResponse(response runtime.ClientResponse, co
 	return nil
 }
 
-/*
-PostPresetChatOKBody post preset chat o k body
-swagger:model PostPresetChatOKBody
-*/
+// PostPresetChatOKBody post preset chat o k body
+//
+// swagger:model PostPresetChatOKBody
 type PostPresetChatOKBody struct {
 	models.Envelope
 

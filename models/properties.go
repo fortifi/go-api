@@ -169,7 +169,7 @@ func (m *Properties) contextValidateCounters(ctx context.Context, formats strfmt
 		if m.Counters[i] != nil {
 
 			if typeutils.IsZero(m.Counters[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Counters[i].ContextValidate(ctx, formats); err != nil {
@@ -198,7 +198,7 @@ func (m *Properties) contextValidateFlags(ctx context.Context, formats strfmt.Re
 		if m.Flags[i] != nil {
 
 			if typeutils.IsZero(m.Flags[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Flags[i].ContextValidate(ctx, formats); err != nil {
@@ -227,7 +227,7 @@ func (m *Properties) contextValidateValues(ctx context.Context, formats strfmt.R
 		if m.Values[i] != nil {
 
 			if typeutils.IsZero(m.Values[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Values[i].ContextValidate(ctx, formats); err != nil {

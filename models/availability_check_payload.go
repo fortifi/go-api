@@ -96,7 +96,7 @@ func (m *AvailabilityCheckPayload) contextValidateProperties(ctx context.Context
 		if m.Properties[i] != nil {
 
 			if typeutils.IsZero(m.Properties[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Properties[i].ContextValidate(ctx, formats); err != nil {

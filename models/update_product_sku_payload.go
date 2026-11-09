@@ -72,7 +72,7 @@ func (m *UpdateProductSkuPayload) validatePriceBandFid(formats strfmt.Registry) 
 }
 
 // ContextValidate validates this update product sku payload based on context it is used
-func (m *UpdateProductSkuPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *UpdateProductSkuPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

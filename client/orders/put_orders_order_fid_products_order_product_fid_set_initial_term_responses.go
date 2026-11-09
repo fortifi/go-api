@@ -44,11 +44,9 @@ func NewPutOrdersOrderFidProductsOrderProductFidSetInitialTermOK() *PutOrdersOrd
 	return &PutOrdersOrderFidProductsOrderProductFidSetInitialTermOK{}
 }
 
-/*
-PutOrdersOrderFidProductsOrderProductFidSetInitialTermOK describes a response with status code 200, with default header values.
-
-Initial term updated
-*/
+// PutOrdersOrderFidProductsOrderProductFidSetInitialTermOK describes a response with status code 200, with default header values.
+//
+// Initial term updated
 type PutOrdersOrderFidProductsOrderProductFidSetInitialTermOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutOrdersOrderFidProductsOrderProductFidSetInitialTermDefault(code int) 
 	}
 }
 
-/*
-PutOrdersOrderFidProductsOrderProductFidSetInitialTermDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutOrdersOrderFidProductsOrderProductFidSetInitialTermDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutOrdersOrderFidProductsOrderProductFidSetInitialTermDefault struct {
 	_statusCode int
 

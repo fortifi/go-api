@@ -63,56 +63,48 @@ GetFinancePaymentsParams contains all the parameters to send to the API endpoint
 */
 type GetFinancePaymentsParams struct {
 
-	/* Amount.
-
-	   Transaction amount
-
-	   Format: float
-	*/
+	// Amount.
+	//
+	// Transaction amount
+	//
+	// Format: float
 	Amount *float32
 
-	/* Arn.
-
-	   Acquirer reference number
-	*/
+	// Arn.
+	//
+	// Acquirer reference number
 	Arn *string
 
-	/* AuthCode.
-
-	   Transaction Auth Code
-	*/
+	// AuthCode.
+	//
+	// Transaction Auth Code
 	AuthCode *string
 
-	/* Currency.
-
-	   3 Character Currency Code
-	*/
+	// Currency.
+	//
+	// 3 Character Currency Code
 	Currency *string
 
-	/* DateTolerance.
-
-	   Number of days tolerance on the transaction date
-	*/
+	// DateTolerance.
+	//
+	// Number of days tolerance on the transaction date
 	DateTolerance *float64
 
-	/* First6last4.
-
-	   Locate based on the first 6 and last 4 of a card number
-	*/
+	// First6last4.
+	//
+	// Locate based on the first 6 and last 4 of a card number
 	First6last4 *string
 
-	/* TransactionDate.
-
-	   Transaction Date
-
-	   Format: date-time
-	*/
+	// TransactionDate.
+	//
+	// Transaction Date
+	//
+	// Format: date-time
 	TransactionDate *strfmt.DateTime
 
-	/* TransactionID.
-
-	   Transaction ID
-	*/
+	// TransactionID.
+	//
+	// Transaction ID
 	TransactionID *string
 
 	HTTPClient *http.Client

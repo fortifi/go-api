@@ -44,11 +44,9 @@ func NewDeleteDeviceHardwareIDOK() *DeleteDeviceHardwareIDOK {
 	return &DeleteDeviceHardwareIDOK{}
 }
 
-/*
-DeleteDeviceHardwareIDOK describes a response with status code 200, with default header values.
-
-Device Subscribed
-*/
+// DeleteDeviceHardwareIDOK describes a response with status code 200, with default header values.
+//
+// Device Subscribed
 type DeleteDeviceHardwareIDOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewDeleteDeviceHardwareIDDefault(code int) *DeleteDeviceHardwareIDDefault {
 	}
 }
 
-/*
-DeleteDeviceHardwareIDDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// DeleteDeviceHardwareIDDefault describes a response with status code -1, with default header values.
+//
+// Error
 type DeleteDeviceHardwareIDDefault struct {
 	_statusCode int
 

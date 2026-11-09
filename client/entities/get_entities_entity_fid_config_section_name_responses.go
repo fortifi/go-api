@@ -48,11 +48,9 @@ func NewGetEntitiesEntityFidConfigSectionNameOK() *GetEntitiesEntityFidConfigSec
 	return &GetEntitiesEntityFidConfigSectionNameOK{}
 }
 
-/*
-GetEntitiesEntityFidConfigSectionNameOK describes a response with status code 200, with default header values.
-
-List Of Config Items
-*/
+// GetEntitiesEntityFidConfigSectionNameOK describes a response with status code 200, with default header values.
+//
+// List Of Config Items
 type GetEntitiesEntityFidConfigSectionNameOK struct {
 	Payload *GetEntitiesEntityFidConfigSectionNameOKBody
 }
@@ -120,11 +118,9 @@ func NewGetEntitiesEntityFidConfigSectionNameDefault(code int) *GetEntitiesEntit
 	}
 }
 
-/*
-GetEntitiesEntityFidConfigSectionNameDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetEntitiesEntityFidConfigSectionNameDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetEntitiesEntityFidConfigSectionNameDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetEntitiesEntityFidConfigSectionNameDefault) readResponse(response run
 	return nil
 }
 
-/*
-GetEntitiesEntityFidConfigSectionNameOKBody get entities entity fid config section name o k body
-swagger:model GetEntitiesEntityFidConfigSectionNameOKBody
-*/
+// GetEntitiesEntityFidConfigSectionNameOKBody get entities entity fid config section name o k body
+//
+// swagger:model GetEntitiesEntityFidConfigSectionNameOKBody
 type GetEntitiesEntityFidConfigSectionNameOKBody struct {
 	models.Envelope
 

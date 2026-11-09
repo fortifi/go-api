@@ -62,10 +62,9 @@ DeletePublishersPublisherFidParams contains all the parameters to send to the AP
 */
 type DeletePublishersPublisherFidParams struct {
 
-	/* PublisherFid.
-
-	   Publisher FID to use
-	*/
+	// PublisherFid.
+	//
+	// Publisher FID to use
 	PublisherFid string
 
 	HTTPClient *http.Client

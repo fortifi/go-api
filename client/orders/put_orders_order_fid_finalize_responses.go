@@ -44,11 +44,9 @@ func NewPutOrdersOrderFidFinalizeOK() *PutOrdersOrderFidFinalizeOK {
 	return &PutOrdersOrderFidFinalizeOK{}
 }
 
-/*
-PutOrdersOrderFidFinalizeOK describes a response with status code 200, with default header values.
-
-Order Finalized
-*/
+// PutOrdersOrderFidFinalizeOK describes a response with status code 200, with default header values.
+//
+// Order Finalized
 type PutOrdersOrderFidFinalizeOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutOrdersOrderFidFinalizeDefault(code int) *PutOrdersOrderFidFinalizeDef
 	}
 }
 
-/*
-PutOrdersOrderFidFinalizeDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutOrdersOrderFidFinalizeDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutOrdersOrderFidFinalizeDefault struct {
 	_statusCode int
 

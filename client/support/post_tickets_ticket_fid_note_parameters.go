@@ -66,10 +66,9 @@ type PostTicketsTicketFidNoteParams struct {
 	// Payload.
 	Payload *models.AddTicketNotePayload
 
-	/* TicketFid.
-
-	   Ticket FID to use
-	*/
+	// TicketFid.
+	//
+	// Ticket FID to use
 	TicketFid string
 
 	HTTPClient *http.Client

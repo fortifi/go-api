@@ -63,10 +63,9 @@ PostAppstoreCustomerFidGoogleParams contains all the parameters to send to the A
 */
 type PostAppstoreCustomerFidGoogleParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// Payload.

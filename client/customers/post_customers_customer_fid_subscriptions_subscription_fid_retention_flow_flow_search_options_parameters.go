@@ -63,25 +63,22 @@ PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptio
 */
 type PostCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchOptionsParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* FlowSearch.
-
-	   The unique code or fid for the flow you wish to retrieve
-	*/
+	// FlowSearch.
+	//
+	// The unique code or fid for the flow you wish to retrieve
 	FlowSearch string
 
 	// Payload.
 	Payload *models.RetentionFlowOptionsPayload
 
-	/* SubscriptionFid.
-
-	   Subscription FID to use
-	*/
+	// SubscriptionFid.
+	//
+	// Subscription FID to use
 	SubscriptionFid string
 
 	HTTPClient *http.Client

@@ -48,11 +48,9 @@ func NewPostDeviceUpsertOK() *PostDeviceUpsertOK {
 	return &PostDeviceUpsertOK{}
 }
 
-/*
-PostDeviceUpsertOK describes a response with status code 200, with default header values.
-
-Device created/updated
-*/
+// PostDeviceUpsertOK describes a response with status code 200, with default header values.
+//
+// Device created/updated
 type PostDeviceUpsertOK struct {
 	Payload *PostDeviceUpsertOKBody
 }
@@ -120,11 +118,9 @@ func NewPostDeviceUpsertDefault(code int) *PostDeviceUpsertDefault {
 	}
 }
 
-/*
-PostDeviceUpsertDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostDeviceUpsertDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostDeviceUpsertDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostDeviceUpsertDefault) readResponse(response runtime.ClientResponse, 
 	return nil
 }
 
-/*
-PostDeviceUpsertOKBody post device upsert o k body
-swagger:model PostDeviceUpsertOKBody
-*/
+// PostDeviceUpsertOKBody post device upsert o k body
+//
+// swagger:model PostDeviceUpsertOKBody
 type PostDeviceUpsertOKBody struct {
 	models.Envelope
 

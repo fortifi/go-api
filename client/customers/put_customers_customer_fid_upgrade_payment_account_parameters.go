@@ -62,10 +62,9 @@ PutCustomersCustomerFidUpgradePaymentAccountParams contains all the parameters t
 */
 type PutCustomersCustomerFidUpgradePaymentAccountParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	HTTPClient *http.Client

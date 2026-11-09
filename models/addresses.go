@@ -87,7 +87,7 @@ func (m *Addresses) contextValidateAddresses(ctx context.Context, formats strfmt
 		if m.Addresses[i] != nil {
 
 			if typeutils.IsZero(m.Addresses[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Addresses[i].ContextValidate(ctx, formats); err != nil {

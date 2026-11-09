@@ -48,11 +48,9 @@ func NewGetOrdersOrderFidFraudScanOK() *GetOrdersOrderFidFraudScanOK {
 	return &GetOrdersOrderFidFraudScanOK{}
 }
 
-/*
-GetOrdersOrderFidFraudScanOK describes a response with status code 200, with default header values.
-
-Fraud scan result
-*/
+// GetOrdersOrderFidFraudScanOK describes a response with status code 200, with default header values.
+//
+// Fraud scan result
 type GetOrdersOrderFidFraudScanOK struct {
 	Payload *GetOrdersOrderFidFraudScanOKBody
 }
@@ -120,11 +118,9 @@ func NewGetOrdersOrderFidFraudScanDefault(code int) *GetOrdersOrderFidFraudScanD
 	}
 }
 
-/*
-GetOrdersOrderFidFraudScanDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetOrdersOrderFidFraudScanDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetOrdersOrderFidFraudScanDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetOrdersOrderFidFraudScanDefault) readResponse(response runtime.Client
 	return nil
 }
 
-/*
-GetOrdersOrderFidFraudScanOKBody get orders order fid fraud scan o k body
-swagger:model GetOrdersOrderFidFraudScanOKBody
-*/
+// GetOrdersOrderFidFraudScanOKBody get orders order fid fraud scan o k body
+//
+// swagger:model GetOrdersOrderFidFraudScanOKBody
 type GetOrdersOrderFidFraudScanOKBody struct {
 	models.Envelope
 

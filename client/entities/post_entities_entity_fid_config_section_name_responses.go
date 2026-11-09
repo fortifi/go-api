@@ -44,11 +44,9 @@ func NewPostEntitiesEntityFidConfigSectionNameOK() *PostEntitiesEntityFidConfigS
 	return &PostEntitiesEntityFidConfigSectionNameOK{}
 }
 
-/*
-PostEntitiesEntityFidConfigSectionNameOK describes a response with status code 200, with default header values.
-
-Config Item Saved
-*/
+// PostEntitiesEntityFidConfigSectionNameOK describes a response with status code 200, with default header values.
+//
+// Config Item Saved
 type PostEntitiesEntityFidConfigSectionNameOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPostEntitiesEntityFidConfigSectionNameDefault(code int) *PostEntitiesEnt
 	}
 }
 
-/*
-PostEntitiesEntityFidConfigSectionNameDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostEntitiesEntityFidConfigSectionNameDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostEntitiesEntityFidConfigSectionNameDefault struct {
 	_statusCode int
 

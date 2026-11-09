@@ -44,11 +44,9 @@ func NewDeleteContactsContactFidEmailsEmailFidOK() *DeleteContactsContactFidEmai
 	return &DeleteContactsContactFidEmailsEmailFidOK{}
 }
 
-/*
-DeleteContactsContactFidEmailsEmailFidOK describes a response with status code 200, with default header values.
-
-Email removed
-*/
+// DeleteContactsContactFidEmailsEmailFidOK describes a response with status code 200, with default header values.
+//
+// Email removed
 type DeleteContactsContactFidEmailsEmailFidOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewDeleteContactsContactFidEmailsEmailFidDefault(code int) *DeleteContactsC
 	}
 }
 
-/*
-DeleteContactsContactFidEmailsEmailFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// DeleteContactsContactFidEmailsEmailFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type DeleteContactsContactFidEmailsEmailFidDefault struct {
 	_statusCode int
 

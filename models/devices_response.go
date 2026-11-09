@@ -87,7 +87,7 @@ func (m *DevicesResponse) contextValidateDevices(ctx context.Context, formats st
 		if m.Devices[i] != nil {
 
 			if typeutils.IsZero(m.Devices[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Devices[i].ContextValidate(ctx, formats); err != nil {

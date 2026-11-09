@@ -62,7 +62,7 @@ func (m *ServiceAccountCredentialsPayload) validateKey(formats strfmt.Registry) 
 }
 
 // ContextValidate validates this service account credentials payload based on context it is used
-func (m *ServiceAccountCredentialsPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *ServiceAccountCredentialsPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

@@ -44,11 +44,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysOK() *P
 	return &PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysOK{}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysOK describes a response with status code 200, with default header values.
-
-Advance days set
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysOK describes a response with status code 200, with default header values.
+//
+// Advance days set
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysDefault
 	}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysDefault struct {
 	_statusCode int
 

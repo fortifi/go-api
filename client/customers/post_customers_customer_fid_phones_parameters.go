@@ -63,19 +63,17 @@ PostCustomersCustomerFidPhonesParams contains all the parameters to send to the 
 */
 type PostCustomersCustomerFidPhonesParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// DisplayName.
 	DisplayName *string
 
-	/* OptInStatus.
-
-	   Status of customer email opt-in
-	*/
+	// OptInStatus.
+	//
+	// Status of customer email opt-in
 	OptInStatus *string
 
 	// PhoneNumber.

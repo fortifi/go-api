@@ -63,10 +63,9 @@ PutCustomersCustomerFidAccountStatusParams contains all the parameters to send t
 */
 type PutCustomersCustomerFidAccountStatusParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// Payload.

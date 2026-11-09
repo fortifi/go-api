@@ -79,6 +79,6 @@ func (m CustomerAccountStatus) Validate(formats strfmt.Registry) error {
 }
 
 // ContextValidate validates this customer account status based on context it is used
-func (m CustomerAccountStatus) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m CustomerAccountStatus) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }

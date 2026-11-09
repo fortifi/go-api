@@ -44,11 +44,9 @@ func NewGetCustomersCustomerFidPaymentMethodsCardsOK() *GetCustomersCustomerFidP
 	return &GetCustomersCustomerFidPaymentMethodsCardsOK{}
 }
 
-/*
-GetCustomersCustomerFidPaymentMethodsCardsOK describes a response with status code 200, with default header values.
-
-List of cards
-*/
+// GetCustomersCustomerFidPaymentMethodsCardsOK describes a response with status code 200, with default header values.
+//
+// List of cards
 type GetCustomersCustomerFidPaymentMethodsCardsOK struct {
 	Payload *models.PaymentCards
 }
@@ -116,11 +114,9 @@ func NewGetCustomersCustomerFidPaymentMethodsCardsDefault(code int) *GetCustomer
 	}
 }
 
-/*
-GetCustomersCustomerFidPaymentMethodsCardsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetCustomersCustomerFidPaymentMethodsCardsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetCustomersCustomerFidPaymentMethodsCardsDefault struct {
 	_statusCode int
 

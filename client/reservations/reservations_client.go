@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for reservations API.
-*/
+// Client for reservations API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -72,19 +70,17 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-GetReservationsKeyApplicationBrandFidretrieves reservations.
-
-This call will return information related to how a visitor arrived.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetReservationsKeyApplicationBrandFidContext] instead.
-*/
+// GetReservationsKeyApplicationBrandFid retrieves reservations.
+//
+// This call will return information related to how a visitor arrived.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetReservationsKeyApplicationBrandFidContext] instead.
 func (a *Client) GetReservationsKeyApplicationBrandFid(params *GetReservationsKeyApplicationBrandFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetReservationsKeyApplicationBrandFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -93,13 +89,11 @@ func (a *Client) GetReservationsKeyApplicationBrandFid(params *GetReservationsKe
 	return a.GetReservationsKeyApplicationBrandFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetReservationsKeyApplicationBrandFidContextretrieves reservations.
-
-This call will return information related to how a visitor arrived.
-
-Do not use the deprecated [GetReservationsKeyApplicationBrandFidParams.Context] with this method: it would be ignored.
-*/
+// GetReservationsKeyApplicationBrandFidContext retrieves reservations.
+//
+// This call will return information related to how a visitor arrived.
+//
+// Do not use the deprecated [GetReservationsKeyApplicationBrandFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetReservationsKeyApplicationBrandFidContext(ctx context.Context, params *GetReservationsKeyApplicationBrandFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetReservationsKeyApplicationBrandFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -142,19 +136,17 @@ func (a *Client) GetReservationsKeyApplicationBrandFidContext(ctx context.Contex
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostReservationsKeyApplicationBrandFidCustomerFidmakes a new reservation.
-
-Reserve against a key.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostReservationsKeyApplicationBrandFidCustomerFidContext] instead.
-*/
+// PostReservationsKeyApplicationBrandFidCustomerFid makes a new reservation.
+//
+// Reserve against a key.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostReservationsKeyApplicationBrandFidCustomerFidContext] instead.
 func (a *Client) PostReservationsKeyApplicationBrandFidCustomerFid(params *PostReservationsKeyApplicationBrandFidCustomerFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostReservationsKeyApplicationBrandFidCustomerFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -163,13 +155,11 @@ func (a *Client) PostReservationsKeyApplicationBrandFidCustomerFid(params *PostR
 	return a.PostReservationsKeyApplicationBrandFidCustomerFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostReservationsKeyApplicationBrandFidCustomerFidContextmakes a new reservation.
-
-Reserve against a key.
-
-Do not use the deprecated [PostReservationsKeyApplicationBrandFidCustomerFidParams.Context] with this method: it would be ignored.
-*/
+// PostReservationsKeyApplicationBrandFidCustomerFidContext makes a new reservation.
+//
+// Reserve against a key.
+//
+// Do not use the deprecated [PostReservationsKeyApplicationBrandFidCustomerFidParams.Context] with this method: it would be ignored.
 func (a *Client) PostReservationsKeyApplicationBrandFidCustomerFidContext(ctx context.Context, params *PostReservationsKeyApplicationBrandFidCustomerFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostReservationsKeyApplicationBrandFidCustomerFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

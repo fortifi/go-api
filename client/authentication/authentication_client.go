@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for authentication API.
-*/
+// Client for authentication API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -90,17 +88,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-GetIntegrationsVerifyUserverifies a user.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetIntegrationsVerifyUserContext] instead.
-*/
+// GetIntegrationsVerifyUser verifies a user.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetIntegrationsVerifyUserContext] instead.
 func (a *Client) GetIntegrationsVerifyUser(params *GetIntegrationsVerifyUserParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetIntegrationsVerifyUserOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -109,11 +105,9 @@ func (a *Client) GetIntegrationsVerifyUser(params *GetIntegrationsVerifyUserPara
 	return a.GetIntegrationsVerifyUserContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetIntegrationsVerifyUserContextverifies a user.
-
-Do not use the deprecated [GetIntegrationsVerifyUserParams.Context] with this method: it would be ignored.
-*/
+// GetIntegrationsVerifyUserContext verifies a user.
+//
+// Do not use the deprecated [GetIntegrationsVerifyUserParams.Context] with this method: it would be ignored.
 func (a *Client) GetIntegrationsVerifyUserContext(ctx context.Context, params *GetIntegrationsVerifyUserParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetIntegrationsVerifyUserOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -156,21 +150,18 @@ func (a *Client) GetIntegrationsVerifyUserContext(ctx context.Context, params *G
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-	GetMecurrents user.
-
-	Retrieve information about the current connected user (you)
-
-.
-
-	This method does not support injected context.
-	However, timeout and opentracing contexts are honored whenever enabled.
-
-	If you need to pass a specific context, use [Client.GetMeContext] instead.
-*/
+// GetMe currents user.
+//
+// Retrieve information about the current connected user (you)
+// .
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetMeContext] instead.
 func (a *Client) GetMe(params *GetMeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetMeOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -179,15 +170,12 @@ func (a *Client) GetMe(params *GetMeParams, authInfo runtime.ClientAuthInfoWrite
 	return a.GetMeContext(ctx, params, authInfo, opts...)
 }
 
-/*
-	GetMeContextcurrents user.
-
-	Retrieve information about the current connected user (you)
-
-.
-
-	Do not use the deprecated [GetMeParams.Context] with this method: it would be ignored.
-*/
+// GetMeContext currents user.
+//
+// Retrieve information about the current connected user (you)
+// .
+//
+// Do not use the deprecated [GetMeParams.Context] with this method: it would be ignored.
 func (a *Client) GetMeContext(ctx context.Context, params *GetMeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetMeOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -230,21 +218,18 @@ func (a *Client) GetMeContext(ctx context.Context, params *GetMeParams, authInfo
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-	GetOrganisationcurrents organisation.
-
-	Retrieve information about the current organisation
-
-.
-
-	This method does not support injected context.
-	However, timeout and opentracing contexts are honored whenever enabled.
-
-	If you need to pass a specific context, use [Client.GetOrganisationContext] instead.
-*/
+// GetOrganisation currents organisation.
+//
+// Retrieve information about the current organisation
+// .
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetOrganisationContext] instead.
 func (a *Client) GetOrganisation(params *GetOrganisationParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetOrganisationOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -253,15 +238,12 @@ func (a *Client) GetOrganisation(params *GetOrganisationParams, authInfo runtime
 	return a.GetOrganisationContext(ctx, params, authInfo, opts...)
 }
 
-/*
-	GetOrganisationContextcurrents organisation.
-
-	Retrieve information about the current organisation
-
-.
-
-	Do not use the deprecated [GetOrganisationParams.Context] with this method: it would be ignored.
-*/
+// GetOrganisationContext currents organisation.
+//
+// Retrieve information about the current organisation
+// .
+//
+// Do not use the deprecated [GetOrganisationParams.Context] with this method: it would be ignored.
 func (a *Client) GetOrganisationContext(ctx context.Context, params *GetOrganisationParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetOrganisationOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -304,21 +286,18 @@ func (a *Client) GetOrganisationContext(ctx context.Context, params *GetOrganisa
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-	GetServiceAuthTokenverifies service account get access token.
-
-	User service account credentials to retrieve an API token
-
-.
-
-	This method does not support injected context.
-	However, timeout and opentracing contexts are honored whenever enabled.
-
-	If you need to pass a specific context, use [Client.GetServiceAuthTokenContext] instead.
-*/
+// GetServiceAuthToken verifies service account get access token.
+//
+// User service account credentials to retrieve an API token
+// .
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetServiceAuthTokenContext] instead.
 func (a *Client) GetServiceAuthToken(params *GetServiceAuthTokenParams, opts ...ClientOption) (*GetServiceAuthTokenOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -327,15 +306,12 @@ func (a *Client) GetServiceAuthToken(params *GetServiceAuthTokenParams, opts ...
 	return a.GetServiceAuthTokenContext(ctx, params, opts...)
 }
 
-/*
-	GetServiceAuthTokenContextverifies service account get access token.
-
-	User service account credentials to retrieve an API token
-
-.
-
-	Do not use the deprecated [GetServiceAuthTokenParams.Context] with this method: it would be ignored.
-*/
+// GetServiceAuthTokenContext verifies service account get access token.
+//
+// User service account credentials to retrieve an API token
+// .
+//
+// Do not use the deprecated [GetServiceAuthTokenParams.Context] with this method: it would be ignored.
 func (a *Client) GetServiceAuthTokenContext(ctx context.Context, params *GetServiceAuthTokenParams, opts ...ClientOption) (*GetServiceAuthTokenOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -377,21 +353,18 @@ func (a *Client) GetServiceAuthTokenContext(ctx context.Context, params *GetServ
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-	GetVersioncurrents version.
-
-	Retrieve the current version of the Fortifi api
-
-.
-
-	This method does not support injected context.
-	However, timeout and opentracing contexts are honored whenever enabled.
-
-	If you need to pass a specific context, use [Client.GetVersionContext] instead.
-*/
+// GetVersion currents version.
+//
+// Retrieve the current version of the Fortifi api
+// .
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetVersionContext] instead.
 func (a *Client) GetVersion(params *GetVersionParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetVersionOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -400,15 +373,12 @@ func (a *Client) GetVersion(params *GetVersionParams, authInfo runtime.ClientAut
 	return a.GetVersionContext(ctx, params, authInfo, opts...)
 }
 
-/*
-	GetVersionContextcurrents version.
-
-	Retrieve the current version of the Fortifi api
-
-.
-
-	Do not use the deprecated [GetVersionParams.Context] with this method: it would be ignored.
-*/
+// GetVersionContext currents version.
+//
+// Retrieve the current version of the Fortifi api
+// .
+//
+// Do not use the deprecated [GetVersionParams.Context] with this method: it would be ignored.
 func (a *Client) GetVersionContext(ctx context.Context, params *GetVersionParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetVersionOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

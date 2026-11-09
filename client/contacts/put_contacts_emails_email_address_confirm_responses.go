@@ -44,11 +44,9 @@ func NewPutContactsEmailsEmailAddressConfirmOK() *PutContactsEmailsEmailAddressC
 	return &PutContactsEmailsEmailAddressConfirmOK{}
 }
 
-/*
-PutContactsEmailsEmailAddressConfirmOK describes a response with status code 200, with default header values.
-
-Email Address Confirmed
-*/
+// PutContactsEmailsEmailAddressConfirmOK describes a response with status code 200, with default header values.
+//
+// Email Address Confirmed
 type PutContactsEmailsEmailAddressConfirmOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutContactsEmailsEmailAddressConfirmDefault(code int) *PutContactsEmails
 	}
 }
 
-/*
-PutContactsEmailsEmailAddressConfirmDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutContactsEmailsEmailAddressConfirmDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutContactsEmailsEmailAddressConfirmDefault struct {
 	_statusCode int
 

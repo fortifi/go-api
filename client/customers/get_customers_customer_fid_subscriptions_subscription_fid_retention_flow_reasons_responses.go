@@ -48,11 +48,9 @@ func NewGetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsO
 	return &GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsOK{}
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsOK describes a response with status code 200, with default header values.
-
-Retention Flow Reasons
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsOK describes a response with status code 200, with default header values.
+//
+// Retention Flow Reasons
 type GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsOK struct {
 	Payload *GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsOKBody
 }
@@ -120,11 +118,9 @@ func NewGetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsD
 	}
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasons
 	return nil
 }
 
-/*
-GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsOKBody get customers customer fid subscriptions subscription fid retention flow reasons o k body
-swagger:model GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsOKBody
-*/
+// GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsOKBody get customers customer fid subscriptions subscription fid retention flow reasons o k body
+//
+// swagger:model GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsOKBody
 type GetCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowReasonsOKBody struct {
 	models.Envelope
 

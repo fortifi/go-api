@@ -144,7 +144,7 @@ func (m *Periods) contextValidatePeriods(ctx context.Context, formats strfmt.Reg
 		if m.Periods[i] != nil {
 
 			if typeutils.IsZero(m.Periods[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Periods[i].ContextValidate(ctx, formats); err != nil {

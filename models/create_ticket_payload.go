@@ -60,6 +60,9 @@ type CreateTicketPayload struct {
 	// Enum: ["none","minor","moderate","significant","extensive"]
 	Impact string `json:"impact,omitempty"`
 
+	// key = Label | value = Label Value (optional)
+	Labels []*KeyValuePayload `json:"labels"`
+
 	// language
 	Language string `json:"language,omitempty"`
 
@@ -99,6 +102,10 @@ func (m *CreateTicketPayload) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateImpact(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLabels(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -226,6 +233,36 @@ func (m *CreateTicketPayload) validateImpact(formats strfmt.Registry) error {
 	// value enum
 	if err := m.validateImpactEnum("impact", "body", m.Impact); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *CreateTicketPayload) validateLabels(formats strfmt.Registry) error {
+	if typeutils.IsZero(m.Labels) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Labels); i++ {
+		if typeutils.IsZero(m.Labels[i]) { // not required
+			continue
+		}
+
+		if m.Labels[i] != nil {
+			if err := m.Labels[i].Validate(formats); err != nil {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
+					return ve.ValidateName("labels" + "." + strconv.Itoa(i))
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
+					return ce.ValidateName("labels" + "." + strconv.Itoa(i))
+				}
+
+				return err
+			}
+		}
+
 	}
 
 	return nil
@@ -360,6 +397,10 @@ func (m *CreateTicketPayload) ContextValidate(ctx context.Context, formats strfm
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateLabels(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
@@ -373,7 +414,7 @@ func (m *CreateTicketPayload) contextValidateBcc(ctx context.Context, formats st
 		if m.Bcc[i] != nil {
 
 			if typeutils.IsZero(m.Bcc[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Bcc[i].ContextValidate(ctx, formats); err != nil {
@@ -402,7 +443,7 @@ func (m *CreateTicketPayload) contextValidateCc(ctx context.Context, formats str
 		if m.Cc[i] != nil {
 
 			if typeutils.IsZero(m.Cc[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Cc[i].ContextValidate(ctx, formats); err != nil {
@@ -413,6 +454,35 @@ func (m *CreateTicketPayload) contextValidateCc(ctx context.Context, formats str
 				ce := new(errors.CompositeError)
 				if stderrors.As(err, &ce) {
 					return ce.ValidateName("cc" + "." + strconv.Itoa(i))
+				}
+
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *CreateTicketPayload) contextValidateLabels(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Labels); i++ {
+
+		if m.Labels[i] != nil {
+
+			if typeutils.IsZero(m.Labels[i]) { // not required
+				continue
+			}
+
+			if err := m.Labels[i].ContextValidate(ctx, formats); err != nil {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
+					return ve.ValidateName("labels" + "." + strconv.Itoa(i))
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
+					return ce.ValidateName("labels" + "." + strconv.Itoa(i))
 				}
 
 				return err

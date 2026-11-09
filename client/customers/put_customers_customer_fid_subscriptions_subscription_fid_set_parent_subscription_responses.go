@@ -48,11 +48,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscription
 	return &PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionOK{}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionOK describes a response with status code 200, with default header values.
-
-Parent subscription set
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionOK describes a response with status code 200, with default header values.
+//
+// Parent subscription set
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionOK struct {
 	Payload *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionOKBody
 }
@@ -120,11 +118,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscription
 	}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptio
 	return nil
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionOKBody put customers customer fid subscriptions subscription fid set parent subscription o k body
-swagger:model PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionOKBody
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionOKBody put customers customer fid subscriptions subscription fid set parent subscription o k body
+//
+// swagger:model PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionOKBody
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidSetParentSubscriptionOKBody struct {
 	models.Envelope
 

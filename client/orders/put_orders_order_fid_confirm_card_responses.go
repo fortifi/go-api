@@ -48,11 +48,9 @@ func NewPutOrdersOrderFidConfirmCardOK() *PutOrdersOrderFidConfirmCardOK {
 	return &PutOrdersOrderFidConfirmCardOK{}
 }
 
-/*
-PutOrdersOrderFidConfirmCardOK describes a response with status code 200, with default header values.
-
-Order confirmed and payment authroized
-*/
+// PutOrdersOrderFidConfirmCardOK describes a response with status code 200, with default header values.
+//
+// Order confirmed and payment authroized
 type PutOrdersOrderFidConfirmCardOK struct {
 	Payload *PutOrdersOrderFidConfirmCardOKBody
 }
@@ -120,11 +118,9 @@ func NewPutOrdersOrderFidConfirmCardDefault(code int) *PutOrdersOrderFidConfirmC
 	}
 }
 
-/*
-PutOrdersOrderFidConfirmCardDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutOrdersOrderFidConfirmCardDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutOrdersOrderFidConfirmCardDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PutOrdersOrderFidConfirmCardDefault) readResponse(response runtime.Clie
 	return nil
 }
 
-/*
-PutOrdersOrderFidConfirmCardOKBody put orders order fid confirm card o k body
-swagger:model PutOrdersOrderFidConfirmCardOKBody
-*/
+// PutOrdersOrderFidConfirmCardOKBody put orders order fid confirm card o k body
+//
+// swagger:model PutOrdersOrderFidConfirmCardOKBody
 type PutOrdersOrderFidConfirmCardOKBody struct {
 	models.Envelope
 

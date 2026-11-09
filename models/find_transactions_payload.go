@@ -43,12 +43,12 @@ type FindTransactionsPayload struct {
 }
 
 // Validate validates this find transactions payload
-func (m *FindTransactionsPayload) Validate(formats strfmt.Registry) error {
+func (m *FindTransactionsPayload) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this find transactions payload based on context it is used
-func (m *FindTransactionsPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *FindTransactionsPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

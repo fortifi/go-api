@@ -177,7 +177,7 @@ func (m *InvoiceItem) contextValidateSubItems(ctx context.Context, formats strfm
 		if m.SubItems[i] != nil {
 
 			if typeutils.IsZero(m.SubItems[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.SubItems[i].ContextValidate(ctx, formats); err != nil {

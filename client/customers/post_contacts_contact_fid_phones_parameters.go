@@ -63,19 +63,17 @@ PostContactsContactFidPhonesParams contains all the parameters to send to the AP
 */
 type PostContactsContactFidPhonesParams struct {
 
-	/* ContactFid.
-
-	   Contact FID to use
-	*/
+	// ContactFid.
+	//
+	// Contact FID to use
 	ContactFid string
 
 	// DisplayName.
 	DisplayName *string
 
-	/* OptInStatus.
-
-	   Status of customer email opt-in
-	*/
+	// OptInStatus.
+	//
+	// Status of customer email opt-in
 	OptInStatus *string
 
 	// PhoneNumber.

@@ -48,11 +48,9 @@ func NewPutTicketsTicketFidStatusOK() *PutTicketsTicketFidStatusOK {
 	return &PutTicketsTicketFidStatusOK{}
 }
 
-/*
-PutTicketsTicketFidStatusOK describes a response with status code 200, with default header values.
-
-Success Response
-*/
+// PutTicketsTicketFidStatusOK describes a response with status code 200, with default header values.
+//
+// Success Response
 type PutTicketsTicketFidStatusOK struct {
 	Payload *PutTicketsTicketFidStatusOKBody
 }
@@ -120,11 +118,9 @@ func NewPutTicketsTicketFidStatusDefault(code int) *PutTicketsTicketFidStatusDef
 	}
 }
 
-/*
-PutTicketsTicketFidStatusDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutTicketsTicketFidStatusDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutTicketsTicketFidStatusDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PutTicketsTicketFidStatusDefault) readResponse(response runtime.ClientR
 	return nil
 }
 
-/*
-PutTicketsTicketFidStatusOKBody put tickets ticket fid status o k body
-swagger:model PutTicketsTicketFidStatusOKBody
-*/
+// PutTicketsTicketFidStatusOKBody put tickets ticket fid status o k body
+//
+// swagger:model PutTicketsTicketFidStatusOKBody
 type PutTicketsTicketFidStatusOKBody struct {
 	models.Envelope
 

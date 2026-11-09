@@ -28,12 +28,12 @@ type FinalizeOrderPayload struct {
 }
 
 // Validate validates this finalize order payload
-func (m *FinalizeOrderPayload) Validate(formats strfmt.Registry) error {
+func (m *FinalizeOrderPayload) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this finalize order payload based on context it is used
-func (m *FinalizeOrderPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *FinalizeOrderPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

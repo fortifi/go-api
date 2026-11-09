@@ -62,22 +62,19 @@ PostCustomersCustomerFidNoteParams contains all the parameters to send to the AP
 */
 type PostCustomersCustomerFidNoteParams struct {
 
-	/* Colour.
-
-	   Colour of the new ticket
-	*/
+	// Colour.
+	//
+	// Colour of the new ticket
 	Colour *string
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* Note.
-
-	   Text content of note
-	*/
+	// Note.
+	//
+	// Text content of note
 	Note string
 
 	HTTPClient *http.Client

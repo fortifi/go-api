@@ -44,11 +44,9 @@ func NewDeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidOK() *DeleteCust
 	return &DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidOK{}
 }
 
-/*
-DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidOK describes a response with status code 200, with default header values.
-
-Payment Method Archived
-*/
+// DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidOK describes a response with status code 200, with default header values.
+//
+// Payment Method Archived
 type DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewDeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidDefault(code int
 	}
 }
 
-/*
-DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type DeleteCustomersCustomerFidPaymentMethodsPaymentMethodFidDefault struct {
 	_statusCode int
 

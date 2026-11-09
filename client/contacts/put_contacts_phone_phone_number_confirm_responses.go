@@ -44,11 +44,9 @@ func NewPutContactsPhonePhoneNumberConfirmOK() *PutContactsPhonePhoneNumberConfi
 	return &PutContactsPhonePhoneNumberConfirmOK{}
 }
 
-/*
-PutContactsPhonePhoneNumberConfirmOK describes a response with status code 200, with default header values.
-
-Phone Number Confirmed
-*/
+// PutContactsPhonePhoneNumberConfirmOK describes a response with status code 200, with default header values.
+//
+// Phone Number Confirmed
 type PutContactsPhonePhoneNumberConfirmOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutContactsPhonePhoneNumberConfirmDefault(code int) *PutContactsPhonePho
 	}
 }
 
-/*
-PutContactsPhonePhoneNumberConfirmDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutContactsPhonePhoneNumberConfirmDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutContactsPhonePhoneNumberConfirmDefault struct {
 	_statusCode int
 

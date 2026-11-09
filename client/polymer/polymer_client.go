@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for polymer API.
-*/
+// Client for polymer API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -66,17 +64,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-GetPolymersListCodeParentFidlists polymers by type.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetPolymersListCodeParentFidContext] instead.
-*/
+// GetPolymersListCodeParentFid lists polymers by type.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetPolymersListCodeParentFidContext] instead.
 func (a *Client) GetPolymersListCodeParentFid(params *GetPolymersListCodeParentFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPolymersListCodeParentFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -85,11 +81,9 @@ func (a *Client) GetPolymersListCodeParentFid(params *GetPolymersListCodeParentF
 	return a.GetPolymersListCodeParentFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetPolymersListCodeParentFidContextlists polymers by type.
-
-Do not use the deprecated [GetPolymersListCodeParentFidParams.Context] with this method: it would be ignored.
-*/
+// GetPolymersListCodeParentFidContext lists polymers by type.
+//
+// Do not use the deprecated [GetPolymersListCodeParentFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetPolymersListCodeParentFidContext(ctx context.Context, params *GetPolymersListCodeParentFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPolymersListCodeParentFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

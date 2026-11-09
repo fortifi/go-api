@@ -112,6 +112,6 @@ func (m PaymentAccountType) Validate(formats strfmt.Registry) error {
 }
 
 // ContextValidate validates this payment account type based on context it is used
-func (m PaymentAccountType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m PaymentAccountType) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }

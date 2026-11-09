@@ -62,34 +62,29 @@ PutMessengerDeliveriesDeliveryFidUnsubscribeParams contains all the parameters t
 */
 type PutMessengerDeliveriesDeliveryFidUnsubscribeParams struct {
 
-	/* ClientIP.
-
-	   IP Address of the visitor
-	*/
+	// ClientIP.
+	//
+	// IP Address of the visitor
 	ClientIP *string
 
-	/* DeliveryFid.
-
-	   Delivery FID
-	*/
+	// DeliveryFid.
+	//
+	// Delivery FID
 	DeliveryFid string
 
-	/* Encoding.
-
-	   Encoding from the visitors browser 'HTTP_ACCEPT_ENCODING'
-	*/
+	// Encoding.
+	//
+	// Encoding from the visitors browser 'HTTP_ACCEPT_ENCODING'
 	Encoding *string
 
-	/* Language.
-
-	   Language from visitors browser 'HTTP_ACCEPT_LANGUAGE'
-	*/
+	// Language.
+	//
+	// Language from visitors browser 'HTTP_ACCEPT_LANGUAGE'
 	Language *string
 
-	/* UserAgent.
-
-	   User Agent of the visitors browser 'HTTP_USER_AGENT'
-	*/
+	// UserAgent.
+	//
+	// User Agent of the visitors browser 'HTTP_USER_AGENT'
 	UserAgent *string
 
 	HTTPClient *http.Client

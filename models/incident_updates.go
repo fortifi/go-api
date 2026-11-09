@@ -87,7 +87,7 @@ func (m *IncidentUpdates) contextValidateIncidentUpdates(ctx context.Context, fo
 		if m.IncidentUpdates[i] != nil {
 
 			if typeutils.IsZero(m.IncidentUpdates[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.IncidentUpdates[i].ContextValidate(ctx, formats); err != nil {

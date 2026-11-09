@@ -48,11 +48,9 @@ func NewPostTransactionsTransactionFidRetryOK() *PostTransactionsTransactionFidR
 	return &PostTransactionsTransactionFidRetryOK{}
 }
 
-/*
-PostTransactionsTransactionFidRetryOK describes a response with status code 200, with default header values.
-
-Transaction Retried
-*/
+// PostTransactionsTransactionFidRetryOK describes a response with status code 200, with default header values.
+//
+// Transaction Retried
 type PostTransactionsTransactionFidRetryOK struct {
 	Payload *PostTransactionsTransactionFidRetryOKBody
 }
@@ -120,11 +118,9 @@ func NewPostTransactionsTransactionFidRetryDefault(code int) *PostTransactionsTr
 	}
 }
 
-/*
-PostTransactionsTransactionFidRetryDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostTransactionsTransactionFidRetryDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostTransactionsTransactionFidRetryDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostTransactionsTransactionFidRetryDefault) readResponse(response runti
 	return nil
 }
 
-/*
-PostTransactionsTransactionFidRetryOKBody post transactions transaction fid retry o k body
-swagger:model PostTransactionsTransactionFidRetryOKBody
-*/
+// PostTransactionsTransactionFidRetryOKBody post transactions transaction fid retry o k body
+//
+// swagger:model PostTransactionsTransactionFidRetryOKBody
 type PostTransactionsTransactionFidRetryOKBody struct {
 	models.Envelope
 

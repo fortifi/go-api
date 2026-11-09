@@ -44,11 +44,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryOK()
 	return &PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryOK{}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryOK describes a response with status code 200, with default header values.
-
-Provisioning Queued
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryOK describes a response with status code 200, with default header values.
+//
+// Provisioning Queued
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryDefa
 	}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidProvisioningRetryDefault struct {
 	_statusCode int
 

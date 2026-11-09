@@ -87,7 +87,7 @@ func (m *Brands) contextValidateBrands(ctx context.Context, formats strfmt.Regis
 		if m.Brands[i] != nil {
 
 			if typeutils.IsZero(m.Brands[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Brands[i].ContextValidate(ctx, formats); err != nil {

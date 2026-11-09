@@ -62,16 +62,14 @@ GetFlowsFlowFidStepsStepFidParams contains all the parameters to send to the API
 */
 type GetFlowsFlowFidStepsStepFidParams struct {
 
-	/* FlowFid.
-
-	   Flow FID to use
-	*/
+	// FlowFid.
+	//
+	// Flow FID to use
 	FlowFid string
 
-	/* StepFid.
-
-	   Flow Step FID to use
-	*/
+	// StepFid.
+	//
+	// Flow Step FID to use
 	StepFid string
 
 	HTTPClient *http.Client

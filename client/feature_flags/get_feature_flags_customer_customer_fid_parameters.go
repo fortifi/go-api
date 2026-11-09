@@ -62,10 +62,9 @@ GetFeatureFlagsCustomerCustomerFidParams contains all the parameters to send to 
 */
 type GetFeatureFlagsCustomerCustomerFidParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	HTTPClient *http.Client

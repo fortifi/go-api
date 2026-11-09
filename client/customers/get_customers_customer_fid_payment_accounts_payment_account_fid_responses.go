@@ -48,11 +48,9 @@ func NewGetCustomersCustomerFidPaymentAccountsPaymentAccountFidOK() *GetCustomer
 	return &GetCustomersCustomerFidPaymentAccountsPaymentAccountFidOK{}
 }
 
-/*
-GetCustomersCustomerFidPaymentAccountsPaymentAccountFidOK describes a response with status code 200, with default header values.
-
-Payment Method Information
-*/
+// GetCustomersCustomerFidPaymentAccountsPaymentAccountFidOK describes a response with status code 200, with default header values.
+//
+// Payment Method Information
 type GetCustomersCustomerFidPaymentAccountsPaymentAccountFidOK struct {
 	Payload *GetCustomersCustomerFidPaymentAccountsPaymentAccountFidOKBody
 }
@@ -120,11 +118,9 @@ func NewGetCustomersCustomerFidPaymentAccountsPaymentAccountFidDefault(code int)
 	}
 }
 
-/*
-GetCustomersCustomerFidPaymentAccountsPaymentAccountFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetCustomersCustomerFidPaymentAccountsPaymentAccountFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetCustomersCustomerFidPaymentAccountsPaymentAccountFidDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetCustomersCustomerFidPaymentAccountsPaymentAccountFidDefault) readRes
 	return nil
 }
 
-/*
-GetCustomersCustomerFidPaymentAccountsPaymentAccountFidOKBody get customers customer fid payment accounts payment account fid o k body
-swagger:model GetCustomersCustomerFidPaymentAccountsPaymentAccountFidOKBody
-*/
+// GetCustomersCustomerFidPaymentAccountsPaymentAccountFidOKBody get customers customer fid payment accounts payment account fid o k body
+//
+// swagger:model GetCustomersCustomerFidPaymentAccountsPaymentAccountFidOKBody
 type GetCustomersCustomerFidPaymentAccountsPaymentAccountFidOKBody struct {
 	models.Envelope
 

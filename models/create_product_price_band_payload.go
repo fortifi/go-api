@@ -52,7 +52,7 @@ func (m *CreateProductPriceBandPayload) validateDisplayName(formats strfmt.Regis
 }
 
 // ContextValidate validates this create product price band payload based on context it is used
-func (m *CreateProductPriceBandPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *CreateProductPriceBandPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

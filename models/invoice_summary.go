@@ -364,7 +364,7 @@ func (m *InvoiceSummary) contextValidateCreditNotes(ctx context.Context, formats
 		if m.CreditNotes[i] != nil {
 
 			if typeutils.IsZero(m.CreditNotes[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.CreditNotes[i].ContextValidate(ctx, formats); err != nil {

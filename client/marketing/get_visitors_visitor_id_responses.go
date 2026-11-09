@@ -48,11 +48,9 @@ func NewGetVisitorsVisitorIDOK() *GetVisitorsVisitorIDOK {
 	return &GetVisitorsVisitorIDOK{}
 }
 
-/*
-GetVisitorsVisitorIDOK describes a response with status code 200, with default header values.
-
-Pixels
-*/
+// GetVisitorsVisitorIDOK describes a response with status code 200, with default header values.
+//
+// Pixels
 type GetVisitorsVisitorIDOK struct {
 	Payload *GetVisitorsVisitorIDOKBody
 }
@@ -120,11 +118,9 @@ func NewGetVisitorsVisitorIDDefault(code int) *GetVisitorsVisitorIDDefault {
 	}
 }
 
-/*
-GetVisitorsVisitorIDDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetVisitorsVisitorIDDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetVisitorsVisitorIDDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetVisitorsVisitorIDDefault) readResponse(response runtime.ClientRespon
 	return nil
 }
 
-/*
-GetVisitorsVisitorIDOKBody get visitors visitor ID o k body
-swagger:model GetVisitorsVisitorIDOKBody
-*/
+// GetVisitorsVisitorIDOKBody get visitors visitor ID o k body
+//
+// swagger:model GetVisitorsVisitorIDOKBody
 type GetVisitorsVisitorIDOKBody struct {
 	models.Envelope
 

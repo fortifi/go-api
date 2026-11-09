@@ -63,36 +63,31 @@ GetCustomersCustomerFidTicketsTicketFidPostsParams contains all the parameters t
 */
 type GetCustomersCustomerFidTicketsTicketFidPostsParams struct {
 
-	/* BeforeTimestamp.
-
-	   Show posts before timestamp
-
-	   Format: int64
-	*/
+	// BeforeTimestamp.
+	//
+	// Show posts before timestamp
+	//
+	// Format: int64
 	BeforeTimestamp *int64
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* IncludeHTML.
-
-	   Respond with the html body as a part of the response
-	*/
+	// IncludeHTML.
+	//
+	// Respond with the html body as a part of the response
 	IncludeHTML *bool
 
-	/* Limit.
-
-	   Maximum number of records per page (default: 20, max: 100)
-	*/
+	// Limit.
+	//
+	// Maximum number of records per page (default: 20, max: 100)
 	Limit *int64
 
-	/* TicketFid.
-
-	   Ticket FID to use
-	*/
+	// TicketFid.
+	//
+	// Ticket FID to use
 	TicketFid string
 
 	HTTPClient *http.Client

@@ -25,12 +25,12 @@ type Pagination struct {
 }
 
 // Validate validates this pagination
-func (m *Pagination) Validate(formats strfmt.Registry) error {
+func (m *Pagination) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this pagination based on context it is used
-func (m *Pagination) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *Pagination) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

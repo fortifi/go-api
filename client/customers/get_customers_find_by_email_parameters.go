@@ -63,16 +63,14 @@ GetCustomersFindByEmailParams contains all the parameters to send to the API end
 */
 type GetCustomersFindByEmailParams struct {
 
-	/* BrandFid.
-
-	   Brand Fid to search for
-	*/
+	// BrandFid.
+	//
+	// Brand Fid to search for
 	BrandFid *string
 
-	/* Email.
-
-	   Email address for the customer
-	*/
+	// Email.
+	//
+	// Email address for the customer
 	Email *string
 
 	// RetrieveBillingData.

@@ -144,7 +144,7 @@ func (m *PublisherCampaigns) contextValidateCampaigns(ctx context.Context, forma
 		if m.Campaigns[i] != nil {
 
 			if typeutils.IsZero(m.Campaigns[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Campaigns[i].ContextValidate(ctx, formats); err != nil {

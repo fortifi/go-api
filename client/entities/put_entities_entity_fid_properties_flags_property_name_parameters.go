@@ -63,19 +63,17 @@ PutEntitiesEntityFidPropertiesFlagsPropertyNameParams contains all the parameter
 */
 type PutEntitiesEntityFidPropertiesFlagsPropertyNameParams struct {
 
-	/* EntityFid.
-
-	   Entity FID to use
-	*/
+	// EntityFid.
+	//
+	// Entity FID to use
 	EntityFid string
 
 	// Payload.
 	Payload *models.PropertyFlagPayload
 
-	/* PropertyName.
-
-	   Property Name
-	*/
+	// PropertyName.
+	//
+	// Property Name
 	PropertyName string
 
 	HTTPClient *http.Client

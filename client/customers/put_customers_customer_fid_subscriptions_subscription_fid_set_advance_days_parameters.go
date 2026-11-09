@@ -63,10 +63,9 @@ PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysParams contains
 */
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// Days.
@@ -74,10 +73,9 @@ type PutCustomersCustomerFidSubscriptionsSubscriptionFidSetAdvanceDaysParams str
 	// Format: int32
 	Days int32
 
-	/* SubscriptionFid.
-
-	   Subscription FID to use
-	*/
+	// SubscriptionFid.
+	//
+	// Subscription FID to use
 	SubscriptionFid string
 
 	HTTPClient *http.Client

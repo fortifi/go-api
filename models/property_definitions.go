@@ -87,7 +87,7 @@ func (m *PropertyDefinitions) contextValidateProperties(ctx context.Context, for
 		if m.Properties[i] != nil {
 
 			if typeutils.IsZero(m.Properties[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Properties[i].ContextValidate(ctx, formats); err != nil {

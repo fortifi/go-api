@@ -63,46 +63,39 @@ PutCustomersCustomerFidChargebacksChargebackFidParams contains all the parameter
 */
 type PutCustomersCustomerFidChargebacksChargebackFidParams struct {
 
-	/* CaseNumber.
-
-	   Case Number
-	*/
+	// CaseNumber.
+	//
+	// Case Number
 	CaseNumber string
 
-	/* ChargebackFid.
-
-	   Chargeback FID to use
-	*/
+	// ChargebackFid.
+	//
+	// Chargeback FID to use
 	ChargebackFid string
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* Description.
-
-	   Notes
-	*/
+	// Description.
+	//
+	// Notes
 	Description *string
 
-	/* ReasonCode.
-
-	   Chargeback Reason Code (see https://github.com/packaged/rwd/blob/master/src/Finance/Chargeback/ChargebackReasonHelper.php)
-	*/
+	// ReasonCode.
+	//
+	// Chargeback Reason Code (see https://github.com/packaged/rwd/blob/master/src/Finance/Chargeback/ChargebackReasonHelper.php)
 	ReasonCode string
 
-	/* Refunded.
-
-	   If this payment has been refunded by the alert
-	*/
+	// Refunded.
+	//
+	// If this payment has been refunded by the alert
 	Refunded bool
 
-	/* State.
-
-	   Current State
-	*/
+	// State.
+	//
+	// Current State
 	State string
 
 	HTTPClient *http.Client

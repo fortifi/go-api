@@ -100,6 +100,6 @@ func (m CustomerLifecycle) Validate(formats strfmt.Registry) error {
 }
 
 // ContextValidate validates this customer lifecycle based on context it is used
-func (m CustomerLifecycle) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m CustomerLifecycle) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }

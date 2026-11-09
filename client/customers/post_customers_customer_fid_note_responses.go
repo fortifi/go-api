@@ -44,11 +44,9 @@ func NewPostCustomersCustomerFidNoteOK() *PostCustomersCustomerFidNoteOK {
 	return &PostCustomersCustomerFidNoteOK{}
 }
 
-/*
-PostCustomersCustomerFidNoteOK describes a response with status code 200, with default header values.
-
-Customer note saved
-*/
+// PostCustomersCustomerFidNoteOK describes a response with status code 200, with default header values.
+//
+// Customer note saved
 type PostCustomersCustomerFidNoteOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPostCustomersCustomerFidNoteDefault(code int) *PostCustomersCustomerFidN
 	}
 }
 
-/*
-PostCustomersCustomerFidNoteDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostCustomersCustomerFidNoteDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostCustomersCustomerFidNoteDefault struct {
 	_statusCode int
 

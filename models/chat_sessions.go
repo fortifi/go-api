@@ -144,7 +144,7 @@ func (m *ChatSessions) contextValidateChatSessions(ctx context.Context, formats 
 		if m.ChatSessions[i] != nil {
 
 			if typeutils.IsZero(m.ChatSessions[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.ChatSessions[i].ContextValidate(ctx, formats); err != nil {

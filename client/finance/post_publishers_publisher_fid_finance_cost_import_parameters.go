@@ -66,10 +66,9 @@ type PostPublishersPublisherFidFinanceCostImportParams struct {
 	// Payload.
 	Payload *models.ImportCostPayload
 
-	/* PublisherFid.
-
-	   Publisher FID to use
-	*/
+	// PublisherFid.
+	//
+	// Publisher FID to use
 	PublisherFid string
 
 	HTTPClient *http.Client

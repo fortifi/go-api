@@ -87,7 +87,7 @@ func (m *ProductPrices) contextValidatePrices(ctx context.Context, formats strfm
 		if m.Prices[i] != nil {
 
 			if typeutils.IsZero(m.Prices[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Prices[i].ContextValidate(ctx, formats); err != nil {

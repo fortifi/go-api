@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for appstore API.
-*/
+// Client for appstore API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -72,21 +70,18 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-	PostAppstoreCustomerFidAppleposts a new apple notification.
-
-	Post a new Apple notification.
-
-.
-
-	This method does not support injected context.
-	However, timeout and opentracing contexts are honored whenever enabled.
-
-	If you need to pass a specific context, use [Client.PostAppstoreCustomerFidAppleContext] instead.
-*/
+// PostAppstoreCustomerFidApple posts a new apple notification.
+//
+// Post a new Apple notification.
+// .
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostAppstoreCustomerFidAppleContext] instead.
 func (a *Client) PostAppstoreCustomerFidApple(params *PostAppstoreCustomerFidAppleParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostAppstoreCustomerFidAppleOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -95,15 +90,12 @@ func (a *Client) PostAppstoreCustomerFidApple(params *PostAppstoreCustomerFidApp
 	return a.PostAppstoreCustomerFidAppleContext(ctx, params, authInfo, opts...)
 }
 
-/*
-	PostAppstoreCustomerFidAppleContextposts a new apple notification.
-
-	Post a new Apple notification.
-
-.
-
-	Do not use the deprecated [PostAppstoreCustomerFidAppleParams.Context] with this method: it would be ignored.
-*/
+// PostAppstoreCustomerFidAppleContext posts a new apple notification.
+//
+// Post a new Apple notification.
+// .
+//
+// Do not use the deprecated [PostAppstoreCustomerFidAppleParams.Context] with this method: it would be ignored.
 func (a *Client) PostAppstoreCustomerFidAppleContext(ctx context.Context, params *PostAppstoreCustomerFidAppleParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostAppstoreCustomerFidAppleOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -146,21 +138,18 @@ func (a *Client) PostAppstoreCustomerFidAppleContext(ctx context.Context, params
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-	PostAppstoreCustomerFidGoogleposts a new google notification.
-
-	Post a new Google notification.
-
-.
-
-	This method does not support injected context.
-	However, timeout and opentracing contexts are honored whenever enabled.
-
-	If you need to pass a specific context, use [Client.PostAppstoreCustomerFidGoogleContext] instead.
-*/
+// PostAppstoreCustomerFidGoogle posts a new google notification.
+//
+// Post a new Google notification.
+// .
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostAppstoreCustomerFidGoogleContext] instead.
 func (a *Client) PostAppstoreCustomerFidGoogle(params *PostAppstoreCustomerFidGoogleParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostAppstoreCustomerFidGoogleOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -169,15 +158,12 @@ func (a *Client) PostAppstoreCustomerFidGoogle(params *PostAppstoreCustomerFidGo
 	return a.PostAppstoreCustomerFidGoogleContext(ctx, params, authInfo, opts...)
 }
 
-/*
-	PostAppstoreCustomerFidGoogleContextposts a new google notification.
-
-	Post a new Google notification.
-
-.
-
-	Do not use the deprecated [PostAppstoreCustomerFidGoogleParams.Context] with this method: it would be ignored.
-*/
+// PostAppstoreCustomerFidGoogleContext posts a new google notification.
+//
+// Post a new Google notification.
+// .
+//
+// Do not use the deprecated [PostAppstoreCustomerFidGoogleParams.Context] with this method: it would be ignored.
 func (a *Client) PostAppstoreCustomerFidGoogleContext(ctx context.Context, params *PostAppstoreCustomerFidGoogleParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostAppstoreCustomerFidGoogleOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

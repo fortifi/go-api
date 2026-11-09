@@ -52,12 +52,12 @@ type IncidentUpdate struct {
 }
 
 // Validate validates this incident update
-func (m *IncidentUpdate) Validate(formats strfmt.Registry) error {
+func (m *IncidentUpdate) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this incident update based on context it is used
-func (m *IncidentUpdate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *IncidentUpdate) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

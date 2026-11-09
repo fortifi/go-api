@@ -48,11 +48,9 @@ func NewGetAdvertisersOK() *GetAdvertisersOK {
 	return &GetAdvertisersOK{}
 }
 
-/*
-GetAdvertisersOK describes a response with status code 200, with default header values.
-
-List of advertisers
-*/
+// GetAdvertisersOK describes a response with status code 200, with default header values.
+//
+// List of advertisers
 type GetAdvertisersOK struct {
 	Payload *GetAdvertisersOKBody
 }
@@ -120,11 +118,9 @@ func NewGetAdvertisersDefault(code int) *GetAdvertisersDefault {
 	}
 }
 
-/*
-GetAdvertisersDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetAdvertisersDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetAdvertisersDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetAdvertisersDefault) readResponse(response runtime.ClientResponse, co
 	return nil
 }
 
-/*
-GetAdvertisersOKBody get advertisers o k body
-swagger:model GetAdvertisersOKBody
-*/
+// GetAdvertisersOKBody get advertisers o k body
+//
+// swagger:model GetAdvertisersOKBody
 type GetAdvertisersOKBody struct {
 	models.Envelope
 

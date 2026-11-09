@@ -63,24 +63,21 @@ GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsParams
 */
 type GetCustomersCustomerFidTicketsTicketFidPostsTicketPostTimestampAttachmentsParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* TicketFid.
-
-	   Ticket FID to use
-	*/
+	// TicketFid.
+	//
+	// Ticket FID to use
 	TicketFid string
 
-	/* TicketPostTimestamp.
-
-	   Ticket Post Timestamp
-
-	   Format: int64
-	*/
+	// TicketPostTimestamp.
+	//
+	// Ticket Post Timestamp
+	//
+	// Format: int64
 	TicketPostTimestamp int64
 
 	HTTPClient *http.Client

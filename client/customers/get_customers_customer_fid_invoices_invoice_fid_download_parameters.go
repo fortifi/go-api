@@ -62,19 +62,17 @@ GetCustomersCustomerFidInvoicesInvoiceFidDownloadParams contains all the paramet
 */
 type GetCustomersCustomerFidInvoicesInvoiceFidDownloadParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// Filename.
 	Filename *string
 
-	/* InvoiceFid.
-
-	   Invoice Fid to use
-	*/
+	// InvoiceFid.
+	//
+	// Invoice Fid to use
 	InvoiceFid string
 
 	HTTPClient *http.Client

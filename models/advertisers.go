@@ -144,7 +144,7 @@ func (m *Advertisers) contextValidateAdvertisers(ctx context.Context, formats st
 		if m.Advertisers[i] != nil {
 
 			if typeutils.IsZero(m.Advertisers[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Advertisers[i].ContextValidate(ctx, formats); err != nil {

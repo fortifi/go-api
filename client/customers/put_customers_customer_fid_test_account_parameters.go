@@ -63,10 +63,9 @@ PutCustomersCustomerFidTestAccountParams contains all the parameters to send to 
 */
 type PutCustomersCustomerFidTestAccountParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	// IsTestAccount.

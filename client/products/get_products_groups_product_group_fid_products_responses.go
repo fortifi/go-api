@@ -48,11 +48,9 @@ func NewGetProductsGroupsProductGroupFidProductsOK() *GetProductsGroupsProductGr
 	return &GetProductsGroupsProductGroupFidProductsOK{}
 }
 
-/*
-GetProductsGroupsProductGroupFidProductsOK describes a response with status code 200, with default header values.
-
-Products
-*/
+// GetProductsGroupsProductGroupFidProductsOK describes a response with status code 200, with default header values.
+//
+// Products
 type GetProductsGroupsProductGroupFidProductsOK struct {
 	Payload *GetProductsGroupsProductGroupFidProductsOKBody
 }
@@ -120,11 +118,9 @@ func NewGetProductsGroupsProductGroupFidProductsDefault(code int) *GetProductsGr
 	}
 }
 
-/*
-GetProductsGroupsProductGroupFidProductsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetProductsGroupsProductGroupFidProductsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetProductsGroupsProductGroupFidProductsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetProductsGroupsProductGroupFidProductsDefault) readResponse(response 
 	return nil
 }
 
-/*
-GetProductsGroupsProductGroupFidProductsOKBody get products groups product group fid products o k body
-swagger:model GetProductsGroupsProductGroupFidProductsOKBody
-*/
+// GetProductsGroupsProductGroupFidProductsOKBody get products groups product group fid products o k body
+//
+// swagger:model GetProductsGroupsProductGroupFidProductsOKBody
 type GetProductsGroupsProductGroupFidProductsOKBody struct {
 	models.Envelope
 

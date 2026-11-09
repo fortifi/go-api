@@ -48,11 +48,9 @@ func NewPutProductsProductFidPricesPriceFidOK() *PutProductsProductFidPricesPric
 	return &PutProductsProductFidPricesPriceFidOK{}
 }
 
-/*
-PutProductsProductFidPricesPriceFidOK describes a response with status code 200, with default header values.
-
-Updated price details
-*/
+// PutProductsProductFidPricesPriceFidOK describes a response with status code 200, with default header values.
+//
+// Updated price details
 type PutProductsProductFidPricesPriceFidOK struct {
 	Payload *PutProductsProductFidPricesPriceFidOKBody
 }
@@ -120,11 +118,9 @@ func NewPutProductsProductFidPricesPriceFidDefault(code int) *PutProductsProduct
 	}
 }
 
-/*
-PutProductsProductFidPricesPriceFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutProductsProductFidPricesPriceFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutProductsProductFidPricesPriceFidDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PutProductsProductFidPricesPriceFidDefault) readResponse(response runti
 	return nil
 }
 
-/*
-PutProductsProductFidPricesPriceFidOKBody put products product fid prices price fid o k body
-swagger:model PutProductsProductFidPricesPriceFidOKBody
-*/
+// PutProductsProductFidPricesPriceFidOKBody put products product fid prices price fid o k body
+//
+// swagger:model PutProductsProductFidPricesPriceFidOKBody
 type PutProductsProductFidPricesPriceFidOKBody struct {
 	models.Envelope
 

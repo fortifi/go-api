@@ -48,11 +48,9 @@ func NewGetPolymersListCodeParentFidOK() *GetPolymersListCodeParentFidOK {
 	return &GetPolymersListCodeParentFidOK{}
 }
 
-/*
-GetPolymersListCodeParentFidOK describes a response with status code 200, with default header values.
-
-List of Polymers
-*/
+// GetPolymersListCodeParentFidOK describes a response with status code 200, with default header values.
+//
+// List of Polymers
 type GetPolymersListCodeParentFidOK struct {
 	Payload *GetPolymersListCodeParentFidOKBody
 }
@@ -120,11 +118,9 @@ func NewGetPolymersListCodeParentFidDefault(code int) *GetPolymersListCodeParent
 	}
 }
 
-/*
-GetPolymersListCodeParentFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetPolymersListCodeParentFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetPolymersListCodeParentFidDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetPolymersListCodeParentFidDefault) readResponse(response runtime.Clie
 	return nil
 }
 
-/*
-GetPolymersListCodeParentFidOKBody get polymers list code parent fid o k body
-swagger:model GetPolymersListCodeParentFidOKBody
-*/
+// GetPolymersListCodeParentFidOKBody get polymers list code parent fid o k body
+//
+// swagger:model GetPolymersListCodeParentFidOKBody
 type GetPolymersListCodeParentFidOKBody struct {
 	models.Envelope
 

@@ -48,11 +48,9 @@ func NewPostProductsProductFidPricesOK() *PostProductsProductFidPricesOK {
 	return &PostProductsProductFidPricesOK{}
 }
 
-/*
-PostProductsProductFidPricesOK describes a response with status code 200, with default header values.
-
-Price created successfully
-*/
+// PostProductsProductFidPricesOK describes a response with status code 200, with default header values.
+//
+// Price created successfully
 type PostProductsProductFidPricesOK struct {
 	Payload *PostProductsProductFidPricesOKBody
 }
@@ -120,11 +118,9 @@ func NewPostProductsProductFidPricesDefault(code int) *PostProductsProductFidPri
 	}
 }
 
-/*
-PostProductsProductFidPricesDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostProductsProductFidPricesDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostProductsProductFidPricesDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostProductsProductFidPricesDefault) readResponse(response runtime.Clie
 	return nil
 }
 
-/*
-PostProductsProductFidPricesOKBody post products product fid prices o k body
-swagger:model PostProductsProductFidPricesOKBody
-*/
+// PostProductsProductFidPricesOKBody post products product fid prices o k body
+//
+// swagger:model PostProductsProductFidPricesOKBody
 type PostProductsProductFidPricesOKBody struct {
 	models.Envelope
 

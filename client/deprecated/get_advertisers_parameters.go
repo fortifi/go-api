@@ -63,16 +63,14 @@ GetAdvertisersParams contains all the parameters to send to the API endpoint
 */
 type GetAdvertisersParams struct {
 
-	/* Limit.
-
-	   Maximum number of records per page (default: 20)
-	*/
+	// Limit.
+	//
+	// Maximum number of records per page (default: 20)
 	Limit *int64
 
-	/* Page.
-
-	   Page number (default: 1)
-	*/
+	// Page.
+	//
+	// Page number (default: 1)
 	Page *int64
 
 	HTTPClient *http.Client

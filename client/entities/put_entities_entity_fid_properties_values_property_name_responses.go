@@ -44,11 +44,9 @@ func NewPutEntitiesEntityFidPropertiesValuesPropertyNameOK() *PutEntitiesEntityF
 	return &PutEntitiesEntityFidPropertiesValuesPropertyNameOK{}
 }
 
-/*
-PutEntitiesEntityFidPropertiesValuesPropertyNameOK describes a response with status code 200, with default header values.
-
-Property Saved
-*/
+// PutEntitiesEntityFidPropertiesValuesPropertyNameOK describes a response with status code 200, with default header values.
+//
+// Property Saved
 type PutEntitiesEntityFidPropertiesValuesPropertyNameOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutEntitiesEntityFidPropertiesValuesPropertyNameDefault(code int) *PutEn
 	}
 }
 
-/*
-PutEntitiesEntityFidPropertiesValuesPropertyNameDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutEntitiesEntityFidPropertiesValuesPropertyNameDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutEntitiesEntityFidPropertiesValuesPropertyNameDefault struct {
 	_statusCode int
 

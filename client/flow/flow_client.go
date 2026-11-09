@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for flow API.
-*/
+// Client for flow API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -126,17 +124,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-DeleteFlowsFlowFidarchives a retention flow.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.DeleteFlowsFlowFidContext] instead.
-*/
+// DeleteFlowsFlowFid archives a retention flow.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.DeleteFlowsFlowFidContext] instead.
 func (a *Client) DeleteFlowsFlowFid(params *DeleteFlowsFlowFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteFlowsFlowFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -145,11 +141,9 @@ func (a *Client) DeleteFlowsFlowFid(params *DeleteFlowsFlowFidParams, authInfo r
 	return a.DeleteFlowsFlowFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-DeleteFlowsFlowFidContextarchives a retention flow.
-
-Do not use the deprecated [DeleteFlowsFlowFidParams.Context] with this method: it would be ignored.
-*/
+// DeleteFlowsFlowFidContext archives a retention flow.
+//
+// Do not use the deprecated [DeleteFlowsFlowFidParams.Context] with this method: it would be ignored.
 func (a *Client) DeleteFlowsFlowFidContext(ctx context.Context, params *DeleteFlowsFlowFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteFlowsFlowFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -192,17 +186,15 @@ func (a *Client) DeleteFlowsFlowFidContext(ctx context.Context, params *DeleteFl
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-DeleteFlowsFlowFidStepsStepFidarchives a retention flow step.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.DeleteFlowsFlowFidStepsStepFidContext] instead.
-*/
+// DeleteFlowsFlowFidStepsStepFid archives a retention flow step.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.DeleteFlowsFlowFidStepsStepFidContext] instead.
 func (a *Client) DeleteFlowsFlowFidStepsStepFid(params *DeleteFlowsFlowFidStepsStepFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteFlowsFlowFidStepsStepFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -211,11 +203,9 @@ func (a *Client) DeleteFlowsFlowFidStepsStepFid(params *DeleteFlowsFlowFidStepsS
 	return a.DeleteFlowsFlowFidStepsStepFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-DeleteFlowsFlowFidStepsStepFidContextarchives a retention flow step.
-
-Do not use the deprecated [DeleteFlowsFlowFidStepsStepFidParams.Context] with this method: it would be ignored.
-*/
+// DeleteFlowsFlowFidStepsStepFidContext archives a retention flow step.
+//
+// Do not use the deprecated [DeleteFlowsFlowFidStepsStepFidParams.Context] with this method: it would be ignored.
 func (a *Client) DeleteFlowsFlowFidStepsStepFidContext(ctx context.Context, params *DeleteFlowsFlowFidStepsStepFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteFlowsFlowFidStepsStepFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -258,17 +248,15 @@ func (a *Client) DeleteFlowsFlowFidStepsStepFidContext(ctx context.Context, para
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetFlowslists retention flows.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetFlowsContext] instead.
-*/
+// GetFlows lists retention flows.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetFlowsContext] instead.
 func (a *Client) GetFlows(params *GetFlowsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -277,11 +265,9 @@ func (a *Client) GetFlows(params *GetFlowsParams, authInfo runtime.ClientAuthInf
 	return a.GetFlowsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetFlowsContextlists retention flows.
-
-Do not use the deprecated [GetFlowsParams.Context] with this method: it would be ignored.
-*/
+// GetFlowsContext lists retention flows.
+//
+// Do not use the deprecated [GetFlowsParams.Context] with this method: it would be ignored.
 func (a *Client) GetFlowsContext(ctx context.Context, params *GetFlowsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -324,17 +310,15 @@ func (a *Client) GetFlowsContext(ctx context.Context, params *GetFlowsParams, au
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetFlowsFlowFidretrieves retention flow details.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetFlowsFlowFidContext] instead.
-*/
+// GetFlowsFlowFid retrieves retention flow details.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetFlowsFlowFidContext] instead.
 func (a *Client) GetFlowsFlowFid(params *GetFlowsFlowFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsFlowFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -343,11 +327,9 @@ func (a *Client) GetFlowsFlowFid(params *GetFlowsFlowFidParams, authInfo runtime
 	return a.GetFlowsFlowFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetFlowsFlowFidContextretrieves retention flow details.
-
-Do not use the deprecated [GetFlowsFlowFidParams.Context] with this method: it would be ignored.
-*/
+// GetFlowsFlowFidContext retrieves retention flow details.
+//
+// Do not use the deprecated [GetFlowsFlowFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetFlowsFlowFidContext(ctx context.Context, params *GetFlowsFlowFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsFlowFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -390,17 +372,15 @@ func (a *Client) GetFlowsFlowFidContext(ctx context.Context, params *GetFlowsFlo
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetFlowsFlowFidStepsretrieves retention flow steps.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetFlowsFlowFidStepsContext] instead.
-*/
+// GetFlowsFlowFidSteps retrieves retention flow steps.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetFlowsFlowFidStepsContext] instead.
 func (a *Client) GetFlowsFlowFidSteps(params *GetFlowsFlowFidStepsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsFlowFidStepsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -409,11 +389,9 @@ func (a *Client) GetFlowsFlowFidSteps(params *GetFlowsFlowFidStepsParams, authIn
 	return a.GetFlowsFlowFidStepsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetFlowsFlowFidStepsContextretrieves retention flow steps.
-
-Do not use the deprecated [GetFlowsFlowFidStepsParams.Context] with this method: it would be ignored.
-*/
+// GetFlowsFlowFidStepsContext retrieves retention flow steps.
+//
+// Do not use the deprecated [GetFlowsFlowFidStepsParams.Context] with this method: it would be ignored.
 func (a *Client) GetFlowsFlowFidStepsContext(ctx context.Context, params *GetFlowsFlowFidStepsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsFlowFidStepsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -456,17 +434,15 @@ func (a *Client) GetFlowsFlowFidStepsContext(ctx context.Context, params *GetFlo
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetFlowsFlowFidStepsStepFidretrieves retention flow step details.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetFlowsFlowFidStepsStepFidContext] instead.
-*/
+// GetFlowsFlowFidStepsStepFid retrieves retention flow step details.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetFlowsFlowFidStepsStepFidContext] instead.
 func (a *Client) GetFlowsFlowFidStepsStepFid(params *GetFlowsFlowFidStepsStepFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsFlowFidStepsStepFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -475,11 +451,9 @@ func (a *Client) GetFlowsFlowFidStepsStepFid(params *GetFlowsFlowFidStepsStepFid
 	return a.GetFlowsFlowFidStepsStepFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetFlowsFlowFidStepsStepFidContextretrieves retention flow step details.
-
-Do not use the deprecated [GetFlowsFlowFidStepsStepFidParams.Context] with this method: it would be ignored.
-*/
+// GetFlowsFlowFidStepsStepFidContext retrieves retention flow step details.
+//
+// Do not use the deprecated [GetFlowsFlowFidStepsStepFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetFlowsFlowFidStepsStepFidContext(ctx context.Context, params *GetFlowsFlowFidStepsStepFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetFlowsFlowFidStepsStepFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -522,17 +496,15 @@ func (a *Client) GetFlowsFlowFidStepsStepFidContext(ctx context.Context, params 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostFlowFlowFidLogcreates flow.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostFlowFlowFidLogContext] instead.
-*/
+// PostFlowFlowFidLog creates flow.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostFlowFlowFidLogContext] instead.
 func (a *Client) PostFlowFlowFidLog(params *PostFlowFlowFidLogParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostFlowFlowFidLogOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -541,11 +513,9 @@ func (a *Client) PostFlowFlowFidLog(params *PostFlowFlowFidLogParams, authInfo r
 	return a.PostFlowFlowFidLogContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostFlowFlowFidLogContextcreates flow.
-
-Do not use the deprecated [PostFlowFlowFidLogParams.Context] with this method: it would be ignored.
-*/
+// PostFlowFlowFidLogContext creates flow.
+//
+// Do not use the deprecated [PostFlowFlowFidLogParams.Context] with this method: it would be ignored.
 func (a *Client) PostFlowFlowFidLogContext(ctx context.Context, params *PostFlowFlowFidLogParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostFlowFlowFidLogOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -588,17 +558,15 @@ func (a *Client) PostFlowFlowFidLogContext(ctx context.Context, params *PostFlow
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostFlowscreates a new retention flow.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostFlowsContext] instead.
-*/
+// PostFlows creates a new retention flow.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostFlowsContext] instead.
 func (a *Client) PostFlows(params *PostFlowsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostFlowsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -607,11 +575,9 @@ func (a *Client) PostFlows(params *PostFlowsParams, authInfo runtime.ClientAuthI
 	return a.PostFlowsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostFlowsContextcreates a new retention flow.
-
-Do not use the deprecated [PostFlowsParams.Context] with this method: it would be ignored.
-*/
+// PostFlowsContext creates a new retention flow.
+//
+// Do not use the deprecated [PostFlowsParams.Context] with this method: it would be ignored.
 func (a *Client) PostFlowsContext(ctx context.Context, params *PostFlowsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostFlowsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -654,17 +620,15 @@ func (a *Client) PostFlowsContext(ctx context.Context, params *PostFlowsParams, 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostFlowsFlowFidStepscreates a new retention flow step.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostFlowsFlowFidStepsContext] instead.
-*/
+// PostFlowsFlowFidSteps creates a new retention flow step.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostFlowsFlowFidStepsContext] instead.
 func (a *Client) PostFlowsFlowFidSteps(params *PostFlowsFlowFidStepsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostFlowsFlowFidStepsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -673,11 +637,9 @@ func (a *Client) PostFlowsFlowFidSteps(params *PostFlowsFlowFidStepsParams, auth
 	return a.PostFlowsFlowFidStepsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostFlowsFlowFidStepsContextcreates a new retention flow step.
-
-Do not use the deprecated [PostFlowsFlowFidStepsParams.Context] with this method: it would be ignored.
-*/
+// PostFlowsFlowFidStepsContext creates a new retention flow step.
+//
+// Do not use the deprecated [PostFlowsFlowFidStepsParams.Context] with this method: it would be ignored.
 func (a *Client) PostFlowsFlowFidStepsContext(ctx context.Context, params *PostFlowsFlowFidStepsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostFlowsFlowFidStepsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -720,17 +682,15 @@ func (a *Client) PostFlowsFlowFidStepsContext(ctx context.Context, params *PostF
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutFlowsFlowFidupdates retention flow details.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutFlowsFlowFidContext] instead.
-*/
+// PutFlowsFlowFid updates retention flow details.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutFlowsFlowFidContext] instead.
 func (a *Client) PutFlowsFlowFid(params *PutFlowsFlowFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutFlowsFlowFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -739,11 +699,9 @@ func (a *Client) PutFlowsFlowFid(params *PutFlowsFlowFidParams, authInfo runtime
 	return a.PutFlowsFlowFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutFlowsFlowFidContextupdates retention flow details.
-
-Do not use the deprecated [PutFlowsFlowFidParams.Context] with this method: it would be ignored.
-*/
+// PutFlowsFlowFidContext updates retention flow details.
+//
+// Do not use the deprecated [PutFlowsFlowFidParams.Context] with this method: it would be ignored.
 func (a *Client) PutFlowsFlowFidContext(ctx context.Context, params *PutFlowsFlowFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutFlowsFlowFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -786,17 +744,15 @@ func (a *Client) PutFlowsFlowFidContext(ctx context.Context, params *PutFlowsFlo
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutFlowsFlowFidStepsStepFidupdates retention flow step details.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutFlowsFlowFidStepsStepFidContext] instead.
-*/
+// PutFlowsFlowFidStepsStepFid updates retention flow step details.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutFlowsFlowFidStepsStepFidContext] instead.
 func (a *Client) PutFlowsFlowFidStepsStepFid(params *PutFlowsFlowFidStepsStepFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutFlowsFlowFidStepsStepFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -805,11 +761,9 @@ func (a *Client) PutFlowsFlowFidStepsStepFid(params *PutFlowsFlowFidStepsStepFid
 	return a.PutFlowsFlowFidStepsStepFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutFlowsFlowFidStepsStepFidContextupdates retention flow step details.
-
-Do not use the deprecated [PutFlowsFlowFidStepsStepFidParams.Context] with this method: it would be ignored.
-*/
+// PutFlowsFlowFidStepsStepFidContext updates retention flow step details.
+//
+// Do not use the deprecated [PutFlowsFlowFidStepsStepFidParams.Context] with this method: it would be ignored.
 func (a *Client) PutFlowsFlowFidStepsStepFidContext(ctx context.Context, params *PutFlowsFlowFidStepsStepFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutFlowsFlowFidStepsStepFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

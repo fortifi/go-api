@@ -87,7 +87,7 @@ func (m *Orders) contextValidateOrders(ctx context.Context, formats strfmt.Regis
 		if m.Orders[i] != nil {
 
 			if typeutils.IsZero(m.Orders[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Orders[i].ContextValidate(ctx, formats); err != nil {

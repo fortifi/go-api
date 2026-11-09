@@ -62,10 +62,9 @@ PutOrdersOrderFidSetChargeIDParams contains all the parameters to send to the AP
 */
 type PutOrdersOrderFidSetChargeIDParams struct {
 
-	/* ChargeID.
-
-	   Charge ID provided by ChargeHive.com
-	*/
+	// ChargeID.
+	//
+	// Charge ID provided by ChargeHive.com
 	ChargeID string
 
 	// OrderFid.

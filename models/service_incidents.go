@@ -87,7 +87,7 @@ func (m *ServiceIncidents) contextValidateServiceIncidents(ctx context.Context, 
 		if m.ServiceIncidents[i] != nil {
 
 			if typeutils.IsZero(m.ServiceIncidents[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.ServiceIncidents[i].ContextValidate(ctx, formats); err != nil {

@@ -48,11 +48,9 @@ func NewPutReviewReviewFidOK() *PutReviewReviewFidOK {
 	return &PutReviewReviewFidOK{}
 }
 
-/*
-PutReviewReviewFidOK describes a response with status code 200, with default header values.
-
-Review Update
-*/
+// PutReviewReviewFidOK describes a response with status code 200, with default header values.
+//
+// Review Update
 type PutReviewReviewFidOK struct {
 	Payload *PutReviewReviewFidOKBody
 }
@@ -120,11 +118,9 @@ func NewPutReviewReviewFidDefault(code int) *PutReviewReviewFidDefault {
 	}
 }
 
-/*
-PutReviewReviewFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutReviewReviewFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutReviewReviewFidDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PutReviewReviewFidDefault) readResponse(response runtime.ClientResponse
 	return nil
 }
 
-/*
-PutReviewReviewFidOKBody put review review fid o k body
-swagger:model PutReviewReviewFidOKBody
-*/
+// PutReviewReviewFidOKBody put review review fid o k body
+//
+// swagger:model PutReviewReviewFidOKBody
 type PutReviewReviewFidOKBody struct {
 	models.Envelope
 

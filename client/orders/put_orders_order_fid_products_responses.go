@@ -48,11 +48,9 @@ func NewPutOrdersOrderFidProductsOK() *PutOrdersOrderFidProductsOK {
 	return &PutOrdersOrderFidProductsOK{}
 }
 
-/*
-PutOrdersOrderFidProductsOK describes a response with status code 200, with default header values.
-
-Order products successfully updated
-*/
+// PutOrdersOrderFidProductsOK describes a response with status code 200, with default header values.
+//
+// Order products successfully updated
 type PutOrdersOrderFidProductsOK struct {
 	Payload *PutOrdersOrderFidProductsOKBody
 }
@@ -120,11 +118,9 @@ func NewPutOrdersOrderFidProductsDefault(code int) *PutOrdersOrderFidProductsDef
 	}
 }
 
-/*
-PutOrdersOrderFidProductsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutOrdersOrderFidProductsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutOrdersOrderFidProductsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PutOrdersOrderFidProductsDefault) readResponse(response runtime.ClientR
 	return nil
 }
 
-/*
-PutOrdersOrderFidProductsOKBody put orders order fid products o k body
-swagger:model PutOrdersOrderFidProductsOKBody
-*/
+// PutOrdersOrderFidProductsOKBody put orders order fid products o k body
+//
+// swagger:model PutOrdersOrderFidProductsOKBody
 type PutOrdersOrderFidProductsOKBody struct {
 	models.Envelope
 

@@ -62,10 +62,9 @@ GetEntitiesEntityFidPropertiesParams contains all the parameters to send to the 
 */
 type GetEntitiesEntityFidPropertiesParams struct {
 
-	/* EntityFid.
-
-	   Entity FID to use
-	*/
+	// EntityFid.
+	//
+	// Entity FID to use
 	EntityFid string
 
 	HTTPClient *http.Client

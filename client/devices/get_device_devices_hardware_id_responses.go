@@ -48,11 +48,9 @@ func NewGetDeviceDevicesHardwareIDOK() *GetDeviceDevicesHardwareIDOK {
 	return &GetDeviceDevicesHardwareIDOK{}
 }
 
-/*
-GetDeviceDevicesHardwareIDOK describes a response with status code 200, with default header values.
-
-List of devices with matching hardware ID
-*/
+// GetDeviceDevicesHardwareIDOK describes a response with status code 200, with default header values.
+//
+// List of devices with matching hardware ID
 type GetDeviceDevicesHardwareIDOK struct {
 	Payload *GetDeviceDevicesHardwareIDOKBody
 }
@@ -120,11 +118,9 @@ func NewGetDeviceDevicesHardwareIDDefault(code int) *GetDeviceDevicesHardwareIDD
 	}
 }
 
-/*
-GetDeviceDevicesHardwareIDDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetDeviceDevicesHardwareIDDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetDeviceDevicesHardwareIDDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetDeviceDevicesHardwareIDDefault) readResponse(response runtime.Client
 	return nil
 }
 
-/*
-GetDeviceDevicesHardwareIDOKBody get device devices hardware ID o k body
-swagger:model GetDeviceDevicesHardwareIDOKBody
-*/
+// GetDeviceDevicesHardwareIDOKBody get device devices hardware ID o k body
+//
+// swagger:model GetDeviceDevicesHardwareIDOKBody
 type GetDeviceDevicesHardwareIDOKBody struct {
 	models.Envelope
 

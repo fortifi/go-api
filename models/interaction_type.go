@@ -101,7 +101,7 @@ func (m *InteractionType) validateName(formats strfmt.Registry) error {
 }
 
 // ContextValidate validates this interaction type based on context it is used
-func (m *InteractionType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *InteractionType) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

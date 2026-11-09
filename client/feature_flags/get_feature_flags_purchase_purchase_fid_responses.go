@@ -48,11 +48,9 @@ func NewGetFeatureFlagsPurchasePurchaseFidOK() *GetFeatureFlagsPurchasePurchaseF
 	return &GetFeatureFlagsPurchasePurchaseFidOK{}
 }
 
-/*
-GetFeatureFlagsPurchasePurchaseFidOK describes a response with status code 200, with default header values.
-
-Entity Feature Flags Retrieved
-*/
+// GetFeatureFlagsPurchasePurchaseFidOK describes a response with status code 200, with default header values.
+//
+// Entity Feature Flags Retrieved
 type GetFeatureFlagsPurchasePurchaseFidOK struct {
 	Payload *GetFeatureFlagsPurchasePurchaseFidOKBody
 }
@@ -120,11 +118,9 @@ func NewGetFeatureFlagsPurchasePurchaseFidDefault(code int) *GetFeatureFlagsPurc
 	}
 }
 
-/*
-GetFeatureFlagsPurchasePurchaseFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetFeatureFlagsPurchasePurchaseFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetFeatureFlagsPurchasePurchaseFidDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetFeatureFlagsPurchasePurchaseFidDefault) readResponse(response runtim
 	return nil
 }
 
-/*
-GetFeatureFlagsPurchasePurchaseFidOKBody get feature flags purchase purchase fid o k body
-swagger:model GetFeatureFlagsPurchasePurchaseFidOKBody
-*/
+// GetFeatureFlagsPurchasePurchaseFidOKBody get feature flags purchase purchase fid o k body
+//
+// swagger:model GetFeatureFlagsPurchasePurchaseFidOKBody
 type GetFeatureFlagsPurchasePurchaseFidOKBody struct {
 	models.Envelope
 

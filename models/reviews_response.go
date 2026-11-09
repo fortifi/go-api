@@ -87,7 +87,7 @@ func (m *ReviewsResponse) contextValidateReviews(ctx context.Context, formats st
 		if m.Reviews[i] != nil {
 
 			if typeutils.IsZero(m.Reviews[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Reviews[i].ContextValidate(ctx, formats); err != nil {

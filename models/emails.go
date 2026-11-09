@@ -87,7 +87,7 @@ func (m *Emails) contextValidateEmails(ctx context.Context, formats strfmt.Regis
 		if m.Emails[i] != nil {
 
 			if typeutils.IsZero(m.Emails[i]) { // not required
-				return nil
+				continue
 			}
 
 			if err := m.Emails[i].ContextValidate(ctx, formats); err != nil {

@@ -62,16 +62,14 @@ GetEntitiesEntityFidPropertiesValuesPropertyNameParams contains all the paramete
 */
 type GetEntitiesEntityFidPropertiesValuesPropertyNameParams struct {
 
-	/* EntityFid.
-
-	   Entity FID to use
-	*/
+	// EntityFid.
+	//
+	// Entity FID to use
 	EntityFid string
 
-	/* PropertyName.
-
-	   Property Name
-	*/
+	// PropertyName.
+	//
+	// Property Name
 	PropertyName string
 
 	HTTPClient *http.Client

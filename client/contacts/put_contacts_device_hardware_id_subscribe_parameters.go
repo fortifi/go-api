@@ -63,64 +63,54 @@ PutContactsDeviceHardwareIDSubscribeParams contains all the parameters to send t
 */
 type PutContactsDeviceHardwareIDSubscribeParams struct {
 
-	/* BrandFid.
-
-	   Brand to subscribe the device to
-	*/
+	// BrandFid.
+	//
+	// Brand to subscribe the device to
 	BrandFid *string
 
-	/* ClientIP.
-
-	   IP Address of the visitor
-	*/
+	// ClientIP.
+	//
+	// IP Address of the visitor
 	ClientIP *string
 
-	/* Encoding.
-
-	   Encoding from the visitors browser 'HTTP_ACCEPT_ENCODING'
-	*/
+	// Encoding.
+	//
+	// Encoding from the visitors browser 'HTTP_ACCEPT_ENCODING'
 	Encoding *string
 
-	/* EntityFid.
-
-	   Customer or Contact Fid linked to device (Fid)
-	*/
+	// EntityFid.
+	//
+	// Customer or Contact Fid linked to device (Fid)
 	EntityFid *string
 
-	/* GroupFid.
-
-	   Group to subscribe the device to
-	*/
+	// GroupFid.
+	//
+	// Group to subscribe the device to
 	GroupFid *string
 
-	/* HardwareID.
-
-	   Hardware ID
-	*/
+	// HardwareID.
+	//
+	// Hardware ID
 	HardwareID string
 
-	/* Language.
-
-	   Language from visitors browser 'HTTP_ACCEPT_LANGUAGE'
-	*/
+	// Language.
+	//
+	// Language from visitors browser 'HTTP_ACCEPT_LANGUAGE'
 	Language *string
 
-	/* OptInData.
-
-	   Additional data to store against opt-in
-	*/
+	// OptInData.
+	//
+	// Additional data to store against opt-in
 	OptInData []string
 
-	/* OptInStatus.
-
-	   Status of customer email opt-in
-	*/
+	// OptInStatus.
+	//
+	// Status of customer email opt-in
 	OptInStatus *string
 
-	/* UserAgent.
-
-	   User Agent of the visitors browser 'HTTP_USER_AGENT'
-	*/
+	// UserAgent.
+	//
+	// User Agent of the visitors browser 'HTTP_USER_AGENT'
 	UserAgent *string
 
 	HTTPClient *http.Client

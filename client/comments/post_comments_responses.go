@@ -48,11 +48,9 @@ func NewPostCommentsOK() *PostCommentsOK {
 	return &PostCommentsOK{}
 }
 
-/*
-PostCommentsOK describes a response with status code 200, with default header values.
-
-Comment/Note created
-*/
+// PostCommentsOK describes a response with status code 200, with default header values.
+//
+// Comment/Note created
 type PostCommentsOK struct {
 	Payload *PostCommentsOKBody
 }
@@ -120,11 +118,9 @@ func NewPostCommentsDefault(code int) *PostCommentsDefault {
 	}
 }
 
-/*
-PostCommentsDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostCommentsDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostCommentsDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostCommentsDefault) readResponse(response runtime.ClientResponse, cons
 	return nil
 }
 
-/*
-PostCommentsOKBody post comments o k body
-swagger:model PostCommentsOKBody
-*/
+// PostCommentsOKBody post comments o k body
+//
+// swagger:model PostCommentsOKBody
 type PostCommentsOKBody struct {
 	models.Envelope
 

@@ -62,10 +62,9 @@ GetContactsContactFidAddressesParams contains all the parameters to send to the 
 */
 type GetContactsContactFidAddressesParams struct {
 
-	/* ContactFid.
-
-	   Contact FID to use
-	*/
+	// ContactFid.
+	//
+	// Contact FID to use
 	ContactFid string
 
 	HTTPClient *http.Client

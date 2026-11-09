@@ -109,6 +109,6 @@ func (m PurchaseStatus) Validate(formats strfmt.Registry) error {
 }
 
 // ContextValidate validates this purchase status based on context it is used
-func (m PurchaseStatus) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m PurchaseStatus) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }

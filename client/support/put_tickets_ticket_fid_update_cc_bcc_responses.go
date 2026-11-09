@@ -48,11 +48,9 @@ func NewPutTicketsTicketFidUpdateCcBccOK() *PutTicketsTicketFidUpdateCcBccOK {
 	return &PutTicketsTicketFidUpdateCcBccOK{}
 }
 
-/*
-PutTicketsTicketFidUpdateCcBccOK describes a response with status code 200, with default header values.
-
-Returns true if changes are made and false if no changes made
-*/
+// PutTicketsTicketFidUpdateCcBccOK describes a response with status code 200, with default header values.
+//
+// Returns true if changes are made and false if no changes made
 type PutTicketsTicketFidUpdateCcBccOK struct {
 	Payload *PutTicketsTicketFidUpdateCcBccOKBody
 }
@@ -120,11 +118,9 @@ func NewPutTicketsTicketFidUpdateCcBccDefault(code int) *PutTicketsTicketFidUpda
 	}
 }
 
-/*
-PutTicketsTicketFidUpdateCcBccDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutTicketsTicketFidUpdateCcBccDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutTicketsTicketFidUpdateCcBccDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PutTicketsTicketFidUpdateCcBccDefault) readResponse(response runtime.Cl
 	return nil
 }
 
-/*
-PutTicketsTicketFidUpdateCcBccOKBody put tickets ticket fid update cc bcc o k body
-swagger:model PutTicketsTicketFidUpdateCcBccOKBody
-*/
+// PutTicketsTicketFidUpdateCcBccOKBody put tickets ticket fid update cc bcc o k body
+//
+// swagger:model PutTicketsTicketFidUpdateCcBccOKBody
 type PutTicketsTicketFidUpdateCcBccOKBody struct {
 	models.Envelope
 

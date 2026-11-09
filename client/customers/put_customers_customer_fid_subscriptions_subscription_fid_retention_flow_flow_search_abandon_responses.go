@@ -48,11 +48,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSear
 	return &PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOK{}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOK describes a response with status code 200, with default header values.
-
-Retention Flow State
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOK describes a response with status code 200, with default header values.
+//
+// Retention Flow State
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOK struct {
 	Payload *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOKBody
 }
@@ -120,11 +118,9 @@ func NewPutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSear
 	}
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSea
 	return nil
 }
 
-/*
-PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOKBody put customers customer fid subscriptions subscription fid retention flow flow search abandon o k body
-swagger:model PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOKBody
-*/
+// PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOKBody put customers customer fid subscriptions subscription fid retention flow flow search abandon o k body
+//
+// swagger:model PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOKBody
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidRetentionFlowFlowSearchAbandonOKBody struct {
 	models.Envelope
 

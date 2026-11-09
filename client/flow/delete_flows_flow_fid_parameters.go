@@ -62,10 +62,9 @@ DeleteFlowsFlowFidParams contains all the parameters to send to the API endpoint
 */
 type DeleteFlowsFlowFidParams struct {
 
-	/* FlowFid.
-
-	   Flow FID to use
-	*/
+	// FlowFid.
+	//
+	// Flow FID to use
 	FlowFid string
 
 	HTTPClient *http.Client

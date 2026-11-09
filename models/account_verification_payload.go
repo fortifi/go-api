@@ -31,12 +31,12 @@ type AccountVerificationPayload struct {
 }
 
 // Validate validates this account verification payload
-func (m *AccountVerificationPayload) Validate(formats strfmt.Registry) error {
+func (m *AccountVerificationPayload) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this account verification payload based on context it is used
-func (m *AccountVerificationPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *AccountVerificationPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

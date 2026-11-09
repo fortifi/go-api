@@ -46,12 +46,12 @@ type Notification struct {
 }
 
 // Validate validates this notification
-func (m *Notification) Validate(formats strfmt.Registry) error {
+func (m *Notification) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this notification based on context it is used
-func (m *Notification) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *Notification) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

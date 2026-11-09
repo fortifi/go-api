@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for products API.
-*/
+// Client for products API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -234,17 +232,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-DeleteProductsGroupsProductGroupFidProductsProductFidremoves a product from the group.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.DeleteProductsGroupsProductGroupFidProductsProductFidContext] instead.
-*/
+// DeleteProductsGroupsProductGroupFidProductsProductFid removes a product from the group.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.DeleteProductsGroupsProductGroupFidProductsProductFidContext] instead.
 func (a *Client) DeleteProductsGroupsProductGroupFidProductsProductFid(params *DeleteProductsGroupsProductGroupFidProductsProductFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteProductsGroupsProductGroupFidProductsProductFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -253,11 +249,9 @@ func (a *Client) DeleteProductsGroupsProductGroupFidProductsProductFid(params *D
 	return a.DeleteProductsGroupsProductGroupFidProductsProductFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-DeleteProductsGroupsProductGroupFidProductsProductFidContextremoves a product from the group.
-
-Do not use the deprecated [DeleteProductsGroupsProductGroupFidProductsProductFidParams.Context] with this method: it would be ignored.
-*/
+// DeleteProductsGroupsProductGroupFidProductsProductFidContext removes a product from the group.
+//
+// Do not use the deprecated [DeleteProductsGroupsProductGroupFidProductsProductFidParams.Context] with this method: it would be ignored.
 func (a *Client) DeleteProductsGroupsProductGroupFidProductsProductFidContext(ctx context.Context, params *DeleteProductsGroupsProductGroupFidProductsProductFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteProductsGroupsProductGroupFidProductsProductFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -300,17 +294,15 @@ func (a *Client) DeleteProductsGroupsProductGroupFidProductsProductFidContext(ct
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetProductslists all products.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetProductsContext] instead.
-*/
+// GetProducts lists all products.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetProductsContext] instead.
 func (a *Client) GetProducts(params *GetProductsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -319,11 +311,9 @@ func (a *Client) GetProducts(params *GetProductsParams, authInfo runtime.ClientA
 	return a.GetProductsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetProductsContextlists all products.
-
-Do not use the deprecated [GetProductsParams.Context] with this method: it would be ignored.
-*/
+// GetProductsContext lists all products.
+//
+// Do not use the deprecated [GetProductsParams.Context] with this method: it would be ignored.
 func (a *Client) GetProductsContext(ctx context.Context, params *GetProductsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -366,17 +356,15 @@ func (a *Client) GetProductsContext(ctx context.Context, params *GetProductsPara
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetProductsGroupsgets a list of all product groups.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetProductsGroupsContext] instead.
-*/
+// GetProductsGroups gets a list of all product groups.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetProductsGroupsContext] instead.
 func (a *Client) GetProductsGroups(params *GetProductsGroupsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsGroupsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -385,11 +373,9 @@ func (a *Client) GetProductsGroups(params *GetProductsGroupsParams, authInfo run
 	return a.GetProductsGroupsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetProductsGroupsContextgets a list of all product groups.
-
-Do not use the deprecated [GetProductsGroupsParams.Context] with this method: it would be ignored.
-*/
+// GetProductsGroupsContext gets a list of all product groups.
+//
+// Do not use the deprecated [GetProductsGroupsParams.Context] with this method: it would be ignored.
 func (a *Client) GetProductsGroupsContext(ctx context.Context, params *GetProductsGroupsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsGroupsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -432,17 +418,15 @@ func (a *Client) GetProductsGroupsContext(ctx context.Context, params *GetProduc
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetProductsGroupsProductGroupFidretrieves product group details.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetProductsGroupsProductGroupFidContext] instead.
-*/
+// GetProductsGroupsProductGroupFid retrieves product group details.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetProductsGroupsProductGroupFidContext] instead.
 func (a *Client) GetProductsGroupsProductGroupFid(params *GetProductsGroupsProductGroupFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsGroupsProductGroupFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -451,11 +435,9 @@ func (a *Client) GetProductsGroupsProductGroupFid(params *GetProductsGroupsProdu
 	return a.GetProductsGroupsProductGroupFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetProductsGroupsProductGroupFidContextretrieves product group details.
-
-Do not use the deprecated [GetProductsGroupsProductGroupFidParams.Context] with this method: it would be ignored.
-*/
+// GetProductsGroupsProductGroupFidContext retrieves product group details.
+//
+// Do not use the deprecated [GetProductsGroupsProductGroupFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetProductsGroupsProductGroupFidContext(ctx context.Context, params *GetProductsGroupsProductGroupFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsGroupsProductGroupFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -498,17 +480,15 @@ func (a *Client) GetProductsGroupsProductGroupFidContext(ctx context.Context, pa
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetProductsGroupsProductGroupFidProductsgets a list of products belonging to the group.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetProductsGroupsProductGroupFidProductsContext] instead.
-*/
+// GetProductsGroupsProductGroupFidProducts gets a list of products belonging to the group.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetProductsGroupsProductGroupFidProductsContext] instead.
 func (a *Client) GetProductsGroupsProductGroupFidProducts(params *GetProductsGroupsProductGroupFidProductsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsGroupsProductGroupFidProductsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -517,11 +497,9 @@ func (a *Client) GetProductsGroupsProductGroupFidProducts(params *GetProductsGro
 	return a.GetProductsGroupsProductGroupFidProductsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetProductsGroupsProductGroupFidProductsContextgets a list of products belonging to the group.
-
-Do not use the deprecated [GetProductsGroupsProductGroupFidProductsParams.Context] with this method: it would be ignored.
-*/
+// GetProductsGroupsProductGroupFidProductsContext gets a list of products belonging to the group.
+//
+// Do not use the deprecated [GetProductsGroupsProductGroupFidProductsParams.Context] with this method: it would be ignored.
 func (a *Client) GetProductsGroupsProductGroupFidProductsContext(ctx context.Context, params *GetProductsGroupsProductGroupFidProductsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsGroupsProductGroupFidProductsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -564,17 +542,15 @@ func (a *Client) GetProductsGroupsProductGroupFidProductsContext(ctx context.Con
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetProductsOffersretrieves all offers.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetProductsOffersContext] instead.
-*/
+// GetProductsOffers retrieves all offers.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetProductsOffersContext] instead.
 func (a *Client) GetProductsOffers(params *GetProductsOffersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsOffersOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -583,11 +559,9 @@ func (a *Client) GetProductsOffers(params *GetProductsOffersParams, authInfo run
 	return a.GetProductsOffersContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetProductsOffersContextretrieves all offers.
-
-Do not use the deprecated [GetProductsOffersParams.Context] with this method: it would be ignored.
-*/
+// GetProductsOffersContext retrieves all offers.
+//
+// Do not use the deprecated [GetProductsOffersParams.Context] with this method: it would be ignored.
 func (a *Client) GetProductsOffersContext(ctx context.Context, params *GetProductsOffersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsOffersOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -630,17 +604,15 @@ func (a *Client) GetProductsOffersContext(ctx context.Context, params *GetProduc
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetProductsOffersOfferFidretrieves offer details.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetProductsOffersOfferFidContext] instead.
-*/
+// GetProductsOffersOfferFid retrieves offer details.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetProductsOffersOfferFidContext] instead.
 func (a *Client) GetProductsOffersOfferFid(params *GetProductsOffersOfferFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsOffersOfferFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -649,11 +621,9 @@ func (a *Client) GetProductsOffersOfferFid(params *GetProductsOffersOfferFidPara
 	return a.GetProductsOffersOfferFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetProductsOffersOfferFidContextretrieves offer details.
-
-Do not use the deprecated [GetProductsOffersOfferFidParams.Context] with this method: it would be ignored.
-*/
+// GetProductsOffersOfferFidContext retrieves offer details.
+//
+// Do not use the deprecated [GetProductsOffersOfferFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetProductsOffersOfferFidContext(ctx context.Context, params *GetProductsOffersOfferFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsOffersOfferFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -696,17 +666,15 @@ func (a *Client) GetProductsOffersOfferFidContext(ctx context.Context, params *G
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetProductsProductFidretrieves product details.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetProductsProductFidContext] instead.
-*/
+// GetProductsProductFid retrieves product details.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetProductsProductFidContext] instead.
 func (a *Client) GetProductsProductFid(params *GetProductsProductFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -715,11 +683,9 @@ func (a *Client) GetProductsProductFid(params *GetProductsProductFidParams, auth
 	return a.GetProductsProductFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetProductsProductFidContextretrieves product details.
-
-Do not use the deprecated [GetProductsProductFidParams.Context] with this method: it would be ignored.
-*/
+// GetProductsProductFidContext retrieves product details.
+//
+// Do not use the deprecated [GetProductsProductFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetProductsProductFidContext(ctx context.Context, params *GetProductsProductFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -762,17 +728,15 @@ func (a *Client) GetProductsProductFidContext(ctx context.Context, params *GetPr
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetProductsProductFidPricebandsretrieves product price bands.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetProductsProductFidPricebandsContext] instead.
-*/
+// GetProductsProductFidPricebands retrieves product price bands.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetProductsProductFidPricebandsContext] instead.
 func (a *Client) GetProductsProductFidPricebands(params *GetProductsProductFidPricebandsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidPricebandsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -781,11 +745,9 @@ func (a *Client) GetProductsProductFidPricebands(params *GetProductsProductFidPr
 	return a.GetProductsProductFidPricebandsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetProductsProductFidPricebandsContextretrieves product price bands.
-
-Do not use the deprecated [GetProductsProductFidPricebandsParams.Context] with this method: it would be ignored.
-*/
+// GetProductsProductFidPricebandsContext retrieves product price bands.
+//
+// Do not use the deprecated [GetProductsProductFidPricebandsParams.Context] with this method: it would be ignored.
 func (a *Client) GetProductsProductFidPricebandsContext(ctx context.Context, params *GetProductsProductFidPricebandsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidPricebandsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -828,17 +790,15 @@ func (a *Client) GetProductsProductFidPricebandsContext(ctx context.Context, par
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetProductsProductFidPricebandsPriceBandFidretrieves product price band details.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetProductsProductFidPricebandsPriceBandFidContext] instead.
-*/
+// GetProductsProductFidPricebandsPriceBandFid retrieves product price band details.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetProductsProductFidPricebandsPriceBandFidContext] instead.
 func (a *Client) GetProductsProductFidPricebandsPriceBandFid(params *GetProductsProductFidPricebandsPriceBandFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidPricebandsPriceBandFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -847,11 +807,9 @@ func (a *Client) GetProductsProductFidPricebandsPriceBandFid(params *GetProducts
 	return a.GetProductsProductFidPricebandsPriceBandFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetProductsProductFidPricebandsPriceBandFidContextretrieves product price band details.
-
-Do not use the deprecated [GetProductsProductFidPricebandsPriceBandFidParams.Context] with this method: it would be ignored.
-*/
+// GetProductsProductFidPricebandsPriceBandFidContext retrieves product price band details.
+//
+// Do not use the deprecated [GetProductsProductFidPricebandsPriceBandFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetProductsProductFidPricebandsPriceBandFidContext(ctx context.Context, params *GetProductsProductFidPricebandsPriceBandFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidPricebandsPriceBandFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -894,17 +852,15 @@ func (a *Client) GetProductsProductFidPricebandsPriceBandFidContext(ctx context.
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetProductsProductFidPricesretrieves product prices.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetProductsProductFidPricesContext] instead.
-*/
+// GetProductsProductFidPrices retrieves product prices.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetProductsProductFidPricesContext] instead.
 func (a *Client) GetProductsProductFidPrices(params *GetProductsProductFidPricesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidPricesOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -913,11 +869,9 @@ func (a *Client) GetProductsProductFidPrices(params *GetProductsProductFidPrices
 	return a.GetProductsProductFidPricesContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetProductsProductFidPricesContextretrieves product prices.
-
-Do not use the deprecated [GetProductsProductFidPricesParams.Context] with this method: it would be ignored.
-*/
+// GetProductsProductFidPricesContext retrieves product prices.
+//
+// Do not use the deprecated [GetProductsProductFidPricesParams.Context] with this method: it would be ignored.
 func (a *Client) GetProductsProductFidPricesContext(ctx context.Context, params *GetProductsProductFidPricesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidPricesOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -960,17 +914,15 @@ func (a *Client) GetProductsProductFidPricesContext(ctx context.Context, params 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetProductsProductFidPricesPriceFidretrieves product price details.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetProductsProductFidPricesPriceFidContext] instead.
-*/
+// GetProductsProductFidPricesPriceFid retrieves product price details.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetProductsProductFidPricesPriceFidContext] instead.
 func (a *Client) GetProductsProductFidPricesPriceFid(params *GetProductsProductFidPricesPriceFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidPricesPriceFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -979,11 +931,9 @@ func (a *Client) GetProductsProductFidPricesPriceFid(params *GetProductsProductF
 	return a.GetProductsProductFidPricesPriceFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetProductsProductFidPricesPriceFidContextretrieves product price details.
-
-Do not use the deprecated [GetProductsProductFidPricesPriceFidParams.Context] with this method: it would be ignored.
-*/
+// GetProductsProductFidPricesPriceFidContext retrieves product price details.
+//
+// Do not use the deprecated [GetProductsProductFidPricesPriceFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetProductsProductFidPricesPriceFidContext(ctx context.Context, params *GetProductsProductFidPricesPriceFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidPricesPriceFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1026,17 +976,15 @@ func (a *Client) GetProductsProductFidPricesPriceFidContext(ctx context.Context,
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetProductsProductFidSkusretrieves product s k us.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetProductsProductFidSkusContext] instead.
-*/
+// GetProductsProductFidSkus retrieves product s k us.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetProductsProductFidSkusContext] instead.
 func (a *Client) GetProductsProductFidSkus(params *GetProductsProductFidSkusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidSkusOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1045,11 +993,9 @@ func (a *Client) GetProductsProductFidSkus(params *GetProductsProductFidSkusPara
 	return a.GetProductsProductFidSkusContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetProductsProductFidSkusContextretrieves product s k us.
-
-Do not use the deprecated [GetProductsProductFidSkusParams.Context] with this method: it would be ignored.
-*/
+// GetProductsProductFidSkusContext retrieves product s k us.
+//
+// Do not use the deprecated [GetProductsProductFidSkusParams.Context] with this method: it would be ignored.
 func (a *Client) GetProductsProductFidSkusContext(ctx context.Context, params *GetProductsProductFidSkusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidSkusOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1092,17 +1038,15 @@ func (a *Client) GetProductsProductFidSkusContext(ctx context.Context, params *G
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-GetProductsProductFidSkusSkuFidretrieves product s k u details.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetProductsProductFidSkusSkuFidContext] instead.
-*/
+// GetProductsProductFidSkusSkuFid retrieves product s k u details.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetProductsProductFidSkusSkuFidContext] instead.
 func (a *Client) GetProductsProductFidSkusSkuFid(params *GetProductsProductFidSkusSkuFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidSkusSkuFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1111,11 +1055,9 @@ func (a *Client) GetProductsProductFidSkusSkuFid(params *GetProductsProductFidSk
 	return a.GetProductsProductFidSkusSkuFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetProductsProductFidSkusSkuFidContextretrieves product s k u details.
-
-Do not use the deprecated [GetProductsProductFidSkusSkuFidParams.Context] with this method: it would be ignored.
-*/
+// GetProductsProductFidSkusSkuFidContext retrieves product s k u details.
+//
+// Do not use the deprecated [GetProductsProductFidSkusSkuFidParams.Context] with this method: it would be ignored.
 func (a *Client) GetProductsProductFidSkusSkuFidContext(ctx context.Context, params *GetProductsProductFidSkusSkuFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetProductsProductFidSkusSkuFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1158,17 +1100,15 @@ func (a *Client) GetProductsProductFidSkusSkuFidContext(ctx context.Context, par
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostProductscreates a new product.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostProductsContext] instead.
-*/
+// PostProducts creates a new product.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostProductsContext] instead.
 func (a *Client) PostProducts(params *PostProductsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1177,11 +1117,9 @@ func (a *Client) PostProducts(params *PostProductsParams, authInfo runtime.Clien
 	return a.PostProductsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostProductsContextcreates a new product.
-
-Do not use the deprecated [PostProductsParams.Context] with this method: it would be ignored.
-*/
+// PostProductsContext creates a new product.
+//
+// Do not use the deprecated [PostProductsParams.Context] with this method: it would be ignored.
 func (a *Client) PostProductsContext(ctx context.Context, params *PostProductsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1224,17 +1162,15 @@ func (a *Client) PostProductsContext(ctx context.Context, params *PostProductsPa
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostProductsGroupscreates a new product group.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostProductsGroupsContext] instead.
-*/
+// PostProductsGroups creates a new product group.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostProductsGroupsContext] instead.
 func (a *Client) PostProductsGroups(params *PostProductsGroupsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsGroupsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1243,11 +1179,9 @@ func (a *Client) PostProductsGroups(params *PostProductsGroupsParams, authInfo r
 	return a.PostProductsGroupsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostProductsGroupsContextcreates a new product group.
-
-Do not use the deprecated [PostProductsGroupsParams.Context] with this method: it would be ignored.
-*/
+// PostProductsGroupsContext creates a new product group.
+//
+// Do not use the deprecated [PostProductsGroupsParams.Context] with this method: it would be ignored.
 func (a *Client) PostProductsGroupsContext(ctx context.Context, params *PostProductsGroupsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsGroupsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1290,17 +1224,15 @@ func (a *Client) PostProductsGroupsContext(ctx context.Context, params *PostProd
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostProductsGroupsProductGroupFidProductsProductFidadds a product to the group.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostProductsGroupsProductGroupFidProductsProductFidContext] instead.
-*/
+// PostProductsGroupsProductGroupFidProductsProductFid adds a product to the group.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostProductsGroupsProductGroupFidProductsProductFidContext] instead.
 func (a *Client) PostProductsGroupsProductGroupFidProductsProductFid(params *PostProductsGroupsProductGroupFidProductsProductFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsGroupsProductGroupFidProductsProductFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1309,11 +1241,9 @@ func (a *Client) PostProductsGroupsProductGroupFidProductsProductFid(params *Pos
 	return a.PostProductsGroupsProductGroupFidProductsProductFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostProductsGroupsProductGroupFidProductsProductFidContextadds a product to the group.
-
-Do not use the deprecated [PostProductsGroupsProductGroupFidProductsProductFidParams.Context] with this method: it would be ignored.
-*/
+// PostProductsGroupsProductGroupFidProductsProductFidContext adds a product to the group.
+//
+// Do not use the deprecated [PostProductsGroupsProductGroupFidProductsProductFidParams.Context] with this method: it would be ignored.
 func (a *Client) PostProductsGroupsProductGroupFidProductsProductFidContext(ctx context.Context, params *PostProductsGroupsProductGroupFidProductsProductFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsGroupsProductGroupFidProductsProductFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1356,17 +1286,15 @@ func (a *Client) PostProductsGroupsProductGroupFidProductsProductFidContext(ctx 
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostProductsOfferscreates a new offer.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostProductsOffersContext] instead.
-*/
+// PostProductsOffers creates a new offer.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostProductsOffersContext] instead.
 func (a *Client) PostProductsOffers(params *PostProductsOffersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsOffersOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1375,11 +1303,9 @@ func (a *Client) PostProductsOffers(params *PostProductsOffersParams, authInfo r
 	return a.PostProductsOffersContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostProductsOffersContextcreates a new offer.
-
-Do not use the deprecated [PostProductsOffersParams.Context] with this method: it would be ignored.
-*/
+// PostProductsOffersContext creates a new offer.
+//
+// Do not use the deprecated [PostProductsOffersParams.Context] with this method: it would be ignored.
 func (a *Client) PostProductsOffersContext(ctx context.Context, params *PostProductsOffersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsOffersOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1422,17 +1348,15 @@ func (a *Client) PostProductsOffersContext(ctx context.Context, params *PostProd
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostProductsProductFidAvailabilityCheckchecks product availability.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostProductsProductFidAvailabilityCheckContext] instead.
-*/
+// PostProductsProductFidAvailabilityCheck checks product availability.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostProductsProductFidAvailabilityCheckContext] instead.
 func (a *Client) PostProductsProductFidAvailabilityCheck(params *PostProductsProductFidAvailabilityCheckParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsProductFidAvailabilityCheckOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1441,11 +1365,9 @@ func (a *Client) PostProductsProductFidAvailabilityCheck(params *PostProductsPro
 	return a.PostProductsProductFidAvailabilityCheckContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostProductsProductFidAvailabilityCheckContextchecks product availability.
-
-Do not use the deprecated [PostProductsProductFidAvailabilityCheckParams.Context] with this method: it would be ignored.
-*/
+// PostProductsProductFidAvailabilityCheckContext checks product availability.
+//
+// Do not use the deprecated [PostProductsProductFidAvailabilityCheckParams.Context] with this method: it would be ignored.
 func (a *Client) PostProductsProductFidAvailabilityCheckContext(ctx context.Context, params *PostProductsProductFidAvailabilityCheckParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsProductFidAvailabilityCheckOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1488,17 +1410,15 @@ func (a *Client) PostProductsProductFidAvailabilityCheckContext(ctx context.Cont
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostProductsProductFidAvailabilityReservereserves product.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostProductsProductFidAvailabilityReserveContext] instead.
-*/
+// PostProductsProductFidAvailabilityReserve reserves product.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostProductsProductFidAvailabilityReserveContext] instead.
 func (a *Client) PostProductsProductFidAvailabilityReserve(params *PostProductsProductFidAvailabilityReserveParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsProductFidAvailabilityReserveOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1507,11 +1427,9 @@ func (a *Client) PostProductsProductFidAvailabilityReserve(params *PostProductsP
 	return a.PostProductsProductFidAvailabilityReserveContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostProductsProductFidAvailabilityReserveContextreserves product.
-
-Do not use the deprecated [PostProductsProductFidAvailabilityReserveParams.Context] with this method: it would be ignored.
-*/
+// PostProductsProductFidAvailabilityReserveContext reserves product.
+//
+// Do not use the deprecated [PostProductsProductFidAvailabilityReserveParams.Context] with this method: it would be ignored.
 func (a *Client) PostProductsProductFidAvailabilityReserveContext(ctx context.Context, params *PostProductsProductFidAvailabilityReserveParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsProductFidAvailabilityReserveOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1554,17 +1472,15 @@ func (a *Client) PostProductsProductFidAvailabilityReserveContext(ctx context.Co
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostProductsProductFidPricebandscreates a new product price band.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostProductsProductFidPricebandsContext] instead.
-*/
+// PostProductsProductFidPricebands creates a new product price band.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostProductsProductFidPricebandsContext] instead.
 func (a *Client) PostProductsProductFidPricebands(params *PostProductsProductFidPricebandsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsProductFidPricebandsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1573,11 +1489,9 @@ func (a *Client) PostProductsProductFidPricebands(params *PostProductsProductFid
 	return a.PostProductsProductFidPricebandsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostProductsProductFidPricebandsContextcreates a new product price band.
-
-Do not use the deprecated [PostProductsProductFidPricebandsParams.Context] with this method: it would be ignored.
-*/
+// PostProductsProductFidPricebandsContext creates a new product price band.
+//
+// Do not use the deprecated [PostProductsProductFidPricebandsParams.Context] with this method: it would be ignored.
 func (a *Client) PostProductsProductFidPricebandsContext(ctx context.Context, params *PostProductsProductFidPricebandsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsProductFidPricebandsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1620,17 +1534,15 @@ func (a *Client) PostProductsProductFidPricebandsContext(ctx context.Context, pa
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostProductsProductFidPricescreates a new product price.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostProductsProductFidPricesContext] instead.
-*/
+// PostProductsProductFidPrices creates a new product price.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostProductsProductFidPricesContext] instead.
 func (a *Client) PostProductsProductFidPrices(params *PostProductsProductFidPricesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsProductFidPricesOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1639,11 +1551,9 @@ func (a *Client) PostProductsProductFidPrices(params *PostProductsProductFidPric
 	return a.PostProductsProductFidPricesContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostProductsProductFidPricesContextcreates a new product price.
-
-Do not use the deprecated [PostProductsProductFidPricesParams.Context] with this method: it would be ignored.
-*/
+// PostProductsProductFidPricesContext creates a new product price.
+//
+// Do not use the deprecated [PostProductsProductFidPricesParams.Context] with this method: it would be ignored.
 func (a *Client) PostProductsProductFidPricesContext(ctx context.Context, params *PostProductsProductFidPricesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsProductFidPricesOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1686,17 +1596,15 @@ func (a *Client) PostProductsProductFidPricesContext(ctx context.Context, params
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PostProductsProductFidSkuscreates a new product s k u.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PostProductsProductFidSkusContext] instead.
-*/
+// PostProductsProductFidSkus creates a new product s k u.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PostProductsProductFidSkusContext] instead.
 func (a *Client) PostProductsProductFidSkus(params *PostProductsProductFidSkusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsProductFidSkusOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1705,11 +1613,9 @@ func (a *Client) PostProductsProductFidSkus(params *PostProductsProductFidSkusPa
 	return a.PostProductsProductFidSkusContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PostProductsProductFidSkusContextcreates a new product s k u.
-
-Do not use the deprecated [PostProductsProductFidSkusParams.Context] with this method: it would be ignored.
-*/
+// PostProductsProductFidSkusContext creates a new product s k u.
+//
+// Do not use the deprecated [PostProductsProductFidSkusParams.Context] with this method: it would be ignored.
 func (a *Client) PostProductsProductFidSkusContext(ctx context.Context, params *PostProductsProductFidSkusParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostProductsProductFidSkusOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1752,17 +1658,15 @@ func (a *Client) PostProductsProductFidSkusContext(ctx context.Context, params *
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutProductsGroupsProductGroupFidupdates product group details.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutProductsGroupsProductGroupFidContext] instead.
-*/
+// PutProductsGroupsProductGroupFid updates product group details.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutProductsGroupsProductGroupFidContext] instead.
 func (a *Client) PutProductsGroupsProductGroupFid(params *PutProductsGroupsProductGroupFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsGroupsProductGroupFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1771,11 +1675,9 @@ func (a *Client) PutProductsGroupsProductGroupFid(params *PutProductsGroupsProdu
 	return a.PutProductsGroupsProductGroupFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutProductsGroupsProductGroupFidContextupdates product group details.
-
-Do not use the deprecated [PutProductsGroupsProductGroupFidParams.Context] with this method: it would be ignored.
-*/
+// PutProductsGroupsProductGroupFidContext updates product group details.
+//
+// Do not use the deprecated [PutProductsGroupsProductGroupFidParams.Context] with this method: it would be ignored.
 func (a *Client) PutProductsGroupsProductGroupFidContext(ctx context.Context, params *PutProductsGroupsProductGroupFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsGroupsProductGroupFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1818,17 +1720,15 @@ func (a *Client) PutProductsGroupsProductGroupFidContext(ctx context.Context, pa
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutProductsOffersOfferFidupdates offer details.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutProductsOffersOfferFidContext] instead.
-*/
+// PutProductsOffersOfferFid updates offer details.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutProductsOffersOfferFidContext] instead.
 func (a *Client) PutProductsOffersOfferFid(params *PutProductsOffersOfferFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsOffersOfferFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1837,11 +1737,9 @@ func (a *Client) PutProductsOffersOfferFid(params *PutProductsOffersOfferFidPara
 	return a.PutProductsOffersOfferFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutProductsOffersOfferFidContextupdates offer details.
-
-Do not use the deprecated [PutProductsOffersOfferFidParams.Context] with this method: it would be ignored.
-*/
+// PutProductsOffersOfferFidContext updates offer details.
+//
+// Do not use the deprecated [PutProductsOffersOfferFidParams.Context] with this method: it would be ignored.
 func (a *Client) PutProductsOffersOfferFidContext(ctx context.Context, params *PutProductsOffersOfferFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsOffersOfferFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1884,17 +1782,15 @@ func (a *Client) PutProductsOffersOfferFidContext(ctx context.Context, params *P
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutProductsProductFidupdates product details.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutProductsProductFidContext] instead.
-*/
+// PutProductsProductFid updates product details.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutProductsProductFidContext] instead.
 func (a *Client) PutProductsProductFid(params *PutProductsProductFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsProductFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1903,11 +1799,9 @@ func (a *Client) PutProductsProductFid(params *PutProductsProductFidParams, auth
 	return a.PutProductsProductFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutProductsProductFidContextupdates product details.
-
-Do not use the deprecated [PutProductsProductFidParams.Context] with this method: it would be ignored.
-*/
+// PutProductsProductFidContext updates product details.
+//
+// Do not use the deprecated [PutProductsProductFidParams.Context] with this method: it would be ignored.
 func (a *Client) PutProductsProductFidContext(ctx context.Context, params *PutProductsProductFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsProductFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -1950,17 +1844,15 @@ func (a *Client) PutProductsProductFidContext(ctx context.Context, params *PutPr
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutProductsProductFidPricebandsPriceBandFidupdates product price band details.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutProductsProductFidPricebandsPriceBandFidContext] instead.
-*/
+// PutProductsProductFidPricebandsPriceBandFid updates product price band details.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutProductsProductFidPricebandsPriceBandFidContext] instead.
 func (a *Client) PutProductsProductFidPricebandsPriceBandFid(params *PutProductsProductFidPricebandsPriceBandFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsProductFidPricebandsPriceBandFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -1969,11 +1861,9 @@ func (a *Client) PutProductsProductFidPricebandsPriceBandFid(params *PutProducts
 	return a.PutProductsProductFidPricebandsPriceBandFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutProductsProductFidPricebandsPriceBandFidContextupdates product price band details.
-
-Do not use the deprecated [PutProductsProductFidPricebandsPriceBandFidParams.Context] with this method: it would be ignored.
-*/
+// PutProductsProductFidPricebandsPriceBandFidContext updates product price band details.
+//
+// Do not use the deprecated [PutProductsProductFidPricebandsPriceBandFidParams.Context] with this method: it would be ignored.
 func (a *Client) PutProductsProductFidPricebandsPriceBandFidContext(ctx context.Context, params *PutProductsProductFidPricebandsPriceBandFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsProductFidPricebandsPriceBandFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -2016,17 +1906,15 @@ func (a *Client) PutProductsProductFidPricebandsPriceBandFidContext(ctx context.
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutProductsProductFidPricesPriceFidupdates product price details.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutProductsProductFidPricesPriceFidContext] instead.
-*/
+// PutProductsProductFidPricesPriceFid updates product price details.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutProductsProductFidPricesPriceFidContext] instead.
 func (a *Client) PutProductsProductFidPricesPriceFid(params *PutProductsProductFidPricesPriceFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsProductFidPricesPriceFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -2035,11 +1923,9 @@ func (a *Client) PutProductsProductFidPricesPriceFid(params *PutProductsProductF
 	return a.PutProductsProductFidPricesPriceFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutProductsProductFidPricesPriceFidContextupdates product price details.
-
-Do not use the deprecated [PutProductsProductFidPricesPriceFidParams.Context] with this method: it would be ignored.
-*/
+// PutProductsProductFidPricesPriceFidContext updates product price details.
+//
+// Do not use the deprecated [PutProductsProductFidPricesPriceFidParams.Context] with this method: it would be ignored.
 func (a *Client) PutProductsProductFidPricesPriceFidContext(ctx context.Context, params *PutProductsProductFidPricesPriceFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsProductFidPricesPriceFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -2082,17 +1968,15 @@ func (a *Client) PutProductsProductFidPricesPriceFidContext(ctx context.Context,
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutProductsProductFidSkusSkuFidupdates product s k u details.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutProductsProductFidSkusSkuFidContext] instead.
-*/
+// PutProductsProductFidSkusSkuFid updates product s k u details.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutProductsProductFidSkusSkuFidContext] instead.
 func (a *Client) PutProductsProductFidSkusSkuFid(params *PutProductsProductFidSkusSkuFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsProductFidSkusSkuFidOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -2101,11 +1985,9 @@ func (a *Client) PutProductsProductFidSkusSkuFid(params *PutProductsProductFidSk
 	return a.PutProductsProductFidSkusSkuFidContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutProductsProductFidSkusSkuFidContextupdates product s k u details.
-
-Do not use the deprecated [PutProductsProductFidSkusSkuFidParams.Context] with this method: it would be ignored.
-*/
+// PutProductsProductFidSkusSkuFidContext updates product s k u details.
+//
+// Do not use the deprecated [PutProductsProductFidSkusSkuFidParams.Context] with this method: it would be ignored.
 func (a *Client) PutProductsProductFidSkusSkuFidContext(ctx context.Context, params *PutProductsProductFidSkusSkuFidParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutProductsProductFidSkusSkuFidOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

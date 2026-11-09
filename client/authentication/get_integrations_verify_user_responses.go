@@ -48,11 +48,9 @@ func NewGetIntegrationsVerifyUserOK() *GetIntegrationsVerifyUserOK {
 	return &GetIntegrationsVerifyUserOK{}
 }
 
-/*
-GetIntegrationsVerifyUserOK describes a response with status code 200, with default header values.
-
-Integration User
-*/
+// GetIntegrationsVerifyUserOK describes a response with status code 200, with default header values.
+//
+// Integration User
 type GetIntegrationsVerifyUserOK struct {
 	Payload *GetIntegrationsVerifyUserOKBody
 }
@@ -120,11 +118,9 @@ func NewGetIntegrationsVerifyUserDefault(code int) *GetIntegrationsVerifyUserDef
 	}
 }
 
-/*
-GetIntegrationsVerifyUserDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetIntegrationsVerifyUserDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetIntegrationsVerifyUserDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetIntegrationsVerifyUserDefault) readResponse(response runtime.ClientR
 	return nil
 }
 
-/*
-GetIntegrationsVerifyUserOKBody get integrations verify user o k body
-swagger:model GetIntegrationsVerifyUserOKBody
-*/
+// GetIntegrationsVerifyUserOKBody get integrations verify user o k body
+//
+// swagger:model GetIntegrationsVerifyUserOKBody
 type GetIntegrationsVerifyUserOKBody struct {
 	models.Envelope
 

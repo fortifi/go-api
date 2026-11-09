@@ -44,11 +44,9 @@ func NewPutCustomersCustomerFidExternalReferenceOK() *PutCustomersCustomerFidExt
 	return &PutCustomersCustomerFidExternalReferenceOK{}
 }
 
-/*
-PutCustomersCustomerFidExternalReferenceOK describes a response with status code 200, with default header values.
-
-External Reference Updated
-*/
+// PutCustomersCustomerFidExternalReferenceOK describes a response with status code 200, with default header values.
+//
+// External Reference Updated
 type PutCustomersCustomerFidExternalReferenceOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutCustomersCustomerFidExternalReferenceDefault(code int) *PutCustomersC
 	}
 }
 
-/*
-PutCustomersCustomerFidExternalReferenceDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutCustomersCustomerFidExternalReferenceDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutCustomersCustomerFidExternalReferenceDefault struct {
 	_statusCode int
 

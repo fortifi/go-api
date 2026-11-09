@@ -62,34 +62,29 @@ PutContactsDeviceHardwareIDUnsubscribeParams contains all the parameters to send
 */
 type PutContactsDeviceHardwareIDUnsubscribeParams struct {
 
-	/* BrandFid.
-
-	   Brand to unsubscribe the device from
-	*/
+	// BrandFid.
+	//
+	// Brand to unsubscribe the device from
 	BrandFid *string
 
-	/* EntityFid.
-
-	   Entity to unsubscribe the device from (Fid)
-	*/
+	// EntityFid.
+	//
+	// Entity to unsubscribe the device from (Fid)
 	EntityFid *string
 
-	/* GroupFid.
-
-	   Group to unsubscribe the device from
-	*/
+	// GroupFid.
+	//
+	// Group to unsubscribe the device from
 	GroupFid *string
 
-	/* HardwareID.
-
-	   Hardware ID
-	*/
+	// HardwareID.
+	//
+	// Hardware ID
 	HardwareID string
 
-	/* UnsubscribeType.
-
-	   Unsubscribe Level
-	*/
+	// UnsubscribeType.
+	//
+	// Unsubscribe Level
 	UnsubscribeType *string
 
 	HTTPClient *http.Client

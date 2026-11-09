@@ -63,82 +63,70 @@ PostCustomersCustomerFidPaymentsPaymentFidChargebackParams contains all the para
 */
 type PostCustomersCustomerFidPaymentsPaymentFidChargebackParams struct {
 
-	/* Amount.
-
-	   Disputed Amount
-
-	   Format: float
-	*/
+	// Amount.
+	//
+	// Disputed Amount
+	//
+	// Format: float
 	Amount float32
 
-	/* CaseNumber.
-
-	   Case Number
-	*/
+	// CaseNumber.
+	//
+	// Case Number
 	CaseNumber string
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* DateSubmitted.
-
-	   Date the chargeback was received (Time in ISO 8601 standard with optional fractions of a second e.g 2015-12-05T13:11:59.888Z)
-
-	   Format: date-time
-	*/
+	// DateSubmitted.
+	//
+	// Date the chargeback was received (Time in ISO 8601 standard with optional fractions of a second e.g 2015-12-05T13:11:59.888Z)
+	//
+	// Format: date-time
 	DateSubmitted strfmt.DateTime
 
-	/* Description.
-
-	   Notes
-	*/
+	// Description.
+	//
+	// Notes
 	Description *string
 
-	/* FeeAmount.
-
-	   Fee Amount
-
-	   Format: float
-	*/
+	// FeeAmount.
+	//
+	// Fee Amount
+	//
+	// Format: float
 	FeeAmount *float32
 
-	/* FeeCurrency.
-
-	   3 Character Currency code for the fee
-	*/
+	// FeeCurrency.
+	//
+	// 3 Character Currency code for the fee
 	FeeCurrency *string
 
-	/* PaymentFid.
-
-	   Payment FID to use
-	*/
+	// PaymentFid.
+	//
+	// Payment FID to use
 	PaymentFid string
 
-	/* ReasonCode.
-
-	   Chargeback Reason Code (see https://github.com/packaged/rwd/blob/master/src/Finance/Chargeback/ChargebackReasonHelper.php)
-	*/
+	// ReasonCode.
+	//
+	// Chargeback Reason Code (see https://github.com/packaged/rwd/blob/master/src/Finance/Chargeback/ChargebackReasonHelper.php)
 	ReasonCode string
 
-	/* Refunded.
-
-	   If this payment has been refunded by the alert
-	*/
+	// Refunded.
+	//
+	// If this payment has been refunded by the alert
 	Refunded bool
 
-	/* Source.
-
-	   Source of the alert, or gateway for everything else
-	*/
+	// Source.
+	//
+	// Source of the alert, or gateway for everything else
 	Source string
 
-	/* State.
-
-	   Current State
-	*/
+	// State.
+	//
+	// Current State
 	State string
 
 	HTTPClient *http.Client

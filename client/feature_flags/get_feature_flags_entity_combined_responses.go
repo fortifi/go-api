@@ -48,11 +48,9 @@ func NewGetFeatureFlagsEntityCombinedOK() *GetFeatureFlagsEntityCombinedOK {
 	return &GetFeatureFlagsEntityCombinedOK{}
 }
 
-/*
-GetFeatureFlagsEntityCombinedOK describes a response with status code 200, with default header values.
-
-Combined Entity Feature Flags Retrieved
-*/
+// GetFeatureFlagsEntityCombinedOK describes a response with status code 200, with default header values.
+//
+// Combined Entity Feature Flags Retrieved
 type GetFeatureFlagsEntityCombinedOK struct {
 	Payload *GetFeatureFlagsEntityCombinedOKBody
 }
@@ -120,11 +118,9 @@ func NewGetFeatureFlagsEntityCombinedDefault(code int) *GetFeatureFlagsEntityCom
 	}
 }
 
-/*
-GetFeatureFlagsEntityCombinedDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// GetFeatureFlagsEntityCombinedDefault describes a response with status code -1, with default header values.
+//
+// Error
 type GetFeatureFlagsEntityCombinedDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *GetFeatureFlagsEntityCombinedDefault) readResponse(response runtime.Cli
 	return nil
 }
 
-/*
-GetFeatureFlagsEntityCombinedOKBody get feature flags entity combined o k body
-swagger:model GetFeatureFlagsEntityCombinedOKBody
-*/
+// GetFeatureFlagsEntityCombinedOKBody get feature flags entity combined o k body
+//
+// swagger:model GetFeatureFlagsEntityCombinedOKBody
 type GetFeatureFlagsEntityCombinedOKBody struct {
 	models.Envelope
 

@@ -62,16 +62,14 @@ PutCustomersCustomerFidCurrencyParams contains all the parameters to send to the
 */
 type PutCustomersCustomerFidCurrencyParams struct {
 
-	/* Currency.
-
-	   Currency (ISO 4217, 3 Character Code)
-	*/
+	// Currency.
+	//
+	// Currency (ISO 4217, 3 Character Code)
 	Currency string
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
 	HTTPClient *http.Client

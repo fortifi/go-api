@@ -19,12 +19,12 @@ type InvoiceDownloadResponse struct {
 }
 
 // Validate validates this invoice download response
-func (m *InvoiceDownloadResponse) Validate(formats strfmt.Registry) error {
+func (m *InvoiceDownloadResponse) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this invoice download response based on context it is used
-func (m *InvoiceDownloadResponse) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *InvoiceDownloadResponse) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

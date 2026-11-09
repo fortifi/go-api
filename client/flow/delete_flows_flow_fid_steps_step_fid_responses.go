@@ -48,11 +48,9 @@ func NewDeleteFlowsFlowFidStepsStepFidOK() *DeleteFlowsFlowFidStepsStepFidOK {
 	return &DeleteFlowsFlowFidStepsStepFidOK{}
 }
 
-/*
-DeleteFlowsFlowFidStepsStepFidOK describes a response with status code 200, with default header values.
-
-Step archived successfully
-*/
+// DeleteFlowsFlowFidStepsStepFidOK describes a response with status code 200, with default header values.
+//
+// Step archived successfully
 type DeleteFlowsFlowFidStepsStepFidOK struct {
 	Payload *DeleteFlowsFlowFidStepsStepFidOKBody
 }
@@ -120,11 +118,9 @@ func NewDeleteFlowsFlowFidStepsStepFidDefault(code int) *DeleteFlowsFlowFidSteps
 	}
 }
 
-/*
-DeleteFlowsFlowFidStepsStepFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// DeleteFlowsFlowFidStepsStepFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type DeleteFlowsFlowFidStepsStepFidDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *DeleteFlowsFlowFidStepsStepFidDefault) readResponse(response runtime.Cl
 	return nil
 }
 
-/*
-DeleteFlowsFlowFidStepsStepFidOKBody delete flows flow fid steps step fid o k body
-swagger:model DeleteFlowsFlowFidStepsStepFidOKBody
-*/
+// DeleteFlowsFlowFidStepsStepFidOKBody delete flows flow fid steps step fid o k body
+//
+// swagger:model DeleteFlowsFlowFidStepsStepFidOKBody
 type DeleteFlowsFlowFidStepsStepFidOKBody struct {
 	models.Envelope
 

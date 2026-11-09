@@ -44,11 +44,9 @@ func NewPutCustomersCustomerFidAccountTypeOK() *PutCustomersCustomerFidAccountTy
 	return &PutCustomersCustomerFidAccountTypeOK{}
 }
 
-/*
-PutCustomersCustomerFidAccountTypeOK describes a response with status code 200, with default header values.
-
-Customer Status Updated
-*/
+// PutCustomersCustomerFidAccountTypeOK describes a response with status code 200, with default header values.
+//
+// Customer Status Updated
 type PutCustomersCustomerFidAccountTypeOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPutCustomersCustomerFidAccountTypeDefault(code int) *PutCustomersCustome
 	}
 }
 
-/*
-PutCustomersCustomerFidAccountTypeDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PutCustomersCustomerFidAccountTypeDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PutCustomersCustomerFidAccountTypeDefault struct {
 	_statusCode int
 

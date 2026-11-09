@@ -22,12 +22,12 @@ type TriggerOnDemandOrderPayload struct {
 }
 
 // Validate validates this trigger on demand order payload
-func (m *TriggerOnDemandOrderPayload) Validate(formats strfmt.Registry) error {
+func (m *TriggerOnDemandOrderPayload) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this trigger on demand order payload based on context it is used
-func (m *TriggerOnDemandOrderPayload) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *TriggerOnDemandOrderPayload) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

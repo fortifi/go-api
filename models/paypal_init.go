@@ -19,12 +19,12 @@ type PaypalInit struct {
 }
 
 // Validate validates this paypal init
-func (m *PaypalInit) Validate(formats strfmt.Registry) error {
+func (m *PaypalInit) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this paypal init based on context it is used
-func (m *PaypalInit) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *PaypalInit) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

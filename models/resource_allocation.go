@@ -25,12 +25,12 @@ type ResourceAllocation struct {
 }
 
 // Validate validates this resource allocation
-func (m *ResourceAllocation) Validate(formats strfmt.Registry) error {
+func (m *ResourceAllocation) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this resource allocation based on context it is used
-func (m *ResourceAllocation) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *ResourceAllocation) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 

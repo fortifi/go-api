@@ -48,11 +48,9 @@ func NewPostCustomersCustomerFidFinanceCalculateTaxOK() *PostCustomersCustomerFi
 	return &PostCustomersCustomerFidFinanceCalculateTaxOK{}
 }
 
-/*
-PostCustomersCustomerFidFinanceCalculateTaxOK describes a response with status code 200, with default header values.
-
-Calculated tax amount
-*/
+// PostCustomersCustomerFidFinanceCalculateTaxOK describes a response with status code 200, with default header values.
+//
+// Calculated tax amount
 type PostCustomersCustomerFidFinanceCalculateTaxOK struct {
 	Payload *PostCustomersCustomerFidFinanceCalculateTaxOKBody
 }
@@ -120,11 +118,9 @@ func NewPostCustomersCustomerFidFinanceCalculateTaxDefault(code int) *PostCustom
 	}
 }
 
-/*
-PostCustomersCustomerFidFinanceCalculateTaxDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostCustomersCustomerFidFinanceCalculateTaxDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostCustomersCustomerFidFinanceCalculateTaxDefault struct {
 	_statusCode int
 
@@ -187,10 +183,9 @@ func (o *PostCustomersCustomerFidFinanceCalculateTaxDefault) readResponse(respon
 	return nil
 }
 
-/*
-PostCustomersCustomerFidFinanceCalculateTaxOKBody post customers customer fid finance calculate tax o k body
-swagger:model PostCustomersCustomerFidFinanceCalculateTaxOKBody
-*/
+// PostCustomersCustomerFidFinanceCalculateTaxOKBody post customers customer fid finance calculate tax o k body
+//
+// swagger:model PostCustomersCustomerFidFinanceCalculateTaxOKBody
 type PostCustomersCustomerFidFinanceCalculateTaxOKBody struct {
 	models.Envelope
 

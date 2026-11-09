@@ -62,28 +62,24 @@ PutCustomersCustomerFidSubscriptionsSubscriptionFidParams contains all the param
 */
 type PutCustomersCustomerFidSubscriptionsSubscriptionFidParams struct {
 
-	/* CustomerFid.
-
-	   Customer FID to use
-	*/
+	// CustomerFid.
+	//
+	// Customer FID to use
 	CustomerFid string
 
-	/* Description.
-
-	   Description for the subscription
-	*/
+	// Description.
+	//
+	// Description for the subscription
 	Description *string
 
-	/* DisplayName.
-
-	   Name of the subscription
-	*/
+	// DisplayName.
+	//
+	// Name of the subscription
 	DisplayName *string
 
-	/* SubscriptionFid.
-
-	   Subscription FID to use
-	*/
+	// SubscriptionFid.
+	//
+	// Subscription FID to use
 	SubscriptionFid string
 
 	HTTPClient *http.Client

@@ -44,11 +44,9 @@ func NewDeleteOrdersOrderFidOffersOfferFidOK() *DeleteOrdersOrderFidOffersOfferF
 	return &DeleteOrdersOrderFidOffersOfferFidOK{}
 }
 
-/*
-DeleteOrdersOrderFidOffersOfferFidOK describes a response with status code 200, with default header values.
-
-Offer removed from the order successfully
-*/
+// DeleteOrdersOrderFidOffersOfferFidOK describes a response with status code 200, with default header values.
+//
+// Offer removed from the order successfully
 type DeleteOrdersOrderFidOffersOfferFidOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewDeleteOrdersOrderFidOffersOfferFidDefault(code int) *DeleteOrdersOrderFi
 	}
 }
 
-/*
-DeleteOrdersOrderFidOffersOfferFidDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// DeleteOrdersOrderFidOffersOfferFidDefault describes a response with status code -1, with default header values.
+//
+// Error
 type DeleteOrdersOrderFidOffersOfferFidDefault struct {
 	_statusCode int
 

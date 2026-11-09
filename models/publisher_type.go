@@ -130,6 +130,6 @@ func (m PublisherType) Validate(formats strfmt.Registry) error {
 }
 
 // ContextValidate validates this publisher type based on context it is used
-func (m PublisherType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m PublisherType) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }

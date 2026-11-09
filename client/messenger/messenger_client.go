@@ -43,9 +43,7 @@ func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) Client
 	return &Client{transport: transport, formats: strfmt.Default}
 }
 
-/*
-Client for messenger API.
-*/
+// Client for messenger API.
 type Client struct {
 	transport runtime.ContextualTransport
 	formats   strfmt.Registry
@@ -96,17 +94,15 @@ type ClientService interface {
 	SetTransport(transport runtime.ContextualTransport)
 }
 
-/*
-GetMessengerListMessageGroupslists message groups.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.GetMessengerListMessageGroupsContext] instead.
-*/
+// GetMessengerListMessageGroups lists message groups.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.GetMessengerListMessageGroupsContext] instead.
 func (a *Client) GetMessengerListMessageGroups(params *GetMessengerListMessageGroupsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetMessengerListMessageGroupsOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -115,11 +111,9 @@ func (a *Client) GetMessengerListMessageGroups(params *GetMessengerListMessageGr
 	return a.GetMessengerListMessageGroupsContext(ctx, params, authInfo, opts...)
 }
 
-/*
-GetMessengerListMessageGroupsContextlists message groups.
-
-Do not use the deprecated [GetMessengerListMessageGroupsParams.Context] with this method: it would be ignored.
-*/
+// GetMessengerListMessageGroupsContext lists message groups.
+//
+// Do not use the deprecated [GetMessengerListMessageGroupsParams.Context] with this method: it would be ignored.
 func (a *Client) GetMessengerListMessageGroupsContext(ctx context.Context, params *GetMessengerListMessageGroupsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetMessengerListMessageGroupsOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {
@@ -162,17 +156,15 @@ func (a *Client) GetMessengerListMessageGroupsContext(ctx context.Context, param
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
-/*
-PutMessengerDeliveriesDeliveryFidUnsubscribeunsubscribes an email based on the delivery fid.
-
-This method does not support injected context.
-However, timeout and opentracing contexts are honored whenever enabled.
-
-If you need to pass a specific context, use [Client.PutMessengerDeliveriesDeliveryFidUnsubscribeContext] instead.
-*/
+// PutMessengerDeliveriesDeliveryFidUnsubscribe unsubscribes an email based on the delivery fid.
+//
+// This method does not support injected context.
+// However, timeout and opentracing contexts are honored whenever enabled.
+//
+// If you need to pass a specific context, use [Client.PutMessengerDeliveriesDeliveryFidUnsubscribeContext] instead.
 func (a *Client) PutMessengerDeliveriesDeliveryFidUnsubscribe(params *PutMessengerDeliveriesDeliveryFidUnsubscribeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutMessengerDeliveriesDeliveryFidUnsubscribeOK, error) {
 	var ctx context.Context
-	if params.inner.ctx != nil {
+	if params != nil && params.inner.ctx != nil {
 		ctx = params.inner.ctx
 	} else {
 		ctx = context.Background()
@@ -181,11 +173,9 @@ func (a *Client) PutMessengerDeliveriesDeliveryFidUnsubscribe(params *PutMesseng
 	return a.PutMessengerDeliveriesDeliveryFidUnsubscribeContext(ctx, params, authInfo, opts...)
 }
 
-/*
-PutMessengerDeliveriesDeliveryFidUnsubscribeContextunsubscribes an email based on the delivery fid.
-
-Do not use the deprecated [PutMessengerDeliveriesDeliveryFidUnsubscribeParams.Context] with this method: it would be ignored.
-*/
+// PutMessengerDeliveriesDeliveryFidUnsubscribeContext unsubscribes an email based on the delivery fid.
+//
+// Do not use the deprecated [PutMessengerDeliveriesDeliveryFidUnsubscribeParams.Context] with this method: it would be ignored.
 func (a *Client) PutMessengerDeliveriesDeliveryFidUnsubscribeContext(ctx context.Context, params *PutMessengerDeliveriesDeliveryFidUnsubscribeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PutMessengerDeliveriesDeliveryFidUnsubscribeOK, error) {
 	// NOTE: parameters are not validated before sending
 	if params == nil {

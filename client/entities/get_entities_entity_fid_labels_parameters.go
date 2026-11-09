@@ -62,10 +62,9 @@ GetEntitiesEntityFidLabelsParams contains all the parameters to send to the API 
 */
 type GetEntitiesEntityFidLabelsParams struct {
 
-	/* EntityFid.
-
-	   Entity FID to use
-	*/
+	// EntityFid.
+	//
+	// Entity FID to use
 	EntityFid string
 
 	HTTPClient *http.Client

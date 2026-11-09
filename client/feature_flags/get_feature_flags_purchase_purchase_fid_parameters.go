@@ -62,10 +62,9 @@ GetFeatureFlagsPurchasePurchaseFidParams contains all the parameters to send to 
 */
 type GetFeatureFlagsPurchasePurchaseFidParams struct {
 
-	/* PurchaseFid.
-
-	   Purchase FID to use
-	*/
+	// PurchaseFid.
+	//
+	// Purchase FID to use
 	PurchaseFid string
 
 	HTTPClient *http.Client

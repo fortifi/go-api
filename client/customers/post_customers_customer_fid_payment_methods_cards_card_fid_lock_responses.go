@@ -44,11 +44,9 @@ func NewPostCustomersCustomerFidPaymentMethodsCardsCardFidLockOK() *PostCustomer
 	return &PostCustomersCustomerFidPaymentMethodsCardsCardFidLockOK{}
 }
 
-/*
-PostCustomersCustomerFidPaymentMethodsCardsCardFidLockOK describes a response with status code 200, with default header values.
-
-Card Locked
-*/
+// PostCustomersCustomerFidPaymentMethodsCardsCardFidLockOK describes a response with status code 200, with default header values.
+//
+// Card Locked
 type PostCustomersCustomerFidPaymentMethodsCardsCardFidLockOK struct {
 }
 
@@ -102,11 +100,9 @@ func NewPostCustomersCustomerFidPaymentMethodsCardsCardFidLockDefault(code int) 
 	}
 }
 
-/*
-PostCustomersCustomerFidPaymentMethodsCardsCardFidLockDefault describes a response with status code -1, with default header values.
-
-Error
-*/
+// PostCustomersCustomerFidPaymentMethodsCardsCardFidLockDefault describes a response with status code -1, with default header values.
+//
+// Error
 type PostCustomersCustomerFidPaymentMethodsCardsCardFidLockDefault struct {
 	_statusCode int
 

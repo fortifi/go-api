@@ -88,6 +88,6 @@ func (m CustomerAccountType) Validate(formats strfmt.Registry) error {
 }
 
 // ContextValidate validates this customer account type based on context it is used
-func (m CustomerAccountType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m CustomerAccountType) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }

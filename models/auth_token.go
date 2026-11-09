@@ -22,12 +22,12 @@ type AuthToken struct {
 }
 
 // Validate validates this auth token
-func (m *AuthToken) Validate(formats strfmt.Registry) error {
+func (m *AuthToken) Validate(_ strfmt.Registry) error {
 	return nil
 }
 
 // ContextValidate validates this auth token based on context it is used
-func (m *AuthToken) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *AuthToken) ContextValidate(_ context.Context, _ strfmt.Registry) error {
 	return nil
 }
 
