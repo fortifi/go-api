@@ -24,6 +24,9 @@ type OrderPublisherPayload struct {
 	// Campaign hash to allocate this action to (leave blank to use visitor ID values)
 	CampaignHash string `json:"campaignHash,omitempty"`
 
+	// Media type the action came from, e.g. 'ap' for app order forms
+	MediaType string `json:"mediaType,omitempty"`
+
 	// (required) Trigger the publisher action when the order gets to this state
 	// Enum: ["approved","setup","complete"]
 	OnState string `json:"onState,omitempty"`
