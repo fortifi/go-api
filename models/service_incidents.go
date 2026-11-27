@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // ServiceIncidents Service Incidents
@@ -42,8 +43,8 @@ func (m *ServiceIncidents) validateServiceIncidents(formats strfmt.Registry) err
 	}
 
 	for i := 0; i < len(m.ServiceIncidents); i++ {
-		if typeutils.IsZero(m.ServiceIncidents[i]) { // not required
-			continue
+		if m.ServiceIncidents[i] == nil {
+			return validate.Required("serviceIncidents"+"."+strconv.Itoa(i), "body", m.ServiceIncidents[i])
 		}
 
 		if m.ServiceIncidents[i] != nil {

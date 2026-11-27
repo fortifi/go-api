@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // VisitorPostAction Vistor Action
@@ -69,8 +70,8 @@ func (m *VisitorPostAction) validatePixels(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Pixels); i++ {
-		if typeutils.IsZero(m.Pixels[i]) { // not required
-			continue
+		if m.Pixels[i] == nil {
+			return validate.Required("pixels"+"."+strconv.Itoa(i), "body", m.Pixels[i])
 		}
 
 		if m.Pixels[i] != nil {

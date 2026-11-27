@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // ProductSkus Product SKUs
@@ -42,8 +43,8 @@ func (m *ProductSkus) validateSkus(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Skus); i++ {
-		if typeutils.IsZero(m.Skus[i]) { // not required
-			continue
+		if m.Skus[i] == nil {
+			return validate.Required("skus"+"."+strconv.Itoa(i), "body", m.Skus[i])
 		}
 
 		if m.Skus[i] != nil {

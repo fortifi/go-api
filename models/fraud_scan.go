@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // FraudScan Result of a fraud scan
@@ -57,8 +58,8 @@ func (m *FraudScan) validateMetaDataItems(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.MetaDataItems); i++ {
-		if typeutils.IsZero(m.MetaDataItems[i]) { // not required
-			continue
+		if m.MetaDataItems[i] == nil {
+			return validate.Required("metaDataItems"+"."+strconv.Itoa(i), "body", m.MetaDataItems[i])
 		}
 
 		if m.MetaDataItems[i] != nil {

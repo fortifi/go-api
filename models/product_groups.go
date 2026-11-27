@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // ProductGroups Generic Response
@@ -42,8 +43,8 @@ func (m *ProductGroups) validateGroups(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Groups); i++ {
-		if typeutils.IsZero(m.Groups[i]) { // not required
-			continue
+		if m.Groups[i] == nil {
+			return validate.Required("groups"+"."+strconv.Itoa(i), "body", m.Groups[i])
 		}
 
 		if m.Groups[i] != nil {

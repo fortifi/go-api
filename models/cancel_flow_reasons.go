@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // CancelFlowReasons Cancellation Flow Reasons
@@ -42,8 +43,8 @@ func (m *CancelFlowReasons) validateReasons(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Reasons); i++ {
-		if typeutils.IsZero(m.Reasons[i]) { // not required
-			continue
+		if m.Reasons[i] == nil {
+			return validate.Required("reasons"+"."+strconv.Itoa(i), "body", m.Reasons[i])
 		}
 
 		if m.Reasons[i] != nil {

@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // ReviewsResponse Reviews Response
@@ -42,8 +43,8 @@ func (m *ReviewsResponse) validateReviews(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Reviews); i++ {
-		if typeutils.IsZero(m.Reviews[i]) { // not required
-			continue
+		if m.Reviews[i] == nil {
+			return validate.Required("reviews"+"."+strconv.Itoa(i), "body", m.Reviews[i])
 		}
 
 		if m.Reviews[i] != nil {

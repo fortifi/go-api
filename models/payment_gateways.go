@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // PaymentGateways Generic Response
@@ -94,8 +95,8 @@ func (m *PaymentGateways) validateGateways(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Gateways); i++ {
-		if typeutils.IsZero(m.Gateways[i]) { // not required
-			continue
+		if m.Gateways[i] == nil {
+			return validate.Required("gateways"+"."+strconv.Itoa(i), "body", m.Gateways[i])
 		}
 
 		if m.Gateways[i] != nil {

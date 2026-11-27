@@ -56,6 +56,9 @@ type ProductOffer struct {
 	// setup discount type
 	SetupDiscountType DiscountType `json:"setupDiscountType,omitempty"`
 
+	// tax inclusive
+	TaxInclusive bool `json:"taxInclusive,omitempty"`
+
 	// term
 	Term int32 `json:"term,omitempty"`
 
@@ -98,6 +101,8 @@ func (m *ProductOffer) UnmarshalJSON(raw []byte) error {
 
 		SetupDiscountType DiscountType `json:"setupDiscountType,omitempty"`
 
+		TaxInclusive bool `json:"taxInclusive,omitempty"`
+
 		Term int32 `json:"term,omitempty"`
 
 		TermType CycleTermType `json:"termType,omitempty"`
@@ -129,6 +134,8 @@ func (m *ProductOffer) UnmarshalJSON(raw []byte) error {
 	m.SetupDiscountAmount = dataAO1.SetupDiscountAmount
 
 	m.SetupDiscountType = dataAO1.SetupDiscountType
+
+	m.TaxInclusive = dataAO1.TaxInclusive
 
 	m.Term = dataAO1.Term
 
@@ -171,6 +178,8 @@ func (m ProductOffer) MarshalJSON() ([]byte, error) {
 
 		SetupDiscountType DiscountType `json:"setupDiscountType,omitempty"`
 
+		TaxInclusive bool `json:"taxInclusive,omitempty"`
+
 		Term int32 `json:"term,omitempty"`
 
 		TermType CycleTermType `json:"termType,omitempty"`
@@ -199,6 +208,8 @@ func (m ProductOffer) MarshalJSON() ([]byte, error) {
 	dataAO1.SetupDiscountAmount = m.SetupDiscountAmount
 
 	dataAO1.SetupDiscountType = m.SetupDiscountType
+
+	dataAO1.TaxInclusive = m.TaxInclusive
 
 	dataAO1.Term = m.Term
 

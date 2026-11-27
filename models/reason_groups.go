@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // ReasonGroups Reason Groups
@@ -42,8 +43,8 @@ func (m *ReasonGroups) validateReasonGroups(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.ReasonGroups); i++ {
-		if typeutils.IsZero(m.ReasonGroups[i]) { // not required
-			continue
+		if m.ReasonGroups[i] == nil {
+			return validate.Required("reasonGroups"+"."+strconv.Itoa(i), "body", m.ReasonGroups[i])
 		}
 
 		if m.ReasonGroups[i] != nil {

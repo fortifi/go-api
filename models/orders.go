@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // Orders List of orders
@@ -42,8 +43,8 @@ func (m *Orders) validateOrders(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Orders); i++ {
-		if typeutils.IsZero(m.Orders[i]) { // not required
-			continue
+		if m.Orders[i] == nil {
+			return validate.Required("orders"+"."+strconv.Itoa(i), "body", m.Orders[i])
 		}
 
 		if m.Orders[i] != nil {

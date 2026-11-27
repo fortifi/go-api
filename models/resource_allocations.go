@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // ResourceAllocations Resource Allocations
@@ -94,8 +95,8 @@ func (m *ResourceAllocations) validateAllocations(formats strfmt.Registry) error
 	}
 
 	for i := 0; i < len(m.Allocations); i++ {
-		if typeutils.IsZero(m.Allocations[i]) { // not required
-			continue
+		if m.Allocations[i] == nil {
+			return validate.Required("allocations"+"."+strconv.Itoa(i), "body", m.Allocations[i])
 		}
 
 		if m.Allocations[i] != nil {

@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // Publishers Publishers
@@ -94,8 +95,8 @@ func (m *Publishers) validatePublishers(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Publishers); i++ {
-		if typeutils.IsZero(m.Publishers[i]) { // not required
-			continue
+		if m.Publishers[i] == nil {
+			return validate.Required("publishers"+"."+strconv.Itoa(i), "body", m.Publishers[i])
 		}
 
 		if m.Publishers[i] != nil {

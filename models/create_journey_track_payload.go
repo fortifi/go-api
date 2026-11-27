@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // CreateJourneyTrackPayload create journey track payload
@@ -45,8 +46,8 @@ func (m *CreateJourneyTrackPayload) validateData(formats strfmt.Registry) error 
 	}
 
 	for i := 0; i < len(m.Data); i++ {
-		if typeutils.IsZero(m.Data[i]) { // not required
-			continue
+		if m.Data[i] == nil {
+			return validate.Required("data"+"."+strconv.Itoa(i), "body", m.Data[i])
 		}
 
 		if m.Data[i] != nil {

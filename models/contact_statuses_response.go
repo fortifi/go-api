@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // ContactStatusesResponse Contact Statuses Response
@@ -42,8 +43,8 @@ func (m *ContactStatusesResponse) validateStatuses(formats strfmt.Registry) erro
 	}
 
 	for i := 0; i < len(m.Statuses); i++ {
-		if typeutils.IsZero(m.Statuses[i]) { // not required
-			continue
+		if m.Statuses[i] == nil {
+			return validate.Required("statuses"+"."+strconv.Itoa(i), "body", m.Statuses[i])
 		}
 
 		if m.Statuses[i] != nil {

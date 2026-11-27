@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // TicketPosts Ticket Posts
@@ -42,8 +43,8 @@ func (m *TicketPosts) validatePosts(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Posts); i++ {
-		if typeutils.IsZero(m.Posts[i]) { // not required
-			continue
+		if m.Posts[i] == nil {
+			return validate.Required("posts"+"."+strconv.Itoa(i), "body", m.Posts[i])
 		}
 
 		if m.Posts[i] != nil {

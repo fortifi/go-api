@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // Payments Payments
@@ -42,8 +43,8 @@ func (m *Payments) validatePayments(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Payments); i++ {
-		if typeutils.IsZero(m.Payments[i]) { // not required
-			continue
+		if m.Payments[i] == nil {
+			return validate.Required("payments"+"."+strconv.Itoa(i), "body", m.Payments[i])
 		}
 
 		if m.Payments[i] != nil {

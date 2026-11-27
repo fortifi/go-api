@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // PaymentCards Generic Response
@@ -42,8 +43,8 @@ func (m *PaymentCards) validateCards(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Cards); i++ {
-		if typeutils.IsZero(m.Cards[i]) { // not required
-			continue
+		if m.Cards[i] == nil {
+			return validate.Required("cards"+"."+strconv.Itoa(i), "body", m.Cards[i])
 		}
 
 		if m.Cards[i] != nil {

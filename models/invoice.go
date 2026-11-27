@@ -312,8 +312,8 @@ func (m *Invoice) validateCreditNotes(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.CreditNotes); i++ {
-		if typeutils.IsZero(m.CreditNotes[i]) { // not required
-			continue
+		if m.CreditNotes[i] == nil {
+			return validate.Required("creditNotes"+"."+strconv.Itoa(i), "body", m.CreditNotes[i])
 		}
 
 		if m.CreditNotes[i] != nil {
@@ -369,8 +369,8 @@ func (m *Invoice) validateInvoiceItems(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.InvoiceItems); i++ {
-		if typeutils.IsZero(m.InvoiceItems[i]) { // not required
-			continue
+		if m.InvoiceItems[i] == nil {
+			return validate.Required("invoiceItems"+"."+strconv.Itoa(i), "body", m.InvoiceItems[i])
 		}
 
 		if m.InvoiceItems[i] != nil {

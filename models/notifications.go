@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // Notifications Sent Notifications
@@ -42,8 +43,8 @@ func (m *Notifications) validateNotifications(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Notifications); i++ {
-		if typeutils.IsZero(m.Notifications[i]) { // not required
-			continue
+		if m.Notifications[i] == nil {
+			return validate.Required("notifications"+"."+strconv.Itoa(i), "body", m.Notifications[i])
 		}
 
 		if m.Notifications[i] != nil {

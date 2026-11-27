@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // UpdateCcBccPayload update cc bcc payload
@@ -58,8 +59,8 @@ func (m *UpdateCcBccPayload) validateAddBcc(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.AddBcc); i++ {
-		if typeutils.IsZero(m.AddBcc[i]) { // not required
-			continue
+		if m.AddBcc[i] == nil {
+			return validate.Required("addBcc"+"."+strconv.Itoa(i), "body", m.AddBcc[i])
 		}
 
 		if m.AddBcc[i] != nil {
@@ -88,8 +89,8 @@ func (m *UpdateCcBccPayload) validateAddCc(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.AddCc); i++ {
-		if typeutils.IsZero(m.AddCc[i]) { // not required
-			continue
+		if m.AddCc[i] == nil {
+			return validate.Required("addCc"+"."+strconv.Itoa(i), "body", m.AddCc[i])
 		}
 
 		if m.AddCc[i] != nil {

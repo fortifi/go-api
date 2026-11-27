@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // TaxItemResponse Tax Item Response
@@ -96,8 +97,8 @@ func (m *TaxItemResponse) validateRateBreakdown(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.RateBreakdown); i++ {
-		if typeutils.IsZero(m.RateBreakdown[i]) { // not required
-			continue
+		if m.RateBreakdown[i] == nil {
+			return validate.Required("rateBreakdown"+"."+strconv.Itoa(i), "body", m.RateBreakdown[i])
 		}
 
 		if m.RateBreakdown[i] != nil {

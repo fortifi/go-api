@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // RetentionFlowOptionsPayload retention flow options payload
@@ -42,8 +43,8 @@ func (m *RetentionFlowOptionsPayload) validateOptions(formats strfmt.Registry) e
 	}
 
 	for i := 0; i < len(m.Options); i++ {
-		if typeutils.IsZero(m.Options[i]) { // not required
-			continue
+		if m.Options[i] == nil {
+			return validate.Required("options"+"."+strconv.Itoa(i), "body", m.Options[i])
 		}
 
 		if m.Options[i] != nil {

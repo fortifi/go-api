@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // Tickets Generic Response
@@ -94,8 +95,8 @@ func (m *Tickets) validateTickets(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Tickets); i++ {
-		if typeutils.IsZero(m.Tickets[i]) { // not required
-			continue
+		if m.Tickets[i] == nil {
+			return validate.Required("tickets"+"."+strconv.Itoa(i), "body", m.Tickets[i])
 		}
 
 		if m.Tickets[i] != nil {

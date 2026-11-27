@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // CustomerInteractions customer interactions
@@ -42,8 +43,8 @@ func (m *CustomerInteractions) validateChats(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Chats); i++ {
-		if typeutils.IsZero(m.Chats[i]) { // not required
-			continue
+		if m.Chats[i] == nil {
+			return validate.Required("chats"+"."+strconv.Itoa(i), "body", m.Chats[i])
 		}
 
 		if m.Chats[i] != nil {

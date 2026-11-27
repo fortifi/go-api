@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // Reservations Reservations
@@ -42,8 +43,8 @@ func (m *Reservations) validateReservations(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Reservations); i++ {
-		if typeutils.IsZero(m.Reservations[i]) { // not required
-			continue
+		if m.Reservations[i] == nil {
+			return validate.Required("reservations"+"."+strconv.Itoa(i), "body", m.Reservations[i])
 		}
 
 		if m.Reservations[i] != nil {

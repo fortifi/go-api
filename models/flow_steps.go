@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // FlowSteps Retention Flow Steps
@@ -45,8 +46,8 @@ func (m *FlowSteps) validateSteps(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Steps); i++ {
-		if typeutils.IsZero(m.Steps[i]) { // not required
-			continue
+		if m.Steps[i] == nil {
+			return validate.Required("steps"+"."+strconv.Itoa(i), "body", m.Steps[i])
 		}
 
 		if m.Steps[i] != nil {

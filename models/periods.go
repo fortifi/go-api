@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // Periods Generic Response
@@ -94,8 +95,8 @@ func (m *Periods) validatePeriods(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Periods); i++ {
-		if typeutils.IsZero(m.Periods[i]) { // not required
-			continue
+		if m.Periods[i] == nil {
+			return validate.Required("periods"+"."+strconv.Itoa(i), "body", m.Periods[i])
 		}
 
 		if m.Periods[i] != nil {

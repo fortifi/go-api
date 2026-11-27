@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // Brands Brands
@@ -42,8 +43,8 @@ func (m *Brands) validateBrands(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Brands); i++ {
-		if typeutils.IsZero(m.Brands[i]) { // not required
-			continue
+		if m.Brands[i] == nil {
+			return validate.Required("brands"+"."+strconv.Itoa(i), "body", m.Brands[i])
 		}
 
 		if m.Brands[i] != nil {
