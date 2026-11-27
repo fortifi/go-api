@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // Attachments List of attachments
@@ -42,8 +43,8 @@ func (m *Attachments) validateAttachments(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Attachments); i++ {
-		if typeutils.IsZero(m.Attachments[i]) { // not required
-			continue
+		if m.Attachments[i] == nil {
+			return validate.Required("attachments"+"."+strconv.Itoa(i), "body", m.Attachments[i])
 		}
 
 		if m.Attachments[i] != nil {

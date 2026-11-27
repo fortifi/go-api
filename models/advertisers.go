@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // Advertisers DEPRECATED
@@ -94,8 +95,8 @@ func (m *Advertisers) validateAdvertisers(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Advertisers); i++ {
-		if typeutils.IsZero(m.Advertisers[i]) { // not required
-			continue
+		if m.Advertisers[i] == nil {
+			return validate.Required("advertisers"+"."+strconv.Itoa(i), "body", m.Advertisers[i])
 		}
 
 		if m.Advertisers[i] != nil {

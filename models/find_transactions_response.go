@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // FindTransactionsResponse find transactions response
@@ -42,8 +43,8 @@ func (m *FindTransactionsResponse) validateTransactions(formats strfmt.Registry)
 	}
 
 	for i := 0; i < len(m.Transactions); i++ {
-		if typeutils.IsZero(m.Transactions[i]) { // not required
-			continue
+		if m.Transactions[i] == nil {
+			return validate.Required("transactions"+"."+strconv.Itoa(i), "body", m.Transactions[i])
 		}
 
 		if m.Transactions[i] != nil {

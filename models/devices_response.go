@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // DevicesResponse Devices Response
@@ -42,8 +43,8 @@ func (m *DevicesResponse) validateDevices(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Devices); i++ {
-		if typeutils.IsZero(m.Devices[i]) { // not required
-			continue
+		if m.Devices[i] == nil {
+			return validate.Required("devices"+"."+strconv.Itoa(i), "body", m.Devices[i])
 		}
 
 		if m.Devices[i] != nil {

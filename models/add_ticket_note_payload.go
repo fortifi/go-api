@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // AddTicketNotePayload add ticket note payload
@@ -42,8 +43,8 @@ func (m *AddTicketNotePayload) validateNotes(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Notes); i++ {
-		if typeutils.IsZero(m.Notes[i]) { // not required
-			continue
+		if m.Notes[i] == nil {
+			return validate.Required("notes"+"."+strconv.Itoa(i), "body", m.Notes[i])
 		}
 
 		if m.Notes[i] != nil {

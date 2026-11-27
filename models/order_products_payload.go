@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // OrderProductsPayload order products payload
@@ -66,8 +67,8 @@ func (m *OrderProductsPayload) validateModifySubscriptions(formats strfmt.Regist
 	}
 
 	for i := 0; i < len(m.ModifySubscriptions); i++ {
-		if typeutils.IsZero(m.ModifySubscriptions[i]) { // not required
-			continue
+		if m.ModifySubscriptions[i] == nil {
+			return validate.Required("modifySubscriptions"+"."+strconv.Itoa(i), "body", m.ModifySubscriptions[i])
 		}
 
 		if m.ModifySubscriptions[i] != nil {
@@ -96,8 +97,8 @@ func (m *OrderProductsPayload) validateNamesProductPriceFids(formats strfmt.Regi
 	}
 
 	for i := 0; i < len(m.NamesProductPriceFids); i++ {
-		if typeutils.IsZero(m.NamesProductPriceFids[i]) { // not required
-			continue
+		if m.NamesProductPriceFids[i] == nil {
+			return validate.Required("namesProductPriceFids"+"."+strconv.Itoa(i), "body", m.NamesProductPriceFids[i])
 		}
 
 		if m.NamesProductPriceFids[i] != nil {
@@ -126,8 +127,8 @@ func (m *OrderProductsPayload) validateProducts(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Products); i++ {
-		if typeutils.IsZero(m.Products[i]) { // not required
-			continue
+		if m.Products[i] == nil {
+			return validate.Required("products"+"."+strconv.Itoa(i), "body", m.Products[i])
 		}
 
 		if m.Products[i] != nil {
@@ -156,8 +157,8 @@ func (m *OrderProductsPayload) validateQuantityProductPriceFids(formats strfmt.R
 	}
 
 	for i := 0; i < len(m.QuantityProductPriceFids); i++ {
-		if typeutils.IsZero(m.QuantityProductPriceFids[i]) { // not required
-			continue
+		if m.QuantityProductPriceFids[i] == nil {
+			return validate.Required("quantityProductPriceFids"+"."+strconv.Itoa(i), "body", m.QuantityProductPriceFids[i])
 		}
 
 		if m.QuantityProductPriceFids[i] != nil {

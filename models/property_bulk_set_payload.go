@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // PropertyBulkSetPayload Set Many Properties
@@ -63,8 +64,8 @@ func (m *PropertyBulkSetPayload) validateDecrementCounters(formats strfmt.Regist
 	}
 
 	for i := 0; i < len(m.DecrementCounters); i++ {
-		if typeutils.IsZero(m.DecrementCounters[i]) { // not required
-			continue
+		if m.DecrementCounters[i] == nil {
+			return validate.Required("decrementCounters"+"."+strconv.Itoa(i), "body", m.DecrementCounters[i])
 		}
 
 		if m.DecrementCounters[i] != nil {
@@ -93,8 +94,8 @@ func (m *PropertyBulkSetPayload) validateFlags(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Flags); i++ {
-		if typeutils.IsZero(m.Flags[i]) { // not required
-			continue
+		if m.Flags[i] == nil {
+			return validate.Required("flags"+"."+strconv.Itoa(i), "body", m.Flags[i])
 		}
 
 		if m.Flags[i] != nil {
@@ -123,8 +124,8 @@ func (m *PropertyBulkSetPayload) validateIncrementCounters(formats strfmt.Regist
 	}
 
 	for i := 0; i < len(m.IncrementCounters); i++ {
-		if typeutils.IsZero(m.IncrementCounters[i]) { // not required
-			continue
+		if m.IncrementCounters[i] == nil {
+			return validate.Required("incrementCounters"+"."+strconv.Itoa(i), "body", m.IncrementCounters[i])
 		}
 
 		if m.IncrementCounters[i] != nil {
@@ -153,8 +154,8 @@ func (m *PropertyBulkSetPayload) validateValues(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Values); i++ {
-		if typeutils.IsZero(m.Values[i]) { // not required
-			continue
+		if m.Values[i] == nil {
+			return validate.Required("values"+"."+strconv.Itoa(i), "body", m.Values[i])
 		}
 
 		if m.Values[i] != nil {

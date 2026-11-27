@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // CreateOrderPayload create order payload
@@ -102,8 +103,8 @@ func (m *CreateOrderPayload) validateModifySubscriptions(formats strfmt.Registry
 	}
 
 	for i := 0; i < len(m.ModifySubscriptions); i++ {
-		if typeutils.IsZero(m.ModifySubscriptions[i]) { // not required
-			continue
+		if m.ModifySubscriptions[i] == nil {
+			return validate.Required("modifySubscriptions"+"."+strconv.Itoa(i), "body", m.ModifySubscriptions[i])
 		}
 
 		if m.ModifySubscriptions[i] != nil {
@@ -132,8 +133,8 @@ func (m *CreateOrderPayload) validateProducts(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Products); i++ {
-		if typeutils.IsZero(m.Products[i]) { // not required
-			continue
+		if m.Products[i] == nil {
+			return validate.Required("products"+"."+strconv.Itoa(i), "body", m.Products[i])
 		}
 
 		if m.Products[i] != nil {

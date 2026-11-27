@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // ProductPriceBands Product Prices
@@ -42,8 +43,8 @@ func (m *ProductPriceBands) validatePricebands(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Pricebands); i++ {
-		if typeutils.IsZero(m.Pricebands[i]) { // not required
-			continue
+		if m.Pricebands[i] == nil {
+			return validate.Required("pricebands"+"."+strconv.Itoa(i), "body", m.Pricebands[i])
 		}
 
 		if m.Pricebands[i] != nil {

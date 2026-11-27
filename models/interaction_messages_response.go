@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // InteractionMessagesResponse interaction messages response
@@ -42,8 +43,8 @@ func (m *InteractionMessagesResponse) validateMessages(formats strfmt.Registry) 
 	}
 
 	for i := 0; i < len(m.Messages); i++ {
-		if typeutils.IsZero(m.Messages[i]) { // not required
-			continue
+		if m.Messages[i] == nil {
+			return validate.Required("messages"+"."+strconv.Itoa(i), "body", m.Messages[i])
 		}
 
 		if m.Messages[i] != nil {

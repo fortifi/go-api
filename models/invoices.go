@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // Invoices Generic Response
@@ -94,8 +95,8 @@ func (m *Invoices) validateInvoices(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Invoices); i++ {
-		if typeutils.IsZero(m.Invoices[i]) { // not required
-			continue
+		if m.Invoices[i] == nil {
+			return validate.Required("invoices"+"."+strconv.Itoa(i), "body", m.Invoices[i])
 		}
 
 		if m.Invoices[i] != nil {

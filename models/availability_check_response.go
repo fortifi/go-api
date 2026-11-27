@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // AvailabilityCheckResponse Product information to check availability
@@ -48,8 +49,8 @@ func (m *AvailabilityCheckResponse) validateSuggestions(formats strfmt.Registry)
 	}
 
 	for i := 0; i < len(m.Suggestions); i++ {
-		if typeutils.IsZero(m.Suggestions[i]) { // not required
-			continue
+		if m.Suggestions[i] == nil {
+			return validate.Required("suggestions"+"."+strconv.Itoa(i), "body", m.Suggestions[i])
 		}
 
 		if m.Suggestions[i] != nil {

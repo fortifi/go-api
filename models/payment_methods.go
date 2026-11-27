@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // PaymentMethods Generic Response
@@ -42,8 +43,8 @@ func (m *PaymentMethods) validateAccounts(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Accounts); i++ {
-		if typeutils.IsZero(m.Accounts[i]) { // not required
-			continue
+		if m.Accounts[i] == nil {
+			return validate.Required("accounts"+"."+strconv.Itoa(i), "body", m.Accounts[i])
 		}
 
 		if m.Accounts[i] != nil {

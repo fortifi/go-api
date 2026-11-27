@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // AvailabilityCheckSuggestionResponse Suggestion for an availability check response
@@ -45,8 +46,8 @@ func (m *AvailabilityCheckSuggestionResponse) validateProperties(formats strfmt.
 	}
 
 	for i := 0; i < len(m.Properties); i++ {
-		if typeutils.IsZero(m.Properties[i]) { // not required
-			continue
+		if m.Properties[i] == nil {
+			return validate.Required("properties"+"."+strconv.Itoa(i), "body", m.Properties[i])
 		}
 
 		if m.Properties[i] != nil {

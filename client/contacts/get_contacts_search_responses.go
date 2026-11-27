@@ -16,6 +16,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // GetContactsSearchReader is a Reader for the GetContactsSearch structure.
@@ -265,8 +266,8 @@ func (o *GetContactsSearchOKBody) validateData(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(o.Data); i++ {
-		if typeutils.IsZero(o.Data[i]) { // not required
-			continue
+		if o.Data[i] == nil {
+			return validate.Required("getContactsSearchOK"+"."+"data"+"."+strconv.Itoa(i), "body", o.Data[i])
 		}
 
 		if o.Data[i] != nil {

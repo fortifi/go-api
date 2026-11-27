@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // EntityFeatureFlags Entity Feature Flags
@@ -42,8 +43,8 @@ func (m *EntityFeatureFlags) validateFeatureFlags(formats strfmt.Registry) error
 	}
 
 	for i := 0; i < len(m.FeatureFlags); i++ {
-		if typeutils.IsZero(m.FeatureFlags[i]) { // not required
-			continue
+		if m.FeatureFlags[i] == nil {
+			return validate.Required("featureFlags"+"."+strconv.Itoa(i), "body", m.FeatureFlags[i])
 		}
 
 		if m.FeatureFlags[i] != nil {

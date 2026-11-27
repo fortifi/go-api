@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // Labels Labels
@@ -42,8 +43,8 @@ func (m *Labels) validateLabels(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Labels); i++ {
-		if typeutils.IsZero(m.Labels[i]) { // not required
-			continue
+		if m.Labels[i] == nil {
+			return validate.Required("labels"+"."+strconv.Itoa(i), "body", m.Labels[i])
 		}
 
 		if m.Labels[i] != nil {

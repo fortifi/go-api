@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // FindTransactionResponse find transaction response
@@ -108,8 +109,8 @@ func (m *FindTransactionResponse) validateDiscounts(formats strfmt.Registry) err
 	}
 
 	for i := 0; i < len(m.Discounts); i++ {
-		if typeutils.IsZero(m.Discounts[i]) { // not required
-			continue
+		if m.Discounts[i] == nil {
+			return validate.Required("discounts"+"."+strconv.Itoa(i), "body", m.Discounts[i])
 		}
 
 		if m.Discounts[i] != nil {
@@ -138,8 +139,8 @@ func (m *FindTransactionResponse) validateItems(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Items); i++ {
-		if typeutils.IsZero(m.Items[i]) { // not required
-			continue
+		if m.Items[i] == nil {
+			return validate.Required("items"+"."+strconv.Itoa(i), "body", m.Items[i])
 		}
 
 		if m.Items[i] != nil {
@@ -168,8 +169,8 @@ func (m *FindTransactionResponse) validateSubscriptions(formats strfmt.Registry)
 	}
 
 	for i := 0; i < len(m.Subscriptions); i++ {
-		if typeutils.IsZero(m.Subscriptions[i]) { // not required
-			continue
+		if m.Subscriptions[i] == nil {
+			return validate.Required("subscriptions"+"."+strconv.Itoa(i), "body", m.Subscriptions[i])
 		}
 
 		if m.Subscriptions[i] != nil {
@@ -198,8 +199,8 @@ func (m *FindTransactionResponse) validateTaxes(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Taxes); i++ {
-		if typeutils.IsZero(m.Taxes[i]) { // not required
-			continue
+		if m.Taxes[i] == nil {
+			return validate.Required("taxes"+"."+strconv.Itoa(i), "body", m.Taxes[i])
 		}
 
 		if m.Taxes[i] != nil {

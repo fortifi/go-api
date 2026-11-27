@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // CreatePresetChatSessionPayload Create A Preset Chat session
@@ -88,8 +89,8 @@ func (m *CreatePresetChatSessionPayload) validateLabels(formats strfmt.Registry)
 	}
 
 	for i := 0; i < len(m.Labels); i++ {
-		if typeutils.IsZero(m.Labels[i]) { // not required
-			continue
+		if m.Labels[i] == nil {
+			return validate.Required("labels"+"."+strconv.Itoa(i), "body", m.Labels[i])
 		}
 
 		if m.Labels[i] != nil {
@@ -118,8 +119,8 @@ func (m *CreatePresetChatSessionPayload) validateNotes(formats strfmt.Registry) 
 	}
 
 	for i := 0; i < len(m.Notes); i++ {
-		if typeutils.IsZero(m.Notes[i]) { // not required
-			continue
+		if m.Notes[i] == nil {
+			return validate.Required("notes"+"."+strconv.Itoa(i), "body", m.Notes[i])
 		}
 
 		if m.Notes[i] != nil {

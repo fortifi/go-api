@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // Polymers List of Polymers
@@ -42,8 +43,8 @@ func (m *Polymers) validateItems(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Items); i++ {
-		if typeutils.IsZero(m.Items[i]) { // not required
-			continue
+		if m.Items[i] == nil {
+			return validate.Required("items"+"."+strconv.Itoa(i), "body", m.Items[i])
 		}
 
 		if m.Items[i] != nil {

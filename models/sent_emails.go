@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // SentEmails Sent Emails
@@ -42,8 +43,8 @@ func (m *SentEmails) validateEmails(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Emails); i++ {
-		if typeutils.IsZero(m.Emails[i]) { // not required
-			continue
+		if m.Emails[i] == nil {
+			return validate.Required("emails"+"."+strconv.Itoa(i), "body", m.Emails[i])
 		}
 
 		if m.Emails[i] != nil {

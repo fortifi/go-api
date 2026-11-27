@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // AvailabilityCheckPayload Product information to check availability
@@ -51,8 +52,8 @@ func (m *AvailabilityCheckPayload) validateProperties(formats strfmt.Registry) e
 	}
 
 	for i := 0; i < len(m.Properties); i++ {
-		if typeutils.IsZero(m.Properties[i]) { // not required
-			continue
+		if m.Properties[i] == nil {
+			return validate.Required("properties"+"."+strconv.Itoa(i), "body", m.Properties[i])
 		}
 
 		if m.Properties[i] != nil {

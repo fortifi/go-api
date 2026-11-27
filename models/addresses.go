@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // Addresses Generic Response
@@ -42,8 +43,8 @@ func (m *Addresses) validateAddresses(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Addresses); i++ {
-		if typeutils.IsZero(m.Addresses[i]) { // not required
-			continue
+		if m.Addresses[i] == nil {
+			return validate.Required("addresses"+"."+strconv.Itoa(i), "body", m.Addresses[i])
 		}
 
 		if m.Addresses[i] != nil {

@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // Properties Properties set on an entity
@@ -56,8 +57,8 @@ func (m *Properties) validateCounters(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Counters); i++ {
-		if typeutils.IsZero(m.Counters[i]) { // not required
-			continue
+		if m.Counters[i] == nil {
+			return validate.Required("counters"+"."+strconv.Itoa(i), "body", m.Counters[i])
 		}
 
 		if m.Counters[i] != nil {
@@ -86,8 +87,8 @@ func (m *Properties) validateFlags(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Flags); i++ {
-		if typeutils.IsZero(m.Flags[i]) { // not required
-			continue
+		if m.Flags[i] == nil {
+			return validate.Required("flags"+"."+strconv.Itoa(i), "body", m.Flags[i])
 		}
 
 		if m.Flags[i] != nil {
@@ -116,8 +117,8 @@ func (m *Properties) validateValues(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Values); i++ {
-		if typeutils.IsZero(m.Values[i]) { // not required
-			continue
+		if m.Values[i] == nil {
+			return validate.Required("values"+"."+strconv.Itoa(i), "body", m.Values[i])
 		}
 
 		if m.Values[i] != nil {

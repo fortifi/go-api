@@ -133,8 +133,8 @@ func (m *CreateTicketPayload) validateBcc(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Bcc); i++ {
-		if typeutils.IsZero(m.Bcc[i]) { // not required
-			continue
+		if m.Bcc[i] == nil {
+			return validate.Required("bcc"+"."+strconv.Itoa(i), "body", m.Bcc[i])
 		}
 
 		if m.Bcc[i] != nil {
@@ -163,8 +163,8 @@ func (m *CreateTicketPayload) validateCc(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Cc); i++ {
-		if typeutils.IsZero(m.Cc[i]) { // not required
-			continue
+		if m.Cc[i] == nil {
+			return validate.Required("cc"+"."+strconv.Itoa(i), "body", m.Cc[i])
 		}
 
 		if m.Cc[i] != nil {
@@ -244,8 +244,8 @@ func (m *CreateTicketPayload) validateLabels(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Labels); i++ {
-		if typeutils.IsZero(m.Labels[i]) { // not required
-			continue
+		if m.Labels[i] == nil {
+			return validate.Required("labels"+"."+strconv.Itoa(i), "body", m.Labels[i])
 		}
 
 		if m.Labels[i] != nil {

@@ -43,6 +43,9 @@ type CreateProductOfferPayload struct {
 	// setup discount type
 	SetupDiscountType int32 `json:"setupDiscountType,omitempty"`
 
+	// Treat the override amount as the total charged, including tax. Override offers only.
+	TaxInclusive bool `json:"taxInclusive,omitempty"`
+
 	// term
 	Term int32 `json:"term"`
 

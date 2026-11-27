@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // InteractionVerificationResponse Interaction Verification Response
@@ -54,8 +55,8 @@ func (m *InteractionVerificationResponse) validateInteractionTypes(formats strfm
 	}
 
 	for i := 0; i < len(m.InteractionTypes); i++ {
-		if typeutils.IsZero(m.InteractionTypes[i]) { // not required
-			continue
+		if m.InteractionTypes[i] == nil {
+			return validate.Required("interactionTypes"+"."+strconv.Itoa(i), "body", m.InteractionTypes[i])
 		}
 
 		if m.InteractionTypes[i] != nil {

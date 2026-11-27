@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // ContactPeople Contact Peoples
@@ -94,8 +95,8 @@ func (m *ContactPeople) validateContacts(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Contacts); i++ {
-		if typeutils.IsZero(m.Contacts[i]) { // not required
-			continue
+		if m.Contacts[i] == nil {
+			return validate.Required("contacts"+"."+strconv.Itoa(i), "body", m.Contacts[i])
 		}
 
 		if m.Contacts[i] != nil {

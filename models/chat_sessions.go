@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // ChatSessions List of chat sessions
@@ -94,8 +95,8 @@ func (m *ChatSessions) validateChatSessions(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.ChatSessions); i++ {
-		if typeutils.IsZero(m.ChatSessions[i]) { // not required
-			continue
+		if m.ChatSessions[i] == nil {
+			return validate.Required("chatSessions"+"."+strconv.Itoa(i), "body", m.ChatSessions[i])
 		}
 
 		if m.ChatSessions[i] != nil {

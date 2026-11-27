@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // InvoiceItem Generic Response
@@ -127,8 +128,8 @@ func (m *InvoiceItem) validateSubItems(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.SubItems); i++ {
-		if typeutils.IsZero(m.SubItems[i]) { // not required
-			continue
+		if m.SubItems[i] == nil {
+			return validate.Required("subItems"+"."+strconv.Itoa(i), "body", m.SubItems[i])
 		}
 
 		if m.SubItems[i] != nil {

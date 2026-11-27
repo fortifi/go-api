@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag/jsonutils"
 	"github.com/go-openapi/swag/typeutils"
+	"github.com/go-openapi/validate"
 )
 
 // PublisherCampaigns Publisher Campaigns
@@ -94,8 +95,8 @@ func (m *PublisherCampaigns) validateCampaigns(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Campaigns); i++ {
-		if typeutils.IsZero(m.Campaigns[i]) { // not required
-			continue
+		if m.Campaigns[i] == nil {
+			return validate.Required("campaigns"+"."+strconv.Itoa(i), "body", m.Campaigns[i])
 		}
 
 		if m.Campaigns[i] != nil {

@@ -275,8 +275,8 @@ func (m *InvoiceSummary) validateCreditNotes(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.CreditNotes); i++ {
-		if typeutils.IsZero(m.CreditNotes[i]) { // not required
-			continue
+		if m.CreditNotes[i] == nil {
+			return validate.Required("creditNotes"+"."+strconv.Itoa(i), "body", m.CreditNotes[i])
 		}
 
 		if m.CreditNotes[i] != nil {
